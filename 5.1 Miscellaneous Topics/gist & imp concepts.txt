@@ -1,0 +1,15 @@
+gist & imp concepts
+
+* High ThroughPut := many queries in 1 sec
+  Low Latency     := fast response in less time
+
+=> Productionizing Model (realtime) happens at Large Scale
+    \
+     woth high-throughput & low-latency requirements
+
+**IMP-------
+[A/B test] :
+=> The true test of your Model is not on Train or Test Set 
+   Its actually via A/B testing
+
+   If doesnt work => not creating business impact

@@ -1,0 +1,27 @@
+DL TIPS
+
+=> while doing it keras & tensorflow way, you can use Violin Plots to see distribution of Weight among diff Hidden Layers
+
+=> Data Augmentation is esp used for Image Dataset 
+   \
+    used mostly in CNN
+
+=> Initial layers in CNN often deal with the task of detecting the Borders, Common Shapes & Likewise
+   (which is common among all tasks esp when we talk about Images)
+
+=> Keep Small Learning Rates when you FineTune Your Model
+
+=> Machine Translation esp have long term dependencies
+
+=> Padding primarily meant for Batch Update, in LSTM (thus it can speed up update process)
+
+=> TensorFlow/Keras :- allows to add diff regularization at diff layers
+
+* Dropout & Conv Layer & Fully Connected Layer :
+  -------
+  -> compare to 2 Conv layer, chances of dropout being present between 2 fully connected layers is more
+     because
+     there are more weights variable between 2 FC-layers, comparatively
+     So need some sort of Regularization
+
+=> Better tip is to add Dropout after every Fully Connection Layer !!

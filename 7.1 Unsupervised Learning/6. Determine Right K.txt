@@ -1,0 +1,46 @@
+* Determine Right K
+  -----------------
+
+ -> In K-means or K-mediod, K is Hyper-Parameter :
+
+ Ways :
+
+1) Domain-Knowledge : 
+
+2) Elbow-Method or Knee Method :
+   --------------------
+    -> plot loss vs K plots & find the best k as we do earlier in Cross-Validation
+
+
+noTE :-
+  In case if Cross Validation we do have ground truth so we can compare & validate
+  In case of Clustering, no ground truth so we employ Knee-method (just based on Data )
+
+
+* Hyper-Parameter Selection : (Elbow Method )
+  ---------
+   Loss vs K
+
+   -> Plot :- is monotonically decreasing as k increases
+
+   -> as k increases, the loss decreases or dramatically decreases & then after some point it
+      changes it rate of fall
+
+   -> So elbow point is the one where steepness of falling changes 
+   		or
+   		There is sudden change in direction or rate of change in fall
+
+   -> Pick elbow point where there is sudden change (ie kinda slope has change)
+
+   (Consider Human Elbow)
+
+   In the case of K-mean, the plot will be sommething like constantly decreasing as k increases
+
+   at k = n, it will be 0
+      \
+       because k=n means every point is itself cluster & in that case distance of point from itself is 0 => thus loss is 0 for every cluster
+
+
+
+
+

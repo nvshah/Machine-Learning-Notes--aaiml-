@@ -1,0 +1,37 @@
+6.2 Hill Descent 2D
+------------------
+
+ref : Saddle Point (https://en.wikipedia.org/wiki/Saddle_point )
+
+_________
+
+
+* Hill Climbing Analogy :
+  --------------------
+
+* loss & Weights Correspondence:
+  ---------
+   -> Loss is just a Func over Weights
+   -> Loss(w) :- just a way to represent the vector|matrix form to scalar form
+
+
+* Contout Lines :
+  --------
+   -> All the Point that are at same Height (in 2D Convex Fn Plot (ie Hyperbola let say))
+       \
+       then they form a ring (of path) & that line is known as Contour Line
+
+   -> Helps to Visualize the Higher Dimension Plot
+       \
+        Visualizinng the 3D plots in 2D surface
+
+   -> By looking at the Contour Plots we can have Idea where the local Minima|maxima can be !!
+
+   -> by looking at Contour, You can tell if its Saddle Point or Minima|Maxima
+
+
+* Saddle Point:
+  -------
+   - Appears as minima from 1 Side
+     whereas
+     If looked at from other side it appears as a Maxima

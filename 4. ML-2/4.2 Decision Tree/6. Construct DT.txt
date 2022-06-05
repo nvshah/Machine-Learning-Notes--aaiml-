@@ -1,0 +1,51 @@
+Construct DT
+
+-> Info Gain breaking dataset using diff feature for Y
+
+   compare Information Gain for f1, f2, f3,... & pick one with highest Information Gain
+
+
+* Pure Node :
+  -----
+   -> Enntropy = 0
+    - Can predict from avail data pts easily
+    - no need to break it further in DT
+
+-> Recursively breaking the node using Information Gain as Criteria
+
+* Noisy Data Intution :
+  ---- 
+   - We won't grow a node further at given depth if we have very few points
+     \
+      because following that path might be only lead to noisy/outlier data pts (which is rare in dataset)
+
+   - If we increase depth of Tree just for such minor pts & if those pts turn out as outlier than
+     We are just Overfitting
+
+* Stop Growing Tree When :-
+   
+   1) Pure Node
+
+   2) Few points @ node (ie lack of pts at node to further break down 
+   						(might be prone to noise  & hence Overfitting))
+
+   3) If we are too deep (ie depth of tree is more)
+
+* Hyper-Parameter :
+  --------
+	=> Depth of tree incr, -> Chances of Overfitting incr
+	      \
+	       because there are fewer & fewer pts as depth increases
+
+	=> Depth of tree lower -> Chances of Underfitting incr
+	     
+  - So Depth is the Hyper-Param in DT
+  - to pick right Depth we can use Cross-Validation
+
+
+-> Whilst constructing Decision Tree we can use either of 2 :-
+     
+     1) Info-Gain + Entropy
+     2) Info-Gain + Gini Impurity
+
+

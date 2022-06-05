@@ -1,0 +1,18 @@
+Notes Case Studies Real World
+
+Tips :-
+
+- Whenever you have Real World case Studies !
+     Ask Question Such as :-
+          1) What would be the `business metric` that would be applicable to this problem
+          2) Type of Analysis
+          3) What type of models make sense
+          4) 
+
+* First cut V1 Solution vs Optimal Solution
+
+
+Steps on Real World Problems :
+  
+  1) Business Objective & Constraints
+

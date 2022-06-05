@@ -1,0 +1,7 @@
+Remember | Facts | TIps
+
+-> PDF := Derivative of CDF
+
+-> Derivative := slope of tangent at give point
+
+-> FACT :- Mostly in E-Commerce the distribution is Power-Law Distribution

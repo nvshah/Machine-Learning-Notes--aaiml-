@@ -1,0 +1,41 @@
+11 Data Augmentation 
+-------------------
+
+------
+REMEMBER
+
+Data Augmentation is esp used for Image Dataset 
+   \
+    used mostly in CNN
+
+-------------
+
+- Data Augmentation helps to make CNN Models more robust towards rotation, scale, cropping, etc...
+  by introducing the invariances onto the dataset
+
+- Some of the operations that covered by augmentation is :-
+  - flips, horizontal shift, vertical shift, rotation, zoom, shear (Stretch)
+    |
+    via performing bunch of such operations we can augment new images for given data point
+
+- For each Data Pt in original data set, I'm augmenting the dataset
+
+Que) Whu Data Augmentation is useful ??
+ -> You can get several Invariances
+     |
+      - shear Invariance, rotation invariance, zoom invariance, shear invariance
+        noise invariance
+
+    Invariance := inp to output mapping doesn't changes when inp is changed slightly
+
+    Thus this will help s.t my output doesn't changes when inp changes slightly due to Invariances
+
+ -> If you have small dataset => you can create much larger dataset
+
+=> Because you introduce invariance to the input dataset, the ConvNet Model you train become Invariant
+   to certain invariances
+
+
+=> Data Augmentation is esp used for Image Dataset 
+   \
+    used mostly in CNN

@@ -1,0 +1,18 @@
+terms
+
+- Dropout Techniqye  // Regularization
+- RLU
+- Contour Plots
+
+- EDA (ie Exponential Decaying Average)
+
+- Cross Entropy
+
+[Maths]--------
+- Minima, Maxima, Saddle Points
+- Convex Functions, Non-Convex Function
+- Orthogonal 
+- Frobenius Norm
+- SGD & Momentum | 
+- Exponential Weighinng Scheme
+

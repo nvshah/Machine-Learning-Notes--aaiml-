@@ -1,0 +1,22 @@
+Doubts 
+
+Q) What is the significance of Calibration ??
+   - because what calibration is trying to achieve seems simmilar to minimizing Loss Func in GD Optimization !
+   & that is already being done 
+
+   -> If we minimize the loss function then the probability will implicitly be improved for same model
+      & ( thus same aim of calibration )
+
+   => because at the end we are taming our Model only to encompass the probabilities as well as predictions	
+
+q2) In calibration what we try to achieve is :-
+
+  prepare or tame our model s.t. its good for class-labels as well as probabilities of those class labels
+
+  but As we are already minimizing our Loss Func in optimization process, (wont it will inherently achieve the goal of calibration ie as Loss func gets minimized class label prediction gets improves & thus probabilities (between actual & predicted) also comes closer)
+
+
+Q3) Can we say that in calibration the intution is same as what behind the XGBoost ie 
+    Minimizing the error by fitting Model to the Error
+
+    (Here we are minimizing miss-probabilities instead)

@@ -1,0 +1,46 @@
+
+____________
+
+- Regression using DT also gives you Axis-Parallel lines only & not smooth curve
+
+------------
+
+Regression & DT
+---------------
+
+-> For Regression normally we use MSE or MAD
+
+-> So in DT for classificationn we can use IG but for regression we need to use something else
+
+So For Regression 
+ - we will use MSE or MAD instead of Entropy
+
+ MSE :- mean((Y - Y`)^2)
+
+ So We will go to that child node which has lower error compare to other with parent
+
+ So We will split based on features & 
+  Whichever feature reduces the error (ie MSE) we will select that fetaure
+
+Thus :-
+
+=< At any stage when we try to reduce/break dataset via feature 
+	We are trying to reduce the error effectively
+ 
+=> In case of classification :- Pick feature Fi - that reduces `entropy`
+   
+   In case of Regression :- Pick feature Fi - that reduces `error` (ie MSE)
+
+   also Best Entropy = 0  // no randomness but totally deterministic
+        Best Error  = 0  
+
+Curve & DT-Regression :
+---------------
+=> Regression using DT also gives you Axis-Parallel lines only & not smooth curve 
+   
+   So DT regression is never smooth like curve 
+
+-> DT is trying to approximate the curve with axis-parallel lines
+
+
+

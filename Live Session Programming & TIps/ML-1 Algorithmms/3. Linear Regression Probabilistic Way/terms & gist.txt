@@ -1,0 +1,11 @@
+terms & gist
+
+REMEMBER :- 
+  In statistics you need to make assumptionns to move further in derivations
+
+
+- Likelihood Function of Parameters (ie w & b)
+- Independent Rule of Probability
+
+- Maximum Likelihood Estimation (MLE)
+- Maximum A Posteriroi Estimation (MAP)

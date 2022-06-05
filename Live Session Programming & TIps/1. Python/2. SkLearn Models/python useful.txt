@@ -1,0 +1,32 @@
+python useful
+
+hasattr()
+
+
+make_classification //
+
+
+* matplotlib :
+     
+     - ListedColorMap
+
+* numpy :
+     
+     - c_    // col-stacking
+     - r_   // row-stacking
+     - ravel()  // mostly used on meshgrid
+     - meshgrid()  // used to create points in grid fashion (x,y)
+
+
+* sklearn 
+     
+     - MlpClassifier
+     - GaussianProcessClassifier
+     - RBF
+     - DecisionTreeClassifier
+     - GaussianNB
+
+     - Linear & Quadratic Discriminant Analysis
+
+     - StandardScalar
+     - decision_function()  // similar to predict

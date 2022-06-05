@@ -1,0 +1,96 @@
+ref : https://www.analyticsvidhya.com/blog/2021/04/improve-naive-bayes-text-classifier-using-laplace-smoothing/
+
+________________________
+* Tips-Facts :
+
+=> If numerator or denominator in original likelihood is small then you have less confidence abt the 
+    ratio
+   (As ratio are easily corrupted when you have small vals in numerator or denominator)
+
+=> in most cases alpha = 1 is taken
+   As alpha incr, it move towards Uniform Distribution
+
+try alpha values :- {1, 10, 1000, 5000 }
+_________________________
+
+* Laplace Smoothing :
+  ------------
+   => Workaround for such features whose likelihood is not available inside lookup 
+      ( probably due to missing val of such feature in training set)
+
+   - Let say Train data for text-classif
+
+   -> Often it is possible that training data has not all the words (esp some esoteric words)
+      & test data may possess some new (esoteric) words
+
+      So it happens that query text possess words which are not in corpus (ie training set)
+
+   ->
+    Challenge :- (Test Query new word)
+
+        So for trainig set challange is such w` is not there calculated at the end of training 
+         ie likelihood of such w` is not computed & we cannot do lookup so.
+
+       (Idea 1)
+       -> Ignoring or Dropping such w` is also incorrect (as their probability will be considered as 1 
+          then)
+
+       (Also)
+       -> P(w` | y=1) = 0/n1 = 0 // cannot take 0 as well as it will make all other 0 in expression
+
+   ----
+   WorkAround :- Laplace Smoothing or Additive Smoothing
+
+   Laplace Smoothing :
+   --------------
+    -> P(w` | y=1) = 0 + alpha / (n1 + alpha * k)   // n1 is #pts where y=1
+
+        where k = # distinct values we can take for w`  // 2 in case of text processing 
+
+
+      Case 1:- alpha small 
+               \
+                -> As don't know abt w` so give very less probability to any class
+                -> getting rid of multiplication by zero problem
+
+      Case 2:- alpha large
+               \
+                -> Giving same probability to all classes i.e being equi-probable
+                  (Eg in case of 2, it would be 0.5)
+                -> Being Bias (Simple Model)
+                   As we dont know abt w` we will try to give equal probability to all classes
+
+    => So via Laplace Smoothing for any word (not necessary in training data), 
+
+          for training => (#freq_for_give_class_of_train_pts + alpha) / (n1 + alpha*k)
+    --
+    MIMP
+    -> As alpha increases => Moving my likelihood probability to Uniform Distribution (i.e Equi-Probable)
+
+    => If numerator or denominator in original likelihood is small then you have less confidence abt the 
+       ratio
+       (As ratio are easily corrupted when you have small vals in numerator or denominator)
+    
+  **=> Thus LS is just trying to move likelihood closer to Equi-Probable if the ratio in original 
+       likelihood is too small
+
+    -> LS needs to be done for all pts values i.e training pts as well
+
+   Q) Why called Smoothing ??
+     -> because it is smoothing towards Uniform Distribution or moving it towards Uniform Distribution 
+
+     -> Its also called Additive Smoothing as We are adding something to numerator & denominator
+
+
+---------------
+(EXTRA)
+
+Hyper-Parameter Tuning 
+
+Finding Optimal ‘α’:
+
+Here, alpha is a hyper-parameter and you have to tune it. The basic methods fortune it is as follows:
+
+1. Using elbow plot, try plotting ‘performance metric’ v/s ‘α’ hyper-parameter.
+
+2. In most cases, the best way to determine optimal values of alpha is through a grid search over possible parameter values, using cross-validation to evaluate the performance of the model on your data at each value

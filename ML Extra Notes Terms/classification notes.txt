@@ -1,0 +1,17 @@
+classification notes
+
+- Linear Shape
+- Non Linear Shape
+
+* Hyper-Parameters :
+  --------
+   parameter that decide how your model is going to perform
+   parameter that decide High-Bias (underfitting) - High - Variance (Overfitting) tradeoff
+
+   We determine Hyper-Param using CV
+
+ => Hinge Loss has small problem i.e at Hinge its not differentiable (i.e at Zi=1 probably)
+
+
+
+* RF :- Random Forest works well on Tabular Data

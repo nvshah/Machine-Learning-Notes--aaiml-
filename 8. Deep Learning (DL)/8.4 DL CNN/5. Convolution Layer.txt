@@ -1,0 +1,130 @@
+5. Convolution Layer
+-------------------
+
+-----
+(GIST)
+
+* ConvNets :- in short is Convolution with multiple Kernels followed by Activation RELU
+
+* Similarity Between MLP layer & Conv-nets
+    \
+     Weights in MLP is same as Kernels in Conv-Nets
+
+------
+
+* For 1 Edge Detection := 1 Kernel (like Sobel )
+  |
+  In NN, we may use multiple kernels
+
+* In NN, (bilogical perspective) as we have many areas in Visual Cortex (V1, V2, V3, ...)
+  So same way
+  for multiple Edge Detectors => We will have multiple Kernels
+      |
+      1 Edge Detector => 1 Kernel
+
+* CNN :
+  ---
+   - lets learn kernels (Matrices) for an Edge Detection in case of MLP|DL|NN
+
+   - Thus kernel can be thought of as an Weight Matrices in NN
+     &
+     We will learn this Kernel Matrices
+
+* Multiple Kernels : -> may do diff kind of Edge Detection
+
+    Idea :- So instead of hard-coding the Kernel (ie like sobel)
+            let us learn kernel from data just as we learn Weights in MLP
+
+=> Thus Kernel works like Weights in MLP
+
+    - for n kernels :- You will get n images in output
+    - You can stack those outputted images
+
+
+* Convolution Layer :
+  ----------------
+   Inp Image :- n*n*c
+       |
+    m multiple kernels | padding | stride=1
+       |
+       n*n*m output
+
+       n*n := for padding & stride=1
+       &
+       m := from m kernel
+       Thus
+       n*n*m := Tensor
+
+REMEM
+-> length & width depend on padding, stride & kernel size
+      depth depends on number of kernels you have
+
+   => each channel in output tensor corresponds to 1 Kernel
+
+   -> Convolution Layer has 
+        - Multiple Kernels  (ie Edge Detector)
+        - Padding
+        - Stride
+
+   -> Depth in output depends on #kernels
+      &
+      Matrix dimen (ie length & width) of output depends on padding, stride
+
+   Hyper-Params :- (for single Convolutionn Layer)
+   ----
+    \
+     -> #kernels, padding, stride
+
+* Conv Nets :
+* Convolution Layer & 2 Stages : (Reln betn MLP & Conv Nets)
+  ---------------------------
+
+  1. For Every Kernel, Take Input Matrices & Convolve it using 1 Kernel
+      \
+       you will get something like n*n*1
+
+     The above process is called as Convolution
+
+  2. now on this output matrix, Do element wise Relu (ie apply RELU on each cell) 
+
+  Thus in short <--
+   |
+   1. First complete Convolution & then apply Eelement Wise RELU
+
+ 
+* General Conv Nets View:
+  ---
+    1. Padding
+    2. Convolution with Multiple Kernels
+    3. Relu (Activation)
+
+    => Convolution with Multiple kernels followed by an Activation
+
+
+* Thus Convolution Layer has 2 Functions
+   - Conv. with multiple Kernels
+   - Apply RELU
+
+
+______
+
+* Multiple Layer of Conv Nets :
+  ---
+   -> Multiple layers of Convolution
+
+   => In the initial Level :- Convolution Layer looks like detecting Edge
+      &
+      as we go further in levels, We can see unraveling more processing info by kernels
+
+   => Deep Multi Layered ConvNet
+       |
+       starting layer learns :- Edge Detection & similar tasks
+       more complex layers :- learns the parts or more complex information (or abstractions)
+
+      Deeep ML ConvNet works in very much similar to Visual Cortex in Human Brain (ie V1 -> V2 -> V3 ...   Hierarchy) 
+
+   => In Deep ConvNets, if we get on get the Tensors, then eventually this tensor becomes small as layer number (or complexity) increases
+
+   -> Thus as layer progresses, the dimen of output tensor may diminishes & it may also flatten
+      (Sometimes that situtation is called as "LeNet")
+    

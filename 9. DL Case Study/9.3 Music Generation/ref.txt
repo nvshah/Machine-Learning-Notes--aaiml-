@@ -1,0 +1,30 @@
+ref
+
+https://folkrnn.org/
+https://soundcloud.com/trivedigaurav/char-rnn-composes-long-composition
+https://soundcloud.com/sigur-ur-sk-li/neuralnet-music-1
+
+
+https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla/
+https://www.abcjs.net/abcjs-editor.html
+https://en.wikipedia.org/wiki/ABC_notation
+https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5
+
+[Char-RNN kerapathy Blog]
+http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+
+[ABC Notes Version] http://abc.sourceforge.net/NMD/
+[Music Tune Res] http://trillian.mit.edu/~jc/music/book/oneills/1850/X/
+[Code ref] https://drive.google.com/file/d/1RFeSemr8k4ykbvb3x2nByMapPxN-OaM5/view
+
+[Play ABC Notes to Music]
+https://abcjs.net/abcjs-editor.html
+
+[Tabla Music]
+https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla/
+https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla-part-2/
+
+[LSTM MIDI Music Gen]
+https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5
+https://github.com/Skuldur/Classical-Piano-Composer

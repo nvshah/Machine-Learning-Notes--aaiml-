@@ -1,0 +1,17 @@
+ref :
+[LSTM MIDI Music Gen]
+https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5
+https://github.com/Skuldur/Classical-Piano-Composer
+
+9. Music & LSTM
+---------------
+
+- Music21  // Python Library
+
+- MIDI Music Generation (from Midi File)
+
+=> If you can represent the seq of events as seq of characters
+   then you can use Char-RNN model
+
+-> So in this case the format changes
+   instead of ABC notation, MIDI notation is used

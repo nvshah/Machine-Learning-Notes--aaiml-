@@ -1,0 +1,17 @@
+2. Why & Insights Probability Approach
+---------
+
+Que) Why Epsilon is assumed to be Gaussian Distributed ??
+ ---------
+  -> because we know That for Probability (ie pDF) in Gaussian Distribution there is exponential part
+     &
+     log can cancel out exp part
+     &
+     Wherever there is probability Just try to think if log can be used somehow (as log is often used in case of derivation or in scenario of Probabilities based approaches)
+
+  -> Thus this will make math work easy
+
+  So as much epsilon is near to Gaussian Distb => Model will work very well (as we are close to our assumption)
+  & 
+  as much epsilon is far from Gaussian Distb => Model will degrade (as we move away from our assumption)
+

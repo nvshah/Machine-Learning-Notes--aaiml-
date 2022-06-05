@@ -1,0 +1,4 @@
+ML Core Math Concept Que
+
+Q) What is Relation between Langrange Multipliers (Constrained Optimization) vs 
+   Eigen Values (Matrix Factorization) ?? 

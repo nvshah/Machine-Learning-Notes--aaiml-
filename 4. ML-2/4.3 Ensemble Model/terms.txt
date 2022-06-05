@@ -1,0 +1,36 @@
+terms
+
+- Bagging
+- Bootstraping
+- Aggregation
+
+- Random Forest
+- Feature Bagging | Column Sampling
+- Out of Bag Points | oob pts
+- In the Bag points
+- Col sampling rate
+- Row sampling rate
+
+- trivially Parallelized
+- Multi-Core | Boxes
+
+- Boosting
+- Additive Combining
+
+- Non Trivial
+- residual err
+
+- Residuals
+- Steepest Descent  <--**
+
+- Partial Derivataive
+- Grad Notation
+
+- Gradient Boosting
+- Gradient Boosting DT
+- Shrinkage & Regularization
+
+- XGBoost
+- AdaBoost | Weighted Model
+- StackingClassifier | MetaClassifier
+- Cascading Models	

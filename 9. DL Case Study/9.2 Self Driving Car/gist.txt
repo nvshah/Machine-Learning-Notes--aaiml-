@@ -1,0 +1,9 @@
+gist
+
+-> End 2 End Model
+
+- Data available from ComaAi, Baidu, CourseEra, Udacity
+
+- You can use VGG, ResNet, Inception
+
+  CNN-RNN combined

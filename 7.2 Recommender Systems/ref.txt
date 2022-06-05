@@ -1,0 +1,22 @@
+ref
+
+[Yehudi Korenn Netflix Prize RS]
+https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf
+
+[Eigen Faces]
+- https://bugra.github.io/posts/2013/7/27/PCA-EigenFace-And-All-That/
+- https://scikit-learn.org/stable/auto_examples/decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py
+
+[Norms L1 vs L2]
+https://medium.com/analytics-vidhya/l1-vs-l2-regularization-which-is-better-d01068e6658c
+
+[Netflix Price ]
+https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf
+
+-------
+
+[Surprise Library]
+http://surpriselib.com/
+
+[Yehaudi koren Factor in Neighbors]
+https://courses.ischool.berkeley.edu/i290-dm/s11/SECURE/a1-koren.pdf

@@ -1,0 +1,72 @@
+RBF Kernel
+
+---------------
+
+- 2 points which are dissimilar are farther away
+  ie Kernel = Similarity
+     Distance = Dissimilarity
+
+- Hyper-Param in RBF based SVM :- sigma, C
+
+-> sigma :- radius of influence
+
+- RBF kernel is also called as Gaussian Kernel
+
+---------------
+
+Radial Basis Function (RBF)
+---------------
+-> It's similar to KNN in classification
+
+RBF is most popular & General Purpose SVM kernel
+
+=> K(X1, X2) = exp(-||X1-X2||^2/(2*sigma^2))   // similarity function
+   
+    sigma = hyper-param
+
+- As distance incr, kernel val falls exponentially
+    \
+     As pts get farther & farther away, make kernel val = 0
+
+  if Kernel val k = 0,
+      \
+       similarity = 0 => distance = inf
+
+  Thus intutively Kernel = Similarity
+                  Distance = Dissimilarity
+
+-> RBF itself looks very much like a Gaussian/Normal PDF
+   
+   (Run Time Comparision) :- 
+
+   In KNN, store all the K pts
+
+      RBF :- only SVS -> alpha_i  (those alpha_i > 0 only)
+
+   Often #SVS << n
+
+   Biggest drawback of KNN was run time complexity 
+   Where in RBF SVM we can overcome that as we need to calculate alpha_i for SVS (Support Vector) only
+
+   -> Hence RBF-SVM is a nice approxiamtion to KNN
+   -> Hence RBF kernel are used as general purpose Kernel
+
+
+Hyper-Param :
+  2 hyper-param in RBF Kernel :- 1) C for loss func
+                                 2) sigma for RBF kernel func
+
+  sigma is considered as radius of influence
+
+* KNN & RBF Kernel relation :
+  ----------------
+
+  -> as sigma incr, same as K incr in KNN // ie accomodate more points in vicinity
+              decr,           decr        // closest pt in vicinity
+
+
+------------
+
+* Landmarks :
+  ------
+   - choose some landmarks & calculate the similarity ie K() with those landmarks

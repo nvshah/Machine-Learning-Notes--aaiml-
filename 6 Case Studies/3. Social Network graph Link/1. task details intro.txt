@@ -1,0 +1,71 @@
+Task :- (Link Prediction Problem)
+--------------------------
+   Predict Missing Links between users in Social Media Network
+   ie 
+     Friends Recommenndation in FB kinda Task
+
+   => Need to find the Edge or valid link between users/nodes
+   
+
+* Data Info :
+  _______
+   -> Only graph relatin between different Users is provided (not other meta info is provided)
+      ie
+        Source Node -> Target Node
+
+   => Pure Graph Based Link Prediction Problem <----***
+      ________________________________________
+
+   => Graph details provided is only a snapshot of any time t
+      \
+       But in real world this graph is dynamic in nature (ie changing & evolving)
+
+
+* Mapping to Supervised Problem :
+  -------------
+   -> presence of directed edge from source -> destination = 1
+      absence of directed edge from source -> destination = 0
+
+      Thus binary classif Task
+
+
+ * Following Back Feature :
+   ---- 
+    If u1 follows u2, then there is high chance (ie high probability) that u2 follows back u1
+
+
+ * Featurize :
+   ----
+    - Eg #common vertices followed by both u1 & u2
+    - other Graph based Features
+
+---(MIMP)---
+Key Task is to Come up with Graph based Features
+ \
+  then it will be standard binary classification Tasks 
+
+______________
+
+1) No Latency requirment :
+   ----
+    - no hurry in prediction 
+      (can be every night or morning in the day)
+
+2) Probabilities Predicting Usefulness :
+   ----
+    -> can help to display or show or recommend top k users for given Ui
+
+3) Precision & Recall :
+   ----
+    If user is following ui -> uj, then I must recommend it ie Recall
+    If user must follow ui -> uk then I should recommend ie Precision
+
+    High Precision & High Recall => F1-Score can be useful
+
+   1) F1-Score - for high prec & Recall
+
+   2) Precision @ Top_K
+      --------------
+    -> If I recommend 10 (ie K) peoples, then how many of them are correct (ie how many of them will Ui will eventually end up following) 
+
+    

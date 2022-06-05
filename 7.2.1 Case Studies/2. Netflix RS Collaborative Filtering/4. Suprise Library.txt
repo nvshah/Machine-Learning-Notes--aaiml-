@@ -1,0 +1,11 @@
+* Suprise Library
+  --------------
+
+  ref : 
+  [surprise] http://surpriselib.com/
+  [Collaborative Filtering] https://courses.ischool.berkeley.edu/i290-dm/s11/SECURE/a1-koren.pdf
+
+----------------
+
+ -> For RS in python
+

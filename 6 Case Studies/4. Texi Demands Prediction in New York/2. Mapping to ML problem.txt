@@ -1,0 +1,49 @@
+2. Mapping to ML problem
+
+NOTE :- Data 
+          - possess millions of entry
+          - each entry corresponds to pickup information
+
+* Mapping to ML Problem :
+  ---------
+
+   dask.dataframe :-
+   ______
+    - useful when we have datasets larger in size than RAM
+       \
+        filesize > ram_size
+
+    - read blocks from a file at a time into memory instead of entire file
+
+    - aggregation on column in dask will work in hierarchical manner
+
+
+* time series Prediction :
+  -----------
+   So if we aim to plot #pickups vs Time plot, 
+    & then we can get idea abt to predict pickup at time t via approximating at time t+1
+
+  => Time series Prediction is special case of Regression
+
+-> we have time series based prediction in current case 
+
+* Regression ( Timer Series Base Data)
+  ------ 
+
+* Performance metric (kpi) :
+  ------------
+   1. MAPE
+   2. MSE
+
+   1. MAPE : (Mean absolute percentage error)
+     ----- 
+      -> as we are interseted in percentage difference so we are considering this metric
+      -> because in business constraint what matter is percentage error more
+
+   => We are using percentage as a way to quantify how far away are we from pickup estimation
+
+___________________
+
+
+
+

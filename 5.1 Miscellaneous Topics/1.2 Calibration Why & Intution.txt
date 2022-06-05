@@ -1,0 +1,55 @@
+-------
+
+End Goal of Calibration :- Improve Model (ie what CV does still now)
+             \
+              Kinda CV to generalize the model well (at probability level)
+
+-------
+
+
+Calibration Why & Intution:
+-----
+
+calibration works on probabilities instead of actual labels
+
+ 1. 
+ Instead of predicting class values directly for a classification problem, it can be convenient to predict the probability of an observation belonging to each possible class. Predicting probabilities allows some flexibility including deciding how to interpret the probabilities, presenting predictions with uncertainty, and providing more nuanced ways to evaluate the skill of the model. Predicted probabilities that match the expected distribution of probabilities for each class are referred to as calibrated. 
+
+ IdEa :- 
+ Calibration is a must if we want a probabilistic class-label as output i.e., P(Y_i|X_i), as calibration corrects these probabilities.
+
+ => If you are using a log-loss as a performance metric which needs the P(Y_i|X_i) values, 
+    calibration is a must.
+
+ 2.
+ The probabilities output by the models such as LR, naive bayes are often NOT well calibrated which can be observed by plotting the calibration plot as we discuss in the next video. Hence, we use calibration as a post-processing step to ensure that the final class-probabilities are well calibrated.
+
+ example :-
+ ------
+  Model -1 :- P(y_i=1|x_i) =0.99, Accuracy = 90%
+  Model 2 :- P(y_i|x_i) = 0.91 ,Accuracy = 90%
+
+  The model 2 is considered good and well calibrated as it is saying I am 91% sure while predicting a positive point as positive and it indeed was correct in finding 90% of positive points.
+
+imp
+=> In nutshell, if we plot fraction of positives v/s p(y_i=1|x_i) ,
+   we expect a striaght line for ideal calibrated model.
+
+
+imP :
+=< The concept of calibration matters only when the probablities of prediction matters.
+   In case probablities are not important for classification then there is no need for calibration. 
+
+=> Calibration focus on group of points ie chunk of data & not single data
+   whereas Simple Model consider for point wise
+
+   Calibration = Relative
+   Base Estimator = Absolute   // giving probability for single pt to class label
+
+   grp means :-  if we say to 10 people that you will get 80% this time 
+                   \
+                    then atleast 8 of them must get 80%  in perfect clalibrated model
+
+
+   In calibration we are consider all the points sharing same probability for particular class 
+   & then trying to tame model base on that !

@@ -1,0 +1,63 @@
+7. SGD & GD | Momentum
+----------------
+
+* Updation Ways :
+  ----
+
+  W_t = W_t-1 + {eta}*GRAD   // GRAD expect to grab its value via GD
+
+  1. All the Points Consideration := GD (Gradient Descent)
+  2. Using only 1 Point at a time := SGD (Stochastic Gradient Descent)
+  3. Using batch of points randomly picked := mini-batch SGD
+
+  => Now-a-days Mini-Batch SGD is used widely
+
+
+* GD vs Mini-Batch SGD correspondence :
+  ---------------------------------
+  (IMP)
+  =! Derivative Commputed during Mini-Batch SGD is not exatcly equal to Derivative computed during Gradient Descent
+
+  Ideally We want the the derivative val to be calculated via GD
+  |
+  but considering large number of point at same time becomes impractical sometime
+  So we use Mini-Batch SGD to approximate to GD
+
+  NOTE :- 
+    -> Mini-Batch SGD results may possess some Noisy|Errorneous vals
+    -> We are expecting val found via GD as ideal for comparision
+
+
+* GD vs SGD Convergence :
+  -------------
+  => Through GD, path you will take will always lead towards best|optimal point(location)
+
+  SGD is rough approx to GD
+
+  Core Idea (SGD | GD) := take lots of iterations to reach the Minima|Maxima (ie end goal)
+
+  => In SGD, We will move in some directions but eventually possibly we will reach the goal
+     Whereas 
+     In GD, We will try to move to end goal (as straigh forward as possible)
+
+  -> Thus in above view We can say that GD is the ideal way to reach the Goal in Optimization
+     ( As it tends to follow the Straight path towards the end goal )
+
+  - Thus iterations required in SGD will be more compare to GD, generally (Theoretically !)
+     |
+     GD will converge in fewer steps
+
+     But the cost of Computing GD is v.large so we are choosing the SGD
+
+
+* SGD & Noisy Updates :
+  -----------
+  - In case of GD, it will be Straigh-Forward in reachinng towards optimal point
+  - In case of SGD, each of the updates are more noisy as compare to GD
+
+
+* De-Noising the Gradients From SGD :
+  --------------------
+   -> So as to converge faster
+   -> SGD + Momentum => Some great concept to 
+    

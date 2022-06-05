@@ -1,0 +1,26 @@
+2. SVM & Logistic Reg
+ ---------------
+
+* SVC :
+  ---
+   Linear Kernel = Hinge loss + Reg
+
+
+* Support vectors & margins :
+  ---------
+   -> Margin Maximization is one kinda Regularization Strategy
+
+=> Sigmoid does take care of Outliers to some extent
+   Sigmoid does mititgate some problems of Outliers
+
+
+
+* Outliers vs Rare Event :
+  --------
+   - depends on domain knowledge
+
+
+* M Estimators ;
+  ------
+   - techniqye in optimization
+   - tampered loss val beyond some val

@@ -1,0 +1,5 @@
+Doubts Good
+
+Q) Why Higher Weightage to MissClassified Point will solve the purpose (ie improve the Model ) ??
+ ->
+  

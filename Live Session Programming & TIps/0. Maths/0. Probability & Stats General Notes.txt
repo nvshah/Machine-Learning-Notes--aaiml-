@@ -1,0 +1,20 @@
+0. Probability & Stats General Notes
+
+* Confidence Intervals vs Significance Levels ??
+  
+  - 2 diff things in 2 diff contexts
+
+=> Based on Quantification of meaning of Similarity You should decide your Test-Stats & Null Hypothesis
+
+- Desig test stats with communicationn with Business Teams
+ 
+* Null Hypothesis :
+  --------
+	=> Choose Null Hypothesis s.t You can simulate it (simulation such tests is easy)
+
+	=> Choose Null Hypothesis s.t You can simulate it
+	     \ 
+	      -> Simulating Similarity is easy (via Randomization)
+	      -> Simulating non-Similarity or diff in population is extreme difficult
+
+	   Simulating there does not exists diff is easy :- so we assume no diff in case of Null Hypothesis in permutation testing 

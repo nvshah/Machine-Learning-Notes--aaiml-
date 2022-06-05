@@ -1,0 +1,118 @@
+Doubts
+
+1) Why to find minima we do double derivative ?? (Live Session Programming 1.3)
+
+2) Why CDF can't be used directly when Distribution is not Gaussian
+
+3) Q Actual Diff between Kernal Density Plot vs Normal PDF or CDF 
+   (let say for Uniform Distb)
+
+
+4) If two random variables are related in a deterministic way, how are the PDFs related?  
+   (from prob stats interview que)
+
+
+5) In NB, Problem 2 of Outliers 
+   (ie very few words in training dataset)
+
+   So as a Soln do we need to keep thresold of word keeping in mind that word cnt per classes ?
+      or on entire training set
+
+      because if data is skewed then all words fall in same classes & we would not know if we 
+      we compare word-freq before class groupings !
+      
+
+6) In Logistic Regression Why we assume that when sigmoid gives Probaility Yi=1 then its belonging to +1 & not -1
+   Can't we take -1 class points in direction of Yi=1
+     &           +1 class pts in direction of Yi=0
+
+
+7) Does 
+   Sigmoid gives probability for truly points in range 0.5 -> 1
+   &
+   For miss-classified points from 0 -> 0.5
+
+8) So When sigmoid gives probability Yi = 1, here 1 is not class point right it can be for +1 or -1 both right ??
+
+9) In logistic Regression We assume Normal W to be Unit Vector
+   then why should we care abt Weight Vector W as W will be comprised of all basis vectors
+
+   (Does it mean that we assume unit vector )
+
+9.1) In Langrange Multiplier We constrained W^T*W = 1 i.e W to be unit vector
+
+10) As Dimen is very high, How data is linearly seperable (probability incr) ??
+   (from Log-Reg Real World Cases)
+
+11) Does Gradient Descent is applied on entire Optimization Proble 
+    (ie Loss Term  + Regularization Term)
+    Or just apply first considering Loss term & then once optimized 
+    accounted the Regularization term later
+
+    (If does this way then do chances of Overfitting increases  ???)
+
+
+12) Why for Very High Dimen Features, Linear Model are preferred ??
+   
+    (from Featurization technique Vide0 : Model specific Featurization)
+
+13) What is the significance of Calibration ??
+   - because what calibration is trying to achieve seems simmilar to minimizing Loss Func in GD Optimization !
+   & that is already being done  ??
+
+
+14) Distance of Point from a Plane ?? Why divide by norm of a vector ??
+
+15) Why Train Error & Test Err difference should be minimum ??
+     - What if I have 2 obsv with optimal Test err but with diff train err
+       then which one to pick
+        obsv with large diff but less train err
+        or obsv that has less diff but high train err
+
+16) (from Liear Regression)
+    
+    As we know that hyper-parameter is decided via Train Dataset ie During gradient descent Algo
+     -> ie we get our weights vector
+
+    Now What is the Role of CV dataset ie (Cross Validation) ??
+     -> to decide genralization param
+        or 
+        to decide generalization param as well as improve weights vector ??
+          \
+           because weight vector ie Coeff is already decided by Training Phase via Gradient Descent
+           & Loss Function
+
+    in Linear Reg :- With the help of Train Data we find Coef (ie Weights)
+                     What is the role of CV dataset in Linear Reg what its impacting on model ?
+                       -> learning rate (ie langrange param, learning rate )
+
+Q) Does Sparse Representation benefits whilst using the Cosine similarity over Dense Repr ??
+   if yes then how ??
+
+   sparse Repr for Euc Dist Understood -> as dimen incr, dist makes less sense
+   
+   (KNN in various scenarios)
+
+
+Q) Why Feature Scaling (ie Normalization) is done after Splittinng ?
+
+   -> Won't it make some values from Test going outside of range ie more than 1 
+      or less than 0
+   
+
+
+---------------------
+
+(Resource to ask for AAIML)
+
+-> SQL commands.txt	
+
+
+programming Que ??
+
+Q) does all the intermediate computed results info in ML process are pickled to .p extension files
+   ie does pascal source code is compatible with major kinda computed results ??
+
+   or which are such other files extension format that are used to cache store the Intermediate results via pickling ??
+
+   (ref : Social Media link Prediction - katz centrality)

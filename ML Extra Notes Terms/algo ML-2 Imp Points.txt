@@ -1,0 +1,152 @@
+algo ML-2 Imp Points
+
+- Hyper-param & CV
+ ------ 
+Train - Test Split :
+     \
+      Grid-SearchCV for finding best split ratio or optimal hyper-parameter (via Cross Validation)
+
+----
+ KNN :- instance based method
+ NB  :- Probabilistic method
+ Log-Reg, Linear-Reg, SVM  :- Geometry Inspired
+
+---
+
+* Linear Model : Model which possess linear surface as seperating one are called as Linear Model
+      Eg Linear Reg, Logistic Reg, Lr-SVM
+
+* Logistic Reg :
+  ----
+   -> Is Gaussian naive bayes
+
+* Kernelized-Logistic Regression :
+  ------
+
+* Convex Hull for SVM : 
+
+* SVM :- 
+    RBF kernel imp   // intution similar to KNN
+
+    Algo to implement Dual Form of SVM :- SMO (Sequential Minimal Optimization)
+
+* DT
+  
+  => Feature will only be imp or useful when it reduces the entropy going down level in DT
+  or 
+  => If IG due to that feature fi is maximum overall whilst constructing tree then that feature is 
+     imp
+
+* Enesemble Models :
+  
+  - Bagging (to work more for generalization part ie lowering variance)
+  - Boosting (to work for Loss part i.e lowering bias ie training err)
+  - Stacking Models
+  - Cascade Models
+
+* Gradient Descent :
+  ------------
+   -> To approximate the optimization of a variable via update steps
+   - Eg Linear Regression
+
+  Steepest Descent :
+  ------
+   -> Similar concept to GD, where functions are optimized instead of variable
+   - Eg pseudo-residual
+
+  Stochastic Gradient Descent :
+  ------
+   -> It's a batch gradient Descent
+
+=> Linear Model have tendency towards High Bias Problem
+
+=> Response Coding is 1 of technique available in case of Multi Class Classification
+
+* Hyper Param Tuning :
+  --------
+   - is performed via CV dataset
+   - Its often performed via GridsearchCV or RandomSearchCV
+   - It involves trying out diff param value for Hyper-Parameters
+
+=> We must always add Regularization in Optimization to avoid Overfitting
+
+* (REMEMBRANCE)----
+
+ 1) The vocabuylary should be built only with the words of Train Data
+
+ 2) Data Leakage Problem :
+    ---------------
+      - Dont do fit_transform() before train-test-split
+
+      - at the time of training we are giving some hints abt some features which are new to train
+        but not new to test
+
+ 3) You should pass the probability scores & not the predicted values for ROC-AUC calculations
+
+* BOW vs One-Hot :
+  -----------
+   BOW :- considers the actual count
+   One-Hot :- 1 or 0 ie present or not present (ie Binary BOW)
+
+
+* Given Probabilities Score (prediction) & CM :
+  --------------
+   => Given Probabilities Score if you want to find the Confusion Matrix then 
+      first you need to find the optimal thresold out of probability 
+        \
+         ie its not always necessary that 0.5 is optimal thresolds always
+
+-> Sampling with Replacement & Without Replacement have some implications with Ennsemble methods
+   ie Bagginng & BootStrapping
+      
+=> Cosine Similarity is often well suited for sparse vectorss
+
+* Solving Optimization Problem (Loss Func) :
+  ----------
+   1) SGD  (Stochastic Gradient Descent)
+   2) MF   (Matrix Factorization)
+   3) ALS  (Alternating Least Squares)
+
+* Cold Start Problem :
+  -------------
+   -> If new pts are found in test that never been seen in train data
+
+=> L1 regularizations creates sparsity
+
+
+* Kernel Logic :
+  -----
+   -Focus on 2 things :- 
+      1. Distance preservance (just like TSNE)
+      2. Random Projection (Internnally)
+
+   [Intution] =>
+   
+   - First project pts from d -> d` space (where d` >> d)  
+         // doing this way may allow Non-linear -> Linear Seperation possibly
+         // Kernel Func used K(xi, xj)
+     thenn
+     Project this pt from d` -> d`` (S.t. d`` < d`)
+     Here it should project s.t. K(xi, xj) is almost or maximially preserved !
+
+   Kernel Approximation trick :
+   ----
+    -> I can get smaller dimension (keeping the Kernel Distance (ie K(xi, xj) as much retained as possible))
+        & this smaller dimension d`` is as much close to d as its possible
+
+    -> End Goal :
+         -> Find such dimension d`` s.t
+             - distance in kernel space (d`) is preserved as well
+             - & new space d`` is close to original space ie d  (as much as possible)
+
+    => Thus Kernel Approx is kinda or similar or analogous in idea to TSNE
+         - as it try to preserve the distance (betweenn pairwise points)
+         - also they use concepts like Random Projections internally
+
+
+[REMEMBER]
+=> Data Normalization is Mandatory (esp in DL|MLP|NN)
+
+* Recommended System :
+   \
+    Recency & Frequency Impact

@@ -1,0 +1,56 @@
+14. VGGNet
+----------
+Sec 4.14
+
+ref : 
+https://github.com/fchollet/deep-learning-models/blob/master/vgg16.py
+https://www.quora.com/What-is-the-VGG-neural-network
+https://arxiv.org/pdf/1409.1556.pdf
+
+----
+Remember :-
+
+-> At the end finally you will have fully connected layer (ie Flatten one from Tensor)
+
+---
+
+- It's a better version of AlexNet
+     (Simpler form of AlexNet) 
+ 
+- In AlexNet wee have diff type of Kernel for Convoultion & Pooling also may differ
+  
+  Here we will use same type of Kernel in case of VGGNet
+       &
+       Same type of Max-Pooling as well
+  |
+  Simplification :- we will only use 3*3 matrix Kernel &
+                    Sride = 1
+                    Max Pool Kernel size is 2*2 with stride = 2
+
+- 2 Kinda Networks
+  \
+   VGG-16,  VGG-19   (16 layers & 19 layers)
+     
+   -> at lot places VGG networks are used (esp for Computer Vision)
+
+
+=> All Convolution Kernel are of 
+      - 3*3
+      - Stride = 1
+      - padding = 'same'
+
+   All Max-Pools has same :-- 2*2 size & stride=2
+
+   -> This will simplify the model
+
+--------
+
+* Keras & VGG16
+  ---
+   -> There is ImageNet Dataset
+
+      this VGG16 model is trained on this ImageNet Dataset & you cann get model with all weights built in (ie Pre-Exisitng in keras)
+
+   - Pre-Trained VGG16 Model.
+
+   -> trained model is available in Keras for VGG16

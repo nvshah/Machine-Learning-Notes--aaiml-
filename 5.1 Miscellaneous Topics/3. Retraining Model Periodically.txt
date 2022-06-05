@@ -1,0 +1,24 @@
+3. Retraining Model Periodically
+
+- Consider Stock Market Prices Prediction Data
+
+  So you train your model & predict for upcoming days is your basic aim
+
+  Now let say it works good for next 3 days but on 4th day it did not perform well
+  - that is the signal that you should traing your model again on that 4th day with most reent data
+    & utilise new trained model for onwards predictions (ie 5th day, ...)
+
+Q) How to spot when to Re-train ?
+  
+  -> If cost of retraining is not much high (ie its trivial), then you can retrain on some interval basis
+
+  Otherwise you can consider several factors
+
+   - Model Performance is dropping
+
+   - dataset itself is changing (Non-Stationary Data)
+
+      Eg Stock Market Prices :- there are several factors impacting it
+                                such as dollar drop, Rupees rise, gold price drop, etc...
+
+     Check if test & train data have same or diff distb

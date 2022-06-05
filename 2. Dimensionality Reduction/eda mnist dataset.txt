@@ -1,0 +1,19 @@
+cola.github.io
+
+* MNIST
+  -----
+    Image - {0 -> 9}
+
+    Each Data point - repr by Matrix of 28*28
+
+    Flatening :- Converting Matrix to Column or Row Vector  
+       \
+        Row or Col Flatening
+
+    So 28*28 -> 784 * 1   // 784 pixels
+
+    Q) How to visualize such high dimen dataset ?
+     -> pair plot will not work
+
+
+    784 -> 2 dimension   // Using TSNE

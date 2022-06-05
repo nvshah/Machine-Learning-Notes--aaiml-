@@ -1,0 +1,11 @@
+ref concepts
+
+GAN ref :- https://drive.google.com/file/d/1i32iTTdPn_v2nYFB8iHc0tKotVWDsY3a/view
+
+---
+
+reference/related concepts to GANs :-
+  Game Theory,
+  Min-Max Theorem
+
+Q) Why this alternating Model Training in GANs ??

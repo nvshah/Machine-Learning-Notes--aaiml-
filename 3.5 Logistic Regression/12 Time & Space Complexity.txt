@@ -1,0 +1,52 @@
+12 Time & Space Complexity
+---------
+
+Points :-
+
+- as lma incr -> sparsity incr -> feature with less imp will get weight 0
+
+-> Working Model is imp than Best Model
+
+-------------
+
+- Train LogReg 
+    \
+     O(n*d)  // n = #pts & d = #features
+
+- Run-Time Complexity :
+     
+     Space : O(d)
+     Time  : O(d)   // d is #features
+
+  -> Thus Logistic Regression is very good for Low-Latency Application (Esp when dimen is small)
+
+  If d is large :
+  -----
+   -> use L1 regularizer  first
+      -----------
+          \
+           Sparsity  (Weight 0 corresp to less imp features )
+
+      As you keep incr lma, Sparsity also increases => more of Wj = 0
+
+      So 3 things to care :- via Hyper-Param, lma
+             1) Bias & Variance for Underfitting & Overfittinng
+
+             2) Sparsity :- for latency
+
+      When latency is also utmost imp & so you incr lma (considering 3 things ie Bias, Variance, Latency), May be Bias-Variance tradeoff is not best or so well 
+
+       So as lma incr, bias also incr, -> performance will drop
+
+        But if you are under tight constraints of latency & need to incr lma than you need to sacrifice something (ie performance)
+          \
+           As if your model cannot response within minor time then it's of no use eventhough if its high performant
+            \
+            In such scenario we need to consider ( Latency + Bias-Variance ), whilst Hyper-Param decision
+
+            So choice will be tradeoff betweenn Bias & Latency
+
+  -> So there will be tradeoff between bias, variance & latency
+
+  => Working Model is imp than Best Model
+

@@ -1,0 +1,20 @@
+Some Good Que Ans
+
+# ref -> https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2877/questions-answers/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+
+-------------
+
+1. Can we use the median for calculating the squared error? Answer in Yes or No and explain.
+
+Yes, we can calculate squared error using median instead of the mean, but I believe it will give a higher squared error as compared to mean in squared error. Because, if the data is slightly or heavily skewed, the median will always give us the middle value thus the difference between the data value and median increases which ultimately increases the error. Whereas, in such a case mean will be pulled towards the higher weighted values which reduces the difference between the data value and mean thus squared error will be a lower value.
+
+2. can we use the mean instead of the median in the MAD? Answer in Yes or No and explain.
+
+Yes, we can calculate MAD using the mean. In such a scenario, we can have two cases, using mean only for absolute difference calculation then finding the median, or we can compute the mean of the absolute mean difference. But, in both cases, the error will be high. Because it will no longer remain robust against outliers as the mean gets skewed towards the outliers and the difference with the lower values will increase significantly.
+
+
+4. Explain CLT? And, if we have CLT then why we need Hypothesis testing?
+
+Theoretically speaking CLT can be applied to any kind of distribution but one of its major assumptions is that while applying it the entire population should be covered which is not possible in real-life. Thus, we use hypothesis testing means doing analysis on the sample then come up with the population estimate.
+
+5. 90% CI means

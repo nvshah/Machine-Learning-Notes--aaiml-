@@ -1,0 +1,60 @@
+10. Missing Val Imputation
+
+* Missing Value Imputation :
+  --------------------
+   => In real world there are lots of missing val
+   -> missing val in features/col
+
+    - Data Corruption
+    - Data collection error
+
+    - filling missing val techniques (3) :- 
+
+    *) Imputation :
+       -----
+        - done as a preprocessing step
+        - replace with something
+
+        -> { Mean, Median, Mode }
+
+        2) Mean Imputation (For Class Label):
+           -----
+        	* If Classification 0, 1
+          
+           	  Then do mean replacement based on class-label i.e 
+              	If Xi -> f3 missing then 
+                    if Xi -> yi = 1 => mean of f3 for all pts that have label = 1
+                                = 0 => mean of f3 for all pts that have label = 0
+
+              => mean imputation of relative population instead of entire population (in case of 
+                 classification problem/objective)
+
+
+        3) New missing value feature
+           -----
+            Missing feature val can also be a source of some information sometime
+
+             - create a new binary data-matrix with same size as original one
+               this binary matrix will keep record/track of val missing or not in original dataset
+               (Whether inn original data this was missing or not !!!)
+
+             - Impute the original matrix
+
+            As missing val sometimes can be informative, we can use binary matrix to check whenever required.
+
+        4) Model based Imputation :
+           ------
+            -> try to predict missing val using model-algorithm
+
+            -> Convert particular feature/col where there are missing val as predicted feature /column
+               & try to put missing val pts in test set
+                 train with available pts & then predict missing val
+
+            For classification - KNN 
+                Regression     - Any regression model
+
+            => KNN is often used for Model based Imputation 
+                \
+                 As it has concept of neighborhood & relative assumption
+
+            => Takes significantly more time to run.

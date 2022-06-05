@@ -1,0 +1,64 @@
+reference articles
+
+[one hot encoding]
+https://machinelearningmastery.com/why-one-hot-encode-data-in-machine-learning/
+
+[Norms in ML]
+https://machinelearningmastery.com/vector-norms-machine-learning/
+
+[Kaggle Winner Interview featurizaation]
+kaggle.com/category/winnners-interviews/
+
+[Correlation Between Categorical & Numerical Variable]
+https://medium.com/@outside2SDs/an-overview-of-correlation-measures-between-categorical-and-continuous-variables-4c7f85610365
+
+[Sigmoid Fn Explaination]
+Ronny Restrepo :- http://ronny.rest/blog/post_2017_08_10_sigmoid/
+
+---------
+mine 
+
+[k Fold CV]
+https://medium.datadriveninvestor.com/k-fold-cross-validation-6b8518070833
+
+[sgd classif vs logistic regression]
+https://datascience.stackexchange.com/questions/37941/what-is-the-difference-between-sgd-classifier-and-the-logisitc-regression
+
+[percenntiles]
+https://www.statisticshowto.com/probability-and-statistics/percentiles-rank-range/
+
+[Binning]
+https://pbpython.com/pandas-qcut-cut.html
+
+[Feature Scaling]
+https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/
+
+[Data Leakage]
+https://towardsdatascience.com/preventing-data-leakage-in-your-machine-learning-model-9ae54b3cd1fb#:~:text=5.,to%20normalize%20AFTER%20splitting%20data.
+
+[Norms L1 vs L2]
+https://medium.com/analytics-vidhya/l1-vs-l2-regularization-which-is-better-d01068e6658c
+
+
+[PreProcessing Categorcal Feature]
+https://albertum.medium.com/preprocessing-onehotencoder-vs-pandas-get-dummies-3de1f3d77dcc
+
+
+[Linear Algebra]
+https://towardsdatascience.com/linear-algebra-survival-kit-for-machine-learning-94901a62465e
+
+[MSE & LogLOSS]
+https://medium.com/analytics-vidhya/understanding-the-loss-function-of-logistic-regression-ac1eec2838ce
+
+[High Dimenn & Linearly Seperable]
+https://stats.stackexchange.com/questions/33437/is-it-true-that-in-high-dimensions-data-is-easier-to-separate-linearly
+
+-------
+
+questions
+
+https://stackoverflow.com/questions/17017878/is-scikit-learn-suitable-for-big-data-tasks
+
+
+[Integral Counts for MultiNomial NB]
+https://stats.stackexchange.com/questions/271923/how-to-use-tfidf-vectors-with-multinomial-naive-bayes

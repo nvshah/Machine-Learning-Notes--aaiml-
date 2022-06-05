@@ -1,0 +1,28 @@
+1. Intro
+---
+
+ref :
+https://folkrnn.org/
+https://soundcloud.com/trivedigaurav/char-rnn-composes-long-composition
+https://soundcloud.com/sigur-ur-sk-li/neuralnet-music-1
+
+Task :- Generate New Music using DL
+        by understanding the pattern that humans like
+
+
+* What is Music ?
+ -> Seq of something (ie musical notes or components)
+
+ - ABC notation
+   Sheet Music
+
+* DL Task:
+
+ - Input :- Seq of Musical events
+   Out  :- new seq of musical events
+
+ - For our task we will consider Single Instrument Music
+   &
+   later it can be modified & extened for Multi Instruments Music as well
+
+ => So our task will be focus for generating "new" music using 1 Instrument only

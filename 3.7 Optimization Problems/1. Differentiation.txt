@@ -1,0 +1,34 @@
+1. Differentiation
+
+Online ref : derivavtive-calculator.net
+
+---------------
+
+-> All of Modern Deep Learning is Chain Rule 
+
+---------------
+
+* Single Variable differentiation :
+  ---------
+   -> rate of change of y w.r.t x = dy/dx = tan(theta)
+
+   -> as dx -> 0, line/hypotaneous becomes tangent i.e point
+
+   Tangent :- 
+      -> line that touches plane exactly at 1 point
+      -> hypotaneous we obtained as dx -> 0
+
+   As delat(x) -> 0, delta(y)/delta(x) => dy/dx
+
+   -> dy/dx = slope of a tangent with X-Axis          // geometrically
+   				ie angle that slope make with x-axis
+
+   => tan(theta) = slope 
+                 = angle between tangent & X-Axis
+
+
+   * Gradient of Func :
+     ---
+      -> derivative of func = Gradient of that func
+
+

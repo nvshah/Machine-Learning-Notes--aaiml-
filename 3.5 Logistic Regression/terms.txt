@@ -1,0 +1,39 @@
+terms
+
+linearly Seperable
+Linear Surface, Quadratic Surfaces
+
+Optimization Problem
+Signed distance
+
+tapper it off
+Optimization Problem
+Monotonic Function
+
+Weight Vector
+L2 Norm of W
+Regularization Term
+Loss Term
+
+L1 regularized term
+L2 regularized term
+Elastic Net
+
+Differentiable & Continuous
+Probabilistic & Loss-Minimization Interpretation
+
+Logistic Loss
+Hinge Loss
+expo loss
+sq-error loss
+
+GridSearch & RandomSearch
+
+Collinearity of Features
+MultiCollinearity
+
+Feature Engineering/Transformation
+Polynomial, trigonometry, log, exponent,
+
+Pertubation Technnique  // for collinear determination
+General Linear Models

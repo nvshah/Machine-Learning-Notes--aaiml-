@@ -1,0 +1,97 @@
+remember gist
+-------
+
+=> Depth of Kernel will be same as depth onf Inp Tensor I've
+
+-----------
+
+=> You will have multiple Kernels throughout the CNN
+
+=> At the end finally you will have fully connected layer (ie Flatten one from Tensor)
+
+- In Convolution Layer you have bunch of Weights & Kernels
+
+=> Relu(Relu(x)) = Relu(x)
+
+=> initial layers in CNN often deal with the task of detecting the Borders, Common Shapes & Likewise
+   (which is common among all tasks esp when we talk about Images)
+
+=> Keep Small Learning Rates when you FineTune Your Model
+
+-> CNN Code :- FE output you get for your Inp via Conv (before Flatten/Dense part)
+
+________
+
+* Convolution :
+--------------
+
+=> Kernels are typically Square Matrix for most Image Processing
+
+* Concepts :
+  ---
+
+1) Convolution : analogous to Dot product (for matrix)
+
+2) Padding : to get more or same dimen in Output Matrix during Convolution
+
+3) Striding :- to reduce dimen in Output Matrix during Convolution
+
+
+
+* CNN :
+  ----
+
+  CNN is quite diff than ordinary MLP-NN
+   |
+   Wee've Convolution Layer &
+          Max-Pooling layer
+
+  -> For Optimizzation we need to ensure that this layers are differentiable
+
+
+* ConvNet :
+  ----
+   -> Just like in MLP we denote reln between 2 layers nodes via Weight matrices
+   -> In a ConvNet the relation between 1 pixel to another pixel is denoted by the Kernel Matrices
+
+
+* Convolution & SubSampling :
+  ----
+   - Connvolution : via kernel (getting diff aspects of Inp Image via diff Kernels)
+
+* Invariant Model & Data Augmentation :
+  ---- 
+   - Data Augmentation helps to make model more robust towards invariances via introducing invariancies to Input Data
+
+   Invariances such as :- Scale, Shear, Rotate, etc ...
+
+[*IMP]
+=> Data Augmentation is esp used for Image Dataset 
+   \
+    used mostly in CNN
+
+
+* Convolution vs Max-Pooling :
+  ----
+   -> When you need to keep Same Size as Inp, You can use Convolution layer
+      &
+      When you need to reduce the size, you can consider Max-Pooling Layer
+
+
+_____________
+
+* Image Inp Networks (NN) based on CNN 
+
+1) LeNet :- Simple 
+
+2) AlexNet :- Conv + Pooling + Flatten
+
+3) VGGNet :- Better versionn of AlexNet
+
+NOTE
+-> Weight Layer can be possible in 2 ways :- Kernels or FC (ie fully connected layers)
+
+
+* CNN Code
+  ---
+   -> part of your FE output

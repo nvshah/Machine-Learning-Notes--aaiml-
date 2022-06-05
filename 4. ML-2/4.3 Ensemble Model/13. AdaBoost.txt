@@ -1,0 +1,65 @@
+ref :- alliance.seas.upenn.edu
+
+-----------
+
+- For general purpose stuff GBDT is good algorithm
+
+- GBDT is applied more than AdABoost esp at internet companies
+
+___________
+
+* AdaBoost
+  -------
+
+  -> Used primarily in Computer Vision or Image Processing like application
+
+  Most successful application of AdaBoost :-
+    - Face Detection
+    - Image Detection
+
+  CORE IDEA :- 
+  --------
+  Why Adaptive Boosting ?
+   -> At every stage we are adapting to the errors that were made in prev stage
+      & 
+      we are giving more importance to the points which are being missclassified
+
+  - spot error at each stage
+  - provide more weight to those pts for next modelling so that model can be improved
+
+  Process :
+  ---
+   - At each stage train model
+     &
+     grp where there are error do modify s.t 
+       - increase weight of error i.e upsample or downsample technique (Weighted model)
+     - modify or make weighted alteration to pts which are error.
+
+   -> Typically You increase the weight exponentially
+
+   - At each stage we determine model 
+     &
+     then at the end we will provide weight to each model i.e alpha_i
+
+   => alpha in AdaBoost is same as gamma in GBDT
+
+
+* Weighted Models :
+  ---
+   - one way to implement weighted model is to upsample
+
+* Difference :
+  ---
+   In case of GBDT we use pseudo-resiuals, computed from the -ve gradient of loss func
+
+   Whereas 
+
+   in AdaBoost :-
+     All the points which are errorneous are given more weightage using something called 
+     adaptive boosting
+
+
+
+
+
+

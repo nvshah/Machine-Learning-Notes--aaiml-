@@ -1,0 +1,61 @@
+* Intro Hierarchical Clustering
+  ----
+---------
+-> So in case of Hirearchical clustering you can jumpt between any K clusters easily 
+
+---------
+
+-> There are 2 kind of Hierarchical Clustering 1) Agglomerative & 2) Divisive
+
+* Agglomerative :
+  --------
+   - grouping together to form a large part
+
+   - initially it assumes each point as individual cluster
+   - then it combines nearest cluster into 1 group
+      \
+       It iteratively combine the nearest cluster into single group
+       It incrementally keeps combining the cluster which are close together
+
+       Combining or grouping will happen based on some similarity technique
+       \
+        Key ingredients :- simmilarity between clusters
+
+   -> At the end we will get single cluster 
+
+   - Its alike Union & find Union operation
+
+   -> starts from n to 1
+
+
+* Divisive :
+  -------
+   -> Its reverse/opposite to Agglomerative
+
+   - It starts from single cluster & go towards tiny cluster ie 1 to n
+
+=> agglomerative is more popular than Divisive
+   \
+    because trying to group things together based on similarity is easier than 
+            trying to break or divide things
+
+=> Thus Agglemorative :- merge
+        Divisive      :- splits
+
+
+* Tree & Hierarchical Significance :
+  --------
+   You can represent either Agglomerative or Divisive as a `Dendogram`
+
+   Tree like structure that records the sequence of merges or splits.
+    \
+     Hierarchy of merges at diff level
+
+* No Hyper-parameters :
+  -----
+   => There is no need to give #clusters as hyper-parameter
+       \
+       Hyper-parameter search is inherently done in this kind of algo
+
+=> So in case of Hirearchical clustering you can jumpt between any K clusters easily 
+

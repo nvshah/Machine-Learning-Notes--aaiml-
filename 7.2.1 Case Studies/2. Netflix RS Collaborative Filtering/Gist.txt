@@ -1,0 +1,29 @@
+Gist
+
+-> temporal Nature
+
+
+* Collaborative Filtering RS :
+  -------
+
+   -> Inorder to do RS, we need Some Features for User Vector & Item Vector
+      to compare them
+
+      So we will use User & Movie Pair & Fetch out some stats & info that can be used as Feature
+
+      NOTE :- Only user & Movie info will contribute to the Feature Formation (Featurization)
+            - Ratings will be used as predictor (ie To be predicted entity)
+
+* Surprise Models :
+  ----
+   -> Esp lib used for RS kinda tasks 
+
+* Modeling :
+  ----
+   Final Model := XgBoost
+
+   -> Before that various Susrpise models are used in Manual Ensembling Fashion 
+      ie 
+      Output of each Surprise model will become a Feature to Final Model 
+
+   -> Surprise Model are specifically used for MF (ie RS) 

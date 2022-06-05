@@ -1,0 +1,61 @@
+* Similarity Based Algo
+  ------------
+
+-------------
+
+-> If its a sparse vector then Cosine Similarity is very much useful
+
+-------------
+
+* Collabaritve Based RS :
+  -------------------
+
+- item-item similarity
+  user-user similarity
+
+
+* user-user similarity :
+  -------
+  -> user :- vector
+
+  You can use any similairity (ie Cosine Similarity)
+
+  User Similarity Matrix
+
+  S1) Build the user-vector based on ratings
+  S2) Compute a Similarity Matrix
+  S3) Find the Most similar user to given User Ui
+  S4) Pick items that are not yet watched by the given user Ui from similar users
+  S5) Recommend those picked items (from Similar Users) to given User Ui
+
+  Problem with user-user similarity :
+  ---
+   -> User's preferences changes over time
+
+      If it not changes too often then We can build the matrix over period of time
+      but 
+      If it changes then user-user similarity is not a good choice
+
+  - Eg user's liking the same genre or kinda movie will form a group
+
+
+* item-item based similarity :
+  -------
+  -> item :- as a vector
+
+  Similariyt metric :- cosine similarity
+
+  Note :- 
+  -> Ratings on a given product/item does not change significantly over time after the initial period
+
+  Thus we've advantage of less computing the matrix A (user-item) 
+
+  - Eg here highest rated movie will get similar into 1 grp & likewise
+
+
+* Rule of Thumb :
+  -------------
+   When you have more users than items (content) &
+   if the ratings of items do not change much over time
+
+   then its preferable to use item-item based similarity than user-user based similarity

@@ -1,0 +1,101 @@
+ref :-  https://cs.wmich.edu/alfuqaha/summer14/cs6530/lectures/ClusteringAnalysis.pdf   
+
+-----
+- Hyper-Params : Min-Pts, epsilon  // for DbScan Algo
+
+---------
+
+* Density based Clustering :
+  ----
+	   -> Dense & Sparse regions seperation -> clusters 
+
+1. DBScan intro
+--------------
+-> One of the scheme of Density based Clustering
+
+- DBScan was developed by Database & DataMining Community so that RangeQueries can 
+  be highly optimized inside Database & can be used effectively
+
+- Goal : Try to seperate the Dataset based on Dense Regions & Sparse Regions
+
+-> Typically Dense regions becomes different cluster
+   &
+   Dense regions often get seperated by sparse regions
+
+-> Sparse regions typically contains noisy points
+
+
+Q) How to Measure Density ??
+  ---
+   - Min pts, epsilon, Core-pt, border-pt, noise-pt, density-edge, density connection pts
+
+
+* Measuring Density : 
+ __________________
+  
+  There are 2 params :- min-pts & epsilon 
+
+  these 2 params are hyper-parameter of DBscan algo
+ 
+  - epsilon => help to define the density of point
+  - min-pts => help to identify dense or sparse regions
+
+  -> Min-Pts :- points require to form a dense regions
+
+  1) Density :
+    -----
+  	- For given pt p : density = #surrounding pts in radius range of {epsilon}
+
+  2) Dense Regions :
+    ------
+    - for given point p: if region of epsilon around it has more than {min-pts}
+                         then it is said to be lying in dense regions
+
+                         if that region has less than min-pt then it is called as sparse region
+
+    => Thus dense regions is region that contains atleast min-points
+
+
+* Core Point
+  __________
+
+   -> Given min-pts & epsilon & Dataset D
+
+   For any point p, if p has >= min-pts in its surrounding of epsilon range then p is called as core point
+
+   core-point :- lying in core of region ie 
+               -> Lye inside dense region
+
+* Border Point :
+  ____________
+
+   -> Given min-pts & epsilon & Dataset D
+
+   point p is said to be border-point iff:
+   
+   1) P is not core point (ie it has < min-pts in its epsilon range)
+   2) p is neighbor of other core point let say o (ie distance between o & p is < epsilon)
+
+
+* Noise Point :
+  ____________
+   -> Point which is neither a Core Point nor a Border Point are called a Noise Points
+
+
+* Density Edge :
+  ___________
+   
+   Edge between 2 points s.t.
+
+     - 2 points are core points 
+     - distance between those 2 points is <= {epsilon}
+
+* Density Connected Points :
+  ________________
+
+   2 points P & Q are said to be Density Connected Points iff:
+
+    - a path of density edges exists between 2 core points 
+      (Note :- all the vertex in that path are also the core points)
+
+      So path length will always be multiple of epsilon

@@ -1,0 +1,76 @@
+2. remembers
+
+* Parallel Computing vs Distributed Computing :
+  ----------------------
+   Parallel Computing :- Shared Memory
+
+      - multi-core
+
+   Distributed Computing : distributed memory
+
+      - large amount of data
+      - Spark / Hadoop
+      - Multiple systems connected via Network
+
+      - Reddis, Spark, hadoop
+
+
+* Eg of simple parallelism :- 
+      - Matrix addition
+
+
+* Shared Memory :
+  ----------
+   - memory shared amon multiple cores
+   - shared space within the RAM
+   => Each process has its dedicated memory
+
+   -> Via shared memory, you can access common info along multiple processes via shared memory
+      \
+
+   => Shared Memory among multiple Python Shell/scripts/Idle (ie files)
+        \
+         multiprocessing.shared_memory
+
+
+* Multi Processing :
+  -------
+   -> Seperate process on seperate cores
+
+   -> Parallel pricessing algo depends on how you chunk down your data & how you process it
+
+
+* Cache vs Ram :
+  -----
+   - Register are there on each cores
+   
+   => As you come closer to Cores 
+        - the size of memory reduces,
+        - the cost inncreases
+        - the speed also increases
+
+
+* Train Size & Ram :
+  ------
+   - If D_train doesnt fit into RAM :
+       1) Break into chunks
+
+       2) or do Distributed processing (Spark)
+
+
+   => Random Forest is trivially parallelizable
+
+
+* Pool of Process :
+  --------
+   -> Process creation takes time
+   - tasks get splitted amonng pool of processes
+
+* Data Parallelism or Task Parallelism :
+  ------------------------
+
+* Gunicorn : 
+  --------
+   -> It has pool of processes
+   - It takes request , maintain it in queue & assign a process to this request &
+     then return output once calculated

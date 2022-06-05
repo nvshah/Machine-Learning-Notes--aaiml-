@@ -1,0 +1,54 @@
+1. OverView
+------------
+
+ref :
+ https://www.tensorflow.org/tutorials/
+ https://medium.com/implodinggradients/tensorflow-or-keras-which-one-should-i-learn-5dd7fa3f9ca0
+
+- Core written in :- C/C++
+  Interface on Top of it :- Python, JS, Java, ...
+
+  Versions :- TensorFlowLite
+
+------
+
+* Tensor :- 
+  ----
+   - mathematical terms
+   - tensor := n-dimensional array
+
+   - thus tensor is genearlization of concepts such as vector, matrix, cube, ...
+
+   - DL is all abt Tensor Operations
+
+   Flow :
+   ---
+    - related to backward Propogation
+    - flow of derivative in backward direction
+   
+   - TensorFlow code gives you lot of Low-Level Control
+
+   => When you required change Low-Level Structure lot :- TensorFlow is useful
+
+
+* Keras :
+  ------
+   - Its a High Level Library
+   - Easy to learn
+   - fewer lines of Codes
+
+   2 Option for Backend :- (ie Code Underhood) 
+       - TensorFlow 
+       - Theano
+
+   - Keras can talk with TensorFlow or Theano
+   - Keras is kinda High-Level library
+
+* Others :
+  -----
+   - PyTorch, MxNet
+
+* Conclusion :
+  --------
+   - If you are not doing some research kinda work then Go for Keras
+   - If you are not doing some complex Deep NN related Stuff then also you can opt Keras

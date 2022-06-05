@@ -1,0 +1,46 @@
+* Pandas :
+ -----
+	series
+    ----
+      -> .as_matrix()	  // to get in (d1,) form atleast with 1 dimension
+
+* numpy :
+  ---
+    np.matmul()  // matrix multiplication
+       vstack()
+       cumsum()   //cumulative sum i.e keep adding
+
+* Matplotlib :
+  ----
+    -> plt.imshow()
+
+
+* sklearn.preprocessing
+           \
+            StandardScalar()      //perform standardization
+               \
+                .fit_transform()   // transform data point using standardization
+
+         .decomposition.PCA()      // Direct PCA w.o intermediate steps [Shortcut]
+            			 \
+            			 n_components  
+            			 fit_transform()
+            			 .explained_variance_
+
+         .manifold
+            \
+             TSNE()   
+               \
+                (parm) random_state   // as TSNE is randomized algo to get consistent output ise this param
+                (param) perplexity
+
+* scipy.linalg
+         \
+          eigh      // function that computers eigen vectors & values
+
+
+* Seaborn 
+    
+     sn.FacetGrid()
+
+

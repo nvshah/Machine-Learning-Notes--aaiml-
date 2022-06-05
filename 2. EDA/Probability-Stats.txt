@@ -1,0 +1,401 @@
+ref -
+
+
+(Probability - Stats)
+
+=> As sample size incr -> sample mean equi to population mean, took effect onwards
+=> Pareto Distribution has infinite mean & 
+
+=> use stats.probplot() to compare 1 plot with another standard plots
+
+=> CDF relates with & give info about percentiles easily
+   To find the population (relatively proportion) in some range of values of random Variable X
+   
+=> More often you will find Log-Normal Distb than Gaussian Distb
+
+*=> Distributions are more preferred instead of percentile models (as they are more precise)
+    percentiles can be errorneous for extreme cases (points) 
+
+=> Covariance gets affected by changing the unit of features
+   Pearson Coefficient doesn't consider the slope (i.e speed at which both variable changes), it only tells how much ??
+
+=> Spearman Rank is much robust than Pearson Coefficient to Outliers
+
+=> Most of the case We used Gaussian Distb as we know 95% by heart for CI
+
+=> From Experiment We will have Observation
+
+=> Typically P-val is considered as small if it's less than 5%
+
+=> Re-Sampling is a Way to simulate Null Hypothesis (H0)
+
+-----------------------
+
+Extra
+
+CDF is used to calculate AUC  (whenever Continuous Probability)
+    is actually accumulated Probability
+
+PDF describes the shape of Distribution
+
+Mutually Exclusive Events -> Events that are in reverse of each other
+      Consider formula b = 1 - 1
+      if p(a) < 0.2 then p(b) > 0.8
+      These Inequality represents the Mutually Exclusive Events example
+
+
+HT -> Keep in mind 
+      1) You need to take good test statistic
+      2) You need to consider null hypothesis that is easy to simulate
+      3) Then only you will be able to compute p-val effectively
+
+________________________________________________
+
+* Random Variable :
+  ---
+   #Random Outcome #Experiment
+   Eg Fair Dice, Toss a Coin
+
+   2 Types - Discrete, Continuous
+
+* Population & Sample :
+  ---
+   Population - set of all obs/events
+   Sample     - subset of population to estimate stats about population
+
+   It's impractical to calculate mean of population so we took sample (random)
+
+* Gaussian Distribution :
+  ---
+   -> mean & variance are called params of distribution
+   -> Given Random Variable follows Gaussian Distributio, You need only 2 vars to 
+      plot a PDF or CDF i.e mean & Variance
+
+      Variance is also called Scale
+      Variance incr - Peaker & thin otherwise Fatter & Blunt
+
+      Peak of hill is most often a mean (in Gaussian Distribution)
+
+   Properties :-
+      1) Symmetric
+      2) As x increases, y reduces exponentially (with quadratic)
+
+   CDF of Gaussian Distribution :
+     - S Shaped Curve
+     -> Whenever mean = 0, corresponding y = 0.5 in CDF
+     -> As CDF goes farther & farther away from x=0 line, Variance Increases
+
+   68-95-99.7 rule 
+
+
+* Symmetric Distribution
+  ---
+  	-> Determines the shape of PDF
+  	- There exists point s.t. left side & right side are mirror images of each other 
+
+  Skewness :
+  ---
+    -> Determines the shape of PDF
+    - Tailed like behaviour
+    - left (-ve) , right (+ve)
+
+    => larger val (+ve) == longer tail
+
+    -> Skewness measures how long tailed & in which direction tailed
+
+  Kurtosis :
+  -------
+  	-> Determines the shape of PDF
+  	-> mesaurement of tailedness  (not peakedness)
+
+  	-> Kurtosis of Gaussian Distribution = 3
+  	   Excess Kurtosis of Gaussian       = 3-3 = 0
+
+  	- Determine if problems of outlier or not
+
+
+* Standard Normal Variate :
+  ---
+   - transform any random variable (with any mean & variance) to variable with ( mean 0 & var 1)
+
+* Kernal Density Estimation :
+  ---
+   - More crowded points -> higher height
+
+   (There are nice hacks abt how to find correct bandwidth)
+      \
+       start with small bandwidth & keep track how jagged curve is !!
+
+* Sampling Distribution & Central Limit Theorem (CLT):
+  -----
+   -> Takes samples mean & find mean from it
+
+   CLT :
+     - Given a random variable (finite), You can estimate mean & variance of any population using
+       Sampling Distribution of Sample Means
+
+       Sampling Distribution of Sample Means will always be a Gaussian Disb (according to CLT)
+
+     -> as n >= 30, i.e sample size >= 30
+        estimation took its effect 
+
+
+* Quantile-Quantile (QQ) Plot
+  ---
+   - graphical method to determine 
+       1) if random variable is Gaussian or not
+       2) Given 2 Distb, Both are similar distb or not
+
+   - When sample size is small It's hard to interpret using QQ plot for distb similarity
+
+
+Q) Where to use Distributions ?
+
+  -> Data Analysis (for EDA)
+  => Gaussian Distribution - is a theoritical model i.e observed in many natural phenomenon
+
+     If Any Standard Variable such as (salaries, heights) are not Gaussian Distributed We
+     can't use CDF
+
+
+* ChebyShev's Inequality :
+  ---
+    - No Distribution type given
+  	-> Used to find percentage of points around Mean when Distribution type is not given
+  	=> min % of points lies around mean in {k*sigma} range
+
+  	- It's useful when we don't know type of Distribution where we do not have ready made rule like
+  	  68-95-99.7
+  	- 2 formulas are there (concept of Mutually Exclusive Events is used to derive another)
+
+
+* Uniform Distribution :
+  ---
+   1) Discrete  2) Continuous
+   
+   PMF -> Discrete
+   PDF -> Continuous
+
+   -> Probability of getting any value is uniform/same (i.e equi-probable)
+   -> used in generating random numbers
+       Eg is random.random() of python
+
+* Bernoulli Distribution :
+  ---
+  	-> PMF
+  	Binomial :
+  	  -> n times Bernoulli 
+
+* Log-Normal Distb :
+  ----
+   -> If log(X) is Normal  i.e Natural Logarithm
+    - Fatter tails on Right Side
+    - Heavy Tail Distribution
+
+    - usecase more often found in Internet-Companies
+
+* Power-Law :
+  ----
+    -> Very Very Long tail
+     - 80-20 Rule
+     - Pareto Distribution : Peak & then fall
+
+     - 2 params delta & xm
+
+     => As delata decreases, tail-fatness of distb increases
+
+     * Dirac Delta Funcn :
+        -> EveryWhere 0 except peak
+
+    Determination of Power-law :- Log-Log Plot  
+
+* Box-Cox Transformation :
+  -----
+  	AIM : Transform  Pareto -> Gaussian (via Power transformation) 
+
+
+* Application of Non-Gaussian Distb :
+  ----
+    -> Theoritical Model with Properties (like CDF-PDF, <= val, etc...)
+
+* Co-Relation :
+  ----    
+   1) Co-Variance
+      ----
+   		-> How 2 Variables Changes w.r.t each other
+   		   NOTE - Covaraince for same 2 variables may vary for diff metric units of values used 
+   		          But behaviour will remains same
+
+   2) PCC (Pearson Correlation Coefficient) :
+      ---
+       -> tells how much +ve or -ve Co-Variance relation is !!
+        - 0  // not correlated at all
+
+       => Slope of line doesn't matter, all it's care about linear relationship
+          So how fast cannot be induced
+        - cannot capture complex relationship (i.e non-linear, sin-wave, Quadratic, monotonically non-dec 
+          etc .. )
+
+      #=> Pearson Coefficient doesn't consider the slope (i.e speed at which both variable changes)
+
+   3) Spearmen Rank Coef :
+     ----
+       -> tends to improve the non-linear coefficent over pearson coefficent
+       => Note : Rank is strictly increasing
+
+        - Don't care if it's linear or not, but as long as there is strictly monotonicity
+          r = 1
+          It dont cares about how far|close points are, It's only care abt RANK
+
+       => It handles Outliers much elegantly than Pearson
+
+  => Correlation is not Causation
+
+* Point Estimate :- Estimation of Population Mean via Sample Mean
+
+* Confidence Interval :
+  -----
+    -> Much more richer in information than Point Estimate
+     - lower bound & upper bound 
+     - the proportion left on both side (left side of lower & right side of upper) 
+       for m % confidence 
+           is (1 - (m/100))/2 each
+
+    Given #sample, mean of sample
+
+    Case 1 - known std dev
+    Case 2 - Student's T Distribution
+
+    Student's T Distb :- was meant intutively for estimating CI
+
+* Bootstarping :
+  ----
+    - For computing CI for stats like {median, nth percentile, }
+    - It uses percentile() concept to compute lower bound & upper bound of intervals
+
+    - Non-Paramteric Technique (Doesnt make any assumptions about Distribution)
+
+* Hypothesis testing :
+  ----
+    -> To test statisitcal difference between 2 set of values belonging to 2 different classes
+        or
+       How statistics var between samples of 2 different classes
+
+       HT = ( Difference of Mean )
+
+     - Null Hypothesis (H0)
+       Alternative Hypothesis (H1)
+       Test-Statistic
+       P-Value
+
+    -> For whole analysis we've only have sample points from both classes
+       We figure out `truth` first for stats we want to discover (i.e We set some base case)
+
+       You have initial observations of statisticals manipulation (i.e difference)
+       from samples collected from both classes
+       This is `exact truth` observed from samples
+
+       Find Conditional probability for X >= thresold given Null Hypothesis
+
+   -> When we do Experiment We will have Observation
+
+   Steps :-
+     1) Task Definition & Design Experiment & Do Observation
+     2) Null Hypothesis & Test Statistic
+     3) P-val
+     4) Significance Level
+   
+   * P-val :
+     ---
+      -> Probability of Observation (which is seen/observed earlier) given some assumption 
+         (null hypothessis)
+
+         NOTE - Observation is true i.e ground truth 
+
+      ?-> Typically P-val is considered as small if it's less than 5%
+
+      => Experiment depends on Sample Size
+
+      => Points to consider while Hypothesis Testing :
+           - Design of Experiment
+           - Selection of Sample Size
+           - Null Hypothesis Consideration S.T. Probability Compututation is feasible
+
+   REMEMBER :-
+    ---
+     -> In HT, we can never say Observation is wrong (as we've observed it)
+               So only assumption (i,e null hypothesis) can be wrong 
+
+     => i.e Probability of observation that is already observed (but now given null hypothesis)
+
+* Permutation Testing & ReSampling :
+  ------
+   -> Used to calculate p-value
+   -> Used to simulate the Null Hypothesis
+
+   => Permutation Test is the 1 of the way of using Monte Carlo Method
+   
+   5 % Significance :-
+     => In most cases p-val of 0.05 is used i.e it's called 5% Significance level.
+
+   Steps :
+   ---
+    1) Mix Samples from 2 classes (Jumble all things) & Also calculate original mean diff
+    2) Simulation via ReSampling into 2 Classes & calculating mean diff each time
+
+    3) try to find pos of original delta (i.e mean diff) in simulated mean diff list(in sorted order)
+
+       so all percentage of members on RHS of original delta will be p-val
+       i.e it will be 1 - (percentile of pos)
+
+   Resampling = Constructing 2 classes again back from Jumble of samples Randomly
+                Each class having same size of sample as original one but randomly chosen
+
+   REMEMBER :- Re-Sampling is a Way to simulate Null Hypothesis (H0)
+
+
+  Significance Level : (alpha)
+  ----
+   -> Normally 5 % significance level is used
+
+   => But if you want really really sure about hypothesis then tends towards smaller p-val significance
+
+   => So p-val must be >= significance level inorder to pass the test
+
+
+* K-S test :
+  -----
+    -> Application of Hypothesis Testing where it uses HT to determine if 2 R.V uses same distribution
+       or Not
+   Kolmogorov Smirnov test
+
+* Proportional Sampling :
+  -----
+    -> The probability of picking an element from bunch is proportional to it's value amongst other 
+        (i.e its percentile in indirect way)
+
+        Eg Highest value in bunch will have highest probability
+           lowest val will have lowest probability 
+
+
+       NOTE :- so probability of all elemement is not equi-probable i.e it's not uniform
+               So here if I pick random elem then it must follow above definition in probability
+
+    Steps :-
+    -----
+      1) Compute Sum of all elements
+      2) Normalizing using Sum  (map all elem -> elem / sum)
+      3) Cumulative Normalized Sum (value)
+
+      4) sample unfiorm val (0, 1)
+
+      5) prop sampling
+
+
+      r lying between any 2 cumulative normalized val is equal = gap between them
+      (as r is uniform variable between 0 & 1)
+
+
+
+    Normalizing Property :- all val lie between 0 to 1
+                            sum of all val is 1

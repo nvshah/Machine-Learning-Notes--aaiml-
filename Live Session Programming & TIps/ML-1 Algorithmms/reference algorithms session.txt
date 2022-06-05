@@ -1,0 +1,7 @@
+reference algorithms session
+
+[Linear Algebra]
+https://colab.research.google.com/drive/1u702voTlK7dj7GRFXyGQtdq-LBSmcLkG
+
+[SVM Interview Que]
+https://docs.google.com/presentation/d/1pnYB7oZks2Lz5sHKINUnLJ_yZLOFoIYXnNF_kzDfrAU/edit#slide=id.g608a935b5f_0_109

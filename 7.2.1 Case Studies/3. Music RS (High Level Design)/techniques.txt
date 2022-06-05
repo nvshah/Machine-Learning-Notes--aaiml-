@@ -1,0 +1,10 @@
+techniques
+
+- Elastic Search
+- Fast NN Search  (Fast Nearest Neighbors Search)
+
+- FAISS (FB) 
+
+- Surprise Library
+
+- explore Exploit Strategy

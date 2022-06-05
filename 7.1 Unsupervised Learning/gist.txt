@@ -1,0 +1,79 @@
+gist
+
+* Clustering
+  ----
+   \
+    - No ground truth
+    - Learn based on only Features or Data
+    - So Clustering techniques are not always deterministic
+    - Clustering can never be perfect or its hard to prefect it.
+
+    Main Goal :- minimize inntra-cluster distance
+                 maximize inter-cluster distance
+
+  Centroid-based  :- k-means, K-mediods
+  Tree-based      :- Hierarchical Clustering
+  Density-Based   :- DBScan
+
+
+* K-means clustering :
+  -----
+   - 1 technique to achieve clustering goal
+   goal :- find the k-centroids that can represent each of k cluster
+
+   -> Lloyds Algorithm :- to find the k-centroids efficiently in K-means clustering
+
+   - Centroid :- founded via mean technique
+
+
+* K-mediod :
+  ------
+   - 1 technique to achieve clustering goal
+   goal :- find the k-centroids that can represnt each of k cluster
+
+   -> PAM (partition around Mediod) :- algo to find k-centroids 
+   
+   - Centroid :- founded via trial & error method
+
+   - Interpretability 
+   - Kernalization (ie Similarity Matrix Utilization)
+      \
+       trivially kernalizable
+
+ => Interpretability of K-mediods is better than K-means
+ => K-mediods is much more easier to Kernalize than K-means
+
+
+ * Determining the best K :
+   ----
+    - domain knowledge
+    - Elbow/Knee method
+
+
+* Hierarchical Clustering :
+  -----
+   - Agglomerative  :- group/merge
+   - Divisive       :- divide/split
+
+   -> Problem i.e High Time & Space Complexity
+
+
+* Density Based Clustering :
+  ------
+
+  DBScan :
+  ----
+   2 hyper-params :- Min-Pts, Epsilon
+
+     Min- Pts :- decide the dense or sparse regions
+     Epsilon  :- help to find the density of point 
+
+   Points :- Core Point, Border Point, Noise Point
+   other ideas :- Density edge, Density Connection Point
+
+   DBScan Algo : uses above ideas & 2 hyper-param
+        \
+         - main task is range-queries 
+
+   Range Query :- range is something defined by Hyper-Sphere
+   

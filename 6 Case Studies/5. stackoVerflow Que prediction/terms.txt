@@ -1,0 +1,14 @@
+terms
+
+* Multi Label algorithms
+
+* Mean F1-score
+    \
+     Micro Avergaed F1-score
+     Macro Avergaed F1-Score
+
+* Hamming Loss
+
+* One vs Rest
+
+

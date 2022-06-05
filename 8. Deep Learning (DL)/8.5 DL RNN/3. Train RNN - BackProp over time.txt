@@ -1,0 +1,62 @@
+3. Train RNN - BackProp over time
+----------------------
+
+NOTE :-
+ 
+ - RNN is not about multiple layers connected with each other in some fashion
+   |
+   instead it's 1 layer Repeated over time 
+
+
+* Forward Prop :
+  -----
+   - Direction of Arrows
+
+* Backward Prop :
+  ----
+   - Opposite Ddirecn of Arrow
+
+   - backward Prop happen over time & 
+     only 3 matrices updated (ie W, W`, W``)
+
+   Remember :-- It's not multiple layers 
+                It's just one layeer that gets repeated so
+
+                in backprop also entities related to 1 layer will gets updated but that
+                will happen over time multiple times.
+
+
+* Problem (in BackProp over time)
+  -----
+  1) Vanishing Grad Problem :
+    -----
+   - becausee its being repeated over time 
+     |
+     then final derivative for First word (ie dL/dw1) will involve lots of multiplication terms
+     |
+     & this can lead to Vanishing Grad Problem
+
+  2) Exploding Grad Problem :
+     ---
+     - When you have many grad more than 1
+
+  Note :- You are not facing this problem because of lots of layers
+          but 
+          You are having this problem because you are performing backProp multiple times over time
+
+        Just you are performing 
+          Back Prop over time or
+          Forward Prop over time
+
+        So just because You have Sequence of many words that is causing this issue of
+        Vanishing or Exploding Gradient in your RNN
+
+
+* Recurrent Unit :
+  -----
+   -> Single Box Layer that gets Repeated over time in RNN is called as Recurrent Unit
+    - This Recurrent unit takes curr word, prev-word learned & provides out accorddingly
+
+=> To handle Above problem of Vanishing & Exploding Grad in Simple RNN, 
+  (due to increasing seq of words), 
+   there are special Recurrent Unit ie "LSTM" & "GRU"

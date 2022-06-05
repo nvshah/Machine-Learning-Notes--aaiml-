@@ -1,0 +1,72 @@
+1. Deep MLP Intro
+----------------
+
+- Till 2012, People try to build 2 or 3 Layered Nnetwork 
+  
+  Problems They face :- (Structural + Math Issue)
+    - Vanishinng Grad Problem
+    - Too little data
+    - Too little Compute Power
+
+* Little Data & More Weights :
+  ----
+   -> If you have complex network & just fewer data points 
+      it means you have more weights & fewer data
+       \
+        This will tends towards Overfitting
+
+* Too Little Compute Power :
+  ----
+   -> Each Iter :- Batch-Pts 
+                     |
+                     constitute epoch
+
+      We need multiple epochs to update weight properly
+
+      Now if single iteration or epoch if take lot of time (because of low compute power) &
+      we need to update weights inn entire network
+      \
+      SO this will affect the speed of training
+
+----
+
+=> Post 2010, (Structural Change)
+   - We've good amt of Data (also Labelled Data), because of Internet Companies
+   - New type of Computing Infrastructure (ie GPU other than CPU)
+   - New Ideas & Algorithms
+
+   this 3 things together created good space for Deep Learning
+
+=> GPU are very suitable for the needs of DL algorithms
+
+----
+
+* Theory vs Experiment :
+ --------------------
+
+=> Generally For any thing or Model,
+     \
+      Firstly the Hypothesis is made & then Experiment is performed
+      |
+       -> In case of ML model, Math Work is first Discoverd & Analyzed & then experiments were caarried out
+
+   But 
+   In case of DL => Invert of this happened
+               \
+                Building new theory was very hard whereas Performming new experiment was easy comparatively
+
+   Thus there are basically 2 approaches
+
+   1) Mathematician Approach 
+        \
+         Theory First => Experiment Second
+         Eg - ML
+            - University Works
+
+   2) Engineer Approach
+       \
+        Experiment First => Theory Second
+        Eg - DL
+           - Works performed at Compannies such as Google, Microsoft, 
+
+   => At the end what matters is RESULT

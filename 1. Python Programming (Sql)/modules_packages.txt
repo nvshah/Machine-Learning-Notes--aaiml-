@@ -1,0 +1,87 @@
+=> doc strings are imp for readability
+
+* Modules :
+  ------
+   -> .py file
+   -> from ... import
+      import name
+
+
+  =? dir() - helps you list or prints all names in given modules
+
+
+* Packages :
+  -----
+   -> folders
+   -> __init__.py  // consider by python this folder as package
+
+      subpackage -> module
+
+   => ways of organizing the modules in directory structure
+      Packages are group of modules. (logical grouping)
+
+
+* Files / IO :
+  ------
+   1) Open
+   2) Read/Write
+   3) Close
+
+   open()  // open file in current directory
+
+   Modes -> 'r' : read mode
+            'w' : open new file if not exists or truncate existing file
+            'x' : create new file (given file is not created earlier) exclusively
+            'a' : appending, adding to end of file (wo truncating)
+
+            2 modes :
+
+             't' : text mode                 //default
+             'b' : binary mode (bytes|(1-0))
+             '+' : read + write
+
+   Q) How text is stored ??
+    -> depends on OS (windows, linux, Mac)
+       - Python talks to OS & OS handles File Management
+
+   * file handler :
+     -----
+
+      try - except } - best way of closing file
+
+
+   => You can open file in desired `encoding` format
+
+
+   functions on file cursor  :-
+   ---------
+    -> read()    // read file contents single char by char
+       tell()    // curr position of cursor
+       seek()    // move cursor
+       readline() // read upto `\n`
+       readlines() // till end of file
+
+   NOTE -> When you iterate over file pointer it reads line by line
+
+   To remove a empty dir :-     os.rmdir()
+   To remove a non-empty dir :- shutil.rmtree()    //shutil stands for shell utils
+
+
+* Exception Handling :
+  ----------------
+   fundamental things in Error : Type + Message(Descr)
+
+   -> Errors are handled gracefully in `except`  block
+
+   (tip) => To get error info : sys.exc_info() 
+
+
+* Debugging :
+  ---------
+   pdb -> python debugger 
+
+    pdb commands -> 
+
+        list   // tell me where am I at moment !
+        p locals()  // p is for print
+        c           // continue

@@ -1,0 +1,25 @@
+reference
+
+[Pseudo-Residual for Log-Loss & Classification]
+https://www.youtube.com/watch?v=qEZvOS2caCg
+
+[Mathematical Reasoning for pseudo-residuals]
+https://www.youtube.com/watch?v=1o0yd6eMmA0
+
+
+[GB algo]
+https://en.wikipedia.org/wiki/Gradient_boosting#Algorithm
+
+[GB Explaination]
+https://explained.ai/gradient-boosting/index.html
+
+
+
+-------------
+
+[ADABoost]
+alliance.seas.upenn.edu
+
+[StackingClassifier]
+mlextend
+

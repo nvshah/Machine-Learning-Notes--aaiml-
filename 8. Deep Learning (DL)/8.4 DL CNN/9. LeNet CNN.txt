@@ -1,0 +1,23 @@
+9. LeNet CNN 
+----------
+sec :- 4.9
+ref 
+https://web.archive.org/web/20201126174628/https://engmrk.com/lenet-5-a-classic-cnn-architecture/
+https://www.kaggle.com/code/blurredmachine/lenet-architecture-a-complete-guide/notebook
+
+____________
+
+- Convolution :- via Kernel
+      \
+       -> (getting diff aspects of Inp Image via diff Kernels)
+
+  SubSampling :- is kinda Mean/Avg Pooling
+
+
+* Eg - MNIST
+  ---
+  Inp Img -> GrayScale
+
+     After pass through 2 round of Convolution followed by SubSampling (ie Avg Pooling)
+     we will have 2D Matrix form Output then onwards we can do MLP (ie Fully Connected Network)
+     & at end we can have layer of Activation like Sigmoid or SoftMax

@@ -1,0 +1,29 @@
+terms
+
+- Monotonically Decreasing (Continuous Decreasing)
+  Bitonic Array (Incr-peak-Decr)
+
+- BiSection = Divide & Conquer
+  Binary Search uses Divide & Conquer approach
+
+- Rate of Convergence -> How fast we are moving towards x
+
+- Feynman method of integration
+
+- Dot Product = Copmonent wise multiplication & then addition of all
+
+  Variance :- Avg dispersion of points from central tendency
+
+  Unit Normal Vector :- perpendicular vector
+
+  Accuracy, Error | MissClassification
+
+  Sparse :- not-uniform/random spread of data in the sparse dimension
+
+- Principal Diagonal & Off-Matrix Diagonal
+
+- Joint Probability model 
+
+- Pseudo Random number generator
+
+- Penalized Terms

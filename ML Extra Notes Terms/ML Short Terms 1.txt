@@ -1,0 +1,75 @@
+ML Short Terms 1
+
+Sparse Vectors
+Sparse Matrix    // matrix with rows as sparse vectors
+
+Sparsity of matrix // percent of non-useful cell
+
+Heuristic | Hack
+
+Norms & distance & length
+
+Low-Latency System
+
+Overfitting, Underfitting
+
+Randomized Algorithm (not always give right ans but most probably give correct ans)
+
+Probabilistic vs Determinitsic Outcome
+
+Accuracy, Error | MissClassification
+
+Disparity
+
+Black-Box Model & Interpretable Model
+
+Sparse :- not-uniform/random spread of data in the sparse dimension
+
+Dumb Model | Sensible Model | Random Model
+
+Hyper-Parameters
+Cross Validation 
+GridSearch, Random Search
+
+Collinear Features
+
+Objective Function in Optimization problem
+
+Lagrange Multiplier / Equality Constrainnts/ InEquality Constraints
+
+SMO SVM
+
+axis parallel hyper-plane
+
+Entropy of R.V
+
+Feature Bagging | Column Sampling
+
+Residuals
+Pseudo-Residuals
+
+AB testing
+Offline testing
+Online testing
+
+Shattering
+
+High Throughput
+
+Temporal Nature of Data
+
+Approximation Algo (For hard Problemn)
+
+Matrix Factorization | Eigen Value Decomposition
+
+Bias Term | Mean term | Regularization term
+
+Randomized controls Trials | A/B testing | Bucket-Testings
+
+Weighted Eucledian Distance
+
+Spatial-Property (Spatial-Coherence)
+
+Fast NN Search
+
+Recency & Frequency

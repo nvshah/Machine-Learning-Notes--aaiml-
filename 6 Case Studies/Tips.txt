@@ -1,0 +1,29 @@
+Tips
+
+-> While doing with Jupyter NB :-
+    Store your information from intermediate data into temporary/intermediate files
+    to avoid pre-computation of such
+
+=> You can store your computation in ML process to file, intermediatry
+    \
+     pickling computed information :- dump & load
+
+     .p files are used // pascal source code files can be used to store computed results
+
+=> Mean F1-Score (Micro Avg F1-Score) for multi-Label classification problem
+
+=> sqlite is most used database 
+
+(Feature Engineering hack) :
+----------------
+=> Provide more weight to some feature by repeating n times the value of that feature
+
+=> Inorder to approximate the worst model for your problem just try to find out the random Model
+
+
+* For comparing models (Probabilities base system)
+  ------
+   - compare the diff matrix (ie Confusion, Precision, Recall)
+   - compare the Tr-Err, cv-err, Test-Err
+
+   - compare the misclassification

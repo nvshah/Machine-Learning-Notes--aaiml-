@@ -1,0 +1,6 @@
+Remember
+
+-> Learning Rate is used during Optimization Process
+
+=> Forward/Backward Feature Selection is techniqye that is model-agnostic 
+   (ie it can be used for any model)

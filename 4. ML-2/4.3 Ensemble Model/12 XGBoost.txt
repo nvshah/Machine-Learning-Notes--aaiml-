@@ -1,0 +1,44 @@
+---------
+- pip3 install XGBoost
+
+
+---------
+
+* XGBoost
+  -------
+
+  GBDT :- pseudo residual + additive term
+
+  Sklearn GBClassifier :- GBDT + row-sampling
+
+  XGBoost :- GBDT + row-sampling + col-sampling	
+
+
+  - XGBoost tries to mix the best of both world i.e GBDT & RF
+  - by adding R.S & C.S we have advantage of Random Forest
+
+  -> XGBoost performs better than sklearn implementation
+
+
+NOTE :- simple linear model like Log-Reg or Lr-reg is also a high bias & low variance model
+
+ So models we get optionns :- gbtree, gblinear
+
+* Col-Sampling or ( Feature Bagging ):
+  -------
+   colsample_bytree ;-
+      to construct whole tree if wanna limit set of features
+
+   colsample_bylevel :-
+      to construct any node you wanna set limit of features
+
+* Lr-Reg & GBDT :
+  ----------
+   -> both have some kinda similarity 
+
+      in Lr-Reg :- variable & weights 
+         GBDT   :- function & gamma
+
+* Sparse GBDT :
+  --------
+   - when we want few base-learners to have an impact on final Model

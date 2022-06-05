@@ -1,0 +1,44 @@
+ref :-
+  Refer: https://en.wikipedia.org/wiki/Random_sample_consensus   
+
+------
+
+-> We say that 2 lines L1 & L2 are almost similar if :-
+     - both are almost overlapping
+     - cosine dist between them is less
+________
+
+
+-----
+Basic Idea :- Try removing outliers step by step from training data before finalizing the model
+              in further piepline (ie for Cross Validation)
+
+* RANSAC ( Random Sampling Consensus )
+ ------
+
+  - Consider Linear Regression & if there are extreme outliers on 1 side then those may pull the 
+    decision surface (ie seperating line) towards them
+
+  So modeling in such scenario of extreme outlier is possible using RANSAC
+
+ RANSAC idea :- 
+
+  - Instead of training on all pts take random sample from Training Data
+    then your model will be less impacted by an outliers comparatively
+
+  Steps :-
+
+   1) Take some random samples from the Entire D-train data
+
+   2) Train the model on random sample i.e L0  // linear reg model 0
+      - remove the outliers identify by this model from original D_Train
+                    \
+                     -> large yi - yi` for this model (random sample data)
+
+   3) After removal of outliers found in L0, treat the new D_train_1
+
+   - Repeat the steps 1, 2, 3 till you get L_i almost same as L_i+1 (ie till you Converge)
+
+   Note : L_i & L_i+1 almost same means :- almost overlapping or cosine distance is less between them
+
+   At the end of this your model will be Robust

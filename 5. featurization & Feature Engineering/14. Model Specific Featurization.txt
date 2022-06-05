@@ -1,0 +1,60 @@
+------
+* Log-Reg :- GNB (Gaussian Naive Bayes)
+             features - normal distributed
+
+=> In high dimen space to sperate data is not very hard 
+   so Linear Models works well in such case
+   - hyperplanes 
+
+=> Thus Model & Featurization are inter-related
+______
+
+
+------
+
+
+* Model Specific Featurization
+ -----------------
+
+ Case 1)
+
+   Feature f :- power-law distb 
+       model :- Log-Reg 
+
+    *=> FACT :- Log-Reg works well when fetaure is gaussian distb
+
+      So we will take log(x) for feature f vals
+
+ Case 2) 
+
+    Linear Combinations :- Linear Regression
+
+    models like Logistic Reg & Linear Reg is useful for identifying the linear combinations among features
+
+
+ Case 3) 
+
+    When interaction matters -
+      - use of DT/RF/GB can be useful
+
+      because DT are good for accounting interactions among features 
+
+    How to know if interaction matters ??
+     - via domain knowledge or Common Sense
+
+
+ Case 4)
+
+    Text data & Bag of Words :
+       - end up having very high dimen space
+
+    When dimen is very high - we have choices of hyper planes & so 
+     Linear Models works well in such case
+
+ => Thus Model selection also sometimes depend on Featurization
+     &
+    The model you choose could also define what kind of features would work better
+
+
+ => Thus Model & Featurization are inter-related
+

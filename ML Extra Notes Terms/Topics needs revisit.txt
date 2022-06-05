@@ -1,0 +1,36 @@
+Topics needs revisit
+
+-> Calibration
+
+-> T Distribution
+
+-> KDE Kernel Density Estimation
+
+-> Distance of Poinnt from a Plane ?? Why divide by norm of a vector ??
+
+-> HyperParameter Tuning
+
+=> Pandas.read_hdf  !! // to read data from .h5 file extennsion
+
+-> KS-Test (P-val)
+
+-> CUDA
+
+-> feature_log_prob  in Naive Bayes
+
+=> Langrange Multiplier (in Constrained Optimization) vs Eigen Values !!
+     - https://journeyinmath.wordpress.com/2018/08/18/lagrangemultipliers/
+
+
+------------
+[EXPLORE ML in DETAILS]
+
+-> SVM Primmal to Dual Form
+
+
+
+------------
+
+yet to watch (youtube)
+
+- Constrained Optimization + Langrange (Khann Academy)

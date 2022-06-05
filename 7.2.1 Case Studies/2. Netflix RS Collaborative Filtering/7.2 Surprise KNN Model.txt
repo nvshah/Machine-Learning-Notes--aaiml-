@@ -1,0 +1,55 @@
+7.2 Surprise KNN Model
+
+Tip :- Play around with Hyper-Param to get deal with Overfitting !
+
+____________
+
+KNN Surprise Model : 
+  - introduce features which are very similar intutively to what we found whilst Top-13 Features 
+
+  - Analogy to Features we found via Manually during top-13 Features
+    Top 13 Feat :- founded manually
+    This time  :- we will find via Model from Surprise
+
+    Concept intutively is same among both
+
+
+=> KNN Eqn : (user-User Similarity)
+   -----
+    -> KNN Surprise Model helps to find the (user-user sim)
+    -> It uses baseline model & additive terms 
+
+    - Take all the users v who are very similar to user u for movie rating i
+        \
+         k most similar users to curr user(u)
+
+    Similarity :
+    ---
+     - Cosine or Pearson Coef Correlation can be used
+     - between all user & curr user that has rated similar movie ie movie(i)
+
+    Deviation : (in baseline model)
+    ----
+     - How wrong is ratings from baseline model is also accounted in KNN Surprise model
+       (r_vi - b_vi)
+
+    Shrunkage pearson Correlation Coef :
+    -----------
+     -> Its alike Laplace Smoothing
+     -> to make Pearson Coef more smooth
+
+    Obsv :- some overfitting is observed
+
+
+* KNN -> User-User Predictor
+         Movie-Movie Predictor
+
+* Updated Model :
+  -----
+   -> 13 Features + Baseline Model + KNN-baseline-User-user + KNN-baseline-Movie-Movie
+
+
+* Feature Imp :
+  ---------
+   -> These Feature are not adding much imp because 
+      We already have such kinda feature in model (ie during Computing top 13 Features)

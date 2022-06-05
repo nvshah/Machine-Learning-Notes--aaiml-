@@ -1,0 +1,28 @@
+terms
+
+- similar points
+
+- ground truth  (class labels | regression values)
+
+- Intra Cluster (inside)
+  Inter Cluster (between)
+
+- Dunn index
+
+- Lloyd algorithms
+
+- Approximation Solution (Hard Problemn)
+
+- initialization sensitiviy (Random picking of cetroids at initialization)
+
+- K-means ++
+
+- K-mediods
+
+- Agglomerative & Divisive
+
+- proportional probability
+
+- DBScan
+
+- range query

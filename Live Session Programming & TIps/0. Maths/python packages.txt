@@ -1,0 +1,21 @@
+python packages
+
+* PrettyTable   // to display tabular like structure in nice way
+
+
+* scipy.stats 
+         \
+         ks_2samp   // KS testing
+
+         probplot   // Q-Q plot
+         pareto     // Pareto Distributed Data 
+         boxcox     // Transform (esp Log-Transform)
+
+
+* np.random.beta()      // beta distribution
+           .pareto()    // pareto distribution  
+                           { closer parameter a is between pareto distb closer are distb}
+
+* sns.distplot
+
+

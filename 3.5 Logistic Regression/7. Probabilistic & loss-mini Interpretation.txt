@@ -1,0 +1,153 @@
+7. Interpretation
+
+ref :
+
+[Probabilistic Interpretation]
+https://www.cs.cmu.edu/~tom/mlbook/NBayesLogReg.pdf
+ \
+  Section 3.1
+
+----------------------
+
+-> All things is abt assumptions
+
+- Logistic Regression = Gaussian NB  + Bernoulli RV (predicted)  // in naive bayes term
+
+-> For func to be differentiable It needs to be Coin-tosstinuous
+
+=> In lot of optmization problem if you cant solve it then approximate it
+
+=> Loss Func is ammazinng way to get idea abt behaviour of diff algo
+
+------------
+
+=> -log(x) = log(1/x)
+
+=> Zi = Yi*(W^T*Xi)
+
+---------------------
+
+1) Probabilistic Interpretation of Logistic Regression :-
+_________________
+
+* Using Naive bayes :
+  ---------------
+
+    Assume 1) features are real vals :- (assume gaussian NB)
+                 \
+                  P(Xi/Yi) is normally distributed
+
+    Assume 2) classifer variable/label ie Yi is Bernoulli random Variable (Eg Coin-toss)
+
+  So Logistic Regression = Gaussian NB  + Bernoulli RV (for class label)
+
+
+* 2 diff formulation :
+  ------------
+   geometrically   (-1 & 1)
+   probabilistic   (0 & 1)
+
+   2) argmin(Sum( -Yi*Pi - (1-Yi)(1-Pi) ))   // probabilistic interp as Pi represent Probability
+
+   Case 1) When Yi = +ve i.e +1
+
+       Then optimization eqn for geometric & probabilistic are exactly same
+
+   Case 2) When Yi = -ve (for geometrically)
+                   = 0   (for Probabilistic)
+
+            Eventually both are same mathematically
+
+-----------------------------------------------------
+
+=> NOTE : Often Zi = Yi*(W^T*Xi), is used for representation 
+                
+                Zi = Yi * f(x)
+
+2) Loss-Minimization Interpretation : 
+_________________
+
+  Loss Function :- 
+   ------
+    function that will provide 
+          +1 : on incorrect classification 
+    			0  : on correct classification
+
+  goal :- given data pts, minimze the Loss-function
+
+  Motive :- Always we want to minimize the loss & maximize the profit
+
+ - Plot Zi (x-axis) vs Loss-Function (y-axis) 
+
+ * 0-1 Loss function 
+   ---------
+	 
+	- funcn that provide either 0 or 1 as output Y 
+
+	- for Logistic Regression
+	  (ideal) 0-1 loss func = 1 if Zi < 0
+	                        = 0 if Zi > 0
+
+ - Loss func perspective :- 
+     Find W (ie plane ) S.T it minimizes the 0-1 Loss Funnction
+
+MIMP :- 
+=> Optimization Problem are solved using differentiation 
+---
+=> For an func to be differentiable it needs to be continuous
+   Nonn-Continuois = Non-Differentiable
+   
+   0-1 Loss func is not continuous
+    because at x = 0 func is not defined i.e whether it will be 1 or 0
+
+   So 0-1 loss function cannot be differentiated
+
+   Since 0-1 loss func cannot be differentiated, We need to approximate it
+
+
+* Logistic Loss Func Approximation :
+  ------------------------
+   -> one such func to approximate Loss-Func as Loss-Func can't be differentiated
+      (As Loss Func is not continuous)
+
+   -> Logistic Loss :
+      -----------
+       - is one approximation of 0-1 loss func 
+       - is a continuous (so can be differentiable)
+
+       When Zi > 0 it's not quickly resemble to Loss-Func i.e 0
+                   but as Zi inncr it behaves & resembles to Loss-Func ie tends towards 0
+
+       When Zi < 0, it's no more resemble like a Loss-Func
+                    instead it increases sharply
+
+   -> Hinge Loss :
+      -----------
+       - When you apply Hinge Loss Func You get algo called as SVM
+
+
+* Loss Func :
+  ---------
+   -> Loss Func is Beauty that can give intution of diff algorithm
+
+      By just changing the loss function You can get diff algorithms 
+
+   -> Let say If loss func used is 
+
+      - Logistic Loss Func => Logistic Reg
+      - Hinge Loss Func    => SVM
+      - exponentiation Loss Func => Adaboost
+      - Sq-Loss Func       => Linear Regression
+
+   => So this way you can compare various algo in 1 plot via diff loss func
+       &
+      Thus Loss-Func is so amazing
+
+   => Various Loss Func are used for an approximation
+      (As oftem times we will have func for optimization that are not differentiable ) 
+
+
+
+
+
+

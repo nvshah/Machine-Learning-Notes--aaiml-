@@ -1,0 +1,33 @@
+terms
+
+- window-width
+- emperically (experimentally)
+
+- frequency, Time Period
+- Amplitude, Oscillations
+
+- Fourier Transform
+- repeating waveform
+
+- Deep Learned Features (LSTM)
+
+- Image Data Featurization
+- Color Histogram
+- Edge Histogram
+- Haar Features
+
+- SIFT (Scale Invariant Feature Transforms)
+- Image/object detection
+- Scale Invariant
+- Rotational Invariant
+- OpenCV
+
+- state of the art technique
+- CNN
+
+- relational features
+- Graph Theoritic Features
+
+- Indicator Variable
+- Feature Binning/Bucketing
+

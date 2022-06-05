@@ -1,0 +1,25 @@
+Data Understanding & AIm
+
+-> We need probabilities for all classes to understand & interpret in a better way
+
+=> DT, NB, LogReg are easily interpretable
+   whereas
+   RBF SVM is not easily interpretable
+
+* Performance Metric
+  ---------
+
+1) Multi Class Log Loss
+-> One of good function to use For Multi-Class Output is Log-Loss function
+    \
+     because LogLoss uses probability outputs explicitly
+     (hence Multi-Class Log-Loss is valid choice)
+
+=> & besides we also want to penalize sligh variation (which can be achieved via LogLoss func)
+   \
+    -> Even small deviation from Ideal Probability will increase the Loss ie (log Loss)
+
+
+* Split :
+  ----
+   -> We want distribution in test, train, CV to be roughly same

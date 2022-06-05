@@ -1,0 +1,50 @@
+Python Packages
+
+Plotly
+
+Seaborn
+
+* numpy :
+  ----
+   -> cumsum()
+      mean(), median(), percentile()
+
+      random.normal()  // normal distribution where 
+                \
+                 param { loc, scale}  // loc is mean, scale is variance
+
+            .uniform()  //uniformly distribute variable
+
+
+-------
+
+* Seaborn (sns)
+  ---
+   -> sns.FacetGrid()
+         .map()
+         .add_legend()
+
+         .jointplot()
+         .kdeplot()   // plot pdf using kernel density estimation
+
+
+* statsmodel.robust
+               \
+                mad()  //median abs deviation
+
+* scipy.stats
+		  \
+		   probplot()  // QQ plot :- to compare a distb with any standard distb
+		   boxcox()    // box cox transformed (power transformation)
+		   loggamma()  // log gamma distb
+
+		   norm.rvs()  // to generate samples of gaussian distribution N(0,1)
+		   kstest()    // to find similarity betn 2 distb (i.e using CDF & thresold & significance)
+
+
+* sklearn.utils
+            \
+             resample()
+
+         .metrics.accuracy_score()
+

@@ -1,0 +1,25 @@
+Doubts
+
+1) Distance of Origin from plane How ?? b / ||w||
+
+2) Confidence Intervals vs Significance Levels ??
+
+3) Why to do Normalization/Standardization before PCA(Eigen Decomposition) 
+   What if we do after applying the PCA (ie Eigen Decomposition)
+
+
+4) High Dimension & Linear Seperation 
+
+   During Video of Interview Que for SVM ?
+
+   -> I caught up with this que :- 
+        In high dimension data is easily Linearly Seperable, Comparatively
+
+     I understood the statement (theoretically)
+
+        [My Understanding] :-
+        - ie As dimension increases We have more information & thus we can derive better seperation line
+
+     But still I cannot absorb it at 100%
+
+     So can you explain it in more intutive way to understand & imbibe it conceptually

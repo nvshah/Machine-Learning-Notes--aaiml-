@@ -1,0 +1,43 @@
+11. Optimizers : AdaDelta & RmsProp
+--------------------------------
+
+----
+
+
+----
+
+=> Core Idea : use Exponential Weighing (Decaying) Scheme to avoid Slower Convergence in AdaGrad
+____
+
+
+=> In adagrad, we saw that if alpha_t is very large then => slow convergence
+       \
+        Why its becoming large ? 
+          -> bcause you are considering sum of every prevv-grid term-square to find alph_t
+
+* Idea : - instead of taking all prev-grad, consider decaying Grad Average
+
+* Exponential Decaying Average :
+  ----------
+   EDA
+    -> insteead of taking prev-grad squared sum, we will take exponential decaying average
+         \
+          thus instead of having 1.0 as multiplier to every Grad 
+          We will have decaying effect of multiplier as grad becomes old
+
+   => Doing this way will give us good control over learning rate & thus it will grow but in a controlled manner
+   & thus connvergence will not slow down as much as it would in case of Adagrad
+
+
+* AdaDelta :
+  ----
+   --> 
+    Take Exponential Weighted Averages of Gradient Squares instead of Simple Sum of Gradiennt Squares( ie in case of AdaGrad)
+    So as to avoid Slower Convergence
+
+ => Thus AdaDelat will Converge faster than Adagrad
+
+* RMSProp :
+  -----
+   -> Tries to do same thing but slightly diffeerently
+

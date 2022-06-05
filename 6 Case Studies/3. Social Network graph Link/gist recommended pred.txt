@@ -1,0 +1,72 @@
+gist recommended pred
+
+--------
+intermediate files (temporary files) jupyter NB :- EDA-Basic Stats
+
+-------
+
+CRUX :- Featurization for Graph Data
+
+* Pure Graph based Edge/Link Predictinon
+
+* 1 Snapshot of data at time t
+
+Key Task :- To come up with Graph based Features to solve binary classification problem
+
+The Big challange is : Featurization Technique !!
+
+* Task :- Binary Classification Task 
+            \
+             Edges present - 1
+             Not Present   - 0
+
+=> Data provides possess only info abt edges present i.e all labels 1
+   So we need to create data pts for label 0 to make Balanced Dataset
+
+
+* Cold Start Problem :
+  --------
+   - There are some data (vertices ) in Test data for which I've no information regards in Train data
+     at all
+
+* Pre-computation : (Preparing the Dataset)
+  -------
+   Constructing Y_i's (predicted variable)
+   
+   1) Data Points for Label 0 (missing edges)
+   2) Balanced Dataset (achieved via above point)
+
+
+* Temporal Nature : (Real World)
+  ---------
+   - data is changing/evolving over time
+   - but here given only 1 snapshot so We cannot use Temporal SPlitting
+
+* Featurization :
+  ---------
+   -> Most Imp part in case of Graph-based ML
+
+   * set based doings :
+       1) Jaccard distance
+       2) Otsuka OChiai Coefficient
+
+   * Rank Mesaures
+       3) Page Rank  
+            \ 
+             -> Help us to find most popular (ie Celebrity)
+    
+   4) shortest Distance & Weakly Connected Components (Community)
+
+       (=> Thus Shortest Path & Weakly Connected Component helps to spot out the Community of Users)
+        - detecting Communities & if given 2 users both belong to same communit or not
+
+   5) Adar Index : (For Directed Graph)
+
+       => common elements with a large neighbourhoods are lesser significant when predicting connection between 2 nodes
+
+       - Eg}  fan base of Celebrity (Salman Khan) vs School Friends
+
+   6) Follows Back
+
+
+  

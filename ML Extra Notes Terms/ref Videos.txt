@@ -1,0 +1,4 @@
+ref Videos
+
+[Langrange Multipliers]
+khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/lagrange-multiplier-example-part-1

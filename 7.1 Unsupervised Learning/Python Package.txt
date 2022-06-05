@@ -1,0 +1,32 @@
+Python Package
+
+ref :  
+http://scikit-learn.org/stable/auto_examples/cluster/plot_dbscan.html#sphx-glr-auto-examples-cluster-plot-dbscan-py
+
+ http://scikit-learn.org/stable/modules/generated/sklearn.cluster.DBSCAN.html
+
+sklearn.cluster
+         \
+      	 .KMeans 
+      		\
+       		param : { n_cluster, n_init }
+
+         .AgglomerativeClustering
+
+         .DBScan
+
+
+n_init :- are there so that you can reduce chance to stuck with outliers for your model
+
+
+* For kmediod :
+  ----
+   letiantian/kemdiod  // github profile
+
+
+
+* NOTE :- 
+  ----
+   Ball_tree vs KD_tree 
+
+   Ball tree is similar to KD-tree where instead of Breaking into Cuboid it breaks into Spheres the regionns

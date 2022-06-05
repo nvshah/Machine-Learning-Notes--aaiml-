@@ -1,0 +1,68 @@
+
+-----------
+=> Color Histograms cannot determine Shapes 
+
+* Haar features :- advance Image Processing Features (for Edge Detection)
+
+___________
+
+buzz Words :- { haar features, }
+
+-----
+
+* Image Histograms
+
+> Images - Objects, Faces, Scans, X-Rays, autonoumous cars
+
+=> Best way to Featurize Image Data is CNN
+
+* Image Histograms :
+  ---------
+   1) Color Histogram :
+      -------
+       -> RGB
+        steps :- 1) All red vals of each pixel & plot Histogram 
+                     \
+                      vals range in 0 -> 255
+
+                    -> We can create vector easily from this of length = 255
+
+                 2) similarly do for green & blue 
+
+       thus for an image :- we've 3 vectors of 255 size
+
+       Eg 
+       -- 
+         1) Sky :- lot of blue pixels
+         2) Sunshine :- lot of red color pixels
+
+         3) Face Detection :- lot of skin color pixels
+
+       => Color Histograms cannot determine Shapes 
+
+    2) Edge Histogram ;
+      -------
+       -> Edge detection is kind part of Image Recognition
+
+       -> Edge can occur in multiple directions
+
+       - So break Image into sub-regions & try to find the angle of edge in those sub-regions
+
+       - then we can plot the histograms for edge-angle/val
+
+=> `Haar` features are one of the advance Image Processing Features
+
+
+* Featurization technique in brief (for Images) :
+  ----------
+
+  - Very Basic & Rudimentary 
+    -> Color Histogram
+       Edge Histogram
+
+  - Advance 
+
+    -> SIFT (for Object detection)
+    -> CNN  (DEEp Learning State of the Art technique)
+
+    

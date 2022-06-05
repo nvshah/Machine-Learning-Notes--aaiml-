@@ -1,0 +1,35 @@
+* train run time GB
+
+
+* Train (GBDT) :
+  -----
+   => O(nlgn * d * m)   // m is #base_models, & d is dimen
+
+   - While RF was trivially parallelizable
+   -> GBDT is not easy to parallelize ( because its serial kinda algo )
+
+   -> So thus GBDT takes more time compare to RF (as GBDT cant be parallelize while RF can)
+
+* Run-Time (GBDT):
+  ------
+   -> To evaluate 1 tree :- O(depth)
+                  m tree :- O(depth * m)
+
+      & depth is small in GB !
+
+   => O(depth * m)
+
+   Space Complexity :- Store each trees  + gamma_m 
+                      { almost same as RF }
+                      ( In RF gamma_m was not there whereas in GBDT its get added)
+
+
+   => because of Shallow DT in GBDT -> it makes it good choice for low-latency application
+
+   -> Thus GBDT is used extensively at internet based companies
+   -  GBDT can work for any kinda loss function
+
+   & It has advantage of small depth in run-time time complexity
+
+
+

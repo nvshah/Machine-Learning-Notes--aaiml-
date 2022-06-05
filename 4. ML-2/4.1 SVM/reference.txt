@@ -1,0 +1,19 @@
+reference
+
+[Primal & Dual Equvalence]
+cs229.stanford.edu/notes2020spring/cs229-notes3.pdf%C2%A0
+
+[Kernel & Feature Engineering]
+https://www.youtube.com/watch?v=itlOae61Oak
+
+[svm interview que]
+https://www.analyticsvidhya.com/blog/2017/10/svm-skilltest/
+
+
+-----------
+
+[diff between Linear SVC & kernel="linear"]
+https://stackoverflow.com/questions/45384185/what-is-the-difference-between-linearsvc-and-svckernel-linear/45390526
+
+[In depth Param Tuning SVC]
+https://medium.com/all-things-ai/in-depth-parameter-tuning-for-svc-758215394769

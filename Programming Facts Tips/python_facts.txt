@@ -1,0 +1,20 @@
+[int internal way] https://rushter.com/blog/python-integer-implementation/
+
+
+-> All int are represented as bignum underhood (via C)
+
+-> random.random() is uniformly distributed random variables (in range 0 -> 1)
+
+-> os.path.isfile('fname') checks if file exists
+
+-> To track time of Code Run :
+      -> 
+            s = time.clock()
+            //....
+            e = time.clock() 
+            d = e - s
+
+* Pickleing :
+  -------
+   -> Create a Binary Stuffs from Python Objects
+   -> dump & load

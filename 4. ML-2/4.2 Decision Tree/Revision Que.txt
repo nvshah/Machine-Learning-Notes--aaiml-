@@ -1,0 +1,21 @@
+Revision Que
+
+Revision Questions:
+
+    How to Building a decision Tree?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3064/geometric-intuition-of-decision-tree-axis-parallel-hyperplanes/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    What is Entropy?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3066/building-a-decision-treeentropy/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    What is information Gain ?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3067/building-a-decision-treeinformation-gain/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    What is Gini Impurity?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3068/building-a-decision-tree-gini-impurity/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    How to Constructing a DT. ?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3069/building-a-decision-tree-constructing-a-dt/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    Importance of Splitting numerical features.?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3070/building-a-decision-tree-splitting-numerical-features/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    How to handle Overfitting and Underfitting in DT?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3073/overfitting-and-underfitting/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    What are Train and Run time complexity for DT?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3074/train-and-run-time-complexity/4/module-4-machine-learning-ii-supervised-learning-models
+     
+    How to implement Regression using Decision Trees?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/3075/regression-using-decision-trees/4/module-4-machine-learning-ii-supervised-learning-models

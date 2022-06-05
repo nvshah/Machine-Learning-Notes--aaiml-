@@ -1,0 +1,5 @@
+state of art techniques
+
+1) YOLO (V3) :- state of the art Obj Detection
+
+2) OpenCV :- Object | Image Detection

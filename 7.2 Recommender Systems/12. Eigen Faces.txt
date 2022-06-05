@@ -1,0 +1,58 @@
+ref :
+[Eigen Faces]
+- https://bugra.github.io/posts/2013/7/27/PCA-EigenFace-And-All-That/
+
+- https://scikit-learn.org/stable/auto_examples/decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py
+
+_____________________________
+
+
+* Eigen Faces
+  ----------
+  (Image Data)
+
+  -> It is the earlier technique used for Image Detection
+  -> Now a days CNN is used more when it comes to Image Data
+
+  - [PCA] technique of MF is used behind Eigen Faces
+
+* PCA & Eigen Faces :
+  -----
+   - Given n image data (ie 64 * 64 = 4096 pixels per each image)
+
+  You can reduce the diemnsion from 4096 ie d -> k, via PCA
+
+  Steps
+
+  1. Flaten or stack each pt's row into single row vector ie You will have n * d matrix
+     where n = # image pts
+           d = 64*64 = 4096 length vector
+
+
+  2. Do Eigen Val Decomposition 
+
+  3. Pick top k Left Eigen vectors (ie Truncated Left Eigen Matrix)
+
+  4. Do matrix transformation is Matrix Multiplication of Original Matrix A (n*d) with Left eigen 
+     Matrix ie (d * k)
+
+     You will get n*k matrix ie k-dimensional vector for each of image point
+
+  NOTE :- Each of your eigen vector is d-dimensional vector
+
+  5. for each row again stack it back to Matrix of Pixel * Pixel Representation
+      ie
+
+* Eigen Faces :
+  ---------
+   The eigen vectors from Left Eigen matrix, when putted/stacked in form of matrix
+   its known as Eigen Faces
+   
+   Faces corresp to Eigen Vectors are known as Eigen Faces
+
+Q) How to decide k ?
+  
+  -> lambda :- represents the amount of variance explained
+         
+
+

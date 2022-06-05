@@ -1,0 +1,10 @@
+CNN End to End Code
+-------------
+
+file : driving_data.py
+
+- train test split := temporal split
+
+Loading batches from train as well as test(validation) data
+-> train_batch_ptr := pointer that helps to peek the next batch from train data
+

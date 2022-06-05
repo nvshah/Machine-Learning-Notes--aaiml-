@@ -1,0 +1,70 @@
+7. CNN Training : Optimization 
+-------------------------
+Sec :- 4.7
+ref :    
+[Deerivative of max-pooling]
+https://www.quora.com/How-are-the-parameters-of-max-pooling-represented-in-the-weights-nodes-of-a-neural-network
+
+--------
+
+
+* Core basic Idea in MLP : (Architecture | Back Propogation)
+   |
+       w
+    X ------> Y -> L(Y, Y`)
+
+   -> dL/dW thus it must be differentiable
+
+   -> As long as I can calculate the partial Derivative or Grad of L wrt W, I can go for 
+      BackPropogation
+
+-> CNN is quite diff than ordinary MLP-NN
+   |
+   Wee've Convolution Layer &
+          Max-Pooling layer
+
+-> For Optimization we need to ensure that this layers are differentiable 
+     (esp inorder to use Backpropogation)
+
+* Convolution Layer : (& Derivate)
+  -----
+   - Convolution Operator
+   - RELU
+
+   -> Convolution Layer := Convolutionn followed by RELU
+
+   RELU is already derivable
+   Convolution Operator is also derivable (as its just enhancement of Dot Product for Matrix)
+
+REMEMBER :-
+________
+   -> In a ConvNet the relation between 1 pixel to another pixel is denoted by the Kernel Matrices
+
+
+* Max-Pooling : (& Derivative)
+  -------- 
+  - We need to check like if Derivative of Max-Pooling Layer is possible ?
+
+REMEMBER :
+  Derivative :- means dy/dx => if x changes then does y changes
+        \
+         let say dy/dx = 0 :=> y do not change as x change
+
+  -> So for derivative from Pooled Layer to Inp Layer :-
+     Just make 1 for those cells whose val is considered whilst Max-Pooling &
+     rest else -> make 0  
+
+  -> Thus we can make Max-Pool Layer Derivable (by some custom tweaks)
+      |
+      Same way we can achieve for Mean-Pool or Avg-Pool as well
+
+
+-> Thus both Convolution Layer & Max-Pool Layer can be made derivable
+   |
+   we can apply backpropagation (for Optimization in CNN as well)
+   |
+   because we can opt for BackPropogation we can use all its machinery
+=> Thus we can use all machinery of MLP in CNN as well (such as SGD, ADAM, ADAGRAD, DROPOUT)
+
+
+

@@ -1,0 +1,8 @@
+4.1 Doubt Suggestion
+-------------
+
+1) For Productionization !!
+   ---
+    -> Can we opt for Cross Platform Approach
+       - as nowadays it seems for feasible soln via (Flutter | React Native | KMM)
+       - Platform Agnostic Way

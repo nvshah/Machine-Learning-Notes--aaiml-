@@ -1,0 +1,6 @@
+ML basic floiw tips
+
+- always seek for data source type ie csv | sqlite
+
+- check for duplicates 
+- transform data if required ie encodings | scalinngs

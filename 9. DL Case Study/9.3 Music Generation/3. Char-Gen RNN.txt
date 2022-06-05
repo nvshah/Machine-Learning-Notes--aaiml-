@@ -1,0 +1,34 @@
+ref : http://karpathy.github.io/2015/05/21/rnn-effectiveness/
+
+3. Char-RNN
+-----------
+
+- Music as Seq of Characters
+  We want our Model to learn Pattern in this Seq
+  &
+  after learning generate some Seq for us
+
+* Char-RNN:
+---
+- special form of RNN
+
+Properties
+1. Char RNN is built out of characters &
+
+2. It's many to many RNN Archi.
+   where every inp has its respective output.
+
+[BEHAVIOUR]
+3. In char-RNN, for a given layer
+   given some inp character, we want to predict the next possible character in sequence
+
+-> next character I should find in the seq.
+-> What is the next probable character based on the pattern in this data so far.
+
+=> If Char RNN learn such patterns then we can generate music notes
+
+
+----
+Application
+
+- Generating baby Names

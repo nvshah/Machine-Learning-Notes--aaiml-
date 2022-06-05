@@ -1,0 +1,102 @@
+----------
+
+______
+REMEMBER : 
+
+-> Matrix Factorization is used in Collobaritve Filtering to predict the unavailble ratings
+   via using the available ratings
+
+- Completed matrix :- Approximation to Incompleted Matrix via Optimization & Decomposition
+
+
+----------
+
+* MF for Collaborative Filtering
+  ------
+
+  Goal :- Fill the values using exisiting values
+
+  Idea :- use the information (ie A_ij) available from given matrix to predict the information for
+          unavailable cells
+
+          Use the ratings provided by the users for movies to predict the ratings for unseen movies 
+          by those users
+
+          ( & then based on that we can prefer/suggest the movies with highest predicted ratings to corresp users)
+----
+
+* Let matrix between user & Item ie Ratings be A
+
+  NOTE :- matrix is sparse i.e there are mmany empty cells
+
+  Let A be decomposed into product of 2 Matrix s.t. 
+
+     A = B * C^T   
+        - where B :- n*d dimen
+                C :- m*d dimen
+                A :- n*m dimen
+
+          where d > 0 & d <= m & d <= n
+
+
+     A_ij = Bi^T * Cj 
+        - where Bi^T :- ith row of B matrix
+                Cj   :- jth row of C matrix
+
+    So to Find B & C we can use optimization technique
+
+* Optimization Problem :
+  ----
+    => Fill or predict the values using Optimization Problem
+
+   	argmin Sum(A_ij - Bi^T * Cj)^2
+
+   	     - where i,j s.t. A_ij is not empty
+
+   	We need to find full B & C matrix
+
+   	-> Ideally we want A_ij = Bi^T * Cj  // So diff between them is error
+
+    => So instead of using all the cells of A_ij we are using only the one which are non-empty
+       & 
+       We are trying to minimize the Square-Loss for them
+
+    => If this optimization is not very hard or NP-hard then we can solve it using Stochastic Gradient Descent method
+
+    So SGD can be use to solve above Optimization problem
+
+    Step-1) Find Bi & Cj for corresp non-empty A_ij
+              \
+               via optimization technique (such as SGD)
+               NOTE :- here instead of scalar val we are finding optimal vectors
+
+    Step-2) Form B & C matrix from Bi & Cj
+                \
+                 B -> n * d dimen
+                 C -> m * d dimen
+     
+    Step-3) Now form new Matrix A_hat = B * C^T
+           
+          Completed Matrix
+                 This new matrix {A_hat} is called as Completed Matrix
+               
+               - Initially {A} is sparse matrix i.e many cells are empty ie So its not completed matrix
+
+               So we use Decomposition + Optimization Problem Technique to approximate the Completed Matrix for {A} ie {A`} using the non-empty cells in original A
+
+* Matrix Factorization Optimization Model :
+  ----------
+   -> Use to predict the empty cells in Matrix A (of user-item interaction) via approximating the completed matrix
+
+   A -> actual ratings
+   A` -> predicted ratings  // completed matrix
+
+   Model says :- break the actual Matrix A into product of 2 Matrix ie
+      \
+       -> A := B * C^T
+            &
+          Try to Fill the values using the optimization problem i.e A`s
+
+Thus :-
+  -> Matrix Factorization is used in Collobaritve Filtering to predict the unavailble ratings
+   via using the available ratings

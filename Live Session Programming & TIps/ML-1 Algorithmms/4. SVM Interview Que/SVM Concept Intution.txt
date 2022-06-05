@@ -1,0 +1,116 @@
+SVM Concept Intution 
+
+--------
+- libsvm is popular for svm tasks in python
+
+- Incorrectly classified Outliers may affect the Support Vectors
+
+---------
+
+* SVM :
+  ---
+   -> SVM is for Convex Optimization (1 Minima)
+   -> everything should converge to 1 global minima (Theoritically)
+
+SVM Core Idea :
+------
+ -> Try to Mmaximize the margin between support Vector Points of both classess
+        \
+         Support Vector Points = Boundary points for Both Classes
+
+    But at same time Try to minimze the MissClassified Points Distance from their respective Support Vectors
+
+    so Here Loss Func :- Hinge Loss :- Will take Care of miss-classification minimization problem
+          &
+            Regularization Term :- Will take care of Marginn Maximiation Problem
+
+            & Will keep good tradeoff for Margin maximization (via Regularization) & 
+              MissClassification Minimization (via Hingle Loss)
+
+* Margin :
+  -----
+   - More Margin is better as it improves the Test Performance &
+     It helps in Generalization
+
+
+* Support Vectors :
+  -----
+   - All the Points for which alpha_i is > 0 (in dual form)
+
+   -> All the points inside margin are Support Vectors Points
+      All the points that are miss classified are also Support Vectors points
+      All the points that are on boundaries are also Support Vectors
+
+* Primal Form :
+  ----
+   - Aims on Finding & Solving things without Aid of Kernel Function 
+   - It just make Dot Product of Point with Weight Vector
+
+
+* Primal vs Dual Form :
+  ------
+  In Primal Form :
+      - We need Point necessarily, & There we do Dot-Product of Point with Weight vector W ie (W.T*Xi)
+
+  Whereas
+
+  In dual form :
+      - We are leveraging the Similarity or Relation between Points. 
+      - So we can use Kernel Function for such pairs of Points
+
+* Logistic Reg or SVM & Calibration :
+  ---
+   In real-world : 
+   Whether its a Logistic Reg or SVM, We take real-valued output & put it through Calibration Model
+   to test its probabilities
+
+* SVM RBF - Kernel & Nearest Neighbor Relation ?
+  ----
+   -> Parameter :- sigma
+
+      If sigma is small :- then points which are closer will be treated as similar
+                           (its similar to as K becomes smaller in KNN)
+
+      If sigma is larger :- Then points which are farther (comparatively) are also considered for 
+                            similarity
+
+* The effectiveness of SVM depends on ?
+  ----
+   ->
+    1.Selection of Kernel 
+        - It is also one kind of Hyper-Parameter
+    2.Kernel Parameters
+    3.Selection of Optimizaer (SGD or SMO)
+
+
+* SMO is Optimizer :
+  ------
+   -> Design for SVM
+
+* Kernelizationn = Automatic Featurization in case of SVM
+
+* kernel Logistic Regression :
+  ------------------------
+
+* Reduce RunTime of SVM for Low-Latency Application : 
+  -----
+   (Model is already trained)
+   Run time complexity in SVM :- depends on Support Vectors
+
+
+* SVM - Kernalization :
+  ---------
+   = For given Point, (xq)
+       \
+        - Find the distance of that point from support vectors inorder to find the side it belongs to
+        - So only support vectors are used in deciding the query point belonging
+
+   -> SVM(kernalized) = KNN (but with shrunken space for comparing the distance/simmilarity)
+
+
+* Primal to Dual :
+  -----------
+
+* SMO :
+  ---
+   - libsvm uses SMO techniqye for Optimization

@@ -1,0 +1,46 @@
+* RS Types
+
+------
+REMEMBER
+
+-> Content based filtering is very similar to Classif/Regression except for Featurization part 
+
+------
+
+* Content based RS & Collabarative Filtering RS :
+  ----------
+
+* Collabarative Filtering :
+  --------
+   - based on user's pattern suggest system(movie)
+   - uses collabarative data that user's shared
+
+   Core Idea :- 
+      - User's who agreed in the past tend to also agree in the future
+      - Collaborate user's nature
+
+   So decision for each user may involve study & obsv from diff user's interest
+
+
+* Content based RS :
+  -------
+   - more like Classif & Regression
+
+   - used cell val ie A_ij info
+     and also we use some meta_info
+
+   Eg Movie Category : action, drama, horror, sci-fi
+
+   user like particular genere of movie & based on that we do recommedation
+   -> Based on the content of the movie or based on the content of User we do filtering
+
+   So decision for each user depends on user's activity itself from past
+
+   So if you have innformation about Movie or Product & if you have information about User alongwith 
+   User's ratings
+   You can used Content Based Recommended System
+
+=> Thus if you have information about User's & Movie alongwith Ratings then you can pose it as a 
+   Standard classification/Regression Problem
+
+=> Content based filtering is very similar to Classif/Regression except for Featurization part 

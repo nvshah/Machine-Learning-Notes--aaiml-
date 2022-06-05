@@ -1,0 +1,207 @@
+* Note 2 Classification Various Scenarios 
+
+
+Topics : { Train Test set diff, Outliers Impact, LOF}
+
+_____________________________
+
+=> Distribution similarity of an data is pivotal factor for test & train data while evaluating a model 
+
+-> Any model is easily understood by looking at decision surface
+-> lesser value of K is more prone to outliers
+
+------------------
+
+density : #points in unit area  
+______________________________
+
+* Train Test Set Differences :  (#Ditribution issue)
+  ----------------
+    -> When data is splitted Randomly then there is not much problem
+
+    TBS - can face problems:
+    --------
+       - problem with test + train split
+
+     -> inn TBS :- data is splitted based on the freshness of data
+         \
+          What if data changes considerably (between test & train set)
+           |
+           Eg if in train set - data contains something related to non-alcholic products, majorly
+              but
+                 in test set - data do contains relevancy with alcholic products 
+                               (Eg adding Wine product, recently)
+
+     - underlying data change
+     - D_train & D_test are fundamentally different
+     - distribution change to diff region (i.e for D_train to D_test)
+          \
+           Due to this model performs very badly 
+
+    So distribution of data itself may change (ie from D_train to D_test) & due to this model performs
+    very badly
+     i.e Cross Validation Error = low but
+                   Test Error  = high
+
+                   or 
+
+         Train Error = Low
+         Cv error = High   
+
+    So when you get such scenario like 
+       CV-error = low
+       Test-Err = high
+
+    then check 1) Distribution of Test & Test Data
+                  Do D_train & D_test have same the same distribution
+
+    => If distribution of train & test are changing so fast (i.e with time), then no model can do best/good
+
+    Q) How to determine if data is changing over time such considerably
+       How to check if D_train & D_test have the same distribution or not 
+
+
+    * Determine if D_train & D_test do not have same distb :
+      -----------------------------------
+            1. Assuming both the train & test have diff distribution totally, initially)
+            2. then using binary classifier check how probable our estimate is via checking accuracy 
+               metric
+               if accuracy is high then our speculation is correct i.e both are sperable
+                              low  then weaker our speculation is likewise.
+
+       S-1) Create new Dataset D` - train :-  Yi` = 1 & Xi` = concat (Xi, Yi) in D_train
+                                    test  :-  Yi` = 0 & Xi` = concat (Xi, Yi) in D_test
+
+       S-2) Using any binary classifier on D`   (it may be logistic, KNN, etc...)
+              \
+               this will try to sperate train on one side & test on other side
+               & the overlap region - don't know
+
+               So if the accuracy = 70% means 30% data lies in overlap region (& gets ignored)
+
+               binary classifier :- f(x) -> +1 or 0
+
+              1) Case 1 - almost overlapping
+                > If train & test data are almost overlapping i.e
+                  - then accuracy would be low
+                  - distributions are very similar
+
+              2) Case 2 - medium overlapping
+                > - binary classifier accuracy is medium
+                  - distb are not very similar
+
+              3) Case 3 - less overlappinng
+                  - accuracy is high
+                  - distb are very different
+
+
+              Thus to determine if train data & test data are coming from same distb,
+              We can use any classifier with small modifications
+
+              Modification is : Assume that Both Train & Test Have diff distb, initially
+                                & try to prove it wrong 
+              & 
+              When accuracy is high => Overlapping is less => Speculation is strengthen => diff distb
+                               low  => Overlapping is high => Speculation is weaker => similar distb
+
+        So If D_test & D_train distb are not similar => features are changing with time
+        => Features are not temporally Stable
+              |
+              In such case whta to do ?? -> change your features or design|build new features
+
+      In a nutshell, we change Dn to Dn', by mixing Dtrain and Dtest, such that Dtrain is represented by a class label 1 and Dtest is represented by a class label 0. We then ask the classifier to separate the points in two classes. If they get well separated, they are highly dissimilar.
+
+
+* Impact Of Outliers :
+  ------------------
+   - Any model is easily understood by looking at decision surface
+
+   Consider KNN :- 
+       lesser value of K, - is more prone to Outliers/Noise
+                          - impact of outlier is big
+
+       Prefer large value of K, if there is tie in accuracy, (as large val of K is less prone to Outlier)
+   
+   => Or If you can detect Outliers, then remove them 
+         but 
+             If it's 2D or 3D then you may have chance to detect it visually
+             But if its 10-D or 1000-D then you can't visually detect outliers easily
+
+        There is 1 technique to detect outliers :- `Local Outlier Factor`
+
+* Local Outlier Factor : (LOF)
+  ---------------------
+
+   1. Outlier detection using avg-distance :
+     -------
+      - take any val of K in K-NN
+	  - calculate K neighbours for each point & find avg-distance
+	  - sort the avg-distance in incr order
+	  - the largest distance will be outlier 
+
+	  Problem :- Cannot detect all outliers (i.e Outlier belong to dense grp)
+
+	  			 NOTE :- In real world all data will not grp into single grp
+	             If there are groups such as Sparse & Dense groups &
+	             Outliers corresponds to both grp
+	            -> then outlier to dense grp may not get detect but outlier of sparse grp will be 
+	               detected 
+
+	            -> Problem is that outlier is not detected based on grp density for which it was detected 
+	               as an outlier
+
+   Workaround :- need to capture or consider what local density is !!!
+
+   2. LOF :
+     ----
+       => It just aim to idenify so recognize those densities which differs by considerable ratio
+          or value
+       -> It is inspired from K-NN 
+
+       k-distance(Xi) = distance to K-th pt from Xi
+       Neighbour (Xi) = set of all K neighbours of Xi
+
+       reachability-distance (x, y) = max(k-dist(x), dist(x, y))
+
+     => local reachability density : lrd(Xi)
+             - # points in some unit area  
+                 (inverse of avg reachability distance of given pt to its K neighbours)
+
+             - Intutively it will calcuate density, for any point in its locality
+
+       ( LOF is associated woth lrd )
+
+     => local outlier factor : lof(Xi)
+             - avg lrd of points in neighbourhood of Xi *  1/lrd(Xi)
+
+            1) LOF - high
+                \
+                 -> If density of points in my neighbourhood is large 
+                    & density in my locality is small
+
+            2) LOF - small
+            	\
+            	 -> If density in my locality is large (ie there are many points near me)
+            	    & density of points in my neighbourhood is small
+
+            SO if LOF is High - Outlier
+                         Low  - Inlier
+     
+     -> If reachability-distance is small then lrd i.e density may be large but its not sufficient
+        to determine outliers 
+
+        LOF will solve the sparse-dense group outliers issue as it will be able to idenify density 
+            diff of outliers for both type of group
+
+     Steps :-
+     ------
+       1. calc LOF for all pts
+       2. determine thresold LOF ( > thresold val will be considered as outliers)
+
+       Where to set thresold ?? -> no exact ans
+           -> Domain specific
+
+    => Interpretability of LOF is not neat or well 
+       (i.e if LOF is large then its bad but how much bad it is  !!!)
+
+

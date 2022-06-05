@@ -1,0 +1,34 @@
+1. Intro Problem
+--------
+
+-> Used Generally
+   - Cameras [Front, Rear, Side]
+   - LIDR Sensors // to obtain 3D geometry around
+   - GPS System
+   - Ultrasonic Sensors
+   - RADAR
+
+Inputs
+
+=> All of these sensors provide inps
+   All of inps goes to Computer
+
+- Sensory Inputs -> Computer
+
+Output :-
+
+=> Steering Wheel Angle, Break, Accleration/Speed
+   Side-Indicators, Vipers, etc...
+
+NOTE :- Auto Transmission System (ie No Manual Gears)
+
+--------
+
+* Simplified Minimal Version of Problem :
+  ---
+   - if someone give you front camera feed/video
+     |
+     predict Steering Angle
+
+   -> Simplified Task would be
+      - Given Seq of Images => predict Seq of Steering Angles Decision

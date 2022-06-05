@@ -1,0 +1,34 @@
+some unique new laws
+
+Dirac-Test
+Zipf's law
+
+Laplace Smoothing
+
+Hughes Phenomenon  (dimen performance correspondence)
+Laplace Smoothing  (for Numerical Stability of Fractional Numbers)
+
+Voronoi Diagram
+
+Pertubation Technique  // To find collinearity betweenn 2 Features (via noise reshaking)
+
+RANSAC Technique     // to make model robust esp when there are large numbers of Outliers
+Lagrange Multiplier
+
+Convex Hull // in algo & in polygon
+
+Mercer's Theorem   // Kernel-Trick
+
+// for comparing or finding dist between 2 distb
+KS-Statistics
+KL-Divergence 
+
+Emperical Risk Minimization  // framework in stats ML 
+
+Radons theorem  // 4 pts cannot be shattered by linear Model
+
+AD-Test  // Aanderson Darlic Test for Gaussian Distribution
+
+jaccard distance  // for sets similarity chances prediction
+
+Cosine Distance (Otsuha Ochiai Coefficient)  // For sets similarity eq to cosine dist

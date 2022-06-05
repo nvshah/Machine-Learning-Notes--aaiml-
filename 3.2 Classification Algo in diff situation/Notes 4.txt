@@ -1,0 +1,147 @@
+Notes 4
+
+Topic : { Handling Categorical & Numerical Features
+          Missing Value Imputation }
+
+
+-> numbers have an inherent order (i.e they are called as ordnial)
+-> Sparse & large vectors are not always best things
+
+=> BOW & one-hot encoding are relative in terms of idea
+
+-> In python missing data = NaN
+
+=> Missing val can also be a source of information
+
+=> KNN is often used for Model based Imputation
+
+-> Model based imputation takes significantly more time than others technique
+__________________________
+
+
+* Categorical & Ordinal features :
+  ---------------------------
+   given features possess some numerical & some categorical
+
+   If we convert categorical into numerical -> then Ordering also get artifically generated 
+                                               (as numbers have order inherently)
+                                               Thus artifical order gets generated
+
+   So converting categorical features into a numerical features is not a good idea (as some relation gets introduced i.e order relation)
+
+   2) One-Hot Encoding :
+      -------------
+      - technique to encode categorical random variables 
+
+      - convert feature to a binary vector of size = #categories in that feature
+
+      NOTE => BOW & one-hot encoding are relative in terms of idea
+      
+      Problem :
+      	Lousy when there are many categories vals in features
+        	ie for 1 pt require large size binary vector
+
+        - dimensionality will incr
+        - vector will be almost sparse
+
+      Solution (may be):
+
+   3) Mean Replacement :
+      --------------
+        - to convert Categorical feature
+        - It is very very objective-specific (problem-specific)
+
+        - replace that col vals with avg val of predicted-var (output-var) category-wise
+          i.e
+          mean-val of y_i (output feature to predict) for each category of that column
+
+          Eg 2 [objective : predict height]
+          		cols y_i = country & y_j = height <- output feature 
+          		 then replace country col with country_height (i.e mean val of height for each country)
+
+
+   4) Domain Knowledge :
+      ----
+       -> to convert Categorical feature
+       -> requires well knowledge (& relativity concept)
+
+
+   5) Ordinal features :
+      --------------
+     - features that can be ordered
+     - Categorical features which can relate with ordinal vals (i.e orderness)
+     - Categorical feature & logical Ordering among them so can be converted to numerical feature
+
+       Eg ratings feature :- {v.good, good, bad, v.bad}
+
+                             {4, 3, 2, 1}
+                             {10, 6, 4, 2}
+
+        Problem :
+        ----
+          How to give this numerical values
+
+
+* Missing Value Imputation :
+  --------------------
+   => In real world there are lots of missing val
+   -> missing val in features/col
+
+    - Data Corruption
+    - Data collection error
+
+    - filling missing val techniques (3) :- 
+
+    *) Imputation :
+       -----
+        - done as a preprocessing step
+        - replace with something
+
+        -> { Mean, Median, Mode }
+
+        2) Mean Imputation (For Class Label):
+           -----
+        	* If Classification 0, 1
+          
+           	  Then do mean replacement based on class-label i.e 
+              	If Xi -> f3 missing then 
+                    if Xi -> yi = 1 => mean of f3 for all pts that have label = 1
+                                = 0 => mean of f3 for all pts that have label = 0
+
+              => mean imputation of relative population instead of entire population (in case of 
+                 classification problem/objective)
+
+
+        3) New missing value feature
+           -----
+            Missing feature val can also be a source of some information sometime
+
+             - create a new binary data-matrix with same size as original one
+               this binary matrix will keep record/track of val missing or not in original dataset
+               (Whether inn original data this was missing or not !!!)
+
+             - Impute the original matrix
+
+            As missing val sometimes can be informative, we can use binary matrix to check whenever required.
+
+        4) Model based Imputation :
+           ------
+            -> try to predict missing val using model-algorithm
+                  \
+                   treating that column which has missing val as to be predicted feature
+
+            -> Convert particular feature/col where there are missing val as predicted feature /column
+               & try to put missing val pts in test set
+                 train with available pts & then predict missing val
+
+            For classification - KNN 
+                Regression     - Any regression model
+
+            => KNN is often used for Model based Imputation 
+                \
+                 As it has concept of neighborhood & relative assumption
+
+            => Takes significantly more time to run.
+
+
+

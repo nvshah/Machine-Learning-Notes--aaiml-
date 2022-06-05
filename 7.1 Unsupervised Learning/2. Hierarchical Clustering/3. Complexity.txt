@@ -1,0 +1,7 @@
+3. Complexity
+
+* Space Complexity :- O(n^2)
+
+* Time Complexity :- O(n^3), => O(n^2 log(n))
+
+-> Thus Hierarchical Clustering is not very useful when n is very large

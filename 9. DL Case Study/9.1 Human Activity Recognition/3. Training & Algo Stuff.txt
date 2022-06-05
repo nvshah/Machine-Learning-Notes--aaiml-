@@ -1,0 +1,83 @@
+3. Training & Algo Stuff
+---------
+
+Tip :- Always Check if Model is Converging during Training
+
+-------
+File -> HAR_Prediction_Models.ipynb
+
+1. We have function to plot Confusion Matrix
+2. A func to print stats & classf report
+
+ML - Handcrafted Engineered Features
+
+-- Applying Diff Model ---
+
+
+1. Log Reg
+2. Lr SVC
+3. Kernel SVM (RBF)
+4. DT
+5. RF
+6. Gradient Boosting
+
+[Summary by ML]
+=> OVerall all 561 feature are very good in classif.
+   There is only Confusion for Sitting & Standing
+
+   Tree based model are not working well
+
+-> Still there is confusion (between Sitting & Standing)
+    |
+    - So if new special feature can be design ? - to differentiate Sitting & Standing
+
+    - or you can go for Deep Learning !!
+
+* Why DL :
+  ------
+   -> because DL can automatically engineer fetaures for us (just from raw time series data)
+
+
+--------------------
+DL - on raw Features
+
+File -> HAR_LSTM.ipynb
+
+* LSTM :
+  ----
+  - train LSTM on raw Time Series Data
+  - Simple Archi
+
+  Task : 6 class classif
+  Data :- 9 time series data (6 from gyroscope & 3 from accelerometer)
+  #DataPts (ie Windows) := 7352
+
+  Window & Time :
+   - as we have decided to take some window & process that signal
+   - so at any time T, we will have 9 such windows
+
+   - So we will take that Raw data from that window at any timestamp T
+
+   - We've encoded these windows as 128 timestamps data
+   - We will have 128 timestamps in each window &
+     At each time -> we will have 9 Recordings (Windows)
+
+     9 readings corresp to 9 windows at every timestamps
+
+     So Inp Dimen = 9
+
+  -> total 7352 points & this points are Windows
+     thus #windows or timestamps = 7352
+
+  - 1st Layer := 32 parallel LSTM   // 1st Layer -> Drop -> Dense
+
+
+Q) Why we use Dropout ?
+----
+ -> If we won't use then our number of total points (ie 7352) would be very close to
+    #params (ie 5K or 6k)
+
+ -> So we use Dropout to reduce or control #params (from growing relatively to #inputs)
+    thus preventing the Overfitting
+
+NOTE :- given constraints of only 7352 data pts, it's pretty good DL (simple) model

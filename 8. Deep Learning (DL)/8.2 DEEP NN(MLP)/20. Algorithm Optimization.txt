@@ -1,0 +1,51 @@
+20. Algorithm Optimization :
+-----------------------
+ref :
+[Word2Vec] https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/
+
+
+----
+
+* Problem with CBOW & SkipGrams :
+  ----
+   - Millions of Weight Computation
+      \
+       Take lot of time
+
+
+* Soln :
+  ---
+  1) Hierarchical SolnoftMax (Algo)
+  2) Negative Sampling (Probability|Stat based)
+
+
+=> In both the case of CBOW & SkipGram, harder part is SoftMax Computation
+
+----
+
+* Hierarchical SoftMax :
+  -----
+  idea :- somehow modify v softmax to make it optimal
+
+  Binary Tree
+  ---
+  - place each word of vocab as leaf node of tree
+  - Binary Activation Unit
+
+
+  Hierarchical Idea :
+  --
+   - instead of v-softmax unit we will need log(v) softmax unit
+   - instead of using linear methods binary tree based methods are efficient
+
+
+* Negative Sampling :
+  ------
+   - At the end we need to update (in back direction)
+
+   idea :- Update only sample of Words per iteration
+           not update everything
+
+   Update only sample of words S.T.
+    1) Always keep the target words
+    2) Amongst the Non-Target words, sample them based on the  sampling Frequency of Words

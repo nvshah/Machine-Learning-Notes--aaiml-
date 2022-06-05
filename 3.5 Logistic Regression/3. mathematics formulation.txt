@@ -1,0 +1,175 @@
+
+----------
+
+- F(x) = X^2  // Parabola
+
+=< In Optimization
+   argmin(f(x)) = argmax(-f(x))
+
+-> The optimization problem eqn differ slightly in 2 diff approaches
+     ie via geometry
+        via probabilistic approach
+
+----------
+
+-> Optimization Remember Points :
+    The x that minimizes f(x) is the same that maximizes -f(x)
+
+-> actually the optimization problem of Logisitc Regression is 
+   a small change using exponent & log over sum of sign-distances
+
+   You make Sum OF Distance eqn robust by adding log & exponent terms
+
+----------
+
+NOTE : We are reaching the optimzation problem use geometry approach
+
+* Optimization Problem :
+  ------ 
+    argmax([sum(sigmoid(sign_distance))])    // Given sigmoid is monotonic function
+
+
+* Monotonic Func :
+  -------------
+   => Strictly increase or Strictly decrease
+   
+   As x incr, f(x) should also incr  // not necessary linearly
+        incr,                  decr  // strictly decr
+
+   1) Log(X) :
+     -----
+      -> Monotonic Func (asa x > 0)
+
+   2) X-Squared :
+     ------
+       -> X^2 is monotonically incr when x > 0
+          X^2 is monotonically decr when x < 0
+
+
+   3) Let say f1(x) = x^2          // monotnic func conditionally
+              f2(x) = log(f1(x)) 
+
+              X* = argmin(f1(x))    // minimization of f1(x)
+              X` = argmin(f2(x))    // minimization of f2(x)
+
+              X* = X`
+
+              Why ? -> let say x is min => f1(x) will be min at X*   // Monotonic funcn
+                    ->                  => f2(x) will also be min at X`  //as Monotonic func
+
+                    Thus X` = X*
+
+             -> Thus minimization doesnt see growth 
+                  i.e monotonic doesnt see how diff func grows 
+                	  but it checks behaviour 
+
+    Theorem 1: - (Monotonic Function)
+    ________
+     If g(x) is a monotonic function
+        \
+         then argmin(f(x)) = argmin(g(f(x)))
+              argmax(f(x)) = argmax(g(f(x)))
+
+ -> So Now Using this theorem we can translate/transform our optimization problem further
+
+    Let g(x) = log(x)  // thus log(x) is monotonic function
+
+     So opt_old = argmax([sum(sigmoid(sign_distance))])   // f(x) = sigmoid(sign_dist)
+                 |
+        opt_new = argmax([sum(log(sigmoid(sign_dist)))])
+
+           // putting all values  ie sigmoid(sign_dist) = 1 / (1 + exp(-Yi*(Wi*X)) => 1 / B
+
+                = argmax([sum(log(1/B)))])
+
+           // log(1/x) = -log(x)
+
+                = argmax([sum(-log(B))])    // B = 1 + exp(-Yi*(Wi*X))  
+
+
+    Theorem 2 :- (Optimization Rule)
+    ------- 
+      Generally In Optimization
+
+      -> argmin(f(x)) = argmax(-f(x)) 
+
+      The point x tha minimizes the f(x) is the one that maximizes the -f(x)  
+
+      -> argmax(f(x)) = argmin(-f(x))  
+
+      Eg f(x) = X^2     // x = 0 min
+         -f(x) = -X^2   // x = 0 max
+
+     So now let use Theorem 2 in optimization Eqn
+
+     So eqn = argmax([sum(-log(B))])  // B = 1 + exp(-Yi*(Wi*X)) 
+
+       eqn2 = argmin([sum(log(B))])   // via Theorem 2
+       	    = argmin([sum(log(1 + exp(-Yi*(Wi*X)))])   // Final Optimization Eqn
+
+
+* Final Optimization Problem : (via Geometry)
+  ---------------
+
+   task := argmin([sum(log(1 + exp(-Yi*(Wi*X)))])   // Yi is -1 or +1
+
+    Grokking this task (ie optimization eqn)
+    ----
+     -> If 1 was not present then log & exp would cancel out each other & 
+        Eqnn would be 
+
+           argmin([sum(-signn_dist)]) = argmax(sum(sign_dist))
+
+      => So Its nothing but maximizing the sign_distances intutively
+    
+    (Idea)
+
+    => So actually the optimization problem of Logisitc Regression is a small change using 
+       exponent & log over sum of sign-distances
+
+       But Actually Idea is same 
+
+       & We solve final Optimization problem & not Sum Of Signn_distance problem
+
+	   Thus Optimized Problem Eqn = Sign_distances + (log, exponent)
+
+  NOTE :- Sum_of_Sign_Distances gets impacted by Outlier much
+	      new_optimized_eqn gets impacted by Outlier less comparatively
+
+  => The final optimization problem is arrivied at using geometrical notion & intution
+
+  
+* Another Formulation for Optimization Problem (via probbaility Notion)
+  ----------
+   1) Via geometrically we arrived at :-
+
+   task := W* := argmin([sum(log(1 + exp(-Yi*(Wi*X)))])   // Yi is -1 or +1   via geometrically
+
+   2) Via Probability :-
+
+   task := W* := argmin([sum(-Yi*log(Pi) - (1-Yi)*log(1-Pi) )])  
+
+                     Where Pi = sigmoid(W^T * X)  // sigmoid(projection | distance)
+                              = sigmoid(distance)
+
+                           & also Yi is either 1 or 0
+   
+   (Observation)
+
+   Note via geometry :- Yi is either -1 or 1
+          probabiity :- Yi is either 0  or 1   
+
+
+    NOTE : The probabilistic way seems similar to Log-Loss function   
+
+
+   3) Loss Function Way also will lead to same formulation as via geometry    
+
+
+
+
+
+
+
+
+

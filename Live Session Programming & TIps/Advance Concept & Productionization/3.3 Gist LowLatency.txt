@@ -1,0 +1,44 @@
+3.1 Gist LowLatency
+---
+REMEMBER
+
+Real Time & Low latency :-
+ -> For training of Model, Real-Time doesn't mean milliseconds,
+    It may go upto minutes (ie let say 10 mins as well)
+
+----
+
+- Batch vs Real-Time Prediction
+
+- Static vs Dynamic Features
+
+- Model Compression
+- Knowledge Distillation
+
+
+---------
+
+For Productionization : (2 ways)
+ ----------
+  - 1. Fast Inference
+         \
+          C|C++
+          model Compression | Quantization
+
+    2. Low-Latency Pipeline
+    	 \
+    	  Offline (Spark)
+    	  Online (Kafka)
+
+
+* Low-Latency Model-Change :- Continuous Learning
+  --------
+   -> Continuous Learning
+        \
+         Online Learning
+
+- Stateless vs Stateful Training
+- Misclassified & Just Classified Points
+
+- Model Updation | Incremental Learning | Model Transfer Learning
+

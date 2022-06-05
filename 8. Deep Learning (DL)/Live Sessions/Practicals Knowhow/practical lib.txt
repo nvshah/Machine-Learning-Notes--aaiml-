@@ -1,0 +1,44 @@
+practical lib
+
+* keras
+  - Sequential()
+
+
+  - utils.plot_model   // very useful to visualize the layers
+
+    utils.to_categorical()  // one hot encoding
+
+  - SparseCategoricalCrossEntropy()
+
+  - callbacks.ModelCheckPoint()  // to save model at end of every epoch
+
+attrib on model instance :
+  - summary()
+
+  - evaluate()
+  - load_weights()
+
+
+* tensorflow
+
+ -> tf.keras.backend.clear_session()
+    tf.keras.models.load_model()
+
+
+* h5py :  // to checkpoint & store the models
+
+
+-----------
+
+* tensorboard :
+  ---
+   - When model is getting trained, it writes to a log file at each epoch
+
+
+----
+
+Remember :
+
+- param :- from_logits  // bool
+             |
+              -> check if need to convert to probability after final output

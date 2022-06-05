@@ -1,0 +1,10 @@
+commands Jupyter NB
+
+-> cd   // change directory
+   ls   // list all files
+   cat   // see content of file
+
+
+-> pip install -r requirements.txt
+
+-> ffmpeg  // to break audio into parts

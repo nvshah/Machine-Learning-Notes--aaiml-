@@ -1,0 +1,30 @@
+=> random_state is just to simulate deterministic output from random behaviour library
+   every time operation is performed
+
+
+-----------------
+* sklearn
+  	\
+   	neighbours.KNeighbourClassifier
+   	            \
+   	             fit()              // find NN for given K & prepare KNN algo
+   	             predict()          // deterministic output
+   	             predict_proba()    // probabilistic output
+
+   	cross_validation
+   	   \
+   	    train_test_split()    // 
+   	    cross_validation_score()   // k-fold CV using provided model & it will determinine
+
+   	metrics.accuracy_score()
+
+
+* matplotlib
+   \
+    colors.ListedColormap   // creating a grid
+
+
+ * numpy 
+     \
+      meshgrid
+

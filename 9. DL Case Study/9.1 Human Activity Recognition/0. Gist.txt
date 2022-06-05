@@ -1,0 +1,9 @@
+0. Gist
+-----
+
+-> Given Time Series Based Data, Recognize the human Activity (6 activities)
+
+-> Learnings :-
+    1) Via ML models
+
+    2) via DL approach

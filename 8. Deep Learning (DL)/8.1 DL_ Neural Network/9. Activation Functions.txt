@@ -1,0 +1,67 @@
+9. Activation Functions
+----------------------
+ref :- Blog -> Ronny Restrepo  (http://ronny.rest/blog/post_2017_08_10_sigmoid/)
+    :- Pdf : https://drive.google.com/file/d/1o0B3sPwiC8aCp4a_locFfSD9753CA-tm/view
+----
+
+
+----
+
+-> Derivative of Sigmoid Fn is represented in terms of Sigmoid Fn itself
+
+=> You can't have Activation Function that is not Differentiable
+____
+
+* Earlier Popular :
+  ---
+  1. Sigmoid 
+  2. tanh
+
+* Activation Fn :
+  ----
+   -> needs to be differentiable
+   -> better as much as its easy to differentiate
+
+* (1) Sigmoid Func :
+  ----------------
+   -> The same function which we used in case of Logistic Regression to Squash the input
+
+   -> From pure differentiation perspective, Sigmoid Fn has several advanatages
+       \
+  (MIMP**)-> Derivative of Sigmoid Fn is represented in terms of Sigmoid Fn itself
+
+   * Sigmoid & Derivative | Plus :
+     -------------------
+      -> As derivative of sigmoid can be expressed in terms of sigmoid itself
+         |
+         You can utilise this during both ie forward & backward propogation
+
+      => derivative of Sigmoid states that how fast does Sigmoid function is changing !
+
+      -> Property :- 0 <= d(sigmoid)/dZ <= 1
+
+* (2) tanh function :
+  -----------------
+    d(tanh)/dZ = 1-tan^2(Z)
+
+    -> tanh also squash the inputs in some range alike sigmoid function
+
+    -> tanh outputs the val in range -1 to +1
+       whereas
+       sigmoid outputs in range 0 to 1
+
+    -> derivative of tanh() also lies in 0 -> 1 (same as Sigmoid)
+
+    -> derivative of tanh, grows faster compare to derivative of sigmoid
+
+
+=> In both the case ie Sigmoid or tanh, the max val of derivative is found at 0
+   the diff is only of bumpiness of derivative curve between two of them
+
+=> Both tanh & sigmoid functions are differentiable
+
+-> But tanh & sigmoid were popular in earlier times (ie Classical DL or Pre-Deep Learning Era)
+
+----------
+
+=> Now a Days more popular Activation Funnctions are RELUs  (ie Modern DL)

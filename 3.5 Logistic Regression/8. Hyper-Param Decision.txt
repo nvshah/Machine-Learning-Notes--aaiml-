@@ -1,0 +1,83 @@
+8. Hyper-Param Decision
+
+
+-> Normally We used CV-Error to pick best Hyper-Param
+
+-> GridSearchCV & RandomSearchCV are available inside sklearn 
+
+---------------
+
+* Hyper-Param Search/Optimization
+_______________________________
+
+ - technique to get optimal hyper-param via Cross Validation
+
+* lambda & Logistic Regression
+  ----------------
+   - Hyper-Param in Logistic Regression
+
+   1. lma = 0 => overfitting
+      lma = large => underfitting
+
+   - lma in Log-Reg is same as K in KNN 
+
+  1 problem as compare to K inn Knn :-
+     \
+      K can take integer vals {1, 2, 3,...}
+      lma can take real vals {0.1, 0.03, 0.3,...}
+
+
+* Grid Search (Brute Force)
+  -----------
+   - alike brute force approach 
+   - Searching in grid of possibilities
+
+   lma in {0.001, 0.01, 0.1, 1, 10, 100, 1000}  // logarithmic space
+
+   lma in {1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+   So often vals are checked in very wide window
+
+   Elastic Net & Grid Search :
+   ---------------- 
+    - 2 hyper param ie lma1 & lma2
+
+    -> search every possibility for lma1 & lma2 ie 
+       in grid of (cnt_of_lma1 * cnt_of_lma2)
+
+   -> It's called Grid Search because You will see grid like pattern for your search space
+      when you have more hyper-parameters
+
+   Problem with Gird-Search :
+   ----------
+
+     1) if 1 hyper-param => m1 times training
+           2 hyper-param => m1*m2 times = m^2  (if m1 == m2)
+           3             => m1*m2*m3 = m^3
+
+           k             => m^k
+
+    Thus as #hyper-param incr, the #times model trains incr exponentially
+
+    So Grid Search is not useful when we have 100 or 1000 of hyper-param
+    (In case of Deep Learning & Complex Models)
+
+* Random Search :
+  -------------
+   -> randomly pick val in given interval
+   - search hyper-param randomly
+
+     ie lma in [10^-3, 10^3]
+
+   => Random search is almost as good as Grid Search 
+      - esp when #hyper-param incr, it sometimes proves to be better
+
+
+
+
+
+
+
+
+
+

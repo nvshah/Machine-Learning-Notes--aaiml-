@@ -1,0 +1,109 @@
+17. Auto Encoder
+---------------
+ref : 
+http://ufldl.stanford.edu/tutorial/unsupervised/Autoencoders/
+https://en.wikipedia.org/wiki/Autoencoder
+
+-------
+Terms
+
+- Layer Wise PreTraining
+
+------
+REMEMBER
+
+=> L1-Regularization creates Sparsity in values that you are regularizing
+
+______
+
+AE := Auto Encoder
+
+=> A way to perform Dimensionality Reduction via NN [like PCA | TSNE]
+   
+   PCA := Variacne
+   TSNE := NeighborHood
+
+* Dimen Reduction :
+  ---
+   -> D : initial Data of dimen-d
+      |
+      D` : constructed Data of dimen-d`  // where d` < d
+
+   -> Try to Preserve the pt in low-dimen space
+
+
+* Simple AE Architecture:
+  ------
+   Eg
+    X - dimension = 6
+        dimension` = 3
+
+
+    1 inp layer, 1 Out layer, & 1 hidden layer
+
+    1) Compression (compress info)
+    2) Expansion   (recreate original dimen info)
+
+    - What we try to achieve is compression of input layer to hidden layer in such a way
+      that we can approximate original X from hidden to Output layer (via Expansion)
+
+    - Thus Compressed layer (ie Hidden layer) encodes all the info from original layer (ie inp layer)
+
+    - Thus in a (NN)MLP
+      we are able to Compress from Inp -> Hidden layer
+      &
+      We can recreate via Expansion from Hidden -> Output layer  
+
+    - Loss Fn :
+       - We can consider the distance loss (ie Squared Loss)
+       - It's differentiable also
+
+  
+* AE with multiple Hidden Layers :
+  ---------
+  - Deep Auto Encoders
+
+
+* DeNoising AE :
+  -------
+   -> Robust (Noised Free) Representation (ie Encoding)
+   - Fot this purpose sometimes noise is intentionally added (inorder to get robustness) 
+      \
+       so that in lower dimension noise gets removed & can have noise free representation
+
+   => Thus with AE, we can have Denoised as well as Lower Dimension representation
+
+
+* Sparse AE :			
+  -------
+   - If output of Hidden layers, you dont want it to be dense!
+
+   - Input (d-dimen data) can be dense or sparse 
+     but 
+     in output (d` dimens data) we dont want dense
+
+   - We can get Sparse d` (ie from Hidden layer) via adding L1-Regularization
+
+   => L1-Regularization creates Sparsity in values that you are regularizing 
+
+
+* AE & PCA :
+  -------
+   - If you have only 1 Sigmoid hidden layers, then
+     the Soln by AE is strongly related to one by PCA !
+
+
+* AE & MNIST & Feature Representation
+  -----
+   - An AE based dimen reduction is one of the most powerful dimen reduction
+   - It's very fast
+        \
+         as there is all of the machinery of DL, ADAM, etc...
+
+   - Thus in additionn to Dimensionality Reduction, AE are also used for better Feature Representation
+     (in an Unsupervised Fashion)
+       \
+        as you don't have Yi
+
+   - Unsupervised Feature Representation :-
+      -> Auto Encoder can help to get Feature Represenntation in an unsupervised fashion

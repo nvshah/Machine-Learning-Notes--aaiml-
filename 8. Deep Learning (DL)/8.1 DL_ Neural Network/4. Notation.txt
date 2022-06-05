@@ -1,0 +1,12 @@
+4. Notation
+----------
+
+* Fully Connected NN :
+  ----
+   -> Making all possible connection (ie Edges)
+
+* Weight as Matrix :
+  ----
+   - We can represent Weight between any 2 layers in Matrix Form
+   
+

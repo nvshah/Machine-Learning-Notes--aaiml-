@@ -1,0 +1,15 @@
+* dir() 
+   -> list all attributes for an underlying type of an object.
+
+  divmod()
+
+  all()
+
+  
+* time 
+
+--------
+
+=> Python comes inbuilt with SqlIte
+  
+  

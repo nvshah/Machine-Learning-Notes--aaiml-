@@ -1,0 +1,24 @@
+Amazing Tips-Facts
+
+* Frobenius Norm :
+  -------
+   X - Matrix :- ||X||^2    // sum each element of matrix after squaring it
+
+
+* NMF & Elastic net :
+  --------
+  
+  NMF objective func in sklearn uses Elastic net 
+
+  Objective func :- X = W*H
+
+  If you want W & H to be sparse Matrix (more) consider providing more weight to l1-regularization multiplication term ie l1_ratio
+
+  so if you provide more weight to L1-Regularization in Elastic Net it will provide more sparsity compare to L2-Regularization
+
+=> L1 regularizations creates sparsity
+
+
+* MF as Optimization Problem :
+  -----
+   - Advantage :- able to account other system biases easily

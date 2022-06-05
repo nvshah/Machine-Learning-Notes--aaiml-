@@ -1,0 +1,93 @@
+5 Impact of Outliers
+
+* Impact Of Outliers :
+  ------------------
+   - Any model is easily understood by looking at decision surface
+
+   Consider KNN :- 
+       lesser value of K, - is more prone to Outliers/Noise
+                          - impact of outlier is big
+
+       Prefer large value of K, if there is tie in accuracy, (as large val of K is less prone to Outlier)
+   
+   => Or If you can detect Outliers, then remove them 
+         but 
+             If it's 2D or 3D then you may have chance to detect it visually
+             But if its 10-D or 1000-D then you can't visually detect outliers easily
+
+        There is 1 technique to detect outliers :- `Local Outlier Factor`
+
+* Local Outlier Factor : (LOF)
+  ---------------------
+
+   1. Outlier detection using avg-distance :
+     -------
+      - take any val of K in K-NN
+	  - calculate K neighbours for each point & find avg-distance
+	  - sort the avg-distance in incr order
+	  - the largest distance will be outlier 
+
+	  Problem :- Cannot detect all outliers (i.e Outlier belong to dense grp)
+
+	  			 NOTE :- In real world all data will not grp into single grp
+	             If there are groups such as Sparse & Dense groups &
+	             Outliers corresponds to both grp
+	            -> then outlier to dense grp may not get detect but outlier of sparse grp will be 
+	               detected 
+
+	            -> Problem is that outlier is not detected based on grp density for which it was detected 
+	               as an outlier
+
+   Workaround :- need to capture or consider what local density is !!!
+
+   2. LOF :
+     ----
+       => It just aim to idenify so recognize those densities which differs by considerable ratio
+          or value
+       -> It is inspired from K-NN 
+
+       k-distance(Xi) = distance to K-th pt from Xi
+       Neighbour (Xi) = set of all K neighbours of Xi
+
+       reachability-distance (x, y) = max(k-dist(x), dist(x, y))
+
+     => local reachability density : lrd(Xi)
+             - # points in some unit area  
+                 (inverse of avg reachability distance of given pt to its K neighbours)
+
+             - Intutively it will calcuate density, for any point in its locality
+
+       ( LOF is associated woth lrd )
+
+     => local outlier factor : lof(Xi)
+             - avg lrd of points in neighbourhood of Xi *  1/lrd(Xi)
+
+            1) LOF - high
+                \
+                 -> If density of points in my neighbourhood is large 
+                    & density in my locality is small
+
+            2) LOF - small
+            	\
+            	 -> If density in my locality is large (ie there are many points near me)
+            	    & density of points in my neighbourhood is small
+
+            SO if LOF is High - Outlier
+                         Low  - Inlier
+     
+     -> If reachability-distance is small then lrd i.e density may be large but its not sufficient
+        to determine outliers 
+
+        LOF will solve the sparse-dense group outliers issue as it will be able to idenify density 
+            diff of outliers for both type of group
+
+     Steps :-
+     ------
+       1. calc LOF for all pts
+       2. determine thresold LOF ( > thresold val will be considered as outliers)
+
+       Where to set thresold ?? -> no exact ans
+           -> Domain specific
+
+    => Interpretability of LOF is not neat or well 
+       (i.e if LOF is large then its bad but how much bad it is  !!!)

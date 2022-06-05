@@ -1,0 +1,16 @@
+Que 
+
+Q) Maths : Diff between Partial Derivative & Grad (Inverted triangle symbol) ??
+
+Q) Why using both Loss() term of prev stage & current stage model for computing gamma  
+   inn Gradient boosting ??
+   -> Won't it suffice if we only minimize or optimize the current stage model 
+      i.e (model build on residuals) thereby minimizing the residuals
+      & 
+      if we minimize this then prev stage loss func will automatically be minimized !!
+      as its only driving the residual ie pseudo residuals
+
+   Sub-Que :-
+      Prev stage Loss Func and current stage residual func are similar 
+      then why we are reducing both 
+      can't we minimze any one of them & thus will reduce other

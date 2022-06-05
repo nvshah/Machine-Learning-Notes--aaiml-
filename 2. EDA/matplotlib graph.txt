@@ -1,0 +1,3 @@
+matplotlib graph
+
+legend :- what color <-> what class label

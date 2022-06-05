@@ -1,0 +1,68 @@
+Data Ref (ABC Notation)
+-
+
+[ABC Notes Version] http://abc.sourceforge.net/NMD/
+[Music Tune Res] http://trillian.mit.edu/~jc/music/book/oneills/1850/X/
+[Code ref] https://drive.google.com/file/d/1RFeSemr8k4ykbvb3x2nByMapPxN-OaM5/view
+
+
+4. Char RNN Data Prep
+-------------------
+
+-> In cas of Char-RNN, you often apply Batch SGD
+   So
+   We will prepare batches
+
+- Every ABC Music file has 2 things :- meta data & music info
+
+-------
+
+* Music File : Jigs (340 tunes)
+
+- We have :- input.txt
+  now we want to preprocess so that we can feed it to Char-RNN
+
+* PrProcess
+
+1) char to idx mapping
+
+2) For every epoch you generate new batch & then train the model with this batch
+
+
+3) Input Text Size := 129,665
+
+3) In single batch
+   - we will have several (ie 16) groups of 64 consecutive characters forming a sequence
+   NOTE :- starting idx of each grp may be diff but later in that seq will be consecutive
+
+4) Output Tensor :
+
+   for every inp there will be prediction of next character
+   &
+   that next character we are representing via vector instead of numerical val
+   so we need 1 more axis to represent it (ie at depth layer of 86 vector size)
+
+----
+
+* PreProcessing Data & Building `em into Batches :
+----------
+
+> Inp (Matrix) - Output (Tensor)
+
+In Inp (Batch1)
+  We will have group of (Sequences of 64 characters)
+  &
+  for each pf these characters, we will encode next possible character (ie next character it should have)
+  using one hot encoding with the help of Tensor in Output Representation
+
+For batch2
+  it will continue the idx from corresp seq in batch1 onwards (ie for each grp)
+  => ie The first row in batch 1 & first row in batch 2 are one after another(continuity in index number)
+
+  -> Thus batch_i will start from whatever left off in prev batch (ie batch_i-1)
+     Eg Batch3 will start off from where the Batch2 Left Off
+
+=> All in all we have 126 batches
+
+Note :-
+-> in all batches each group will see all characters at end

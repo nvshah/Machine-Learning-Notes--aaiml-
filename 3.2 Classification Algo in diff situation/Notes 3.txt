@@ -1,0 +1,142 @@
+Notes 3.txt
+
+Topics :- { Scale & Column Standardization, Interpretability, Feature Selection }
+
+----------------------------------------
+
+-> Eucledian distance gets impacted/affected by Scale
+=> Model Interpretability is imp for all classification techniques
+
+=> PCA & TSNE do not care abt classification task, the care abt preserving distances
+
+------------
+
+- Black Box Model   : No reasoning only output
+- Interpretable Model : Output alongwith reasonings
+________________________________________
+
+* Scale & Column Standardization 
+  -------------------
+
+   Scale-difference :- 
+   ---
+   -> when scale/range of 2 features are different (ie 1-100 & 1-10)
+
+      The variability of ranges differ but when we take difference i.e any Norm 
+      then variability are not treated as per actual range
+
+      i.e diff of 5 for range 1-100 is small compare to diff of 0.8 in range of 1-10
+           \
+            variability of 5 in 1-100 (only 5%) is less than variability of 0.8 in range 1-10 i.e (80%)
+
+          but when we check final results w.o standardization we end having norm as 5 & 0.8 where 5 is considered larger than 0.8 i.e mathematically but logically that is not true 
+
+      => Logically its not true because if Scale-difference
+
+    Soution :- Column Standardization
+
+   * Column Standardization :
+     -------------
+      Idea :- make values from diff scale/range make fall in 1 standard range
+
+              mean = 0 & standadr-deviaton = 1
+
+   => Since Eucledian distance gets impacted/affected by Scale
+        \
+         -> So perform Col-Standardization beofore determining model 
+            as KNN uses Eucledian distance to calculate NN
+
+
+* Interpretability :
+  ---------------
+   Model & BlackBox
+
+   - Black Box Model -> concern with output but not say anything abt reasonings
+   - Interpretable Model -> If model can give some reasoning about why particuar Output !
+
+   If model can give some reasonings, then domain expert about that application field can interpret  it probably the reason with more ideas
+
+   KNN as interpretable Model :
+     Eg k = 7, Xq -> Yq = 1  & let say d = 10 (low dimensions)
+        reasoning := all 7 nearest neighbour are from 1	
+
+        Eg 7 patient are seems to be cancer +ve along with Xq  
+
+            There are 10 tests conducted per patient
+
+        These reasonings can help doctor to understand more idea intutively & he can tell
+        Why all these persons i.e 8 where labelled 1 as +ve
+
+    => K-NN is interpretable when d is small & k is small  
+         [consider medical domain, but this may vary domain to domain]
+
+    So for any classifcationn technique its imp to know if Model is interpretable
+
+   => Model Interpretability is imp for all classification techniques
+
+
+* Feature Importance & Forward Selection :
+  ------------------------------------
+   - most useful feature
+   - sort in incr/decr order of such useful feature
+
+   - feture imp helps in understanding model 
+     -> which in result increase interpretability of model.
+
+   - numerical score for each feature
+
+   - KNN does not give feature imp easily 
+     whereas Logistic Reg gives feature imp easily
+
+   * Forward Feature Selection :
+     -------------
+      -> Help to select useful features
+
+      NOTE : PCA & TSNE do not care abt classification task, the care abt preserving distances
+             Whereas FFS cares abt classification task
+
+      Let say {D_train, D_test}
+       
+      FFS :- if you want to pick k top features then do k iterations & at each iteration
+             You will get set of i optimal features
+      Idea :- ( much like selection sort technique )
+
+      At each stage you are selecting a feature
+
+      perform k iterations :-
+
+        => At each iteration ask que - given a set of features, which feature will add most value to model
+        =? Pick most useful feature, given that you already have some bunch of features.
+            \
+             in such a way that it will give improvement in model or highest accuracy gain
+
+        s-1 ) Train Model & find accuracy for each feature individually 
+                    (accouting prev selected features as well)
+                 \
+                  Here features selected from prev iterations will also participate with individual
+                  i.e prev selected i feature set will be common to all
+                  So Train Model with individual feature + prev selected features
+
+        s-2 ) Find next feature that will add most value
+
+        s-3) Discard that selected feature in s-2 for next iterations & move it to selected feature set
+                 
+      Q) WHy not just take top feature at each iteration & taking feature that is optimal when combine 
+         with prev selected features
+
+      -> because may be possible that individually f1 & f2 features are providing high accuracy 
+         but combinely they may not (maybe due to both of them are much similar )
+
+         So if 2 features are top-2 in stage 1 do not means that both of them will get picked
+
+   * Backward Selection :
+     ------------------
+      -> It tries to remove a feature in each Iteration S.T. after removing, accuracy gain of model is 
+         least affected. i.e remove least imp feature
+
+   Time Complexity is Non-Trivial in both case :- (training d models)
+
+   plus :- Model-Agnostic
+   	    Model-Agnostic : ASA you have method to train & test the data, You can apply FFS or BS
+
+   minus :- High time complexity

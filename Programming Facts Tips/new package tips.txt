@@ -1,0 +1,22 @@
+-> By default, wget downloads files in the current working directory where it is run.
+
+fuzzywuzzy  // pip install
+
+networkx  // for graphs & Networks
+
+dask    
+folium   // open street map
+
+scipy   // esp for sparse matrix, stats, etc...
+
+
+
+numba
+theano
+
+PIL    // Image
+
+
+Ipython.display
+
+openCV   // For Images

@@ -1,0 +1,35 @@
+General ML Notes
+
+-> In ML model & featurization are inter-related
+
+-> Domain Knowledge & Feature Engineering are equally imp in ML as framing a Model/Aglo
+
+-> To make your model Robust 
+     we can employ :- Generalization via Regularization
+                      RANSAC
+                      Local Outlier Factor (LOF)
+
+-> Productionization Model :- High ThroughPut & Low-Latency Application
+
+-> Temporal Nature of Data :- Change over time  // consider it using train-test-split
+
+-> Cross Validations is more trustworthy than the domain knowledge
+
+-> Image-Data has pixels & those pixels have spatial-property (ie Spatial-Coherence)
+   ie Pixel surrounding to it are somewhat related or similar to it
+
+[IMP]
+-> A/B testing is only truth that your Business/Manager Accepts !!
+      \
+       -> GOld Standaard Rule for testing actually in real world
+
+
+-> Domain Knowledge based Validation
+
+[IMP]
+=> The context of Low-Latency changes based on whether you are doing preditcions 
+   or whether you are doing Training
+
+[Real Time & Low latency] :-
+ -> For training of Model, Real-Time doesn't mean milliseconds,
+    It may go upto minutes (ie let say 10 mins as well)

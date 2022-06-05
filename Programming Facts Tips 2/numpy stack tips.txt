@@ -1,0 +1,38 @@
+numpy stack tips
+
+1) plotting the Histogram with percentag on each bar with diff color 
+     \
+      ref ;- Case Study 6 - EDA - class distribution 
+
+
+2) Confusion Matrix
+     
+     ref :- Case Study 6 - ML models - using byte files only :Random Model
+            name :- plot_confusion_matrix()
+
+
+3) Merge 2 Sparse Matrices :- scipy
+
+
+4) Binning :
+   -----
+    -> Do binning of numerical features when majority of feaatures are categorical
+
+
+5) BOW (CountVectorizer) :
+   -----
+    - fit_transform()  // to get shape use `get_shape()`
+
+6) Get percentage of value in Series :
+   --- 
+    -> data['project_is_approved'].value_counts(normalize=True) * 100
+
+
+7) Show text at particular Coordinnate in Plot : -> plt.text(x, y, 'text')       
+
+8) Masked Array -> numpy.ma
+
+9) To get classification report :- sklearn.metrics.classification_report
+
+10) To do One Hot Encoding (diff way then Sklearn) => np_utils.to_categorical(X, k)  // k is # categories
+

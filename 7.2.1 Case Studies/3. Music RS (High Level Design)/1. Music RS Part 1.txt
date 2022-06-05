@@ -1,0 +1,92 @@
+1. Music RS Part 1
+-----------------
+
+- Gaana or Spotify 
+   
+   -> no static data. ie data is dynamic in nature
+
+* Aim :
+  ---
+   - Recommend Stream of Songs
+
+* Data :-
+  ---
+   1 million songs + 1000 new songs per week
+   10 million users / listeners
+
+* Informationn :
+  -----
+
+   1. Listens :- Ui, Sj, time_ij  // User_i listens Sound Sj for duratiomn of time_ij
+
+   2. Up & Down Votes :- Ui, Sj, +1 / -1, timestamp
+
+   3. User Playlists :- Ui, Pk   // Pk is set of songs
+
+   4. User Profile Data :- {name, gender, age, location(ip address), isPaidUser}
+
+   Note :
+     - Voting data is sparse (ie not all users do vote)
+     - Playlist data is also sparse (ie few users create playlist)
+
+
+
+* Biz- Problem :
+  -----
+   -> Recommend Songs (like radio) // ie continuous sequence of Songs
+
+   - Realtime, Adaptive, Continuous Learning
+
+       Adaptive :- User Patterns of Listening Song in Sequence
+
+       Continuous Learning :- If user Skip any song & move to next song then System should learn it
+                              You will get Skipped Song Information as (Ui, Sj, isSkipped)
+
+* Low-Latecy :- next song should come in under 1 sec when youy play some song !
+  ----
+
+-------
+
+* Biz-Metric  (Ask 1st Que in any Business Problem )
+  ------
+   -> Biz-metric is smthng that you can explain to Business Mmanager 
+        (ie in Layman term or simple terms )
+
+   -> # number of recommended song listen per user (per day)
+      or
+      # % of recommended sonng listen by user
+
+* Biz-Problem-Formulation (Pose):
+  -------
+
+   Clasif is problem for Run-Time :
+     -> prob for all songs ie Sj for single user Ui
+
+  1) Song-Song Similarity :
+   
+  2) User-User similarity
+
+  3) Song Vectorization using Deep Learning !
+
+      - Remove Songs that are dissimilar & keep that are Similar (not Skipped in between)
+
+
+- NOTE :- Songs are very Subjective :
+          Eg Let Say some Song S6 is similar to Song S1 & also to S2
+
+             Now let say User Listens Recommonded Song S1 
+                 but Skip Song S2 after hearing for 15 seconds
+
+                 then next Song S3 in row must be s.t 
+                        It's Similar to S1 & 
+                        at same time dissimilar to S2
+
+                 So if S6 is recommended in Row (as next) then its not good recommendation as 
+                 User Skip Song S2 before !
+                 otherwise if user not Ski S2 then its will Work
+
+* FAISS (FB) 
+  ------
+   - a mechanism that be used to help to get Similar Song 
+
+

@@ -1,0 +1,76 @@
+5. Partitioning around mediods (PAM)
+--------------------------
+
+------
+-> K-means => Lloyds
+   K-mediods => PAM
+
+-> K-mediods is trivially Kernnalizable (Kernalization is easy as we can utilise Sim-Matrix)
+
+----------
+
+Core Idea of PAM - is about change in step-3 ie Update of Centroid step
+             \
+              -> is same as LLoyds but in PAM centroid is updated in different way
+
+- K-mediods is a scheme alike k-means
+
+-> Its a technique for finding centroids in K-Mediods scheme
+
+
+1) Initialization :
+   ----
+    - same idea as k-means++ ie `Probabilistic pick` k-centroids from data
+
+2) Assignment :
+   --- 
+    - closest mediod for data point Xi ie `Proximity method`
+
+3) Update / Recompute :
+   ---
+    [Swap base Update Mechanism]
+
+    - (a) swap the existing mediods with non-mediods
+           \
+            - provide chance to points which are not mediods at present to be one of the mediods
+
+            (Swap 1 pt at a time & check, usually)
+
+      (b) Check if this way Loss decreases for each cluster & overall, if not then undo step (a)
+
+   [DECISION]
+    -> Swap is successful when there is improvment inn Loss func (ie no und by step (b))
+       if swap is successful then : compute Assignment step again
+
+   Note :- As we are considering swap of mediod at a time & there can be lot of permutation
+           of such swap 
+
+
+* Loss for Clustering :
+  --------------
+   - can be thought algoithmic as minimizing intra-cluster distance (ie squared distance err)
+   
+   -( In case of mediod (X - Mi)**2, Mi is also one of data point )
+
+
+=>) The only thing we are calculating throughout this is distance(x, Mi) // Mi is also a data point
+
+* Similarity Matrix :
+  -------
+   So if someone provides the similarity matrix or distance matrix
+     - then we can easliy compute K-mediods
+
+   Note :- this is similar to kernel matrix (of SVM)
+
+
+* Advantage of K-Mediods :
+  ----------
+   -> Interpretability
+
+   -> Easily Kernalizable ie Kernalization
+       - given similarity or distance matrix, we can compute k-mediods easily 
+
+
+
+
+ 

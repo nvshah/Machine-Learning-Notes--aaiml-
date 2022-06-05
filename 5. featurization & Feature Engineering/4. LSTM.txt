@@ -1,0 +1,30 @@
+
+
+
+
+---------------------
+
+- BuzzWords :- { Human accoustic, }
+
+--------
+
+- often for time series data we desing special features with help of domain expert
+  So 
+   feature for Heart-Beat may not work for the Human-Accoustic
+
+- Deep Learning - Lots of data - learn automatically (mostly) the best featurization
+
+* LSTM 
+  -----
+   - Its a Deep Learning approach
+   - When you have lots of data, LSTM is a way to for Featurization almost automatically
+
+   - such features are also known as Deep Learned Features
+
+=> So instead if Hand-Made features nowadays Deep-Learned Features are being used
+
+* Today State-Of-Art :
+  ----------------	
+   -> is Deep-Learned Features
+
+   When it comes to Image Processing or medical field, Deep Learning has created an Huge Impact

@@ -1,0 +1,28 @@
+2. Multi Class Classification
+
+* Multi-Class Classifictaion :
+  ----------------
+    Eg Mnist Dataset {0,...,9}
+
+    - KNN is easy to extend to Multi-Class Classification
+    - Whereas Logistic regression can only do binary classification & not multi-class classifcation
+
+    So Some algo can extend easily to multi-class classification whereas some not.
+
+    * Multi-Class to Binary-Classifier
+      -------------------------------
+       idea :- pick each class & verify for them individually making them isolate from rest
+
+       Technique :- 1 vs rest
+                    --------
+       let Yi is from {1,2,3,...,c}   // c classes
+
+       - prepare c binary classifier models
+       - at each time 2 classes will be <i or not i>
+
+       So i=1 -> f(i) -> C1 -> 1 or not 1
+            2         -> C2 -> 2 or not 2
+
+            c         -> Cc -> c or not c
+
+      Thus Multi-Class Classification gets converted to c binary classification problems

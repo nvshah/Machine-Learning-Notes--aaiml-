@@ -1,0 +1,39 @@
+Tips 1
+
+-> Always look at the plots (& Observe it & identify something)
+   Always read the scale of a Plot
+
+-> To plot any func -> just google -> `plot f(x)`   // replace whatever function with f(x)
+
+-> To find lower & upper bound of interval in array (increasing order) :- use numpy.percentile()
+     let say we want {p%} of interval
+
+     lower bound = ((1 - p) / 2) * 100  percentile 
+     upper bound = p   percentile
+
+
+-> Norm of Xi vector square = Xi.transpose * Xi
+
+-> Never make conclusion from Junk (Random data)
+
+-> Use common sense to clean data
+
+=> Given any problem if you can convert it to Vector then we can leverage power of Linear Algebra
+
+=> To solve the optimization problem you need function to be differentiable
+
+=> Langrange Multiplier is helpful to solve the constrained Optimization problem
+
+=> The sparsity do not depends on the loss but on regularizer
+
+->-> To solve Real-World Problem more robustly, deal with Outliers very efficently
+
+-> Dot Product = Cosine Similarity (assuming norm =1)
+
+-> abs() is not differentiable at x=0
+
+-> Read Lots of Literature in ML for understanding Data & finding correct featurization
+
+=> Best way to learn the Image Data is CNN Deep Learning Algo
+
+=> Penalized Terms in yout equation when you think some have nore impact than others

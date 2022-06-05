@@ -1,0 +1,30 @@
+reference 
+
+Python for Data Science : [Numpy + Pandas + Matplotlib]
+  https://drive.google.com/drive/folders/0BwNkduBnePt2U1k1cjhKazRIUlk?resourcekey=0-A8rmBYCQe6co4C8uHd3_3g
+
+_______
+
+[Regex CheatSheet]
+https://www.dataquest.io/wp-content/uploads/2019/03/python-regular-expressions-cheat-sheet.pdf
+
+[panndas Exercise]
+https://www.machinelearningplus.com/python/101-pandas-exercises-python/
+
+[Seaborn Charts]
+https://www.kaggle.com/themlphdstudent/cheat-sheet-seaborn-
+https://regenerativetoday.com/an-ultimate-cheat-sheet-for-stylish-data-visualization-in-pythons-seaborn-library/
+
+[MatplotLib cheatSheet]
+https://github.com/matplotlib/cheatsheets
+
+101 problems for numpy
+101 problems for pandas
+
+[numpy axis]
+https://www.sharpsightlabs.com/blog/numpy-axes-explained/#numpy-axes-quick-explanation
+https://www.sharpsightlabs.com/blog/numpy-axes-explained/
+
+
+[Pandas apply vs map]
+https://stackoverflow.com/questions/19798153/difference-between-map-applymap-and-apply-methods-in-pandas

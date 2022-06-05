@@ -1,0 +1,59 @@
+7. Models Preparing
+   ---------
+
+NOTE :- All the model prep is happening on Sampled Train & Test Data & not actual data
+
+- Metric :- { RMSE, MAPE }
+
+TIP :- 
+ When you do try with multiple models its imp to check which Feature are imp for particular Models (ie Feature Importance is helpful)
+ [F-Score]
+
+___________________________
+
+Given User Ui, Movie Mj :- 
+
+1) Xgboost for First 13 Features :
+   --------------------- 
+    - The Most Imp Feature are { UserAvg, MovieAvg, ... }
+
+2) Surprise baseline model :
+   -------------------
+   need to find :
+    b_u  // kinda alike User_Avg
+    b_i  // kinda alike Movie_Avg
+
+    baseline model := global_avg + b_u + b_i
+       \
+        Similar to calc & finding kinda user_avg (b_u) & kinda movie_avg (b_i)
+         via Optimization Problem
+
+    Linear Models :
+    ---
+     Least Square Optimization problem : 
+        - we will find efficent b_u & b_i  
+        - Note : we will also add Regularization term in Optimization Problem Eqn
+
+
+Idea :- Whatever Output we are getting from Diff Surprise Models will become the next feature in Out Updated Model
+
+* First Model :
+  ------
+   Given  :- User Ui, Movie Mj  & Yi = ratings available
+   &
+   Features :- 1. 13 Feature calc manually
+               2. 14th feature available as output of Surprise baseline Model Prediction
+
+   Apply XGBoost for these features 
+
+   => Feature Importance :
+       - F-Score
+
+
+* Baseline Surprise Model :
+  ----
+   (Optimization Problem)
+   -> Introducing 2 Features Which are very similar to Movie Avg & User Avg
+   -> Its much about finding the user avg & movie avg
+
+

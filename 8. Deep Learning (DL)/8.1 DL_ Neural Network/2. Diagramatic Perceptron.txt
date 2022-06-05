@@ -1,0 +1,38 @@
+2. Diagramatic Perceptron
+--------------------
+
+* Logistic Regression from Neural Network Perspective :
+  -----------------------------------\
+
+ -> Concept of SGD to solve LogReg or LrReg is used extensively whilst working with Neuron
+    interpretation (ie Neural Network) as well !
+
+ - Train a NN := means compute/find the weights on edges/vertices
+
+ - We made a Sigmoid as a Activation Function
+
+
+* Perceptron :
+  ----------
+   - The diff between Perceptron & Logistic Regression is of Activation Function
+   - You can think of Perceptron as Linear Classifier as well (at its simple)
+
+  Simplified Neuron:
+  ---
+   Neurons either Fires or not Fires
+     if fires -> output 1
+     else     -> output 0
+
+  Note : (Perceptron vs LogisticReg)
+  --
+   In case of Perceptron, However there is no Squashing
+   whereas
+   In case of Logistic Reg, there is Squashin in range 0 --> 1
+
+  How to train Perceptron ??
+   -> SGD at its disposal 
+
+  Training the Perceptron means := computing the Weights
+
+=> Thus LogReg & Perceptron can be considered as Single neuron Simple Models
+   The only diff is of Activation Fn (ie Squashing terms)	

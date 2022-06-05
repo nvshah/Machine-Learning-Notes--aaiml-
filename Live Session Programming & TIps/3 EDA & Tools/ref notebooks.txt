@@ -1,0 +1,10 @@
+ref notebooks
+
+[Dimen Reduction]
+https://colab.research.google.com/drive/135woMyKwnVRLV63Czp0zdsKmss9E3fN5
+
+[EDA TIPS Basics Steps]
+https://drive.google.com/file/d/1PeMVoFgzvJ8oWbCVT-6Chjay0xlnVN5x/view
+
+[Tableau 1]
+https://drive.google.com/file/d/1P4u95zAZ5xQ3Ur9VNQV2N_MMwYay8rsC/view

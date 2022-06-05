@@ -1,0 +1,21 @@
+General ML Facts 2
+
+-> Ecommerce Companies Collects Data using Session & Cookies
+
+-> Contours Plot/Map comes from Civil Engineering (Hill)
+
+* Page Rank :
+  ------
+   => You can think whole Web as a Directed Graph
+
+=> Generally People starts their internet activity/journey from the Hub & then propogate to the 
+   different websites in early 1990's -> yahoo & now -> Google Search Engine
+
+-> Cross Validations is more trustworthy than the domain knowledge
+
+=> Domain Knowledge based Validation is imp in ML overall
+
+=> Google has best NLP research & stuff
+
+=> ML is not only about great theory stuff its also about engineering stuff
+   focussing on great architecture & related things

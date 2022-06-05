@@ -1,0 +1,98 @@
+Mathematics concept terms
+
+-> Feynman method of integration
+
+-> Rectangular method
+   Trapezoidal Method  (both to find AUC)
+
+-> Equations :- Line, Circle
+
+-> Monte Carlo Approaches (Random number)
+
+-> Plane :- Intercept & Normal to Plane
+
+-> Hidden Markov Models
+
+----------------------
+
+=> We've seen That Area of Shape We can utilise 2 methods :-
+   
+    - 1) AUC via Rectangular or Trapezoidal
+      2) Monte Carlo method (via Randomization & Sampling)
+      3) Approximation using Polygon
+
+=> Type of Function :
+     
+     Monotonic Func     // Optimization Problem
+     Sigmoid Func       // Log-Reg
+     Logarithmic Func   // General
+     Exponential Func   // General (inverse of Log-Func)
+     Power-Law          // Pareto distb
+
+______________________________________
+
+---
+Stats
+---
+-> Mean, Median, Mode, Standard Deviation, Variance,
+   Percentile, Quartile
+   Median Absoulte Deviation (MAD)
+   Inter Quantile Range (IQR)
+
+   PDF, CDF, PMF
+
+   Gaussian Distribution Curve  | Other Distributions as well
+   Log Log Plot, QQ Plot
+
+-> Slope, Intercept
+   Intercept form of eqn of Plane
+   General form of eqn of plane
+   Normal of a Plane
+
+   Monotonically Decreasing/Increasing
+
+   Test Statistic  // Experiment Statistics
+   P-val
+   ReSampling
+
+-> Deterministic algorithm
+   Stochastic/Probabilistic Algorithm
+
+-> Sparse Matrix | Vectors
+-> distance vs norm
+-> Consine Similarity & Distance
+
+   polarity
+   low-latency 
+
+   Unit Normal Vector (i.e perpendicular vector)
+
+---
+Probability
+---
+Independent & Mutually Exclusive Events
+Bayes Theorem
+
+Joint Probability Distribution
+Simple Independence
+Conditional Independence
+
+--- 
+Plane
+---
+ -> Normal & Intercept
+ -> distance of pt from a plane
+
+
+-> Signed Distances & Projection
+-> Optimization Problem
+-> Monotonic func
+
+---- 
+Optimization problem
+----
+ -> Slope, Derivative
+ -> Gradient Descent
+ -> Objective Func
+ -> Lagrange Multiplier
+

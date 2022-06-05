@@ -1,0 +1,25 @@
+Tips_Ref
+
+* Numerical feature Encoding :
+  ----------
+   - https://ac-classroom-production.s3.amazonaws.com/public/COMMENT/Annotation_2020-05-21_225912_0lyZzN8.jpg
+
+   - https://imgur.com/ldZA1zg
+
+* Feature Importance & Likelihood (Nnaive Bayes)
+  --------
+   ref : https://imgur.com/mWvE7gj
+         https://machinelearningmastery.com/calculate-feature-importance-with-python/
+
+
+* Standardization & Normalization :
+  ---------------------
+   https://www.analyticsvidhya.com/blog/2020/04/feature-scaling-machine-learning-normalization-standardization/
+
+
+* Rule of Thumb  (n iter)
+  ----
+   - https://scikit-learn.org/stable/modules/sgd.html#tips-on-practical-use
+
+   -> number of passes over the training set is 
+          n_iter = np.ceil(10**6 / n) to get convergence

@@ -1,0 +1,10 @@
+11. High dimen
+
+=> As Naive Bayes Works well with Text Classification
+   	\
+   	 It will work well with high dimen data
+
+=> But Note be sure to use Log Probabilities instead of normal numbers to avoid numerical unstability i.e 
+   Numerical-Underflow Problem
+
+   

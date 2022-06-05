@@ -1,0 +1,129 @@
+Logistic Regression & Linear Regression :-
+---------------------------------------
+
+=> always remember that Dot-Product is used to find the Distances or Projections
+   or directions related Stuff
+
+Line/Plane  - Linearly Surfaces
+Circle/Parabola - Quadratic Surfaces
+
+=> For a given plane there is always Normal Perpendicular to plane
+   & 
+   Plane can be represented by its Normal & intercept term
+
+TIP :- For Simplification You can assume plane passes through an Origin so b = 0
+
+=> To solve the optimization problem you need function to be differentiable
+   & 
+   Monotonic func
+
+
+* Optimization Rule :
+  -----------
+	In Optimization :
+	  The x that minimizes f(x) is the same that maximizes -f(x)
+
+    argmax( f(x) ) = argmin ( 1 / f(x))
+
+  - Gradient descent : (Approxiamtion)
+    ------
+     - Update Step
+
+  => Equality Constraints are easy to move into equation using langragian multiplier
+
+  => the most imp part of any optimmization strategy is the
+
+* Collinear Features :
+  -------------
+   representing 1 feature as a linear combination of another feature
+
+* Causation vs Correlation :
+  -------------
+
+
+* Covariance :
+  ---------
+   - tells you how 2 variables vary together
+
+* Correlation :
+  ------
+   - tells you how 2 variables differ w.r.t each other
+
+* f(Xi) for both :
+  ----------------
+  In case of Logistic Regression
+    We have correct-incorrect which is represented by Zi = y*f(xi)
+
+     -> f(Xi) = Sigmoid()  // custom function ie sigmoid
+
+  In case of Linear Regression
+    We have error which is y - y`
+
+     -> f(xi) = W^T*Xi + w0  // Hyper-Plane Eqn
+
+ 
+-> Note : Unit vector & Basis Vector are different
+
+=> We say that 2 lines L1 & L2 are almost similar if :-
+     - both are almost overlapping
+     - cosine dist between them is less
+
+
+__________
+
+* Optimization Problem :
+  ------------
+   - maximization or minimization
+   - Gradient Descent or SGD
+   - slope & tangent
+   - Objective Function
+   - Constraints
+   - Lagrange Multiplier
+   - Eigen Value & Eigen Vectors
+   - Steepest Ddescent
+
+   - Convex Optimization (Gradient Descent | Stochastic Gradient Descent)
+
+=> At both minima & maxima the slope becomes 0
+
+-> Regularization can be thought of as an imposing an equality constraint & solving that via 
+   Langrangian Multipliers
+ 
+=> Dot Product = Cosine Similarity (assuming norm =1)
+
+=> abs() val func is not differentiable around 0 but we can find hack for it
+
+* Differentiability of Function abs() :
+  ----
+   -> abs() is not differentiable at x=0
+
+* Partial Derivative vs Grad :
+  -----
+
+* Steepest Descent :
+  -----
+   - same as gradient descent but here it focus on Function instead of a Variable
+
+* Randomization :
+  ----- 
+   - Random vectors are used in KNN algo via LSH (Locality sensative Hashing)
+
+* Cross Product :
+  ----
+
+* Monte Carlo Simulation 
+  ----
+
+* Hidden Markov Models 
+
+* Matrix Factorizations :
+  -----
+   -Eigen Decomposition
+
+* Frobenius Norm :
+  -------
+   X - Matrix :- ||X||^2    // sum each element of matrix after squaring it
+
+* Cosine Similarity & Dot Product :
+  -------
+   Think geometrically. Cosine similarity only cares about angle difference, while dot product cares about angle and magnitude. If you normalize your data to have the same magnitude, the two are indistinguishable. Sometimes it is desirable to ignore the magnitude, hence cosine similarity is nice, but if magnitude plays a role, dot product would be better as a similarity measure. Note that neither of them is a "distance metric"

@@ -1,0 +1,26 @@
+Doubts
+
+Q) Singular Value & Eigen Value relation ??
+   How the singular values of non-squared matrix can be relate to eigen values of squared matrix
+   In fact if both Matrix ie Squared & Rectangle are independent then how one values drives another ??
+    \
+     Si^2/(n-1) = lama^2
+
+
+Q) How L1 Regularization Creates Sparsity ??
+   
+   What is Conceptual Difference between L1 & L2 Regularization ??
+
+
+Q) Truncated SVD
+   In Word Vector & MF ??
+   
+   why we do not consider Eigen Decomposition (beware Co-Occurence Matrix is Square Matrix)
+   & 
+   Why we go for SVD ??
+
+-------
+
+Q) How we will consider Regularization Terms whilst accounting Optimization Problem as a Matrix Factorization way
+
+   (Reverse of MF as an Optimization Problem) :- 

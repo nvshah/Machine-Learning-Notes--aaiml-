@@ -1,0 +1,34 @@
+Concepts Techniques
+
+* Optimization Problem :
+  ----
+   Loss Func
+
+   1) GD    (Gradient Descent)
+   2) SGD   (Stochastic GD)
+   3) MF    (Matrix Factorizations)
+   4) ALS  (alternatinng Least Squares)
+
+   => Always use regularization term whilst solving loss func for optimization problem
+
+   1) Regularization Term
+   2) Biased Term
+   3) Mean Term 
+
+
+* Underfitting & Overfitting :
+  -----
+   Underfittting :
+      -> Too Simple
+      -> not trying ennough to utilise the features available at hand to learn
+          or
+         features available at hand are not enough for preparingn good model
+
+      -> Regularization term in Optimization Problem Eqn is somewhat related to Underfitting & in
+         Favour to Underfitting
+
+      -> So When Model is Underfitted you cann try reducing the Regularization param as well sometime
+
+* Universal Sentence Encoder : 
+  ------
+   -> Multi-Linguial Encoding Purpose

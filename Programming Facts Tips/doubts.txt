@@ -1,0 +1,6 @@
+doubts
+
+q) does all the intermediate computed results info in ML process are pickled to .p extension files
+   ie does pascal source code is compatible with major kinda computed results ??
+
+   or which are such other files extension format that are used to cache store the Intermediate results via pickling ??

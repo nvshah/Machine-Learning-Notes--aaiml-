@@ -1,0 +1,98 @@
+3. Feature Extraction
+
+---------
+
+modules useful :- 
+  
+  fuzzywuzzy
+
+=> Some techniques & Features are specialized to some specific case/scenario/
+
+---------
+
+- In violin plot or box plot, the more overlap in the plots we have the worst is the conclusion
+  or hard is to differenntiate classes from that Overlappinng Feature
+
+__________
+
+- Words_Common  // is imp in case of Quora Que Pair
+
+* Words_share :
+  ------
+   -> Not best bot Worst
+   -. Has some value help us differentiating 2 classes
+
+
+* Text Preprocess :
+  ------
+   - Stemming
+   - Expanding Contractions
+       \
+        Eg % -> percent   (repalce with)
+           ain't -> is not
+           won't -> will not
+           000   -> K        
+
+* Advance Feature Extraction :
+  -----
+  module :- fuzzywuzzy
+         \
+          -> Helps to find similarity between 2 sentences 
+              0 - dissimilar
+              100 - very similar
+
+  Word = Token but not a Stop Word
+
+  To come up with similarity between 2 sentences S1 & S2, 4 tehcniques :
+	  1) fuzz_ratio
+	  2) fuzz_partial_ratio
+	  3) token_sort_ratio
+	  4) token_set_ratio
+
+   -> ans in 0 to 100
+      | 0 :- dissimilar
+      | 100 :- very similar
+
+  * Edit Distance :
+    -----
+     add | delete | shift  (alphabets)
+
+     You have 3 options add, delete, shift
+
+     If number of edit options are few to bring sent s1 to sent S2, 
+     Then similarity is high between 2 sentences resp.
+
+   1) Fuzz_Ratio ;
+     ---
+      -> works based on less edit options goal to similarity concept
+
+      -> Even its good idea there is a problem
+
+       problem : [partials string stuff]
+
+         Eg  `RC Banglore` & `Royal Challangers Banglore`
+
+             Eventhough both are similar fuzz.ratio() will be less becuase of more edit options need to be performed
+
+         Eg RCB & RCR
+
+             Though both are diff team their fuz-ratio will be high because of less edit options 	
+
+   2) Fuzz.Partial_Ratio :
+     ----
+      -> Is there partial string that matches for me
+      -> ASA match is partial but perfect  | partially match the strings
+
+       problem : [Out of Order]
+
+        `RCB vs CSK` & `CSK vs RCB`
+
+
+   4) Token Set ratio :
+     ---
+      -> It takes set (unique tokens) into consideration & not all the tokens
+
+      problem :- If something is repeating then token_set_ratio will give val of 100
+
+
+

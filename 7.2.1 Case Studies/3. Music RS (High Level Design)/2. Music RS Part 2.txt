@@ -1,0 +1,177 @@
+2. Music RS Part 2
+-------
+
+---------
+- explore-exploit strategy 
+
+----------
+
+-> Sparks gives you MF in built
+
+- There is always an Explore-Exploit Strategy
+
+-------
+
+* Soln Discussed (1) :
+  ---- 
+   1. You can store Song Vectors by Pre-Calculating vectors for Songs
+   2. Then you can perform Song-Somng Similarity for k-sings per users
+           \
+            Elastic Search for Fast NN Search
+   3. Set Ops at runntime ie (Sim(S1) U Sim(S2)) - Sim(S3)  // Here S3 is song user skipped
+
+   Thus Module 1 :- Song-Song Similarity
+
+
+* Surprise Library :
+  ----
+   - Internally does MF stuff (via Globalization & others...)
+
+* MF & Surprise Accomodation (New Model) :
+  ------------
+
+   Module 2 :- Matrix Factorization + Surprise
+
+   -> Takes care of Prev 90 days
+
+   Motif :- To use historical preferences of User i to Fill matrix User-Song 
+            S.t.
+            We will Have corresp info approximation for all songs for parricular user
+          
+          [Real-Time] (Daily basis)
+            This MF Approximation will be done on Midnight for each day or each week :
+
+            Cell -Val :- 1  // listens    
+                         0  // not listens
+                         -1 // missing this song or user now (compare to past)
+
+            Then we can select top k Songs for User Ui	
+
+    NOTE :- We can't rely on SVD, as its heavy on computation on real-time.
+
+* Explore-Exploit Strategy :
+  --------------
+  -> RS needs to be done with Explore-Exploit Strategy
+
+    Eg (Exploit) 30% of time suggest/recommend from prev-(listened) tracks for user
+       (Explore) 70% of time recommends some new songs
+
+  - Explore Exploit ratio can be User-Specific
+  - It's kinda Hyper Parameter
+
+* Popular Songs :
+  -----
+   Time Sensitivity :- {Evening ,Morning, Afternoon }
+   Location Sensitivity :- {Gujarat, Punjab, Mahrashtra, }
+
+* Cold Start :
+  -------
+   - No data to start with !
+   - No data for Song-Song Similarity for (new Song)
+   - or User just Joined
+
+
+-----
+
+* End-End System :
+ --------
+1) Song-Song Sim :
+  ----
+    // Pipeline
+   Song -> DL (AutoEnc) -> Vec
+
+   -> need to run all the time (as new song can be added at any point in time)
+
+2) MF :
+  ----
+   -> Computation Heavy (as it uses prev data inn large amount)
+   
+   -> need to perform midnight each day once
+   -> compute & store 
+
+   Why Night ??
+     -> at night  very few people hears music
+        So traffic is low So it can be computationally efficient
+
+
+3) Popularity :
+   ---
+    - Data preprocessing can be done using bunch of SQL commands
+
+---
+* Run Time System :
+  -----------
+   -> Flask API
+
+   3 Models - 3 API Endpoint
+       \
+        M1, M2, M3
+
+    - Explore-Eploit ratio // for choosing importance to M1, M2, M3
+
+
+---
+* Model Updation :
+  ------------
+    M1 (Song-Song) :- realtime
+    M2 (MF)  :- Weekly/Daily Basis
+    M3 (popularity) :- realtime
+
+
+* A/B testing :
+  ----------
+   Essence :- New & Old Model see random samples of users or requests
+
+    1) Randomly Split Users
+
+    2) Randomly Split Requests 
+            \
+             to old system or to new system
+
+    Metric to check/test :
+      - percentage of time user listen to recommendation
+
+    How you will spot ??
+
+    - Metric vs time Graph :
+      ----------
+      -> Initially Graph of %age user listen to recommendation will fluctuates
+         but later than it will stabilize to some value
+
+         till the time whole Metric Stabilizes run this A/B testing 
+
+         Over the Period of time it will get stabilize
+
+    - Sampling  :
+      ----
+       New :- 10 %
+       Old :- 10 %
+
+       Old2 :- 80 %
+
+       Why not 10% & 90%
+        -> because it will be good to compare new to old on same proportions 
+         - sometimes size also could play a role
+
+    - Gracefully Scaling A/B test : (Bucket Test)
+      -----------
+       - Slowly scale the proportions of New Model Test Data (sampled) step by step if it succedd in prev step
+
+       - Firstly test with small samples
+         If it works well then keep increasing it
+         till the time you find significantly benefit by shifting to new model from an old model 
+         
+---
+* Model Maintainence / metrics :
+  -----------------------
+
+   - How metric is looking over period of time !
+
+   -> Whenever overall performance of model seems degrading then its time to dig in & check 
+      why its not performant as compare to past.
+
+      Did smthng change fundamentally in data  ??
+        - If yes redo some Modelling & other steps
+
+   -> Alarm
+       - Whenver Key Metric fall below 3 or 4 % Just Do Analysis for same why it happen at first place !

@@ -1,0 +1,13 @@
+4. Information Gain
+
+Formula :- 
+	Information_Gain = [Entropy(parent)] – [Weighted Average Entropy of child nodes] 
+
+	I(Y, f) = H_D(Y) - sum(Di/D * H_Di(Yi))  
+	  \
+	   Y is predicted varaible
+	   f - feature on split
+	   H_D = total entropy of parent
+	   H_Di = entropy of child nodes
+
+	Info Gain breaking dataset using feature for Y

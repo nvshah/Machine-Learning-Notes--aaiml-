@@ -1,0 +1,3 @@
+Tips General Code 1
+
+-> Understand the Logical Chunks of Code (instead of remembering Line by Line)

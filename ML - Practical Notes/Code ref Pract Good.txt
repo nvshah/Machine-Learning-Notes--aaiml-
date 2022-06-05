@@ -1,0 +1,4 @@
+Code ref Pract Good
+----
+
+1. Human Activity Recognition (DL-LS 1)

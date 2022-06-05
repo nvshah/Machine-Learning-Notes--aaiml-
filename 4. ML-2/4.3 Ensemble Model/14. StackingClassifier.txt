@@ -1,0 +1,79 @@
+ref : mlextend
+
+pip3 innstall mlextend
+
+----------------
+- StackingClassifier is not implemented natively in sklearn
+  hence using mlextend.classifier
+
+-> Train Meta-Classifier on the Output or prediction of base models
+
+-> StackingClassifier is seldom used in Real-World 
+   (due to high cost, because of training diff base models)
+    \
+     But its often used in competition
+________________
+
+- meta-classifier, 
+
+----------------
+
+
+* StackingClassifier
+  --------------
+
+  - ensemble learning
+
+  - classification models :-  each of models is build independent of others
+      \
+       C1, C2, C3, ... Cm  
+
+       Note :- all can be different type of Models
+
+  -> In stacking the more different these models are, the more it tends to work in practice
+
+  => Stacking - Ensemble works well if each of models are different 
+       \
+        The more diff, the better it tends to be
+
+
+  * Meta Classifier :
+    ----
+     -> The mixing of the output of all the models is known as meta-classifier 
+     -> Need to train Meta Classifier on Output or Prediction of the base Learners <-** (MIMP)
+
+ * bagging vs stackinng :
+   -----
+    in bagging : we have High variance & low bias model & instead of meta-classifier, we have
+                 aggregation technique
+
+       stacking : we have fine tuned model & 
+                  instead of 1 model we use many such model to get output
+
+                  All models have proper bias-variance tradeoff
+
+  Steps :- 
+
+   1) Build t base models
+
+   2) Meta-Classifier from prev outputs
+
+
+* Use Probability as meta-Feature :
+  -----
+   `use_probas`  param in StackingClassifier 
+
+
+* Why not Stackinng-Classifier :
+  --------
+   -> need to train 100 of base models &
+      that require massive training + evaluation time
+
+      on top of that we need to calculate meta-classifier
+
+   -> So Stacking is used in competition
+
+      but in real world its less often used ( as Just for 0.1% accuracy we dont need so much 
+      computation at hand )
+
+

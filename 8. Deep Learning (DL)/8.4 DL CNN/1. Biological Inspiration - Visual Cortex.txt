@@ -1,0 +1,74 @@
+1. Biological Inspiration : Visual Cortex
+----------------------------
+ref :
+(Visual Processing) https://www.youtube.com/watch?v=v20-E_2bT2c
+(Hubel Research) https://en.wikipedia.org/wiki/David_H._Hubel#Research
+(Perception Lec) http://www.cns.nyu.edu/~david/courses/perception/lecturenotes/what-where/what-where.html
+(Visual Layer Img) https://www.frontiersin.org/files/Articles/34845/fpsyg-04-00124-HTML/image_m/fpsyg-04-00124-g001.jpg
+
+-------
+
+* CNN (Conv Nets)	
+  _______________
+  
+  - design for visual tasks (ie like MNIST)
+  - Eg Face, Car, Tiger - What Object Exists in Image
+     |
+     Object Recognition Tasks
+
+  - Computer Vision :- Blennd of AI|ML + Image|Visual
+
+
+* Historical Perspective :
+  ---
+   Cat :- given anesthesia
+
+   Visual Cortex :- part of brain
+
+   Human Brain also has multiple layer of Visual System 
+
+* Visual Cortex :
+  ---
+   - Region for Visual in Brain
+   - many area in visual cortex  (ie V1, V2, V3,...)
+   - V1 area : primary visual cortex
+        -> Edge detection
+
+   So there are some neurons that focus on  & detect
+      - Edge Detection
+      - Motion
+      - Depth
+      - Color
+      - Shapees
+
+   -> Complex Neurons : for lot of varyinng kind of tasks (ie detection)
+      There are special neurons responsible for diff kinda tasks
+
+   There is layer wise connection from v1 -> v2 -> v3 ...
+     |
+     diff area of cortex will play role accordingly then
+     => Edges - > grouped into regions - > grouped into objects  // as level go higher
+
+   => There is nice Hierarchical Structure of Layers of Diff Area of Visual Cortex that can be 
+      simulated via MLP
+
+---
+
+-> Img Processing may include Signal Processing
+
+=> Image Processing, Computer Vision & Signal Processing is lot of inspired by this biological system
+   i.e Edge Detection, Motion,...
+
+
+----
+(From Video Youtube)
+
+=> Flow of Visual Info in Brain involves many diff area of Visual Cortex
+
+-> Objects in real world has boundaries & these boundaries are aligned to diff orientations	
+   
+-> Earlier stage of Visual Processign seems to involve the deetection of edges & orientation
+   &
+   later stages may involve the processing
+
+-> Activity of Brain Cells represent some stimuli in the wolrd

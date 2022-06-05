@@ -1,0 +1,67 @@
+5. Bais Variance NB
+
+--------------
+
+=> alpha in laplace smoothing will drive either Bias or Variance decision for Naive bayes
+
+--------------
+
+- Case 1) low alpha val ie 0 [High-Variance | Overfitting]
+  -----------------
+     No Laplace Smoothing (alpha=0)
+     ------
+    -> Affect the rare words (ie low probability)
+    (Why)
+    -> We are giving probability even to words that are rare }-> Overfittings
+
+       So If remove those 2 texts which possess that rare words in train set
+         then probability will change drastically 
+            \
+             i.e 2/1000 -> 0/1000   //assuming rare words occur 2 times in train set
+
+       Thus small change in training data results in large change in probability 
+        & 
+       As this probability changes - Model changes (as Model is product of these probabilities)
+
+    -> Thus when alpha=0, small change in D_train results in large change in the model
+        \
+        High-Varaince proble  = Overfitting
+
+- Case 2) large alpha 
+  ------------------
+    let say alpha = 10000
+
+    -> probability will be almost similar to equi_probability for all words
+
+       Thus given query pt model cannot say which class does it belongs as all class are equi-eligible
+
+    -> So let say y=0 & y=1, be 2 class
+
+       P(y=0) & P(y=1) -> prior probabilities
+       then if P(y=0) is > than P(y=1), then directly Model will incline towards P(y=0)
+
+    => Thus in such case model will not account likelihood but take decision based on prior probabilities 
+       only
+       So when alpha is very large which ever class has more frequency, Model will declare that class as 
+       output
+
+    -< this same as k=n in case of knn
+
+(REMEMBER)
+=> P(y=1|w1,w2,w3,w4…wd) == P(y=0|w1,w2,w3,w4…wd) 
+      when no.of positive data points == no. of -ve data points. 
+
+
+Q) How to find right alpha ??
+   ----------------------
+  
+  -> via CV or 10-fold CV 
+
+* Hyper-Parameters :
+  --------------
+   - parameter that decide how your model is going to perform
+   - parameter that decide High-Bias (underfitting) - High - Variance (Overfitting) tradeoff
+
+   alpha 	in Naive Bayes
+   K 		in KNN            
+

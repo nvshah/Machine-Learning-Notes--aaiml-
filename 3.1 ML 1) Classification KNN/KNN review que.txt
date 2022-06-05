@@ -1,0 +1,37 @@
+KNN review que
+
+Revision Questions:
+
+    Explain about K-Nearest Neighbors?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2927/k-nearest-neighbours-geometric-intuition-with-a-toy-example/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Failure cases of KNN?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2928/failure-cases-of-knn/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Define Distance measures: Euclidean(L2) , Manhattan(L1), Minkowski,  Hamminghttps://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2929/distance-measures-euclideanl2-manhattanl1-minkowski-hamming/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    What is Cosine Distance & Cosine Similarity?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2930/cosine-distance-cosine-similarity/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    How to measure the effectiveness of k-NN?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2931/how-to-measure-the-effectiveness-of-k-nn/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+    Limitations of KNN?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2933/knn-limitations/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    How to handle Overfitting and Underfitting in KNN?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2935/overfitting-and-underfitting/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Need for Cross validation?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2936/need-for-cross-validation/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    What is K-fold cross validation?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2937/k-fold-cross-validation/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    What is Time based splitting?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2940/time-based-splitting/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Explain k-NN for regression?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2941/k-nn-for-regression/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Weighted k-NN ?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2942/weighted-k-nn/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    How to build a kd-tree.?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2945/how-to-build-a-kd-tree/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    Find nearest neighbors using kd-treehttps://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2946/find-nearest-neighbours-using-kd-tree/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    What is Locality sensitive Hashing (LSH)?(
+    Hashing vs LSH?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2949/hashing-vs-lsh/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    LSH for cosine similarity?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2950/lsh-for-cosine-similarity/3/module-3-foundations-of-natural-language-processing-and-machine-learning
+     
+    LSH for euclidean distance?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2951/lsh-for-euclidean-distance/3/module-3-foundations-of-natural-language-processing-and-machine-learning

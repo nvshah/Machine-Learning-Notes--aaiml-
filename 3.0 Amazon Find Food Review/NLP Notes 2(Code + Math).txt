@@ -1,0 +1,58 @@
+* NLP Notes 2 (Code)
+
+=> More the sparse matrix is, The more-efficient is sparse-matrix representation technique
+
+=> There are multiple Stemming Techniques available { Snowball Stemmer, Porter Stemmer}
+
+=> The stemmed words or root words may not always have a Word2Vec
+_________________________________
+
+
+* SParse Matrix :
+  ----------
+   A matrix that contains most of its row as sparse vector
+   sparse vector is one such that most of its element/info is useless/0
+
+   Eg Bag Of Words applying on a Dataset of n texts
+
+      n * m matrix where m is the dimension provided by BOW
+
+      & this n*m matrix possess so many cells which are 0 or useless
+
+ Q) So How to utilise such Spaces (i.e to effectilvely utilise Space & reduce Space Complexity inndirectly)
+
+  -> Consider a row : if only 3 points are non-zero, then what is use
+                      of storing m spaces in memory
+     
+    * Sparse Matrix Representation Technique :
+       -------------------------
+            So we can use dict to store cell values instead of sparse array/vector
+               \
+                key = (row_no, col_no)
+                val = actual val
+
+        Eg -> CountVectorizer() from scikitlearn uses this technique to return BOW for Dataset
+
+   * Sparsity of matrix :
+     ------------
+      -> percent of non-useful cell (i.e zero cell) among all cells
+
+          let say k among n*m S.T k = 0 then
+      		
+      		sparsity = k / (n*m)
+
+         Eg 0.1 sparse matrix means 10% of cells are zero/useless
+
+  => More the sparse matrix is, The more-efficient is sparse-matrix representation technique
+      As more space will not go idle 
+
+
+* Custom Word2Vec Model :
+  -----------
+    NOTE :- you can use Word2Vec model from google via loading it from Google's db
+
+        Word2Vec create very dense vector
+
+    1) gensim.models.keyedVectors.load_word2vec_format()   // pass list of sentences to this
+
+     later you can use `.wv` on your model

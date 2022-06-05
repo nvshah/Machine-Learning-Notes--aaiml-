@@ -1,0 +1,97 @@
+3. Padding & Strides
+--------------------
+
+
+----------
+BASIC
+
+-> When you want output image exactly as same dimen as inp image (after Convolution via kernel)
+   then use Padding techniqye
+
+=> Kernels are typically Square Matrix for most Image Processing
+
+
+-----------
+
+Remember in Convolution earlier
+  |
+  we have 6*6 Matrix of Image as Inp -> 3*3 kernel -> Output of 4*4 matrix
+
+Formula :
+  
+  n*n -> k*k => (n-k+1)*(n-k+1)
+
+=> Kernels are typically Square Matrix for most Image Processing
+
+-> Padding & Stridings are used when you want your output Image Matrix of diff sizes 
+    same or more as inp size => Padding
+    same or less as inp size => Striding
+
+[AIM] <--
+Q) What if you want output Image exactly same size as Inp ie other than (n-k+1) x (n-k+1)
+   -> Padding
+
+* Padding :
+  -------	
+   convert output matrix to diff dimen than one derived from formula
+   Eg
+      4*4 -> 6*6   // n=6, k=3
+      6*6 -> 8*8   // n=8,, k=3
+
+   Idea :- increase rows & cols as boundary to each side of inp matrix
+
+   => If ypu pad it by 1 extra layer on all side then p=1
+
+   So when you have n*n matrix & if you pad it by 1 => you get (n+2)*(n+2) matrix
+
+  Q) What values to put in there to added layers ??
+   
+    -> Zero Padding
+
+
+* Zero Paadding :
+  ---------
+   - used a lot in CNN
+
+* Same Val Padding :
+  ----
+   - take val present in nearest (col or rows)	
+   - not used extensively
+
+
+Case 1 :- Simple Convolution
+   |
+    ->  n*n -> k*k => (n-k+1)*(n-k+1)
+
+Case 2 :- Padding, Convolution
+   |
+    -> n` = n+2p   // p is padding factor
+       n*n -> k*k => (n+2p-k+1)*(n+2p-k+1)
+
+Case 3 :- Stride, padding, Convolution
+
+
+* Striding :
+  ---------
+   - Moving of Window on Inp Image by Kernel (one by one)
+
+   - In simple Convolution, Kernel shift by 1 Column or 1 Row at a time
+     &
+     this is called as shifted by 1 Stride (Step)
+
+   - stride by 2 (s=2)
+       - means it can shift in horizontal or vertical by 2
+
+   => Strides helps you reduce the size of Matrix
+
+   Eg n*n matrix -> stride of s & k*k kernel => (n-k/s + 1)*(n-k/s + 1)
+
+      Thus in case of Strides, n*n matrix becomes smaller
+
+-------
+
+=> Thus 2 techniqye can be used to get diff size Matrix output during Convolution * Kernel
+    
+    1) Padding is used to get same or more dimen on output
+
+    2) Stride is used when you need to reduce the size in output

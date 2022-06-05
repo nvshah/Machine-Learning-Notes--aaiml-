@@ -1,0 +1,49 @@
+Case Study (Quora Que Similarity)
+-----------------------------
+
+-------
+
+=> Cost of Missclassification is very imp metric in case of Quora Que Similarity
+
+________________
+
+Aim : If 2 que are duplicates of each other	
+       \
+        Slightly Diff worded (phrased) but ans can be shared between them
+
+
+
+* Business Obj & Constraints :
+  ------
+   - Miss-Classification should be avoided as much as possible 
+       because if 2 que are mis classified as similar then answer will be shared between both
+       which is dangerous
+
+
+   Probability :
+   ------
+    -> You want to find probability that Q1 is similar to Q2
+
+    -> You must define such probability because it allows you to define some thresold
+       If you do not have probability score but either 1 & 0 
+         then it would not help in this case scenario
+       We want probability so that we can set some thresold for similarity between 2 Que.
+
+    => So for this case having probability as an output is very useful
+       \
+        Also it allow us to set thresold ( to determine if to merge ans for 2 que or not )
+
+* No Strict Latency Connstraints :
+  ------
+   It can take few minutes or hour
+    but having said that it should not take hours of hour & days
+
+
+* Interpretability ;
+  --------
+  - Interpretability is partially important (ie ennd user will not care about what particular features play role behind merging ans for given 2 Que)
+
+
+MIMP Thing :-
+_________
+   Cost of MissClassification is very much imp in this case

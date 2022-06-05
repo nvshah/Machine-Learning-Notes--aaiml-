@@ -1,0 +1,55 @@
+* Naive Bayes Gist
+
+REMEMBER :-
+
+-> Whenever You have Categorical feature, you can consider missing val as another feature (NAN)
+
+=> Naive Bayes is much more memory efficient O(c * d) at run time (compare to KNN i.e (n * d))
+
+-------------------------
+
+-> It is based on Probability  
+   (i.e Conditional Probability & Conditional Independence Probability)
+
+-> Naive Bayes algo model is all abt feature importance i.e which feature participate more 
+   in determining the labels
+
+   Training Phase :- Likelihood & Priors
+
+   Testing Phase :- Posterior  { ie likelihood lookups }
+
+   Note : Excluding the Evidence as its common to all & constant (whilst comparision)
+
+    - Likelihood :- participation of particular feature in class-label determination
+
+-> Naive bayes is used for text-classification lie problems (benchmark algo fos such problems)
+
+-> Laplace Smoothing (alpha)
+   -----------
+     - alpha & k terms
+     - it is used to deal with unknown likelihoods lookup during test phase
+
+     -> Smoothening will affect less to those class-features where info or data is enough available
+        Smoothenning will impact more on those features where scarcity is more comparitively
+
+     -> It tends towards uniform ie Equi-probability (in case when very few info available & probability is also very less for particular class in that feature)
+
+     => As alpha increases, the likelihood probability drives towards uniform distribution
+   
+   Log Probability :
+   ---------------
+   Log probabilities are used to avoid numerical underflow (ie floating point limitations in python)
+   & provide compratively good numerical stability
+
+-> Overfitting & Underfitting :
+   ------------------
+
+    alpha - small => overfitting
+          - big   => underfitting
+
+   alpha is hyper-param for Naive Bayes Model
+
+-> For categorical features, -> missing val -> NAN
+       numerical features    -> missing val -> Gaussian NB
+
+

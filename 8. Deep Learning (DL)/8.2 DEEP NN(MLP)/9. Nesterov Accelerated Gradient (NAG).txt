@@ -1,0 +1,43 @@
+9. Nesterov Accelerated Gradient (NAG)
+--------------------------------
+ref :
+ SGD + Momentum
+  -> https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d
+
+
+----
+REMEMMBER
+
+=> Gradient calculated at different location may differ in terms of direction 
+   (ie whilst moving towards convergence)
+
+----
+
+-> In case of SGD + Momentum :
+   ---
+    -> while updating the Weight, we consider the Momentum & Gradient at same time
+       i.e
+       From same point where current Weight W_t is standing
+
+
+* NAG :
+  ---
+   - There is slight difference in Update Equation as compare to above approach
+      |
+     -> Here first Momentum is applied to curr weight ie W_t (:= resulting in intermediate W_t`)
+     -> & later Gradient is computed at W_t` position & not at location of W_t (ie original)
+           \
+            thus Gradient is calculated on resluted intermediate Weight Vector
+
+    - Thus in NAG
+       1) First Momentum is applied
+       2) Grad is computed on resulted weight obtained via Step-1
+
+(***)
+NOTE :- 
+  Gradient calculated at different location may differ in terms of direction (ie whilst moving towards convergence)
+
+      -> & Thus resultant updation will differ in compare to above standard SGD + Momentum approach
+
+
+=> NAG is slightly better than Standard Way

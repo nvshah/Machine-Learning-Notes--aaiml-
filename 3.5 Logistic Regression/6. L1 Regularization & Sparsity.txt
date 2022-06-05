@@ -1,0 +1,62 @@
+
+Topics : {L1-Regularizer, Elastic-Net}
+
+ref
+[Why L1 Norm & Sparse Vector]
+https://stats.stackexchange.com/questions/45643/why-l1-norm-for-sparse-models
+
+-----
+
+-> Regularization is used to avoid 
+    - Z -> inf
+    - W -> +inf/-inf
+    - Overfitting
+
+-> L1-regularized create sparsity in W ie Weight vector 
+
+=> The sparsity do not depends on the loss but on regularizer
+
+-> Sparsity depends on Weights & biases & not on loss-term
+
+-------------------------------
+
+
+6. L1 Regularization & Sparsity
+----------------------
+
+So In L2 Regularization :- 2 terms : 
+    1) Logistic-Loss
+    2) L2-Regularizer
+
+-> Alternative to L2-Regularizer : L1-Regularizer
+
+=> Advantage of L1-regularizer i.e Sparsity of W vector :
+
+Solution to Log-Reg is Optimal W* vector &
+
+* Sparsity :
+  ------
+	Sparsity of W* means :- W* to be a sparse vector // many Wi to be 0
+
+=> If we use L1-Regularization, all the less imp feature's corresp weight become 0
+   If L2-regularization is used, then weight become small but not necessary 0
+
+-> Thus More Sparsity means Convergence faster 
+
+
+Q) Why L1 creates Sparsity in W as Compare to L2 ??
+  --------------------------------------------
+  -> 
+
+* Elastic-net :
+  ---------
+   - Alternative to L1 & L2
+   -> combine/include both L1 & L2 Norm regualrized terms
+   -> 2 hyper param thus
+
+   => Such a scene where You have 2 hyper-param in Log-reg is known as Elastic-Net form 
+   
+   NOTE :- If you want more sparsity than increaste the weight of L1-Norm multiplier in Elastic net
+
+
+           

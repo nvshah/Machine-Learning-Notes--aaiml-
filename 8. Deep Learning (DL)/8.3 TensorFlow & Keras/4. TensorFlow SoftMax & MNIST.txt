@@ -1,0 +1,114 @@
+4. TensorFlow SoftMax & MNIST
+-----------------------------
+
+3.6, 3.7, 3.8
+
+Code Ref :- 
+
+[Tensorflow_Softmax_Classfier] https://drive.google.com/file/d/1cYvTo2mcBpBU2XIihDhbDUGrfrkzwgCp/view
+[MLP tensorflow] https://drive.google.com/file/d/1tIEOPJiJtMzStFai47UyODdQhyK9EQnQ/view
+
+---------
+REMEMBER
+
+Things & param matters :-
+ 
+ { #epochs, optimizer, Activation Unit, }
+
+----------
+
+* Xi - Yi -> {0, 1, 2, 3, ..., 9}
+
+* PlaceHolders & Variables :
+  ----
+   PlaceHolder :- define to store transient things like Mini-Batch
+
+
+* NOTE :- In case of Multi-Class Classif & NN :
+          \
+           Both Inpu & Output maybe Vectors & (Y need not to be a Scalar val or any Flags, as it can hold multiple corresp Probabilities)
+
+
+* Sessions :
+  ---
+   - tensorflow session is computation graph initiator signal
+
+   1. initialize global variables
+       -> W, b }-> inital all such variables (probably to 0)
+
+   2. Train Step :
+       -> Define the Optimizer & Loss
+
+   3. Epoch & Find the Accuracy
+
+       Epoch :- When all the train points (of Batch) has been passed through once
+
+ ----
+ (3.7, 3.8, 3.9)
+
+   4. Define the network Aarchitecture Params :
+         - { #hidden layers, #Input Layers, #Output Layers 	}
+
+        - keep_prob & keep_prob_input are used as placeholder for Dropout	
+
+   4.1 Weight Initialization	
+
+   5. Parameters :
+        - #Epochs
+        - Learning Rate
+        - Batch Size
+
+   6. Define the Optimizers		
+
+
+-----
+
+Architecture :-
+
+1) Model 1 :- Sigmoid
+  -----
+   
+   1) Sigmoid + Adam   // decay of learning Rate
+
+   2) Sigmoid + Simple-SGD  // here fixed learning rate  
+
+
+2) Model 2 :- Relu 
+  ------
+     Relu + Adam 
+     Relu + SGD Optimizer
+
+    NOTE :- Generally, RELU + Adam performs well amongs above 4 
+
+
+3) Batch Normalization
+   ----
+   1) Sigmoid + BN + Adam
+   ------
+    - used after first layer 
+
+    => NOTE :- you should not batch normalize X's, but you should Batch Normalize the Z's (ie W^T*X)
+               &
+               then later Sigma's layer is applied	
+
+    => scale & beta are 2 more param used in batch-normalization
+
+    - Batch Normalization on layer1 & layer2 inputs
+
+   2) Sigmoid + BN + SGD
+
+
+4) DropOuts :
+   ---
+    - droput between first & second hidden layer
+
+    steps :- 1. W^T*X + b := Z
+             2. Compute relu(Z)
+             3. apply dropout() to step-2 output
+
+    => Note :- Dropout is applied to output of Hidden Layer & that resulted output is pass as input 
+               to next layer
+               Whereas 
+               In case of Batch Norm, BatchNorm part is applied before each Layer (hidden)
+
+    => Dropout works well when we have large & Deep NN

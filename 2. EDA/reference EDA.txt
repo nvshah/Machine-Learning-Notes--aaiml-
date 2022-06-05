@@ -1,0 +1,48 @@
+reference
+
+[EDA ipynb] https://drive.google.com/file/d/0BwNkduBnePt2eU5JdEN0VXR4VTQ/view?resourcekey=0-XIaE8bi-Mq-Xs2tbXreUag
+
+[EDA Colab] https://colab.research.google.com/drive/0BwNkduBnePt2eU5JdEN0VXR4VTQ?usp=drive_open&resourcekey=0-XIaE8bi-Mq-Xs2tbXreUag
+
+[QQ Plot] https://colab.research.google.com/drive/1m8ZL2jqKTiEr47mJowlsVtFpH2YX4UHT?usp=drive_open
+
+[Uniform Distb] https://drive.google.com/file/d/1PPBLFNgenHy2EiXCAP4n_rtjgBe5SnMw/view
+
+[KS Test] https://colab.research.google.com/drive/1IGKj7OVZ_S4vNEMBEuVQNoniJT_UHQE8?usp=drive_open
+
+[EDA TIPS Basics Steps]
+https://drive.google.com/file/d/1PeMVoFgzvJ8oWbCVT-6Chjay0xlnVN5x/view
+
+[BootStrap Sampling]
+
+---------
+(Extra)
+(Articles)
+
+[Distributions]  
+https://udibhaskar.github.io/practical-ml/probability/distribution/bernoulli/binomial/normal/poission/geometric/lognormal/2020/06/05/Distributions.html#Poisson-Distribution
+
+[Exponential vs Power law] 
+https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2873/applications-of-non-gaussian-distributions/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+
+[Distribution Common]
+https://www.analyticsvidhya.com/blog/2017/09/6-probability-distributions-data-science/
+
+[percenntiles]
+https://www.statisticshowto.com/probability-and-statistics/percentiles-rank-range/
+
+[Binning]
+https://pbpython.com/pandas-qcut-cut.html
+
+[MultiNomial Distributed Data]
+https://www.statisticshowto.com/multinomial-distribution/`
+
+---------
+Study
+
+[Intercept] https://www.youtube.com/watch?v=1rJ5c95MWBQ
+[Hypothesis Testing] https://www.youtube.com/watch?v=2VE6AZPS6bI&t=1s
+[Hypothesis testing] https://drive.google.com/file/d/1KUKGRyN3lTuh_R6DzvXBoqRZJh83I-tZ/view
+
+Linear Algebra extra ref : 3b1b youtube
+Calculus : 3b1b youtube

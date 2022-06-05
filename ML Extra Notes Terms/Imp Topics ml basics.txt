@@ -1,0 +1,53 @@
+Imp Concepts :-
+
+ - Projection / Distance / Dot Product / Angular Similarity
+
+ - Differentiation / slope / tangent / Vector Calculus / Partial Derivative / Gradient Descent/ 
+   Stochastic Gradient Descent / Objective Func
+
+ - Constrained Optimization
+
+ - Langrangian Multipliers / Equality Constraints / Inequality Constraints
+ - Eigen Val & Eigen Vectors 
+
+ - Convex Hull | Convex Polygon
+
+ - Entropy
+
+ - Spasity & Density of Data | Matrix
+
+ - Linear / Non-linear Shape
+
+ - Bootstraping
+ - Random Forest
+ - Feature Bagging | Columnn Sampling
+ - Boosting
+
+ - Residuals
+
+ - Steepest Descent
+
+ - Featurization
+
+ - Making Model More Robust - { Regularization, RANSAC, LOF }
+
+ - Retrain Model Perodically
+
+ - Point Estimate & Confidence Interval
+
+ - High ThroughPut & Low-Latency Realtime Application
+
+ - KDE Plot
+
+ - Response Coding
+
+ - Random Vectors | Randomization
+
+ - Matrix Factorization
+
+ - Optimization | Regularization
+   Regularizationn term + Bias Term + Mean-Term
+
+ - SvD | Truncated SVD
+
+ - Kernalized-Logistic Regression

@@ -1,0 +1,42 @@
+------------
+
+-> sklearn impl of GradientBoostingClassifier is not that much fast
+   \
+    -> Best algo opensource is XGBoost (Best GBDT impl)
+
+____________
+
+
+Python Packages
+
+---------
+
+- Imp params for GradientBoostingClassifier
+    \
+     { learning_rate, n_estimators, max_depth, subsample }
+
+
+________
+
+* sklearn.ensemble
+			\
+			 .RandomForestClassifier
+			 .ExtraTreesClassifier
+
+			 .GradientBoostingClassifier
+			   \
+			    XGBClassifier()
+			      \
+			       .fit()
+
+		 .model_selection
+		       \
+		        .cross_val_score()   // cross validation
+
+		      .VotingClassifier
+
+* XGBoostClassifier
+
+* mlextend.classifier
+            \
+             StackingClassifier

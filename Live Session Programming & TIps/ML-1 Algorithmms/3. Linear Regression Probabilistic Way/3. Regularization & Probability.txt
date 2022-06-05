@@ -1,0 +1,137 @@
+Tips :
+-> Also MLE is much more simplified version of MAP as far as Linear Regressio is Concerned
+=> With Gaussian Distb we can play it with logs
+
+__________________
+
+
+3. Regularization & Probability
+----
+
+* Where Regularization ? 
+  -----
+   The simplification obtained in above, doesn't contain regularization ! Where the hack does it go ?
+
+
+[NOTE]
+=> When we derived Likelihood We did not treat theta as Random Variable
+
+* Bayes Theorem :
+  ------
+
+* Theta :
+  ---
+   - Consider {theta} as also a Random Variable 	
+
+   P(theta | D) = P(D | theta) * P(theta) / P(D)
+
+
+* Maximum A Posteriori Estimation : (MAP)
+  ----------
+   => Trying to maximize the Posterior Probability
+
+   ie Give me that theta that maximizes the P(theta | D)   // ie Given Data give that {theta}
+
+   => Also MLE is much more simplified version of MAP as far as Linear Regressio is Concerned
+   -> We will use MAP we will derived Regularized Linear Regression
+   - Best theta is one that maximize the posterior probability
+
+   probability of Dataset (D) := constant 
+       \
+        So it can be ignored whilst comparision
+        (because there are many dataset in Universe & prob of this dataset is constant among them)
+
+ 
+Q) what abt P(theta) ?
+
+* L2-Regularization :
+  --------------
+  
+* Assumption for Weights :
+  --------
+   -> theta = <W, b>
+
+      assume Wi also Gaussian Normal Distributed with some variance ie {tou}
+
+      Assumption for Wj :- Normal Ditributed
+                        :- IID
+
+      Wj -> N(9, tou^2)
+
+      - tou is sensible
+      - if tou is small then probability of W to be very large is small
+
+      - This will not allow W to grow very large
+      - Hence by this assumption we are forcing Wj not to be too large +ve or too large -ve
+
+      -> & This is purpose of Regularization
+
+   -> Thus this from probabilistic standpoint is doing same as what we want from Optimization 
+      standpoint we done during Regularization in Optimization
+
+
+* Theta & Priors & Likelihood :
+  -----
+   Now my theta is one that maximize the likelihood & priors :-
+
+     Likelihood :- P(Y|X; theta)
+     Prior      :- P(theta)
+
+     Both above are stated & simplified in terms of Normal Distribution
+     &
+     We know Normal or Gaussian Distribution is fun way to play with Logs
+
+   Goal :- arg_max_theta ( Likelihood * prior )
+
+   maximizing above is same as maximizing the log(above)
+
+
+* MAP - theta Optimal :
+  -----
+   In solving theta_MAP, 
+      \
+       First part corresp to Likelihood will result via MLE in Minimizing Sum of Square Error
+
+   Second Part Left in Maxmization is :- 
+      \
+       Max (log P(theta))
+
+    Solving this is :- 
+
+    theta is composed of <W, b> ie <W1, W2,..., b>
+       \
+       Here We can ignore b ie P(b) whilst converting Probability P(theta) -> math term or we can consider b as W0
+
+       b = W0
+
+       Thus <W1, w2, ..., W0>
+
+    MAP_theta Optimal Second part := max_W( prod(P(Wj)) )
+
+[LOG Property]
+-----
+=> maximize the log(prod(something)) := maximize the sum(log(something))
+
+   Solving above (Second Part ie from P(theta)) will give us L2-Regularization Term 
+   &
+   Solving (First Part ie from P(D|theta) -> P(Y|X; theta)) Provide us SSE term 
+
+
+* Note :
+  ---
+   Learning Rate is top-up as per our convenniency 
+
+
+* L1-Reg ;
+  -------
+   How can we get L1-Reg term ??
+    -> You need to change assumption of Distribution of Wj before solving the second part ie
+       P(theta)
+
+       W ~ N(0, tou^2)  // L2-Reg in case of Gaussian Distb
+
+       If you Wj ~ to be laplace distb // You will get L1-Reg
+
+
+
+   

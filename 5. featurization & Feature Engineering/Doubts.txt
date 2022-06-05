@@ -1,0 +1,9 @@
+Doubts 
+
+Q) Why for Very High Dimen Features, Linear Model are preferred ??
+  
+  -> because for very high dimen, #hyper-planes choices are more 
+     &
+     Hyper-plane can easily seperate points 
+
+     So Linear Model like Linear Reg & Logistic Reg are preferred

@@ -1,0 +1,9 @@
+Todos
+
+Maxima Minima Function Programming Que (Session 3)
+
+Q. Compute Maxima & Minima of f(x) = x^2 + sin(x) + 2*x   (Live Session 3 (Programming))
+
+Q. factorial w.o using bignum (i.e using simole loop)
+
+Q. Estimate the Value of PI (using area of circle & circumference of circle)

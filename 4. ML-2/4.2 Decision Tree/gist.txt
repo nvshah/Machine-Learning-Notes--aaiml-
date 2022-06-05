@@ -1,0 +1,75 @@
+gist DT
+
+-------------
+
+- KL-divergence is often referred to as relative entropy
+
+=> Computing logs take more time complexity than computing squares
+
+-> Entropy & Gini Impurity can be calculated when Y takes multiple vals i.e (Y1, Y2, Y3,...)
+
+=> IN DT you get Axis-Parallel Tessellation of Space
+
+=> Feature will only be imp or useful when it reduces the entropy going down level in DT
+
+-> Median Absolute Error is more Robust to Outliers	
+
+-------------
+
+-> Entropy Concepts are widely used in Information Theory as well
+
+------------
+
+-> DT is nested if-else or Tree like structure model
+
+- In DT, the graph of data-pts get divided into regions by Axis-Parallel Hyper-Planes
+
+* KL-Divergence :
+  -------
+   -> to compute distance between 2 PDFs P & Q
+   -> Its differentiable
+
+   formula :- D_kl(P || Q) = sum(P(x) * log((p(x)/Q(x))))
+
+* Information Gain :
+  -------
+   -> Advantage we get by breaking/Splitting the Variable in terms of Prediction
+
+   - Entropy(parent) - Avg_Weighted_Entropy(child) 
+
+* Gini Impurity :
+  ------
+   - Alternnative to Entropy (for comparatively optimization)
+
+   - Impurity & Randomness are kinda alikeness
+
+=> Gini Impurity is computationally efficicent compare to Entropy (because of log-term)
+
+* Regression & DT :
+  ----
+   - Use MSE or MAD instead of IG
+   - Thus Pick split option where error reduces going down the tree
+
+TIP :-
+----
+ 1) Avoid One-Hot Encoding for Categorical Features in DT, (as it increases d)
+
+ 2) If categorical feature with lots of levels then convert it into Numerical feature 
+    (ie via probability)
+     P(yi=1 | f = C1)
+
+ 3) Feature will only be imp or useful when it reduces the entropy going down level in DT
+
+ 4) Only when you have sufficient samples, you can trust the node (otherwise your model can go for 
+    Overfitting)
+
+---------
+
+Python :
+
+  split can be done in 2 ways :- `best` or `random`
+
+  Instead of evaluating all features it could pick less features at split !!
+   \
+    Eg sqrt(), log2(),
+       [ randomly picks the bunch of features ]

@@ -1,0 +1,42 @@
+Tips ML 3
+
+=> Whenever you have Log-Loss as metric & you are looking for probability estimate,
+   -> Do calibration on top of Base Model
+
+=> When you do not have same same data pt for 2 different model
+   then connsider Confidencee Interval instead of point Estimate for Metric
+
+=> If there is temporal change in your dataset, ie data change over temporal axis, then 
+   you must consider temporal split for your data
+
+=> As Logistic Regression is Linear Model so it has higher chance of Underfitting
+
+=> If distributions in Train, Test, CV are very diff then =>  ML models will not work very well
+
+1.) If there is a less gap between train and test error, it means the model has learnt the pattern in the train data well and also generalized the same in the test or unseen data well. This is the ideal condition.
+
+2.) If the train error is very less and the test error is very high, it means the model is overfitting. The model couldn't generalize well in the test data. You can add regularization to prevent overfitting. 
+
+=> feature engineering Hack :
+   --------
+    - provide more weight to some feature ;- by repeating the value of that particular Feature
+
+=> When you have high dimension data, linear Models performs very well
+
+=> If something can be represented with mathematical objective function then we can 
+    link it with different algorithms
+
+=> Optimization as Problem sovling helps to represent & scheme as MF way easily for diff kinda Tasks
+
+=> L1 regularizations creates sparsity
+
+=> When we transform the Image to Vector, We are ignoring the spatial-properties of image in our system
+
+[A/B test] :
+=> The true test of your Model is not on Train or Test Set 
+   Its actually via A/B testing
+
+[Random Model & Bias]
+=> Random model maybe Worst Model in terms of Performance, but it gurantees to be Non-Biased
+
+=> Watching the Distribution og to be predicted Feature you can figure out bias as well

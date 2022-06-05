@@ -1,0 +1,25 @@
+
+-------
+
+- For Time Series :- LSTM
+
+_________
+
+
+* Image DL Featurization
+ -----------
+  CNN -> Deep Learning Featurization 
+  ___
+   (State of the Art)
+
+   -> for automatically getting features from Image, (give lots of data)
+
+   - CNN is much faster than other image data featurization technique
+
+   Eg
+   ---  
+       Tumor from X-Rays :- just provide lots of X-rays
+           \
+            tumor or not
+            
+        You can detect any image

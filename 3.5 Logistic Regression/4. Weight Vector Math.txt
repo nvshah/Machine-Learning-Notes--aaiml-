@@ -1,0 +1,51 @@
+
+-------------------
+
+=> sigmoid(distance) = the probability of pt lying on same side of normal
+
+------------------
+
+* Weight Vector :
+  ------------
+   -> The optimum W* we find via Optimizationn Problem is called Weight Vector (Feature Vector)
+
+      W is a d-dimen data pt
+
+   -> d-dimen ie d-feature
+      So corresponding to every feature we get weight associated to it
+
+  Given Xq
+
+  decision is 1) W^T*X > 0 , => then Yq = +ve
+              2) W^T*X < 0 , => then Yq = -ve
+
+  To get probabilistic interpretation :- We will use Sigmoid(W^T*X)
+
+  W = [W1, W2,...Wi,...,Wd]   // Weights
+  F = [F1, F2,...Fi,...,Fd]   // features
+
+* Interpretation of W :
+  ------------------
+   let say corresp feature of query pt Xq as Fi
+
+   Case 1 :- If Wi = +ve;
+             if Fi incr => Probability of query pt Xq belonging to +1 class also increases
+
+              then if Fi incr => Wi*Fi also increases
+                      \
+                       -> Summation(Wi*Xq_i)
+                       =  W^T * Xq_i incr
+                       =  sigmoid(Wi * Xq_i) also incr  // monotonic fun
+                       = P(Yq = 1) also incr  // probablistic interpretation
+
+  Case 2 :- If w = -ve
+  			if Fi incr => Probability of query pt Xq belonging to +1 class decreases
+  						  thus Probability of query pt Xq belonging to -1 class increases
+  (gist)
+  
+  For a given query pt 
+  Wi is corresp weight resp to Feature Fi of query pt Xq
+  if Wi is +ve, then if its ith feature incr then its probability to class +1 also incr
+  if Wi is -ve, then if its ith feature incr then its probability to class -1 incr
+
+

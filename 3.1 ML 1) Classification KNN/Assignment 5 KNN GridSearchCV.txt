@@ -1,0 +1,4 @@
+Assignment 5 KNN GridSearchCV
+
+sklearn -> make_classification  // for customly generating classification dataset
+

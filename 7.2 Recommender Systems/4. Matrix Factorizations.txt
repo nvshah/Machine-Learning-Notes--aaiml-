@@ -1,0 +1,109 @@
+
+------------
+
+___________
+REMEMBER
+
+-> PCA = Eigen Decomposition => performed on (Covariance Matrix) Squared Matrix 
+   SVD = Singular Val Decomp => performed on any Rectangular Matrix
+   
+   Covariance Matrix is Squared & Symmetric Matrix
+
+-----------
+
+
+* Matrix Factorizations
+  ----------
+
+  A -> matrix
+  \
+   decompose A into product of other matrices (ie Factorization)
+
+
+* PCA & MF :
+  --------
+  -> PCA is an example of Matrix Factorization
+
+* Eigen Decomposition : (PCA)
+  --------
+  -> The Covariance Matrix S can be decomposed into 3 Matrices 
+      ie
+         S = M * Lama * M_transpose
+
+         where each of them have d*d size or shape
+
+         Lama :- Diagonal Matrix
+           \
+            -> hold the eigen values along the diagonal
+
+  => Fundamentally PCA is doing Eigen Decomposition of Covariance Matrix (ie Matrix Factorization)  
+  -> Thus PCA does MF using Eigen Vectors
+
+=> PCA is often on Covariance Matrix (ie Squared Matrix)
+-> Thus in case of PCA matrix will be Symmetric because it is Covariance Matrix 
+   ( & Covariance Matrix is Square & Symmetric Matrix)
+
+
+* Singular Value Decomposition : (SVD)
+  ---------------
+   - Its a Matrix Factorization Techniques that is related to PCA
+
+   - It can be performed on any Rectangular Matrix
+   - Thus to perform SVD, matrix need not to be Symmetric
+
+   SVD :- X -> U * SIGMA * V^T 
+
+               U :- n*n
+               SIGMA :- n*d
+               V^T :- d*d
+
+   Singular Values :
+   ---
+   In case of SVD, middle matrix (ie SIGMA) will be diagonal Matrix &
+   entries on diagonal line will be called as Singular Values
+   
+   => Singular Values will form a Middle Matrix
+
+   Left Singular Matrix :
+   ----
+    - U
+    -> set of left Singular Vectors
+
+   Right Singular Matrix :
+   ----
+    - V
+    -> set of right Singular Vectors
+
+* Eigen Values vs Singular Values :
+  ------------
+   Eigen Value  Decomposition :- Eigen Values as a Diagonal in Diagonal matrix
+   Singular Value Decompositon :- Singular Value as a Diagonal in Diagonal Matrix
+
+   Si^2 / n-1 = LAMA_i
+
+   Eigen val of S :- lama_i
+   Sinngular val of X :- S_i
+
+   In case of SVD :-
+
+   Ui :- ith Column of U :- ith Eigen Vec of X*X^T
+   Vi :- ith column of V :- ith Eigenn Vec of X^T*X
+
+* NMF (Non-Negative Matrix Factorization)
+  -------------
+   -> Decompose Matrix into product of 2 Matrix s.t all the elements in both the matrix is >= 0
+
+      A = B * C^T   
+
+         - A is n*m dimen
+           B is n*d dimen
+           C is m*d dimen
+
+         S.T. Bij >= 0 & Cij >= 0
+
+
+-------------
+
+* NMF & Regularization :
+  -----------
+   -> If you want to factorize in more sparse Matrices then provide more weight to L1-Norm in Elastic Net

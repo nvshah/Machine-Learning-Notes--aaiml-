@@ -1,0 +1,27 @@
+* Cold Start Problem 
+  -------
+
+  In RS :
+
+  - Sometimes if User is new, there is no information about user's ratings activity
+  - Sometimes when item/prosuct is new, there is no information about item's ratings
+
+  such scenario is known as Cold Start Problem where you have new user or new items & 
+
+  => In such case you can use Top items based on meta data
+
+  => Handling the Cold Start Problem in RS :- `Content based RS is simplest idea`
+
+* New User:
+  -----
+   - metadata for user
+
+   For new user you will use the meta-data info from user & use the Content Based Recommended System to recommend
+
+* New-Item :
+  --------
+   - meta-data for item
+
+   You can recommend the similar items to user based on meta-data for new arriving items to already existing one
+
+   

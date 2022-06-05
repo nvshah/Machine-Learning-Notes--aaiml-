@@ -1,0 +1,24 @@
+Time & Space COmplexity
+
+Time 
+---
+:- roughly :- O(n log(n))
+    
+    log n :- range query
+    n :- for n points 
+
+    so n * log(n) ie n times range query performed
+
+   => Range-Query Can be Optimized using KD-Tree or Oct-Tree
+
+Space :- 
+---
+ O(n)
+
+ Thus when dataset is very high dimensional it can cause problem
+
+-------
+
+ 1. K-means has roughly Time Complexity of O(n)
+
+ 2. Hierarchical :- O(n^2 logn)

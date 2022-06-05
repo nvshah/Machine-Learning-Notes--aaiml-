@@ -1,0 +1,27 @@
+
+perturbation -> mental uneasiness
+
+___________________
+
+* Whole of Machine Learning is not about building models its about finding/creating the 
+  insights that impacts the business values
+
+* Problem Solving Skills are Transferable
+
+* Foundational Skills is more imp than any fancy skills
+
+* Put your conclusion in simple English (layman term)
+  Always remember the Objective while EDA
+
+* Through understanding various approaches you become better ML Engineer
+
+* Best way to learn abt is read others work
+
+* Do Google Search & Be Patient
+
+
+
+TIPS
+---
+
+- There is no right or wrong ans, It's all abt how do you tackle the things !!

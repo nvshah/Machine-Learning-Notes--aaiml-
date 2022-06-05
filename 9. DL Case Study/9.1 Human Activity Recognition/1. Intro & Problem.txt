@@ -1,0 +1,82 @@
+1. Intro
+
+--------
+Keys
+
+mag := magnitude
+
+
+---------
+
+AIM : If we have data from Accelerometer & GyroScope from Mobile Device
+      Can we predict the Human Activity such as
+      Walking, Running, Sitting, Standing, Dancing, etc...
+
+Usecase :-
+ Smart Watches
+ Eg :- Fitbit, AppleWatch, Boat
+
+ using this we can
+ helps to predict :- calories, heart rate prediction
+
+ You can use this Activity to measures certain things such as calries burn, etc...
+
+----
+
+* Problem :
+  --
+  - GyreoScope
+  - Acclerometer
+
+  Angular Velocity measure over time along 3 axis
+  X, y & Z axis over time
+
+  Inp :- 6 Time Series Data
+  Out :- one of the Activity (ie Running, Standing, Laying, Sitting, Upstairs, DownStairs ...)
+
+  MultiClass Classif Problem
+
+---
+
+Notes :
+
+-> Data is Time-Series based
+   So Data is broken up in Equi-Sized Window (along time axis)
+
+-> Window -> Filters (Signal Processing) -> Vector
+
+* Overlapped Sampling :
+  ---
+   - I'll consider overlapping windows
+   - Take next window such that it overlap somewhat with prev window
+
+Data :- 6 time series data
+--
+ - from each (acceleo, gyro), we have data in 3 axis (ie directions)
+
+ - These 6 time series data has bee processed & engineered into Features for us
+   &
+   the size of that vector of features is 128
+
+ Flow :-
+  -> Original Data is converted into Windows
+  -> Each window we apply some signal processing filters & we get vector of length 128
+
+  -> On top of these 128 features, there are also some other features engineered
+
+=> Case study is tradeoff between Expert Engineer Features & Raw Time-Series
+
+
+
+---------
+
+1. Huma Expert Data :- we will apply classical ML
+2. For Raw Data (time series) :- we will use RNN
+
+=> RNN can work well with Sequential Data
+
+
+Folder-Explained:
+  - Inertial Signal :- Raw Time-Series Data
+
+  - train.csv & test.csv are related to expert features

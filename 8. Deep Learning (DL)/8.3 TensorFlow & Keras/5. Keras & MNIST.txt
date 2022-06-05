@@ -1,0 +1,165 @@
+5. Keras & MNIST & MLP
+---------------------
+
+ref Code 
+[keras MNIST] https://drive.google.com/file/d/1PMyn9bgjDzhaBm2NO3YQ1f0m-Y2SmZe4/view
+
+-----
+Buzz Terms
+
+- keras initializers (just google it)
+
+-----
+TIPS :- 
+
+np_utils.to_categorical :- Inorder to achieve things alike One Hot encoding
+
+_____
+
+* Keras :
+  ---
+   - high level library, which can use Tensorflow under_the_hood 
+   - keras is same to DL as scikit-learn to ML
+
+
+* Normalizing & OHE :
+  ----
+ 
+TIP :- Inorder to do thing alike OHE you can use (diff way) :- np_utils
+        \
+         -> np_utils.to_categorical()
+
+
+--> KERAS Template way of definign MLP model <--
+
+* Keras & MNIST : (3.12)
+  ------------
+
+* Model : (Simple Softmax using Keras)
+  ---
+  1. Define the Model
+      keras -> Sequential()   // Softmax is nothing Sequential
+
+  2. Define the Structure  // add()
+
+     Add layers to your model you want 
+       - ie it can be Dense Layer or Sparse Layer
+
+	  => Inorder to define model & layers you only need few info :
+	   - what is input/output relationship
+	   - what is activation function
+	   - Dense or Sparse
+
+  2.1 Batch Normalization Layer (Optional)
+
+      -> If you want to add the Batch Normalization to next to your layer :-- 
+          BatchNormalization()
+
+  2.2 Dropout Layer (Optional)
+
+      -> If you want to add the DropOut Layer to curr layer :-- 
+          DropOut()
+  
+  3. Compilation Parameters // compile()
+       - optimizer
+       - loss
+       - metric
+
+       Here param to compile()
+          |
+          loss :- can be Eg :- { 'categorical_crossentropy' }
+
+
+1) Simple MLP (1 Layer SoftMax)
+
+2) MLP + Sigmoid + SGD
+
+3) MLP + Sigmoid + ADAM  // only change in Optimizer
+
+4) MLP + RELU + SGD  // only change in param of `activation` in step-2 of definne structure (ie add())
+       
+     -> With RELU, during step-2, ie whilst defining structure (ie add())
+        add()
+          |
+          you can define the initializer for your weights
+             \
+              for Eg RandomNormal()
+                     he_normal()
+
+5) MLP + RELU + ADAM
+
+6) MLP + BatchNormalization + ADAMOptimizer
+
+7) MLP + DropOut + ADAMOptimizer
+
+-------------------------------------------------------------------------
+
+* HyperParam Tuning & KERAS | MNIST : (3.13)
+  --------------------------------
+
+- List of HyperParameters :-
+   1. # Layers
+   2. # Activation Unit in each Layer
+   3. Selection of Activation Unit :-- Relu, Sigmoid
+   4. Dropout Rate
+
+-Remember : 
+ ----
+  -> in case of sk-learn we have 2 good algo :- GridSearch & RandomSearch for Hyper-Param
+      |
+      Now we need to see if we can somehow leverage this by having communication between 2 diff tools
+      Keras & Sklearn
+
+* Connect keras & sklearn for hyper-Param tuning : (SKLEARN WRAPPER)  
+  -----------------------------------------------  -----------------
+  -> Activation Type Param : 
+     - We will Tune 1 param for now :- Activation Type (ie Either Relu or Sigmoid)
+
+  => keras.wrappers.scikit_learn -> KerasClassifier :
+     __________________________
+      - can be used to talk between keras & sklearn for hyper-param tuning
+
+      Q What Wrapper does ?
+      -> It wraps over `keras Model` to make it understanbdable to Sci-Kit-Learn
+
+
+  - Thus we have define our own classifier ie KerasClassifier for purpose that underhoods use keras to classify but for doing hyper-param we will use sklearn tool
+
+  Thus sklearn -> will do Hyper-Param Tuning using (Grid or Random)
+         \
+          where as an estimator we will use our custom classifier (ie KerasClassifier)
+           &
+          this classifier leverages the Keras Power to unveiled the MLP|DL|NN structures (ie thus for more complex classification tasks)
+
+   -> For tuning we will use only 1 param as of now for understanding ie Activation Selection 
+        \
+         [ 'sigmoid', 'relu' ]
+
+      - It will try once with 'sigmoid' Activation Unit & 
+        then
+        It will try again with 'relu' Activation Unit
+
+  All in all :-
+    -> We are leveraging the ease of Modelling (esp for DL-MLP), provided by Keras
+       & (internally keras is also using the tennsorflow)
+
+       & Keras & ScikitLearn can talk to each other via Wrapper
+
+ * Caveat :
+   ----
+    - If you are using CPU, then you can mention job = -1, (ie n_jobs param) 
+      because sklearn will parellalize based on #cores
+
+    - but if you are using GPU, then avoid `n_jobs` param
+        |
+        as it may slow downs the performance
+
+---	
+* Other Hyper-Param Tuning Techniques for DL :
+  --------------------
+
+* HYPEROPS | HYPERAS
+  ------------------
+   -> It is another way to do hyper-parameter tuning for MLP NN
+   -> It works with both keras & tensorflow
+   -> It uses more advance techniqyes for optimization such as { black-box optimization, ...}

@@ -1,0 +1,6 @@
+terms
+
+- Heuristics
+
+- Web Scraping
+* What Google is doing :- Internet Scaled Web Scrapping

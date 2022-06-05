@@ -1,0 +1,13 @@
+Math Notes (Linera algebra)
+
+* Equation of Lines 
+
+   - Slope-Intercept Form
+   - 
+
+* In statistics you need to make assumptionns to move further in derivations
+
+
+* Derivative & Optimization
+  ---
+   Derivative = 0 => minima, maxima or saddle point

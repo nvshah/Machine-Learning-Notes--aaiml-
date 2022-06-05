@@ -1,0 +1,10 @@
+tips ML problem
+
+- Do Univariate Analysis
+
+- Do Feature Processing Before Train-Test Split
+
+- Use scipy for sparse matrix merge
+
+- Use tqdm to check progress during code running
+

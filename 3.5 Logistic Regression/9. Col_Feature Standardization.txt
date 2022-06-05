@@ -1,0 +1,26 @@
+* Standardization :
+_____________
+
+Xij = Xij - mean / std_dev
+
+=> In Logistic Regression, its mandatory to compute the col-standardization
+
+   Why ?
+   -> because we are computing distances to hyper-plane
+      &
+      wherever distances occur, Scaling may cause an issue so we need standardization
+
+      Scale of features could impact a result (ie di)
+        - It may result in less accurate distance
+        - It may slow down the loss-func minima optimization process
+           \
+            slow convergence
+
+   -> Hence we standardize fetaures
+
+=> Col/Feature Standardization is also called as mean-centering & scaling
+
+
+* Normalization :
+  ----
+   -> You can also consider normalization in alternative to Standardization

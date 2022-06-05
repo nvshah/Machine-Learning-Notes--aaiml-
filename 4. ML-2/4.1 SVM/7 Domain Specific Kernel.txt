@@ -1,0 +1,24 @@
+
+----------------
+
+-> Feature Transformation is partially replaced by finding the right/appropriate Kernel
+
+----------------
+
+
+Domain Specific Kernel
+--------
+
+=> Since Feature transformation is domain specific more of so there are specialized kernel for 
+   specific domain
+
+   Feature Transformation = Kernel-Trick
+
+- Text Classification Specialized String Kernel
+  Genome based specialized kernel
+  Graph Kernel Specialized Kernel
+
+-> Effectively Feature Knowledge + Domain knowledge creates custom kernel (ie Domain Specific Kernel)
+   for relevant problems
+
+- Feature Transformation is partially replaced by finding the right/appropriate Kernel

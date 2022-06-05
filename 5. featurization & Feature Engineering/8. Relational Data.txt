@@ -1,0 +1,10 @@
+* Relational Data
+-------------
+
+  -> you can use SQL queries (like groupBY, Join etc..)
+     to come up with features for Task defined
+
+     Domain-Specific :- if task changes, features will change
+
+
+=> In general when we have relational data -> we can use SQL to featurize it

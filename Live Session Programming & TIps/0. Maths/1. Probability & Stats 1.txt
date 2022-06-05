@@ -1,0 +1,128 @@
+1. Probability & Stats 1
+
+ref :- Itconline.net   // for center limmit theorem simulation
+
+ref :- https://drive.google.com/file/d/1dS-kf0DNVT6VLhDiVYQ6bo6XWwrT0SnW/view
+
+---------
+ROT :- Sample Size  >= 30   //CLT
+
+> Sampling with Replacement & Without Replacement have some implications with Ennsemble methods
+   ie Bagginng & BootStrapping
+
+> If you are rejecting NULL hypothesis then keep increasing the sample size unti you 
+  reach some reasonable conclusion
+
+---------
+
+Data :- BlackFriday Sales Data
+
+
+* Central Limit Theorem :
+  ------
+   => Pop-mean is roughly equal to mean of samples means
+
+   => Sample Stdev = Pop-Stdev / sqrt(n)   // n is sample size
+
+   let n be sample size
+   as n increases -> More Gaussian like
+   					 Variance/width of bell curve decreases
+
+   	  n incr -> Var decr
+
+
+* Importance of Random Sampling :
+  -----
+   -> To avoid skewed Sampling
+
+* Mean vs Median :
+  ----
+   Distributional Statistics (parametric statistics) :- Mean is used
+   Outliers :- 
+
+* Point Estimate vs Range(Interval) Estimate :
+  -----
+
+=> When the cost of obtaining the data of whole population is very high in such case 
+   We will employ classic Statistics Techniques 
+
+   (ie Point Estimate or Range estimate)
+
+
+* A/B testing :
+  ----
+   Change the color of Buy Button & Improvement in Sales 
+    \
+     This is hypothesis (ie Gut feel we have)	
+
+   So in A/b testinng :
+      - 1 % of traffic will be redirected to new Page (that contains Blue Color)
+      - 99 % of traffic will be redirected to old Page (that contains prev Orange Color)
+
+    This 1% is random sample 
+         \
+          so now based on this available sample we need to check & estimate the improvement
+          for entire population
+
+          because we can't use directly what we observe for 1% with what we Observe for 99%
+          as both are imbalanced
+
+          So we need some way to utilise the observation of 1% for entire population (inorder to compare the Hypothesis or new Suggestion of Color)
+
+          In such case Techniques like :- Confidence Interval | Hypothesis Testing comes into play
+
+  -> Thus a/b testing incorporates the usefulness of classical stats techniques
+
+* Hypothesis :
+  ----
+   = Gut feel we have
+
+* classical stats Techniques :
+  -----
+   -> Confidence Interval & Point Estimate
+   -  Hypothesis testing
+   -  others
+
+   Eg Election Results Estimate 
+         (its not feasible to go to each & every person in the country so in such case classical stats comes into handy)
+
+
+* Standard Error :
+  -----
+   -> When we do some kind of estimate instead of computing on actual population
+
+   std error of mean = std-Dev os Samplign distb
+
+
+* 95% Confidence Interval (interpretation) :
+  ------
+   -> If taking ranndom samples is repeated n times, then 95% CI means that 95% of n times the population mean lies in the interval we give each time out of n time.
+
+
+* P-val & Permutation Testing & Resampling :
+  ------
+   -> Compute p-val using permutation testing & resampling   or (from p-val table)
+
+   p-val is finding probability of what we observed under null-hypothesis
+
+   In case of p-val & Null-Hypothesis :
+     - do check for multiple values of sample size
+
+     It may possible that at small val of sample size you may reject null-hypothesis
+        but at large val of sample size you may accept null-hypothesis
+
+* Bucket Test :
+  -------
+   slowly increase the sample size in case of p-val & Hypothesis Testing
+   and
+   also in case of A/B testing
+
+TIP :- If you are rejecting NULL hypothesis then keep increasing the sample size until you 
+       reach some reasonable conclusion
+       &
+       conclusion of all sample size you tested must be same (in case of rejection)
+
+* KS-test :
+  -------
+   -> uses K-Distrb unnderhood
+

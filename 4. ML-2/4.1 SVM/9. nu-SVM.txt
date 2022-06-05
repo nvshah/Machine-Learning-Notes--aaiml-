@@ -1,0 +1,30 @@
+nu-SVM
+------
+
+C-SVM -> Original Formulation where C is hyper-param & C > 0
+
+Alternative :- nu instead of C 
+
+ hyper-param = nu
+   \
+    0 <= nu <= 1
+
+    nu >= fraction of errors               // nu is upper bound on frac of errors
+    nu <= fraction of support vectors      // lower bound on support vectors
+
+ -> nu is maximum fraction of error that can happen
+
+ Eg nu = 0.01 
+    - % of errors maximum allowed is 1 %  i.e <= 1%
+    - Support Vectors is >= 1% i.e atleast 1%
+
+ => nu controls the #errors
+
+ For run-time complexity, we want lesser #SVs
+ but nu doesnt control the Support Vectors numbers as 
+   \
+    nu have upper bound on error
+    but nu do not have any upper bound in SVs
+
+=> Thus nu-SVM is 1 way to get understanding or an idea abt how many Support Vectors we may have.
+   nu-SVM do not give control over support-vectors but can give some idea 

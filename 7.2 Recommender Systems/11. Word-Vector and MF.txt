@@ -1,0 +1,73 @@
+* Word-Vector and MF 
+  ----------
+
+  Word2Vec is inspired from Neural Network
+
+  Lots of technique :- LSA, PLSA, LDA, GLOVE
+
+  GLOVE :- (GLobal Vectors)
+     \
+      related to word2vec
+
+  most of the techniques can be related with MF
+
+
+* SVD & Word-Vectorization :
+  -----------------------
+
+ (1)Co-Occurence matrix :
+    --------
+     - n * n matrix  // n is # words
+
+     - Wj occurs in the context of Wi
+       \
+        -> Wj & Wi occurs in neighbourhood of some distance
+
+     - Co-occuring in neighborhood
+
+ (2) SVD :
+    ----
+     - On top of Co-Occurence Matrix
+ 
+ (3) Truncated SVD :
+     ---
+      - Truncated SVD on top of SVD (ie on top of Co-Occurence Matrix)
+
+ (4) word vec :
+     ------
+      Each of rows of Trunncated Left Singular Matrix U` will become the word vec correspondingly
+
+
+* Truncated SVD :
+  -------------
+   -> 2 inputs :- k, X
+
+   - Take top k left singular vectors (ie Discard some columns from left Singular matrix)
+   - Take top k singular values
+   - Take top k Right singular vectors (ie Discard some rows from right singular Matrix)
+
+   => it's nice approximation to Original matrix X :- 
+            as we discarded least info - related singular values
+
+
+   -> X = U` * SIGMa` * V`
+            
+            U`  :- n*k   dimen
+            SIGMA` :- k*k  dimen
+            V`  :- k*n   dimen
+ 
+
+ * Problems :
+   ---------
+    
+    As Entire Steps to get Word-Vec innvolves 2 main things ie 
+      \
+       Co-Occurence Matrix + Trunncate SVD
+
+    -> Co-Occurence matrix is of n*n & n represents #words which is typically large
+
+   Soln :
+   ---
+    -> People genrally takes the subset of words ie Top {m} most imp words & thus build the Co-Occurence matrix of m*m instead of n*n
+
+    - most imp words = word with greater TF-IDF value

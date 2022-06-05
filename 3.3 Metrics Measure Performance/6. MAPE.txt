@@ -1,0 +1,19 @@
+* MAPE (Mean Abs Percentage Err)
+  --------
+
+  Error = ei = pi - ai  // pi = prdicted & ai = actual
+
+  So MAPE = avg(sum([ei/ai]))
+
+  problem : Singularity Problem 
+  ----
+   When ai = 0
+   -> 1/0
+
+* Alternative MAPE :
+  ----------
+   when ai = 0, Take avg val of all ai's
+
+  Modified MAPE := avg(sum(abs(ei/a_bar)))
+
+                := sum(ei) / sum(ai)

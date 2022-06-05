@@ -1,0 +1,10 @@
+10. ImageNet 
+------------
+Sec 4.10
+ref
+https://en.wikipedia.org/wiki/ImageNet
+https://www.kaggle.com/c/imagenet-object-detection-challenge
+
+- AlexNet
+
+- ImageNet dataset became the benchmark for CNN

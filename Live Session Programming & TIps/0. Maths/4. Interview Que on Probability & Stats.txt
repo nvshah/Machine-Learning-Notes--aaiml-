@@ -1,0 +1,138 @@
+Date :- 4th March 2022
+
+[10.13] -> Live Session
+
+4. Interview Que on Probability & Stats
+--------------
+
+
+--------
+TIPS
+
+FACT :- Mostly in E-Commerce the distribution is Power-Law Distribution
+
+-------
+REMEMBER
+
+- Emperical CDF := Observed CDF
+
+-
+For Discrete RV :- PMF  // Probability Mass Function
+For Continuous RV :- PDF  // Probability Density Function
+
+- PDF := is Derivative of CDF
+- Derivative := Slope of Tangent at a Point
+
+-------
+
+Q1) CDF to PDF  | Differentiate
+--------------------------------
+ [CDF, PDF, Calculus, Coding]
+
+ -> Emperical (Observed) CDF to Emperical PDF
+
+ X is Continuous RV
+
+ [NOTE]
+ For Discrete RV :- PMF  // Probability Mass Function
+ For Continuous RV :- PDF
+
+  1. For Discrete RV : 
+       - Its Trivial
+       - We just need to take diff of curr to prev & catch out probability
+
+  2. For Conti RV :
+       - Thus we need to find PDF here  
+       - Idea :- Differentiate
+
+  Soln :
+  --
+   -> PDF := is Derivative of CDF
+      Derivative := Slope of Tangent at the Point
+
+   -> To get the best possible approximation for derivative of any given point xi
+       - try out the leftmost & rightmost point of xi
+         & see which one is closest to it
+
+         Which ever point is closer (ie either left or right) we will pick that
+         & calculate `rise over run`
+
+   -> Simply Compute best approximation to slope at each given point as best as you can !
+
+   NOTE :- We will not get perfect CDF
+            but it will be best approximation 
+
+Q2) PDF vs PMF :
+----------
+ -> For Discrete RV : 
+       - Probability vals ie PMF's val must lie between 0 & 1
+
+    For Valid PDF plot :
+       - Area under the Curve should be = 1   // (As PDF = Derivative of CDF)
+
+
+Q3) CLT :
+--------
+ - Given some mean, & Std-Dev for some Continuous RV
+    |
+    We can apply CLT to get normally distributed data
+
+
+Q4) Interval Population | Unnknown Distb 
+---------
+ How many points lie in certain interval without providing any details of underlying distribution
+
+ * ChebyShev's InEquality 
+   ---
+    - One of imp equality in prob theory is ChebyShev's InEquality
+
+
+Q5) Probability Que on Bayes Theorem 
+ -------
+  -> Logic : Conditional Probability
+
+
+[**IMP]
+Q6) Experiment in Ecommerce (A|B test & P-val):
+ ------------------------------
+  - Actual (Emperical) Data
+  - A|B test
+
+  Find : P-val diff between red & blue button in sales
+         or
+         We need to annalyzze if there is actual diff in sales when red or blue button is used !	
+
+---
+REMEMBER :- Mostly in E-Commerce the distribution is Power-Law Distribution
+---
+
+  -> Available Techniques :-  
+        - KL-Test, KL-Divergence
+          QQ-Plot
+
+        - Permutation Testing (with Resaampling) (with median as Test Statistics)
+---
+REMEMBER :- KS test tends to fails for longer tails
+---
+
+  -> Try to play with multiple statistics (for Permutation Testing)
+        \
+         mean, median, diff-percentiles
+
+
+Q7) Proportional Sampling (Variation)
+  ------------
+   -> Instead of element itself connsider square of elements while doing sampling 
+      (for weightage| proportion)
+
+      Remember 2 things whilst implementing : Keep track of elements in original arr
+      ->
+      In the final output arr, elements must be same as what belong to original input array (order may varies)
+      beware of what proportional conndition is used underneath
+       
+      1) create new arr for respective proportional condition (ie Squared of each term)
+      2) Apply Proportional Samplinng on new arr (but argindex based) 
+           \
+            so that we have track of element's index itself rather than element itself
+
+      3) Based on sampled indexes just represent original vals in output array acordingly 

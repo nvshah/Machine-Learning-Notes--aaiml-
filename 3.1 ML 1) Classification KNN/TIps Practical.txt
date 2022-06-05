@@ -1,0 +1,5 @@
+TIps Practical
+ 
+1)  stratified Sampling :
+      durinf train_test split try to use stratified Sampling 
+      to preserve the distribution between splitted parts

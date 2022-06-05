@@ -1,0 +1,16 @@
+remember tips
+
+Programminng Tips :
+  
+- At Every Stage store your findings or Data manipulation into pickle files
+  (so you can continue from last in next time)
+
+
+* Inverted Indices :
+  ------------
+   -> It's most efficient DS when it comes to search
+   -  So google, or any other company that have searching facility will be probably using Innverted Indexes underhood someway
+
+
+=> TF-IDF was design for search Engines & Large Documents
+   where TF of words in text-doc is not always 1/freq

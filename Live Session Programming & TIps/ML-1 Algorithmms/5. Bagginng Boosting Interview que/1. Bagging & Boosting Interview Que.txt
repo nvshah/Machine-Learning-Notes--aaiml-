@@ -1,0 +1,193 @@
+1. Bagging & Boosting Interview Que
+-------
+
+-------
+-> Regularizer :- helps to avoid Overfitting by addint it to the Loss Fun
+
+-> RF :- Random Forest works well on Tabular Data
+
+Core :
+ - RF := In random forest each of your base tree are already overfit
+-------
+
+1) 
+
+- In boosting you want your base learner to be Underfitting
+  Whereas
+
+  In bagging we've Deeper Trees :- ie Overfitting is preferred
+      \
+       Random Forest
+
+=> RBF with larger Sigma is a Suitable learner for Boosting
+      \
+       -> larger sigma := means mmore variance in PDF graph
+
+   RBF with larger Sigma := similar to KNN with larger K
+       \
+        Thus its Underfitting & suitable for Boosting as Base-Learner
+
+---
+
+2) Pseudo Code for Gamma in GBDT
+   --------
+   - tags :- critical point
+
+   gamma_m = argmin (Sum (Loss(Yi, ( F_m-1(xi) + gamma h_m(xi)) )
+
+           = argmin (Summ (n1 + gamma * n2))   // n1 & n2 are 2 constant numbers resulted
+           = Some_Fun(gamma)    // nothing but some funciton of gamma
+
+     F_m-1(xi)  // is the Yi_hat (pred) after m-1 models are boosted 
+     h_m(x)   // is the mth Model you trained  
+
+     Thus Your Objectie boils downn to 
+        -> argmin(some_fun(gamma))
+            &
+            this you cann find via SGD
+
+        SGD :- initialize gamma_0 = some random number & Find the true convergence value 
+
+   Ans :- 
+     Step - 1) Write the Eqn
+
+            2) Simplify the Eqn
+
+            3) SGD till convergence | For Loop
+
+----
+
+3) Hyper-Param Tune for Random Forest (RF)
+   
+   Specific To Random Forest --
+
+   1. #base-learners increases -> Less Overfitting
+
+   2. Col Sampling & Row-Sampling 
+        - For same number of base Learners if I use 100% of Colummn Sampling & 100% of Row-Sampling 
+          then chances of Overfitting is more
+   
+   Tree based properties --
+
+   3. - max-depth,
+      - #min num of samples in Leaf Node
+      - #min samples to split
+      - min percentage gainn to split | Entropy
+
+   These will impact the Overfitting & Underfitting of RF
+  
+---
+4) Hyper-Param Tune for GBDT
+
+   Relevant to GBDT
+	
+   1. #base-learners increases -> More Overfitting  (because you are training on Pseudo-Residuals)
+
+   2. Shrinkage :
+
+         -> as reduces (shrinkage reduction) : less overfit
+
+         - Shrinkage is not Learning Rate (Learning Rate is used during Optimization)
+           Shrinkage is just way to provide weight to diff model learn during boosting stages
+
+   3. gamma :
+         - Via Regularizing it, we can avoid gamma from over-shooting its own val
+
+   => GBDT tends to overfit a lot because we ar training on errors
+
+---
+5) Change Loss Fun() to avoid Overfitting in GBDT ??
+    |
+     Loss Fun :- L(y, F(x))  // F(x) is whay model trains & y is ground level
+    
+    [Strategy 1]
+    -> In GBDT we want shallow Trees &
+       Thus
+       we can use #leaf nodes as Regularization Term With Loss
+
+    [strategy 2]
+    -> You can also use sum of depths of all trees 
+
+       where #leaf-nodes must be less 
+
+
+     Fundamental Concept :
+     -----
+       - Trees are base learnners in GBDT
+       - So anything related to Trees we can add in our Optimization problem (for regularization)
+         would be helpful.
+           \
+            - deep nodes
+            - depth of tree
+            - #leaf nodes of all trees
+
+          ie Anything that restrains trees from growing in huge amount
+
+
+-----
+6) Feature Importance for GBDT ? (Pseudo Code)
+   
+   -> Input :- each of Trees ie T1, T2, T3,...
+
+   1. For each base learner, compute the Information Gain for each feature
+   2. Sum up these for each feature for all the base learners
+
+
+---
+7) Design Weighted Random Forest Model, Where each Base Learner is Weighted ??
+
+  Core :
+   - RF := In random forest each of your base tree are already overfit
+
+     -> Now if you make {alpha_i} too large on some trees then you gonna overfit to those trees maybe
+
+  - Stacking Kinnda Model
+  - OOB Score
+
+  - can add layer of randomization
+
+  Doubt ? -> How Stacking is much better way to do Weighted Random Forest Model, Where each Base Learner is Weighted ??
+
+---
+8) In GBDT with Log Loss, show that Pseudo-Residual = - derivative of loss fun 
+   
+   -> Ans See Video 5.10) Residual, Loss Fun & Gradients  // & referral Links
+
+
+---
+9) RF-Regression & Confidence Interval instead of Point Estimate !
+  
+  -> Soln 1 : Take 95% CI of all output of different Tree in RF 
+          \
+           Problem :- if there are less Tree then its nnot enough accurate to get 95% from few outputs of those Trees
+
+     Soln 2 : Instead of returning the aggregated val from each tree, return the all set of values
+
+              ie When you reach Last Node in Tree, there will be many set of vals possible 
+                 Just return those all vals
+
+               Make 1 set of all the vals obtained from diff trees (ie Set from multiple sets)
+
+               thenn take 95% from this Single Set
+
+     [Sets Perspective]
+     ------------------
+     Key Takeaway :- At last Node in each tree we've bunch of vals,
+                     So instead of returning avg of all vals
+                     Here return entire set & thus utilize entire set of vals
+  
+(** IMP)
+---
+10) Implement RF-Train using multicore/multithreaded code
+   
+   -> RF :- Trivially Parallelizable
+        \
+         -> RF is used extensively for Tabular Like Data
+
+
+      Shared-Memory
+
+
+--------
+
+* Universal Sentence Encoder : Multi-Linguial Encoding Purpose

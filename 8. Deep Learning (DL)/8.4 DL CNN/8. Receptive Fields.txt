@@ -1,0 +1,45 @@
+8. Receptive Fields & Effective Receptive Fields
+------------------
+
+=> In Reality You will have multiple Convolution Kernel, Whose Weights we learn through back-propogation
+
+
+-------
+GIST
+
+=> Effective Receptive Field becomes imp when you have multi-layered CNN	   
+=> Effective Receptive Field is much larger in the Original Image
+
+--------
+
+* Receptive Field (Part) :
+  ---
+   - It is that part of an image which Convolution Kernel Operates on at particular instant of time.
+     |
+     portion of Inp Image that is being Convoluted by the Kernel to geenrate some part of Output at a time is called as Receptive Part of Image
+
+   - Receptive Portion of Inp Image keep changing with time.
+
+   - Receptive Field is that part of image which at given time t is convoluted with Kernel
+
+[NOTE]
+=> In Reality You will have multiple Convolution Kernel, Whose Weights we learn through back-propogation
+   \
+    So multiple kernels, effectively output a Tensor
+    (as single layer outputs a Layer)
+
+
+* Effective Receptive Field :
+  ----
+   Part of original Image whose pixels are being convoluted by kernels in further layers deep in NN
+
+   Effective Receptive Field depends on multiple things such as 
+    - stride param, padding param, etc...
+
+   => The effective region of original img whose pixels has directly/indirectly contributed to the Convolution Kernel present at diff level is called as Effectove Receptive Field 
+       \
+        So all those pixels (of Effective Receptive Field) in original img is indirectly being Convoluted by the Kernel at diff layers correspondingly
+
+   => Effective Receptive Field becomes imp when you have multi-layered CNN
+
+   => Effective Receptive Field is much larger in the Original Image

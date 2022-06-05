@@ -1,0 +1,8 @@
+Q. Distribution vs Percentile Model Approach (Why Distributions are preffered.)
+\
+ -> Computing percentile for extreme points can be errorneous (it's like a discrete findings)
+    whereas Distribution is like a Continuous findings
+
+
+Q Actual Diff between Kernal Density Plot vs Normal PDF or CDF 
+   (let say for Uniform Distb)

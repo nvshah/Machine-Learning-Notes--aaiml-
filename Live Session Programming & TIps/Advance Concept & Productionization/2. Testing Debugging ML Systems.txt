@@ -1,0 +1,227 @@
+ref :
+ 1) https://sebastianraschka.com/Articles/2014_about_feature_scaling.html
+ 2) https://towardsdatascience.com/normalization-vs-standardization-quantitative-analysis-a91e8a79cebf
+
+
+2. Testing Debugging ML Systems
+-----------------------
+
+------
+REMEMBER TERMS
+
+- Input Form Bias (Default Val)
+
+- Unit Test,          // Func
+  Integration test,   // Input Output  Compatibility
+  Load (Performance) test,  // Latency QPS
+  A/B test            // Model Comparision
+
+------
+
+1) Data Sanity/Verification Check  
+   ---
+   1) [ORDERED]
+      ---
+    	Eg NAN vals or out of range...
+	    - No crazy vals	
+	    - check for data skewness/bias (using groupby & count)
+
+	    Eg Feature :- day of Week
+
+   2) [CATEGORICAL]
+      ---
+        i) `deduplication`
+            Eg Feature :- State	
+                            \
+                             GJ  | Gujarat
+        - As data comes from anywhere need to set some fixed set of data
+
+        ii) Distribution of Data :
+              - Distributional Skew check (need to be aware of it)
+
+
+   3) [NUMERICAL]
+      ---
+       Eg Age // As user inp in Social Network
+
+       - get the distb of data & seek for outliers
+
+       - Input Form Bias (Default Val) -> Will skew up your model because input is not actually correct
+
+   4) [IMAGE]
+      ---
+       -> X * Y format
+       -  duplicates
+
+   5) [TEXT]
+      ---
+       - Same Language
+       - In English You have Power Law Distribution for words Freq
+       - Sentence Framing (Part of Speech | grammar)
+
+
+2) Data Splitting :
+   --------
+    Train + CV + test 
+
+    i) Random
+    ii) Time-based
+
+    -> Stats Different Analysis
+         \
+          How diff are the Data between Train & Test (especially)
+
+    - Check if your Train & CV data are how much different ?? 
+
+    -> Do analysis if Train & Test/CV are on same Distb or not
+        \
+         This is very essential for time based splitting | or Outliers
+
+
+3) Feature Transforms :
+   ------
+    - Normalization | Min-Max Scaling
+        \
+         -> Check Division by Zero 
+            Check log(0)  problem
+
+    - Missing Val Imputation
+         - Beware
+            When missing val are more for some specific class & less for other class
+            then it will impact the Modle (ie It will perform well for some class & worst for others)
+
+         -> So check if imputation is happening to equal amount of class 0 & class 1 or not (for eg)
+
+         Eg If you have more missinng for class 0 & less missing for class 1 
+             -> then its better to introduce new Feature rather than doing imputation on those
+                because missing val itself signifies lot of things
+
+
+    -) Per Feature Outliers :
+	   -------
+	    -> Clip or Clamp
+	    		-> In case of Extreme Outliers
+
+	-) One Hot Encoding :
+	   Normalizing
+	   Standardizing
+    
+    -) BOW := 
+       Tf-Idf
+       Word-Vec
+
+
+-----------
+
+* Model Debugginng & testing :
+  -------------------------
+
+1) Univariate Analysis :
+   ----
+    - tells you best & least useful features
+        - talk to someone with domain knowledge (for verification)
+      Maake sure of Sensible Data
+
+2) Baseline Model :
+   ----
+    - Simplest Model with best Univariate Features
+          \
+           set a benchmark for upcoming models
+
+      helps to set baseline Metric 
+
+    - Random Model
+      Mean Model
+        \
+         To know that Data is Sensible (Data nnnot have crazy issues)
+
+   BaseLine Metrics :
+   --------
+    - baseline model or random model 
+      \ 
+       Gives idea what worst can happen
+
+3) Model Impl Testinng :
+   -------
+    - Few (good Data) ideal Points
+         \
+          try to check overfit (ie no regularization) just for sake of ideal points only
+
+    - All params weight connstant (ie [0, 1]) & you mmust know what to expect
+
+    - If its optimization based models  (SGD - Lr Reg, Log Reg, SVM, DL)
+        \ 
+         Track Gradients & Learning Rate
+
+
+   => Increase Regularization 
+       |
+       Epoch vs Loss Plot
+
+   => Plot Train & CV Performance
+
+   NOTE :-
+     When learnign rate changes model performance can suddenyl change/increase
+
+4) Look for CVV-Performance Oscillations :
+   ----
+    - Doing back & forth -> then reduce learning rate
+
+5) Unit Test :
+   ----
+    - Do Unit Test for all function you define
+       \
+        Should know standard set of inputs/outputs
+
+
+-----
+[TESTING]
+
+* Domain Knowledge based Validation :
+  ----
+   - Feature Importance :
+     ---
+      - Does most useful feature makes sense !!
+
+   - Localization in CNN
+
+
+* Most Failure Cases :
+  -----
+   - try to explain why model fails	
+
+   -  Weighted Model
+      Feature Transformation
+      Loss Fn Changes
+
+
+* Metric-Based Debugging : 
+  -----
+   - Multiple Metrics or Selective Metrics to contribute ...
+ 
+* PipeLine Debugging :
+  ---
+   - Integration Testing :- Input-Output Compatibility
+                          - Data Availability
+
+* Productionization :
+  ---
+   1) Performnace Testing :- 
+      --------------
+      QPS & Latency
+
+      QPS :- Query per Seconds
+        \
+         Load Testing Analysis
+
+   2) A/B testing 
+      ---------
+       - Old Model & New Model Comparision
+       - to measure Causality
+
+
+---------------
+MODEL- MAINTAINANCE
+
+-> Data - Statistical Differences
+

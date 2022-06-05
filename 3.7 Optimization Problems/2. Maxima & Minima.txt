@@ -1,0 +1,42 @@
+2. Maxima & Minima
+
+-> Solving eqn is nit always trivial
+
+=> At both minima & maxima the slope becomes 0
+    \
+     df/dx = 0   // as slope is df/dx
+
+Q) Maxima or Minima ?
+   ---------------
+  -> one of the simplest way to determine if gradient is maxima or minima is 
+     to take nearest point of optima, after solving df/dx
+
+       Step 1) df/dx = 0  // solve & find x
+       step 2) take point near to x to determine if x is maxima or minima
+
+  - It may possible that function may have 
+  		- only either maxima or minima
+    	- neither have maxima nor minima
+    	- multiple maxima & multiple minima (but 1 global maxima/minima)
+
+
+ * Local Minima/maxima :
+   -------
+    - W.r.t locality or neighborhood there is minima/maxima
+
+   Global Minima/Maxima :
+   -------
+    - Amongst all its minima/maxima
+
+
+-> Minima/maxima are not always trivial to be found out
+    - sometimes solving such eqn becomes non-trivial (not easy)
+
+    So when its hard to find df/dx = 0
+
+    	- In such case we can use techniques such as gradient Descent (An iterative + Computational approach)
+
+
+* Gradient Descent
+
+

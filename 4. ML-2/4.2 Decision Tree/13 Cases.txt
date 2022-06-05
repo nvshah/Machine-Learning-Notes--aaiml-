@@ -1,0 +1,86 @@
+Cases
+-----
+
+1) Imbalance Data :
+   ------
+    -> Have to balance it (via Upsampling or Down Sampling)
+    -> because it impacts entropy or MSE calculation
+
+2) Large Dimension :
+   --------
+    -> At each node-split : we need to evaluate each feature (ie for IG)
+       \
+        So Time Complexity for Training increases dramatically as d incr
+
+    So If we have Categorical Feature :-
+       avoid One-Hot Encoding
+        \
+         because it increases number of features = thus thereby incr the Train Time Complexity
+
+    So When we have Categorical Features with lots of levels, (ie distinc val)
+     \
+      -> Its preferrable to convert them into numerical features
+
+
+3) Similarity Matrix :
+   ------
+    -> DT requires features explicitly  (so as to calculate entropy)
+    -> So DT do not work normally smoothly just by Similarity Matrix
+
+4) MultiClass Classification :
+   --------
+    -> DT inherently can do mutliclass classification ?
+
+       because Entropy & Gini Impurity can be calculated for Y having multiple vals 
+       Y -> {y1, y2, y3, y4,...}
+
+    -> So you dont need to do One Vs Rest
+
+    -> DT naturally does Multi-Class Classification
+
+5) Decision Surfaces :
+   ----------
+    - Non-linear
+       \
+        (not learning only 1 line but lots of Hyper-plane in DT)
+
+    - Axis-Parallel Hyper-Cuboids or Hyper-Space
+
+6) Feature Interaction :
+   --------
+    - Conjuction of diff conditions of diff features is known as Feature Interaction
+       \
+        Eg f1 > 10 and f2 > 5
+
+    - logical feature interactions are inbuilt into DT
+      (While in case of Log-reg we need to do it explicitly ie Feature Transformation ie Fi*Fj, etc....)
+
+7) Outliers :
+   -------
+    -> as depth incr - outliers will impact the tree a lot (dramatically)
+       & can cause Tree Unstability
+
+8) Interpretable :
+   -----
+    -> DT are super intrpretable
+      (as we can write if-else ...)
+
+      So when depth is reasonable DT are good interpretable
+
+9) Feature Importance :
+   -----
+    -> We can infer based on Entropy cause by particular feature Fi to split at given level
+
+       Eg If feature fi is used multiple times at several level to determine split & its reducing 
+          a entropy by a lot then its important feature
+
+          How much reducn in entropy owing to this feature fi
+
+    - Normally when we train DT in sklearn it gives feature imp for each feature
+
+    => Feature will only be imp or useful when it reduces the entropy going down level in DT
+    or 
+    => If IG due to that feature fi is maximum overall whilst constructing tree then that feature is 
+       imp
+
+   -> Computing FI is straight forward in DT

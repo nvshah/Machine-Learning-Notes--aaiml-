@@ -1,0 +1,79 @@
+Math Notes 2.txt
+
+* Ratios + Offset + Percentile
+
+ -> If ratio of 2 fraction is same 
+     & 
+    if you add the offset to numerator of 2 fractions 
+    then the 
+    Fraction with smaller (numerator & denominator) will impacted/affected more than larger (numerator & denominator)
+
+    Why ??-> because percentile of of both fraction vary at each point 
+            \
+             ie smaller one will reach towards/move away from median faster than 
+                larger one would be
+
+                So impact on smaller one is high
+
+Let say ratios :- 
+   
+   s1 = 2/100  = 2 %
+   b1 = 18/900 = 2 %
+
+   let say offset = 10 
+
+     so s1 = (2+10)/100 = 10 %
+        b1 = (18+10)/100 = 3.04 %
+
+   Thus s1 turn from 2 -> 10
+        b1           2 -> 3.04
+
+
+* Linear vs Quadratic Eqn :
+  ----------------
+   Linear : exponent 1
+   quadratic : exponent 2
+
+   Quadratic Func has squared term + linear term + constants
+
+
+* Convex Polygon : Polygon where all points lie on or inside that polygon
+   ------
+     \
+      -> Convex Hull Idea & Concept
+
+
+* tangent :
+  ------
+   -> Tangent helps us to find the slope of function at particular instance 
+
+
+* Distance of Origin from Plane ??
+  --------
+   Plane : W^T*X + b = 0
+   
+   -> b // W
+
+
+* Jaccard Distance :
+  --------
+   -> helps to analyse how 2 sets are similar to each other 
+
+* Norm :
+  -----
+   L1 Norm
+   L2 Norm
+
+   Frobenius Norm (for Matrix)
+
+
+* Sparse vs Dense :
+  ----------
+
+   Dot Product of Sparse Vector :
+   ------
+    -> Only connsiders the non-zero value between 2 vector & do computation
+
+   Dot Product of Dense Vector :
+   ------
+    -> Do Computation on Entire vectors

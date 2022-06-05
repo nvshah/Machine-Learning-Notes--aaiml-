@@ -1,0 +1,21 @@
+* TensorFlow Install
+--------------
+
+ref :- https://www.tensorflow.org/install/install_windows
+
+tutorial
+
+[Official] -> https://www.tensorflow.org/get_started/
+[Google Tensorflow]  -> https://cloud.google.com/blog/products/ai-machine-learning/learn-tensorflow-and-deep-learning-without-a-phd
+
+learningtensorflow.com 
+https://databricks.com/tensorflow
+https://www.tensorflow.org/learn
+
+______
+
+2 Ways to install
+ 1) pip
+ 2) anaconda
+
+=> For GPU version of TensorFlow - You need CUDA (driver) toolkit as well to install

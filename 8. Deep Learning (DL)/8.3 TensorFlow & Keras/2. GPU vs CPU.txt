@@ -1,0 +1,89 @@
+2. GPU vs CPU
+------------
+
+ref : 
+[COlab] https://research.google.com/colaboratory/faq.html
+
+------
+TERMS
+
+- VRAM
+
+-----
+REMEMBER 
+
+-> CUDA is onne of the tool to program the underhood of GPU's such as Nvidia GPU
+=> GPU are fast if you have paralleilizable Tasks
+
+-----
+
+* GPU := Graphic Processing Unit
+  CPU := Central Processing Unit
+
+  GPU -> more with DL
+
+* CPU :
+  ---
+   - Cores :- can run in parallel
+     Cache :- shared between cores
+
+     Cores & Cache lie on same chip  // Computation Unit
+     RAM  // Memory Unit
+
+=> RAM & CPU do not lie on same chip
+
+    -> for General Purpose
+
+   - Cores can be 8, 6, 4
+
+   - Operates at 2GHz
+
+* GPU :-
+  ----
+   - Cores can be :- 100, 1000,...
+   - thus GPU cores are slower but there are many of them
+
+   * Distributed Cache :-
+     ---
+     -> Sum of All cache from all those cores is known as `VRam`
+
+   - It can do lot of paraller operation
+
+   - operates at 400MHz
+
+   How GPU works with Data :-
+   -> 1. It obtains data from RAM
+      2. Distribute it amongst all of its core in best possible way
+
+   CUDA :
+   ---
+    -> Its kinda a tool or programming interface to work with the GPU	
+    - Can help to define how data from RAM should split among Distributed Cache !
+
+   -> GPU can run more tasks in parallel than CPU (as it has more cores)
+
+ [**]
+ => GPU are fast if you have paralleilizable Tasks
+
+
+* DL & GPU :
+  -----
+   DL - has lots of Matrix Mul & Addition
+      - ie tensor operations
+      - thus GPU suits its needs
+
+   Thus as Lots of DL operations are parallelizable, GPU is best option for computation
+
+   -> GPU turns out to be 10 to 100 times faster
+
+
+* VRAM & Significnace :
+  -----
+   -> VRAM is sum of all Distributed cache memory in GPU chip
+
+   -> More the VRAM := 	More complex tasks you can consider to Modeled or to attained
+
+
+ ---------
+
+ Some GOOD GPU :-- GTX 1080 Ti

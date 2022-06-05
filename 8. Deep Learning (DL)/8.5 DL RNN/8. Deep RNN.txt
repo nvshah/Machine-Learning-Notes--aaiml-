@@ -1,0 +1,26 @@
+8. Deep RNN
+-----------
+
+=> The core concepts in RNN is the LSTM or GRU cells
+
+---------------
+
+-> Simple RNN cells are not used often because they won't learn the long-term dependency
+   So LSTM | GRU is used instead
+
+* Simple RNN :- involves input layer & time axis
+
+* Deep RNN :
+  ---
+   - Deep RNN is very similar to Deep MLP, Deep CNN except that core cells unit are different (there are 2 major axis time + depth)
+   - involves inp layer, depth & time-axis
+
+   - For any LSTM cell in 2nd layer you get input from 1st layer
+
+  FP :- whichever direction of arrows are (->) there is Forward Propogation
+        &
+        In reverse to that is the Back Propogation
+
+  BP :
+
+   => So Back Propogation happens across time as well as across depth axis

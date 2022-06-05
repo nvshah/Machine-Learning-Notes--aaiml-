@@ -1,0 +1,23 @@
+* Best Case & Worst Case :
+  -----------------
+   (KNN)
+
+   1) When dimenn is not large, KNN is good
+
+      When dimen is large -> Curse of dimen (as Euc dist)
+                          -> Interpretability decr
+                          -> KDTree/LSH runtime complexity incr
+
+   2) Low-Latency System 
+      ---------
+      -> result fast
+       
+      - Any internet applications are said to be low-latency systems
+      - KNN should not be used for Low-latency system
+
+   3) Find the right distance measure 
+      -------
+       i.e Cosin-Sim or Euc-Dist or Manhatten-dist ???
+
+       -> KNN is good if you known otherwise KNN is not good choice
+       -> Or if Distance/Similarity Matrix is given then its good to choose KNN

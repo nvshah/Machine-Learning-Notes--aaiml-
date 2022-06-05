@@ -1,0 +1,83 @@
+1. Biological Neurons
+---------
+
+------
+NOTE
+
+=> All biological learning is nothing but Weights on Neural Circuits (Connections)
+
+
+------
+-> Weights & Connnections play imp part in Learning 
+
+_________
+
+* Neuron :
+  ---
+   - is activated/Fired (whenn there is enough dendrite)
+
+   Mathematical Idea for Output :-
+   ----
+    -> Output := Func(Sum())   // Sum() is summation of weighted inputs
+
+
+* Logistic Regression & neuron :
+  -----
+   -> Till now we saw Logistic Regression in terms of Plane seperatin 2 space
+
+   -> We will see LogReg in terms of neuron & thus perceptron concept will be coined 
+
+
+-------
+(Growth of Bilogical Neurons)
+
+* Biological NN :
+  -----
+   - Cell Body (ie Neuron)
+     Dendrides
+     Axons
+
+   - Inter-connection of above neuron is biological NN 
+
+
+=> When you born you have some neuron
+
+* Note 
+   - The more dense the brain evolve, the more calories it requires
+   - Uptil some age (let say, Teenage) the Biological Neural Network will grow towards more dense sense
+     But
+     Later it will start neural Degeneration ie. some of networks will repeal|removed
+
+* Neural Degeneration :
+  --------
+   - because our body becomes weak, brain also gets affected
+     &
+     thus some of neurons dies
+     ie Some of connection gets degenerated !
+
+* Early Stage : (Initial Data Interaction)
+  --------
+   - During first six years, Human consumes lots of Data
+      \
+       they experience data from several ways : {visual, audio, video, family, sensory }
+   
+   -> Later new connection are formed based on the data realized/interacted at earlier stage
+
+
+* Neural Circuit :
+  --------
+   -> will learn from experiments 
+
+   Eg 
+   let say small child dont know abt hot plate
+    |
+    So he touches the hot plate & feel much pain
+    |
+    later nnext time he will think before touching hot plate
+      \
+       because of 2 reasons
+          - prev learning of own experiment (neural circuits)
+          - or his parents told him explicitly too be aware of same
+
+[**]
+=> All biological learning is nothing but Weights on Neural Circuits (Connections)

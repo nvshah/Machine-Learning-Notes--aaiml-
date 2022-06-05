@@ -1,0 +1,3 @@
+Commannds Tips
+
+1. ls -lrt  // list all folders

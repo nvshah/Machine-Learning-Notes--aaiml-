@@ -1,0 +1,64 @@
+* Types of RNN :
+---------------
+
+----------
+[NOTES]
+
+- Don't forget that there are 3 Weights imp in RNN
+
+----------
+
+Types of RNN
+
+1) Many to One :
+  ---
+   - useful for sentiment classif
+
+2) One to Many :
+  ---
+   - no seq in inp
+   - Input is just 1 Point & in output you may have many (ie Sequence)
+
+   - Eg Image Captioning :
+          \
+           Image -> What is in the Image
+                     |
+                     Sentence about Image
+
+3) Many to Many : (Same Length)
+  ---
+   - inp & out both are sequence
+   - same length for inp <-> out
+   Application
+    - part of Speech
+
+   - often used in NLP
+
+   - here seq are generated parallely
+
+4) Many to Many : (diff Length)
+  ---
+   - Inp & Out can be of diff sizes
+   - Eg Machine Translation
+   -    English to Spanish Sentence Translation
+
+   - It's also called as an Encoder-Decoder Network
+   - It is often known as Seq-to-Seq models.
+
+   - Here first input is processed & then output is generated (ie Linear fashion)
+       \
+        Intution : without seeing whole English Sent I may not translate it into spanish
+                   (as gramatical structure for Eng is diff from that of spanish)
+
+        - thus all inputs are followed by all the outputs in this case
+
+5) One to One :
+  ----
+   - It's nothing but a simple MLP
+   - (ie no recurrent part but single recurrent component to say it)
+
+[REMEMBER]
+=> Don't forget that there are 3 Weights
+   W1 :- Takes input for current action
+   W2 :- goes with ouput of prev action
+   W3 :- third weight generating Yi's

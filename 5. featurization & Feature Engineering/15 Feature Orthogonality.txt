@@ -1,0 +1,40 @@
+------
+
+_________
+
+key :- idea of boostinng // when orthogonal to rest features & more correlated with output label
+
+-------
+
+* Feature Orthogonality
+  -------------
+
+ => The more different/orthogonal the features are, the better the model would be !
+
+ - If features are well correlated with the ouput variable then its good otherwise its useless
+   but
+   If features are highly correlated amongst themselves then overall impact of model would be less
+   
+ - REMEMBER
+   So In general :
+     - when you consider new feature it should be s.t. that new feature correlate more with output variable y & less amongst other existing determining features.
+
+   Add new feature in Consideration :
+   ---------
+    -> Let say f1, f2, f3 -> y
+
+       if we consider f4 & build Model then we get some error i.e y - y` = err
+
+       f4 should be s.t. it must correlated with err of model
+        \
+         -> because as much better its correlated with err, the y-y` gap will be reduced after f4
+            consideration with such update
+
+    => so f4 (new feature) must correlated with err (y - y`)
+
+=> This type of feature eng where you try to correlate with the class-label 
+   & less correlate with the others
+   (similar to idea of Boosting)
+
+
+

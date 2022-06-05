@@ -1,0 +1,30 @@
+* Tensorflow DL Practical
+-----------------------
+
+tf.matmul()  // matrix multiplication
+tf.nn.softmax()  // softmax fn
+
+tf.reduce_sum()
+tf.reduce_mean()
+
+tf.IneractiveSession
+
+tf.train.GradientDescentOptimizer()  // Optimizer
+
+tf.nn.moments()  // mean + variance
+
+
+----- Keras ----
+
+model.summary()  // Gives nice summary of each layer & params
+     .compile()
+
+BatchNormalization()  // For Adding normalization layer
+DropOut()   // For addding DroOut Layer
+
+he_normal()      // used whilst initializing weight
+RandomNormal()   // used whilst initializing weight
+
+keras.optimizers
+        \
+         -- Adam, RMSprop, SGD

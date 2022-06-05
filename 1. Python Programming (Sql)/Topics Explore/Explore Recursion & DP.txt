@@ -1,0 +1,22 @@
+Explore Recursion & DP
+
+- Overlapping Sub-Problems
+- Recursion
+- Memoiztion (storing)
+
+- Back Propagation
+
+- Top Down DP  (recursion + storage) // memoization
+- Bottom Up DP (iteration + tabulation)
+
+* 2 dimensional Dynamic Programming
+  ------
+   2 variables changing during recursion
+   (recursion of order 2)
+
+  1 dimensional Dynamic Programming 
+  -----
+   1 variable changing during recursion
+   (recursion of order 1)
+
+=> Hash Table are most widely used Data Structure

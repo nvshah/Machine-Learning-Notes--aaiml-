@@ -1,0 +1,50 @@
+Python Tips :
+-----------
+
+- use `module.` notation when using module (i.e namespace imported)
+- keep take care of identation
+
+- never compare `math.nan` with a number
+
+- Python uses bignum underhood to store int so it can hold arbitarily large digits
+
+________________________________________________
+ 
+1) to get version of python :-  `sys.version`
+
+2) To represent non--number :- `math.nan`
+
+   To check if nan :-  `math.isnan(o)`
+
+
+3) To remove tags from text document :- use bs4.BeautifulSoup() with lxml as parser
+
+4) To get byte file size :- os.stat()
+
+5) Most Frequent items in List :- Counter() data structure
+
+6) To get all subfolders :- os.listdir()
+
+7) To remove folder & all its content :- shutil.rmtree()
+_________________________________________________
+
+numpy + ML modules
+
+=> Instead of using sparse array to store values
+   Use  dict where key is tuple & value is value that would be present in sparse array actually
+
+* Numerical Underflow :
+  --
+   -> When floating point precison exceeds the 16 places after point then it is called Numerical Underflow
+      Then python starts rounding the number
+
+=> To deal with Numerical Underflow, one of the way is to use Log of the Variable i.e
+   As Log is Monotonic & does not change the Order of a numbers
+
+=> Whenever you have categorical features, You can consider missing val as one other category ie (NAN)
+
+=> To compute SIFT features :- use openCV python library
+
+* Pickleing :
+  -------
+   Create a Binary Stuffs from Python Objects

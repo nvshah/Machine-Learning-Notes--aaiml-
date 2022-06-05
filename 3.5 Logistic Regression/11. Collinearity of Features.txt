@@ -1,0 +1,35 @@
+11. Collinearity of Features :
+
+* Collinear Features :
+  -------------
+   representing 1 feature as a linear combination of another feature
+
+    f1 = a1X1 + b
+
+* MultiCollinear Features :
+  -------------
+   representing 1 feature as a linear combination of multiple feature
+
+    f1 = a1X1 + a2X2 + b
+
+
+* Pertubation Technnique :
+  ------------
+   (Shake it a little)
+
+   -> Add a little noise (random) to all the values in a matrix 
+
+      Noise be come from some random variable N(0, 0.002)
+
+   Step1) Before Pertubation calculate the Weight vector W* i.e <w1, w2,...>
+
+   Step2) Perform Pertubation ie add noise to data in matrix
+
+   Step3) After Pertubation Calculate again Weight Vector W` i.e <w1`, w2`,...>
+
+         Now compare W*  <w1, w2, ... >
+                     W`  <w1`, w2`,...>
+
+         - If both vector weights differ significantly then both are collinear
+           \
+            So you cannot use abs(Wi) for feature importance

@@ -1,0 +1,35 @@
+13. Optimizers Algo
+-----------------
+
+ref :
+
+1. https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f
+2. https://www.kdnuggets.com/2020/12/optimization-algorithms-neural-networks.html
+
+--------
+
+1) SGD
+2) SGD + Momentum
+3) NAG
+4) Adagrad
+5) AdaDelta
+6) RmsProp
+7) Adam
+
+=> Optimization is the problem you need to solve 
+   &
+   Optimizer are the things that matter most for that
+
+-> Adagrad 
+     \
+      -> is quicker in Converging
+      -> Works very well when you have sparse data/features
+
+-> One of the Advantage of Momentum based techniques is that it helps us to mitigate 
+   Stucking at Saddle point (		as being face in SGD technique)
+
+-> SGD (mini-batch) is preferred for shallow/small NN
+     \
+      otherwise it will stuck at Saddle Point (ie Loss will not change much )
+
+

@@ -1,0 +1,8 @@
+Encoder Decoder
+----------------
+
+- Origin : Types of RNN - (LSTM | Seq models)
+
+
+- Encoder-Decoder Models are just an extension to Sequence Models
+

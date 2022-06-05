@@ -1,0 +1,43 @@
+* Weightage Similarity Product (Brand & Color)
+  _________________
+
+  Idea ::- Weightage Eucledian Distance (Title + Brand + Colors)
+
+-> Till now we have just check the Title feature for Product Similarity 
+   Now we will Consider Brands & Colors as well
+
+   Title -> Vector (300 Dimens) via Idf-W2V
+
+* Brands & Colors :
+  ------
+   get vector for Brands & Colors via 1-hot encoding
+
+* Product Vector :
+  -------
+   - Combine all the vectors (horizontally)
+      \
+       Title + Brands + Colors
+
+* Weightage Product Vector :
+  -------
+   - Sometimes you want to specifically recommend based on color or brand 
+      \
+       in such case just provide the weightage accordingly to title, brand, color in product vector
+
+
+Code :- [9.6] => Weightage Similarity using brand & color
+
+
+* Try with diff weights :
+  -----------
+
+  More Weights => More Preference
+
+  1) Title :- Weights = 5
+     extra (brand & color) :- weights := 5
+
+  2) Title :- Weights = 5
+     extra (brand & color) :- weights := 50
+
+     // Lot of Importance to Brand & Color for Similarity
+

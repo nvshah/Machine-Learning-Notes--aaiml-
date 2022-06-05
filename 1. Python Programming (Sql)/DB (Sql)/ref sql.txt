@@ -1,0 +1,21 @@
+ref sql
+
+w3school
+original mysql ref manual
+
+* https://documentation.sas.com/doc/en/pgmsascdc/9.4_3.5/sqlproc/p0aymxwsvbt5wcn1lncugwjtf758.htm#:~:text=In%20PROC%20SQL%2C%20a%20column,ORDER%20BY%20clause%20is%20executed.
+
+[Cross-Product]
+https://learnsql.com/blog/join-tables-without-common-column/
+
+
+-----------------
+
+There are six parts in the conceptual order of execution of a SELECT statement from the ANSI SQL standard or ISO SQL standard perspective. If all six parts exist, the sequence is the following:
+
+The FROM part is executed first.
+The WHERE or ON part is executed second.
+The GROUP BY part is executed third.
+The HAVING part is executed fourth.
+The SELECT part is executed fifth.
+The ORDER BY part is executed last.

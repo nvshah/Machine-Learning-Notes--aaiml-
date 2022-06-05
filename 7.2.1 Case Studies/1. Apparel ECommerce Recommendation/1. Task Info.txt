@@ -1,0 +1,38 @@
+* Task Info
+  ----
+
+   Objective :- Recommend similar Product/Item based on Item View
+                using product description & image
+
+                (Using Content Based Recommendation System)
+      
+      Given Query Product -> Find the Similar Product !!
+
+* Content Based RS (Amazon):
+  -----
+   - Brand, Image, Color, Text(Description), etc...
+
+
+  Collaborative Filtering :
+  ----
+   based on user activity of visiting items (window), we can recommend the upcoming users
+   new items based on prev-users window activity
+
+
+* Terminology :
+  -----
+   Data Points := Product = Row in Dataset
+
+
+* Features of Product :
+  ----
+   Out of 19 total features we select below :- 
+
+   1. asin  (unique number to each product)
+   2. brand
+   3. color
+   4. product_type
+   5. image_url
+   6. title
+
+=> We will use `title` feature extensively throughout task (ie Its mimp feature because its short & informative)

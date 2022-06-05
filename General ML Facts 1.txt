@@ -1,0 +1,76 @@
+=> Linear algebra is all about studying shapes ({Rectangle, Circle, Sphere, Cuboid, Line, Plane, etc...})
+
+=> radians is most widely used than degree
+
+ML = Art + Science
+     Art = Feature Engineering/Trasnf, Exploration, EDA  (Creative)
+     Science = geometry, probability, Algorithms
+
+=> High ThroughPut & Low-Latency Aplication
+
+Mathematcis Fact :
+------
+ -> Simplest way to represent the rectangle is by a Diagonal Coordinates 
+
+ -> Root finding Problem (finding root of equation where f(x) = 0)
+
+ -> Rate of Convergence -> How fast we're going towards x
+
+ -> Quantifying something (measuring how good or bad it is)
+
+ -> Euc-dist gets affected by scale
+
+ -> As Variance has slight upper edge of impact when compare to Bias As dimen incr, The Generalization 
+    Error term have square for bias term
+
+ -> Plane is represennted by Normal & Intercept
+
+ => Every Model makes some assumptions
+
+ -> Working Model is imp than Best Model
+
+ -> To solve Real-World Problem more robustly, deal with Outliers very efficently
+
+ -> Categories of categorical features are also called as Levels
+
+ -> Internet companies sits on peta-bytes of data
+
+ -> At the end of the day all ML algo need to work with numerical features/vectors
+
+Algorithm :-
+------
+ -> So as far as ML is concern, We'll Consider Space Complexity at evaluation time as :
+      total amount of space needed to evaluate at run time 
+
+ -> To be sure about the algorithm to work on future data points, it must be tested on `Unseen data`
+
+ -> If D_train & D_test have considerably diff distribution, then your model will fail on Test-Set
+    (this can be possible when data changes over time)
+    In such case CV-err = low & Test-Err = High
+
+    So Distribution of your data plays pivotal role for your model to infer predictions in future
+
+-> The whole Machine Learning is abt Underfit vs Overfit 
+   The diff between best model & worst model is just about Underfit & OverFit
+
+-> We are using Loss Func as Approximation to Optimization problem as
+   Often times The Optimization Func is not differentiable & thus nonn-continuous
+
+-> The Deep Learninng is tryimg to automate some part of Feature Engineering
+
+-> The whole of ML is glorified Feature Engineering (with sime simple Algo)
+
+=> One of the most imp algorithm for Optimization in ML is Stochastic Gradient Descent (SGD)
+
+-> Fav algo should not be there in ML as it must depend on Problem instead of personal biases
+
+-> Error = bias^2 + variance + c   // c is irreducible error
+
+-> GBDT is applied more than AdABoost esp at internet companies
+
+-> Ensemble Model is used very much in kaggle Competition
+
+-> Algorithm Model need not only to be used as Classification but can also be used as Featurization
+   Eg DT for Feature binning
+
+=> If you have more parameter to estimate then you need more data or points

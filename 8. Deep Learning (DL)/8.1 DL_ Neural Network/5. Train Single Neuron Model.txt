@@ -1,0 +1,131 @@
+5. Train Single Neuron Model 
+---------------
+RECAP
+ - SGD, Chain-Rule-Intro
+
+______
+[Terms]
+
+- Identity Function
+
+------
+
+
+_______
+
+NOTE :- We will derive everythings with Linear Regression perspective because mathematics is easy
+
+
+* what does training means in case of Neuron ??
+->
+  To find the best edge-weights
+
+=> Single Neuron Model can be used for both
+    - Classification Problem Framing
+    - Lr Regression Problem Framing
+
+    We will consider lr Regression problem further for understanding because 
+    mathematics & calculus is easy (when doing Perceptron for lr Regression)
+
+    But Whatever we learn for Regression can be easily extended to Logistic Regression (or likewise Classification Technique)
+
+-> For Reg we have studied 1 way :- SGD (for optimization)
+    \
+     We will leverage those concepts in Neural perspective way.
+
+----------
+
+* Linear Reg & Simple Perceptron :
+  ---------
+
+   - activation function would be Identity Function
+   - input would be W^T*Xi
+      &
+     output would also be W^T*Xi
+
+  Identity Function :
+  _____________
+   -> Function that has same input & output
+
+
+* Logistic Reg & Simple Perceptron :
+  -------
+   - You will have Logistic Fun as an activation function
+   - Thus you will have Sigmoid as an activation function & it will become Classification task
+
+[Perceptron Activation Function]
+-------------------------------
+=> Thus all in all
+   For Simmple Perceptron
+   if Activation Fn
+   is
+   - Identity Functionn => Linear Regression Task
+   - Sigmoid Function => Classification Task
+   
+   - Thresold Funnction => Simple Perceptron
+ 
+___________
+
+* Optimization Problem in Linear Reg & NN :
+  --------------------
+
+  => Our aim is to solve the optimization problem from Neuron Perspective, (rather than Standard Optimization SGD perspective)
+
+  S-1) Define Loss Fn
+       ---
+---
+Remember :- The farther away Yi_hat from the Yi, We want to penalize it (in our Loss Fn)
+---
+
+  S-2) Pose the Optimization Problem 
+       ---
+       Activation Fn
+        - Identity Functionn => Linear Regression Task
+   		- Sigmoid Function => Classification Task
+   		- Thresold Funnction => Simple Perceptron
+  
+  S-3) Solve the Optimization Problem
+       ---
+       a. initialize weights (vector)  [Randomly may be]
+       b. Derivative (partial) of Loss w.r.t. Weights (vector)   // (**IMP Step
+            \
+             Computing Grad
+       c. Update Weights => 
+             W_new = W_old - learninRate * derivative_term
+
+       (Keep Repeating this till Converge)
+
+
+        Key Part = is computing the Graident (ie Partial Derivative)
+
+(RECAP)<--
+  Gradient Descent
+  ---
+   --> In standard GD, we find the Grad term by considering all the points
+
+   [Batch SGD]
+   But in case of SGD, we find the Grad by considering 1 point or a small set of point instead of all
+  
+  * Find Grad in Case of NN :
+    --------------
+     -> Chain Rule of Differentiation 
+
+[-*IMP*-]
+
+* Chain Rule of Differentiation | Gradient | NN perspective :
+  ------------------------------------------------------
+   - Loss is applied at top of Output Layer in NN
+
+  -> Gradient of Loss w.r.t each Weight (from initial input layer) via Chain Rule
+      \
+       will provide us some path from Input -> Output layer (& this path will be unique)
+
+  Path & Edges & Differentialtion :
+  -----
+   -> So we will use the connected path & calculate diff partial derivative encountering in tha path
+
+  Thus to Compute the derivatives :-
+    - You just need to follow the path (in Neural Network)
+
+  Also
+   When you compute the partial derivative for each individual point

@@ -1,0 +1,87 @@
+-----
+
+
+___________
+
+
+Spark :- Distributed System Engineering 
+
+-----
+
+* Spark & Productionnization
+ ---------------------
+
+ Till we do productionization -> We are just in experimental stage of our model
+  
+ 1) Raw Data :
+    -----
+  Raw Data can sit/present in -
+           - CSV, textfile, SQL-DB
+           - Data wareHouse, 
+           - Hive, Hadoop
+           - Spark (SQL)
+ 
+ 2) ETL stage :
+  	------
+  	- Data Engineers
+
+   -> Process Raw Data & obtained Featurized Data
+
+   Extract Trasnform & Load
+
+    - ETL pipeline or Data pipeline
+
+    - Design Choice ;
+
+      Q) What is Frequency to perform ETL pipeline ie How often ?
+       -> It depends on how often Raw Data get Generated
+          For Eg for Sales Data it required quite often times maybe everyday
+
+
+  3) Featurized data :
+	* After ETL stage - Featurized Data 
+   
+   	  challanges :- 
+
+       1) Volume of Data | Size of data
+
+           beyond certain size of data model will not perform significantly (& plateau off)
+
+           Small Size -> 
+              can be trainned via RaM
+
+           Medium Size -> 
+              Can be fitted in HDD or SSD so we can break data & build seperate model for each chunk & then use some scheme such as aggregation (ie simple would be average)
+
+           Large Size ->
+              1 TB / 10 TB / 100 TB / 1 PB
+
+              such data cannot be stored inside single HDD or SSD, 
+              one of the way to work with such large data is SparkML
+
+* SparkML :
+  -------
+   -> Work with very large volume of data
+
+   Spark :
+     - Distributed System/Computing Platform
+
+
+* Software architecture :
+  ---------
+
+  1) SOA (Service Oriented Architecture)
+
+     -> Model deployed as Service on Web-API
+
+     -> Your Service is Independent of all other Service
+
+
+  * Web API :
+    --
+     - Flask
+     - Json is popular format
+
+     To connect to any system at computer we require 2 things :- Ip address & Port Number
+
+

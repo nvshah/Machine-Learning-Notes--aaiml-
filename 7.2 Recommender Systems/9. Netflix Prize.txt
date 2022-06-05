@@ -1,0 +1,140 @@
+ref : https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf
+
+_______
+IMP 
+
+ALS -> Alternating Least Squares
+
+-----
+TIPS
+
+=> We must always add Regularization in Optimization to avoid Overfitting
+
+=> You can add complex variations to your problem because optimization problem is stated as MF approach
+
+=> Connecting Clustering technique with Matrix Factorization is possible easily because of Optimization
+
+-------
+
+* Challange :
+  --------
+  - Netflix itself has some RMSE error & it challanges to further lower it down to atleast 10 %
+
+
+* Netflix Prize
+  ------------
+  - gives some user's ratings for bunch of movies
+  - RMSE error need to be lower than 10% of what Netflix has as RMSE
+
+* Optimization + Regularization + MF :  (1st Eqn for Optimization Problem as MF)
+  -----
+  - Loss Func + Regularization term
+  - We must always add Regularization in Optimization to avoid Overfitting
+
+  Problem we are solving = Loss Minimization + Regularization
+
+  How to solve ??
+
+  1) SGD (Stochastic Gradient Descent)
+      - idea : partial derivavtive w.r.t each parameter(that needs to be find)
+
+  2) ALS (Alternating Least Squares)
+  	  - idea : Fix params at a time & alternate GD for finding params
+  	  - it's faster than SGD in this case
+
+* ALS : (Alternating Least Squares)
+  ---
+   (Steps)
+   a) Fix Param-1, & Run Gradient Descent for Loss Func to find best param-2
+   b) Fix param-2 & Run Gradient Descent for Loss Func to find best Param-1
+   c) Loop above steps of alternating (fixing + finding) till converge
+
+  -> ALS is very suited for such kinda optimization problem, where we need to finnd 2 best param
+   - ALS is fast in such case
+   - underhood ALS uses Gradient Descent only
+
+* User Interaction (Modification) (2nd Eqn for Optimization Problem as MF)
+  ______________________________
+  
+  -> Ecosystem + User-Bias + Item-Bias + Actual-Intended
+
+* Mean-Term & Bias-term :
+  ------------
+
+  Total rating Aij can be decomposed into 4 parts :-
+      { Mean-Term, Bias-Term (user + item), dot-product(user*item) }
+
+  Mean-Term (Mu):
+  -----
+   -> Avg ratings of all ratings for given movies by all users (movies, Users)	
+
+   NOTE : there is no point in predicting the (Mu) as it can be easily fouded (alike High Bias Problem)
+
+   So you need want to find How Diff the (user, item) combination in ratings is diff from avg one 
+    ie (Mu) term
+
+
+  Mean-Terms :- Has nothing to do with either user or Item
+              - It has to do with Whole Ecosystem (Netflix Let say) of (User, Item) 
+                  \
+                   ie How people are rating
+
+  Bias-Term 
+
+  	(Item/Movie Biased)
+    bi  :- bias towards item
+         - has to do with the Item ie Movie (nothing to do with the user)
+         - It's term that is extra to mean-term
+         - Denotes how much extra bias does particular Movie Get (ie Bias because of Item/Movie)
+
+         - How diff this particular movie is irrespective of every different movie
+
+    (User Biased)
+    bu  :- bias towards user
+         - It has to do with user & (it has nothing to do with item/movie)
+         - Eg some user typically rates movie lower than avg person
+
+         - How differently particular user rates typically than other users (avg)
+
+         - +ve  // if user typically gives higher ratings than avg
+           -ve  // if user typically gives lower ratings than avg users  (Crticial User)
+
+    (Interaction Affect Actual)
+    Dot-Product (User-Item) :
+
+          - Interaction affect (between user-item)
+          - actual ratings given for item by user
+          - actual what user thinks about Movie/Item
+
+    gist :
+    ---
+     Modified terms include :- 
+        - Systematic Bias for entire ecosystem
+        - Systematic Bias for particular Movie
+        - Systematic Bias for particular User
+        - actual typically interaction affect (w.o any bias)
+
+
+  => Thus moving from eqn-1 to eqn-2 (modifed) is easily facilitated by optimization
+
+     Thus Recommended System as MF optimization incorporates the facilitation of System-biases ie 
+     (problem specific changes) very easily
+
+     This is not possible in case of for Eg item-item similarity with this much ease
+
+
+* Big advantage of MF as Optimization (Problem):
+  ---------------------
+   - Add (Accomodate) the systematic biases very easily
+
+   (Ratings from users for items are time depenndent)
+
+   => You can add complex variations to your problem because optimization problem is stated as MF approach
+
+
+* Time- Dependent :
+  -------
+   -> Ratings by Users for Items are time dependent
+
+
+* Connecting Clustering technique with Matrix Factorization is possible easily because of Optimization

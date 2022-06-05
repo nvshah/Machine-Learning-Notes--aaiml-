@@ -1,0 +1,34 @@
+* Clustering Applications
+  --------
+
+=> Clustering was not algorithmm intended or rooted from ML perspective
+   instead it was actyally used lot in data mining application
+
+1) ECommerce :
+  ------
+   Eg Amazon, Flipkart
+
+    Group Customers based on the behaviour
+    - so as later they can be offered with deals, offers per diff groups
+
+
+2) Image Segmentation or Computer Vision :
+   -------
+    - all abt grouping or clustering similar pixels to segment objects
+    - typically apply ML-ago to perform object detection
+
+    Computer vision or Image Processijg involves the Image Segmentation
+
+
+3) amazon review polarity : (Manual labelling)
+   ---------------
+    - after reading review someone has given polarity (either +ve or -ve)
+
+    -> assume there are 1M reviews then it would be very expensive as it require lot of man power
+
+    => Manual labeling is Time Consuming & Expensive
+       So in cases like this Clustering can be applied 
+
+    - Whenever Manual Labeling is Time Consuming & Very Expensive, Clustering can be used as a
+      pre-processing step to group the data points
+      afterwhich manual labellingn can be performed with less efforts comparatively (via observing the few data points from each group)

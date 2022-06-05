@@ -1,0 +1,24 @@
+
+_______________
+
+-> `best` or `random` split
+
+Imp attrib :- 
+     DecisionTreeClassifier 
+        \
+         {split, max_depth,
+           min_samples_split, min_samples_leaf }
+
+Median Absolute Error is more Robust to Outliers
+
+--------------
+
+
+Python Packages
+
+* sklearn.tree
+           \
+            DecisionTreeClassifier  // Gini Impurity
+            DecisionTreeRegressor   // mse or mae
+
+* graphviz  // visualize the DT

@@ -1,0 +1,86 @@
+Seaborn
+
+-> plt.style.use('dark_background')   // dark mode
+
+-> tabulate.tabulate // pretty prinnt dataframe
+
+=> FacetGrid facilitates subplots
+
+=> KDE = Smooth Version	
+
+- Selection of plot on real world depends on Que, Data, context
+
+---------
+
+- `hue` is meant for color of points to class
+
+- params for FacetGrid - {height, col, col_wrap, size }
+
+- KDE plot :- bandwidth & kernels 
+  ------\ 
+         use to plot distributions using kernel density estimationns
+          | kernel = bandwidth you choose for each pt & estimations is height estimation for the points livinh in that kernel
+
+-----------------
+
+* Good Plotting Habits :
+  ---------
+=> always in a plot ensure there is 
+     - X axis labels & Scales
+     - Y axis labels & Scales
+     - Grid
+     - Legend    (When more than 1 colors)
+     - title
+
+- sns.load_dataset()  //Load dataset 
+- sns.set()           // change to grid style	
+- sns.color_palette()
+
+- sns.scatterplot() 
+      lineplot()
+      distplot()
+      kdeplot()
+      jointplot()
+
+* Multiple Plot :
+  ----
+   sns.FacetGrid()  // subplots for each combination 
+         \
+          .map()  {plt. {hist, scatter}}
+
+
+1) Scatter Plot 
+   -----
+   sns.scatterplot() - {x, y, hue, size, sizes}
+
+
+2) Line Plot :  // Plots Tube Plots 
+   ----
+    -> Tube Plot :- get idea about Variability  around Line Plot ie Tube
+    
+       Line with Tube (Mean & 95% Confidence Interval - Gives Idea abt Variability of Observations)
+
+3) Dist Plot (Distribution Plot)
+   ------
+   => kdeplot :- takes histogram & smooth it & shapes it
+       \
+        bandwidth i.e - { bw }
+           \
+            -> What range val of values at given point should I use to obtain height for KDE Plot
+
+               bandwidth - large ;- More values :- More Smooth out Curve
+                         - smaller ;- plot less smoother & much more Jagged
+
+            => KDE plot has soime heuristic which computes bandwidth automatically
+
+4) JointPlot :
+   ---
+    -> Scatter + distribution
+
+
+5) Contour Plots :
+   ---
+    In Contour Plots 
+      -> Points at Center are having high density & thus those are in a large numbers
+         &
+         As we move away from center density reduces

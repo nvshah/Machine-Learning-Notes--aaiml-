@@ -1,0 +1,54 @@
+gist.txt
+
+------
+MIMP :- 
+-> If your Data contains multi-collinearity then you can't interpret Weights very easily
+
+
+------
+
+-> We will derive Linear Regression Notion Using Probabilistic Approach 
+
+1) MLE  (Maximum Likelihood Estimation)
+2) MAP  (Maximum A Posteriori Estimation)
+
+* Assumption (Prior)
+  ---
+   1. Epsilon is Gaussian Distributed
+   2. Epsilon is IID (independent & identically Distributed)
+                         \                    \ 
+                          -> CNot Correlated   -> Same distribution
+
+   3. Yi is linearly available from Xi (Linearity)
+
+
+* Statistical Assumptions :
+  ----
+   1. Linearity
+   2. Independence of Errors
+   3. Normal Distb of Errors
+   4. Absence of Perfect Multi-Collinearity
+
+[MIMP]
+* Multi-Collinearity & Weights :
+  -------
+   -> If your Data contains multi-collinearity then you can't interpret Weights very easily
+
+* Error & Normal Ditstb :
+  -----
+   -> Lots of Noise | Err are represented wrt Gaussian because of some hints of CLT 
+
+* MLE :
+  ---
+   -> Maximixe the Likelihood(theta)
+   -> Here theta is composed of <w,b> & its fixed (not variable)
+   -> Helps us to derive Non-Regularized Part of Linnear Reg only
+
+
+* MAP :
+  ---
+   -> Maximum A Posteriori Estimation
+   -> Here theta ie <w,b> combination is treated as Random Variable
+   -> Help us to get Regularized part of Linear Regression as well
+
+   -> Best theta is one that maximize the posterior probability

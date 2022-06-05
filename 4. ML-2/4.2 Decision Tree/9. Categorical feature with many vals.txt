@@ -1,0 +1,32 @@
+
+____________
+
+-> Categories of categorical features are also called as Levels
+-> Converting categorical fetaure to numerical feature helps us to get rid of Data Sparsity
+
+-------------
+
+* Categorical feature with many possible vals
+  -------------
+   - many possible discrete vals
+   
+   Eg feature = pincode/zipcode
+        \
+         numerical but still cant compare them easily
+
+      - each pincode can be category
+
+-> Categories of categorical features are also called as Levels
+
+- some of splitted dataset gets very small from early depth level
+
+* hacks :-
+  ----
+   1) Convert categorical feature to numerical feature 
+       \
+        P(Yi=1 | Pj)
+
+      2 feature having same probability = having them as numerical feature is useful
+_____
+MIMP :
+*=> Thus converting categorical fetaure to numerical feature helps us to get rid of Data Sparsity

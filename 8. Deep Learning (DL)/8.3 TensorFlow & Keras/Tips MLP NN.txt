@@ -1,0 +1,3 @@
+Tips MLP NN
+
+=> while doing it keras & tensorflow way, you can use Violin Plots to see distribution of Weight among diff Hidden Layers

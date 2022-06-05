@@ -1,0 +1,64 @@
+2. RNN Technique
+---------------
+
+----
+REMEM
+
+[***]
+-> So RNN is not about diff layer connected via diff Weights
+      but
+      It's actually 1 layer Repeated over time 
+
+---
+
+* LEt consider Amazon Text Review for Eg :
+
+* RNN & Amazon Food Review Text Classif :
+  -------
+
+  -> Here each layer will corresponds to each word in single text
+     |
+     & beyond this it also depends on the previous layer output as well
+       (thus learning from the sequence of words context as well in  the sentence (txt))
+
+  -> Finally in Output we will have A Predictor layer Unnit like (SoftMax) that will be responsible 
+     to deal with the Output that we got from last layer that corresponds to last word of text
+
+  Weights :
+  ---
+   - There are 3 types of weeights we can see in Network
+   1) W :- connecting inp to hidden layers
+   2) W` :- connecting prev layer out to next layer inp
+   3) w`` :- Connecting last Hidden layer Out to Softmax to generate Output Prediction		
+
+
+  Core Structure :- 
+  ---
+   - Activation Unit where t_th word denotes the t-timeline
+     &
+     it consider ouptut of prev time i.e prev word as well (ie t-1 word)
+
+     if t is the last word then there also will be a layer of predictor like Softmax attached to this
+     unit.
+
+   -> Basically layer of neurons remain same across diff words
+      but it enact differently at different timestamps (ie with diff words)
+
+   -> Axis is "time"
+   
+  [***]
+   -> So RNN is not about diff layer connected via diff Weights
+      but
+      It's actually 1 layer Repeated over time 
+
+* Basic Idea (in my word) :
+  -----
+  - So the Single Box of RNN represents this idea 
+     |
+     Just provide some weights to previously learned words &
+     provide the wwight to current word
+     &
+     combinely pass them to this box (ie curr layer) to give output, 
+     ( which can be propogated further )
+
+    To find appropriate Weeight for prev-words & curr-word is the learning part to hang around

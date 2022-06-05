@@ -1,0 +1,21 @@
+terms
+
+Margin-Maximizing HyperPlane
+Support-Vectors
+Convex-Hull
+
+Hard-Margin SVM (geometric interpretation)
+Soft-margin SVM (geometric interpretation)
+Hinge-Loss  (Loss-Minimzation interpretation)
+
+Primal Formulation
+Dual Formulation
+
+Kernel Function
+Kernel trick | Kernalization
+Kernel Logistic Regression
+
+Polynomial Kernel	
+Radial Basis Func (RBF) Kernel  | Gaussian kernel
+NuSVM
+SVR

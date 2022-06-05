@@ -1,0 +1,174 @@
+17. Transfer Learning
+---------------------
+sEc 4.17
+
+ref
+https://cs231n.github.io/transfer-learning/   (GOOD BLOG*)
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+
+-------
+terms 
+
+- BottleNeck Feature
+
+-----
+Remember
+
+-> initial layers in CNN often deal with the task of detecting the Borders, Common Shapes & Likewise
+   (which is common among all tasks esp when we talk about Images)
+
+-> Keep Small Learning Rates when you FineTune Your Model
+
+--------
+
+Idea :- Instead of building CNN from scratch to solve a task, What if We can reuse Existing Models
+        Which is trained on Diff DataSet
+
+Eg Keras has VGG16 trained on ImageNet dataset  // ie Pre-Trained Model
+
+NOTE :- This pretrained models are avail in keras as well as Tensorflow
+
+* Transfer Learning :
+    - Can I transfer learning of 1 Dataset to a Diff Dataset
+      to solve the diff tasks altogether
+
+
+* Case 1: (Feature Eng Tool)
+  ---
+   - ReUse VGG but till Flattenn Layer & We will skip last Densely Connected Flattened Layer
+
+   - Xi -> Layers (Except Last Dense Layer) -> Xi`
+
+     So these features to this layers are called BottleNeck Features
+
+   - Thus we have used VGG Net as Feature Engineering
+
+   VGG Net as FE tool
+    -> ReUsing VGGNet but instead of using it for whole Network we used till all Convolution Layers only & avoid last Densed layers (ie Flattened one)
+   
+   [CNN-Code]
+    -> Vector that you get in above is called as CNN-Code
+
+   => Thus here we are using the bottleneck feature to derive the vector repr of Image & not going for entire Network
+
+   :) Bottleneck Features :- Just before the Flatten layers
+
+   => We use VGG Pre-Trained Model as Feature Eng. to find `CNN-Codes`
+   
+  [CASE 1 GIST] <-**
+   => Thus we are reusing Model as to do Feature Engineering (ie get CNN-Codes in vector form for inp Images)
+
+____
+
+* Case 2 : (Fine Tuned Last layer)
+  -----
+  
+  REMEMBER :- 
+  Early Layers concern & bother generally abt the common shapes (ie Edges & Common Initial Shapes)
+
+  Idea :- We will Freezed the Earlier(Initial) Layers 
+          (ie We will not change their Weights & Kernels & related property)
+
+          - Make Weights & Kernels & all params constant
+
+  Early Layers Detect very common things such as Edges, Basic Shape. which is very common amongst all tasks esp. images
+  then why bother abt doing same every time !!??
+
+  So Freezed Early (Starting) Layers
+  &
+  Modify the Last (Ending) 2 Layers
+
+  -> So we may use at last Softmax layers
+  -> So During BackPropogation We will change the Weights on layer that is close to Output
+
+  -> So We FineTune the Weights of Last layer NN (ie which is part of VGG & is already trained)
+     |
+     During FineTuning ensure that Learning Rate is Small (so that Weights do not change Drastically)
+
+
+____
+
+* Case 3 : (As Initializing for Current Data)
+  ---
+   Use VGG16 + ImageNet = as Initial Model
+   &
+   Tune Complete Model with your Data set D = {Xi, Yi}
+    \
+     Fine Tuning all layers
+
+
+____
+
+* Case 4:
+  ---
+   - Retrain Network from Scratch
+   - It's very expensive as it needs to draw out all common things from detecting lines, edges,
+     shapes, etc..
+
+
+---------
+
+GIST Cases
+
+Case 1) -> use VGG ie pretrained as Feature Engineering Tool
+Case 2) -> Train & FineTune only last layers
+Case 3) -> Use Pre-trained as Initialization for your Dataset (FineTuning everything)
+Case 4) -> Build from Scratch
+
+----------
+
+* Dataset & (VGG16 + ImageNet)
+  ------
+   - Let say your task dataset := D = {xi, yi}
+     &
+     already trained model := VGG16 + ImageNet
+
+   - It depends on your task dataset several property that which of above 4 cases is suitable
+     property such as { size of dataset, similarity to ImageNet }
+
+   1) If Your Dataset is Similar to imageNet & 
+      Size of your Task Dataset is Small
+
+      => then you can consider Case 1 :- Do Feature Engineering -> grab CNN code -> & just then Go to train simple Linear Model
+
+
+   2) If your Dataset is large &
+      Similar to ImageNet
+
+      - Yoy can FineTune your Whole Model
+      - With Keeping small Learning Rates
+      - This require powerful GPU to Finetuned wholesome of layers
+
+   3) If your Dataset is Medium &
+      Similar to ImageNet
+
+      - You can Fintuned the last Few layers
+
+
+   4) If Dataset is small &
+      DisSimilar to ImageNet
+
+      - You can consider taking output from earlier Stages for Your Feature Engineering part
+        (As Detecting Edge & Shapes can be still Relevant)
+
+      - Since your dataset is small you cant train full fledged Network
+        So you will leverage the already existing network partially
+
+        Take one of earlier layer -> Flatten it -<  & use it for Feature Engineering tool
+        to get CNN Code for FE
+
+   5) If Dataset is large &
+      DisSimilar to ImageNet
+
+      Suggestion :-
+      - Initializee the Model using VGG16
+
+      - Tune Whole the Network then (because the Dataset is large so tuning whole Netwrok can be beneficial)
+---
+[IMP**]
+|
+=> If |D| is small & similar to ImageNet
+     -> I will take data from last conv layer (ie before Flattening) as my Feature Engineering Step
+
+   If |D| is small & dissinilar to ImageNet
+     -> I will consider taking data from earlier stage for my Feature Engineering Step

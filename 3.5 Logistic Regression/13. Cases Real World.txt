@@ -1,0 +1,89 @@
+Imbalanced Dataset Eg :- https://www.youtube.com/watch?v=l8Dge0z1Zks
+
+
+13. Cases Real World
+
+
+* Imbalanced Data :- UnnderSampling or Up-Samplinng
+
+* Outliers :- 
+  --------
+
+   -> less impact due to Outliers (because of Sigmoid Func)
+
+   Way to reduce impact :-
+
+   1) Trial & Discard :
+      --------
+       Step1) Find W* with D_train
+
+       Step2) Discard pts which are very far from the linear decision surface found in Step1
+              (ie remove pts whose distance is very large)
+
+       Step) Find soln W* again with new D_train modified
+
+
+* Missing vals :
+  ----------
+   - standard imputation technique
+
+
+* Multi-Class Technique :
+  ----------
+   - One vs Rest
+
+   other extensions :- MaxEnt, SoftMax Classifier, Multinomial LR
+
+
+* Distance Matrix :
+  --------
+   - Extension - Kernel LogReg :- SVM that uses Distance Matrix
+
+* Best & Worst Case :
+  ----------
+    - almost linearly seperable
+    - low-latency requirement
+    - very fast to train
+
+    - d is very large;    Logreg is farily good
+       \
+       chance that data is linearly seperable is also very high  (because of Curse of Dimen)
+       (because as d is high so we have many hyperplanes to choose froms )
+
+       -> large d - then L1 regularizer also helps out with sparsity
+
+
+____________________
+
+NOTE :- If you have large num of miss-classified pt then their -ve distance will be high
+         &
+        thus their sigmoid will tend towards 0
+
+* Imbalanced Dataset :
+  ---------------
+
+   Eg Let 20 (+ve pts)
+           3 (-ve pts)
+
+        Let say plane P1 seperate +ve & -ve perfectly & their signoid distance  = 0.8
+
+        So Zi =  (20 * 0.8) + (3 * 0.8) = 18.4  // sign distance
+
+        Let Plane P2 be annother plane that seperates all pt on one side ie +ve side
+        Then the plane P2 which sperates all pt on one side might get selected just because of few -ve pts
+        because Zi = (20 * 1) + (3 * 0) = 20  // sign distance
+          \
+           here 1 for +ve as their distance from plane is too large so sigmoid() will provide 1
+                0 for -ve as their distance is high & they are present on misclassified side so sigmoid() = 0
+
+      But if 20(+ve)
+             20(-ve)
+
+          Then for plane P1 : Zi = (20 * 0.8) + (20 * 0.8) =  32 // sign distance
+ 
+                         P2 : Zi = (20 * 1) + (20 * 0) = 20  // sign dista
+
+                      So as 32 > 20 So P1 will be selected
+
+                      NOTE : Our motif is to maximize the sign_distances
+

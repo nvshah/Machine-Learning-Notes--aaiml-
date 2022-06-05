@@ -1,0 +1,118 @@
+t_sne
+
+ref : 
+
+https://distill.pub/2016/misread-tsne/
+
+----------
+TIPS
+
+ - Never make conclusion from Junk (Random data)
+ 
+ - TSNE is a randomized algo (slightly diff output when result multiple times)
+
+------
+
+-> most powerful technique
+
+-> PCA tries to preserve Global Shape of Data
+   PCA doesnt care much abt local structure (i.e distances between points)
+
+   Tsne can choose to preserve local structure (i.e neighbourhood)
+
+=> Stchoastic == Probabilistic
+
+-----------------------------------
+
+TSNE = Probabilistic Neighbourhood Embedding
+
+* Neighbourhood 
+  -----
+   -> close to point (geometrically)
+
+* Embedding :
+  ----
+   -> For every point in high dimension space If its corresponding point in lower-dimension
+      can be found then it is called embedding
+
+* T-Sne :
+  ---
+   - try to preserve the neighbourhood
+
+  => Note you cannot perfectly embed the points
+
+  Crowding Problem :
+  ---
+   - proof by contradiction
+   - sometimes its impossible to preserve the distance in all N
+
+   -> T-distb is used to ameliorate the above problem to some extent at its best
+
+* Iterative Algorithm :
+  -------
+
+  TSne is an iterative algo (just like Clustering)
+     \
+      At every stage it tries to improve embeddings
+
+     1) steps  = # iterations 
+     2) perplexity - # near points (no of neighbours)
+
+     => tradeoff between perplexity & steps is to be decided
+
+     NOTE :- 
+       - always run TSNE for multiple value of perplexity val
+       - try to keep #-perplexity < #-points
+       - plot TSNE for various val of steps(iteration) to check if shape is stabilizing
+       - once find right perplexity & steps, fixed & run it for multiple times.
+          (as TSNE is not deterministic algorithm)
+
+       - Never conclude by just looking 1 perplexity value
+
+       When we use perplexit = number of points It's try to preserve whole structure (which is often not possible)
+
+* Stochastic NE :
+  ------------
+   It means that probabilistic
+
+  => Tsne is not a deterministic algorithm but its a probabilistic/stochastic algorithm
+
+  * Deterministic Algo : every time for same input provide same output
+
+
+ * Interesting Drawback of Tsne:
+   -----
+    -> one of the thing what Tsne does is
+        - expands the dense cluster
+        - shrinks the sparse cluster
+
+    -> drawback of tsne is that it cannot say about density/sparseness (i.e size) of cluster.
+
+    -> Tsne doesn't preserve distances between cluster
+    
+    -> Random data makes sense when used 1 perplexity value
+    :- Never make conclusion from Junk & Random data is junk
+
+    -> TSne never exactly replicate the results
+
+
+* TSne Intution :
+  ------
+   - geometrically it helps us to get understanding of topology (i.e shape)
+
+      Eg trefoil Knot
+         Interlocked chain
+
+
+    1) run steps/iter till shapes stabilize
+    2) peplexity i.e  2 <= p <= n
+    3) re-run t-sne p-step till stable or not
+
+
+* TSne & Mnist :
+  -----
+   -> Visual Similarity Grouping 
+      group point based on their visual similarity
+
+
+

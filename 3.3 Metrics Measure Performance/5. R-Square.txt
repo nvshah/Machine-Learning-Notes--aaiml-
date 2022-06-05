@@ -1,0 +1,100 @@
+5. R-Square or Coefficient of Determination
+
+-------------------
+
+=> R-Squared is metric that helps us to compare our model with simple mean model
+    ie if our model is better than simple mean model  (R-Sq > 0)
+                       equal to                       (R-Sq = 0)
+                       worse than                     (R-Sq < 0)
+
+-------------------
+
+* Regression Problem
+  ----------------
+
+-> In regression output y_i is real val & Model predicts = y_i_hat
+
+   error e_i = diff betn actual & model-generated ie predicted
+
+Q) How good the regression is ??
+
+-------
+
+* Sum of Square Error : (SSE)
+  -----------------
+
+   1) SS_total
+      -----
+       => Sum of Square Err using Simple Mean model i.e SUM((Yi - Y_mean)^2)
+   
+	   * Simple Mean Model :
+  	     ----- 
+    	  Note :- In regression simplest model we can build is 
+                given any query pt, return the mean of (all data pts)
+
+            i.e Xq -> mean(Yi) as Yq
+
+   2) SS_residue 
+      -------
+       => Sum of Square Err using error i.e SUM((Yi - Y_bar)^2)  
+
+          // (Yi = actual) & (Y_bar = predicted)
+
+* R-Square Metric :
+  --------------
+    formula = 1 - ( SS_res / SS_total )
+
+    Case-1 : SS_res = 0 => R^2 = 1  // Best Model
+
+    Case-2 : SS_res < SS_total => R^2 in [0, 1]
+
+    Case-3 : SS_res = SS_total => R^2 = 0  // Model is same as simple mean model
+
+    Case-4 : SS_res > SS_total => R^2 is -ve // Worse than Simple Mean Model
+
+
+* Problem with R-Squared :
+  -----------
+
+  * Ditribution of Errors :
+   ---------------------
+
+   Note R-Sq is Sum of e_i^2
+
+   If one of e_i is large val then whole r-square could get mess up
+
+   So R-Squared is not very Robust to Outliers
+
+   So now lets see 
+      \
+       For every Xi we have -> Yi, Yi_hat, e_i
+
+       & In regression how good I am is all about measure of e_i
+
+   Median Absolute Deviation : (MAD)
+   ------------------
+    -> So we can consider e_i as random variable & can calculate the median val of all errors i's
+
+       Median is equi to Mean
+       MAD    is equi to Std-Deviation
+
+       MAD = median(| e_i - median_of_e_i | )
+
+    -> MAD gives idea abt how errors are spread
+
+    => Looking at 2 vals we can understand if errors are typically small or not  
+          those 2 vals are Median & MAD
+
+          Eg if median & MAD is small then errors will be small
+
+    NOTE :- Median & MAD are not very much impacted by Outliers
+
+    You can use any Central Tendency i.e Mean or Median of e_i's (errors behaviour)
+
+
+
+
+
+
+ 
+

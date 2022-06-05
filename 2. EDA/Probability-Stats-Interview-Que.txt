@@ -1,0 +1,31 @@
+
+    What is a random variable?
+    What are the conditions for a function to be a probability mass function?(http://www.statisticshowto.com/probability-mass-function-pmf/)
+    What are the conditions for a function to be a probability density function ?(Covered in our videos)
+    What is conditional probability? 
+    State the Chain rule of conditional probabilities?(https://en.wikipedia.org/wiki/Chain_rule_(probability))
+    What are the conditions for independence and conditional independence of two random variables?(https://math.stackexchange.com/questions/22407/independence-and-conditional-independence-between-random-variables)
+    What are expectation, variance and covariance?(Covered in our videos)
+    Compare covariance and independence?(https://stats.stackexchange.com/questions/12842/covariance-and-independence)
+    What is the covariance for a vector of random variables?(https://math.stackexchange.com/questions/2697376/find-the-covariance-matrix-of-a-vector-of-random-variables)
+    What is a Bernoulli distribution? 
+    What is a normal distribution?
+    What is the central limit theorem?
+    Write the formula for Bayes rule?
+    If two random variables are related in a deterministic way, how are the PDFs related?
+    What is Kullback-Leibler (KL) divergence?
+    Can KL divergence be used as a distance measure?
+    What is Bayes’ Theorem? How is it useful in a machine learning context?
+    Why is “Naive” Bayes naive?
+    What’s a Fourier transform?
+    What is the difference between covariance and correlation?
+    Is it possible capture the correlation between continuous and categorical variable? If yes, how?
+    What is the Box-Cox transformation used for?
+    What does P-value signify about the statistical data?
+    A test has a true positive rate of 100% and false positive rate of 5%. There is a population with a 1/1000 rate of having the condition the test identifies. Considering a positive test, what is the probability of having that condition?
+    How you can make data normal using Box-Cox transformation?
+    Explain about the box cox transformation in regression models.
+    What is the difference between skewed and uniform distribution?
+    What do you understand by Hypothesis in the content of Machine Learning?
+    How will you find the correlation between a categorical variable and a continuous variable ?
+    How to sample from a Normal Distribution with known mean and variance?

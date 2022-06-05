@@ -1,0 +1,65 @@
+Notes 1 Intro (Geometric)
+
+----------------
+
+----------------
+
+* SVM :
+_____
+
+-> can do both classification & regression
+
+Key Idea :- Find Hyper-plane that seperates points as widely as posible
+
+=> Such plane is called as Margin-Maximizing Hyper-plane
+
+-> We want to find the plane s.t. if we take 2 other planes parallel to this base plane
+    ie one parallel plane touches boundary pt of 1 class
+       other parallel plane touches boundary pt of another class
+
+       The gape between 2 parallel plane is known as Margin
+
+   So We should find such base plane s.t Gape between two parallel planes is maximize or 
+   they are farther away as much as possible
+
+SVM : tries to find Hyper-Plane that maximizes the Margin
+
+    As Margin incr -> generalization accuracy improves
+
+
+* Support Vector :
+  ------------- 
+    -> Pts through which parallel planes (to Margin-maximizing plane) or Boundary Planes pass through 
+       are known as Support Vectors	
+
+    -> The pts that are present on positive hyper-plane or negative hyper-plane are known as Support Vectors
+
+    +ve Hyper-plane :- The boundnary plane that is nearest to +ve pts
+    -ve Hyper-plane :- The boundary plane that is nearest to -ve pts
+
+* Convex Hull Polygon :
+  ------
+   -> All the points must lie on the side or inside the polygon
+
+   Connvex : A shape is said to be Connvex if pick any 2 points & bridget between those 2 points via 
+             points lying in that shape only & that bridge path should be shortest path
+
+             If some part of shortest path is outside the polygon region then its non-convex
+
+   Convex Polygon :         
+     If all the pts on the line connecting 2 points are inside polygon then it is called as Convex Polygon
+
+   Convex Hull :
+     build smallest convex polygon that has every pt inside or on the convex polygon
+
+   Alternative Geometric interpretation Steps :
+   --------------------------
+
+     1) Convex Hull of +ve & -ve pts
+     2) Find shortest line connecting these hulls
+     3) Bisect the Line
+          \
+           The plane that bisect the line will be the Margin-Maximizing Plane
+
+     So plane obtained via this way (alternative geom interpretation) will be same as The Plane obtained via standard way
+

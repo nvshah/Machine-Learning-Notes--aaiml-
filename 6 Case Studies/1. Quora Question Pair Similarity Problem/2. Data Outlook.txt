@@ -1,0 +1,38 @@
+2. Data Outlook
+
+-----------
+=> If we do not have timestamps in Dataset, we cannot do Temporal Splitting
+
+=> If there is temporal change in your dataset, ie data change over temporal axis, then 
+   you must consider temporal split for your data
+
+___________
+
+-> Binary Classification Task (1 | 0)
+
+- spend good time on Featurizaation
+
+* Performance Metric:
+ -------
+  KPI :- Key performance metric for case
+
+  1) LogLoss :
+  ---
+  => Whenever you have probability as classificationn or output val, Log-Loss is one of the best func
+
+  2) Binary Confusion Metric
+
+
+* Temporal Nature :
+  -------
+   - Type of Que change over time so Model should also change over time
+
+     Eg When any Political Election Period arrives Que related candidate may be asked lot 
+        in that period for speculation (Eg Trump vs Biden)
+
+   - But in this dataset we do not have timestamps so we cannot do Temporal Splitting
+
+REMEMBER
+=> If there is temporal change in your dataset, ie data change over temporal axis, then 
+   you must consider temporal split for your data
+

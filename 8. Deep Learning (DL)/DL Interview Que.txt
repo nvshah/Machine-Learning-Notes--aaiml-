@@ -1,0 +1,28 @@
+DL Interview Que
+
+[Interview que onn Deep Learning]
+https://www.youtube.com/watch?v=vwYmrKDvnlg
+
+-----------
+
+Q1)
+--- 
+ ( Linear Algebra | Orthogonality | Frobenius Norm )
+ Add the Connstraints on Weight Vector between 2 layers 
+
+  -> Constraints :- W must be Orthogonal : 
+                        1) all rows must be orthogonal to each other
+                        2) all cols must be orthogonal to each other
+
+  1) Rows Constraints :- W*W^T = I
+  2) Cols Constraints :- W^T*W = I
+
+  Optimization Eqn :
+  ---
+    min { Loss + lma * [ Frobenius_Norm(W*W^T - I) + Frobenius_Norm(W^T*W - I) ] }
+
+  Frobenius_Norm :
+  _______________
+   -> convert Vector|Matrix to Scalar Val
+   -> Frobenius_Norm(X) = sum of squared of each term
+

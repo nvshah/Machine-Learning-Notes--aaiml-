@@ -1,0 +1,73 @@
+2. Edge Detection 
+---------------
+Convolution; Edge Detection :
+---------------------------
+
+ref :- https://en.wikipedia.org/wiki/Sobel_operator
+
+------
+NOTE
+
+Image := Matrix of Pixel
+
+Convolution :- Kinda Dot Product (but for Matrices)  // ie Elem wise Product & then Add
+
+-----
+REMEMBER
+
+CORRECTION :- Instead of taking zero pixel value as white, it is customary to take zero as black and 255 as white. 
+
+_______
+
+
+* Convolution : to detect an edge
+
+* Convolution Matrix :
+  ----
+   filter, Mask, Operator
+
+-> We detect edges on given inp image matrix by applying Convolution Operator
+
+* Operation of Convolution via Edge Detection
+  --------
+
+* Sobel Horizontal Edge Detector :
+  ----
+   - 3*3 matrix
+   - act as an operator
+   - helps to detect an horizontal edgesdge
+
+   -> [[+1, +2, +1]
+       [0, 0, 0]
+       [-1, -2, -1]]
+
+   => Applying Convolution via Sobel Horizontal Edge Detector
+      ---- 
+      - Component wise multiplication & then adddition (with Input Image Matrix)
+      - You can normalize the output of convolution (after sobel is applied)
+        So that you can get edge idea of light & dark regions
+
+      - The whiter it is in ouput, the more horizontal it is !
+
+[REMEMBER]
+=> Wherever you have edges, we will have white colors in output
+    &
+   rest we will have black color	
+
+=> The more contrast, the mmore deeper white it is
+
+* Sobel Vertical Edge Ddetector :
+  ----
+   - use to detect vertical edge from image
+   - It is also called as Soble Vertical (3*3) Kernel
+
+______________
+GIST
+
+* Convolution Operation :
+  -----
+   - Elem wise Multiplication & then addition (Given 2 Matrix)
+   - Generalization of Dot Product 
+      \
+       Convolution is done for Matrices
+       Dot Product is done for 2 Vectors

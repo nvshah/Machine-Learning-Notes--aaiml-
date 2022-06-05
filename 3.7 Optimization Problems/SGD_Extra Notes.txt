@@ -1,0 +1,16 @@
+SGD_Extra Notes
+
+* SGD (Stochastic gradient Descent)
+  -----
+
+   - we divide the dataset into batches and feed these batches into the model. 
+     These batches are non overlapping. 
+
+
+* Epoch :
+  ----
+   -> Iteration of all Batches = Single Epoch
+
+   => In every epoch, our model being trained will see each data point at once
+
+   - End of an Epoch :- done going through all samples

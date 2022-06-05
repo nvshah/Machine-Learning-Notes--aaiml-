@@ -1,0 +1,118 @@
+TIPS ML Remember Pts.txt
+
+-------------------------
+
+Imp Concepts :- Projection / Distance / Dot Product / Angular Similarity
+
+				Differentiation / slope / tangent / Vector Calculus / Partial Derivative / Gradient Descent/ 
+				Objective function
+
+
+--------
+
+=> The gap between metric value in Elbow method for train & test should be minimal
+
+------------------------
+
+-> Feature Collinearity Test :- Use Pertubation Technique
+
+=> As Dimen is very high, data is linearly seperable (probability incr)
+
+-> If you want to transform your features 
+    then you cann use several mathematical intutions
+
+       1) square   // to get positive
+       2) Log 
+       3) Exponent
+       4) Sigmoid
+
+=> there is no problem of imbalanced data in linear regression as there are no class labels.
+
+=> One of the most imp algorithm for Optimization in ML is Stochastic Gradient Descent (SGD)
+
+=> So when you only need the Similarity between Pairs of Points, 
+      -> You can trivially Kernalize it
+
+-> Regularization can be thought of as an imposing an equality constraint & solving that via 
+   Langrangian Multipliers
+
+=> The sparsity do not depends on the loss but on regularizer
+
+=< For regression we use Mean Squared Error (MSE) or Median Absolute Deviation (MAD)
+
+=> Bagging helps use to reduce the Variance of a Model
+
+=> Thus approximating the residual with pseudo-residuals we can optimize our problem for any loss func
+
+=> Hinge Loss has small problem i.e at Hinge its not differentiable
+
+=> For any model, always use Cross Validation to get Hyper-param
+
+=> Use GBDT impl of XGBoost instead of Scikit learn implementation
+
+=> GBDT is applied more than AdABoost esp at internet companies
+
+=> When the cost of making a mistake is very high :- Cascade models are used typically
+
+-> Ensemble Model is used very much in kaggle Competition
+
+-> Algorithm Model need not only to be used as Classification but can also be used as Featurization
+   Eg DT for Feature binning
+
+=> DT is one of the good technique for Binning of reaal-valued features
+
+=> Models & Featurization are inter-related
+
+=> New feature to be included for Model Consideration should be Such That its get correlated with the 
+   error (from model that was trained with that new feature inclusion)
+
+=> If you have more parameter to estimate then you need more data or points
+
+=> Whenever you have log-loss as metric, train a base model & then also train a calibrated Model
+
+=> You need to consider the retraining of model periodically, when data is changing over time
+
+=> Use elbow methods to find the correct thresolds, ie (esp during Hyper-Param Tuning)
+
+=> Use Stratified sampling whilst train-test-split, inorder to preserve the distribution among splitted parts 
+
+=> At the end GridSearchCV or RandomSearchCV helps us to find the best hyper-param value for Model
+   out of many hyper-param models
+
+=> Normalization or Standardization needs to be performed before CV but after SPlit
+   inorder to avoid Data Leakage Problem !!
+
+[Dimen Reduction]
+=> Do perform Normalization/Standardization of data before doing PCA (ie Eigen Val Decomposition)
+
+=> We must always add Regularization in Optimization to avoid Overfitting
+
+=> Elastic Net :
+   ----
+    L1 + l2 regularization :- 
+
+    If you provide more weight to L1 regularization :- it will result in Sparse Matrices in case of NMF (Matrix Factorization)
+
+* Inverted Indices :
+  ------------
+   -> It's most efficient DS when it comes to search
+   -  So google, or any other company that have searching facility will be probably using Innverted Indexes underhood someway
+
+* Multiple Models Evaluation | Try & Explore :
+  --------
+   TIP :- When you do try with multiple models its imp to check which Feature are imp for particular Models (ie Feature Importance is helpful)
+
+* [Imp of HyperParam & #Features]
+   -> If more features are taken into consideration & Hyper-Param Tuning is not done well
+      then More Feature Model may not show significant result compare to Less-Featured Models
+
+* [Dimen & Lr Reg]
+  Number of Hyper-Planes that you can draw in higher dimensions increases exponentially
+
+ => Whole concept of Euc-Dist Starts breaking Down When Dimensionality is High
+
+----
+* RF :- Random Forest works well on Tabular Data
+-----
+[BOOSTING]
+=> Typically Your Boosting Base Model perform Well on Tabular Data

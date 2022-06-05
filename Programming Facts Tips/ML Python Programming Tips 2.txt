@@ -1,0 +1,18 @@
+ML Python Programing Tips 2
+
+* To get best thresold outa GridSearch or RandomSearch ;- 
+	Best params :- result.cv_results_['params'][result.best_index_] OR result.best_params_
+
+	Best mean score :- result.cv_results_['mean_test_score'][result.best_index_] OR result.best_score_
+
+	Best std :- result.cv_results_['std_test_score'][result.best_index_]
+
+
+* Data can be present in 2 forms mostly :-
+    1) Sqlite
+    2) Csv files
+
+
+=> slmultilearn only uses dense matrix & not sparse matrix
+
+=! Always do Sanity Checks

@@ -1,0 +1,88 @@
+ref 
+
+[Primal & Dual Equvalence]
+cs229.stanford.edu/notes2020spring/cs229-notes3.pdf%C2%A0
+
+-----------------
+
+=> Dot Product = Cosine Similarity (assuming norm =1)
+
+-> The most imp idea in SVM is Kernel Trick
+=> Hence Kernal-SVM using Kernel-Trick can solve Non-Linearly Seperable Datasets also
+
+-----------------
+
+*Dual Form of SVM
+ --------
+
+ Primal Formulation of SVM = Soft Margin SVM   // (Constraint Optimization Problem)
+
+ Solving Primal Formulation = Solving Dual Formulation 
+
+argmax for alpha := ...
+
+ after finding alpha we can use it to compute f(Xq)
+
+ For SV     :- alpha_i > 0
+ For Non-SV :- alpha_i = 0
+
+
+=> The Support Vectors are the one that matter for classification most
+
+f(Xq) = sum(alpha_i * Xi^T*Xq) + b
+   \
+    -> Thus Non-Support-Vector dont change the function 
+       So only thing that matters is a Support Vectors
+
+-> Non-SV do not really change how your classif-algo behaves
+
+REMEMBER :-
+---
+ Dot Product = Cosine Similarity (assuming norm =1)
+
+* kernel Function :
+ ---------------
+  So Xi^T*Xj is replaced by Similarity like function i.e K(Xi, Xj)
+  - K is called as Kernel Function which is similar to Similarity Function
+
+  => Kernel func intutivelt tells you about similarity between Xi & Xj
+
+
+Q) Why going from Primal Form to Dual Form & Why in SVM ??
+ -> 
+    Because dual form have notation comprises of Dot-Product i.e We can have intution of Similarity
+    & can take advantage of such concepts.
+    ie Xi^T*Xq
+
+    So enntire idea is to get it into Dot-Product or Similarity based form & take advantage of same
+
+* Kernel Trick :
+  ------------
+
+  -> Replacing the Xi^T*Xj with kernel Function is known as Kernel Trick
+
+  * Linear SVM :- If not replace Xi^T*Xj & keep it as it is
+  * Kernel SVM :- If replace it with Kernel Function
+
+  - In both above seperating Hyper-plane is in space of Xi's.
+
+  - Lot of time Linear SVM & Logistic Reg appears very similar in terms of results
+
+
+  Linear SVM :- seperating decision surface is Linear Hyper-plane 
+  -------
+  But Linear Hyper-plane fails sometimes for Non-Linear organized data
+
+  Kernel SVM + appropriate Kernel :- would for such non-linear data
+  ---------
+    -> transform pts which are in Xi space to Xi`
+
+    (Whereas in Log-Reg + Feature Transformation, We are finding Hyper-plane but in diff plane of Xi's)
+
+  => Hence Kernal-SVM using Kernel-Trick can solve Non-Linearly Seperable Datasets also
+
+  Kernalization :
+  ----------
+   -> Make SVM to handle non-linear seperable datasets
+
+  Kernel Logistic Regression : Extension over Logistic Regression

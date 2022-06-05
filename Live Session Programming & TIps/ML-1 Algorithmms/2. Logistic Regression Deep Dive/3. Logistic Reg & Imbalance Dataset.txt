@@ -1,0 +1,10 @@
+3. Logistic Reg & Imbalance Dataset :
+ ------------
+
+ ref : https://www.youtube.com/watch?v=l8Dge0z1Zks
+
+
+ => When distance is very large => then probability on either side increases
+
+ -> When you have imbalanced datapoints then your Hyper-Plane (which is going to be selected)
+    will move as far away as possible from correctly classifying points but at same time incorrectly classifying all other minority of points

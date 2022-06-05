@@ -1,0 +1,122 @@
+
+* IMP TIps-Rememeber
+
+-> Sparsity Increased as lma increases or C decreases   // C = 1/lma
+
+-> For a correct classified pt :- large +ve distance :- sigmoid() near to 1
+         misclassified pt      :- large -ve distance :- sigmoid() tends towards 0
+
+=> The sparsity do not depends on the loss but on regularizer
+
+-> Sparsity depends on Weights & biases & not on loss-term
+________________________
+
+* Logistic Regression
+  ---------
+
+ -> This algo depends on assumption i.e pts are mostly linearly seperable
+
+ -> the algo crux lies in distance of pts from plane (ie decision surface)
+    &
+    Finding the Plane/Surface that seperates two
+                    \
+                     You need to Find a Feature Vector ie Normal to Plane
+
+ => The Logistic Reg math lies around 3 things
+     1) sign_distances
+     2) Monotonic Function
+     3) Optimization Problem
+
+ -> There are 3 ways to understand Logistic Regression 
+     1) Geometrically
+     2) Probabilistic
+     3) Loss Function
+
+ Objective :- Optimize the Sum of Sigmoid_Func(sign_distances)  (geomteric intution)
+               \
+                ie Find plane that imply the above func (mostly seperate 2 classes)
+
+ final optimum problem :- Loss-Term + Regularized-Term
+
+ * Sigmoid :
+   ------
+    -> Helps to get some rid of Outliers in Logistic Regression
+    -> Helps to convert real val (ie Signed Distance) -> Probability
+
+    -> Thus Sigmoid Func is used whilst Inference as well (along with Training)
+
+ -> Sigmoid(distance) gives us probability abt decision i.e +ve or -ve
+    Sigmoid(sign_distance) gives about accuracy of our decision for (+1 & -1 classes)
+
+ -> We want to find the linear surface that almost sperate the class-pts
+    - for that we consider sign_distances factor
+
+ => Sum of Sign distances gets impacted by the Outliers 
+    So We will use some other components with Sum of Sign Distances i.e log & exponent
+
+    So final Optimization Problem Eqn will be slight different from Sum Of Sign distances
+    but the idea remains same
+
+-> Also the formulation of optimization problem vary slighlty between geometrically & probabilistic 
+   approach
+
+* REMEMBER : 
+  ----
+   Sign Distance is only used whilst Traininng Model (inorder to decide correct Weight Vector)
+
+   For test data we have to predict the sign (ie Yi) so at that moment there is no concept of Signed Distance
+
+* Regularization :
+  -----------
+   -> Used to prevent Overfitting
+   -> Overfitting happens when W tends towards large component (ie +inf & -inf)
+
+   -> balance between loss term & regularized term
+
+Thus min(loss-term + regularized-term) is goal
+
+=> L1-regularized create sparsity in W ie Weight vector & so It's prefer over L2-regularized
+
+=> In Logistic Regression, its mandatory to compute the col-standardization
+
+=> If features are independent then only we can use abs() val of Weight Wi as Feature Importance
+   Otherwise use Feature-Forward-Selection as feature Imp 
+
+
+* L1-Regularizer :
+  ---------
+   As lma incr -> sparsity incr -> feature with less imp will get weight 0
+
+  - Use L1-Regularizer when you have tight constraints with latency 
+  - try to find tradeoff between 3 things :- Bias, Variance, Latency
+
+=> Logistic Reg Works Well for low-dimen data & when latency is in tight condition
+
+* Time Complexity :
+  -------
+   Runtime complexity :- O(d) time & O(d) space
+
+   Thus Logistic Regression is good algorithm for low-latency internet based application
+
+
+* Feature Eng :
+  --------- 
+    - feature study/Obsv 
+    - feature transformation
+
+
+---------
+
+* Loss Func Representation :
+  ---------
+   2 Ways :
+
+     1) Geometric :- Sum (1 + exp(-yi*Wi*Xi))    // Here Yi can be {-1, 1}
+
+     2) Probabilistic :- Sum ( Yi(logPi) - (1-Yi)(log(1-Pi)))  // here Yi can be {0, 1}
+
+
+* Significance of Sigmoid Func in Logisitc Reg :
+  ----
+   -> It helps to achieve what minimization of Log-Loss Func in Probabilistic Interpretation does, but with Geometrical StandPoint of View
+

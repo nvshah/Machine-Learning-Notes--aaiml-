@@ -1,0 +1,79 @@
+
+
+-----------------------
+=> there is no problem of imbalanced data in linear regression as there are no class labels.
+
+=> As you put more features ie #features, The chances of Overfitting also increases
+
+--------------------------
+     
+
+1) Imbalanced Dataset :- 
+     There is no problem of imbalanced data in linear regression as there are no class labels.
+
+2) Feature Imp & Interpretability :- 
+     - not multi-collinear
+     - interpret by Weight Vector
+
+3) Feature Engineering/ Transformation :
+   ---------------
+    -> The most imp part 
+
+    L1 Regularizer :
+    -----
+     - as lma incr, sparsity incr & thus useless feature weights drop to 0
+
+    - product of features
+    - squares of features
+    - log(fi)
+    - exp(fi)
+
+
+4) Outlier :
+   -------
+    - As Squared-Loss is being used. So it can be impacted by an Outliers very Significantly
+
+    How to solve ??
+
+    Technique : RanSac 
+    -----------------
+     1. Find W & w0 first
+     2. find pt for which  y - y_i` is large & remove it & prepare new Dataset  
+              \- (Extreme Points)
+     3. build model with new Dataset
+
+     Keep doing above 3 steps iteratively
+
+
+    -> If dataset contains lot of Outliers than Which Loss would be better 
+        ie Squared Loss   - L2 Loss
+            or 
+           Abs() loss    - L1 loss
+    
+    -> Outliers are misbehaving ie Theu dont fit into model very well. 
+         \
+          e_i is very large  ie (y-y`)
+
+
+       Consider error in both case Then for very large error :-
+
+          - error for L1 will be significantly low than to L2
+          - Contribution of error to Loss-Func in case of l2 will be more (as its quadratic)
+            when compare to L1
+
+      => L2 will be more impacted by an outlier than L1
+
+    => Another Thought
+
+       For L2 the Gradient Descent, 
+           - During initial iterations step-size will not decrease substantially as compared to L1
+             (because as Outliersa are more => so error will be more )
+
+           - Thus L2 will take more time to converge than L1 (because of step-size decreasing slowly)
+
+           
+
+
+
+
+

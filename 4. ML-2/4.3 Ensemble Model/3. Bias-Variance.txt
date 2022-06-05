@@ -1,0 +1,58 @@
+
+______________
+
+- 2 Hyper-param :- #base models & (row-sampling-rate, col-sampling-rate)
+
+=> The most imp hyper-param is the number of base learners i.e base models
+
+--------------
+
+Bias-Variance
+--------
+
+RF :- reduce variance
+ \
+  -> Low-Biase (because base models (Mi's) are low-biased)
+
+  M -> M1, M2, ... Mk
+
+  bias(M) = bias(Mi's)
+
+  variance depends on k as more unique/experts sub-models Mi's are less variant it would be
+   \
+    -> K incr, variance decr
+         decr, variance incr
+
+  So more the base models, the better
+
+  So k = hyper-param = #base-models
+
+* Col-Sampling Rate = d`/d
+  Row-Sampling Rate = m/n
+
+  as Col.S.R & Row.S.R goes down -> sub models are more de-corelated 
+   \
+    ie Each of Dataset D1, D2, ... will be more different => Thus low-variance model
+
+    Beware not to keep such rate very low that its very easy to train model ie base Model
+    which in turn are individual High-bias model
+
+    So keep rate reasonable
+
+  => Thus as Col.sampling rate or
+             Row sampling rate reduces => low-variance model 
+
+  *- often rates are fixed
+
+=? As k incr, your model performance will increase upto some pt & then it will plateau off
+
+-> So we will have Di, D_CV, D_test
+   we will use D_CV to decide k (based on performance metric)
+
+=> The most imp hyper-param is the number of base learners i.e base models
+
+--> In general for Bias-Variance tradeoff :-
+     \
+      we fix row & col sampling rate
+      &
+      we tweak a hyper-param k only to get best bias-variance tradeoff

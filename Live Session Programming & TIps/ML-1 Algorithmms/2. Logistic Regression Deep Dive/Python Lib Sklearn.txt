@@ -1,0 +1,9 @@
+Python Lib Sklearn
+
+Q) Diff between LogisticRegression & SGDClassifier ?
+---
+ -> https://stackoverflow.com/questions/43961225/sgdclassifier-vs-logisticregression-with-sgd-solver-in-scikit-learn-library
+
+
+ - LogisticRegression() :- impl that minimizes the log probability way 
+ - 

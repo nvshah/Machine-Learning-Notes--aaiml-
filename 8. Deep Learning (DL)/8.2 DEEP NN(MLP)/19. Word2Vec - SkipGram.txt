@@ -1,0 +1,94 @@
+19. Word2Vec - SkipGram
+-----------------------
+
+------
+
+
+______
+REMEMBER 
+
+-> Linear Activation Unit is very cheap to Compute
+
+
+------
+
+
+* SkipGram :
+  --------
+  IDEA :- given focus word, predict the context words (// exact opposite of CBOW)
+
+  let Hidden layer Size :- n
+
+      Inp Layer :- Focus Word (vector of size v)
+
+      Output layer :- K-SoftMax 
+                       \
+                        - where each softmax will classify each context word
+ 					    - also each softmax is fully connected
+
+ 					  K-Multi Class Classifier
+
+  => Thus this network is exactly sort of like inversion of CBOW NN
+
+
+* Weights :
+  ------
+   In both CBOW & SkipGram you have same weights in total :-
+     -> (k+1)*(N*V)
+
+
+* SoftMax Funcns :
+  ------
+   CBOW :- 1 SoftMax
+   SkipGram :- K Softmax
+
+   Hence SkipGrams takes more computation time
+
+------ 
+Comparision
+
+* CBOW : (PLUS)
+  -----
+   1. Faster than SkipGram
+   2. Better for Frequent Occuring Words 
+        \
+         because there will be more context words for those such kinda words (during Training Phase)
+         
+* SkipGrams : (PLUS)
+  -----
+   1. Works well for smaller data
+   2. Better for InFrequent Words
+
+
+=> SkipGrams is much harder Problem
+   whereas
+   CBOW is easier one 
+       (ie think of Fill in the Blanks where you need to fill Focus Word in place of Blank)
+
+
+* K & N :
+  -----
+   as K incr => more context words (ie Surrounding words)
+             => N-dim Representation you get for each point is better
+
+      N incr => more dimen to represent data
+
+
+* Obtain Word Vec :
+  -----
+   - use the Weight Matrix between Inp layer & Hidden layer to procure the Word vector
+
+
+* Problem with Both (CBOW & SkipGram) :
+  -------
+   -> Even for small Corpus Size (ie v)
+       -> It require large amt of Weight Computation
+           |
+           So we need some algorithm optimization technique to deal with this !
+           
+
+------
+GIST
+
+SkipGram :- from 1 word -> predict K Words
+CBOW     :- from k words -> predict 1 Word

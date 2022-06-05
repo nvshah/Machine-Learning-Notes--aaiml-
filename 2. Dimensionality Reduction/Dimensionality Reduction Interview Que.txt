@@ -1,0 +1,15 @@
+Revision:
+
+    What is dimensionality reduction? https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2878/what-is-dimensionality-reduction/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    Explain Principal Component Analysis?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2889/geometric-intuition-of-pca/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    Importance of PCA?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2888/why-learn-pca/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    Limitations of PCA?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2894/limitations-of-pca/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    What is t-SNE?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2898/what-is-t-sne/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    What is Crowding problem?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2901/crowding-problem/2/module-2-data-science-exploratory-data-analysis-and-data-visualization
+     
+    How to apply t-SNE and interpret its output?https://www.appliedaicourse.com/lecture/11/applied-machine-learning-online-course/2902/how-to-apply-t-sne-and-interpret-its-output/2/module-2-data-science-exploratory-data-analysis-and-data-visualization

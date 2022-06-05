@@ -1,0 +1,40 @@
+file :- run_dataset.py // in zipped folder
+
+ref :- Section 2.12
+
+___________________________
+
+7. Train the Model
+--------
+
+- `save` folder stores the final model files
+
+- loss -> mean-squared-error
+          L2 Norm of Weights
+
+  MSE + L2*Lma
+
+- Hyper-param tuning for AdamOptimizer()
+
+- 30 epoch
+
+
+----
+
+* Test the Model
+  ---
+
+  -> Visualizing the data (predicted)
+      \
+       open a img seq (ie Input) images
+        &
+        side by side open corresp viz & just visualiza if its looking proper in sync
+
+  -> This way (by visualization) gives you far more satisfaction than with numerical figures
+
+  -> To Visualize :- use opencv
+
+
+* OpenCv :
+  ---
+   - For Image Viz

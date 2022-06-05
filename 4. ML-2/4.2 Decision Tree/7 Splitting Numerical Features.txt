@@ -1,0 +1,36 @@
+
+-------------
+
+- In DT we ought to use >, <, <=, >= ie if-else conditions quite lot
+
+--------------
+
+
+* Splitting Numerical Features
+
+- For categorical or discrete R.V its simple to split !!
+
+Q) What if features is Numerical - (int or real valued) ?? 
+
+  - sort the feature in ascending order  [ // O(nlg(n)) ]
+
+  (For single feature)
+  - we can have then n possible constraints variations for split ie
+       f1 < t1   // t1 = first val
+       f1 < t2   // t2 = second val 
+
+          t : thresold
+
+       We can have such n variations
+
+    So we check through n possible splitting criteria
+    -> this is quite time consuming & non-trivial
+
+  - pick best among all variations
+
+-------
+
+  Thus for d features we will need to sort all such d features 1 by 1 :- ( d * n * lg(n) )
+
+
+

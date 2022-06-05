@@ -1,0 +1,9 @@
+2. Data Part
+---
+
+File -> HAR_EDA.ipynb
+
+-> We change the name of Feature Columns
+
+-> We use TSNE for 561 Data Viz
+   2-d Embeddings

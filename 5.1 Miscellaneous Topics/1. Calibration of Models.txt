@@ -1,0 +1,159 @@
+ref : http://scikit-learn.org/stable/modules/calibration.html   
+
+--------
+
+=> average in case of {binary values} = probability of val being 1
+
+=> Also the curve in calibration plot is monotonic curve
+
+=> Whenever you have log-loss as metric, train a base model & then also train a calibrated model
+
+imP :
+=< The concept of calibration matters only when the probablities of prediction matters.
+   In case probablities are not important for classification then there is no need for calibration. 
+_____________
+
+- calibration is used after Cross validation
+
+--------
+
+=> Calibration Model works when Probability Estimation comes in picture
+    - to make Probbaility Estimation better
+
+* Calibration of Models
+ --------------
+
+ Task : Given Model M
+
+         f(Xq) -> Yq  // Yq may not be actual probability
+
+         We want to calculate P(Yq=1|Xq) & P(Yq=0|Xq)
+
+ Calibration is a stage where model is already trained & you want to check its calibre for classes
+  - what is probability of prediction = 1 would be found by calibration model
+
+=> Calibration can be useful when you have probabilistic Outputs of your classifier
+
+ * Process :
+   ----
+    Xq -> Model M() -> Yq -> Calibration Model CB() -> P(Yq=1) !!
+
+=> Whenever you have log-loss as metric, train a base model & then also train a calibrated model
+
+
+* Calibration Plots :
+  -------------
+  Connsider cross validation set D_cv  {xi, yi}
+  & 
+  (classification is binary classification)
+
+  Steps :-
+
+    1. build a table of x, yi, yi`
+
+    2. reorder table data in incr order of yi`
+
+    3. seperate table data into chunk of size m
+        &
+       calculate the avg(yi) & avg(yi`) for each chunk // ie avg prediction & avg actual
+
+       let ayi = avg(yi)  & ayi` = avg(yi`)
+
+    Data for calibration = {ayi`, ayi}   // calibration dataset
+         \
+          -> P(ayi=1 | ayi`) 
+
+   - Calibration plot 
+     -------
+         x axis :- ayi`
+         y axis :- ayi  //actual probability of yi=1 given Xq
+
+    Eg if in first chunk 30 pts are +ve & 70 are 0 then ayi = 0.3  
+
+    average in case of binary classification = probability of val being 1
+
+  => So ideally there sould be straight line at 45 degree
+      \
+       but in real world there will never be a line at 45 degree
+
+       Why ? -> ideally avg(ayi) = avg(ayi`) 
+
+  => Also the curve in calibration plot is monotonic curve
+
+  So calibration model is all abt : given yi`, predict yi
+
+___________
+
+goal in calibration :- given yi`, try to find yi 
+
+original curve = curve obtained in plot of yi & yi`
+
+So after performing calibration if we plot curve then it should maximally overlap with original curve
+(ie curve between yi` & yi)
+
+----
+
+(How to perform calibration given calibration dataset)
+ \
+  -> Via Regression ie minimizing Loss Func & Cross validation ( same old procedure )
+
+
+* Platt Scaling | sigmoidal Calibration
+  ---------------------------
+
+  - one of the way to perform calibration 
+
+  - It is useful when original curve is similar to sigmoidal curve
+
+  -> goal in calibration model : given D_calibration, predict yi given yi`
+     The curve in scalibration plot seems similar somewhat to sigmoid curve
+     so we can use modified sigmoid to fit between yi & yi`
+
+  Eqn :-
+
+     yi = inv(1 + exp( A*yi` + B ))  
+
+       -> We need to find the A & B via optimization problem where yi & yi` are feeded from 
+          Calibration Dataset
+
+  Emperical Curve :- curve obtained in actual plot  (Uncalibrated)  
+  
+   - when curve for actual yi & yi` dont seems like sigmoidal in shape, then plat scaling do not work 
+     as intend for calibration
+
+   => Platt scaling works well only when original curve seems alike sigmoidal curve (func)
+  
+  => When there is step-wise like curve :- Isotonic Calibration can be helpful 
+
+IMP
+* Observation :
+-------
+ - if calibrated & original plot are almost overlapping then we can say that, it's very good at 
+   predicting p(Yq = 1 | Xq)
+
+   f(Xq) = Yq` -> P(Yq = 1|Xq) 
+
+   
+
+------------------
+(Mine Understanding)
+
+In calibration what we try to achieve is :-
+
+  prepare ot tame our model s.t. its good for class-labels as well as probabilities of those class labels
+
+  but As we are already minimizing our Loss Func in optimization process, (wont it will inherently achieve the goal of calibration ie as Loss func gets minimized class label prediction gets improves & thus probabilities (between actual & predicted) also comes closer)
+
+
+=> imP :
+=< The concept of calibration matters only when the probablities of prediction matters.
+   In case probablities are not important for classification then there is no need for calibration. 
+
+Q) Main Difference between Calibration & our loss-Function ie Base Estimator 
+  
+  -> Normal modelling accounts labels & one-to-one correspondence i.e   
+       for a pt {Xi, Yi} -> Yi`  diff between Yi & Yi`
+
+  Base Estimator -> Train on Label | Class
+  Calibration    -> Train on connsidering the probabilities
+

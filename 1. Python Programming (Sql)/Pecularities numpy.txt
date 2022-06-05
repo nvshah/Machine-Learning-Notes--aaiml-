@@ -1,0 +1,197 @@
+Pecularities numpy 
+[ref]
+https://drive.google.com/drive/folders/0BwNkduBnePt2WXcxME5PMExSbUk?resourcekey=0-ICnYzv0qVOJuDfxVikGT0w
+
+---------
+
+Tip -> `%timeit {expr}`   //can be used in Jupyter NB to calculate avg times
+
+-> number of dimensions = # continuous `[` brackets
+   size of tuple of shape = `{ndim}` of numpy array
+
+-> last axis = -1  (rows in case of 2D matrix)
+
+=> `.reshape()` returns View to original matrix. so alteration on reshaped matrix can reflect 
+   in original matrix
+
+=> Convert a matrix i.e (n1, n2,...nk) to a vector : arr.reshape(n1 * n2 * ... * nk)
+
+=> linear algebra :- np.linalg
+
+=> get bytes consumed by the numpy array :- .nbytes
+
+------------------------------------------
+
+
+* numpy sliced vs python array sliced assignment :
+  ---------------
+   npa[4:] = 11   // will assign all elements in sliced to 11
+   a[4:] = [1]    // python array requires the list however on RHS side
+
+
+* Slicing in numpy will not return new array but will point to same array's subarray
+
+* View :
+  -----
+  -> To share memory while sclicing
+  -> Instead of copying array I am providing view for same (so that it is space efficient)
+
+  np.shares_memory()  // check if 2 variables/pointers are sharing same meory reference 
+                         (not necessary as whole but partially also allowed)
+  Force a Copy :
+
+     .copy()
+
+
+* Masking : (Fancy Indexing)
+  -------
+   -> apply mask on individual item & those who evaluate to true are returned
+
+   -> Masks create copies & not views
+
+   -> Mask will produce boolean array
+
+
+* Indexing :
+  -----
+   1) [i,j,k,...]                 // indexing with subscript (square bracket) with {comma,} as ndim
+   2) [[idx1, idx2, idx3, ...]]   // indexing with array
+
+
+* Scaler Operation :
+  ------
+   -> Addition, Exponent
+
+
+* Element Wise Operation
+
+* Element-Wise Comparision i.e 
+    v1 == v2  // will produce a boolean vector 
+
+
+* == vs array_equal()
+
+  == :- will produce boolean vector for each element-wise comparision
+  array_equal() :- will compare element wise & return True or False
+
+
+* logical :
+  -----
+  	logical_and(), logical_or()
+
+  	&, | 
+
+
+* reduce functions :
+  ------
+    NOTE - on all reduce function you can provide axis - orientation i.e in which direction reduce function should commence
+    So in given direction (denoted by axis) reduce function will be applied
+
+    arr.sum()
+      \
+       axis :- param
+         {
+           0 -> column wise   (first dimension)   -> At the end We get Column Vector
+           1 -> row wise      (2nd dimension)     -> At the end we get Row Vector
+         }
+
+    .argmin()    // At what index my element is smallest inside matrix
+    .argmax()    // At what index my element is largest inside matrix
+
+    
+* statistics :
+  ---------
+   .mean(), median(), std()
+
+
+* Text File to Numpy Array :
+  ---------
+   np.loadtxt('filename.txt')   // convert all row in txt to np->matrix
+
+
+* BroadCasting :
+  --------
+   - replicate to match dimension so that operation can be performed on matrices (valid)
+
+   .tile()   // You can use tile() to construct more & more tilings
+
+   => broadcasting is performed implicitly by np in python
+
+
+
+--------- Miscellaneous (Advance- Intermediate) ------------
+
+* np.newaxis :
+  ---------
+   -> To add new dimension to your current numpy array 
+       \
+        It will increase ndim by { ndim + 1 }
+        It will increase tuple size of shape by 1
+
+   => Can be useful to convert 1D array to 2D array
+
+
+* Shape Manipulation :
+  --------
+    reshape()
+
+
+    IMP -> reshape() returns a View to original matrix
+
+
+* .T
+  ---
+   -> Transpose of a matrix
+   => It also returns View to Original matrix
+
+
+* resize() :
+  ------
+   It is same as reshape() but here extra space is filled with default value (i.e 0 for int)
+
+   IMP -> resize() cannot be applied to array that is being pointed/referred by more than 1 pointers
+
+   => Also resize() is an inplace operation.
+
+* sort() :
+  ------
+   np.sort()  -> // sort non-inplace
+   arr.sort()  -> // sort inplace
+
+   NOTE -> you can use here axis to define direction of sort
+  
+
+  argsort() :
+  --------
+   -> return the indices of elements after sorting done.
+
+
+-----------(Extra)
+-----------
+
+ 
+
+  np.cumsum()  // cumulative sum
+  np.matmul()  // matrix multiplication
+  np.vstack()  // vertical stacking
+
+  np.meshgrid()  //
+
+  numpy.diff()    // difference between consecutive numbers pair in original arr
+       .sign()    // copysign in python
+
+  np.where()     // filter
+
+  np.unique()
+    .full()
+
+  np.vander()   // vandermode matrix
+
+  matrix_obj.A1  // returns the self matrix as flattened array
+
+  np.sign()    // provides the sign of numbers
+
+
+  np.linalg.norm() // linear algebra
+
+  np.flatnonzero()

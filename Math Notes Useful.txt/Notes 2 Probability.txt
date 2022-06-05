@@ -1,0 +1,12 @@
+Simple Independence 
+Conditional Independence
+
+Standard Deviation is influence by Outliers a Lot
+While MAD is less influence by an Outliers
+
+
+* Exponential Distb (Eg)
+  ----
+   Time it takes between your phone calls ie at t1 & next at t2 is often represented by exponential distb
+
+=> In statistics you need to make assumptionns to move further in derivations

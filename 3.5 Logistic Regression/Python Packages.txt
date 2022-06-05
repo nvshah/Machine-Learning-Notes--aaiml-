@@ -1,0 +1,24 @@
+Python Packages
+
+Most Imp param of LogisticRegression :-
+
+    GridSearchCV := n_jobs, iid, refit
+    RandomSearchCV := param_distributions
+
+    LogisticRegression := penalty    // penalty = regularized term
+
+// TO get weight vector :- classifier.coef_
+
+
+  GridSearchCV(classifier, ...)
+
+
+* sklearn :
+  	\
+  	 .grid_search.GridSearchCV
+
+  	 linear_model.LogisticRegression 
+  	                 \
+  	                  param :- {penalty }
+
+  	             .SGDClassifier

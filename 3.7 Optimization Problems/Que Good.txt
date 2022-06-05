@@ -1,0 +1,30 @@
+Que Good
+
+* How to know any funcntion is Differenntiable or not ?
+
+-> Function has to be Continuous 
+   Its not nnecessary that if Function is Continuous then its Differentiable
+
+   Function has to be Smooth -> Slope Do not change eradically
+
+   If a slope changes instantly (ie let say from -1 to +1) -> then its not continuous at some point
+
+=> So Differentiability defines the First Derivative of Func has to be Continuous
+
+
+* Continuous  :
+  -----
+   Means that Function line should be connected by all dots
+   There should not be any point where function is not defined !
+
+* Differentiability :
+  -----
+   -> Tells us if First Derivative is Continuois or not !
+
+
+-> A Function may be Continnuous but not Differentiable 
+
+
+* PieceWise Function :
+  -------
+   We can define abs val of x via Peice Wise Func

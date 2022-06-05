@@ -1,0 +1,17 @@
+Doubts.txt
+
+Decision Null Hypothesis
+
+-> Here We assume H0 = no diff between PM & PW
+
+   obs = actual diff
+   
+   Now Via Test we found that P(ts > obs | H0) = 3.6%
+    => only 3.6% of population have diff >= obs diff
+       whereas rest 96% have < obs diff
+
+    as diff less doesn't implies that more similarity (ie no diff approximately)
+
+   So in such case when 96% time diff is almost small than obs diff, ain't we should accept Null Hypothesis ??
+
+   because Null Hypothesis also assume of no diff & we also get higher chances of less diff than observed diff 96 percent of time

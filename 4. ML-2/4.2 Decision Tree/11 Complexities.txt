@@ -1,0 +1,28 @@
+* Complexities
+
+- Train Time 
+  -----
+   O(n*lg(n)*d)
+     \
+      n*lg(n) for sorting the features
+      d for dimension
+
+   So when d is large DT may not be the best option
+
+
+- Run Time 
+  -----
+   -> Space Complexity : O(#nodes)
+
+   NOTE :- We train DT of ideally max 10 depth
+
+   -> Time Complexity : O(depth)
+
+=> For large data, with small or reasonable dimensionality
+    \
+     DT can be useful
+      (even for low latency application)
+
+-> There are variations of Decision Tree :- 
+     1) Random Forest
+     2) Gradient Descent

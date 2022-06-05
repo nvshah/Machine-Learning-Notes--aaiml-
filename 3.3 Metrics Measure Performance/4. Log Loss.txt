@@ -1,0 +1,76 @@
+* Log Loss :
+  ----
+  - Classification metric
+
+----------------  
+-> Log loss uses probability scores
+=> -log(x) falls very sharply
+
+=> Smaller the better
+
+=> Log-Loss is powerful metric for probability scores
+--------------------- 
+
+Log Loss : 
+--------
+=> Log Loss is powerful metrics When probability score is given
+=> smaller the better
+
+-> For Classification, good metric
+-> Log Loss uses exact probability scores
+-> Log Loss penalizing the small deviation in probability score
+
+   P_i = y_hat (ie y^) = probabilty score for y (pred-var)
+
+   log-loss := -avg((Yi*log(Pi) + (1-Yi)*log(1-Pi)))) 
+
+   So If my model is great then 
+   			P_i must be close to 1 in case when y = 1
+   								           0              y = 0
+
+   It's abt taking avg of -ve log-probabilty
+
+                  = avg neg log(prob of correct class label) 
+
+=> Log-Loss model is penalizing for small deviation in probabilty
+      \
+       if y = 1 & 
+           pi_1 = 0.6; & pi_2 = 0.8
+           then log-loss of pi_1 will be more than log-loss of pi_2
+
+          y = 0 &
+           pi_1 = 0.1 & pi_2 = 0.4
+           then log-loss of pi_1 will be less than log-loss of pi_2
+
+=> smaller the log-loss better the model
+   
+   Log-Loss values range from 0 to inf
+
+     -Log(X) : at 0 => close to inf
+             : at 1 => 0
+             Thus -log(X) false very quickly from 0 -> 1
+
+
+* Multi-Class & Log-Loss :
+  ---------------------
+   Log-Loss can easily be extended to MultiClass Classification problem
+
+
+* Problem :
+  ------
+   -> Its hard to interpret
+      because log-loss val is not limited in 0 -> 1
+      log-loss range from 0 -> inf
+
+      best case i.e 0  // we know that 
+
+      but what abt upper bound if 
+
+         log-loss(M1) = 1 & 
+         log-loss(M2) = 10 
+
+         then what to tell about these 2  
+
+
+
+  

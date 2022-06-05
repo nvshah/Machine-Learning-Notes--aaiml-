@@ -1,0 +1,34 @@
+Extra Notes SVM Que
+
+Q) Difference between LinearSVC & SVC :
+  
+ 	1) By default the loss minimized in SVC is the regular Hinge loss which has been discussed in our course. Whereas in LinearSVC, by default the squared hinge loss(square of this regular hinge loss) is minimized. If you want the regular hinge loss to be minimized in LineaSVC, then you have to specify the value manually.
+
+	2) While solving a multi-class classification problem, LinearSVC uses One-vs-Rest approach, whereas SVC uses One-vs-One approach.
+
+	For example, if we have total 5 classes in our dataset. They are 'A', 'B', 'C', 'D', 'E'. Then,
+	The models built by LinearSVC are (One-vs-rest approach)
+
+	A (vs) others (Predicts whether the point  belongs to class 'A' or not)
+	B (vs) others (Predicts whether the point  belongs to class 'B' or not)
+	C (vs) others (Predicts whether the point  belongs to class 'C' or not)
+	D (vs) others (Predicts whether the point  belongs to class 'D' or not)
+	E (vs) others (Predicts whether the point  belongs to class 'E' or not)
+
+	The models built by SVC are (One-vs-One approach)
+
+	A (vs) B (Takes only the points of classes 'A' and 'B'. Predicts whether the point belongs to class 'A' or 'B')
+	A (vs) C (Takes only the points of classes 'A' and 'C'. Predicts whether the point belongs to class 'A' or 'C')
+	A (vs) D (Takes only the points of classes 'A' and 'D'. Predicts whether the point belongs to class 'A' or 'D')
+	A (vs) E (Takes only the points of classes 'A' and 'E'. Predicts whether the point belongs to class 'A' or 'E')
+	B (vs) C (Takes only the points of classes 'B' and 'C'. Predicts whether the point belongs to class 'B' or 'C')
+	B (vs) D (Takes only the points of classes 'B' and 'D'. Predicts whether the point belongs to class 'B' or 'D')
+	B (vs) E (Takes only the points of classes 'B' and 'E'. Predicts whether the point belongs to class 'B' or 'E')
+	C (vs) D (Takes only the points of classes 'C' and 'D'. Predicts whether the point belongs to class 'C' or 'D')
+	C (vs) E (Takes only the points of classes 'C' and 'E'. Predicts whether the point belongs to class 'C' or 'E')
+	D (vs) E (Takes only the points of classes 'D' and 'E'. Predicts whether the point belongs to class 'D' or 'E')
+
+	3) LinearSVC can be used only to solve only the problems associated with linearly separable data whereas SVC can be used for both linear as well as non-linear data.
+
+	4) The underlying estimators in LinearSVC are 'liblinear' which penalize the intercept. Whereas in SVC, the underlying estimators are 'libsvm'.
+	'liblinear' estimators are optimized for linear separable case and converge faster on large amounts of data when compared to 'libsvm'. That's the reason we see LinearSVC always to be faster than 'libsvm'. 

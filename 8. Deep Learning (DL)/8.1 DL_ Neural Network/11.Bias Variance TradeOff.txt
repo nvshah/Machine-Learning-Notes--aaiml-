@@ -1,0 +1,72 @@
+11.Bias Variance TradeOff
+-----------------------
+
+-----
+REMEMBER
+
+=> Logistic Regression is more suffered by or more exposed towards Underfitting (ie High-Bias) Problem
+
+=> Typically in case of MLP, there is higher chance of Overfitting or High-Variance
+
+[*IMP*]
+=> You can think MLP as Multi layer generalization of Linear Regression or Logistic Regression   
+_____
+
+* NN (MLP) & Bias-Variance :
+  -------------
+  
+  1. As #layers increase
+      |
+       -> Problem of High-Variance (Overfitting)  (more Weights)
+
+     (Model with numerous Weights in Network)
+
+  2. As #layers decrease
+      |
+      Eg Very Few Layer -> Problem of High-Bias (Underfitting)
+
+         Consider 1 Layer 
+           \ 
+            Its Equivalent to Simple Logistic Regression Model (Cannot attain Complex Situation Tasks)
+
+     (Model with fewer Weights in Network)
+
+* MLP & Overfitting :
+  ------
+  (**IMP)
+  --
+  => Typically in case of MLP, there is higher chance of Overfitting or High-Variance
+
+  Soln :-
+  --
+   -> Optimization & 
+      Regularization
+        \
+         L2 or L1
+
+* Loss & Regularization :
+  ------
+   L = sum(Loss across each Point) +  lma * L2_Reg_in_Weights
+
+   L2 Regularization 
+
+   L1 Regularization :- 
+     - Some of Weight = 0
+       Thus
+       Some of Edge is gone or dropout
+     
+     -> Sparse MLP := some of edges get inactive
+        __________
+
+* Hyper-Parameter :
+  -------------
+  1) lma    // corresp to Regularizer (same as in case of Lr-Reg or Log-Reg, Conceptually)
+  2) #layers   // number of layers
+
+  => Keep the number of layers sensible
+
+-----------
+
+[*IMP*]
+=> You can think MLP as Multi layer generalization of Linear Regression or Logistic Regression
+

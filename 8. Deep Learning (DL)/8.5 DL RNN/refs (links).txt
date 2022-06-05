@@ -1,0 +1,17 @@
+refs (links)
+---
+
+[LSTM]
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+
+[GRU slide - Cristopher Ola]
+https://www.slideshare.net/hytae/recent-progress-in-rnn-and-nlp-63762080
+[Blog]
+https://towardsdatascience.com/understanding-gru-networks-2ef37df6c9be
+
+
+----
+
+[IMDB Sentiment Classification]
+https://drive.google.com/file/d/1iWpQBiZO95pfOWLdaG6qKwA27d_Q-EDg/view

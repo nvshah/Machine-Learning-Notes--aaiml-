@@ -1,0 +1,58 @@
+* Need for Better RNN Network :
+  -------------------------
+
+----
+TERMS
+
+- Long-Term Dependency, Simple RNN
+
+----
+REMEM
+
+- Machine Translation esp have long term dependencies
+
+
+
+----
+
+
+* Problem with Simple RNN :
+  ----
+
+  In seq_to_seq model if later output (let say y_i4) depends much on earlier inp (let say x_i1)
+  then its very hard to address this with Forward or Backward Propogation
+  |
+  because in simple rnn n/w, y_i4 more depens on x_i4 or x_i3 than x_i1
+
+  Long-Term Dependency :
+  ---
+   - When later output depends on earlier inp s.t. the depth of layer units between them is large
+     (in such case Backward Propogation will not have much effect between both ie may be due to vanishing or other problems)
+
+  Short-Term Dependency :
+  ---
+   - When output in seq is close to inp (ie consider output & inp of same unit for eg :- x_i2 & y_i2)
+
+  There will be often cases where we need some output in seq that depends more on earlier input of Seq.
+
+
+* Simple RNN & Long-Term Dependency :
+  ----
+   - Simple RNN cannot take care well for Long-Term Dependencies
+
+=> Long-Term Dependency := When later output depends a lot on earlier inputs
+
+=> Long-term dependency won't work well with Simple RNN
+
+* Machine Translation & Encoder-Decoder (Many-to-Many)
+  ---------------------------------
+  -> In such case long-term dependency can often be seen (esp for Translation task of diff language)
+     &
+     over there Back-Propogation cannot help much as #layers increases (of dependency)
+
+[NOTE]
+- In Encoder/Decoder n/w, The output sequence starts after the end of inp seq cells & not at the end of inp seq unit
+
+* LSTM (Long term Short term)
+  ----
+   - It's a good technique to deal with long-term dependency of simple RNN n/w

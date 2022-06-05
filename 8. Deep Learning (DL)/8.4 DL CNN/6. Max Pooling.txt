@@ -1,0 +1,32 @@
+6. Max Pooling
+--------------
+Sec :- 4.6
+
+-------
+- Max Pooling
+  Mean Pooling (Sub Sampling)
+
+------
+
+* Pooling
+  ---
+  - layer you can add to your CNN
+  
+  INVARIANTS:
+
+  - Location Invariant  // regardless of the position, I would like to detect it
+  - Scale Invariant   // regardless of the size/scale, I would like to detect it.
+  - rotation Invariant  // 
+
+  -> Pooling is the concept that makes your model slightly invariant to/as all of above them
+     (ie Thus Pooling has its inspiration from abovee kinda invariance things)
+
+* Max Pooling :- 
+  ---
+   - You can think Max-Pooling as a Kernel
+   - It introduce invariance to the whole System
+
+
+* Most Used Component of Sample NN :
+  ---
+   Conv, RELU, Max-Pooling

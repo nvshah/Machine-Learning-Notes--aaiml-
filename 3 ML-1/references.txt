@@ -1,0 +1,11 @@
+references
+
+
+1.https://www.analyticsvidhya.com/blog/2017/08/skilltest-logistic-regression/
+2.https://www.listendata.com/2017/03/predictive-modeling-interview-questions.html
+3.https://www.analyticsvidhya.com/blog/2017/07/30-questions-to-test-a-data-scientist-on-linear-regression/ 4.https://www.analyticsvidhya.com/blog/2016/12/45-questions-to-test-a-data-scientist-on-regression-skill-test-regression-solution/
+5. https://www.listendata.com/2018/03/regression-analysis.htmls
+
+
+[Data Leakage]
+https://towardsdatascience.com/preventing-data-leakage-in-your-machine-learning-model-9ae54b3cd1fb#:~:text=5.,to%20normalize%20AFTER%20splitting%20data.

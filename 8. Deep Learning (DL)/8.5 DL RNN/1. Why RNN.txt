@@ -1,0 +1,106 @@
+1. Why RNN ?
+----------
+
+-----
+NOTE
+
+Rcurrent :- means Repeat
+
+-----
+
+* Notion ;
+  
+  For Vector Inps -> MLP
+      Image Inps -> CNN
+
+  What if we have Sequence as Inp ??
+  -> RNN
+
+* Sequence :
+  ---
+   -? Eg 
+
+   1) Seq of Words 
+   2) Time Series Data
+   3) Machine Translation
+   4) Speech Recognition
+   5) Image Captions
+
+   - Sequence plays importance in relative context for words in sentennce
+   - Thus its much relatable with `NLP`
+
+* LoopHole with ML Text Processing ??
+  ---
+  - Consider Amazon Text Review 
+  - Here we have seen multiple techniques such as { BOW, TFIDF, Avg W2V, ...}
+    but
+    Here we have not consider the Sequence info. ie We've discarded the Sequence Info.
+    &
+    seq info plays some good role for relative context of words (in NLP)
+
+  -> Thus Seequence Information is imp in NLP
+
+  => RNN is technique that consider Sequence info.
+
+* Time-Series Data :
+  ----
+   - Windowed the data
+   - Freq Domain
+
+* Machine Translation :
+  -----
+   - Seq-to-Seq Model
+   - Eg translation from English Lang to Spanish Lanng
+
+* Speech Recognition :
+  ---
+   - Seq of audio as inp -> English Sentence as Output
+
+* Image Caption :
+  ---
+   Image --> to captions for img as text sentence
+
+   Google Image Search can be improved a lot via this way as
+   once we have captions or text info about Image it is very inntutive to search relatveely for that Image & it somewhat gets convert to google-text search
+
+   Captions :- allow you to know what is there inside image in form of textual sentence
+
+------
+
+* Core idea | RNN :
+  -------
+   - Output depends on seq. of inputs
+     \
+     then we need some new type of NN that leverages the seq info to perform better than 
+     Non-Sequential Info Models.
+
+
+* Problem with MLP :
+  ----
+  - If we design mLP for Inputs that maintains Sequence ie in Vector form (of Each Review Text)
+    |
+    then Input Vector Size may vary as the #words present in each Reiew Texts
+
+  Fix :- 
+   -> take max of all possible words possible & choose vector likewise (ie Zero Padding on Vectors)
+   - but with this Fix, there is one problem ie it works with Train Data
+     but what if any Data Point (ie Sentence) from Test comes upt with larger number of words than expected
+
+   -> But this way the Input Vector Size will be `Massive` & 
+      you are building unnecessary very large networks by Zero-Padding
+   
+   [Problem 2] :-
+
+   -> So with this Fix you can run onto Billions of Weights & Massive Netwwork Problem
+
+-----
+[Gist Need fot RNN]
+
+* To meet & deal with above problems we seen in MLP, new Idea came up of RNN
+  |
+  Problems :- 
+    1) Each of Inp is of Diff Length
+    2) Weights gets Blow up Unnecessarily (ie via Massive Networks) sometimes 
+        (Eg if lengthy text appear in Test Data )
+       &
+       This will make network too hard to train.

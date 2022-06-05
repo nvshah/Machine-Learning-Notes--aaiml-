@@ -1,0 +1,15 @@
+17.1 Doubts
+
+
+Que) Pre-Trained Model
+-----------
+case 2 - tL
+  ref :- 4.17 | timestamp : 10:30
+
+  If We are already using Pre-Trained Model Then Weight & related things are already fixed 
+  So what is meaning of Freezed as its already not gonna change anyway
+
+ Ans :- resolved by me itself
+
+        => Actually in Case 1 only we use totally Pre-Trained Model else
+           We use somewhat & then we also trained it based on our Dataset

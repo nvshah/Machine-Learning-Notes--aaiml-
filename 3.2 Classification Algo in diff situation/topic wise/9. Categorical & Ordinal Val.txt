@@ -1,0 +1,66 @@
+9. Categorical & Ordinal Val
+
+* Feature Transformation :
+  ---------------
+
+* Categorical & Ordinal features :
+  ---------------------------
+   given features possess some numerical & some categorical
+
+   If we convert categorical into numerical -> then Ordering also get artifically generated 
+                                               (as numbers have order inherently)
+                                               Thus artifical order gets generated
+
+   So converting categorical features into a numerical features is not a good idea (as some relation gets introduced i.e order relation)
+
+   2) One-Hot Encoding :
+      -------------
+      - technique to encode categorical random variables 
+
+      - convert feature to a binary vector of size = #categories in that feature
+
+      NOTE => BOW & one-hot encoding are relative in terms of idea
+      
+      Problem :
+      	Lousy when there are many categories vals in features
+        	ie for 1 pt require large size binary vector
+
+        - dimensionality will incr
+        - vector will be almost sparse
+
+      Solution (may be):
+
+   3) Mean Replacement :
+      --------------
+        - to convert Categorical feature
+        - It is very very objective-specific (problem-specific)
+
+        - replace that col vals with avg val of predicted-var (output-var) category-wise
+          i.e
+          mean-val of y_i (output feature to predict) for each category of that column
+
+          Eg 2 [objective : predict height]
+          		cols y_i = country & y_j = height <- output feature 
+          		 then replace country col with country_height (i.e mean val of height for each country)
+
+
+   4) Domain Knowledge :
+      ----
+       -> to convert Categorical feature
+       -> requires well knowledge (& relativity concept)
+
+
+   5) Ordinal features :
+      --------------
+     - features that can be ordered
+     - Categorical features which can relate with ordinal vals (i.e orderness)
+     - Categorical feature & logical Ordering among them so can be converted to numerical feature
+
+       Eg ratings feature :- {v.good, good, bad, v.bad}
+
+                             {4, 3, 2, 1}
+                             {10, 6, 4, 2}
+
+        Problem :
+        ----
+          How to give this numerical values

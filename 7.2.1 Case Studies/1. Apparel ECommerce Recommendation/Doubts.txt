@@ -1,0 +1,8 @@
+Doubts 
+
+* SQL vs (Encodings + Dist) !!
+  --------
+   -> If we want to recommend only based on color or brands then whether 
+      SQl can be considered as good alternative as it can perform groupby efficiently
+      or
+      still Encodings + Distance Technique have an upper edge !??

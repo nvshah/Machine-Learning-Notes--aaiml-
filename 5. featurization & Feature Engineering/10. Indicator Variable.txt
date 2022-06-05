@@ -1,0 +1,14 @@
+* Indicator Variable
+  --------------
+
+  Technique : Convert Feature into a Indicator variable (Feature Engineering technique)
+
+  Example 1:
+  ----
+   height -> binary val feature
+
+  => Indicator variable are more often binary variable
+
+  Example 2 :
+  ----
+   Country -> inndicator variable

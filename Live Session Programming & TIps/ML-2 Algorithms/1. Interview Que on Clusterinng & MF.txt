@@ -1,0 +1,184 @@
+ref [doc]
+https://drive.google.com/file/d/1DMe9X284Yrw41imhrWJGtiFZ9pM_v48c/view
+
+
+1. Interview Que on Clusterinng & MF
+---------------------
+
+-----
+[Terms]
+
+- Frobenius Norm (Matrix | Optimization | SGD)
+
+
+
+-----
+[REMEMBER]
+
+- Large Dimen Data tends to fail for Euc-Distance
+--> IntraCluster Distance :- you can thought of it as Diameter of Cluster
+
+- K-D tree is used to find nearest neighbors, often
+
+-> Mediod will ignore the oultiers, as much as possible (whereas k-means cant)
+
+[Picking Mediods]
+- Picking nearest pt to mediod is not always a solution,
+   especially in case when outliers are present
+
+- Think abt Sigmoid Fun when you have class labels
+
+NOTE :- Finding exact solnn for K-mean is Np-hard 
+
+[IMP]
+=> Equality Constraints are easy to move into equation using langragian multiplier
+_____
+
+Q1) Failure Cases for K-means Clustering ??
+ ->  
+   - cluster of diff size & diff densities
+   - Noisy | Outliers Points
+   - Non-Convex Shape	
+
+----
+q2) Good Metric for Compute Clustering ? 
+ -> 
+   - Inputs :- m-clusters-centroids, m-clusters
+     Outputs :- 
+
+----
+Q3) K-Mediod Time Complexity :
+  -> 
+    O(k * (n-k)^2)
+
+    For single mediod 
+      1) #pts to swap := n-k
+      2) after swap, need to calculate loss each time after swap := (n-k)
+
+      Thus for single mediod TC := O((n-k)^2)
+
+    For k-mediod
+      => k * (n-1)^2
+
+    Alternate Way :-
+      Time Complexity = comb((n-k), 2) * k    
+
+                           // pick a combination of pair from n-k pts (ie non-mediod pts)
+
+   => K-Mediod is a Polynomial type algo
+      &
+      It is Quadratic in n^2
+
+   -> Mediod will ignore the oultiers, as much as possible (whereas k-means cant)
+        \
+         less prone to outliers
+
+
+REMEMBER :
+  - Picking nearest pt to mediod is not always a solution,
+    especially in case when outliers are present 
+
+  - Computing mean of vectors is simple
+    But
+    How would you compute the median of vectors ??
+    
+Q3.1) How would You speed up the K-mediod process ?
+ ->
+   Hack (1 Way)
+   ----
+    -> You can try ignoring the top 1% or 5% or anyelse thresold of points from given cluster,
+       in consideration for updating new centroid in same cluster
+
+       Doing this will allow us to discard some farthest point in participation for next centroid update
+       Thus
+       this way we can get better updation for Cenntroid Point
+       &
+       This will also speed up as few points are ignored
+
+    => Hyper-Param 
+        -> deciding thresold is a part of Hyper-Paarameter Tuning (ie to keep whether 1% or 5% or anything else)
+
+------
+Q4) Agglomerative based Clustering Que
+ -> 
+
+
+------
+Q5) K-means clustering usign SGD ??
+ ->
+ REMEMBER : For SGD we need optimization problem
+            For Optimizzation Problem We need -> objective + Constraints
+
+  NOTE :- Finding exact solnn for K-mean is Np-hard (ie Highly Non-Convex Problem)
+
+    First of all for SGD we need to state Optimization 
+
+    Optimization stmt :-
+      - Frobenius Norm Minimization of matrix
+
+    - standard MF | no constraints on C
+
+    Z : constrainnts : 1) Binary matrix
+                       2) 1 only onnce inn each column
+
+        catch -> how to add these constraints for Z
+  1)
+  Langranje Multiplier & Constraints:
+  ----
+   -> Whenever you have equality constraints 
+       \
+        You can move it to (in multiplication form of) lma (ie langrange Multiplier)
+[***]
+ => Equality Constraints are easy to move into equation using langragian multiplier
+
+   
+  2) 
+   0 or 1 Constraint
+   ----
+    -> It's comparatively hard to impose this constraint
+       So
+       lets induce it in different way
+        \
+         -> 0 <= Zij <= 1  // instead of 0 or 1 we try with between 0 & 1
+
+[***]
+ => Even less-than-equalto & greater-than-equalto constraints can be added to eqn 
+    using langrange multiplier easily (comparatively)
+
+    Thus we are easing or loosening the constraints of 0-1 constraint
+ 
+ [ANS]
+ -> Thus now we have 3 parts of eqn
+
+     1. base objective eqn  (ie Frobenius Norm)
+     2. Langrange Part for Constraint 1 (Column-Sum = 1)
+     3. Langrange Part for Constraint 2 (0 or 1 Constraint (eased out))
+  
+  [Interpret]
+  -> Thus we will get probability for each point for its belonging to each Cluster
+
+-----
+
+Q6) Failure Cases for DB-Scan ??
+ -> 
+
+----
+Q7) 1 Billion Pts of 1-dimen each. Cluster themm on Single Box Efficienntly & Fast ??
+  -> 
+
+   Compute distance of diff points to Cluster on diff processor 
+
+   - Shared Memory
+   - Multi Processing
+
+----
+Q8) Manual Label 
+
+
+----
+q9) Optimize the Rannge-Queries in db-Scan !
+ ->
+
+
+---
+Q10) TC of K-means++ ?? 

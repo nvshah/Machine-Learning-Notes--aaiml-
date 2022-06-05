@@ -1,0 +1,21 @@
+Doubt
+
+1) Auto Enncoder & Dimen Reduction
+   -------------------------
+   -> At the end if we are having same dimension in output as input, then what is 
+      dimensionality reduction done or achieved ??
+
+   Is it that we need to Consider the Hidden layer for the above consideration ??
+   -> IF yes then in case of MLP with multiple hidden layers, which one to pick as reduction layer consideration ??	
+
+
+   Ans 2) 
+    -> You can have multi layers with different sizes for eg.
+
+	1st hidden layer of size 5
+
+	2nd of size 4 and 3rd of size 3.
+
+	Now suppose you want the compressed representation of size size 3 you can select the output of 3rd layer and if you want compressed reperesentation of size 5 you can use the output of first hidden layer.
+
+	So basically it depends on your requirement.

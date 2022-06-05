@@ -1,0 +1,41 @@
+
+-----------
+=> Time series Prediction is special case of Regression
+
+
+_____________
+
+
+* Intro Problem
+  ------------
+
+  Aim :- demand texi requirement for given location in New York
+
+  Provide info to Taxi Driver such as :- in next k mins, which near by region will have good number
+                                         of pickups
+
+
+* Objective & Constraints :
+  ------
+   given (region, time-interval) => predict #pickups
+
+     We can get region info from location via gPS from mobile of Taxi Driver
+
+   Constraints :
+      1) Latency (few seconds)
+         \
+          - model should response within a few seconds
+
+      2) Interpretability 
+          \
+           - not much important
+
+      3) relative errors 
+          \
+           - percentage error & absolute error
+             percentage error in prediction is more importance in this case 
+             Percentage Error in Prediction in diff region is of more important to Driver
+
+         => Overall goal should be to make percentage error very low as much as possible !!
+
+

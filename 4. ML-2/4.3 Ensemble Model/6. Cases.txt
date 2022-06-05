@@ -1,0 +1,40 @@
+Cases
+
+-> RF = DT + CS + RS + Aggr
+     
+   all the cases for DT also holds for RF.
+   except some few 
+                 \
+                  Bias-Variance & FI
+
+
+1) Bias-Variance
+-----------
+=> The bias-variance tradeoff for RF is not same as DT
+         \
+          depends on k : #base_learners
+
+   In case of DT - Bias-Variance TradeOff works based on depth of tree
+   whereas
+   In case of RF we train deep trees & reduce the variance using more number of base-learners
+    i.e using more deep DT
+
+2) Feature Importance
+------------
+   DT : overall reduction in Entropy or Gini Impurity because of this feature @ various levels
+        in the DT
+
+        (You need a weighing normalizaed scheme) i.e at diff level weight to that feture impact will differ so. but idea is overall same
+
+   RF : overall reduction in Entropy or Gini Impurity because of this feature @ various levels
+        in K base models
+
+
+=> RF do not work very well esp when
+     - categorical features with many levels (ie categories)
+     - when you do One-Hot encoding
+     - large-dimensional data	
+
+
+
+      

@@ -1,0 +1,107 @@
+3. Rectified Linear Units (RLU)
+----------------------------
+
+-----
+TERMS
+
+Dead Activation
+
+-----
+
+____
+
+* Rectifier :
+  -----------
+
+* Problem with Classic NN:
+   -> Vanishing Gradient Problem
+   - You will not be able to train Deep NN but a Shallow NN (ie 2 or 3 Layered NN)
+   - Convergence Slows Down
+
+* RELU :
+  -----
+   - Today's default activation function for MLP
+
+   f(Z) = max(0,Z)   // Relu Function  <--***
+    
+
+   => This Relu Function is not differentiable at Zero
+
+    REMEMBER :- For any function to be differentiable, it needs to have smooth curve
+
+   Derivative of Relu :- either 0 or 1  // Binary Val
+       \
+        - as max val is 1 so no problem of Exploding Gradient
+        - as there is no possibility of 0.1, 0.2,... So no problem of Vanishing Gradient
+        - as there is chance of 0, so there can be problem of `Dead Activation`
+
+       => Derivative := 0 if Z < 0
+                        1 if Z > 1
+
+    -> Thus computing derivative of Relu is extremely simple
+
+   => Relu will converge faster thus towards solution
+        \
+        For same number of epoch relu will have small err compare to tanh function
+
+-----
+* Variations of RELU
+
+* SoftPlus :
+  -------
+   - smoother approximation for Relu funnction
+   - softplus is differentiable at 0 as well
+
+   f(z) = log(1+exp(z))
+
+   Derivative of softplus is same as logistic fun
+
+* Noisy Relu :
+  -----
+
+* Dead Activationn State as Problem with RELU :
+  ----------
+
+* Problem with 0 val in Derivative term :
+  ----
+   - As we multiply each individual derivative to obtain final Derivative
+     So
+     Even if only 1 individual derivative is 0 it will constitute entire derivative to 0
+     &
+     Thus weight will not get updated eventually
+     which is a problem
+     &
+     this problem occur when Z is -ve (ie derivative of Relu(Z) is 0)
+
+  Z becomes -ve When weights to Neuron are highly negative
+
+  Z = W^T*X
+        -> here X is normalized
+        -> So when Weights are large -ve nums, Z tends to be -ve
+
+   => Once Z becomes -ve Weights do not update anymore
+
+* Dead Activation State :
+  -----------------
+  - Once Z becomes -ve Weights do not update anymore (in relu)
+  - such a state is called as Dead Activation State
+
+  - So you need to keep check of count of dead activation function during training inorder to
+    prevent your model from entering into dead activation state
+
+
+* Leaky Relu :
+  -----
+   - one of way to deal with Dead Activation State in Relu
+   - but it may introduce the Vanishing Gradient Problem (when there are lots of -ve vals for Z)
+
+-------
+
+* Advantage of Relu :
+  ----
+   - Speeds up
+   - easy to compute
+
+  Drawback :
+
+   - Dead Relu Unit  (when lot of -ve vals for Z)

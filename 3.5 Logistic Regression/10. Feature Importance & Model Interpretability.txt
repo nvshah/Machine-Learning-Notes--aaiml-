@@ -1,0 +1,122 @@
+10. Feature Importance in Logistic Regression
+
+
+---------------
+=> Always check of Multi-Collinearity of features before going for Feature Importance
+
+-> If features are independent then only we can use abs() value of Weights for Feature Importance 
+
+=> Thus if feature vectors are collinear or multi-collinear 
+      then your weight vectors may change arbitarily
+
+=> You must check of Muli-Collinearity or Collinearity of Features before starting the feature importance
+
+-------------
+
+* Feature Importance :
+  ----------------
+    1) abs() val of weights
+    2) FFS - forward feature selection
+
+   -> If all features are independent then by looking at W vector
+      We can say which feature is more important
+        \
+         by taking abs() val of Wi  // Only when features are independent
+
+
+   Let Wj = abs val of weight resp to feature Fj
+
+   1) If Wj is +ve & large :- P(Yq = 1) high
+        \
+         It's impact on determinig correct +ve class label is high
+
+   2) If Wj is -ve & large :- P(Yq = -1) high
+   		\
+   		 It's impact on determining correct -ve class label is high
+
+    Thus if Wj is large => W^T*Xq will be large => feature Fi probability increases in resp classes
+      &
+      so we take abs() val for impact checking
+
+ => abs() val of Wj determines the importance of features in Logistic Regression
+
+    So if feature is defining well class -1 then weight will be given high negatively
+          feature is defining well class +1 then weight will be gien high positively
+
+ Example : Male = +1 & 
+           Female = -1
+
+           1) Hair-Color = Fi (one of feature)
+
+           - So weight corresp to that feature will be High & -ve
+               (as long hair tends to womenn & short hair tends to male)
+
+           2) Height = Fi (one of the feature)
+
+           - Weight corresp to height feature will be medium high as Height do not clearly 
+             seperate both class (ie distributions). There is some intermingling and some seperation
+
+
+ * Model Interpretability :
+   ----------------------
+    - In saying someone that model gives +1 or -1/0
+        \
+        Why it's giving such labels
+
+    -> We can provide some reasoning based on feature importance (ie looking at weights values)
+
+    -> We can pick top m features (via sorting them based on weights & )
+           \
+           Since for top m features query pt has certain kind of behaviour so 
+           we are considering particular output label
+
+
+* If features are Collinear then You cannot use abs() val of Weight for Feature Imp ??
+  
+  Why ??
+
+  -> Because of Multi-Collinearity or Collinearity,
+      There can exists multiple optimal Weight W* vectors S.T they give same output for model
+
+      For Eg W* = <1, 2, 3>
+
+             W` = <4, 0, 3>   // after some linear eqn solving We get diff W` from W* 
+
+             both W* & W` provide same result for classifier
+
+      So Thus Collinearity can give us arbitary weights vectors 
+        \
+      Out of which if for a given Weight vector at moment if we try to pick out some reasoning 
+      it may not comply with another candidate Weight vector
+        Eg feature 3 most imp in W*
+           feature 1 most imp in W`
+
+      Why such Havoc ?? :- Due to Collinearity
+
+  => Thus if feature vectors are collinear or multi-collinear 
+      then your weight vectors may change arbitarily
+      	\
+      	 thus you cannot use abs(Wi) for Feature Importance
+
+
+NOTE :- In real world features can never be perfectly independent
+-------
+
+=> You must check of Muli-Collinearity or Collinearity of Features before starting the feature importance
+
+* Determine if Features are Collinear or not ??
+  
+  -> Pertubation Technique
+         \
+          If no collinearity :- then use abs() val of Weights & go for feature Imp
+
+          If collinear :- then do Forward Feature Selection (FFS is universal & works for all)
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+sklearn scipy
+
+sklearn
+  
+  - CountVectorizer()   // For BOW technique text -> vector of d-dimen d = words_cnt
+  - TfidfVectorizer()   // Tfidf
+
+  - grid_search
+
+  - Normalizer()   // Encoding a numerical Features
+
+  - metrics - {roc_curve, auc, hammming_loss}
+
+  - OneVsRestClassifier()   // multi-class & multi-label algo
+
+  - LogisticRegression()
+  - SGDClassifier()
+
+
+scipy  
+  
+  - signal.find_peaks()    // find peaks elements in array
+
+  - hstack     // sparse.hstack
+
+  - randint    // stats.randint
+  
+  - special.expit()  // for Logistic Sigmoid

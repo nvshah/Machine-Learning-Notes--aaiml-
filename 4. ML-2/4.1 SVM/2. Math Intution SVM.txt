@@ -1,0 +1,138 @@
+
+
+-------------------
+
+-> min-max property :
+   -------
+    argmax(f(x)) = argmin(1/f(x))
+
+-------------------
+
+
+* Math Intution SVM
+  ----------
+
+  margin-maximizing plane :- w^T*x + b = 0
+
+  +ve plane :- w^T*x + b = 1
+  -ve plane :- w^T*x + b = -1
+
+  w will be parallel to all the 3 planes
+
+  d = margin = 2 / ||w||
+
+ => Optimization Problem :- 
+
+      find w*, b* which maximizes margin S.T.  y_i(w^T*x_i + b) > 1 for all points
+
+      So there are n constraints for n points
+
+      w*, b* = argmax ( 2 / ||w|| ) 
+                     S.T y_i(w^T*x_i + b) > 1 for all points
+
+   -> This works when data is linearly seperable 
+
+      No points in margin area also (No mans land)
+
+* Hard Margin SVM :
+  ---------
+   -> Imposing constraint that no points lie in Margin area as well & all points are seperated 
+      ie +ve on one side & -ve on another side
+
+      - In Hard Margin SVM bo errors are allowed
+
+* Almost Linearly Seperable :
+  ------------
+   
+	=> When data are not perfectly linearly seperable but almost linearly seperable
+
+	-> It's hard to tell that if all +ve data on 1 side of margin & 
+	      all -ve data on another side of margin
+
+  Idea : Create a new variable zeta_i s.t if points are inn correct region than it will be 0
+         otherwise it will posess some +ve val
+
+    -> Thus as zeta_i incr, the pt is far away from correct hyper-plane in the incorrect direction
+
+ So What does zeta_i is telling ?
+     ----------------
+    -> 1) if point is in correct direction
+       2) How far away is the point in the incorrect direction
+
+ So for incorrectly classified point zeta_i > 0
+
+=> min-max property :
+   -------
+    argmax(f(x)) = argmin(1/f(x))
+
+* Optimization Problem :
+  ------------------
+  New Optimization Problem : argmin (||w||/2 + C*avg(zeta_i))
+                              S.T
+                               Yi * (W^T * Xi + b) >= 1 - zeta_i,  for all i
+     \
+      -> maximize margin 
+         & minimize zeta_i for all points 
+           (ie minimize the avg distance of miss-classified pts from correct hyper-planes)
+
+    So think :- 
+             Loss = C * avg(zeta_i)  // avg distance of miss classified points
+      Regularizer = ||w|| / 2        // 1 / margin_distance
+
+      Hyper-Param = C                // always +ve
+
+      as C incr => tendency to makes mistakes reduces on D-train => Overfitting = high variance model
+           decr => tendency to Underfit = high bias model
+
+  NOTE : length of W need not to be 1 (ie W need not to be an unit vector)
+
+  => C behaves exactly opposite to lma
+
+  Soft Margin SVM :
+  ----------
+   -> The above formulation of optimization is known as Soft Margin SVM
+   -  allows errors
+
+  Hard Margin SVM :
+  ----------
+   -> No loss 
+   -  Only Regularization
+
+
+Q) Why +1 & -1 for planes ??
+  ------------------------
+  
+  - ||W|| can be of any length
+
+  margin := 2 / ||W||
+
+  let +ve :- w^T*x + b = k
+      -ve :- w^T*x + b = -k 
+
+      only requirement is k > 0 so that those planes are away from base-plane
+
+ +ve & -ve plane to be equivalent far away from margin-maximizing plane
+
+ So margin = ( 2 * K ) / ||w|| 
+
+   From optimization standpoint 
+    -> here we want to maximize the margin so K doesn't matter if we are changing the w 
+       ie deciding the correct w 
+
+   From Algebric StandPoint 
+    -> also it wont change with any val of K
+
+ => So +1 & -1 are taken to simplify the math
+
+ (MIMP)	
+ REMEMBER :- 
+   This all things (ie +ve plane & -ve plane) is possible iff we consider ||w|| need not to be 1
+   	\
+   	 because if ||w|| = 1 then we are fixing margin from initially only which is not rational
+
+
+
+
+
+
+

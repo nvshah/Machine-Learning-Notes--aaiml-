@@ -1,0 +1,7 @@
+Explore 1 (LV)
+
+1) Extract Info from PDF  (pyPDF4 + re)
+
+2) Web-Scraping  (BeautifulSoup + re)
+
+-> Regex can be impl using Dynamic Programming

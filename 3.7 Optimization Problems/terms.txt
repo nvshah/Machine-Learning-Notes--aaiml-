@@ -1,0 +1,19 @@
+terms
+
+- differentiation
+- gradient
+- tangent
+- Slope
+- vector calculus / vector differentiation
+
+- gradient descent
+- Step Size
+- Oscillation Effect
+- Learning Rate
+
+- stochastic gradient descent
+- batch size
+
+- Objective Function in Optimization
+- Equality Constraint
+- InEquality Constraint

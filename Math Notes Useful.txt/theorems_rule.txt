@@ -1,0 +1,32 @@
+
+* Monotonic Func Rule :
+  -----------
+	If g(x) is a monotonic function
+	        \
+	         then argmin(f(x)) = argmin(g(f(x)))
+	              argmax(f(x)) = argmax(g(f(x)))
+
+* Optimization Rule :
+  -----------
+	In Optimization :
+	  The x that minimizes f(x) is the same that maximizes -f(x)
+
+=> Computing logs take more time complexity than computing squares
+
+
+* Basic Property PMF R.V :
+  -------
+   For Discrete R.V & its PMF
+      \
+       -> The sum(P(x)) = 1
+
+
+* For sets similarity we have diff techniques : 
+  1) Jaccard Distance 
+  2) Otsuha Ochiai Coeff (Cosine dist alike)
+  
+  3) Adam / Adar Index ( For Directed Graph)
+
+
+* Monnte Carlo simulations :
+  -------

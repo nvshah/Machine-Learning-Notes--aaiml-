@@ -1,0 +1,149 @@
+4.2 Intervie Que on Productionization 2
+-------------------------------
+
+-----
+REMEMBER :
+
+ => Random model maybe Worst Model in terms of Performance, but it gurantees to be Non-Biased
+
+ => Every Model will have the MetaData File (ie most probably json file)
+       \
+        that stores the info such as Weight, Featires,...
+
+ => Compute Cost vs Performance Tradeoff becomes very Severe for Deep Leanring
+     |
+     Most Imp TradeOff for DL is Compute vs Performance
+
+-----
+
+* ML 
+---
+
+(1) Test Model-Bais :
+----------
+   - Here bias is Social Bias (not that variance relate ie overfittinng underfitting bias)
+           \
+            ie Racially Bias (created disadvantage to minority)
+               Gender
+
+   - Eg Gender Bias :
+     ---
+      1. Dont Consider Gender in Features // (ie may be during Training)
+      2. Compute Feature Imp for Gender & make Decision Likewise
+      3. Hypothesis Testing
+      4. Watching Distb of predicted val based on category
+
+
+REMEMBER :
+---
+ => Random model maybe Worst Model in terms of Performance, but it gurantees to be Non-Biased
+
+
+* Bias & Distribution :
+  ----
+   - If distb of Male, Female or None is more or less almost overlapping then 
+     we can't say it is not biased but the probability of it being biased reduces (as overlapping increases)
+
+   - You cann use KS-test to check similarity between 2 Distb
+
+
+(2) Incorporate Features from Diffd Team :
+---------------
+ - Egineering problems | (ie Productionzation kinda Tasks) (Lead Roles)
+
+ 1. Data Versioning (GIT)
+     \
+      -> Versions, TimeStamp, & MetaData for Model
+
+
+(3) A|B Testing Infrastructure :
+--------------
+ -> Random Number Generator
+
+
+(4) Retrain Scheduling :
+--------------
+ - System Design (Diagram) | Phases
+    |
+     - Train Pipeline, Validation Piepline, Test Pipeline
+       Deployment Pipeline,
+       Retrain pipeline (ie Updates)
+
+       experimentations
+
+ -> Here basically we need to think from the perspective of LifeCycle
+
+
+______________
+
+* DL 
+
+(1) CNN | DL :
+-------
+ - what are challanges to deploy the DL models like CNN
+
+ TradeOffs Matters :-
+ --------------
+  1. Compute Cost vs Performance 
+         \
+          becomes very severe for DL
+
+  2. Adversarial Attacks
+       - Model with low robustness
+
+ [**]
+  => Most Imp TradeOff for DL is Compute vs Performance
+
+* Adverserial Attacks :
+  ---
+   - If you have an adversary (ie Opponents), that knows which models is being used
+     So
+     Some Noise can be genenrated So that it will trouble the System (ie Model) in prediction
+
+* FPS & Server TradeOff :
+  -----
+  Q) What if we dont have enough server resources avail at hand (thus, We can't leverage the Load 
+     Balancing Effect to its Extent)
+    
+    -> 1. Use Client Side Computation Way :
+           \
+            dont rely on server for all computation
+
+       2. Model Pruning & Model quantization 
+
+       4. Rescale Down the Image (in case of CNN)
+
+
+* Model Quantization :
+  ----
+   - Uses fewer bits to store each weights (ie 8 bits instead of 64 bits)
+
+  Model Pruning :
+  ----
+   - remove all weights which are useless 
+      \
+       multiple strategies like L1-Regularization	
+
+
+___________
+
+* Recommended System
+
+(3) Rec Sys for Music|Video
+--------------
+ - Recency & Frequency
+     \
+      lots of importance is given to recency & frequency
+
+   Problem :- Training Model for recent & frequent data is very expensive & computational challange
+              (as it involves MF things)
+
+   que :- how to incorporate Recency & Frequeency factor for RS in a better way
+     -> You can use simmple Item-Item Similarity
+
+
+--------
+
+Q) Simplest ML Approach for Auto Completion :
+    
+    -> Probabilitstic Model

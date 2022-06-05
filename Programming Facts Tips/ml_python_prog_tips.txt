@@ -1,0 +1,68 @@
+Tips :-
+ -> Ipython.display.Image  // to draw image in Interactive python like Jupyter Notebook
+ 
+ -> View is very imp concept 
+
+ -> Doing ML, store your intermediatory results into some intermediate/temporary files
+    ie 
+    Pickling the computed information :- dump & load when needed
+
+    => .p files   // pascal source code files can be used to store such information
+       .csv files  // as usual excel like files to store information
+
+       .h5 file   // pandas.read_hdf
+
+------------
+
+ -> numpy.trapz()   // to get the Area under the curve
+
+ -> np.random.normal(loc=0, scale=1, size=1000)  //To generate standard normal observations
+    np.percentile()                    // To get percentile 
+
+* numpy.reshape()
+  -------
+   -> -1  -> inferred dimension as required 
+
+
+* Convert row/series to matrix of shape n*m
+  ----
+    -> .as_matrix().reshape(n,m)
+
+* standardization :-
+    sklearn.preprocessing.StandardScalar().fit_transform()  
+
+* get the shape of data-matrix :- numpy.shape
+
+* sql query via pandas :- pd.read_sql_query()  
+
+* np.meshgrid()   // better way to create grid from 2 vectors
+
+* zip() equivalent in numpy :- numpy.c_() or numpy.r_()
+
+* get the weight vector in Log-Reg :- classifier.coef_
+
+* to count non-zero entry in numpy array :- numpy.count_nonzero(a)
+
+* to find peaks in array :- scipy has func i.e find_peaks() i.e => scipy.signal.find_peaks()
+
+* print dataframe beautifully :- tabulate
+
+* print row if any columns has Null or NaN values :- df[df.isnull().any(axis=1)]
+
+* Convert matrix to flattend array :- m.A1   // m is matrix obj
+
+* Get the Idea about dupolicated in Series  :- duplicated()
+
+* To find correlation between 2 Columns :- df.corr()
+
+
+------------------------
+
+* Use stratified sampling whilst train_test split as stratify will try to maintain the same distribution between splitted sample
+
+* Use scipy for sparse matrix merge  or stats related works	
+
+* For NLp - Preproceessing task, you can customize the tokenization step via providing custom  
+           `tokenizer`
+
+

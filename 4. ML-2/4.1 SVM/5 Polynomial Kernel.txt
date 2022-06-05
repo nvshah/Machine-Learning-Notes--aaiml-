@@ -1,0 +1,105 @@
+
+--------------------------
+Kernalization
+=> Does implicit feature tranformation for us
+
+-> Quadratic Kernel helps us to transform data into linearly seperable data
+
+-> So kernalization is doing feature Engineering internally
+
+- Kernel Function is meant for similarity
+
+--------------------------
+
+:- Note : In logistic regression to seperate & find plane for non-linear data, We do Feature  
+          Transformaion
+
+
+* Kernalization :
+  ----------
+   -> Make SVM to handle non-linear seperable datasets
+   
+   => Does implicit feature tranformation for us
+   - Kernel function intution is abt similarity
+
+
+* Polynomial Kernel
+  ------------
+   - general polynomial kernel :- (c + Xi^T*Xj)^k   // k is degree of polynomial kernel
+
+   - polynomial means in power more than or equal to 2
+
+   -> What kernalization is doing internally is feature transformation
+
+   - Kernalization takes data which is in d-dimen space & 
+     implicitly does feature transformation(using kernel trick) & 
+     brings data into d` dimen where d` > d typically
+
+     i.e d-dimen -> X1^T*X2 -> k(X1, X2) -> X1`^T*X2` -> d`-dimen   // typically d` > d
+
+   => Thus Kernalization transform data from d to d` dimen S.T d` > d using kernel-trick via 
+      doing internally feature transformation
+
+   -> The highest degree of the dimension in transformed X1` is called the degree if Polynomial Kernel
+
+   - If degree is 2 = Quadratic Kernel
+
+  * Mercer's Theorem :
+    _______________
+
+     Kernel-trick  :
+
+       (Eg Cocentric Circle)
+       When the data is not linearly seperable : apply some kernel trick
+         d -> d`  S.T. d` > d
+
+         d   // not linearly seperable
+         d`  // linearly seperable
+
+
+  -> So whatever we were doing explicit feature transformation in Logistsic Regression is replaced by 
+     Kernalization via implicit transformation
+     Kernel-trick internally does that for us.
+
+* SVM & Non-linear seperable data :
+  ------------------
+   -> Explicit feature transform is replaced by finding right kernel
+
+   - So Most Imp task is to identify right Kernel in SVM
+
+ => Bias-Variance TradeOff is decided by C
+
+
+ * Feature Engineering & SVM & Kernel :
+   ---------------------
+
+   - d -> d`
+
+   REMEMBER :- Quadratic Func has squared term + linear term + constants
+
+   if 2 cocentric circle 
+      \
+       only 2 dimen of d` are sufficient to get linearly seperable transformed data
+
+   if 2 cocentric ellipses
+      \
+       So quadratic terms + linear terms + constants will be useful to make transformation (
+        where if used only quadratic terms then it would fail)
+      
+      - So to seperate 2 ellipsis 6 terms may help of d`
+
+   So if we have parabola, ellipses, hyper-bola than all terms of d` are needed
+   in case of circle only 2 are sufficient
+
+   So what polynomial kernel tries is to generalize transformation process via Kernel-trick
+
+   So quadratic : 2D -> 6D 
+                     \
+                      - transform any conic section (ie circle, ellipsis, parabola,..)
+
+   -> So kernalization is doing feature Engineering internally
+
+
+
+
+

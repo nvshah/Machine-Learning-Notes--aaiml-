@@ -1,0 +1,169 @@
+1. Logistic Regression DD
+  -----------
+
+Q1) What is a Decision Boundary of Logistic Regression ?? 
+---
+  -> Hyper-Plane or Linear Surface
+
+     - We use Sigmoid to Squash the (Output) Values but Sigmoid is not the Decision Surface
+
+
+Q2) What Loss Function Does Logistic Regression Minimize ??
+   
+  -> Log Loss function
+         \
+          because Logistic Reg aim to output probability & for probabilistic output 
+          best metric for Loss is LogLoss
+
+     Not 0-1 Loss :- because 0-1 Loss cannot be Minimizable via Optimization
+
+
+Q3) Diff Interpretation of Log Loss Func ??
+    
+    1) Geometric :- Sum(log(1 + e^(-Z)))                   // Yi is -1 or +1
+    2) Probabilistic :- Sum ( yi(logPi) - (1-Yi)(log(1-Pi)) )   // Yi is 0 or 1
+
+    => 2 Ways to Study Logistic Reg (Intutively)
+       - Geometric 
+       - Log-Odds (Probabilistic)
+
+
+Q4) Optimization Objective & Constraints of Logistic Regression !
+   
+    Remember :- Maximize Signed-Distance   // here Yi is {-1, 1}
+                Minimize the LogLoss       // here Yi is {0, 1}
+    
+    Objective Func :-
+       argmin_w(Log-Loss)  :- trying to find w that minimize the summation of Log loss per Point
+
+    Constraints :-
+       W.T * W = 1
+
+     What if :-
+       W.T * W = k  // some k 
+          -> Thenn also it will work but here W will not be Unit Vector 
+
+     If constraints is imposed upon then it will help us to avoid Overfitting
+
+     NOTE :- 
+       Technnically there is no mandatory constrainnts for Logistic Regression
+       Constraints just help us to deal with overfitting in better way
+
+
+Q5) What is Guarantee that SGD in Logistic Regression has only 1 Minima ??
+
+   -> logistic Regression has only 1 Minima (but how to assure this) !
+
+      Log Loss Optimization Problem is Convex Optimization Problem
+      &
+      Convex Optimization := has 1 global minima
+
+   => Log-Loss is Convex (We need to prove this now !)
+   -> How ?
+       (1 Way)
+     -> Let say Grad_L => has multiple solutions or not !
+
+   => One way to prove Convexity is Derivative test
+
+
+Q6) Given Massive Amt of Data Points, How would you train your Logistic Regression ?
+   
+   -> Distributed Training (Mechanism)  [ Like Spark ]
+
+
+Q7) L1 Regularizations Creates Sparsity, How (Why) ??
+   
+   -> 
+     REMEMBER :- In training phase, L2 is faster than L1
+                 In test phase, L1 is faster than l2
+
+Q8) How do you choice out of L1 & L1 Regularization for your model ? (L2 vs L1)
+   
+   ->  - CV (Cross Validation )  [ Whichever gives better performance pick that one !]
+
+       - Low Latency Application :- use L1 Regualrization (because L1 regularization has less features)
+       - High Dimensional Data :- L1 Regularization can be helpful
+                                   \
+                                    -> As it helps to avoid/skip similar Features !
+
+       -> You can throw away highly correlated features using L1
+
+   -> L1 typically takes more time than L2 (during Training)
+
+
+* Collinearity :
+  ----------
+   - Collinearity creates problem
+   - FI vals obtain through Weight Vector can be messed up because of Multi-Collinearity
+   - But Multi Collinearity has limited impact (or minimum impact) one model performance
+     ie 
+     Collinearity will not affect your Model Performance to much larger extent (or Adversarily)
+     What it impacts Adversarlity is the Feature Importance (ie Weight Vector Importance)
+
+   - Collinearity is property of nature in real world dataset 
+        (so don't waste too much time in removing Collinearity)
+        Just be careful with FI & Model Interpretability
+
+* L2 vs L1 Regularizer :
+  -------
+   L2 :- Smooth Func 
+   L1 :- Non Smooth Func
+
+   L1 Regularization is not Differentiable at 0
+      \
+       -> L1 reaches near to 0 quickly 
+          but as L1 at 0 is not differentiable so need some scheme or hack to deal with that problem
+
+       -> So this why L1 is slightly Slower to Train than L2
+
+   L2 is Smooth Curve :- So L2 no need any additional Scheme 
+
+
+Q9) Optimization Problem Eqn :
+  ------
+   -> What if we can write like 
+
+        ( lma * Log-Loss + Reg )  instead of  ( Log-Loss + lma * Reg )
+
+    Eq1 :- ( Log-Loss + lma * Reg )
+
+         as lma -> incr -> More weight to Reg -> Weigh Vector are not allowed to updates much
+          									  -> Training took less time or less training Happen
+          									  -> Underfitting (Simple Model & Not complex Model)
+
+          		-> decr -> More Weight to Loss -> Weight Vec are allowed to updates more time
+          		 							   -> Trainig can take compartively more time
+          		 							   -> Overfitting (Complex Model as Weight will be trying tp increase themselves)
+
+    Eq2 :-  ( lma * Log-Loss + Reg )
+
+         as lma -> incr -> Lesser imp to Reg term
+                        -> I am trying to minimze the loss as much I can
+                        -> & Thus it will proceeds towards Overfit
+
+
+Q10) Why Sigmoid for Squashing only ? (Significance of Sigmoid Func)
+
+  -> probability interpretation
+
+  -> If we took Probabilistic Interpretation & Min of Log Loss 
+     &
+     If we want same thing via Geometric Interpretation then we need to use Sigmoid Func for best Approximation
+
+     So To get same interpretation as of Probabilistic from Geometric perspective we need to use Sigmoid Function
+
+
+Q11) Linear Seperability of Data :
+     ---
+      Often people say if data is Linearly Seperable the use Logistic Reg
+      &
+      if data is not linearly seperable then use SVM !
+
+     But How do you test if Data is Linearly Seperable or not ?
+    
+     => apply the Linear Model (like Logistic Regression) & check the performance 
+
+Q12) Diff between Logistic Reg & Linear-SVM ?
+      
+     -> Logistic Reg :- uses Log Loss for optimization problem
+        Linear-SVM   :- uses hinge loss for Optimization Problem  (Linear Kernel = SVC)	

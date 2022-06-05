@@ -1,0 +1,88 @@
+------------
+- Repeating Patterns :- Heart rate, Ecommerce Sales
+
+-> Fourier Transform is form of Signal Processing
+
+
+______________
+BuzzWords :- Repeating Waveform, Frequency, Amplitude
+
+-----------
+
+* Fourier Transform
+  ----------------
+   - popular way to represent Time-Series Data
+   - used in Image Compression & Signal Compression
+
+> Terminologies :
+  --- 
+   - Time Period, Frequency
+   - Oscillation
+   - Amplitude
+
+   Freq = #oscillaations per second  (1 / T)
+
+*  Eg 1 : Human Heart Rate :- 60-100 heart beats(oscillations) per min
+            \ 
+             Physical & Repeating Phenomenon
+
+   -> Freq & Phase are imp concepts
+
+*  Eg 2 : Ecommerce Sales (Day & Night) - Time-Series 
+   
+          Pattern - Daily
+                  - Weekly
+                  - annual patterns  (Eg Big Billion Days, Black Friday Sales)
+
+*[IMP]
+=> Whenever there is something repeating or oscillating, first thing to be clicked in mind should be 
+   FREQUENCY
+
+* Fourier transform ;
+  -----------
+   Core Idea :- If repeating waveform  => the use of frequency is benevolent
+
+   => Fourier Transform is kinda Signal Processing
+
+   - For a given composite wave 
+        \
+         if its repeating then we can represent that wave as sum of different sin waves
+         & this method is known as Fourier Transform
+
+         diff sin waves :- diff freq & amplitude
+
+   -> So via Fourier Transform We can represent Wave in Time-Domain to Freq-Domain
+
+      Note : when something is repeating, Freq is eye-catching term
+
+   > Time to Freq domain conversion :
+     ----------
+      -> We will have 2 property ie freq & amplitude for each individual sin wave
+
+      & Inorder to represent this in vector form we will Flatten the freq & amplitude in a single vector
+       \
+        -> [f1, f2, f3, a1, a2, a3]   // 3 freq's followed by correps 3 amplitudes
+
+   * Fourier Representation :
+    __________________
+   => This way of representing time series data into vector form (freq + amp) is known as Fourier representation 
+
+   => Thus instead of design specia features from domain wxpert via Window
+      we will have Freq & amplitude at rescue for vector repr of time series data
+
+
+* Usecase :- 
+  ----
+   - FitBit accelerometer (Smart Watch, Smart Phone)
+
+
+-________________________
+
+FFT :-
+
+* DC component :-
+ ------
+  - when sin-wave or any other time-series pattern Wave, is not centered around 0
+    then it will have DC-component
+
+    DC-component referes to peak at frequency = 0

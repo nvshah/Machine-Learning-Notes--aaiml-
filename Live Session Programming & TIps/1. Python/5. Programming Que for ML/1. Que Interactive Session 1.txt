@@ -1,0 +1,48 @@
+1. Que Interactive Session
+-----------------
+
+Q1) Searching in Matrix
+----
+ -> BINARY SEARCH O(logn + logm)
+
+
+Q2) Derivative of Function 
+-----
+ Concepts :- [Derivative ,  ]
+
+ -> for given point q, we need to find derivative of F(x) at x=q   // upto 6 decimal places
+
+    Given F(x) is conti & differentiable
+
+    So we will find the slope around q 
+
+    > How to choose delta around point {q}
+
+ REMEMBER :- as delta decreases, the accuracy of derivative point increases
+
+ So h = 1e-6 will not give ans in accuracy upto 6 decimal places always // h is delta 
+
+ Soln :- (DIVIDE & CONQUER)
+   Do Binary Search (Divide & Conquer) kinda Logic & decrease {h} till we get accurate ans within 6 decimal places
+
+   Take some initial val of {h} & start decreasing h till it won't change for 6 decimal place
+   Thus derivative becomes more accurate
+
+   One approach is :- divide h by 10 in each iteration
+
+   Idea (gist) :- Keep Loopinng till 6 decimal places get match
+
+Q3) Derivative of Function Where input is Vector :
+-----
+ -> Vector Derivative
+
+ Strategy :- ( Loop + Pertubation ) as above  !!
+
+Q4) 2 Arrays
+------
+     A -> Non-Decreasing order
+     B -> Non-Decreasing order
+
+    Merge 2 array s.t. resultant array is also in sorted order
+
+    Soln :- 2 Pointer Soln

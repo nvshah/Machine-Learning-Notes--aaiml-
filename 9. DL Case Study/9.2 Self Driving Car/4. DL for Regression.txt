@@ -1,0 +1,62 @@
+DL for Regression
+-----------------
+
+---------
+terms notes
+
+- end to end models,
+- CNN-RNN
+
+----------
+
+Problem :- Upfront it is a Regression Problem
+ given Seq of inp imgs => Predict Seq of Steering Wheel Angles
+
+* Case 1 (Not use Seq Info)
+----
+ - Given single img -> predict some output
+   |
+   for this ConvNet are very useful
+   as they are very good at img processing
+
+ - So here you can use simple ConvNet for Regression
+
+* Case 2 (Consider Seq of Images as Inp)
+-----
+ - Kinda CNN-RNN archi
+
+ - Inp := imgs + Seq   // Seq of imgs = Video
+   Out := angles  (Seq of real numbers)
+
+ - Many to Many RNN
+
+ - each img from inp seq will go through custom DL-NN
+   &
+   thus we will have the output corresp to each inp img
+
+ - each img in inp should go through this archi to have corresp out
+
+=> Actual Real-World Self Driving car use very complex CNN-RNN
+
+NOTE :- here we use only CNN for simple purpose (ie Case 1)
+
+* End to End Model :
+--------
+ - takes care of everything
+ - inp -> out
+
+ - End to End model doesnt case abt dealing sub part seperatelt
+   for eg :-
+     detect road,
+     detect lanes
+     detect signals, etc...
+
+    In end to end all this things are considered & final out is generated
+
+ -> In our case End to End model for Case1 (ie ConvNet) would be
+     \
+      takes img as inp & provide angle as an output
+
+ => Thus we are building end to end conv-nn model to predict steering angle given inp image from Seq
+
+    CNN based regression model

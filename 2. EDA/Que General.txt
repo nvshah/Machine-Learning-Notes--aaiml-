@@ -1,0 +1,8 @@
+Que General
+
+Q Why we tends more towards Gaussian Distribution ??
+-> because we know it as theoritical model with some known properties & facts
+
+
+Q What is purpose of T distb ??
+-> It's meant for small sized sample when std-dev is not known

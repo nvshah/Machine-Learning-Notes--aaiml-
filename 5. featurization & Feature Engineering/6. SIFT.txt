@@ -1,0 +1,50 @@
+----------
+
+- openCV - for processing Images  // cv2 <- modulename
+
+
+________________
+
+- buzz words :- { key-points, OpenCV }
+
+-----------
+
+* SIFT (Scale Invariant Feature Transforms)
+------------
+ -> One of the popular technique for Image Featurization
+
+ => It is useful for detecting object from an image
+
+ how ??
+   - It detects a key-point (mostly a corners)
+     &
+     computes 128 dimen vector for each of the key point
+
+ -> SIFT is used in image search
+
+    Eg amazon search any book by uploading image
+
+ * Scale Invariance : (Why ??)
+   -----
+    -> The Key-Points or features do not change even when scale of images changes 
+       (ie image got shrunked or enlarged)
+        \
+         if image size changes then the key-points for obj in those image will be identified in same way ie key-points are not much affected by the scale of the image (ala scale is reasonable diff by)
+
+   Rotational Invariance :
+   ------
+    -> key-points/features neither gets affected when image is rotated 
+
+  Invariance = not changed
+
+* property of SIFT :
+  ---------------
+   1) Scale Invariance
+   2) Rotational Invariance
+
+   => The feature computed do not change much whether if image is shrunk in size or rotated slightly
+
+* Compute SIFT features :
+  ---------
+   -> Can use OpenCV library for Python to compute SIFT features
+ 

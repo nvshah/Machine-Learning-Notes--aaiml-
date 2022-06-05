@@ -1,0 +1,62 @@
+* Linear Regression
+
+ref :  https://colab.research.google.com/drive/1u702voTlK7dj7GRFXyGQtdq-LBSmcLkG
+
+----------
+
+- ascent  // image vector
+- kernel  // 2D Convulation
+
+----------
+
+* Hyperplane :
+  -------
+   Func(W, b)  // W is vector
+
+   - using numpy would be easy
+
+   Parallel planes: When 2 planes have same normal W then they are known as Parallel to each other
+
+
+* half-space :
+  ---------
+   - foundation for SVM & Logistic Regression
+
+     assuming :- ||w|| = 1  // ie W is unit vector
+
+     W*x + b > 0   // one side of half space
+     W*x + b < 0  // other side of half space
+     W*x + b = 0  // on hyper-plane seprating the half-spaces
+
+
+* Element-Wise Product = hadammard Product
+
+* Dot Product -> between 2 Vectors
+  MatMul      -> between 2 Matrix
+
+
+* Frobenius Norm :
+  --------
+   Same as L2-norm for Matrix i.e sqrt(sum_of_sqr(all cells))
+
+   - used in NMF (Non-Negative Matrix Factorization)
+
+
+* Convolution :
+  --------
+   -> Element Wise Product (Hadammard Product)
+
+   - Image Blurring UseCase (via Kernel)   // kernel is a way to featurize your features
+   	  -> via 2D Covolution ie applying kernel on the image-ascent
+
+   - edge detection is also Convolution UseCase
+
+   => Convolution is core concept behind DL images
+
+
+* Hyper-Sphere :
+  -------
+   -> divides the space into 2 parts ie 
+         Inside the Sphere & Outside the Sphere
+
+   To find if point lie outside or inside :- Take norm of difference from origin 

@@ -1,0 +1,23 @@
+https://towardsdatascience.com/4-simple-tips-for-plotting-multiple-graphs-in-python-38df2112965c
+
+
+* Matplotlib :
+  --------
+
+  -> color, shape, linewidth
+
+
+  => With subplots or sub figures you can only work with 1 figure at a time.
+
+  plt.setp()   // set parameter for individual lines
+
+  plt.xticks()
+     .yticks()
+
+
+
+------------------
+* extra 
+
+
+- plt.text(x, y, 'text')              //Show text at coordinate 

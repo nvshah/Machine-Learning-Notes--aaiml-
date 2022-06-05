@@ -1,0 +1,108 @@
+10. IMDB Sentiment Analysis
+-----------------
+
+ref :
+[IMDB Sentiment Classification]
+https://drive.google.com/file/d/1iWpQBiZO95pfOWLdaG6qKwA27d_Q-EDg/view
+
+[Derivation LSTM num of Params]
+https://www.youtube.com/watch?v=l5TAISVlYM0
+
+---
+Key Lesson
+
+- Padding, Batch Importance
+- Embedding Layer
+
+----
+REM
+
+-> LSTM are very trick to get them to work
+
+=> Padding primarily meant for Batch Update, in LSTM (thus it can speed up update process)
+
+____
+
+Aim :- Sequence Classification using LSTM
+
+   Given IMDB ratings text, identify (+ve or -ve)
+
+
+
+* Code (Practical)
+---
+
+Seq of Words to Seq of Indices
+
+1. Sort (Word, Freq) by Descending Order
+2. Rank of Word = Indices of Word for conversion
+
+Thus we will have Seq of Words -> Seq of Ranks (corresp to word)
+
+3. Padding
+ - Each Review has diff length
+ - So we may apply Padding to make same max length
+
+Why Padding ?
+ - without padding it would be just too slow
+
+ -> alike SGD with Batch Size of 1
+    because at anytime of point, we are processing only 1 Seq
+      \
+       - (ie Pick any sentence & move along the time axis of that sentence till update takes place)
+
+ => We need to backpropogate for each of them
+    |
+    & We're backpropogating over time
+
+ -> Thus here we are not combining Sequences & processing them
+    &
+    This is too slow
+
+Also When we have multiple sequences with diff size
+&
+when we perform LSTM, then its kinda SGD with batch size 1
+
+
+* LSTM & Batch & Padding :
+  ----
+   - If we don't do batch, then update process would be too slow (ie BackProp may be slow)
+
+   - So Padding is done primarily to allow batch-update operation on Sequence in LSTM
+     This will speedup training in MLP (LSTM, RNN)
+
+   - Padding primarily meant for Batch Update
+
+* Embedding :
+  ----
+   - is kinda Word2Vec
+   - Provide vector for word
+
+   Why ?
+
+   - It can be prepared whilst training whereas word2vec is static
+
+- LSTM(100) :- means 100 LSTM Cells
+                    where each can we unwrapped along multiple time zone (axis)
+
+
+-> Layers :- 1) Embedding
+             2) LSTM
+             3) Dense Layer //
+
+
+-----------------------------
+
+- Units = Cells (interchangeably)
+
+* Number of Parameters in LSTM :
+  ---------------
+   ref : https://www.youtube.com/watch?v=l5TAISVlYM0
+
+   -> In the LSTM at the end, you need to decide W_f & b_f  (via SGD or any mean of optimization techniqye)
+
+   - 1 Cell, 1 Gate, We have n+m+1 parameters
+
+   - Model has m-units in prev-time-stamps thus h_t will be m size ie value from all cells in pev-time stamp
+
+   - In total we have 4 gates

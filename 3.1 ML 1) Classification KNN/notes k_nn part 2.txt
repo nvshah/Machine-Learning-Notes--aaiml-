@@ -1,0 +1,263 @@
+K-NN part 2 :
+
+
+TOPICS : 1) Determine K in KNN 
+         2) CV & K-fold CV
+
+Tips-Highlight :-
+
+=> Fundamental Obj ML : Perform good on unseen points 
+=> test-set should always be a unseen data
+=> More the training data the better is the algorithm
+
+=> Error on CV is also called as validation error
+-> highest acc = lowest error
+
+=> So whenever time is available, things | behaviour | data changes over time then 
+    Time based splitting is preferrable over Random based splitting
+
+=> K-fold CV provides you k results
+
+____________________________________
+
+Terminologies :
+
+ Accuracy :- # correctly classified pts / # total points
+ error    :- 1 - accuracy
+
+ MisClassification :- 1 - accuracy
+
+ Training Error :- Error occured for training data
+
+ generalization accuracy = accuracy obtain on test set
+ generalization error    = error obtained on test set = 1 - gen_accuracy
+______________________________________
+
+Q*) How to determine K ??
+    --------
+     -> Plot K vs Accuracy(D_test) graph
+
+     -> Curve typically will be hill like curve i.e parabola 
+             \
+              find the peak point - k val
+
+     -> So we used D_test to determine Kth val, i.e K in K-NN
+              used D_train to compute Nearest Neighbour, i.e NN in K-NN
+
+     Small Problem :
+     ------
+       -> If function/algorithm built doesnt do good on unseen points (i.e future points) then its useless
+
+     Generalization :
+     -----
+       -> If an algorithm works well on Future (unseen) points then its called generalized-well function
+
+  -> Fundamental Obj : Perform good on unseen points 
+
+     Here D_test is used to compute K value so we cannot say that that particular K val will be accurate
+     for unseen(future) datapoint
+
+     So to compute the function f(k, NN) :- we use both train & test data, 
+     thus we cannot say that it's generalized because there are no unseen data actually tested 
+
+
+* Cross Validation (CV):
+  ---------------
+  - To deal with above problem of generalization, We've concept of Cross Validation
+
+  -> So Split data into three parts :- [ D_train, D_CV, D_test ]
+
+     REMEMBER :- test-set should always be a unseen data
+
+     Compute function using :- { D_train, D_CV }
+
+                               D_train - used to find NN
+                               D_CV    - used to find K 
+
+     Evaluate function using :- D_test  (unseen datapoints)
+
+  => So whole idea is about differentiating between seen data & unseen data
+
+       here seen data = D_train, D_CV
+            unseen data = D_test
+  
+    Fundamental Obj of ML :-
+    ----
+    => To be sure about the algorithm to work on future data points, it must be tested on Unseen data
+
+  -> generalization accuracy = accuracy obtain on test set
+     generalization error    = error obtained on test set = 1 - gen_accuracy
+
+
+* k-Fold CV :
+  -----------
+    Problem in breaking data into 3 parts :- only 60% avail for training
+
+    Idea :- Use diff combination of train-test to increase utilisation of data & reduce wastage
+
+    => More the training data (more info) the better is the algorithm
+    -> test-set should always be a unseen data 
+       
+       So we can't get rid of test data & we want to utilise more data on training
+
+    k`s-fold CV = combine train + CV data somehow  
+
+    - (utilise training set smartly & avoid wasting CV set)
+
+    Steps :
+    ---
+     1) Break Data into train + test   (lets say 80% + 20%)
+
+     2) Divide train set into k`-equally sized chunks randomly
+
+     3) Play with the combinations|permutation of chunks to simulate the CV & virtual-train set
+         So for each Value of K You will plot graph k` times (each time taking different chunk as CV set)
+                \
+                 for accuracy val for K = avg of (accuracy obtained in k` times)
+
+          Obsv - use chunk_i as CV -> 1 times 
+                     chunk_i as train -> k`-1 times
+
+               -> Thus used every part of training as CV & 
+                            every part of training as trainig as well
+
+                  Thus not wasted 20% of data just for CV purpose
+
+        k`-fold CV => To arrive to accuracy for Kth value in {1,2,...n}, 
+                      We are taking avg accuracy of k` obsv|experiment
+
+    Elbow Methods :
+      You can then find best value of K via plot (K, avg_accuracy) as dicussed earlier
+
+   :) Motif => used all of training data to determine the function|algorithm  
+              whereas in 3-split, CV was not used to its max efficiency in finding the algo
+
+   GIST :- 
+     - D_train is used to compute both K & NN in K-NN
+
+  Problem with k`-fold CV :-
+  -------------
+   -> repeating k` times for finding avg_accuracy for each val of K
+   => Thus time it takes to compute the optimal | best K in K-NN, 
+      increases by k` times if we used k`-fold CV
+      But its a 1 time effort (i.e right K is found for 1 time only) so its OK & valid
+
+
+* How to determine k` in k`-fold CV :
+  ------------------------------
+   -> Rule of Thumb :- typically 10 fold CV is used i.e k` = 10
+
+
+* Visualizing Train, test, CV :
+  -------------
+   -> When you randomly sample & split the Dataset into train, test, CV
+       \
+        -> Expect to see some noise|error|outliers
+
+      1) D_train & D_cv & D_test do not overlap perfectly when randomly sampled
+
+      2) If there are many +ve/-ve points from D_train in a region, then
+         - It's more likely to find the many +ve/-ve points from the D_cv in that region respectively
+
+      3) If there are few +ve/-ve points in a region from D_train then
+         - It's less likely to find the +ve/-ve points from D_cv in that region
+
+         -> such rare points in other's dense region is called as noise|outliers|errors
+
+ * How to determine the Overfitting or Underfitting ?
+   --------------
+
+     Training Error :- 
+     ----
+      -> evaluate | test K-NN on D_train data points i.e taking query point from D_train itself only 
+         and calculate then error via above experiment
+
+         Error on training data using training data to train
+
+         D_train -> training 
+         D_train -> accuracy/error 
+
+     => Error on CV is also called as validation error 
+
+     Remember :
+      - train error always increases as K increases 
+      - We determine K via CV test
+
+    Determining Overfitting & Underfitting :
+    --------------
+      - plot the graph of K vs Error of { CV-Error, Test-Error }
+
+      1) Overfitting:  (K is near to 1)
+         -----
+          Test-Error is low
+          CV-Error is High
+
+      2) Underfitting : (K reaches n)   (Not Damn care about if point is test | train)
+         ----
+          Test-Error is high & 
+          CV-Error is also high
+
+      3) Best Fit tradeoff :
+         ----
+          Train-Error close to CV-Error
+
+
+* Time based Splitting :
+  -------------------
+    -> time is necessary field to do TBS
+    -> data to rely upon changes with time 
+    -  learn from old data & test on latest data
+
+    S-1) Sort your data D_n in increasing order of time
+    S-2) then break|split it into 3 parts
+             \
+              Oldest data - train
+              newest data - test
+              remaining   - CV  (middle not old not new)
+
+    Eg Time based splitting is better for Amazon-Review system :
+
+       If we use Random-Splitting (RBS) then what is problem ??:
+
+          -> With time reviews changes (as product changes)
+             So We may not get better prediction with Random based splitting
+
+          -> My test data is coming from all over the past time 
+             (which is not good if product changes with time)
+
+    So if things are changing with time, then its better to test on recent | fresh data so that 
+    We can get idea about latest trend
+    So that probability of prediction in future is more likely than randomly splitted test data
+
+    TBS Advantage :-
+     --------
+       -> train uses old data (i.e NN using Old data)
+       -> test on recent data (i.e so that we can have better accuracy for future)
+       -> validate on normal data (i.e not too old not too new i.e current trend)
+
+       So in gist :- 
+         With TBS -> train on old trend
+                     validate on current trend
+                     test on latest trend
+
+         TBS would be helpful if data changes with time i.e trend changes with time
+
+         Eg Myntra -> fashion sale idea | trends changes with timespan
+
+       => Since things changing with time so accuracy get with test data in TBS (i.e latest data test)
+          will be much more representative of upcoming data in Future
+
+       -> In TBS all data in 3 parts comes from a sequential time 
+
+     ROT :-
+     ---
+      So whenever time is available, things | behaviour | data changes over time then 
+      TBS is preferrable over RBS
+
+
+
+
+
+
+
+

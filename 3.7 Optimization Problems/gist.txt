@@ -1,0 +1,23 @@
+gist
+
+* Optimization Problem :
+  --------
+   Non-Trivial :- Use Gradient Descent Technique
+
+* Gradient Descent :- Step Size + Learning rate
+
+  => Learning rate is used as a remedy for oscillation effect (Long Jump over optima ie skip optima)
+
+=> Stochastic Gradient Descent (SGD) is very imp algo in ML for optimization problem
+
+* SGD :
+  ----
+   -> randomness ie adding stochasticity (probability) in picking k pts at each iteration
+   -> Batch Size = K
+
+   
+------
+
+REMEMBER
+
+=> Equality Constraints are easy to move into equation using langragian multiplier

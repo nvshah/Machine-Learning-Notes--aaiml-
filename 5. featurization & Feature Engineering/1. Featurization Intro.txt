@@ -1,0 +1,48 @@
+---------------
+-> All ML algo at the end needs & boil down to numerical vector/features 
+
+=> Deep Learning comes up with learning featurization automatically, fairly successfuly
+   Given you have lots of data
+_______________
+
+
+* Featurization
+ -------------
+
+-> Featurization is one of the way to convert features into numerical vector
+
+- At the end all ML algo mostly can process numerical data
+
+* Eg
+
+  Text Data - BOW, TFIDF, avgW2V, TfidfW2V
+
+  Categorical Data - one-hot encoding, mean-response rate, domain specific
+                                       (mean-replicate way)
+
+* Time Series Data :
+  ---------------
+   - Heart-Rate
+   - Ecommerce (product per hour per time)
+   - Speech/Text
+   - Stock Market Price
+   
+   convert time-series -> numerical -> ml
+
+* Image Data 
+  -------- 
+   - XRays, Faces
+
+   convert image -> numerical -> ml
+
+
+* Data in Database Table :
+  ---------------
+   - convert it to numerical 
+
+* Graph Data :
+  --------
+   - Eg recommends a friends on FB
+   - edges represent a relation between vertexes
+
+

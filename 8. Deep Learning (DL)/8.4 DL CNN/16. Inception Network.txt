@@ -1,0 +1,51 @@
+16. Inception Network
+------------------
+Sec 4.16
+
+ref : 
+https://arxiv.org/pdf/1512.00567.pdf
+https://github.com/keras-team/keras-applications/blob/master/keras_applications/inception_v3.py
+
+-----
+TOPIC
+
+=> Bottleneck Layer (1*1 Kernalization trick)
+
+- Concatenation of Channels
+
+----
+
+- research paper from google
+
+* Inception Network :
+  ---
+   - In inception, instead of choosing Kernel Size & or between Convolution or max-Pooling
+     We do everything
+
+   - We try for 
+       - for all sizes of kernel
+       - Convolution / Max-Pooling (ie type of layer)
+     by single layer
+     &
+     Stack that Output Result into Singgle Tensor (ie Channel Concatenation)
+
+  
+  Massive Computation :
+  ----
+   - It require many computation for Convolution of just 1 layer
+
+
+  Idea : (for Optimization to above massive calc issue)
+  ---
+   -> Instead of directly going from inp to out
+      use some internal Kernels
+          |
+          1*1 Kernalization trick
+
+   => This is also called as "Bottleneck Layer"
+
+* Inception Module & Channel Concatenation :
+  ----
+   - Doing it directly is very expensive so we try to achieve it via 1*1 Kernalization trick 
+     (intermediatory)
+   - Stacking up of all output in Inception Module of 1 layer is called as Channel Concatenation

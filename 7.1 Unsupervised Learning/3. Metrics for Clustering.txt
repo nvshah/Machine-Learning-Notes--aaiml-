@@ -1,0 +1,40 @@
+3. Metrics for Clustering
+
+------------
+
+* Ground truth :- class-labels | regression values // in case of supervised learning
+
+-------------
+
+In Supervised Learning :-
+    Class Labels or regression values is called as ground truth
+
+
+* Intra Cluster := with in the same cluster
+  Inter Cluster := between the 2 cluster
+
+  So ideally to form a basis for good clustering it should be S.T.
+    - Intra-Cluster distance between points is small
+      &
+      Inter-Cluster distance between points is large
+
+* Dunn-index :
+  ---------
+   D = maximal_inter_cluster_distance ie d(i,j) / maximal_intra_cluster_distance d`(k)
+
+   if dunn index high -> good clustering
+
+   - numerator :- distance between c_i & c_j clusters for farthest points
+
+     denominnator :- 1) take farthest distance among 2 points belonging to same cluster
+                     2) do this for all cluster
+                     3) pick the clustering distance with largest intra-cluster distance between 2 points within that cluster
+
+   -> Thus Dunn index works considering Worst Case in both inter & intra cluster scenarios
+      (why worst because its considerign the farthest distance in both the cases)
+
+
+* Core Idea :
+  --------
+   -> Large Intra Cluster distance
+      Small Inter Cluster distance

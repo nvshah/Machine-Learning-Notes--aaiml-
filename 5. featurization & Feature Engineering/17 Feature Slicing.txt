@@ -1,0 +1,26 @@
+
+-> When data is imbalanced or there is discrepancy in data, then model will perform
+   better on some kind of data than other
+
+   Eg Error on more for people of US  & less on people of India
+
+* Feature Slicing
+ --------
+  -> this can be used when you have sufficient data for each class label data
+     (esp when features have distinctive behaviour to different categories)
+
+  (if you have less pts for particular class than you can't use this kind of technique)
+
+  -> Slicing Idea : train seperate model for each individual category type 
+       \
+        Slicing the data based on features is called as features slicing
+         \
+          - conditions :1)- category 1 & category 2 should have diff behaviour
+                        2)- must have sufficient number of points for each slices
+
+  => Instead of taking whole data in a big chunk
+     its better to break it
+        \ 
+         - when you have sufficient data
+         - when there is different in behaviour between those 2 features
+

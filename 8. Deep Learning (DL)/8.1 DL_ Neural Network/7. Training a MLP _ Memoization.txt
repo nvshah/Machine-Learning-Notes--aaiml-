@@ -1,0 +1,15 @@
+7. Training a MLP : Memoization
+--------------------------
+
+* Memoization :
+  -----------
+  -> software engineering trick 
+  -> Code Once ReUse multiple times
+
+  - There are certain derivative terms which are being used multiple times among multiple path
+    or ammong network
+    So we can use memoize vals for next time (during updation)
+
+* Back Propogation := (Algo)
+  --------------------
+  => Thus Chain Rule + Memoization (to avoid Recomputation) := Back-Propagation

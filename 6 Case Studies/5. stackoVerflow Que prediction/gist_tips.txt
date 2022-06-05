@@ -1,0 +1,14 @@
+Tips
+
+* Classifier Chanins :
+  ------------
+   -  If 1 label is related to another label or 
+      1 label has power to predict another label
+      then such chains of classifiers is very useful
+
+=> slmultilearn only uses dense matrix & not sparse matrix
+
+=> When you have high dimension data, linear Models performs very well
+
+--------------
+

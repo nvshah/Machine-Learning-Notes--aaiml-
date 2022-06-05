@@ -1,0 +1,55 @@
+REMMEMBER :
+  
+  skmultilearn will always use the dense represntationn of matrix
+  so for high dimen TFIDF storage its not suitable
+
+=> When you have high dimension data, linear Models performs very well
+
+____________________
+
+* featurization
+  -----------
+   - TFIDF featurization
+
+
+* one vs rest :
+  --------
+   We need to build many models (ie 5500, as much as there are individual tags)
+
+
+* Logistic Regression :
+  ------------
+   - For high dimension data its a cheap approach (cheap in the sense required less efforts)
+   - Its similar to linear SVM in a result
+
+
+( Hack ):
+ -------
+  Instead of using 1M points - use 0.5M points
+
+                   5500 tags - use 500 tags
+
+                   Also employing Weighted model : more weight to Title than Body
+                   (as title have more sense of how que will be driven forward)
+
+  - Also instead of using SGDClassifier(), we use logisticRegression() this time in hack
+
+=> Add more weight to Title by repeating the title 3 times (ie for TFIDF it will incr count in vector)
+
+
+------------------
+
+* why Linear Models (logistic Reg) :
+  ---------------
+   - We have Text data -> TFIDF -> high dimensions
+
+   => When you have high dimension data, linear Models performs very well
+
+   1) We have very High dimen data !
+
+      - so Logistic Reg or Linear-SVM is possiblee choice
+
+   2) also we need to train many models because of one vs rest approach !!
+
+      - So we took Logistic Reg (as its Time Complexity efficient)
+

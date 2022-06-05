@@ -1,0 +1,102 @@
+4. Data Preparation
+
+NOTE :- Data givn :- each point corresp to pickup info 
+         \
+          We can find sub-regions from this pickup points 
+             \
+              ie pickup points clustered together & likewise according to pickup counts & frequency
+
+=> We need to prepare data in such way that 
+    we can get segmentation of regions in New-York City & time-intervals also get split up into
+    interval of 10 mins
+
+* Breaking into Regions :
+  ------------------
+   Q1) what is optimal number of cluster to break into ??
+
+   K-Means : for clustering
+    \
+     Those areas which have more pickups will get densely connected
+
+     cluster corresponding to pickups frequency/counts
+
+
+* Inter-Cluster distance : (Constraints)
+  ----------
+  1) Regions must not be too large
+
+     We want to find the surrounding cluster s.t. inter-cluster distance is less than 2 miles
+
+      Why 2 miles -> because earlier we saw that average speed is 2 miles / 10 min
+         			  so we can reach nearby cluster in 10 mins inorder to attend pickup !!
+
+
+  2) regions must not be breaked into too small
+
+     inter-cluster regions must be atleast more than 0.5 miles
+
+  Thus we dont want the regions to be break up into too large or too small
+
+
+* K-means clustering :
+  --------
+   Find cluster (sub-regions) s.t. 
+      inter-cluster distance atleast is 0.5 miles  (min region size)
+      inter-cluster distance atmost is 2 miles     (max region size)
+
+
+   via Hyper-Tuning we found K=40 as nearest to our aim attaining 
+
+
+* Time Binning :
+  -----------
+   -> unixtimestamp (UTC format)
+
+   -> for given pickup times - find in which 10 min interval bin does it fall !
+
+
+thus we have 2 information 
+     \
+      1) cluster id
+      2) 10 min bins block number
+
+
+___________________________________________
+
+
+* Smoothing :
+  --------
+   Why ? -> sometimes bins possess 0-pickups
+       \
+        -> In a cluster there may exists 10 min time-bin s.t. in that bin there are no pickups
+
+   ie 10 min bins possess 0 pickups
+
+   So via smoothing we will try to re-distribute the pickups among the surrounding bins
+
+   0 -> pickups in 10 min bins creates a problem of `ratio-features` :- zero division error
+
+   => Smoothing is done only on Jan, Feb & March Data of 2015
+
+
+------------
+
+* Time Series Bin vs pickups :
+  ----
+   - each unit on x-axis corresponds to 10 min interval
+
+   -> Featurization :- Fourier transform
+
+	   FFT :-
+
+	   * DC component :-
+	     ------
+	      - when sin-wave or any other time-series pattern Wave, is not centered around 0
+	        then it will have DC-component
+
+	        DC-component referes to peak at frequency = 0
+
+
+  => So we cann use Fourier Transform (FFT) to get the features from the data
+
+

@@ -1,0 +1,13 @@
+DL Math useful Note 1
+
+* Function Composition & MLP :
+  -------
+   -> MLP is just graphical way to represent the Function Composition
+   
+   Funnction Composition :- 
+       F(G(x)) 
+       G(F(x))  // G of F of x
+
+
+* Hill Descent :
+  --------

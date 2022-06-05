@@ -1,0 +1,16 @@
+* Graph Data
+----------
+  
+  Social Graph :-
+     vertex : user
+     edge   : friends
+
+     - fb is having one of the largest socila graph data in the world
+
+    Task : recommend new friends of user 
+
+    Way :- create a features
+            f1 :- #mutual-friends     (path exists between 2 nodes u1 & u2)
+            f2 :- #paths between 2 nodes (how many path exists)
+
+    - Such features are known as Graph based features or Graph Theoritic features

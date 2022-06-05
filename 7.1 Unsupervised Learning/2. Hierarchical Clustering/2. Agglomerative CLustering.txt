@@ -1,0 +1,68 @@
+ref :- https://cs.wmich.edu/alfuqaha/summer14/cs6530/lectures/ClusteringAnalysis.pdf
+---
+
+2. Agglomerative CLustering
+------
+
+* Proximity matrix :
+  ------
+   Similarity between 2 Clusters
+
+   - Key idea in Agglomerative Clustering
+
+-> Whichever cluster you merge the corresp row & col need to be updated 
+
+
+* Proximity decider :
+  -----
+
+1) Min :
+   ---
+    (Single Linkage Algoritm)
+
+    -> pick 2 closest point between 2 clusters ie inter-cluster distance is minimum
+
+    * Outliers/Noise :
+      -----
+       noise also gets involved in one of the clusters, often
+       - Tendency to grab/merge noise into clusters
+
+2) Max :
+   ---
+    (Complete Link Algorithm)
+
+    -> Pick 2 farthest point between 2 clusters 
+
+    * Noise :- Less prone to noise & outliers
+
+    When you have large clusters, 
+      - MAX tends to break large clusters
+
+    - biased towards globular (globe-like) structure
+
+3) Group average :
+   ---
+    -> Take all the pairs between 2 cluster & take average
+
+    - Nice Compromise between Single & Complete Link algorithm
+    - it takes into account min distance & max disatnce as well
+
+4) Distance between Centroids:
+   ----
+    -> It's slightly harder to kernalize
+       because centroids are not point from dataset only
+
+=< Note :- everything will get involved in
+
+[Kernalize]
+---
+=> In all above, all you need is Similarity between pairs of points 
+   So when you onnly need the Similarity between Pairs of Points, You can trivially Kernalize it
+
+
+* Ward's Method :
+  -----------
+   -> Similar to Group Average where instead of distance, distance-squared is used
+
+=> Thus in case of agglomerative clustering its all abt findings Proximity Matrix via diff
+   deciders

@@ -1,0 +1,39 @@
+ref :- freecodecamp - how to scrap websites using python & BeautifulSoup
+
+2. Web Scraping
+-------------
+
+lib :- { BeautifulSoup, grep, urllib2, selenium }
+_________
+
+-----
+
+- Web Scraping :- Obtain your own data !
+- What Google is doing :- Internet Scaled Web Scrapping
+
+TIP :- If API is available to obtainn data then use it (legally) instead of Scrapping
+
+* Static Web Page & WebScrapping :
+  ------
+   Static Page := Html 
+
+   1) Obtain Web Page Content (via urllib)
+   2) Decide what you want to grab from that Page 
+   3) parse & get that data from page (via BeautifulSoup)
+
+* Dynamic Web Page & WebScrapping :
+  -----
+   Dynamic Web Page := Static Html + JS
+
+   The problem is that you will obtain the static page content via (urllib) but how you will
+   get the dynamic effect that is resulted by JS
+
+   selenium.webdriver :
+   ----
+   - To achieve/simulate this you need `selenium`  that help you run that html page with js via your browser
+
+   - selenium let you open any browser of your choice
+
+   - selenium helps to perform action on WebPage via Browser
+
+   -> So we will replace urllib2 with selenium in case of dynamic web pages

@@ -1,0 +1,47 @@
+classification terms
+
+function
+training, testing/evaluation
+
+Data matrix Notation 
+
+------ KNN Classification -------
+
+K-NN classification
+L1, L2, Lp norm
+distances vs norm
+
+Eucledian distance
+Manhatten distance
+Minkowski distance
+Hamming distance
+
+similarity & distance
+cosine similarity & cosine distance
+polarity
+low-latency
+
+hyper-parameter i.e k
+Overfitting | Underfitting
+Generalization
+Generalization Accuracy, Generalization Error
+
+accuracy, error
+training error
+random splitting
+time based splitting
+
+KNN regression
+
+Weighted KNN
+Voronoi diagram
+
+KD tree, BST
+LSH
+Randomized Algorithm
+Unit Normal Vector
+Hash Funcn, Hash Table
+Slices, Blocks
+
+Deterministic Output, Probabilistic Output
+

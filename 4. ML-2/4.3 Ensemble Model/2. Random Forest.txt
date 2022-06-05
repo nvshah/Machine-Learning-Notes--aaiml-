@@ -1,0 +1,75 @@
+----------
+
+- Randomization is key idea in RF to reduce variance
+
+- OOB score
+__________
+
+
+* Random Forest
+  -----------
+
+   -> Most popular Bagging Technique
+
+   Random Forest, DT -> base models
+                  Bagging on top of it with feature bagging
+
+   RF = DT + Bagging
+
+   - BootStrap Sampling = Row Sampling
+   - Feature Sampling = Column Sampling
+
+   - In RF, in addition to do Row Sampling (with replcement) also do Col-Sampling
+
+   => Randomization is key idea in RF to reduce variance
+
+   Core Idea of RF :- 
+   -------
+      Given dataset Dn of n pts & d-dimen(features), 
+       get new small dataset s.t m < n & d` < d  -> Model M1
+
+      Thus small datasets are now diff not only in terms of data-pts but also in terms of features
+      Since datsets are diff so Models will be different
+       \
+        So removal of few pts from original training dataset will impact less models
+
+      Base Models :-
+      --------
+      -> Mi's :- DT of reasonable depth
+          \
+          We want base learners to be low-bias & high-variance (dont mind if high variance)
+
+        So we train DT to long depth if required
+        So no limit Just grow as long as model seems reasonable
+
+   Out Of Bag (OOB) Points :
+   -------------------
+    -> For base Model Mi - we train on Di points only
+
+       So there are pts which remains ie Dn - Di in original Train Data
+       Such points are known as Out of Bag Points i.e oob points
+
+       oob pts can be used as CV (cross validation pts) for the Mi model train with Di pts
+       To ensure that Models Mi are sensible we can use oob pts as cross-validation
+
+    :- Mi -> Di
+       Dn-Di -> oob samples = CV dataset for Mi
+   
+   OOB Score :
+   ---------
+    - out of bag score (oob score) 
+
+(gIST)
+* So in a nutshell :
+  	RF :- DT as base learners   // DT are of reasonable depth ie fully grown
+  	      + row sampling with replacement
+  	      + col sampling 
+  	      + aggregation (Majority Vote)
+
+RF do not work very well esp when
+     - categorical features with many levels
+     - when you do One-Hot encoding
+     - large dimensional data
+     
+
+

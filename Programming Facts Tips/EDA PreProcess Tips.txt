@@ -1,0 +1,3 @@
+EDA PreProcess Tips
+
+1) Do min-max scaler if required  :- sklearn...MinMaxScaler

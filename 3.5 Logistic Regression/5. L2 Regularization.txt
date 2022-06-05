@@ -1,0 +1,141 @@
+5. L2 Regularization
+----------
+
+=> the signed distance should be (y_i * W_T * x_i)/||W||
+
+=> Main goal of Regularization is to prevent Overfitting
+    ie prevent Z & W from growing large to inf
+
+-> New Goal/Task = argmin(loss-term + regularized-term)
+
+------------------------
+
+log(1 + delta) > log(1)  // if delta is > 0  // As log() is monotonic func
+
+Overfitting : perfect job on train data which doesnt gurantee You will do better on test data
+
+-----------------------
+
+* Why Regularization ?? 
+  -----------------
+   - Problem in Optimization Eqn w.o Regularized term
+
+=> Optimization Eqn = argmin(sum(log(1 + exp(-Zi))))  // Zi = Yi*(W^T*Xi)
+
+Note :- exp(-Zi) >= 0
+
+        log(1 + positive_num) >= 0
+
+Thus minimal val of sum(log(1 + exp(-Zi))) is 0
+        
+-> Minimal val is 0 when all Zi tends towards infinity   // check exp() function you will get idea
+   
+   Now Zi = Yi * (W^T * Xi)  // only variable is W as (Xi, Yi) are avail from dataset
+   - So find or modify W such that all Zi tends towards +infinity
+                       \
+                        So each component of W has to be either +inf or -inf based on val of (Xi, Yi)
+   - In this way W becomes very large val vector
+       \
+        W = -inf or +inf large vector (components)
+
+ Minima :- when all Zi tends to infinity (ie W is large vector)
+
+1) Zi = +ve, Xi is correctly classified
+2) Zi -> +inf, Minima is found
+
+If you pick W S,T :- - All Xi from train is perfectly classified
+                     - Zi -> +inf
+
+-> Via this way its possible that as W -> -inf or +inf, given n pts,  
+   we get least possible val given optimization problem (i.e 0)
+   &  Its perfectly fitted
+
+* Problem with such W : (large W with large components)
+  --------
+   - What if some pts in training data are Outliers.
+   - If those are also get correctly classfied then there is an Overfitted Model resulted.
+
+   - W vector is becoming very very large as all component has to be +inf or -inf
+
+=> It's not always that W vector has to be +inf or -inf but it is one of the possible case
+    &
+    Sometimes it happens
+   
+   So as we see That if we have large W components ie +inf & -inf,
+    we could get min val for our optimization problem which is 0
+     \
+      But there are also chances of Outliers
+
+-> Problem with large W is that it do not spot the outliers & just go on !!!
+
+So We need to avoid W from being +inf or -inf & minima being 0
+Because if Zi -> inf
+           W -> +inf or -inf 
+           then Ovrfit the Data
+
+Q) How to Control it ?? -> Regularization
+
+
+* Regularization : 
+  --------------
+    - to get rid of all above problem of Overfit by inf Zi & large Wi
+
+    So we will modify the Optimization Eqn & add 1 more term ie
+        connsider lambda = lma
+
+        term = lma * (W^T * W)   // W^T * W is Square of L2-Norm of W
+
+    So Eqn :=	
+
+             argmin( term_1  + term_2  )
+
+                   where term_1 = sum(log(1 + exp(-Zi)))
+                         term_2 = lma * (W^T * W)
+
+    Now W cannot be Very large as if it tries to then 2nd term will not allow
+    As our goal is to find argmin() S.T. both term are minimal
+
+    So term_2 is just Contrasting to term_1 or batteling to term_1
+    term_2 is tussleing with term_1 for W not becoming large
+
+    term_1 is called as Loss-Term
+    term_2 is called as Regularization-Term (specifically L2-Regularizer)
+
+    So Regularized Term is having a Tug of War with Loss-Term
+       \
+        It do not allow Loss-Term to have W val very large & fall in trap of Overfitting
+
+    So Regularized term is controlling the Zi val from not going to +inf
+
+    In this War There will be a spot where both terms will agree & that spot will be 
+    correct optmization point
+
+    So Point where both terms will be small is convergence
+
+    Hyper-Parameter :
+    ----------------
+      lma is hyper-param
+
+      1) lma = 0 :  (Overfit)
+         ----
+          - No regualrized term = Overfitting (as usual)
+          - no one to stop Zi & W from growing very large
+
+      2) lma = large : (Underfit)
+         ----
+          - Influence of regularized term is high in tug of war
+            & so loss-term will shadowed or no more effective
+
+          - loss term will have no more influence ie No use of training ie simple model
+
+      lma controls bias-variance tradeoff in Log-Reg
+
+
+So New Goal/Task = argmin(loss-term + regularized-term)
+
+
+
+
+
+
+

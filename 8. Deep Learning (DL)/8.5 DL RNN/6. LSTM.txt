@@ -1,0 +1,164 @@
+* LSTM (Long Short Term memory)
+  ------------------------
+Sec :- 5.6
+
+ref :
+[LSTM]
+http://colah.github.io/posts/2015-08-Understanding-LSTMs/
+
+------
+Terms
+
+- Cell State
+- Identity Flow
+- Forget Gate
+
+
+
+-------------
+
+- In simple RNN, we do add weights & corresp inp (ie curr + prev)
+  Now
+  In case of LSTM, instead of adding we will have merge operation
+
+
+* Simple RNN :- Ot = f(W*X_t + W`*O_t-1)
+                Yi` = g(W``*Ot)
+
+  LSTM : (Notion)
+  ---
+
+  Merge :- Concat the
+               O_t-1 & X_it  // Inp Vectors
+               W & W`   // Matrices corresp
+
+           Then you just Do Dot Product of those large Matrices obtained after Concatenating them up
+
+
+* Cristopher Olla (Blog Understanding)
+  ----
+
+  Terminology
+
+  Cell := Activation Unit
+
+  C_t := Cell State
+
+  When 2 arrow line join :- it means concatenation
+
+  Point-Wise Operation :- Element Wise Operation
+
+
+* LSTM :
+  ----
+   - involves the concatenation part
+
+   LSTM-Cell
+
+ - tanh point-wise operation vs tanh-neuron layer :
+   -----
+    -> tanh point-wise := applying tanh() to each elem of vector elem-wise
+    -> tanh neuron-layer := network of tanh() (ie as activation unit) neurons
+
+ - Cell State comes from prev timestamp & flows to next timestamp
+
+
+(1) LSTM (Top Layer Explaination)
+------------------------------
+
+-> By Top layer it means comprises of :- Forget gate & Curr gate
+   Forget gate :- handles how much info to flow from previous stage to next stage
+   Curr gate :- handles how much info to flow from curr stage to next stage
+
+* LSTM & ResNets :-
+* Identity Cell State Flow :
+  ---
+   - If your (*) inp is [1,1,1,1,1,...]
+             (+) inp is [0,0,0,0,0,...]
+
+   - Then you can see your cell state flow as it is from time (t-1) to time (t+1)
+
+   - This concept is similar/analogous to Residual Block in ResNet
+
+   [Analogous]
+   - Thus we can see lot more similarity between "ResNets" & "LSTM" in terms what they want to achieve
+     |
+     In LSTM you have point-wise product & point-wise addition
+
+
+-> Thus state of LSTM can be carried as if we want
+-> we can decide how much of my prev-state I want to keep in my next state
+
+-> Forget Gate :
+   ---
+    Tell us how much % of prev-state info must retained for next stage
+
+    - It is (*) operation in LSTM unit
+
+   NewInfo gate :
+   ---
+    How much of new info should I consider to add from current time to flow it to next stage
+
+    - It is (+) operation in LSTM unit
+
+=> Mimp thing is you can skip over connection
+
+
+(2) LSTM (Internal Layer Explaination)
+--------------------------------
+
+    2.1) :-
+    Forget Gate
+    ---
+    - This stage structure tells us how much to remember or forget from prev-state to next-state
+    Forget Gate Weights :- Wf := weight you concatenate from h_t-1 & x_t
+
+    Forget Val F_t := how much of prev-val you must forget whislt proceeding to ahead
+       \
+        How much you forget or retain from prev-cell-state to next cell-state
+
+    2.2) :-
+    Input gate :
+    ---
+    - A Structure
+    - This structure tells us how much to add to previous state (whilst it flow to next part)
+
+
+    2.3)
+    Output gate (Structure):
+    ----
+    -> your output depends on prev-output, curr-state, prev-cell-state
+
+       // NOTE :- prev cell state is already modified by Forget Gate & Input Gate Struture (before it arrives Output Gate Structure)
+
+    -> tanh poit-wise func is used
+
+    -> determines how your cur-output is generated based on prev-cell state & curr-cell-state inputs
+
+=> Thus output from LSTM unit will be :-
+   - cell state (c_t) & output of that cell (h_t)
+
+
+* FIO structure & LSTM :
+  ---
+   Forget, Input, Output
+
+
+* Long-Term Dependency & LSTM
+  -----------------------
+  - because we have a way to short-circuit the LSTM unit & pass prev-state to next state as it is
+    we can hold up on to long-term dependency
+
+  - via LSTM we have a way to worked out a long-term dependency (via Short-Circuit )
+  - Because of possibility of Short-Circuit connection via LSTM unit, we can impact the output
+    even which is very far away
+
+
+
+-----------
+[My Gist]
+
+- In my terms LSTM helps to manage the long-term dependency between Inp & Output part of Sequences
+  via
+  Allowing to propogate the cell state to next stage readily,
+  thus avoiding useless interaction inbetween for true real connection/dependency

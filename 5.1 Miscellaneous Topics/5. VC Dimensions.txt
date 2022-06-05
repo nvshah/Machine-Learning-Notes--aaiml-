@@ -1,0 +1,61 @@
+* VC Dimensions
+ --------
+
+ Models :- {Linear Model, RBF-SVM, Boosting, NN, ...}
+
+Q) How powerful the model is (any given model) ??
+
+-> we can check these 2 ways : 
+    
+    1) Practical (Applied), where take dataset & check which kinda model do best
+
+    2) Theoritical :
+       --
+        - We try to give numerical val to each model
+        - statistical ML or computation learning theory way 
+           \
+            One of such way is VC Dimension
+
+* VC Dimension are not much used in a applied aspects of AI
+  but are used for research community based works or when needs to prove something
+
+Q) Why VC dimension ?
+   - because we want to give numerical val to model
+
+
+- Eg VC dimen & Linear Model !
+     --------
+     - shatter :- able to break or seperate the points  (idea via decision surface)
+       ----
+
+     (Radon's Theorem)
+     4 pts cannot be shattered by the Linear Model  
+       i.e there exists some configuration (ie arrangement of pts) 
+           S.T. pts cannot be shattered by the linear model 
+
+     => Hence VC dimension for Linear Model = 3
+
+     VC dimen = maximum number of pts that can be shattered by a linear model 
+                for all possible configuration
+
+
+     RBF-SVM :
+     ----
+      -> VCF of RBF-SVM is infinity
+      => Thus theritically RBF-SVM is super powerful 
+         (but it doesnt always imply practically, as during theoritical calculations lots of assumptions are made)
+
+=> As VCF dimen of any model incr, Its more powerful Model
+
+=> VCF dimensions are good idea when you want to prove theoritical bounds using statistcial theory
+   & Computation learning theory
+   but when come to practical stuff they are not very useful.
+
+Theoritically VD dimen can also be used to point out bound like
+    \
+     - probability of test err <= probability of train err + C   // this is very useful information
+
+       C is func comprise of VC dimen
+
+
+

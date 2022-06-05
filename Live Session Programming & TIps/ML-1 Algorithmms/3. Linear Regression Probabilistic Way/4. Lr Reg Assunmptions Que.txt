@@ -1,0 +1,95 @@
+4. Imp Points
+-----
+
+=> If your Data contains multi-collinearity then you can't interpret Weights very easily
+
+=> Whole concept of Euc-Dist Starts breaking Down When Dimensionality is High
+______
+
+
+* Statistical Assumptions in Above Proof of Prob Process for Lr-Reg :
+  ----
+
+1) Linearity    (Yi -> Xi)
+
+2) Independence of Err (epsilon)
+
+3) Normal Distb of Err (N(0, sigma.square))
+
+4) Absence of Perfect MultiCollinearity
+
+5) HomoSkedasticity of Errors 
+   HeteroSkedastic Errors
+
+   Residual Plots helps in identifying if Errors are (Homo or Hetero) Skedastic
+
+
+NOTE :-  (IMP)
+------
+If all assumptions are not present then it doesn't mean that Linear Regression will not Work as an Algorithm (It may still work) But in presence of this assumptions it strengthen the presence of Linear Reg as an algorithm
+
+=> It is 1 way to debug the Linear Regression
+      
+      - Eg Plot your err grah & if it looks like Gaussian then yes it may be benefitted from Linear Reg
+           (because we assume earlier Err to be Gaussian Distributed)
+
+
+* Check Linearity :
+  ------
+   (one way to check) :- 
+   If via introducing Quadritic or Cubic Feature check if Loss is reduce ??
+     - if loss is reduce then Linear Combination is not probably the best answer
+     - probably non-linear model will help
+
+* Independence of Err :
+  --
+   - One way to ensure it is via sampling data randomly (ie (X1,Y1), (X2,Y2), (X3,Y3),...)
+   
+
+* Multi Collinearity & Weight Intepretation :
+  --------
+   -> If your Data contains multi-collinearity then you can't interpret Weights very easily
+   -> If there is perfect multi-collinearity the weight gets messed up !
+
+
+* HomoSkedastic Erros :
+  ------
+   - Error that you have here, have a constant variance
+
+   -> Constant Variance (Assumptions)
+       \
+        Epsilon -> N(0, sigma^2)
+
+        - Here Sigma must be Constant
+
+Q) How to determine if Error has Constant Variance ??
+
+* Residual Plots :
+  ------
+   X-axis :- Yi
+   Y-axis :- epsilon (err)
+
+   Var(epsilon | Y) 
+
+   **=> helpful in determining if Your Err are following HomoSkedastic or HeteroSkedastic
+
+* HeteroSkedastic ;
+  -----
+   -> In Residual Plot if Variance of Err (Spread of Err) is Dependent on Yi ie Var(eps | Y) is     
+      recognizable
+      \
+      Thus my all Err do not have same constant variations
+      But Fundamental assumption we made is Sigma^2 must be constant
+      Thus it doesn't follow HomoSkedastivity 
+
+   -> If it doesn't follow HomoSkedasticity then it is called as `HeteroSkedasticity`
+
+   -> There exists some pattern to identify the Error from Yi
+
+* HomoSkedastic :
+  -----
+   -> almost Variance of Err Pts are similar
+
+_________
+
+=> In a nutshell if your dataset holds above 5 assumptions then you can go for Linear Regression

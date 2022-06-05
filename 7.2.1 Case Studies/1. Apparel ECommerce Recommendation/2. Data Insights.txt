@@ -1,0 +1,88 @@
+* Data Insights
+  ---
+
+---------------
+
+useful func from pandas
+ 
+Series :-
+---
+  describe()
+  unique()
+  apply()   // apply some func to series elements
+
+Counter :-
+---
+  most_common()
+
+=> You can use .loc[] with boolean array as well (other than indexing via index name)
+
+---------------
+
+* Data Cleaning & Understandings :
+  -------------------
+
+[The best feature ]
+=> title feature :- mimp feature we will use because 
+                   - `title` is short & informative
+                   - mostly present for every product
+
+
+* Pickleing :
+  -------
+   -> Once you play & understand the data
+       \
+        Store the data into Pickle File so next time you can use the data as you modified earlier
+        to your use
+
+   - We generally store data at end of each & every stage
+
+
+* Remove Duplicates : (DeDupe)
+  ----------
+   Eg - Tshirts (with same Title) of diff Sizes   // are duplicates
+        TShirts (with diff color)                 // are duplicates
+
+
+* Data Cleaning :
+  ---------
+  
+  1) Remove Product With very Few Words in Title
+  
+  2) Removing Duplicates based on the title :
+       \
+        step 1) Sort the rows based on `title`
+        step 2) Start Scanning
+                  - Take diff of words between corresp rows & eliminate if words diff is below some thresold
+
+                  - scan till all rowsa are encountered
+
+        NOTE :- since the rows are sorted so similar rows will be adjacent to each other
+                so scanning & removing duplicates can be completed in O(n) time 
+
+                or in worst case you may require twin for loop ie O(n^2)
+
+  NOTE :-
+  --
+   Alphabetic Sorting cannot some problem where words differ from inbetween  (rather than from start)
+
+  3) Near Duplicate :
+     ----
+      Aalphabetic Sorting cannnot help us in removing near duplicates
+      
+      Brute Force Algorithm :
+      ----
+         Take all pairs combination & check difference >= k words thresold per each pair
+         nC2
+
+      There are many data Structure in alternative such as :- Inverted Indices
+
+      Inverted Indices DS :
+      -----
+        -> use to compute the #different words among the titles
+
+* Inverted Indices :
+  ------------
+   -> It's most efficient DS when it comes to search
+   -  So google, or any other company that have searching facility will be probably using Innverted Indexes underhood someway
+

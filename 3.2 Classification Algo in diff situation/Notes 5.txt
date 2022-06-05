@@ -1,0 +1,214 @@
+Notes 5 :
+
+Topics : {
+        Curse of dimensionality 
+        Bias-Variance TradeOff
+        Intutive Understanding of bias-variance in terms of an error
+         }
+
+-> You want data in all region to understand phenomenon
+
+=> In a high-dimen space every pair of points are equally diatant from each other	
+
+=> Cos-Sim is lesser impacted compare to Euc-dist when dimen incr, So Text-Processing uses Cos-Sim
+=> Forward feature selection is very classification oriented
+
+=> In KNN, As K incr, Bias incr slightly & 
+               Varince decr drastically
+
+=> bias-variance can be understood in terms of an train-test error
+_________________________
+
+- Sparse :- not-uniform/random spread of data in the sparse dimension
+
+- Irreducible Error
+_________________________
+
+* Curse of dimensionnality :
+  ------------------
+   -> Fact : You want data in all region to understand phenomenon
+
+    NOTE : All theory is based on random number of points & Observational studies
+      
+      (# Space Aspect)
+   1) as dimensionality incr, the #data-pts for a good model increase exponentially 
+       because we want data from entire space/region to perform well
+
+    * Hughes Phenomenon :
+      ----
+      	With fixed dataset size, performance drops as dimen incr
+
+      (# Distance & Similarity Aspect)
+   2) Distance Function 
+      ----
+       -> Intution of calc distance in 3D is not valid for high-dimen spaces
+            \
+             Esp for Eucledian distance
+
+       As dimen incr, Euc_dist_max(Xi) is equi to Euc_dist_min(Xi)  // dist are wrt to other points
+        \
+         -> Every pair of points are equally distant from each other
+
+         - So Euc-dist does not make sense logically in high-dimen space
+         - because distance itself doesn't make sense in high-dimen space
+
+         Thus K-NN doesn't make sense in high dimen space
+
+       REMEMBER :- Cos-Sim is less impacted than Euc-Dist When dimen incr, 
+       				\
+                  & So Text-processing like task uses Cos-Sim rather than Euc-Distance
+                    \
+                     Eg => Word2Vec, Bag of Words, TfIdf
+
+      (# Sparsity & Density Aspect)
+    * Sparse & Dense & Curse of Dimen :
+      -----------
+       (Assuming bunch of pts are thrown in d-dimen space - theory)
+
+       high dimen & dense  -> impact of dimen is high
+                    sparse -> impact of dimen is lower comparatively
+
+       Sparse :- not-uniform/random spread of data in the sparse dimension
+
+        -> All the concept are derived keeping in mind the uniformity/randomness of data
+           Now as you go away from uniformity/randomness then definitely the proof will deter
+           & impact of dimen will also degrade
+
+           So sparse is going away from randomness/uniformity => impact of dimen will lower down
+    
+    3) Overfitting Underfitting :
+       ----------
+        -> As dimen incr, Overfitting also incr  (This can be proved easily in Linear Regrssion)
+
+        Soln :- 1. Use Forward Feature Selection - (It is much classification oriented)
+                2. Dimen reducn - (It do not use class label & its not much classificatin oriented)
+
+    Alternative Soln for KNN : (in High dimension Space)
+    ----
+     1) Cos-Sim instead of Euc-Dist
+     2) Sparse Matrix Repr than Dense Repr
+
+
+* Bias - Variance TradeOff :
+  ---------------------
+
+   -> The mathemetical basis for Underftirring & Overfitting is bias-variance tradeoff
+   -< Imp theory of ML that underpins a lot concepts like underfitting & Overfitting
+
+   -< It's much intutive to understand using Linear Regression Concept
+
+   * Generalization Error : (Bias)^2 + Variance + Irreducible Error
+        \
+         It can be decomposed into 3 terms 
+                             1) Bias
+          								   2) Variance 
+          								   3) Irreducible Error
+
+     Goal -> low generalization error
+
+     * Irreducable Error :
+       ---
+        - error that you cannot further reduce (i.e stagnant )
+
+     * Bias Error :
+       ---
+        - Errors due to simplyfing assumptions 
+        - high-bias => Underfitting
+
+        - geometrically :
+             -> Let say our model assumes that Straight Line will be a decision surface or seperator
+                i.e straigh line to seperate +ve & -ve pts
+                
+                But Curve - makes more sense than straight line actually
+
+                But though a Curve would better define model, We simplify model usign straight line
+                (not caring abt some missclassification)
+
+                I am limiting myself to straigh line only
+
+                This Simplification or assumption is known as High-Bias Model or Underfitting
+
+             -> An error that happens due to simplifying assumption are known as Bias-Error
+
+        - Logically Example :
+
+        	Very Simplifying Assumption :
+              -> Dominant class becomes class label of every query point 
+
+            Eg In KNN, when k = n ; 80% +ve & 20% -ve
+                Just predict +ve every time   // this is very simplifying assumption
+
+            -> Such scenario is called high-biased error
+
+    * Variance Error :
+      --- 
+       - variance : how much model changes as training data changes 
+       - model is nothing but Decision Surface so Model change means change in decision surface
+
+       - If model varys much with training data
+       - High-Variance = Overfit
+
+       -> When we perform random sampling every time for test-train split, pts like outlier can go 
+          in diff class label randomly each time
+
+          & If such outlier random belonging to diff labels randomly causes decision surface to change by great impact then it's called High-Variance Error in Model ie OverFitting
+
+       So If 1) Train (70%) + Test (30%)
+             2) Train (70%) + Test (30%)
+
+       => So small changes in Training set results in very diff models(= decision surface) i,e large 
+          changes in model
+          Such a model is called High-Variance Model
+
+          As K incr, this variance will reduces & such Variance error also reduces
+
+
+    Thus reducn of Bias Err     = no underfit
+         reducn of Variance Err = no Overfit
+
+
+  * KNN & Bias-Variance :
+   ------------------
+    As K incr, Bias incr slightly & 
+               Variance decr drastically
+
+    Thus as bias affected slightly so Bias term is squared in decomposition of generalization err
+
+    As K -> n, Bias become very High
+               Variance become very low
+
+    TradeOff is all abt balancing between 2
+      \
+       Good soln lies between 2 extremes i.e Overfit & Underfit
+       As We change K balance is shifting
+
+
+   => Thus all in all Considering Generalization Err & Bias-Var tradeoff
+   			- First we try to reduce Variance 
+   			- & then we go for reducing Bias
+
+   			As Variance has slight upper edge of impact when compare to Bias As dimen incr
+
+
+* Intutive Understanding of Bias-Variance :
+  -------------------------------------
+   - understanding in terms of an errors
+   - using Train Error & Test Error
+
+   1) Underfitting 
+
+       -> train err high => high-biased => underfit
+                    low  => low-biased 
+
+   2) Overfitting
+
+       1 train err low & test err high => high-variance => overfit
+
+       2. train data changes slightly -> model change => overfit => high-variance
+              \
+               So in KNN when k=1, i.e even if 1 point changes in dataset
+                         whole model changes
+                         & thus high-variance problem i.e Overfitting 	
+
+
+

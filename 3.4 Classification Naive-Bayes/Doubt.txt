@@ -1,0 +1,7 @@
+Doubt
+
+q) How Feature Imp Works for Multinomial Features where Feature have more than 2 Categories
+
+   ref : https://imgur.com/mWvE7gj
+
+   -> Feature Imp = Evidence ! -> P(Fi | Yi=1) = 

@@ -1,0 +1,66 @@
+0. Standards of ML Models
+-----
+
+* Heuristics Of ML :
+  -----
+
+-> Atleast 50 Samples 
+
+* Gennre :
+  ----
+   -> Predict Category 
+         \
+          Label Yes :- Classification
+          Label No  :- Clustering
+
+      Predict Quantity (Real Val)
+         \
+          -> (Real Val) Regression
+          -> (looking/Study Data Only) Dimen Reduction
+
+* Classification :
+  ----
+   Small Dataset :-  (< 1000 samples)
+      -> (try to build a linear Model)
+      - Lr SVC
+      - TextData Yes -> Naive Bayes
+                 No  -> KNN Classifier
+      - SVM | Ensemble Techniques
+   
+   Big dataset :-
+      - SGD classifier
+      - Kernel Approxiamtion
+
+* Kernel Logic :
+  -----
+   - First project pts from d -> d` space (where d` >> d)  
+         // doing this way may allow Non-linear -> Linear Seperation possibly
+         // Kernel Func used K(xi, xj)
+     thenn
+     Project this pt from d` -> d`` (S.t. d`` < d`)
+     Here it should project s.t. K(xi, xj) is almost or maximially preserved !
+
+   Kernel Approximation trick :
+   ----
+    -> I can get smaller dimension (keeping the Kernel Distance (ie K(xi, xj) as much retained as possible))
+        & this smaller dimension d`` is as much close to d as its possible
+
+    -> End Goal :
+         -> Find such dimension d`` s.t
+             - distance in kernel space (d`) is preserved as well
+             - & new space d`` is close to original space ie d  (as much as possible)
+
+    => Thus Kernel Approx is kinda or similar or analogous in idea to TSNE
+         - as it try to preserve the distance (betweenn pairwise points)
+         - also they use concepts like Random Projections internally
+
+    RBF Kernel :
+    ---
+     - 1 such kernel that typically try to get its neck around Lr-seperation of Data-Points 
+
+
+Que) How to choose Baseline When Few Features ??
+---
+ -> Linear Reg or Logistic Reg or KNN 
+ -  Baseline models usually dont go in Productionization
+  - Pick the 1 that is simplest based on conditions 

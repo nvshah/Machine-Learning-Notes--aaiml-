@@ -1,0 +1,16 @@
+Doubts Dimen Reduction ?
+
+
+[Dimen Reduction & Pre-Processing]
+1) Why to do Normalization/Standardization before PCA(Eigen Decomposition) 
+   What if we do after applying the PCA (ie Eigen Decomposition)
+
+   -> Just for sake of easing out math work
+
+  [ref] (answer)
+  - https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
+
+
+1) If we do Standardization earlier than PCA, then does Eigen Vectors obtained are also Standardized ??
+   or we need one more Scaling on new Space obtained by Eigen-Vectors
+

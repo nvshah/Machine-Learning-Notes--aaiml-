@@ -1,0 +1,113 @@
+2. Confusion Matrix
+
+Topics : { Confusion matrix, precision, recall, F1-Score }
+
+---------
+
+-> Every Model has some error
+
+--------
+ Terms
+
+  Precision
+  Recall
+
+---------
+
+-> Confusion matrix cannot process probability scores
+
+-> For c-classes c*c confusion matrix 
+       i.e row-axis = predicted
+ 		   col-axis = Actual
+
+   If Model is Sensible (i.e not dumb) : 
+   	- then principal diagonal elements must be high
+   	- off diagonal elements should be small
+
+
+ * Binary Confusion Matrix :
+   ------
+    TP, FP, FN, TN
+
+    Trick : are you correct -> T | P <- predicted label
+
+    Rates :- (cell-val/sum-in-col)
+    -----
+      TPR = TP / P
+      TNR = TN / N
+      FPR = FP / N
+      FNR = FN / p  
+
+    -> To check whether model is sensible or dumb You can use Rates
+    -> You can use Rates to check your model goodness for imbalanced dataset
+
+      1) For Model to be Sensible
+
+         TPR & TNR must be high   // All True to be high 
+         FPR & FNR must be low   // All False to be low
+
+
+      2) Model - Dumb (pred everything -ve)
+
+         above rates will not behave as expected in sensible mode
+
+    Q) Among 4 rates which one to pick ??
+
+     -> depends on application/domain
+
+        Eg for Cancer :- TPR be High & 
+                         FNR be extremely low
+
+                  (i.e AIM : Don't miss a cancerous patient)
+
+
+* Precision & Recall & F1-Score : (+ve class)
+  -----------------
+   - Precision-Recall are very useful in information retrieval related search queries
+
+   - Information Retrieval
+     Suppose million of doc & top 10 are relevant to search query
+     So gathering info from lots of data
+      - there can be many irrelevant data in million of data but we care abt what we want
+
+   -> Only care abt the relevant class
+   => Precision & Re-Call care abt ony 1 class i.e (+ve class)
+   -> How well you are doing with +ve classes
+
+   * Precision :
+     ------
+       formula = Tp / (Fp + Tp)
+
+       => Precision = Out of all pts model predict to be +ve, what % of them are actually +ve
+
+   * Recall :
+     ----
+      its same as TPR  = Tp / (Tp + Fn) = Tp / #P
+
+       => recall = Out of actual +ve, how many +ve were predicted
+
+   => We want precision to be high & Recall to be high
+
+   * F1-Score :
+     -------
+      - combine precision & recall 
+      formula = inv(avg(inv(recall), inv(precision)))
+
+              = (2 * pr * re) / (pr + re)
+
+      -> hard to interpret (than precision & recall)
+
+      F1 score is computed as Harmonic Mean of Precision & Recall
+
+
+___________________
+
+* Precision Matrix :
+  ---
+   - Column sum up to your prediction
+     &
+     each col val denotes the share of actual belonging to original class
+
+   - Ideal Precisionn Matrix :- Diagonal to be 1
+
+

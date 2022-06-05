@@ -1,0 +1,84 @@
+18. Word2Vec: CBOW
+------------------
+
+___
+Terms
+
+- Focus Words
+- Context Words
+
+---
+libray :- gensim
+
+LR Activation :- same input & same output
+
+---
+
+* Featurization of text Data :
+   
+  -> We didn't know how Gensim internally works for Word2Vec conversion(Featurization of text Data) ?
+
+-> Word2Vec is not DL algo but a simple NN algo
+
+
+* Terminologies :
+  -----
+
+  1) Focus Word :
+      -> the main word at moment
+
+  2) Context Word :
+      -> All surroundings to Focus Words
+      -  Context words are very useful in unnderstanding the Focus Words & Vice-Versa
+
+
+* 2 algo for Word2Vec :
+  ----------------
+   1. CBOW (Continuous Bag of Words)
+   2. SkipGram
+
+   These are 2 ways to get/achieve Word2Vec
+
+
+-------
+
+* CBOW :(Continuous Bag of Words)
+  ----------------
+   IDEA :- given context word, predict the focus word
+
+   Let V := set of all words
+       v := #length of V (ie #total words)
+                \
+                 Consider using One-Hot Encoding (so that you can get quick idea )
+
+   -> Predicting Focus word can be considered as a Multi-Class Classification Problem (ie out of many words we need to pick 1 as a focus word to approximate)
+
+   Structure & How it Works ??
+
+   -> Take all texts & identify or create a ( Focus Word & Context Words )
+
+   Train Data & Create Data :
+   --------
+    - Create Focus & Context Words Set, (arbitarily)
+    - This will become Training data for NN(MLP)
+
+   => All the info in Context Words (ie Input layers) will be summarized 
+      by the SoftMax Layer (ie Output Layer)
+       |
+       esp the Weight Matrix betwee Output Layer & Second Last Layer will hold info..
+                    |
+                    Here for every word Wi (ie i in 0 -> v)  // where v is the total num of words
+                    we will have n-dimensional vector   // where n came from n-dimensional hidden layer
+
+       -> Thus we can use this matrix to get Vector Representation of each word
+
+   - So if you want 200 dimennsional Word2Vec :- You need to set n = 200
+     
+   
+* CBOW : (PLUS)
+  -----
+   1. Faster than SkipGram
+   2. Better for Frequent Occuring Words 
+        \
+         because there will be more context words for those such kinda words (during Training Phase)
+         

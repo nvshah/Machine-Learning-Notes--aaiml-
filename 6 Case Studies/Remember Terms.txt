@@ -1,0 +1,116 @@
+Remember Terms
+
+* Jaccard distance :
+  -----
+   -> helps to find how likely 2 sets are similar
+
+----------
+=> The lesser the gap between Train & Test/CV the less is Overfitting  (MIMP***)
+=> What type of Featurization You have to use depends on model as well
+
+-----------
+
+* KPI : Key performance Index
+  ---
+   - Its Performance Metric
+
+* temporal nature :
+  -----
+   - doesnt change over time
+
+* Stable Features & unstable Features :
+  ------
+   - IF Overlapping among 3 ie { Train, Test, CV } is high/significant, the good the stability of fetaure
+   - If overlapping less - Unstable Features
+
+  => If the overlaps are not significant -> then it may leads to overfitting
+
+* Response Leakage :
+  ------
+   - So when the new category from CV, Test are regarded whilst response encoding for Train Data
+     (category which is new to train but not to CV, TEST)
+
+   - so such leakage of category from CV, test to train is known as response leakage
+
+-- MIMP --
+
+1.) If there is a less gap between train and test error, it means the model has learnt the pattern in the train data well and also generalized the same in the test or unseen data well. This is the ideal condition.
+
+2.) If the train error is very less and the test error is very high, it means the model is overfitting. The model couldn't generalize well in the test data. You can add regularization to prevent overfitting. 
+
+---------
+
+* Univariate Analysis : 
+  ----
+   -> Individual Features & their stability in predicting the class labels
+
+* MultiVariate Analysis :
+  ----
+   -> Its nothing but the Machine Learning Models
+    - ie Taking all the features together s.t they impact in predicting the class labels
+
+* Cold Start Problem :
+  ----- 
+   -> test possess some data which are not present in train-set at all
+
+* Relative errors :
+  -----
+
+* DC- Componennt :
+  ----
+   FFT - Timeseries :- not centered around 0
+
+* Simple Moving Avergage :
+  Weighted Moving Avergage :
+
+
+* Multi-Label Classification Algorithm :
+  -----
+   -> Where data point Xi can belong to multiple labels (ie class) at a time
+
+Q) multi-class vs Multi-Labels algorithm ;
+   ------
+   -> Multi-class :- xi has multiple options of class label but at a time it can belong to only 1
+      Multi-Label :- xi has multiple options of class labels & at a time it can belong to 
+                     simulataneous as well
+
+* Mean F1-Score 
+  --------
+   - Micro avergaed F1-score 
+     ______
+      -> Consider the weights of different class labels for computing the F1-score in case of 
+         Multi-label Classification algorithm
+
+         The weighing is inherently done based on the frequency of different labels in original dataset
+
+      -> Weighted Average F1-Score
+
+   - Macro averaged F1-Score 
+     _____
+      -> Simple average of diff F1-Score corresponding to different labels
+
+* Hamming loss :
+  ---------
+   -> fraction of incorrect labels inferred 
+
+* One vs Rest
+
+* Classifiers chain
+
+* MLKNN : Multi label KNN
+
+Random Model :- (Log Probabilities)
+  ---
+   -> 1) generate random probabilities for all classes ie Pij
+      2) Normalize the values (inorder to make probabilities sum to 1)
+
+---------------------------
+
+* Value diff between Train loss & CV loss ?
+   if high => chances of overfitting increases
+
+
+* For probabilities based models (comparision) 
+   compare them onn basis of { Log-Loss, misclassification }
+
+

@@ -1,0 +1,16 @@
+gist Tips
+
+=> So when you onnly need the Similarity between Pairs of Points, You can trivially Kernalize it
+
+* Agglomerative Clustering :- is all abt Proximity Matrix Findings (via diff approach)
+
+* Dendogram :- help us to get any nnummber of cluters 
+               (ie Hyper-param search is inherently done in hierarchical clustering)
+
+
+* K-means vs Hirearchical :
+  ----
+   K-means can easily be sacle to large dataset
+   whereas
+   Hierarchical clustering cannot easliy scale to large dataset 
+        (because of its heavy time & space complexity)

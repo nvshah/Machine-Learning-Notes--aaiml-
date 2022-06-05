@@ -1,0 +1,40 @@
+* MF & Hyper-Parameter Tuning
+  -----	
+   in MF :- A -> B * C
+
+            A :- n*m
+            B :- n*d
+            C :- m*d
+
+            d > 0
+            d <= min(n,m)
+
+   So d is hyper-parameter here
+
+Q) How to choose good d ??
+
+1) Problem/Task Specific :
+   ----------
+
+
+2) Systematic Way :
+   ---------
+    - take help of Loss Func :- A - B_transpose  * C   // Error term or Squared Err term
+
+    - plot the error vs d graph
+       \
+        Find the point or inflection pt s.t. 
+
+    Inflection Pt :- pt before which error reduces fastly with increase in d
+                        after which error reduces slowly with increase in d
+
+    -> Good tradeoff corresponds to the inflection point
+
+
+    Another way to find the good inflectionn point is via Gradient :
+
+ * Gradient & TradeOff :
+   -----
+     - Gradient / Slope 
+     ->  rate of change in error w.r.t change in {d} ie dimen
+

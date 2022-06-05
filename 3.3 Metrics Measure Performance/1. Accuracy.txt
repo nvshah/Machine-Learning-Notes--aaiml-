@@ -1,0 +1,45 @@
+1 Accuracy 
+
+-----------------------------------------
+Tips-Facts-
+
+=> If model return probability scores than Accuracy may not be better metric
+
+
+------------------------------------
+* To understand performance of model we used diff metrics :
+
+_______________________
+
+1) Accuracy :
+   -------
+    => Accuracy = #correct / #total
+	=> values from {0, 1}
+
+	Problem : 
+	---
+	  1) Imbalanced Data (90%-ve & 10%+ve)  
+	     ----
+	      \
+	       Dumb Model : return -ve always regardless of any query point
+             -> Accuracy = 90% 
+
+         -> So for an imbalanced data, accuracy of even dumb model is high
+
+     	 => So Accuracy is not proper metric for imbalanced data
+
+      2) Probability Score/Output 
+         -----
+         -> Accuracy cannot used probability score, it can only used predicted class labels
+
+            So When 2 model M1 & M2 predict same for some task but with different probabilities
+              - then looking at probability score we can say which model is better (interpretation )
+              - but Accuracy cannot interpret this info.
+                It only deals with output (i.e Black-Box Model)
+
+              - So eventhough M1 is better than M2 (via probability score)
+                   Accuracy will tell that M1 & M2 are both accurate (via predicted labels)
+            So Accuracy has no way to utilise the probability Score 
+
+        => So If model return probability scores than Accuracy may not be better metric
+

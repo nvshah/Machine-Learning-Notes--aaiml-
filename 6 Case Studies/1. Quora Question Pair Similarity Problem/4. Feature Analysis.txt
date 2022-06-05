@@ -1,0 +1,49 @@
+4. Feature Analysis
+
+
+* Plotting Word Clouds :
+  -------------------
+- Specific word that is found more common in Duplicate Senetences &
+                that is found more commonly in Non-Duplicate Sentences
+
+  - Some words occur more often in class 1 as compare to class 0 & also vice-versa
+
+* Pair Plot :
+  ----
+   BiaVariate Analysis
+
+* Dist Plot :
+  ---
+   UniVariate Analysis
+
+* TSNE :
+  ----
+   Visualize High Dimen Data
+
+   - tSNE takes a lot of time to run on large dataset
+
+* TFIDF W2V :
+  -------
+   -> instead of avg W2V
+
+* Glove :
+  ----
+   Global Vectors
+
+   - alternative technique to Word2Vec ie
+   - given word it returns vector s.t. semntic meaning of words get preserved
+
+___________________________________________________________________________
+
+
+* Final Modified Data Point :
+  ---------------------
+   -> Simple Features already available from original dataset
+
+    added & calculated new features
+
+    1) 15 new features (via fuzzywuzzy)
+    2) TFIDF W2V using GLOVE for Q1
+    3) TFIDF W2V using GLOVE for Q2
+
+    

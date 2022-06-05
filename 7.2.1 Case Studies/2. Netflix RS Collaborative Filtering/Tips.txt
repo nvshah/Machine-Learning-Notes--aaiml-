@@ -1,0 +1,11 @@
+Tips
+
+-> Always do Feature Imp When it involves exploring multiple models (ie kinda Ensemble techniques)
+   Feature Imp vs Features bar Plot 
+     \
+      F-Score
+
+-> As you do more hyper-parameter tuning The Better results you will get
+
+=> As long as you add more features, There should be improvement in Model (ie consider Boosting technique is used)
+   If it not thenn there must be something need attention with Hyper-parammeter Tuning (properly do HyperParm Tuning)

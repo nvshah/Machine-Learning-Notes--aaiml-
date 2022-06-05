@@ -1,0 +1,39 @@
+
+---------------
+
+- best library to solve SVM is `libsvm`
+
+---------------
+
+
+Train & runtime complexity
+-------
+
+* Sequential Minimal Optimization : (SMO)
+  ---
+  -> Optimization Algorithm to solve SVM
+
+
+* Training Time Complexity :- O(n^2)
+  -------
+
+- Hence most do not use SVM when n is large 
+
+Q) When n is large ???  
+ -> Internet Applications (n is large & low-latency requirement)
+
+
+* RuntTime Complexity :
+  -------
+   -> depends on #support-vectors
+        \
+         if SVs large, => run-time complexity large
+                small, =>                     small
+
+         Svs can be any from 1 <= k <= n
+
+   => In Soft margin SVM there is no way to control number of Support Vectors
+
+   So Complexity = O(k*d)
+
+   In logistic Reg whereas the complexity was O(d) which is better than O(k*d), as in SVM depend on #Support-Vectors

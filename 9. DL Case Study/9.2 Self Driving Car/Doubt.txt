@@ -1,0 +1,7 @@
+Doubt
+
+Q) Ref : Self Driving Car Case Study (SeqInfo)
+         - 2.8 DL - CNN-RNN
+
+         If we pass img from inp seq as seperate to each archi correspondingly
+         then how this archi going to be use the sequence info present in input images ??

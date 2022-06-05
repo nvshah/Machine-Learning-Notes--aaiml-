@@ -1,0 +1,53 @@
+* Recommendation System :
+  --------
+
+Eg - Video Recommended on Youtube
+     
+     Customer who bought this also bought (Amazon)
+
+* Recommended System :
+  ------
+   - Its something about recommending the relevant items to the users based on historical data
+   
+   Matrix (Maths)
+   ----
+   - n * m  // n is users & m is movies(systems)
+   - Its valid to leave the cell blank if user not interacted with system (ie keep it as NaN)
+   - matrix may be sparse 
+        \
+         Most of val in matrix will not be avaialable
+         (Eg user might rate only particular movies)
+
+         - For most user their row-vector will be often sparse
+
+   Sparsity of Matrix :- #empty_cells / #total_cells
+
+
+* Task of RS :- 
+  --------
+   let say user ui :- I1, I2, I3, I4
+             recommend :- I_j to user ui
+
+* RS as Regression or Classification Problem
+  --------
+   If cell values are real values :- we can imposed it with Regression Problem
+                      boolean val :- we can imposed it as Classification Problem
+
+   X := ui + Ij  // Feature vector
+   Y :- A_ij     // cell val
+
+   So you need some way to make out features from user (ui) & system (Ij)
+
+   You are only provided with Data Matrix ie A, which is interaction between user & system
+
+   -> You need to find out the feature vectors
+
+   D_train :- will comprise the entries corresp where A_ij is non-empty
+   D_test :- will comprise the entries corresp where A_ij is empty
+
+* RS as a Matrix Completion Problem :
+  ----------
+    Matrix Completion Problem :
+	  ---- 
+	   - Some val of matrix cells are given & for many cells its not given
+	   Job :- fill up empty cells with reasonable vals based on values in the non-empty cells

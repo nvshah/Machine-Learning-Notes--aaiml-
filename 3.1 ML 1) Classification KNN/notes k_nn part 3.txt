@@ -1,0 +1,366 @@
+
+TOPICS :- { KNN for Regression, Weighted KNN, KD tree, Hashing & LSH, Probabilistic Model}
+
+Topics-Tips-Terms :
+
+- vornois diagram
+-> Line in 2D becomes hyper-plane in high dimensions
+
+=> Hyper-plane is all abt defining its Normal (Perpendicular Vector)
+
+=> Probablistic Output gives you certainty mathematically inn case of KNN
+
+=> Pioneer of LSH is orthogonal Projection & line eqn
+              K-D tree is cos-similarity
+
+-----------------
+
+- KD tree : approach via BST
+  LSH     : approach via Hash-Table
+
+- Randomized algo :- Randomized Algorithm (not always give right ans but most probably give correct ans)
+
+- Unit Normal Vector :- vector that is perpendicula to plane
+________________________________
+
+=> For lot of algorithm, Classification Algo can be extended to Linear Regression with some modifications
+   but not always
+
+* K-NN for Regression :
+  -----------------
+    -> KNN can be extended to LR
+    -> Simple extension/modification of KNN classification problem
+    
+    => In case of LR, y will be Real value & not a class label
+        So
+        -> Instead of `Majority Vote`, Use `Mean` or `Median` to find the NN, & 
+        appropriaate real val
+
+* Weighted KNN :
+  ----------
+   -> give importance to points on how far they are from query point
+   -> give weight to each nearest neighbour
+       \
+        more weight to points that are closer  [Simple Way : w = 1/d ]
+
+        1 strategy is Inverse Relation :- w = 1/d
+
+        Weight S.T. its inversely proportional to distance
+
+   => Thus instead of using Majority Vote to find the Class-Label, Use Weight
+
+* KD Tree : (Approach 1 to find NN)
+  -------
+   -> To reduce time-complexity for K-NN Classification algo from O(N) -> O(logN)
+
+    BST :-
+    ---
+      1) take median of sorted array
+      2) & place left on left of node & right on right of node
+      - To reach any element from root node -> # depth of tree
+
+    Extension of BST in multiple dimen -> KDT
+
+    Eg 2-D Binary Search
+       \
+        Plane breaking region into 2 2 pieces
+
+    Steps) 
+      1. pick the first axis & project point onto that axis & compute median 
+            let that median be x1
+      2. Alternate between axis (i.e if 2 axis then 0,1, 0,1, 0,1)
+      
+      Build the KD-Tree thus using axis-parallel lines & break entire space into small regions
+      S.T. we can find any region via logic of binary search i.e in O(logN)
+
+      At each check, neglecting the search space by 2    
+
+      Thus In KD Tree
+         -> breaking space using axis-parallel lines/planes/hyper-planes into rectangle/cuboid/hyper-cuboid
+         -> IMP : Go from root to leaf using alternate axis one after another in same order always
+
+         So 2D :- using lines -> region rectangle
+            3D          planes ->       cuboid
+            nD        hyper-planes ->    hyper-cuboid
+
+
+    Find nearest neighbour using KD-Tree :
+    ------
+     -> 1) Keep checking till reach leaf node
+           Reach to leaf node 
+           Find the neighbour in founded region
+
+        2) draw circle/hyper-sphere with the point find in the current founded region
+
+        3) If there is any point within this circle than that point is nearest neighbour & no more founded
+           point via KD tree region Box
+
+           Q) How to check f point exists inside circle/Hyper-Circle or not ??
+
+           Now find with which axis-line the circle does intersect
+
+           Backtrack till that axis-line-condition is found
+           -  then try to explore other child part of that node which is found via backtracking
+
+           basically -> If after finding any potential candidate (i.e leaf node arrived) 
+                        try to find if any other element 
+                        from another region/box is near to query point
+                         (Conisder case where query point is on boundary of region & there is also
+                          another point on sibbling boundary region)
+
+                        So if such case is there then we need to backtrack till that region-split-predicate  
+                        & then explore that region which was left earlier, for NN
+
+     -> KD tree is helping to find the region in which query point may lie
+
+     Time Complexity : 1-D tree
+         Best case -> O(logN)
+         Worst Case -> O(N)   // Visit all nodes
+
+     Time Complexity : K-D tree
+         Best Case -> O(K*logN)
+         Worst Case -> O(k*N)
+
+    
+    Limitations of KD tree :
+    --------------
+     -> If query pt at boundary of any region than may be we need to explore more adjacent region
+
+         For Eg 2D -> adjoining cells -> 4
+                3D -> adjoining cells -> 8
+
+          So we can say for nD -> adjoining cells -> pow(2,d)
+
+        So for small dimensions d, we can use KD tree but if d is not small
+         i.e even medium val such as 10 - pow(2,10) = 1024
+                                     20 - pow(2,20) = 1 Million
+                      will create huge impact in worst case (i.e may be when query pt is at boundary)
+
+     1) if dimensionality d is not small
+
+        So as dimensionality incr, adjoining cells to lookup for increases exponentially by 2 power
+         & exponent is extremely dangerous
+         When dimensionality is not small Time Complexity is no more O(logN)
+
+        - small i.e {2,3,4,5}   large|med i.e {10,20,30}
+
+        So major downside of KD tree is that its useless for Higher dimensions
+        & 
+        In reality, ML, d has potentially large values
+
+
+     2) if data is not uniformly distributed
+
+        O(logN) TC is only when data is Uniformly distributed & (also if d is small)
+         \
+          for 1-NN 
+
+          In reality always data is never perfectly uniformly distributed &
+          thus if data is not uniformly distributed then O(logN) is not valid TC for KD tree
+
+          So if data is not uniformly distributed then complexity will be O(n)
+          i.e KD-tree will converge/move towards the Simple-Implementation 
+             (as simple-impl also has O(n) compplexity)
+
+     -> KD-tree was not invented for NN actually (It was actually meant for graphics i.e 2D & 3D data)
+        & in 2D & 3D KD tree works fine
+
+
+* hashing & LSH : (Approach 2 to find NN)
+  ------------
+   -> Locality Sensitive Hashing 
+      :- Powerful technique to find the NN, even when dimen is high
+
+   => LSH is randomized algo
+
+    * Randomized Algorithm (not always give right ans but most probably give correct ans)
+      ___________________
+
+      LSH Motif :-
+      ---
+       - tries to put all the nearby points ( i.e in locality) to same bucket via hash Function
+       - Just by finding hash function h(x) we can find all the points which are close to the query point
+       - works well, even when d is large
+
+  (1) Cos-Similarity & LSH :-
+      --------
+       -> As angle increases, 2 point/vector are angularly seperated (not via eucledian distance)
+          as angle incr -> cosine decr -> similarity decr -> cos-distance incr
+          Cos-Similarity basically means for angular distance/similarity
+
+       Idea :- put all points whose cos-sim is less in same bucket
+
+      Core-Concept :
+      ----  
+       -> All the points pointing towards normal from plane is +ve in dot product (i.e W^T * X >= 0)
+          &
+          All the points pointing towards opposite direction of normal is -ve in dot product 
+          (i.e W^T * X <= 0)
+          where W is normal to Hyper-Plane & 
+                X is point in same direcn of normal if +ve       (i.e lying on same side)
+                              opposite direcn of normal if -ve   (i.e lying on other side)
+
+       => Hyper-plane is all about generating the Normal (i.e perpendicular vector)
+
+     S-1) Hyper-plane generation :
+      -----
+        -> So once we get W i.e normal we can get Plane
+           &
+           W is nothing but d dimension Vector
+
+           So we need to generate a d-dimen vector randomly
+              \
+               d random numbers sampled from N(0, 1) i.e normal distribution 
+
+          When generated random-hyper-plane, it will split the regions uniformly into multiple regions
+            \
+             think of it as pizza so lines are breaking them up into several pieces
+             
+             -> So then your points will get assigned to slices. (or grouped into diff slices)  
+
+             So for every slice we will create a vector i.e hyperplane  &   
+             So for every slice we will check W^T*X >= 0 i.e point lie on which side of slice
+
+        -> # m hyper-planes generation
+
+     S-2) Hash-Val calculation : (using hyper-plane & slices intution)
+          ----------------
+        -> using diff hyper-plane to slice whole area into regions
+             & for each region you are giving a binary vector {-1, 1}
+
+          s Binary Vector will be hash value generated for points in that region for m hyperplanes
+        -> Thus hash-val for any point Xi will be a vector of m size when m-hyperplane are generated
+               values =   sign of projection of points on corresponding hyper-lane
+
+          h(x) = vector of size m
+
+               = [W1^T*X, W2^T*X, ... , Wm^T*X]   // as m hyper-plane are defined by m normals i.e Wm
+
+     S-3) Hash-Table :
+        -----
+        -> m hyperplane are used to calculate the hash table eventually
+
+        -> key = tuple i.e binary vector of size m
+           val = all points having same binary vector i.e (belonging to same slice/group)
+
+          Time Complexity = O(n*m*d)
+          Space Compexity = O(n)
+
+     S-4) Query-Point & h(x):
+         -------
+        -> 1. compute the binary vector for Query-Point i.e h(Xq)
+           2. find the vals for computed binary vector (as key) inside hash table
+           3. n` vals will be neighbour searc space of query point Xq
+
+           Time Complexity = O(d*n`)  // n` will be small generally 
+                           = O(d*m)   // if n` = m
+
+        => Typically m = log(n) is taken
+
+     Problem :
+     --------
+      -> could miss a NN whilst using cos-sim as 2 points may lie on boundary between 2 adj. slices 
+
+      Soln :- 
+        L- hash table :
+        -------
+         -> Instead of computing 1 hash-table compute L hash table
+            i.e generate L m-dimen hyper-plane set
+            i.e randomly generate m-dimen vector for m-hyperplane s.t. two vectors are not equal
+
+            So by this way If point lie in diff slice via 1 hyperplane set then probably may that point will lie in same slice with diff hyperplane set.
+
+            So for given Query Point Xq,
+
+              1.) compute the L binary vector via L hash functions
+
+              2.) Then Take Union of L values obtained via L hash-func & that union set will be 
+                  possible neighbourhood search space (may be large set)
+
+          Time Complexity = O(d * m * L)
+
+      Keep in mind :-
+       ----- 
+         -> How you select m 
+               \
+                if m is small -> less hyper-plane -> less slices -> more points in 1 bucket 
+                                           -> search complexity after region found is more 
+
+                if m is large -> more hyper-planes -> more slices -> less points in 1 bucket
+                                           -> search complexity after regionn found is less
+                                               but 
+                                              chances of error also increases so need large L in case
+                                              i.e more hash-functions i.e more hyper-plane sets
+
+        So need to take m appropriately
+
+        Typically m = log(n) is choosen
+
+
+  (2) LSH & Eucledian Distance :
+      __________________________
+
+       - very simple extension
+
+       -> regions/pieces of bar instead of slices of pizza
+
+       S-1) Project point onto plane
+
+       S-2) Consider plane as 5-star bar & break that into peices/regions
+             & calculate the vector i.e in which part-no it belongs to
+
+             Note in Cos-Sim it was binary vector (i.e with only 2 possible vals i.e -1 & +1)
+             but in case of Euc-dist vector can hold any values (i.e as per regions/pieces per hyperplane)
+
+      NOTE :- Points which are closer will tend to fall in same region/pieces
+
+      So for given query point, compute L vectors via L hash function, 
+      let assume hyperplane divided into r regions
+
+          h1(Xq) = [r-size] => key for hash-table 1
+
+      Boundary Case :
+      -----------
+        -> When 2 points are far away in direction perpendicular to plane
+
+        -> But as we are generating L hyper-plane randomly so there will be probably another plane
+           that will spot out the above edge case
+
+ => Not LHS is not perfect but its probabilistic & Randomized algorithm
+
+  Application:
+  --------
+   -> used extensively in Computer Vision Application
+
+
+* Probabilistic class label :
+  _________________________
+
+  If in NN - there is tie by 4(+ve) - 3(-ve) then its viable to give majority to 4(+ve) ??
+  no because let say if tie is 7(+ve) - 0(-ve) then we are giving label to 7(+ve)
+
+  So what is then advantage to 7-0 case over 4-3 if used simple majority ?
+
+  in case 4-3, we are less certain
+          7-0, we are more certain
+
+    Quantifying such uncertainty :- use probability instead
+
+       -> So we can say in case 1) 4-3 :- +ve points likelihood = 4/7
+                           case 2) 7-0 :- +ve points likelihood = 7/7 = 100% (more certain)
+
+  => Thus we can use KNN to provide probabilistic output (class label)
+
+  -> Probabilistic Output instead of deterministice Output
+  -> gives you certainty mathematically
+
+
+
+
+
+             
+
+
+        
+
+      

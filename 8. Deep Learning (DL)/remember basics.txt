@@ -1,0 +1,41 @@
+remember basics
+----------------
+
+Imp Topics in Modern DL :-
+---
+-> RELU, Batch Normalization, Dropout
+
+_____
+
+=> Data Normalization is Mandatory 
+
+=> Vanishing Gradient becomes Severe in Extreme Cases
+
+
+* Batch vs Epoch ??
+   
+   -> ref : https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch
+
+   batch size :- #samples processed before model is updated
+   Epoch :- Entrire pass through the Train Data
+
+   Eg total data :- 200 samples
+      batch size :- 5
+      total batches :- 40 Batches
+
+      So in each epoch batch considered :- 	40 Batches
+
+[Regularization]
+=> regularization removes all useless Weights
+
+=> Initial layers in CNN often deal with the task of detecting the Borders, Common Shapes & Likewise
+   (which is common among all tasks esp when we talk about Images)
+
+=> Keep Small Learning Rates when you FineTune Your Model
+
+TensorFlow/Keras :- allows to add diff regularization at diff layers
+
+-> Depth of Kernel is same as depth of input image
+=> Depth of Kernel will be same as depth onf Inp Tensor I've
+
+=> Max-Pooling does not have any Trainable Param

@@ -1,0 +1,7 @@
+ref
+
+Data :
+ https://drive.google.com/file/d/118toouH8ifByKJHmmowyjOjGyir-YAvi/view
+
+source :
+ https://archive.ics.uci.edu/ml/datasets/human+activity+recognition+using+smartphones

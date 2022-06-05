@@ -1,0 +1,37 @@
+reference Live Sessions
+
+[Dimen Reduction]
+https://colab.research.google.com/drive/135woMyKwnVRLV63Czp0zdsKmss9E3fN5
+
+[EDA TIPS Basics Steps]
+https://drive.google.com/file/d/1PeMVoFgzvJ8oWbCVT-6Chjay0xlnVN5x/view
+
+[Optimization]
+https://drive.google.com/file/d/15854aBzyD79qGOXkH95M6bQf2868Uzuf/view
+
+[Hyper-param Optimization]
+https://colab.research.google.com/drive/1UeqrsC3MQhh3bVsqCLnAUBSvUF4J34w-
+
+[SVM Interview Que]
+https://docs.google.com/presentation/d/1pnYB7oZks2Lz5sHKINUnLJ_yZLOFoIYXnNF_kzDfrAU/edit#slide=id.g608a935b5f_0_109
+
+[SQL Que]
+https://drive.google.com/file/d/1K3DkkKRAb3o12xt03KZasFZ2eOW61FAk/view
+
+[Tableau 1]
+https://drive.google.com/file/d/1P4u95zAZ5xQ3Ur9VNQV2N_MMwYay8rsC/view
+
+
+------
+
+[Doc Time Series Forecasting]
+https://drive.google.com/file/d/1VDCmqpeUVH-PbZVAtxjTVQn9lIjFoNWu/view
+
+[Debugging & testing]
+1) https://sebastianraschka.com/Articles/2014_about_feature_scaling.html
+2) https://towardsdatascience.com/normalization-vs-standardization-quantitative-analysis-a91e8a79cebf
+
+------
+
+[Doc Interview Que Clustering + MF]
+https://drive.google.com/file/d/1DMe9X284Yrw41imhrWJGtiFZ9pM_v48c/view

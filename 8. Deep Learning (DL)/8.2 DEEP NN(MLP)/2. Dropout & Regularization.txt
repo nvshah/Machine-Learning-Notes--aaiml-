@@ -1,0 +1,66 @@
+2. Dropout & Regularization
+-------------------------
+
+
+-----
+Terms
+
+- Dropout Rate
+
+-----
+=> Training NN = BackPropogation
+
+=> Dropout is general concept that is used for Regularization
+
+=> DropOut is nothing but Randomization for Regularization esp for NN (MLP)
+    |
+     -> Most popular way to Regularize the Deep NN
+
+______
+
+REM :- One of the Biggest Challange in Deep NN is Overfitting because of multiple layers 
+       (& thus multiple Weights)
+
+* Deal With Ovverfitting 
+    - Regularization (L1 or L2)
+    - Dropout 
+
+* RF | Regularization | Randomization :
+  -----------------------
+  RFR = Randomization for Regularization
+  -> In case of Random Forest, We use Randomization for Regularization
+     Knowingly,
+     that each Tree may be Overfitted but as we have randomly choose Features for Each Tree
+     We account Majority Vote at End & thus Hoping for better Regularization comparatively
+
+* DropOuts Idea :
+  ------------
+   1. Randomly Ignore several Neurons at each layer per iteration  (ie Only for that Iteration)
+
+   - So instead of Fully Connected MLP, you will have Sparse Kinda MLP
+
+  DropOut Rate :
+  -----------
+   -> Probability alike
+   -> 0 <= p <= 1
+
+      p := atleast p% of neurons (ie Activation Fn) must be inactive 
+         -> it's the Hyper-param for NN as well
+
+   -> Dropout Sets may differ from   iteration to iteration
+
+   => Dropout is similar Idea to Random Subset of Features
+
+   Understand it from 1 Neuron Perspective :-
+      - some inputs get cut out & thus those features gets excluded
+
+   => Thus Droput = Random Subset of inputs to Neuron
+
+   [Gist]
+   ---
+    => In case of Dropout a subset of activationn unit of Network gets De-activated for a time (ie iteration)
+    => Here we are not changing the algorithm (ie BackPropogation remains intact)
+       Here we are creating a way to create randomness to create Regularization
+  
+   Train Time => Activation Fn is present with some Probability {p}
+   Test Time => multiply all related weights with {p}

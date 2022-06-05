@@ -1,0 +1,6 @@
+terms
+
+- Recurrent Unit
+- Time Axis
+- Repeated layers 
+- 

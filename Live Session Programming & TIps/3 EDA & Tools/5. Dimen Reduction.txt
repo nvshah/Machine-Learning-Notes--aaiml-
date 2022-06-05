@@ -1,0 +1,188 @@
+*. Dimen Reduction
+  ----------
+
+ref :- (https://colab.research.google.com/drive/135woMyKwnVRLV63Czp0zdsKmss9E3fN5)
+
+=> Always do Sanity Checks
+__________________
+Tips
+
+* os.lisdir()    // get all sub-folders
+* shutil.rmtree()   // remove folder & all its content
+
+* cv2.imread()     // openncv is great lib for image read & process
+* plt.imshow()    // display image in plot via matplotlib
+
+* sklearn.preprocessing.scale()
+         .decomposition.PCA
+                         \
+                          .explained_variance_ratio_
+                          .components_
+
+         .manifold.TSNE()
+__________________
+-> OpenCV works well with nnumpy
+
+-> Smaller the image size :- more los of info
+
+=> Do perform Normalizatoion/Standardization before PCA (Eigenn Decomposition)
+
+- template image
+
+=> When we transform the Image to Vector, We are ignoring the spatial-properties of image in our system
+   
+-------------
+
+Q) Dimensionality Reduction vs Feature Selection :
+   ------------------
+    -> In Dimensionality Reduction We transform or get new features
+    -> In Feature Selection Selected Features are Subset of Available Features
+
+    => Dimensionality Reduction is generally done prior to Model preparing
+       Feature Selection is done generally later to Model Preparing
+
+* Auto Encoders vs PCA :
+  ---------
+   - Auto Encoder is Complex Algorithm
+   - Its kinda generalization of PCA
+
+   PCA :- Simple Model
+   AE  :- Complex Model
+
+   If simple model works then dont go for Complex Model
+
+
+* PCA :
+  ---
+   -> Eigen Decomposition : Eigen Val & Eigen Vectors
+
+   -> There are many techniques to solve the Eien Decomposition (`svd_solver` is the param that decides this)
+
+
+* Image & OpenCV :
+  --------
+   -> Image (grayscale) is just matrix of Pixels
+
+   -> OpenCV works well with numpy
+        \
+         -> to read & process image
+
+    What we want ??
+      -> Represent matrix : as 1 row
+
+   When image has colors we will get Tensors (because of R, G, B)
+    - RGB will add depth & thus 3-dimenn matrix
+
+
+* PCA :-  
+  ----
+   -> PCA is done via Eigen Decomposition 
+   -> Prior to Eigen Decomposition -> Normalization of Data is done (ie Mean Centring)
+      (Why Normalization/Standardization is before Eigen Decomposition (ie PCA))
+
+   => sklearn Standardization :
+      ----
+       -> mean Removal & Variance Scaling 
+
+
+   Python :- sklearn :- 
+
+      explained_variance_ratio_ 
+          -> variance explained by each eigen-vector accordingly
+
+
+   * inflection Point :
+     ----
+      - Most of variance is explained before such point
+      - You pick n_component's n value via inflection point observation
+      - Pick s.t 99% of variance is explained
+
+   2 Ways to find the k-components :
+      - 1) Elbow method to find inflection point
+      - 2) Conserve 99% of Variance 
+
+
+* Eigen Faces :
+  ---------
+   -> After We get Eigen Vectors correspondingly
+       \ 
+        If visualize the image again back by converting this each eigen vector back to n*n from 1*n 
+        ie Matrix from Vector
+
+        Then such Matrix obtained from Eigen Vector is known as Eigen Faces &
+        k-eigen Faces corresp to k Eigen vectors of n dimen cann help us to visualize & approximate to original image 
+
+
+* Template Image :
+  ------
+   - Image that gets lots of repeated in The Data
+
+
+* Amazing Info :
+  ------
+   Before PCA(Eigen Decomposition) -> you do Standardization/Normalization
+    \
+     Then after PCA -> you get some new space (formed by diff vectors) known as Eigen Vectors
+
+   Q) does this eigen vectors needs to be Standardized or Normalized ??
+     -> Not necessary !
+
+     So we do Min-Max Scaling inorder to easy out visualization of data after transformed to this new space
+
+   Eg let say We have data of n-dimen Then we transform it to k-dimen let k=2 so 2-dimen
+       - then to visualize that Data which are in 2-dimen
+         we can do min-max scaling of that 2-dimensions so that we can get better idea instead of 
+         diff-range of both dimensions
+
+   Overall :-
+   ---
+    Old Spae -> Standardized -> PCA -> New Space -> Min-Max scaler (Normalize) -> Visualize (better)
+
+
+
+* PCA & Visualization :
+  -----
+   When go from d-dimen to 2 dimen, sometimes visualization is not meaningful.
+
+   d -> d` dimension :- Build model on d` dimensions
+
+
+* sklearn & public datasets :
+  ----------
+   sklearn.datasets -> fetch_lfw_people()
+
+   sklearn.uti.Bunch
+                \
+                 data    // numpy array matrix
+
+--------------------------
+
+* TsNE
+  -----
+   -> Its a stochastic algorithm
+      So TSNE uses some Randomization
+
+   images & TSNE :
+   ----
+    -> TSNE will try to seperate & group 1 image from another (& try to group them based on similarity)
+
+   Optimization :- perplexity, #iterations
+
+
+=> TsNE plots (as Visualization) are better than PCA plots
+
+
+--------------
+(gist)
+
+* Spatial Property :
+  -----------
+   => When we transform the Image to Vector, We are ignoring the spatial-properties of image in our system
+
+   [Spatial Info] :
+   ______________
+   -> for given pixel, the surrounding pixel have spatial coherence with it (similar properties)
+      When 
+      We transform Matrix -> Vector (for single Image), this Spatial-Coherence Property gets break out for some ones
+
+  Convolution Operation

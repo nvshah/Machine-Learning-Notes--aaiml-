@@ -1,0 +1,8 @@
+Notation
+
+Entropy :- H(Y)
+
+log_2 :- lg
+log_e :- ln
+
+derivative :- grad

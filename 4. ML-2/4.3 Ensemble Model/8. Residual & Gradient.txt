@@ -1,0 +1,143 @@
+[Pseudo-Residual for Log-Loss & Classification]
+https://www.youtube.com/watch?v=qEZvOS2caCg
+
+[Mathematical Reasoning for pseudo-residuals]
+https://www.youtube.com/watch?v=1o0yd6eMmA0
+
+---------------
+- grad can be used for derivative term
+
+-> We can approximate residual with pseudo-residual in Boosting process
+Why?
+=> Thus approximating the residual with pseudo-residuals we can optimize our problem for any loss func
+_______________
+
+- Pseudo Residuals :- advtg - can minimize any Loss Func
+     \
+      -> imposter to an error
+
+----------------
+
+* Loss Optimization Func :- 
+     
+     Log-Reg - Log-Loss
+     Lr-Reg  - Squared-Loss
+     SVM     - Hinge Loss
+
+* Residuals, Loss-Func & Gradient
+  -----------
+  residual := error = Yi - F_k(x)
+
+  Thus L(yi, F_k(x)) = error
+  
+(1) For regression :- Square of Err term ie pow (Yi - Fk(x), 2)
+  -----
+  -1 * grad(L w.r.t F_k(x)) is proportional to error   // can be easily obtained by derivative = 0
+
+  - Thus (-ve) of grad() is called as pseudo-residual or proxy to an error or residual
+
+  So now instead of {x, err_i} -> we can have
+                    {x, pseudo_residual_i}   // pseudo_residual is proxy to an error_i
+
+                    So err_i = pseudo_residual_i  // approximation
+
+  -> Thus instead of training on residual/error, We can train on Pseudo Residuals
+     \
+      as Pseudo-Residual allow us to use any Loss function 
+      ala that Loss func is derivable w.r.t F_k(x)
+
+  REMEMBER :- DT is minimizing for Entropy & not any other kinda loss
+
+  Big advantage of Pseudo-Residuals :
+  ---------------------------
+  -> But with Gradient Boosting We can minimize any loss ala that loss func is differentiable
+
+=> Thus approximating the residual with pseudo-residuals we can optimize our problem for any loss func
+
+Gradient Boosting :
+________________
+ -> GB says that for 
+
+     Give Base Models (with high bias) 
+      -> GB will combine them using pseudo-residuals
+            \
+             -> get pseudo-residual by taking -ve grad() of loss func w.r.t F_i-1(x)   
+               // for stage i in GB
+
+ -> This property ie we can use any loss func & minimize it 
+    Makes GB a super powerful algorithm
+
+    RF -> work for only Entropy 
+    GB -< for any kinda loss func ala that func is differentiable
+
+
+-------------------
+
+* Binary Classification & Pseudo Residual 
+  ----------------------------
+
+  (2) Gradient for Logistic Loss Func :
+
+    When you have classification problem & loss func is log-loss
+
+    then -1 * grad() of L w.r.t F_k(x) = Pi - yi     // F_k(x) = Y`
+       Pi = probability of Xi class = +ve or +1 
+
+
+Q) Can pseudo-residual can always be interpreted as a residual/error ??
+-> No   
+   - If its any Loss func it's hard to interpret the Pseudo Residual 
+
+   Then why we are using pseudo-residuals ?? (if not for all Loss func then !!)
+     -> There are optimization standpoint behind pseudo residual
+
+=> The pseudo residual as a proxy to residual/error is just simplifying understanding
+   But actually there is mathematics optimization standpoint behind it as well
+
+
+-------------------
+
+* The Mathematical Reasonings for using Pseudo-Residuals :
+  -----------------------------
+
+  => Fundamental Reasoning for Pseudo-Residual comes from pure Calculus
+
+  Why -ve of derivative of Loss Func w.r.t F_k(x)
+
+  model at m step = 
+      sum of 
+        model at m-1 step +
+        argmin(sum(L()))  // over hm picking
+
+  -> You can try over all possible DT as there can be many such DT
+
+
+  * Mathematical Theories :-
+    ---
+     Same way we are optimizing over variables (via Gradient Descent), We can optimize over functions
+
+  => Using Core idea of update step from Gradient descent -> we can employ it to solve & approximate the model at m step
+  
+  * Steepest Descent :
+    ------------
+    Gradient Descent :
+    -> To approximate the optimization of a variable via update steps
+     - Eg Linear Regression
+
+    Steepest Descent :
+    -> Similar concept to GD, where functions are optimized instead of variable
+     - Eg pseudo-residual
+
+  NOTE :-
+    We dont use Pseudo residual just because they are similar to residual but 
+    because there is fundamental math behind it. so we use pseudo-residual as error
+
+ 
+
+  ( -> We find the grad by fitting model on it
+     &
+     we find gamma by simply i dimensional optimization )
+
+
+
+   

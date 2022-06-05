@@ -1,0 +1,22 @@
+Code Ref NB
+
+- [TensorFlow & MNIST] DL - 3.6
+  3.6) https://drive.google.com/file/d/1cYvTo2mcBpBU2XIihDhbDUGrfrkzwgCp/view
+  3.7) https://drive.google.com/file/d/1tIEOPJiJtMzStFai47UyODdQhyK9EQnQ/view
+
+- [Keras MNIST | HyperParam Tuning]
+  3.12) https://drive.google.com/file/d/1PMyn9bgjDzhaBm2NO3YQ1f0m-Y2SmZe4/view
+
+-[Mnist Keras ]
+  4.12) https://github.com/DustinAlandzes/mnist-lenet-keras/blob/master/lenet.py
+
+- Mnist Keras ConvNet (AAIML)
+  https://drive.google.com/file/d/1I5kcAaQKEx0IwUNQvZdYkctwCcWFf81N
+
+-[IMDB Sentiment Classification]
+ https://drive.google.com/file/d/1iWpQBiZO95pfOWLdaG6qKwA27d_Q-EDg/view
+
+--------- Live Sessions ---------
+
+- TF & Keras
+https://colab.research.google.com/drive/1wCZnBKZqsblAuPLmSKEReRcmoMyQ4Quv

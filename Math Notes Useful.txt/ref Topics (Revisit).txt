@@ -1,0 +1,8 @@
+ref Topics (Revisit)
+
+=> Langrange Multiplier (in Constrained Optimization) vs Eigen Values !!
+
+
+yet to watch (youtube)
+
+- Constrained Optimization + Langrange (Khann Academy)

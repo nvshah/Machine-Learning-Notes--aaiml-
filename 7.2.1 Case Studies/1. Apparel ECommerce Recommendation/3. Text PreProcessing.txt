@@ -1,0 +1,137 @@
+* Text PreProcessing
+  -------
+---------
+TIPS
+
+=> Stop Words removal is good for some kind of algo only whereas for some it is bad
+
+=> TF-IDF was design for search Engines & Larde Documents
+   where TF of words in text-doc is not always 1/freq
+---------
+- stopwords download via nltk 
+
+- BOW, TF-IDF, W2V, Avg W2V, TF-IDF w2V, IDF W2V
+
+---------
+
+  After dedupe data ;- we get 16K rows of data
+
+1) stop Words Removal 
+   -------
+   -> Stop Words removal is good for some kind of algo only whereas for some it is bad
+
+
+2) Stemming :
+   ------
+   -> Take word & convert it to its root form
+
+
+* Text-Based Product Similarity : 
+  -------
+
+  Linear algebra :
+
+  (1) Eucledian Dist
+      ---- 
+       -> Represent title as d-dimen vector & then compare n titles for n products
+
+  Title as Vector
+  -----------
+   -> d-dimen array
+
+   1) BoW :-(bag of words technique)
+      ___
+       -> Discarding the Seq info in the text
+       -> Simple Texhnique
+       -> based on the Count 
+
+
+   BOW + Euc-Dist  :- (First Cut soln)
+   ---------
+    - to pick k similar product based on BOW & Euc-Dist for similarity
+
+
+   2) TF-IDF 
+      ---
+
+   3) IDF 
+      ---
+       -> IDF based Vectorization & Recommendation
+
+       Why IDF ?? (Motivation behind idf)
+
+       =>? becuase for `title` words often do not repeat in title senntence/text
+            \
+             So TF is often very low for each word vector ie almost 1/freq
+
+       => Thus TF for shorter title > TF for lonnger title (as denominator increases for longer title due top more words)
+
+       => Thus TF-IDF will tends to prefer shorter title (than longer title) for Product Similarity more ( just because of an TF)
+
+[REMEMBER]
+---
+=> TF-IDF was design for search Engines & Large Documents
+   where TF of words in text-doc is not always 1/freq
+
+    * IDF based Product Similarity :
+      -----
+       - Drop TF (as title are typically shorter)
+
+=> BOW & TF-IDF do not accounnt Semantic of words at all (they both only concern with frequency)
+     \
+      Frequency Based Techniques
+
+
+4) Semantic Similarity & Word2Vec :
+   -------------------------
+    Semantic :- some words are intutively related to each other
+
+  * Word2Vec :
+    ----
+     -> Consider Semantics of Words as well
+     -> Dense Vector 
+     -> require very large Data Corpus
+
+     -> super Powerful & intutively capture the semantice relation in a vector
+          \
+           similar semantice relation words vector will be parallel to each other (in same context)
+
+     -> Google has trained W2V on data from google-news
+                            \
+                             300 dimen
+
+     Word Context :
+     ----------
+      -> Approach for Word2Vec to identify the semantics
+      -> A way to achieve or form Word 2 Vec 
+
+  * Avg Word2Vec :
+    --------
+     - just divide W2V vector of title by k, where k is the number of words in title Ti
+
+-> For this WorkShop Purpose, Only Words that are required are sampled from the Word2Vec from Google-News
+
+* Heat-Map interpretation :
+  -------
+   Matrix Show the Euc-Dist between words between Query Title ie (Tq) & Point Title (Tp)
+
+   For Query Title :- Tq, Matrix diagonal element will be 0 as when Tq commpared with itself
+                          Euc-Dist = 0n for all words
+
+
+------------
+(Weightage Word2Vec)
+
+* Tf-Idf Weighted W2V :
+  --------------
+   -> Weighted W2V
+   -> Potential of both :- Word Frequency + Word Semantics
+
+
+* IDF Weighted W2V
+  -----------
+   -> As in this problem (title are shorter) so instead of Tf-IDF if we use IDF only as weight multiplier
+   then it would be better
+
+   -> It will leverage both Word Frequency Importance + Word Semantics Importance
+

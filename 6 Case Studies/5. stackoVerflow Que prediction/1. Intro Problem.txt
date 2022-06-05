@@ -1,0 +1,102 @@
+1. Intro Problem
+
+ref : 
+(Code)
+https://drive.google.com/drive/folders/149ZLCNqL4WBdp-7Y3eHxcMHHhVvIWRSW
+
+______________________
+
+Q) multi-class vs multi-label :-
+
+_______________________
+
+* Stackoverflow Question Tagging :
+  --------------------------
+
+  stack overflow  :- title, description, tags
+
+    The more accurately predict flags/tags, the better it can create EcoSystem to send right
+    que to right people 
+
+
+* Data :
+  ----
+   6 millions data rows
+       \
+        { ID, Title, Body, Tags }
+
+        Preicted Variable :- tags
+
+
+--- ML problem Posing ----
+
+Q) How to pose as a Proper ML problem :
+
+   D -> {Xi, Yi}  // Xi -> Questions, Yi -> set of tags
+
+
+* Multi-Label Classification Problem :
+  --------
+   -> each of Xi (ie data point) can belong to multiple labels (ie classes)
+      unlike in binary or multiple classification where each Xi can belongs to only 1 class at a time
+
+   => So this is somewhat diff kinda ML-problem where data point can belong to multiple class at a time
+  
+
+* Metric :
+  -----
+   -> F1-score :- high prec & high recall
+        \
+         geometric mean based
+
+      but F1-score works for Binary or Multi-Class classification
+      So
+      here we need slight modification of F1-Score for Multi-labels algorithm (to get good precision & recall)
+
+   Idea :- modify the F1-Score concept for Multi-label Problem
+
+* Mean-F1 Score
+  ----------
+   - (Micro Avergaed F1-Score)
+   - (Macro averaged F1-Score)
+
+   Micro Averaged F1-Score :
+   -------
+    -> summating precision & recall for all class labels
+
+    NNOTE :- 
+      If the number of points with label, t_i is small then
+        TP & FP for that will also be a small
+        & thus contribution to ratio will also be small	
+
+    => Thus in micro-avergaed F1-Score you are subtely giving weightage based on how frequent labels occurs
+
+    => Thus this is sort of Weighted Aaverage where weighing is inherently done based on how seldom does a label occur in original data
+
+    Thus Micro Averaged = Weighted Average  // where weighing happens based on the frequency of labels
+
+
+   Macro-Avergaed F1-Score :
+   -------
+    => Simple average of f1-score corresp to diff labels
+    -> Thus here weighing does not take place
+
+    -> thus when data is very imbalanced by labels then Macro-average f1-Score is not preferred
+
+   REMEMBER :-
+   ----
+    When you have desrepancy in data based on labels, Micro-Average f1-Score is preferred over Macro Averge f1-Score
+
+
+* Hamming Loss :
+  ----------
+   -> Fraction of labels predicted incorrect
+
+   -> as your y_i & y_i_hat disagree mmore & more the XOR between them will be larger & larger
+
+   => contribution to the Hamming Loss is more if actual labels set (vector) & 
+      predicted labels set (vector) differ more & more
+
+   -> It's a sort of like accuracy but not exact accuracy
+ 
+

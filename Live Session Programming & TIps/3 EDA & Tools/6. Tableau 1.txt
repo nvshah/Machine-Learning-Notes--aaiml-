@@ -1,0 +1,53 @@
+ref : https://drive.google.com/file/d/1P4u95zAZ5xQ3Ur9VNQV2N_MMwYay8rsC/view
+
+=> Tableau is Just one mere tool like Word/Excel in Past
+   but enhanced for better Viz..	
+
+-----
+- Tableau Free & Tableau Desktop
+
+
+-----
+
+
+6. Tableau 1
+-----------
+- GUI based tools
+- For Dashboards
+
+-> Tableau fetches data from multiple data sources & you can do visualization stuff
+
+- Tableau Loads data (from excel for eg) into internal repr to perform fast visualization
+
+* Pivot Transformation :
+  -------
+   - Collapse Columns or Expand Columns
+
+
+------
+
+
+=> Always use appropriate color schema based on Message You want to Convey
+
+* Dashboard :
+  ----
+   - Something where we place multiple sheets
+     & We can add interactivity
+   - Apply Filters (interactively) among multiple plots
+
+
+* Story :
+  ---
+   -> Like a SlideShow (Data Driven)
+   -> You can include Sheet, Dashboard as a Single Slide
+
+   -> We can also Select Sheet & Dashboard & Select one particular aspect of it in a Single Slide
+
+   -> Convey a Story through slides
+
+
+-------
+
+* PowerBI vs Tableau :
+  -------------
+   Microsoft Products :- PowerBI

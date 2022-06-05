@@ -1,0 +1,11 @@
+Python useful Packages
+
+IPython.display -> Image
+       .core.display -> HTML	
+
+scipy.misc.ascent()   // already immage inbuilt in scipy
+
+
+PrettyTable
+
+sklearn

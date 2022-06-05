@@ -1,0 +1,33 @@
+3. Vector Caclulus :
+  
+----------
+
+TIP : 
+
+=> It's easy to understand the Vector Calculus using Scalar Calculus equivalent
+
+------------
+
+-> Till now we have seen x & f(x),  where x is scalar
+
+But whole of Machine Learning is about vectors so that we can work on high dimensions
+
+x : vector :- high-dimen space
+
+* Vector Differentiation :
+  -----------
+   - Grad or Del 
+   - vector instead of scalar
+
+   speak :- Grad of F w.r.t v  // where F is function of a vector v
+
+   * Partial Derivative
+     ---
+      - function f() is terms of multiple variables i.e dependent on vector & not a scalar
+
+        When we take derivative of such function w.r.t vector we will get another vector
+        with members as partial derivative term
+
+   REMEMBER : this Behaves same way but only thing is that variable is now vector innstead of a scalar
+
+   solving dF/dv = 0  sometimes is not trivial

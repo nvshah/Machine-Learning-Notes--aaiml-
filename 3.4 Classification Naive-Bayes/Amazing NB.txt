@@ -1,0 +1,16 @@
+Amazing NB
+
+* Mix Multinomial + Gaussian
+------
+https://stackoverflow.com/questions/14254203/mixing-categorial-and-continuous-data-in-naive-bayes-classifier-using-scikit-lea
+
+
+The simple answer: multiply result!! it's the same.
+
+Naive Bayes based on applying Bayes’ theorem with the “naive” assumption of independence between every pair of features - meaning you calculate the Bayes probability dependent on a specific feature without holding the others - which means that the algorithm multiply each probability from one feature with the probability from the second feature (and we totally ignore the denominator - since it is just a normalizer).
+
+so the right answer is:
+
+calculate the probability from the categorical variables.
+calculate the probability from the continuous variables.
+multiply 1. and 2.

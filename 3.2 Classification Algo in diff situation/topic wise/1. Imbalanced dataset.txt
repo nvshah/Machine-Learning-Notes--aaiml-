@@ -1,0 +1,92 @@
+1. Imbalanced dataset
+
+* Imbalanced vs Balanced Dataset : 
+  ------------------
+    1) Balanced Dataset :- 
+
+      - Good balance betn +ve & -ve pts
+      - roughly equal
+      - disparity less
+
+    2) Imbalanced Dataset :
+
+      - 1 class dominating over other
+      - Majority Class | Dominating class : class with more points
+      - Eg Medicine Diagnostic (Cancer)
+           ECommerce           (90% cust who visit not buy)
+
+      problem-1
+      - Not always but in some cases its possible that majority|dominating class will be biased
+        i.e Dominating class will have undue impact
+        ( Not fair just because of less population )
+
+      problem-2
+       - Dumb Model & Accuracy metric can result high for such models
+
+    Q) How to Solve Imbalanced Dataset ?? 
+      -> 1) UnderSampling
+         2) OverSampling  { repeatation, Extrapolation, Class-Weight }
+
+   * UnderSampling :  (Way 1)
+     ----------
+     	let say minority class C1 - #n1 
+     	        majority class C2 - #n2
+
+     -> Create a new data set from Imbalanced dataset :-
+             - copy all minority class into new dataset as it is (ie #n1 from C1)
+             - randomly sampled #n1 points from majority class C2 i.e n1 out of n2 points
+
+             After this new Data set will be balanced with equal cnt of pts from both classes
+
+       Problem with Under-Sampling :
+       -----
+        - as n2-n1 pts are thrown away from Class C2
+          So new dataset has much less points than original one, 
+          so our model have smaller amt of data so it may not work as well
+
+        - So throwing away data is not good idea at all
+
+    * OverSampling : (Way 2)
+      ----------
+        - work around to not loose data ie to not loose insights
+
+        Way-1 : (Repeatation)
+        --------------------
+        - So try to repeat points of minority class to match the cnt of majority class pts
+          i.e #n1 + k = #n2  // try to find k
+             or
+              #n1 * m = #n2
+              Eg if #n1 = 100
+                    #n2 = 900  
+                    then k = 800 or #n1 * 9
+
+        - repeat the points
+        - geometrically, placing more points from the minority class in the dataset
+
+        Way 2 : (Extrapolation)
+        ----------------------
+        idea :- instead of just repeating point on top of itself
+                try to create artifical/synthetic points from available points in that region
+
+        Such a way of creating artifical/synthetic points from available (i.e minority class region) points
+        is called as Extrapolation
+
+ 		    way 3 : (Class- Weight)
+ 		    ---------------------
+ 		    idea :- same as repeatation but virtually
+     		provide weights to your class & consider them whilst finding the neighbours
+     			\
+     			 Provide higher weight to minority class
+     			 Provide smaller weight to majority class
+
+     			 So while exploration, if any pt from minority interacted then consider (weight * pt)
+
+    * Another Problem 2 with Imbalanced Dataset : (Dumb Model)
+      --------------
+       -> Can get high `accuracy` with imbalanced dataset with a dumb model
+
+       Dumb Model :- Model where majority of points dominate the rest one 
+                     (so no need to do any calc for pred, just predict majority class & accuracy will be  
+                      high thereby)
+
+                  Eg Model which says every point is almost -ve is a dumb model.

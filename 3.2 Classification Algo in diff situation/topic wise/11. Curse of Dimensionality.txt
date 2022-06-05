@@ -1,0 +1,64 @@
+11. Curse of Dimensionality
+
+* Curse of dimensionnality :
+  ------------------
+   -> Fact : You want data in all region to understand phenomenon
+
+    NOTE : All theory is based on random number of points & Observational studies
+      
+      (# Space Aspect)
+   1) as dimensionality incr, the #data-pts for a good model increase exponentially 
+       because we want data from entire space/region to perform well
+
+    * Hughes Phenomenon :
+      ----
+      	With fixed dataset size, performance drops as dimen incr
+
+      (# Distance & Similarity Aspect)
+   2) Distance Function 
+      ----
+       -> Intution of calc distance in 3D is not valid for high-dimen spaces
+            \
+             Esp for Eucledian distance
+
+       As dimen incr, Euc_dist_max(Xi) is equi to Euc_dist_min(Xi)  // dist are wrt to other points
+        \
+         -> Every pair of points are equally distant from each other
+
+         - So Euc-dist does not make sense logically in high-dimen space
+         - because distance itself doesn't make sense in high-dimen space
+
+         Thus K-NN doesn't make sense in high dimen space
+
+       REMEMBER :- Cos-Sim is less impacted than Euc-Dist When dimen incr, 
+       				\
+                     & So Text-processing like task uses Cos-Sim rather than Euc-Distance
+
+      (# Sparsity & Density Aspect)
+    * Sparse & Dense & Curse of Dimen :
+      -----------
+       (Assuming bunch of pts are thrown in d-dimen space - theory)
+
+       high dimen & dense  -> impact of dimen is high
+                    sparse -> impact of dimen is lower comparatively
+
+
+       Sparse :- not-uniform/random spread of data in the sparse dimension
+
+        -> All the concept are derived keeping in mind the uniformity/randomness of data
+           Now as you go away from uniformity/randomness then definitely the proof will deter
+           & impact of dimen will also degrade
+
+           So sparse is going away from randomness/uniformity => impact of dimen will lower down
+    
+    3) Overfitting Underfitting :
+       ----------
+        -> As dimen incr, Overfitting also incr  (This can be proved easily in Linear Regrssion)
+
+        Soln :- 1. Use Forward Feature Selection - (It is much classification oriented)
+                2. Dimen reducn     - (It do not use class label & its not much classificatin oriented)
+
+    Alternative Soln for KNN :
+    ----
+     -> Cos-Sim instead of Euc-Dist
+     -> Sparse Matrix Repr than Dense Repr

@@ -1,0 +1,55 @@
+Intro.txt
+
+* Problem :- Given User & Movie & Ratings try to predict the movies for users
+
+  Challange :- Netflix already havd `cinematch` performance eavaluated in terms of RMSE
+               Netflix want it to be improved 
+
+
+  Objective :-  
+  ----
+   - Predict the Ratings for User-Movie Pair (Given User-Movie Ratings Data)
+   - Now Post predicting the ratings, user will be recommended the movie accordingly
+   - So once User watch that recommended movie he/she will actually provide the ratings for that movie
+   -> So now we have actual + predicted ratings
+        - we can compute RMSE or MAPE like measures from it
+
+   -> ratings range from 1 -> 5
+   -  So this problem can be framed as MF or Regression Problem (both ways)
+
+  Constraints :
+  ---
+   -> Interpretability : Why you recommend this movie to user (???)
+
+  Low Latency
+  ----
+   - There is no must need for Low latency Requirement in this case
+   - as we can precompute the results & cache it & provide it to user on next day
+          (Eg Yesterday night we can precompute & recommend it on next day
+              as user watch  max 2-3 movie per day)
+
+   - So there is no explicit Low-Latency Requirement (So there is no Low latency Constraint)
+
+
+* Pose as ML Problem :
+  -------------
+   - Standard RS problem
+      \
+       Multiple Approaches :- Item-Item Similarity
+                              User-User Similarity
+                              MF problem
+   - It can also be imposed as Regression Problem
+      \
+       If Given Matrix we can Find Features somehow thenn we can use Regression as well
+          
+          D={xi, yi}  // yi ranges from 1 to 5
+             - we need to find xi somehow based on ratings provided
+
+   - MF + Regression + XGBoost => Problem as Solution
+
+
+* Performance Metric :
+  --------
+   - RMSE (minimize it)
+   - Try to provide interpretability
+

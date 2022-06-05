@@ -1,0 +1,175 @@
+ref : 
+https://colab.research.google.com/drive/1BfqcTvn-kyNajsDw6VDeUhAlk4N1g4Nq
+
+* Probability & Stats 2.txt
+
+---------
+TIPS
+
+=> Choose Null Hypothesis s.t You can simulate it (simulation such tests is easy)
+  
+--------
+
+- Computer change modern stats leaps & bounds
+
+=> Time it takes between your phone calls ie at t1 & next at t2 is often represented by exponential distb
+
+=> log Transform is generalization/special-case of BoxCox Transform
+
+=> In some situation Linear Regressionn tends to work better when features are close to Normal
+   than Non-normal
+
+=> Every Distb has some parameters (ie paramteric Models)
+
+=! At internet company you see lot of Pareto Distribution
+
+=> Distb are lots of likes models
+
+-------------------  
+
+* Causation & Correlation :
+  ----------------
+
+* Parametric vs Non-Parametric Statistics :
+  ----------
+   Parametric Stats :
+   	 - cares abt Distb/Models
+	 - we are trying to fit to some Distb/Models
+	 - so we have some assumptions
+
+   Non-Parametric Stats :
+     - don't care abt Distb/Models
+	 - It's much interested in randomly & independent pickup of obsv in sample
+
+	 - Randomly & Independent
+
+	    (Eg Picking the person should be independent of prior pickups)
+
+	 -> It says that let use computer for simulation to tell everything that 
+	    parametric stats says !!
+
+	 -> requires slightly larger amt of data than parametric stats (as we need to simulate via computers)
+	    \
+	     because its making no assumptions as well
+             
+------------
+
+* QQ Plot :
+  ------
+   - Observed Quantiles
+   - Theoritical quantiles
+
+   In QQ plot as long as majority or vast number of points are on line, its good
+
+   -> As sample size increases, fewer aberration will be spotted
+
+   Rule of Thumb :- 30 or 100 min sample points
+
+   mimp things to check :- all quantiles points are on straigh line or not (for Normal Distb)
+
+
+* Exponential Distb :
+  ----
+   eg UseCase :-
+
+      Time it takes between your phone calls ie at t1 & next at t2 is often represented by exponential distb
+
+      Time between 2 Phone Calls  (Electronics & TeleCommunication engineer)
+
+   => Exponential Distb is simplest Power Law
+   
+
+* BoxCox Transform :
+  --------
+=> log Transform is Special Case of BoxCox Transform 
+
+--
+NOTE :- You have to do mean-Centring + Variance-Scaling before diving into Model  
+--
+
+* Study of Distribution is knnown as Parametric Models :- Paramteric Study 
+
+
+* Pareto Distb :
+  ---------
+   - Falls faster than Exponnential
+
+   Eg Salaries of People follows Pareto Distb (Economics)
+      Prices of Products Purchase
+
+
+* QQ-Plot vs KS-Test :
+  -------
+   QQ-Plot :- Visual Based
+   KS-Test :- Hypothetical (ie more numerical approach based)
+
+=> Distb are lots of likes models
+
+* BootStraping :
+  ------
+   - Its a non-parametric strategy for stats
+   - no assumption
+   - Computational Simulations
+
+   - Random Sampling with replacement
+
+   - n, m, k
+
+     n = sample points
+     m = each bootstrap sample size
+     k = number of bootstraps
+
+   - Assume Population is following Beta Distb & took 100 samples from it
+
+
+* beta distribution :
+  ------
+
+--------------------------------
+
+=> Pareto Distb can have Outliers
+
+* Permutation Test + Resampling :
+  --------
+   - Completely Non-Parametric (does not assume any kinda distribution)
+   - Given 2 Observed Distb, we need to find the similarity
+       \
+        It doenst care what kind of underlying distb both given distb belongs to
+
+   - One of way to do Hypothesis Testing
+   - We can use any Test Statistics of our Choice
+
+   Null Hypo :- Women & Men spend same amnount
+
+=> Choose Null Hypothesis s.t You can simulate it
+     \ 
+      -> Simulating Similarity is easy (via Randomization)
+      -> Simulating non-Similarity or diff in population is extreme difficult
+
+   Simulating there does not exists diff is easy :- so we assume no diff in case of Null Hypothesis in permutation testing 
+
+
+* KS Test :
+  ------
+   - It's also one of the way to find similarity between 2 Distribution (Parametric Way)
+   - Given 2 Distb It computes the CDF & see gap between them
+
+   - Its a Parametric method because it uses Konglomorov Distb (underhood to find the P-val)
+
+   - It uses gap to provide the P-values (via help of Konglomorov Distb)
+              \
+               Maximum Gap info is used by KonGlomorov Distb
+
+   - Supremum of the gap :- test stats
+   			\
+   			 Maximum Gap between 2 Distb
+         => This maximum gap follows a Konglomorov Distb
+
+   => Thus Konglomorov Distb is used to give P-Value
+
+   - null Hypothesis H0 = Supremum Gap between 2 Distb = 0
+
+
+* Konglomonrov (K) Distribution :
+  -------
+   -> K distribution is used in KS test to study 

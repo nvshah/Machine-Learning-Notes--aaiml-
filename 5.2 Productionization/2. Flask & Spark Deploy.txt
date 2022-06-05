@@ -1,0 +1,62 @@
+ref :- https://drive.google.com/file/d/1O1HwVdUjBdFy80QDzTdayuklRcsyYwCn/view
+
+2. Flask & Spark Deploy
+----------------
+
+
+port :- door through which some other(external)	apps can communicate to your computer
+
+1) LocalHost (Flask)
+
+* Model.py
+  ----
+   - load from Sqlite
+   - Train
+   - dump back to Pickle
+
+  Thus Trainned Model is Stored in Pickle & loaded when there needed some inference !
+
+  [At Runtime]
+
+  1) Classifier Model (Trained)  // Stored in pickle file
+       \
+        -> to get Xq -> Yq
+
+  2) CountVectorizer            // also stored in pickle file
+        \
+         to convert text -> Xq
+
+  Files :- count_vec.pkl,  model.pkl
+
+* app.py :
+  -----
+   -> Flask Entry Point to run Flask app
+
+
+2) AWS :
+______
+
+-> Lease a box on AWS (Remote)
+
+* EC2 :
+  ---
+   - Micro Instance
+
+  .pem file :
+
+* TODO :
+  ---
+   1. Connect & open remote box terminal in curent system (via ssh)
+   2. copy content to remote box (via scp)
+   3. install pip on aws remote box
+   4. just install all requiremennts packages of python
+
+
+* ssh commands :
+  --------
+   -> Help us to access remote box terminal in local system
+   -  helps us to open terminal in remote box on AWS
+
+* scp :
+  ---
+   helps to copy content from local system to remote box opened via ssh command earlier

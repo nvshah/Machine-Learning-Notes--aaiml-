@@ -1,0 +1,105 @@
+14 NonLinear Seperable
+
+
+----------------------------
+
+=> The most imp aspect of Machine Learning is Feature Engineering
+
+-> Whole of Applied ML is Feature Engineering
+
+-> Feature transformation is Art of ML 
+
+---------------------------
+
+
+-> When data are nonlinarly seperable :
+  ------
+   - drawing a plane cannnot seperate inn such scenario
+
+   Eg Co-Centric Circles
+
+
+- Feature Transformation or Engineering :
+  --------------------------------
+   -> Transform the features 
+    - Transform your features may be to diff space
+
+   -> When you have crazy data, F.E. toss its way
+
+    ie let say 2 features f1 & f2
+       then
+         f1 -> f1` = f1^2  // transform
+         f2 -> f2` = f2^2
+  
+   -> In a nutshell, We are having diff feature space than from original one
+
+  Q) How to know Which Feature transformation to apply ??
+
+   -> By practice & observation
+
+
+  Eg 1) If the data pt are distributed in Co-Centric Circle fashion :
+        - then We know that 
+              f1^2 + f2^2 = r  // this is not a linear eqn but quadratic form (as exponent is 2)
+
+              but if we take f1^2 = f1` & f2^2 = f2`  // ie take f1^2 & f2^2 as new axis
+              then
+
+              f1` + f2` = r  // this is probably linear eqn (as exponent is 1)
+
+ => The most imp aspect of ML is 
+      1) feature-engineering 
+      2) Bias-Variance TradeOff
+      3) Data Analysis
+
+
+  Eg 2) * XOR data Pattern :
+        --------------
+      -> Cannot seperate such data using linear surface
+
+       f1` = f1 * f2
+       f2` = f2
+
+       All positive pt on 
+
+
+  Eg 3) Alternating +ve & -ve pts group
+       --------------
+        -> cannot seperate with any hyper-plane
+
+       f1` = sin(f1)
+       f2` = f2
+
+       (Assuming the width of sin wave is equal with alternating class/grp width)
+
+
+* Typical Transformations of Real-Valued Features :
+  -------------------------------
+
+   1) Polynomial Feature Transformation 
+          \
+           f1, f1^2, f1^3, ..
+
+           - product of features : f1*f2, ...
+
+   2) Trigonometric :
+          \
+           Sin(F1), Cos(F1)
+
+           - combination : sin(f1)^2
+
+  When you have boolean features :
+
+   3) Boolean :
+         \
+          OR, AND, XOR, NOT, ...
+
+   4) Log()
+
+   5) exponentiation : e^()
+
+
+-> In Amazon Review System also BOW, TFIDF, Word2Vec are all Feature Enginerring Technique
+
+
+

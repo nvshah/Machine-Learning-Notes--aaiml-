@@ -1,0 +1,49 @@
+16. Train a MLP
+---------------
+
+* Step :
+  ----
+
+  1) PreProcess :- Data Normalization
+
+  2) Weight Init :- Xavier or Glorot (Sigmoid/tanh)
+                    He (Relu)
+                    Gaussian (Small Variance)
+
+  3) Choose Activation Fn :- RELU
+
+  4) Try to add Batch Naormalization 
+        - esp for Deep Layers (ie closer to Output)
+        - helps to reach local minima faster (ie faster convergence)
+
+  5) Dropout :- For Regularization
+  		\
+  		 hyper-param - dropout rate (p)
+
+  6) Optimizer (What to Choose)
+         - Best -> ADAM
+
+  7) Hyper-Parameters :- 
+        1) Architecture : 
+              - how many layers
+              - how many neurons per each layer
+
+        2) Dropout Rate
+
+        ADAM
+         3) Beta1, Beta2, alpha
+
+        4) What is Loss Function 
+               - Log Loss (2 class)
+               - Muliti Class Log loss (multiple classes)
+               - Squared Loss (Regression Tasks)
+
+  8) Always Monitor Your Gradient Descent
+      - Apply Gradient Clipping if needed
+
+  9) Plot Train Loss vs Epoch
+      - as eepoch incr Loss must decreasing
+
+  10) Avoid Overfitting
+       - Its show easy to Overfit in MLP (Deep)
+

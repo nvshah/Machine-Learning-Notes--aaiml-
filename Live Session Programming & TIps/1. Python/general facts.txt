@@ -1,0 +1,10 @@
+general facts
+
+* Mounting in Linux :
+  ----
+   Mount Google Drive on Google Colab
+
+   google.colab.drive.mount(path)  
+           // path is virtual file path on Linux System where Google Colab is hosted to place our files from Google Drive
+
+           afterwhich your whole google drive will be accessible via that path on that Linux Machine 

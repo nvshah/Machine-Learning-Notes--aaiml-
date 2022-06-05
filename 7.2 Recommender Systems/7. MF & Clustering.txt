@@ -1,0 +1,79 @@
+* MF & Clustering
+  ---------------
+
+* K-means : 
+  ----
+   -> find clusters & their centroids
+
+   So We will have 1 set of clusters ie K = [k1, k2, ..., kn]
+                   &
+                   corresp set of cenntroids C = [c1, c2, ..., cn]
+
+   Inorder to convert the CLustering problem to MF :-
+     \
+      We will create a Matrix of n-pts & k-clusters ie k*n
+
+      where each cell denotes 
+
+          - if Z_ij = 1 if n_i pt belong to k_j cluster (having c_j as centroid)
+                    = 0 if not
+
+   Given 3 matrices :
+
+     1) X -> set of user(data)-pt vectors   // each pt vector is column vector
+
+     2) C -> set of centroid vectors  // each centroid vector is column vector
+             (Matrix formed by Cluster Centroids)
+
+     3) Z -> Z_ij : 1  // Xj belongs to Ci
+                    0  // not 
+
+             (Matrix of which point belong to which cluster)
+
+     Special Property of Z :- 
+         in any column of it only enntry will be 1 else all 0 
+         (ie a pt can belong to only one cluster at a time)
+
+         ie Sum of column of Z must be 1
+
+   goal :- We will decompose X into product of 2 matrices 
+
+              s.t. X = C*Z   <- Objective
+                   \
+                    Above Matrix Factorization is equivalent(approximation to) 
+                       :- min (X - C*Z)^2
+
+                    S.T. Zij = 1 or 0  // this is hard part
+
+
+=> So we have converted Original Problem formulation from (Vectors & Scalars) into Form of (Matrix)
+
+Matrix Problem Formulation :-
+___________________
+   
+   minimize :- (X - C*Z)^2   =>  X = C*Z   // approximation via Factorization
+                  
+                  s.T :- 1) Zij = 0 or 1
+                         2) Sum of Zj = 1
+
+
+* So k-means as Matrix Factorization step :
+  --------
+   -> Given a Matrix of Data Points, X
+        break it into product of 2 Matrices (ie Matrix Factorization)
+
+      K-means = MF + col-constraints + 0-1 constraints (Z)
+
+      Thus if there are no contsraints then k-means would simply be Matrix Factorization Optimizationn problem
+
+----------------
+
+Thus MF :-  C * Z
+     NMF :- Cij >= 0 & Zij >= 0
+
+     K-means :- MF + col-constraints + 0-1 constraints
+                 \
+                  Zij = 0 or 1 & col-sum of Zj = 1
+
+
+

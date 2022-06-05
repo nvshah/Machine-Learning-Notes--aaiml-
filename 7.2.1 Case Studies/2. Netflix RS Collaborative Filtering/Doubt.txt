@@ -1,0 +1,39 @@
+Doubt 
+
+Q) Featurization :
+   ---
+    How come the labels/thing which is going to be predicted becomes the fetaure of the model
+
+    How come the ratings (which is going to be predicted) becomes the Feature of the Model(XgBoost)
+
+
+Q) What is the Motif behind doing such kinda Nested Boosting Kinda thing ??
+    
+    Nested Boosting ??
+      \
+       -> Creating Models manually also & for creating each model you are using XGBoost
+          &
+          XGboost -> internally also creates or improves the baseline models via boosting
+
+
+doubt ! 
+(7.15 Overview of the modelling strategy) 
+
+From above plan, I can figure something like
+Nested-XGBoost Model Plan :
+    What XGBoost Does internally as a single model (ie creating multiple baseline models iteratively)
+    here the same concept is emulated to create multiple XGBoost Models
+    i.e at each stage we are creating diff XGBoost Model & (Internally XGBoost also does iteratively step for finding baseline models that minimize the errors)
+
+So my question is that what is motif or significance behind such custom & different way to frame an algorithm for this kind of problem ??
+Like Specifically notion of what XGBoost Model does internally as an algorithm, similar kind of concept is used to emulate & derive multiple such XgBoost models stage by stage (adapting the features computed in the way !
+
+
+Q) Baseline vs KNN ??
+  (7.23 KNN & Surprise)
+   
+   Doubt !
+
+If KNN Surprise Model, Internally uses baseline model (as seen in formula)
+then why to take predicted val (output) of Baseline Model as Seperate Feature (ie 14th Feature for our Updated Model) ??
+

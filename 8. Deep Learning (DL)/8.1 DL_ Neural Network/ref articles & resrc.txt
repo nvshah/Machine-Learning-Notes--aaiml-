@@ -1,0 +1,25 @@
+ref 
+
+- developingchild.harvard.edu
+
+- ronny restrepo (sigmoid fn explaination) [http://ronny.rest/blog/post_2017_08_10_sigmoid/]
+
+[BEST TOOLS]
+- playground.tensorflow.org
+
+---------
+Youtube
+
+[exploding Grad & Sigmoid Units]
+ref :- https://www.youtube.com/watch?v=GNDh64aa-vA&feature=youtu.be
+
+[Interview que onn Deep Learning]
+https://www.youtube.com/watch?v=vwYmrKDvnlg
+
+----------
+Resource (PDFS)
+
+Ronny Restrepo PDF Sigmoid
+https://drive.google.com/file/d/1o0B3sPwiC8aCp4a_locFfSD9753CA-tm/view
+
+

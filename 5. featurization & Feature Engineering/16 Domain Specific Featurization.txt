@@ -1,0 +1,8 @@
+* Domain Specific Featurization
+ ----------
+
+  - spend time understanding the domain on which task is defined
+
+  - try to build & enhance on top of what is existing & not re-invent the wheel
+
+  eg what may work for heart attack may not work for stock-market, though both are time series data

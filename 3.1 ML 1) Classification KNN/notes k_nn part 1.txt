@@ -1,0 +1,278 @@
+
+notes 1 classification
+
+TOPICS :- {
+          KNN Classification
+          Decision Surface for KNN
+          Underfitting & Overfitting
+}
+
+NOTE :
+=> Distances are always between 2 points & Norms are always for a Vector
+
+=> Opposite relation/behaviour between distance & similarity
+
+=> default norm is L2-Norm
+
+=> to measure goddness = quantifying the result
+
+=> So as far as ML is concern, We'll Consider Space Complexity at evaluation time as :
+      total amount of space needed to evaluate at run time 
+
+Fundamental Obj of ML
+=> To be sure about the algorithm to work on future data points, it must be tested on Unseen data
+___________________________________________
+
+* Classification :  
+  -----------
+
+  Basic Idea :-
+  ---
+    - its all abt finding a function
+    -> central concept :- find function s.t it takes vector as inp & output a class
+
+    y = f(x)
+
+    -> It may not learn perfectly i.e function f() may be not perfect 
+
+  (: NOTE : function can be algorithm or mathematical function
+
+Q) Diff between classification & regression :
+   -------------------------------------
+
+   => Binary Classification :
+     	2 class classification problem
+
+  The basic difference between classification & regression is :- what values of yi i.e ouptut variables are ?
+
+  When output variable is not a set of finite element or labels then its called regression problem
+  i.e Output variable is in Real number
+
+  Thus Classification - for -> Discrete   Output
+       Regression     - for -> Continuous Output
+
+
+* KNN (classification)
+  -------------------
+   -> neighbourhood of query point :- geometrical proximity (closeness) & approximation
+
+   Steps :-
+     1) Find k-nearest points to Xq in D (i.e Data Set|Matrix)
+     2) Majority Vote (among class labels, nearby)
+
+     Pick K-odd so that we can get ensurity in majority vote
+
+   Failure Cases for K-NN :
+   ----
+    -> Query Point Very far away from rest of points in dataset D
+       (Not in Crowded Area)
+       So when point is very far -> not sure about its class label
+    
+    -> randomly spread in space (i.e jumbled), 
+         - randomness is more than neighbour ensurity
+         - tightly jumbled 
+
+         -> so no useful information, when randomly spread
+
+      So grouping like structure is imp
+         Jumble-Mumble thing is - KNN can fail
+
+
+* Distance Measures :
+  ---------------
+   1) Eucledian Distance (L2 Norm)  (: via Pythagoras theorem)
+   2) Manhatten Distance (L1 Norm)  (: Us Road Blocks)
+         \
+          In each dimension take abs value 
+
+   3) Minkowski Distance (Lp-norm)  (: Genralization ) p > 0
+
+
+   Eucledian distance betn 2 points = L2-norm of diff vector betn 2 points
+
+   => Distances are always between 2 points & Norms are always for a Vector
+
+   * Hamming distance :
+     ----
+      -> # locations|dimensions where 2 binary vectors are different  (i.e XOR between 2 vectors)
+
+      - useful when we have boolean/binary vector
+      - also useful to find distance between strings (if 2 string are similar or not)
+      - Gene Code - Sequences also can be used by hamming distance
+
+
+* Similarity & Distance :
+  ---
+   - Opposite relation/behaviour between distance & similarity
+
+   Cosine Similarity & Cosine Distance :
+   -----
+    formula : 1 - cos-sim(x, y) = cos-dist(x, y)
+
+    => Instead of taking Eucledian dist, 
+
+    Cos-Similiarity :
+    ----
+      => uses angle between 2 vectors to know distance between them
+      -> Cosine of angle between 2 vectors
+      -> points which are farther away angularly 
+
+      -> When vector are in same direction cosine similarity is 0
+                            opposite direction cosine similarity is max 
+                            perpendicular cosine similarity is middle & same
+
+    Cos-Similarity & Dot Product :
+    ----
+     -> Cos(theta) = x1 . x2  [if both are unit vectors]
+
+    Relation between Cos-Similarity & Eucledian Distance :
+    --------
+     -> pow(Eucl-dist(x, y),2) = 2 * cos-dist(x,y)  [if x & y are unit vecotrs]
+
+
+* Measuring Goodness of K-NN :
+  -----------------------
+   Problem :- Given a new review, determine the polarity (+ve / -ve)
+
+   1 - break data into 2 parts {training + test}
+           \
+            s.t train & test intersection must be null
+                train + test = union 
+
+   How to split ??  
+
+    -> 1) Randomly (70-30)
+          ----
+            -> train using train data & test/evaluate using test data 
+            -> Measure Accuracy for test set (via taking each point from test set as query vector)
+
+
+* Time & Space Complexity of Test/Evaluation :
+  ------------------
+    let n = # training points
+        d = dimension of points
+    For single query point, Time Complexity to find K-nearest neighbour is :- O(nd) 
+
+                            Time Complexity to determine class is :- O(K)
+
+    Total = O(nd)
+              \
+               if d << n then O(n)
+
+    So given Xq to find Yq, How much data we need to store in Ram :- O(n) i.e all of training data
+
+    So it will take O(nd) amount of space in RAM during evaluation/test phase for single query
+
+    So as far as ML is concern, We'll Consider Space Complexity at evaluation time as :
+      total amount of space needed to evaluate at run time 
+
+
+* Limitations of KNN :
+  ---------------
+   1) Space Complexity is very large :-
+
+      Let training set size = n = 340K
+        dimension d = 10K
+        Then Space required in Ram = n*d = approx 34GB
+
+   2) Time complexity
+
+       also O(nd) = which is huge for Internet based companies
+
+       Eg for Internet Companies :- 1 ms is req
+              Trading/Freq Companies :-  1 mircorsec is req
+
+       => So low-latency system is requirement 
+
+    * Latency is time its take to output Yq for given Xq
+
+       - So Internet & Finance/Trading based are ought for Low-Latency Systems
+
+       - Whereas in Medicinal field non low-latency system is allowed
+
+    Alternative :- Improve algorithm (i.e KNN)   -> (Kd- Tree, LSH  )
+                   or
+                   Change the algorithm
+
+  => One of the biggest reason why KNN is not used extensively is because of Time & Space Complexity
+
+
+* Decision Surface K-NN & K value :
+  ------------------------------
+
+    hyper parameter :- k 
+   
+    Decision Surface :-  seperates +ve point from -ve points
+    ----
+      Smooth Curve
+      Non-Smooth Curve
+
+      Curve in 2D, Surface in 3D, & so on...
+
+    1) Decision Surface & K = 1
+        -> Decision Surface is drawn as set of points classified as blue(+ve) or orange(-ve) when k = 1
+                   \
+                    Many query points & used 1-NN & apply it 
+                    Seperate Regions using a Curve
+        -> Non-Smooth Curve i.e Curve is Jagged
+
+
+    2) K = 5  (atleast 5 neighbour)
+        -> More smoother curve than k = 1
+
+   (Extreme Case) :-
+   -----------
+    3) K = n
+
+      k values ranges from 1 -> n  ie {1, 2, 3, ....,n}   // n here is total number of points (training)
+
+      So all points are taken as neighbour 
+       - then Majority among entire population will be concluded, regardless of any local group
+       - so it's considered globally
+
+      -> Consider Majority of Entire Points for any query points
+
+       Eg BJP in central & other parties in local election
+           \
+            given more weight
+
+  => Thus In K-NN, the smoothness of Decision Surface increases as K increases
+
+* Overfitting & Underfitting :
+  -----------------------
+   training = fitting a func to data  (that will help in classifying data points)
+
+    In context of above :- Non-Smooth Curve = Overfit => k = 1
+                           No Curve at all = Underfit => k = n
+
+                           Well fit = tradeoff between overfit & underfit
+
+   Overfit :  (Too Eager|jealous)
+   -----
+    -> funcn tries to be eager to fit every small error also it may have
+    -> Extremely Non-Smooth Surfaces
+       So it may not mistake|errors on training dataset
+    -> Over-Work
+    -> less robust
+    => Very Hard-Working
+
+   Underfitting : (Too greedy|Lazy)
+   -----
+    -> I don't care what my data is 
+        i.e I will take what majority of people say
+    -> under-work or no work at all comparatively
+    -> not give a damn | not care (whether its training data or testing data)
+    => Very Lazy
+
+   Well Fitted :
+   -----
+    -> Neither jealous nor Lazy 
+    -> Neither imperfect nor perfect 
+    -> try to balance things (i.e for majority of points not making mistake)
+    -> less prone to noise|outliers
+    -> more robust
+    => Well Balanced
+
+
+
+

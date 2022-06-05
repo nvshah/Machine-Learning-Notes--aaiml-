@@ -1,0 +1,47 @@
+* Data Science Life Cycle
+ ----------
+
+ 1) Data Acquisition:
+
+     ETL (Extract Transform Load)
+       SQL for this purpose
+       Data in {database, data-warehouse, log files, Hadoop/Spark, Flat Files }
+
+ 2) Data Preparation
+
+     Cleaning, Pre-Processing
+
+ 3) EDA (Exploratory Data analysis)
+
+     Plots, Vix, Hypothesis Testing, Slice & Dice Data
+
+ 4) Modeling, Evaluation & Interpretation  <- First Cut Model
+
+     Performance Matrix
+
+ 5) Communicate Results :
+
+     Clear & Simple in Naive manner
+
+ 6) Deployment : Engineering
+
+ 7) Real World Testing : A|B testing
+         \
+          Compare with Current Production Model in Market
+
+ 8) Business/Customer Buy in :
+      - convince them to buy in model soln
+      - Business Impact
+
+ 9) Operations :
+
+     Retrain Models, Handle Failures, Process
+
+
+ 10) Optimization 
+
+     (After 1st Cut Solution)
+     improve models, design more features, etc...
+
+
+

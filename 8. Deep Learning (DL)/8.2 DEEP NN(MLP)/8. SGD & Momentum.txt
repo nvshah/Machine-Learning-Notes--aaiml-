@@ -1,0 +1,93 @@
+8. SGD & Momentum
+------------------
+
+ref :
+
+- https://www.slideshare.net/SebastianRuder/optimization-for-deep-learning
+- https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d
+- refer sebastian Ruder Blog (Optimizing GGradient Descent)
+
+-----
+Concepts :
+
+- Exponential Weighing Scheme
+- Momentum + SGD
+
+-----
+Remember
+
+=> SGD + Momenntum Speeds up the Convergence 
+
+_____
+
+Batch SGD & Momentum :
+
+=> SGD updates are Noisy compare to GD updates
+
+* DeNoising :
+  ---
+
+  Weighted Scheme : 
+  ---------
+  (Exponential Weighting Scheme)
+
+   - At aid
+   - Can be used to diminish the effect of previous observed val, rather than totaly ignoring them
+
+   - Most recent will be givenn more weightage whereas previous one will given less comparatively
+
+   We can have some {gamma} S.T.  0 <= {gamma} <= 1
+
+   It will be used to constitute an equation for each time|iteration to get val
+
+   -> Thus most recent point :- will be given more weightage
+           next recent point :- will be given next high weightage
+              .
+              .
+              So on...
+
+
+   => You can Denoised Data using Exponential Weighting Scheme
+
+   W_t = W_t-1 + {gamma} * Grad    // gammma:- learning rate & Grad := Gradient/derivative
+
+   NOTE :=
+   - Exponential Weigh Scheme has to to deal with Learning Rate & Grad, 
+     when we connsider Update Equation for Weights
+
+   - Thus here right part in Eqn can be modified to leverage Expoential Weight Scheme instead of simple
+     {learning_rate} * Grad   // term
+
+
+* Exponential Weights | Denoise | Momentum :
+  ------------------------------------
+   -> Exponential Weights to denoise your SGD Gradients
+        |
+        SGD + Momentum
+
+   => when you denoised your Mini-Batch sgD Grad via Exponential Weighing Scheme, 
+      You will get the SGD + Momentum
+
+   --> Momentum Term :
+         - Computed using all the prev values
+
+  Momentum vs Grad :
+  --
+   - Curr(latest) Grad will be multiplied with Learning Rate
+   - All prev Grad will be helpful in Finding Momentum
+
+  ( ASSUME :- that Grad compute in Update Eqn is via Mini-Batch SGD )
+
+  => Thus we are introducing 1 more term in Update Eqn :- Momentum
+     \
+      -> Thus there are 2 param in Update Eqn :- 
+          1) Learning Rate   // that gets multiplied to current Grad Term
+          2) Gamma           // that gets multiplied to prev Grad Term (ie Exponential Weighing Scheme)
+
+          Learning Rate := corresp to Curr Grad Term (Mini-Batch SGD)
+          Gamma         := Corresp to Momentum
+
+
+=> In a Nutshell :
+   -----
+    -> SGD + Momenntum Speeds up the Convergence 

@@ -1,0 +1,6 @@
+Doubts
+
+Q) Does Sparse Representation benefits whilst using the Cosine similarity over Dense Repr ??
+   if yes then how ??
+
+   sparse Repr for Euc Dist Understood -> as dimen incr, dist makes less sense

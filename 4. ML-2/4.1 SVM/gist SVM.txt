@@ -1,0 +1,141 @@
+gist SVM
+
+-------------
+
+-> Assumption ||w|| not to be always 1
+
+-> Hyper-Param Notation 
+     C  :- used with loss term
+     lma :- used with Regularizer Term
+
+-> The most imp idea in SVM is Kernel Trick
+
+-> RBF kernel is similar to KNN
+-> Kernel-Trick is similar to Feature Transformation
+
+=> Feature Transformation is partially replaced by finding the right/appropriate Kernel
+
+-> The best library for SVM is libsvm
+
+------------
+
+Hyper Params :- { C, sigma, epsilon }
+
+
+* Hard Margin SVM :- No errors are allowed so focus on margin gap only
+
+* Soft Margin SVM :- for amlost linearly seperable data
+    
+    - allows errors
+	-> Maximize the Margin & Minimize the zeta_i
+    
+    zeta_i = distance of how much incorrect classified from correct plane
+           = avg distance of missclassified pts from correct hyper-planes
+
+    -> argmin ( ||w||/2  + C * avg(zeta_i) )  
+    					S.T. 1 - Yi*(W^T*Xi + b) >= zeta_i   // zeta_i >= 0
+
+* Hinge Loss Interpretation :
+
+Kernel Function :- equivalent to Similarity Function
+
+-> The most imp idea in SVM is Kernel Trick
+
+=> The SVM boils down to 2 things ie 
+     1) When data is Linearly Seperable
+     2) When data is not linearly seperable
+
+=> Bias-Variance TradeOff is decided by C
+
+* Kernelaization : (kernel trick)
+  -----------  
+   Kernel :- It's just way to measure similarity between points
+   ______
+
+   => Does implicit feature tranformation for us
+   		ie transform space of data from d -> d` S.T. d` > d
+
+   So kernalization is doing feature Engineering internally
+
+=> The most imp part in SVM is to decide right Kernel Trick
+
+* Polynomial Kernel :- for non-linear spread data
+
+* RBF Kernel : (General Purpose)
+  -------
+   -> Most Imp kernel in SVM
+   - intution same as KNN where there is sigma in RBF 
+
+   - because of its similarity to KNN it is most useful & general purpose kernel
+
+   In KNN, store all the K pts
+
+      RBF :- only SVS - alpha_i  (those alpha_i > 0 only)
+
+   Often #SVS << n
+
+   Biggest drawback of KNN was run time complexity 
+   Where in RBF SVM we can overcome that as we need to calculate alpha_i for SVS (Support Vector) only
+
+   -> Hence RBF-SVM is a nice approxiamtion to KNN
+   -> Hence RBF kernel are used as general purpose Kernel
+
+   RBF-SVM :- 2 hyper-param i.e C from Soft margin SVM
+                                sigma from RBF func
+
+             So need to do GridSearch or RandomSearch on { C, sigma }
+
+=> Feature Transformation is partially replaced by finding the right/appropriate Kernel
+
+* SMO-SVM :
+  -----
+   - Sequential Minimal Optimization for 
+   - Optimization algo for SVM
+
+* Complexity :
+  ----
+   Train :- O(n^2)
+   RunTime :- O(k * d)   // k is #Support-Vectors
+
+-> Run Time Complexity of RBF SVM is better than Logistic-Reg as the RBF only accounts Support 
+   Vectors SVs for K() calculation while inference
+
+     K() := Kernel Func Calculations
+
+-> Impact of Outliers in SVM is very little as the SVs are the one that matter most
+
+=> There are 2 hyper-param in RBF kernel based SVM :- 1) C for loss func
+                                                      2) sigma for RBF kernel func 
+                                                         (gamma = 1/sigma)
+
+    gamma & C decides the Model in RBF SVM after hyper-tuning
+
+* Nu SVC :
+  ------
+   2 hyper-param nu & gamma(or sigma)
+
+   0 <= nu <= 1 
+
+   -> nu controls the #errors as its upper-bound for errors
+
+* SVR :
+  ----
+   SVR is for Regression purpose & 
+   Hyper-Param = epsilon
+
+   behaves similar to KNN or RBF
+   
+---------------
+
+Python 
+
+ tolerence :- is the thresold to when to stop iteration during gradient descent optimization for
+              finalizing Weight Vector
+
+              terminating criteria for iteration
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+terms.txt
+
+Conditional Probability
+Independent Events & Mutually Excusive Events
+Bayes Theorem
+Posterior, Prior, Likelihood, Evidence
+
+Joint Probability Distribution
+Simple Independence
+Conditionally Independence
+Maximum Posteriori
+
+Log Probability & Numerical Unstability
+Numerical Underflow
+
+Hyper-Parameters
+NAN
+Gaussian NB  (Numerical Imputation)

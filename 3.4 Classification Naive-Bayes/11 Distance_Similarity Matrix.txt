@@ -1,0 +1,9 @@
+11 Distance/Similarity Matrix
+
+When Such Matrix ??
+  - Writing a data point as feature is not trivial
+
+-> Given similarity/distance matrix naive bayes is not capable of using them directly
+   because naive bayes is Probability based approach & not distance based algorithm
+
+-> So given distance/similarity matrix Naive Bayes is seldom used in real world

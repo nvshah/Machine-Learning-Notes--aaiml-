@@ -1,0 +1,18 @@
+Python Lib
+
+
+speech_recognition
+
+multiprocessing
+
+Ipython.display.Audio
+
+os
+ \
+  environ
+
+beautifulsoup
+
+grep
+
+opencv  // for object detection

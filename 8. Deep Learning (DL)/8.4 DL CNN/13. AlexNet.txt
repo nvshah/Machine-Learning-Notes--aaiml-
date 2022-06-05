@@ -1,0 +1,28 @@
+13. AlexNet
+-----------
+
+ref :
+https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+https://i0.wp.com/ramok.tech/wp-content/uploads/2017/12/2017-12-31_01h31_40.jpg
+http://euler.stat.yale.edu/~tba3/stat665/lectures/lec18/notebook18.html
+
+---------
+
+- Focus for Object Detection
+
+- Activation used :- RELU
+  Concept of Dropout was also used
+
+  Data/Image Augmentation
+
+  Multiple GPU to train
+
+* Local Response Normalization (LRM) :
+  -----
+   - Normalize all the Depth Vectors or (ie Channels) in Tensor
+   - Instead of Normalizing entire Tensor, Normalize the Channels (ie depth layer wise)
+     one by one
+
+* Batch NormaliZation :
+  ----
+   - Today's best Normalization Scheme

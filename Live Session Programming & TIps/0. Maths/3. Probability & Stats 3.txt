@@ -1,0 +1,60 @@
+* Probability & Stats 3
+  ----------
+
+* Causation & Correlation :
+  --------
+  => Correlation doesnt imply Causation
+
+  - Scientific/Medical Experiments
+
+  - Randomized controls Trials | A/B testing | Bucket-Testings
+
+=> A/b test used in productionization of ml models
+
+* Loss of Data (Transformation) :
+  ----
+   When can you say some data loss during transformation ??
+     -> When you transform X -> X` & you can't go back to X from X`
+        then we can say some data loss during first transformation
+
+
+* Eg Consider Drug Company
+  ------
+
+  Placebo :- empty capsule
+
+=> NOTE :- For a good experiment 
+             - randomization is key part
+             - sample size also matters
+             - Null Hypothesis is also imp
+             - P-val matters
+
+
+* Randomization :
+  ---
+
+  Non-Randomized Experiment :
+  --
+   - Eg If some drugs given to patient from Hospital H1
+        &
+        Some other drugs to other patients from Hospital H2
+
+        This is uncomtrolled & non-randomized Experiment
+
+
+* Concurrent A/B Test :
+  ------
+   - mostly this kinda test done on E-Commerce Company
+
+   - Eg Change Buy Button Color
+        &
+        Increase Title Text Size
+
+   -> 2 Diff Random Number Generator are used to split people for A/B Test per each Experiment
+
+      Here we have 2 experiment & both experimment are done simulataneously
+                    \
+                     Change Button Color
+                     Increase Title Text Size
+
+   => Note :- Both Experiment must be mostly independent (there mmay small amt of dependence)

@@ -1,0 +1,16 @@
+extra ref :
+
+https://realpython.com/api-integration-in-python/?__s=o7s58u9m2l7k7himjzom
+
+https://openweathermap.org/api
+
+To playwith HTTP -> HTTPie i.e (https://httpie.io/)
+
+------
+
+* Stream Lit :
+  -------
+   1.https://www.streamlit.io/
+   2.https://docs.streamlit.io/en/latest/main_concepts.html
+   3.https://docs.streamlit.io/en/stable/tutorial/create_a_data_explorer_app.html
+   4.https://github.com/streamlit/demo-self-driving

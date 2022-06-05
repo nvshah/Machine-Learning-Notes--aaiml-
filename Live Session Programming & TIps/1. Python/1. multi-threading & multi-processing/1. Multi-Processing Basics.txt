@@ -1,0 +1,84 @@
+Multi Processing Intro
+
+useful libraries :-
+   joblib, BLAS
+   multiprocessing
+   threading
+
+___________
+(TIPS)
+
+* To get the info about Cores & Processor of System (MAC)
+   -> !system_profiler SPHardwareDataType
+
+-------------------------------
+
+- BLAS :- highly optimize code written for Linear algebra
+
+---------------
+
+- scikitlearn uses `joblib` for performing multi-processing tasks
+- Numpy & Scipy also sometimes internally used library called -> `BLAS` for multiprocessing
+- Tensorflow inherently uses multiple threads & multiple cores
+
+
+* Trivially Parallelizable tasks :
+  -----
+   Divide Entire task into diff chunk among diff cores
+
+  multiprocessing 
+         \
+          - Process, Queue
+
+* Queue
+  ----
+   - provided by multiprocessing library to communicate between 2 processes
+   - thread safe & process safe
+
+   - shared resource by all process to which they can write the data
+
+* OS & Scheduling :
+  -------
+   all the process scheduling is taken care by OS
+   - Child Process Spawning from Parent also is taken care by OS
+
+* Process & Threading :
+  ------------
+   -> 1 Process can be break down in multiple threads
+   => Threads shares the same data
+       \
+        very fast to context switch
+
+* GIL (Global Interpreter Lock) 
+  ------
+   - problem with multi threaded Python code
+
+   - multiple threads using same python interpreter for executing code
+
+   - Locking to the control of interpreter by a thread in python is a GIL
+     only when any thread relinqueshes the lock other thread can use it
+
+   => Python Memory Management is not Thread safe
+
+* Low Level for MultiProcessing & MultiThreading :
+  --------
+   Thread, Process, Queue
+
+* High Level for MP & MT :
+  -------
+   joblib
+    \
+     simple mechanisms for parallelising things
+     => (parallelise for loop in python)
+
+     -> Disk caching of function outputs
+
+     -> Run on seperate processes ie cores
+
+     Parallel, delayed
+
+     Parallel :- { n_jobs, }
+
+------------
+
+* MultiProcessing - have memory overhead as data is copied in child processes

@@ -1,0 +1,54 @@
+18. Cats & Dogs and Keras
+--------------------
+Sec 4.18
+
+ref
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+
+------
+Terms
+
+BottleNeck Features, Flatten, Dense Layers
+
+------
+
+- Data of Size = 2000   // Image Dataset
+
+(Case 1)
+* Small ConvNet :
+  ---
+  Steps :
+  
+  Step 1 :- Augmentation
+
+(Case 2)
+* BottlenNeck Features : (VGG16)
+  ----
+   - Remove Final/TOP Layer 
+     Use left out Network as Convolution Features
+     & Train Model on Top of With left Layers 
+
+
+   - for each img bottleneck features are saved & considered
+
+
+   - MLP Layer :- comprises 
+        -> Flatten, Dense Layers & DropOuts
+
+
+(Case 3)
+* VGG16 + Train
+ -------
+ -> Remove Top Layer &
+    then consider remaining as Black-Box (ie Keep those as Constants)
+    &
+    then build moddel on top of it (which may be optimized)
+
+ -> All the early layers are kept constants
+
+ -> Modify Later Layers without touching the Previous layers
+
+-------
+
+=> You can Fine Tune last k Blocks of layer instead of FineTuning only last layer
+   (that is option at your hand)

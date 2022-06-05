@@ -1,0 +1,35 @@
+3. Data Cleaning
+
+* Data Cleaning :- 
+  -------------
+
+	( Percentile Analysis )
+
+   1) Box Plots
+   2) Percentiles lookup (observation)
+   3) Sorted elbow method
+    
+    Data cleaning is performed via choosing thresold for each features 
+    & thresold are chosen based on observinng the percentile values for such features
+    & choose such val as thresold afterwhich feature value seems a long aberrated
+
+ 
+1) Lat-Long Cleaning :
+    -------------
+    -> remove any pickup record which is outside of New-york city
+
+2) Trip Time (Duration) :
+   -------
+
+3) Trip Speed
+   ----
+
+4) Fare thresold
+   ----
+   	- using sorted elbow method (plotting PDF or KDE)
+
+** MIMP NOTE :
+ ----
+  -> whilst removing outliers data you must check how much % of data is actually retained
+      \
+       If after removal, only 40 or 50 % data remains then we've lost much information !

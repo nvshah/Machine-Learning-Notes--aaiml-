@@ -1,0 +1,14 @@
+Python ref
+
+- sklearn.datasets 
+            load_digits()   
+            fetch_openml()
+
+- sklearn.metrics
+            \
+             classification_report
+
+- hpsklearn
+
+
+- numpy.random.permutation

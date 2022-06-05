@@ -1,0 +1,100 @@
+ref : https://drive.google.com/file/d/1jX2Uef-Hm-8eKXlK4RTh9k3XUmvsuOoh/view
+
+3. Deployment & Heroku
+-----------
+
+----
+- Equivalent of Heroku by Amazon is := AWS BeanStalk
+- Using IAAS is slightly harder/complex compare to PAAS
+
+-----
+
+Basically deploymennt
+   - Flask API
+   - GUNICORN  ( Parallel Programming | MultiThreading)
+   - StreamLit
+
+
+* IAAS vs PAAS :
+  --------
+   IAAS :- Infrastructure as a Service (EC2)
+   PAAS :- Platform as a Service (Heroku)
+
+
+* Virtualization vs Containarization :
+  ----
+   Virtualization :- approach in EC2 (IAAS)
+   Containarization :- approach in Heroku (Platform as a Service)
+
+
+* HyperVisor :- VMM (Virtual Machine Monitor)
+      \
+       sits as part of OS
+       - Helps to get Virtual machine
+
+
+* Docker & Containerization :
+  -------
+   -> think of it as Light Weight Alternative 
+   -  Don't require to replicate the Virtual Machine
+
+* AWS EC2 - IAAS :
+  -----
+   - getting virtual BOX
+   - renting infrastructure or hardware
+   - Getting Hardware through a Virtualization Layer
+   - Operate more in Virtualization Space
+
+* Heroku (PAAS) :
+  -----
+   - Dont worry about leasing OS & VM 
+   - Just provide App & its dependencies
+   - Operate in Dynos 
+      (Dynos = Docker) 
+
+NOTE :- Dynos in Heroku is similar to Docker in EC2
+
+* Web Dynos & Worker Dynos :
+  -------
+   Worker Dynos :- Cannot talk to outside world
+   Web Dynos :- Can talk to Web Browser
+                (can be access through the WEB ie internet)
+
+   Web Dynos can communicate to Worker Dynos &
+     Worker Dynos can do innter-communication with each other to get work done.
+
+* Slug :
+  ----
+   - Packaged or Compressed & pre-packaged form of your app
+   - so that dyno or conntainerization layer can process it faster
+
+----
+
+* Python Virtual env :
+  ------------
+   - diff library for diff prespective 
+   - Very useful whilst building PAAS
+
+   - Blank Slate Python + Libraries we care about
+
+   SandBox :- alike virtualenv 
+            - space which is isolated from outside world
+
+* Flask API + GuniCorn :
+  ----------------
+  -> GuniCorn helps you to run flask apps through MultiThreading 
+
+  - requirement.txt
+    procfile        // to tell what needs to be executed
+
+* Heroku CLI :
+  -----
+   #) Kill the App :-  
+            heroku ps:scale web=0 -a app-name    // web dynos to 0
+
+         Changing web=2 will create 2 web dynos for our flask application
+         & then when there is heavy traffic then via Load Balancing it can divided among 2 web dynos
+
+* Load Balancing :
+  ------
+   - Load is balanced by splitting it roughly equally amonng the container you have avail at hand

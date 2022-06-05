@@ -1,0 +1,16 @@
+DataSet Mnist -> kaggle Digit Recognizer
+
+[MNIST PCA TSNE] https://colab.research.google.com/drive/1JLsIJKC4k79aMO_o7BPx_4jsYLkbSdf2?usp=drive_open
+
+[TSNE Distill] https://distill.pub/2016/misread-tsne/
+
+
+----------------
+Extra :-
+
+[Intutive Eigen Vector PCA] 
+https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/140579#140579
+
+
+[KDE]
+https://mathisonian.github.io/kde/

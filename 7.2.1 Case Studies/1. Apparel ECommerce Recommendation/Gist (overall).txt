@@ -1,0 +1,28 @@
+Gist (Overall)
+-----
+
+Code :- { BOW, TFIDF, IDF }
+
+------------
+Techniques used in thisn Project (of Product Recommenndation)
+
+- Text Vectorization (BOW, Tf-Idf, IDF, W2V, Avg W2V, TF-IDF W2V, IDF W2V)
+
+- One Hot Encoding
+
+- Weighted Eucledian Distance  // To provide more weight to specific feature while doing similarity RS
+
+
+-----------
+
+* Using Word Vectors for Recommending Similar Products :
+  -----
+  (ie Text Based Similarity)
+
+  Code for BOW, TFIDF
+
+
+=> TF-IDF was design for search Engines & Larde Documents
+   where TF of words in text-doc is not always 1/freq
+
+

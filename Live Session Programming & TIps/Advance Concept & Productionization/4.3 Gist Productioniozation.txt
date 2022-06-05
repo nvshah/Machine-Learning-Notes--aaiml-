@@ -1,0 +1,15 @@
+4.3 Gist Productioniozation 
+-------------
+
+terms :-
+ - Adverserial Attacks
+   Model Quantization
+
+- Good Points :
+
+=> Compute Cost vs Performance Tradeoff becomes very Severe for Deep Leanring
+
+
+* Recommended System :
+   \
+    Recency & Frequency Impact

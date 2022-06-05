@@ -1,0 +1,20 @@
+gist RNN
+-----
+
+* RNN :
+  ----
+
+  Core Structure:
+  --
+   - It's not diff layer connected in MLP fashion
+   - But it's one layer repeated over time
+
+   - So instead of lots of layer its single layer repeated many times
+
+* Recurrent unit :
+  ---
+   - The layer which we discussed above is often called as Recurrent Unit in RNN
+
+=> Don't forget that there are 3 Weights imp in RNN
+
+=> Long-term dependency won't work well with Simple RNN

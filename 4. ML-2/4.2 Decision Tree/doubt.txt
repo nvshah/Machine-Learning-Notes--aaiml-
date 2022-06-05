@@ -1,0 +1,10 @@
+doubt
+
+Q) Why Entropy possess log() ?
+ -> Information Theory
+
+
+Q) How Train Time Complexity of DT is O(n*lg(n)*d) ??
+
+
+Q) How partial derivative of Summation(Px) = 1  ?? (in proof of Entropy & Uniform Distb)

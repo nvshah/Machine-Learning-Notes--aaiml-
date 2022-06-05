@@ -1,0 +1,37 @@
+* Cascading Models
+  --------------
+
+ Let if we want to identify if Given Credit Card transaction is fraudelent or not !!
+
+ -> Process starts with simple model & continued with complex model as it furthers 
+    i.e goes through cascade of models
+
+    Typically at the end sometimes if complex model still unable to verify then human intervene
+    to verify the model output
+
+ Crux IDEA :- sequence of models (which gets applied one after another)
+
+ Cascade Model :
+ ------------
+  -> Typically used when cost of making a mistake is very high
+
+  Eg credit card fraudelent
+     cancer detection
+
+  -> Typically at the end in pipeline of cascade we've expert/human
+
+  So Instead of doctor seeing 1000 of cases 99% of cases are handled by the algorithm
+
+  -> As we check & progress further to next Model
+     our D_train changes (ie we neglect the pts which are verified or passes in prev stage)
+
+
+  -> You need to be careful in deciding what kind of training data would be seen by your Model
+
+     So D1_train -> D2-train -> D3-train -> ...
+
+     The design of Models also depend on problem at Product level
+
+  -> Cascade Model are also frame as complex if-else conditions
+
+  Eg - We can't even loose fraud case in 0.1% which can cause loose of whomping amount

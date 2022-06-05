@@ -1,0 +1,33 @@
+2. Music Representation
+-----
+
+ref :
+https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla/
+https://www.abcjs.net/abcjs-editor.html
+https://en.wikipedia.org/wiki/ABC_notation
+https://towardsdatascience.com/how-to-generate-music-using-a-lstm-neural-network-in-keras-68786834d4c5
+
+* ABC Notation :
+----
+- MetaData
+  Music :- as a Seq of Characters
+   |
+    -> Seq Structure
+
+- Thus abc notation is super simple structure
+  so that it can be represent using RNN
+  |
+  where we can discover which character must come after which one & likewise
+
+=> Music := as a Seq of events
+
+* MIDI notation :
+----
+- has 2 parts :- Notes Chord & TimeStamp
+
+* Why no Mp3 :
+---
+-> in mp3 : seq of musical sounds
+
+[REMEM]
+-> ABC is much more efficient notation than Mp3 or Midi format

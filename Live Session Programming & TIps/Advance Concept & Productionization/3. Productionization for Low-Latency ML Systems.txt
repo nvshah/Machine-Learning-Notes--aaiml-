@@ -1,0 +1,354 @@
+Date: 5th March, 2022
+
+ref 
+[ML in Real Time]  // Chip Huyen Blog
+
+[2.22] - Live Session
+3. Productionization for Low-Latency ML Systems
+-----------------
+To Explore :
+ - Kafka, Apache
+ - Spark
+
+Terms :
+ - Low-Latency, Batch Predictions
+ - Model Compression
+ - Knowledge Distillation
+
+ - Offline & Online Pipeline Systems
+ - Factorization Machines FM := Logistic Regression + Matrix Factorizations
+ - QPS -> query per second
+ - Stateless vs Stateful Training
+ - Misclassified & Just Classified Points
+
+ - Model Updation | Incremental Learning | Model Transfer Learning
+
+---------
+TIPS
+
+
+---------
+REMEMBER
+
+[IMP]
+=> The context of Low-Latency changes based on whether you are doing preditcions 
+   or whether you are doing Training
+
+- Delay the result may affect Business Impact
+
+[Pre-Compute | Cache |  Pitfall]
+=> As long as number of possibilities is infinitley large the pre-computation strategy may not work very well
+
+Real Time & Low latency :-
+ -> For training of Model, Real-Time doesn't mean milliseconds,
+    It may go upto minutes (ie let say 10 mins as well)
+
+--------
+
+- Alternative to CNN ??
+  ---
+   for Document Classification 
+     - 1D-CNN
+     - LSTM    ( Fot Text based Tasks)
+     - Transformers
+
+---
+=> Low-Latency (Real-time) is meant generally for Internet-Applications,
+    \
+     -> It is regarded in terms of few milli-seconds
+
+* Low Latency System : (Idea)
+  -----
+   1) At Prediction Time
+   2) At Training Time
+
+   [IMP]
+   => The context of Low-Latency changes based on whether you are doing preditcions 
+      or whether you are doing Training
+
+   Prediction & Low-Latency :
+     - few milli-seconds (10-20)
+
+   Training & Low-Latency
+     - few minutes
+
+   Training time Eg:
+   	  Eg 
+   	     1. Youtube | tiktok | Instagram  (any media consumption brand)
+   	  	     -> Recommendation made should get adapted to customer's behaviour
+   	  	        ie Comedy Mood 
+   	  	           Horror Mood
+   	     2. Twitter :- 
+   	         -> some sudden event happens & in such case we need to retrain model in immediate time
+
+---
+
+* Low-Latency Prediction :
+  --------
+
+* Batch-Predictions vs Real-Time Pred :
+  -----------------------------
+   Batch Prediction
+   ---
+    - Often done in Offline ML (when you evaluate Model)
+    - input is many points (thousands of points)
+    - Training
+
+   During Production : (Real-Time Pred)
+   ---
+    - input is sinngle point
+    - output requires in very less amount of time
+
+    - So Batch is seldom used during Production
+    - Production
+
+FACT :- 
+  For Google if latency goes from 100 -> 400, # search reduces by 0.2% to 0.6%
+
+----
+
+* RS & Pre-Compute :
+  ----
+   - Innorder to predict fast you going to precompute & cache (along Distributed Caching)
+
+   - Fails if space is infinitely large
+
+   => Pre-Computed Strategy will not work in case of Google Search Query
+      because there are lots of Free-Form Text Search each & every day by users
+
+      Pre-Compute Strategy not work 
+
+      eg1
+       - Google Search Query (Free Form Text Search)
+      eg2
+       - Medical Image (Scan)
+      eg3
+       - Google Voice Assistant
+      eg4
+       - face recog system (iphone|android lock)
+           - space of possibility of faces is infinitely large
+
+       - finger print lock system (iphone|android lock)
+           - space of possibility of scan is infinitely large
+
+       - Autonomous Vechicle
+
+   => Thus As long as number of possibilities is infinitley large the pre-computation strategy may not work very well 
+
+* Distb HashTables :
+  ----
+   - Reddis & Mem-Cache :- store all info on Distributed cluster of Boxes
+
+* RS & Pre-Computation :
+  ----
+   1. Content Based & Pre-Computation:
+      
+   2. Collaborative & Pre-Computation:
+       - Matrix Factorization
+           - This MF can be done prior hand (ie once evry night|Day)
+
+Q) How often Pre-Commputation gets Refreshed ??
+  ->
+   Eg 
+   Consider Youtube System (FLOW)
+   ----
+    -> As Soon as new video gets uploaded
+
+    	 [PREP]
+ 	     - New Video -> obtain corresp d-dimen vector for Video
+
+ 	     [API]
+         - ML API is called to get similar videos to uploaded videos
+             - (via KNN or other RS techniques)
+
+         [DS]
+         - once we get similar videos, it gets reflected|updated to Distributed Cache
+           maybe (Reddis or MemCache)
+
+         [NOTE]
+         - Diff system have diff architecture for ML Flow
+   
+   [KEY Point]
+   -> Thus underlying Data Structure (ie Redis or MemCache) is changinng Frequently
+
+
+-----
+
+* Dynamic Features & Static Features :
+  ------------------------
+   Consider Youtube System :
+
+   - Static Eg :- 
+       - gender, language, preferences, 
+
+     Dynamic Eg :- 
+       - in last 1Hr What Genre of Video I watch 
+       - #minutes spent in last 1 Hr on Youtube
+
+-----
+
+* Fast Inference System :
+  ---
+
+  Fast Low-latency Pipeline :
+  ---
+   - dynamic features (how fast you compute those ...)
+
+-> All of your data going to come in Distributed System eventually
+
+-> often times when you have fast inference, you did not need to give Justifications
+
+  Eg of Fast Inference :
+     - Search, Recommends
+     - Self-Driving Cars   (some justifications needed but not all )
+
+  But in Medical Diagnosis :
+     - Explainability is importance than speed
+         \
+          What bother the person & what not !  (is of more concern)
+
+  Solutions for Fast-Inference
+
+  0) C/C++
+
+  1) Model Compression : 
+    ------
+    (Quantization)
+    -----
+      -> IOT
+      -> For Example, 32 byte Float to 8 byte float reduction is advantageous
+
+     Eg:) XNor - Net
+
+  2) Knowledge Distillation :
+    ------
+     -> to show that smaller model (ie Student Model) can work as closely as larger model (teacher model)
+
+     Eg DistilBert
+
+  3) Better Hardware
+     ----
+
+  -> Model-Pruning or Removing some unwannted features comes under Model-Compression
+
+-----
+
+* Low-Latency Pipeline :
+  ----------------
+  -> Biggest challenge is computing or findinng the dynnamic Features
+
+  API System (Request Driven Systems)
+  -----
+   -> Modern Architecture mostly have Web-Api based approach
+   - API driven approach
+   - Request Driven Approach
+   - Problem : not able to reduce latency as much as possible (or needed) for low-latency pipeline
+
+  Event Driven Systems (Stream Processing)
+  ------
+   -> Kafka, Kenisis
+   - As soon as event happen, it will alert other systems
+
+   - Distb Systems + MLOPS + Software Enng + ML
+
+* Offline & Online Pipeline System: (Stream Processing)
+  ------------------------------------------------
+   Online :- Kafka
+   Offline  :- Spark
+
+   2 pipeline :- Offline & 
+                 Online (Dynamic Feature generation pipeline)
+
+   -> Moving from Offline(Spark) to Online(kafka) System is not easy task
+
+* Low-Latency Model-Change :- Continuous Learning
+  --------
+   -> Continuous Learning
+        \
+         Online Learning
+
+[**]
+=> Factorization Machines FM := Logistic Regression + Matrix Factorizations
+
+* Model Deploy Stages :
+  ----------
+  EcoSystem
+   -> Eg Weibo (a Chinese Firm) Case Study 
+          \
+           -> Diff model at different iteration & respectivve performance 
+               - Performance in terms of :
+                   - QPS (query per cycle)
+
+* Stateless vs Stateful Training
+  -----------------
+
+  1. Stateless Training :
+    ---
+     -> Weights : random (no relation to prev trained model)
+     -> no preservation of weights (state) in terms of model trained earlier
+
+  2. Stateful Training :
+    ---
+     [Model Updation]
+     ---
+     -> Weights : weigths from prev model (let say yesterday at t-1, ie W_t-1)
+        Data : new data (let say from today)
+
+        then Model is improved/trained & new weights are obtained for today ie W_t
+
+     => The above is kown as Model Updation
+
+    (*IMP*)
+     -> Instead of taking random Weights at start, I will take Weights from prev point as initial data
+        & focus on latest data to improve Weights
+
+* Note :- 
+   Model Updation is not same as Model Transferring 
+
+   Model Transferring :=
+     -> When you take output of 1 Model as input to other model
+        Here
+        You completely transferring the knowledge of the model to diff tasks & that is 
+        Model trannsfer or Transfer Learning
+
+REMEMBER :-
+ -> For training of Model, Real-Time doesn't mean milliseconds,
+    It may go upto minutes (ie let say 10 mins as well)
+
+ -> But usually time taken by Stateless Training of Model is more than Sateful training of model
+    because
+    In stateless you start from random as initial poinnt
+    whereas
+    In case of Stateful You need to adapt new data, but you have prev findings as initial point
+
+
+* Misclassified & Just Classified Points & Stateful Model
+ -------------
+ So in Case of Stateful Model :
+   -> When you provide new data to prev model
+      it may misclassify some points 
+      it may just classify some points (ie prob in range 0.51 to 0.71)
+      it may good classify some points (ie probability in 0.71 to 1.0)
+
+      then you should focus on misclassified & Just classified Points
+       \
+        -> Weight such points (misclassified + Just Classified)
+
+           Higher Weightage to MissClassified Points
+
+* Model Updation [Adaptation] (Alternative ) :
+  ---------------------
+  Inncremental Learning :-
+   Hack :
+    -- instead of channging all param (in Stateful Mode)
+       You can conside only last some thresold Param & make them to adapt these
+       newly points 
+     Strategy :-
+     ---
+       ie Fixed some of Weights & Change (Adapt) only some of Weights
+
+
+
+* Idea of Transfer learning :
+  --------------
+   -> Take Pre-trained Model & use it for diff tasks

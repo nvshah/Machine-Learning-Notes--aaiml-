@@ -1,0 +1,13 @@
+reference code
+
+[NB classifier multi-nomial]
+https://www.ritchieng.com/machine-learning-multinomial-naive-bayes-vectorization/
+
+
+
+
+-----------
+
+Youtube
+
+https://www.youtube.com/watch?v=99MN-rl8jGY

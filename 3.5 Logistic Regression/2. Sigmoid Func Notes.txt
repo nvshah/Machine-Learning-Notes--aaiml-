@@ -1,0 +1,180 @@
+
+----------------------
+
+-> For every Plane there is Unique W (ie Normal)
+
+--------
+
+Q Why Sigmoid ?
+   - tappering & linear behaviour
+   - probability interpretation
+   - Easily differentiated
+   - Monotonically Func
+
+?? Sigmoid gives probability for truly points in range 0.5 -> 1
+   &
+   For miss-classified points from 0 -> 0.5
+
+   So when sigmoid() is interpreted as probability ie Yi=1, 
+       here 1 doesn't mean to be class label but an accuracy
+        P(Yi=1) for +1 or
+        P(Yi=1) for -1 as well // as -1 classes are converted to signed distances 
+
+   Thus Sigmoid function gives high probability for +ve values & this probability changes rapidly
+   when vals come close to 0
+   & as move towards -ve sigmoid() gives less probability
+   
+   [Monotonic Behaviour]
+
+   In Logistic Reg as signed_distance incr positively => sigmoid() gives high probability (for whatever class it was)
+   but asa sign_distance decr negatively => sigmoid() gives less probability
+
+   So max sign_distance =? max probability &
+      min sign_distance =? min probability
+
+------------------------
+
+- Model = Hyper-Plane in Log-Reg
+
+* Signed distance : Yi * (W^T * Xi)
+
+
+* Problem with Sum of Sign distances
+  ----------------------
+
+	* Edge Case 1 :
+	  --------
+	   - Majority class points close to Linear Surface &
+	     few Outliers Very Far away from Linear Surface
+	      \ 
+	       Sum of Sign distances = will result in favor of an outliers i.e (as Outlier is far = lonng distance)
+	                               ie Algo will predict Outlier only Correctly
+
+	                             = -ve most probably
+
+	       - Outlier is disrupting the Sum of Sign distances
+	       - 1 single Outlier (Extreme) is impacting whole model
+
+	* Edge Case 2 :
+	  ---------
+	   - Majority of class points lie on same side of Linear Surface
+	      &
+	     +ve & -ve class points are located in same side S.T. all in all distance cancel out each other 
+
+	     let say 1 more point lie on other side of linear surface belonging to correct class
+
+	     So Sum of Sign distance = +1
+
+	  If try to pick plane from above 2 case :- You will pick plane from 2 (formula wise as +1 > -ve val) 
+	                                   But ideal candidate is plane from 1 (just not selected due to Outlier)
+
+	                  Intutively Plane from 1 is more better (ie less misclassification)
+
+	=> Thus Maximizing Sum of Sign distances is not Outlier prone
+
+- So We need to change this Optimization technique !!! -> Squashing
+
+* Squashing : (from large range to small range)
+  ---------
+    (An intution behind Sigmoid Function)
+
+    Idea : if distance is small - dont change it much
+                          large - then make it small (dont use it as it is)
+
+     As sign distance is small - it may incr normally
+     but when sign dist is large - then func should not incr normally
+
+     So when it becomes large Just tapper it off (dont increase it linearly) 
+     S.T Max val will never be more than something
+
+     So In proximity sign-distance impact will be high 
+     as we move away from Plane impact of sign dist ceases
+
+
+=> So We need some other function instead of f = Yi*(W^T*Xi)
+    \
+     Function that will increase upto some point afterwhich it will tapper-off (ie start plateauing)
+
+* Sigmoid Function :
+  ---------------
+   -> One such function that hold on above needs is Sigmoid Function
+
+      sigmoid(x) = 1 / (1 + pow(e, -x))
+        \
+         As long as x is small it is linear afterwhich it tapper-offs (ie start plateauing)
+      
+      properties of sigmoid :-
+
+      - sigmoid(x) ranges in (0, 1) // max is 1 & min is 0
+      - sigmoid(0) = 0.5
+      - sigmoid() try to gives probability if Yi=1  // probabilistic interpretation
+
+      So 
+         x := sign-distance   // can be mingled as a way
+
+  So Our New Optimization problem := argmax([ sigmoid(sign_distance) ])  // sign_distance = Yi * (Wi * X)
+
+  * Probabilistic Interpretation of Sigmoid() 
+    ---------
+      -> try to give P(Yi = 1)
+         so sigmoid() is equi to probability
+
+      1) very near
+           If pt lie exactly on plane than its distance will be 0 & 
+            thus sigmoid() = 0.5
+          indicating the probability of pt to lie on +ve & -ve side is equal
+
+      2) very far
+          If pt is very far then probability will be high almost near to 1
+
+  * Thus sigmoid transformation has all we needs :- 
+            \
+             - tappering & linear behaviour
+             - probability interpretation
+             - easy to differentiate       (used in optimization)
+
+  Squashing :
+  --------
+   -> This transformation is also known as squashing
+
+      As sign-dist can range in (-inf, +inf)
+           |
+         sigmoid-dist range in [0, 1]    // after transformation via sigmoid function
+
+
+ => Thus new optim problem = transformed the sign-distances into sigmoid distances (ie squashing)
+              \
+               less impacted by outliers
+
+
+ Q) Why Sigmoid Function only ??
+   -> As Sigma Function is easy to differentiate
+
+
+----------------
+
+ Amazing Note :
+
+   1) Sigmoid(sign_distance) => helps you to spot the correct plane
+          \
+           here Yi=1 means pt lies to correct side where it should belong ie +1 or -1
+
+
+   2) Sigmoid(distance) => helps you to predict the class
+          \
+           Probability that Yi=1 ie pt lies in the same side as of Normal to the plane
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  	

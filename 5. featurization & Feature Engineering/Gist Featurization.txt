@@ -1,0 +1,75 @@
+Gist Featurization
+
+=> Business Problem gets converted to ML-problem
+
+-> In ML algo at the end needs to be worked on numerical features ie vectors
+
+So we need the data in some kind of numerical at the end.
+
+-> Featurization is problem & domain specific, You can't cover all thing in one idea
+   You need to bring & pick idea as problem demands
+
+So Featurize :
+  ------
+   -> Simply means to prepare features ready to be used by algo effectively
+      (by doing some manipulation on it)
+
+-> Diff types of data :-
+     1) Time Series
+     2) Image Data
+     3) Graph Data
+     4) Data in Database Table
+
+* Time Series Data 
+  ------- 
+   Eg - Heart Beat Rate, Stock Market, ecommerce Sales
+
+   Main Idea :- If Repeating Waveforms alikeness, then use frequency (its benevloent)
+
+   Fourier Transform :- 
+      Transform from time domain to freq-domain (ie Vector of freq & amplitude)
+
+   - Window
+   - Fourier Transform
+   - LSTM
+
+* Image Data 
+  ----
+   - SIFT (Scale Invariant Feature Transform)
+     ----
+      -> Key-Points detection for object detection in an image
+
+   - CNN (Convolutional NN)
+     ---
+      -> Deep Learning Technique
+
+* Relational data :
+  ---
+   - sQL
+
+* Graph data :
+  ----
+   - vertex & edges
+
+
+=> Featurization & Transformation 
+
+- Feature Binning
+- Indicator Variable
+- Interaction Variable
+- Mathematical Transformation
+
+* Models & Suits :
+  ------
+   > Logistic Reg & Linear Reg :- for linear combinations among features
+   > DT/ RF /GB   :- when interactions among features matters
+
+   > very hig dimen :- linear model may works better
+                       (as for high dimen #hyperplanes choices improves so linnear model tends better)
+
+
+=> Models & Featurization are inter-related
+
+
+
+

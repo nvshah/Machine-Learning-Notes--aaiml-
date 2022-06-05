@@ -1,0 +1,91 @@
+5. Imp Concepts
+
+- Biggest Pro for using Lr-Reg is its Interpretability 
+
+________________
+
+* Error & Normal Ditstb :
+  -----
+   -> Lots of Noise | Err are represented wrt Gaussian because of some hints of CLT 
+
+
+* Auto-Correlation & Error :
+  ----
+   -> auto-correlation comes when it comes Time-Series Data
+           \
+            there is some relation between them
+
+   ARIMA :
+   -----
+      - Auto-Regression Model
+
+      - If you have auto correlation between past data & present|future data then it is preferred to   
+        model using ARIMA 
+
+      - Designed to keep Auto-Correlation in mind
+
+
+* Check Linearity :
+  ------
+   If via introducing Quadritic or Cubic Feature check if Loss is reduce ??
+     - if loss is reduce then Linear Combination is not probably the best answer
+
+TIP :
+  -> Linear Reg is used often for Baseline model
+
+* Feature are Correlated : (Multi-Correlated)
+  ---------
+   Then biggest impact on :-
+     - Interpretation of Model
+     - Stability of Model
+         \
+          If weights can vary too much (then its sign of instability)
+
+   => Biggest Pro for using Lr-Reg is its Interpretability 
+
+**
+[Fundamental Problem in Whole ML] :-
+=> If your Data changes Dynamically Then almost all ML will goes for toss
+
+* Channging Data Over Time:
+  -----
+   -> You need to then focus on Features whose distribution gets least affected over time
+
+
+* Linear Reg & Other Models : 
+  ----
+   - use Lr-Reg as baseline model
+   - use Lr-Reg to debug the data
+   - use Lr-Reg as nice interpretable model (to explain others (non experts) how model behaves )
+
+* Dimensionality & Log vs LR Reg :
+  -----
+
+Que) when dimensionality is large then Euc-Dist will go for toss & Lr-Reg may not work well
+      but 
+     at same time Log-Reg works well comparatively  ??
+
+     How ??
+     -> 
+  
+  -> If you start thinking Lr-Reg or Log-Reg or any Linear Model from Probabilistic Standpoint then
+     Dimensionality won't be much issue !
+
+     but if you think from Euc-Dist StandPoint then (its geometrically) & all this is distance 
+     then you may consider abt Dimensionality
+
+  -> #hyper-planes we have is high for higher dimension
+
+  -> As dimen incr, so concept like Euc-Dist becomes more & more weaker
+
+
+* In Bio-Infomatics :
+  -----
+   -> SVM is highly used (because of Kernel)
+
+
+* High Dimensional Data means :
+  ------
+   d >> n  // ie number of dimension is greater than data points available at hand
+
+

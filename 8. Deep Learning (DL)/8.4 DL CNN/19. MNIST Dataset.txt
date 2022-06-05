@@ -1,0 +1,25 @@
+19. MNIST Dataset
+---------
+Sec 4.19
+
+ref
+https://drive.google.com/file/d/1I5kcAaQKEx0IwUNQvZdYkctwCcWFf81N
+
+- MNIST is actually Image Dataset
+
+- Archi 
+
+  Conv (RELU) -> Conv (Relu) -> MmaxPool() -> Flatten -> Dense Layer -> dropout -> Dense Layer
+
+
+* For Image Data :-
+   
+   You have 2 Option
+
+   1. Flatten Img & leverage the MLP 
+
+   2. Use ConvNet as it has plus of Convolution Operator which can leverage structure in Image (like 
+      Shape, Edge, etc...)
+
+
+=> ConvNet are Special Archi Design Specifically for Image Dataset

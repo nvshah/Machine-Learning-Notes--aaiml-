@@ -1,0 +1,105 @@
+-------
+
+
+-----------
+
+* Model Persistence :- pickling via joblib & Custom-Implementation
+
+* High ThroughPut & Low-Latency
+
+-------
+
+=> Productionizing Model (realtime) happens at Large Scale
+    \
+     with high-throughput & low-latency requirements
+
+=> Productionizing Model requires several skills such as :-
+    1) software Eng        (C/C++ advantage as Low level access)
+    2) Data Structure      (Hash Table)
+    3) Distributed Systems (Load balancer)
+
+* Productionizing Models
+   \
+    -> At Large Scale
+
+- You train your model on your system
+  but then in realtime, to engage with realtime data you productionize your model on some other
+  powerful system
+
+
+* Model Persistence :
+  ----------
+   -> You train your model, then after some time
+      If you want to use again that model then would you train again new model ??
+       -> No
+
+      Instead store your classifier/regressor any model to your disk
+
+      & Load that from disk when you required again
+
+      This process of storing computed model to disk & loading it when needed is known as Model Persistence
+
+   You can store model as a string inside file (ie text file)
+    or
+   You can pickel your model i.e serializng & deserializig in python using pickle module
+
+   -> Better option (for pickling) is using sklearn library
+
+1) one way to productionize the Model Persistence using Sklearn Stuff
+   
+   Sklearn
+   -------
+
+=> sklearn.externals.joblib   <-** simple API for pickling models
+
+* Pikle file :- extension `fName.pkl`
+
+=> So Model Persistence is unique method to persist your model using sklearn stuff to store model
+   in disk & reuse whenever required.
+
+- sklearn is implemented in python so it may be slower for low-latency application
+
+-> Thus via this way we can store model in disk & bring it to RAM when required !
+
+2) Custom Implementation :
+   --------------------
+   -> Store all params of model to file
+   
+   - esp for low-latency application
+
+   -> We can implement customly in diff languages such as C/C++/Java
+      So we can implement models in C/C++/Java
+
+
+Aspects of Productionization :
+--------
+
+* In case of Linear Models : Store Weights in Hash Table 
+  \
+   Why in hash table ? -> because Most the time It gonna be Sparse Vector
+
+* In case of DT :- leverage Low Level language such as C/C++ & write if-else condition in that
+
+* High ThroughPut :
+  ------------
+   - Lots of query point in less time
+
+     (In real time there is Load Balancer which distribute the queries to distributed system
+       ie to different CPU ) 
+
+* Comp Org :
+  ---
+
+  - Lot of things you need frequently you put in Cache than Ram
+
+    Whenever there is something you wanna reuse a lot, then you can consider that to store in Cache
+    (You can do via any lang ie C/C++/Java/Python, to store smthng in cache forcefully)
+
+    Because - Basic Computer Organization Concepts
+
+       -> Cache lies on same chip as of CPU so its closest & CPU can reach it quickly
+
+       -> RAM lies on diff chip, so CPU need to communicate with RAM via MotherBoard & wires
+
+       -> Hard Disk is far comparatively of above 2
+

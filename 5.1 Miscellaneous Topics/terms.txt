@@ -1,0 +1,20 @@
+terms
+
+* Calibration Model
+* Calibration Curve
+* plat Scaling 
+* Isotonic Regression
+
+* RANSAC (Random Sampling Consensus)
+* Non-Stationary Data (Eg Stock Market Domain)
+
+* AB testing
+  Offline testing
+  Online testing
+  AA testing
+  AAB testing
+
+* VC dimension
+* Shattering
+* Computation learning theory
+

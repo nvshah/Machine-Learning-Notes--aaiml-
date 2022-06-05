@@ -1,0 +1,68 @@
+15. Softmax Classifier & Multi-Class Classification
+---------------------
+
+-----
+TERMS
+
+- Cross Entropy
+- Multi Class Log Loss
+
+----
+REMEMBER
+
+-> SoftMax is Generalization of Logistic for K-class Setting (in MLP)
+
+______
+
+-> If we want Multi-Class Classif with Logistic Reg :- We use `One vs Rest`
+
+=> Logistic Reg for Multi-Class Setting := Soft-Max Classifier (naturally)
+
+
+* Logistic Reg from NN(perceptron) Prespective :
+
+
+* SoftMax & Logistic Reg :
+  -------------
+   - SoftMax is kinda extension of Logistic Reg from binary to multi-class classifiction
+        \
+         generalization of Log-Reg for Multiple Classes as Classification problem
+
+   - All the output must sum to 1    // ie Probailistic Interpretation
+
+   - So each output unit will be a kida SoftMax Function that on wholesome with all output unit forms 
+     a Softmax Unit that Sums upto 1
+        \
+         e^z / (summation(e^z))
+
+  => Softmax is generalization of Logistic Regression to Multi-Class Setting
+
+  => Softmax will minimize the Multi-Class Log-Loss
+
+
+* Cross Entropy & Multi-Class Log Loss :
+  ------------
+   - In case of Softmax & MLP, we will have Multi-Class Log loss
+     & 
+     this is often referred to as Cross-Entropy Term
+
+   - Cross Entropy is generalization of Log Loss to multi-class settings
+
+
+* Logistic Reg vs SoftMax :
+  --------------
+   - In my MLP
+     |
+     if I have 2 class classification task :
+       \
+        then my output layer will have 1 Unit :- Sigma (ie Logistic|Sigmoid Unit)
+
+     but if I have multi class & its MLP :
+        \
+         then my output layer will be SoftMax (comprises of multiple units = distinct classes)
+
+
+* Regression Task :
+  ----
+   - In this casee my output will have Linear Unit
+   - thus in case of Linear Regression we can use Simple Linear Unit

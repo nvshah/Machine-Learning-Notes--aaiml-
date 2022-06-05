@@ -1,0 +1,5 @@
+ref
+
+[calibration plots] http://scikit-learn.org/stable/modules/calibration.html   
+
+[RANSAC] Refer: https://en.wikipedia.org/wiki/Random_sample_consensus   

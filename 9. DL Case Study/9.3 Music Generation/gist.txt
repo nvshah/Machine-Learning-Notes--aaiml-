@@ -1,0 +1,17 @@
+gisy
+
+=> Music := as a Seq of Events
+
+- In cas of Char-RNN, you often apply Batch SGD
+
+* Char RNN Model Essence :
+  ---
+  As long as You take some music &
+  if you can represent it as an Sequence of an events
+  Where events are characters
+  |
+  then you can utilise the Char-RNN Model
+
+* Music Gen (General)
+ - Char RNN
+ - All falls down to LSTM & TensorFlow

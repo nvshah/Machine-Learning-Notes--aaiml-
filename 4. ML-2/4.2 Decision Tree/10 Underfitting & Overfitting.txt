@@ -1,0 +1,74 @@
+
+_______________
+
+-> Decision tree with depth = 1 is called as Decision Stump 
+
+---------------
+
+* Underfitting & Overfitting
+------------
+
+=> Depth :
+   _____
+
+   - as depth increases :-
+      \
+       - possibility of having very few pts @ leaf node
+       - chances that pts are noisy/outlier
+       - thus increase chances of Overfitting
+       - sparsity increases as depth increases, at node 
+       				(ie verfy few pts true else mostly rest false)
+
+       - also Interpretability of model decreases
+       		\
+       		 As to traverese long path (many vertexes)
+       		 - thus more convoluted conditions (if-else)
+       		   & thus model interpretability decreases
+
+
+   - Underfitting :
+     -----
+      If let say we are bound bu some limited depth
+      	\
+      	 & in such case at last level if still node are not pure
+      	   then we end up taking majority vote (simplify things)
+
+* decision stump :
+ -------------
+  Decision tree with depth = 1 is called as Decision Stump 
+
+=> Too deep = overfit
+   Too shallow = underfit
+
+-> Determine depth with Cross Validation error
+
+* Note Pts : (Geometrically)
+  -----
+   - As the depth incr :- region becomes smaller & smaller & thus
+                          thus those cube or hyper-cube will accomodate lesser number of points
+
+                          (this is similar to KNN with smaller val of K)
+                           \
+                            In such case we tends towards the Overfitting
+
+     As we have fewer & fewer pts, chance of outlier which we are overfitting also increases
+
+
+   Thus Geometrically :
+
+     Underfitting is one when 
+        \
+         -> have very few hyper-cube i.e (minimum axis-parallel lines that divides the regions)
+         - few or less hyper-spaces that we have broken or tessellated into regions
+
+     Overfitting is one when
+        \
+         -> many hyper-cube i.e (many axis-parallel lines that divides the region & thus much regions)
+         - lot of hyper-spaces that we have broken or tessellated into regions
+
+ => So if keep depth too low - Underfit
+               depth too large - overfit
+
+    So right way to determine depth is via CV error
+
+

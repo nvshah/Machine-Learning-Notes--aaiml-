@@ -1,0 +1,4 @@
+doubts PCA
+
+(Que) Why we do Standardization/Normalization before PCA ??
+  -> is it to just make math easier !!

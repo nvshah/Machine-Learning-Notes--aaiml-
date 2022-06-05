@@ -1,0 +1,123 @@
+3.2 Low Latenncy & Real Time ML
+-------
+
+------
+
+------
+
+
+__________
+
+* Stateless vs Stateful Training
+  -----------------
+
+  1. Stateless Training :
+    ---
+     -> Weights : random (no relation to prev trained model)
+     -> no preservation of weights (state) in terms of model trained earlier
+
+  2. Stateful Training :
+    ---
+     [Model Updation]
+     ---
+     -> Weights : weigths from prev model (let say yesterday at t-1, ie W_t-1)
+        Data : new data (let say from today)
+
+        then Model is improved/trained & new weights are obtained for today ie W_t
+
+     => The above is kown as Model Updation
+
+    (*IMP*)
+     -> Instead of taking random Weights at start, I will take Weights from prev point as initial data
+        & focus on latest data to improve Weights
+
+* Note :- 
+   Model Updation is not same as Model Transferring 
+
+   Model Transferring :=
+     -> When you take output of 1 Model as input to other model
+        Here
+        You completely transferring the knowledge of the model to diff tasks & that is 
+        Model trannsfer or Transfer Learning
+
+REMEMBER :-
+ -> For training of Model, Real-Time doesn't mean milliseconds,
+    It may go upto minutes (ie let say 10 mins as well)
+
+ -> But usually time taken by Stateless Training of Model is more than Sateful training of model
+    because
+    In stateless you start from random as initial poinnt
+    whereas
+    In case of Stateful You need to adapt new data, but you have prev findings as initial point
+
+
+* Misclassified & Just Classified Points & Stateful Model
+ -------------
+ So in Case of Stateful Model :
+   -> When you provide new data to prev model
+      it may misclassify some points 
+      it may just classify some points (ie prob in range 0.51 to 0.71)
+      it may good classify some points (ie probability in 0.71 to 1.0)
+
+      then you should focus on misclassified & Just classified Points
+       \
+        -> Weight such points (misclassified + Just Classified)
+
+           Higher Weightage to MissClassified Points
+
+* Model Updation [Adaptation] (Alternative ) :
+  ---------------------
+  Inncremental Learning :-
+   Hack :
+    -- instead of channging all param (in Stateful Mode)
+       You can conside only last some thresold Param & make them to adapt these
+       newly points 
+     Strategy :-
+     ---
+       ie Fixed some of Weights & Change (Adapt) only some of Weights
+
+* Idea of Transfer learning :
+  --------------
+   -> Take Pre-trained Model & use it for diff tasks
+
+
+_____
+
+Q) Why Higher Weightage to MissClassified Point will solve the purpose (ie improve the Model ) ??
+ ->
+   because usually when we compute the Loss ie we compute for each point & at that time
+   each point is given equal weight (ie of 1)
+
+   Now if we provide more weight to misclassified Point then their Loss will be taken into consideration more compare to others & thus mmodel try to improve over loss of those such points
+   (in a biased or partiality) way more than other points who has less weights
+
+   So here weights will create an impact on Loss computed for each point whilst training
+
+   Thus providing more weight := upsampling those points
+                              := much more importance whilst training
+
+   What weight should be provided to such misclassified points is part of Hyper-Param Tuning
+
+
+--------
+
+* Labels Changed (ie Predicted Variable Changed)
+  ---------
+   1. Aadapt current Model with new data (with 4 label)
+   2. Re-Train Model again for Misclassified Poits (for older labels missclassificaiton)
+        \
+         ie Here Weightage Schemme can be useful
+
+   3. You will get updated Model
+
+
+---------
+
+* Model Updated Diff Frequency :
+  -------
+   1) Daily Updation
+   2) Weekly Updation (via Moving Window)
+
+   If Daily Updation add value compare to Weekly Updation, then only it will be considered
+
+   You need to fix some status Quo :-

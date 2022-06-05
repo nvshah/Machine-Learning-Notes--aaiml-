@@ -1,0 +1,26 @@
+Python Package
+
+ref : https://imgur.com/mWvE7gj
+
+* Out-Of-Cre Naive Bayes :
+  ----
+   Multiple Chunks of Data at a time in RAM  // To handle large amt of Data
+
+* To get the likelihoods calculated by Model :
+  -----
+   use feature_log_prob_  param on fitted classifier
+
+   ref : https://imgur.com/mWvE7gj
+
+
+=> BernoulliNB :- binary/boolean features
+
+
+* sklearn
+    \
+     naive_bayes
+        \
+         MultinomialNB
+
+
+

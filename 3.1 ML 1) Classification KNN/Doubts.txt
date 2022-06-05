@@ -1,0 +1,46 @@
+Doubts
+
+Q1) When CV error & Train Error graph is plotted why choose 
+      CV accuracy max & Train accuracy min
+      instead of
+      CV accuracy max & Train accuracy max ??
+
+      How we can argue that K corresp to Train accuracy max is not good for generalization
+
+
+q2) Does Train Accuracy matters in Choosing K 
+    or 
+    only CV accuracy only matters ??
+
+
+QUE
+
+In grid search cv (KNN assignment)
+
+We draw out 2 accuracy score for 2 data ie train & validation
+
+train accuracy
+
+validation accuracy
+
+why we are considering the train accuracy with low val when there is draw for validation accuracy ??
+
+ain't train accuracy high & validation accuracy high be choosen
+
+or
+
+train accuracy low & validation accuracy high should be preferred ?
+
+eg
+
+let say 2 best thresolds are t1 & t2 & need to choose any one from either for K val in KNN during Cross Validation :
+
+ t1 -> train acc = 0.7 & validationn acc = 0.5
+
+ t2 -> train acc = 0.56 & validation acc = 0.5
+
+Which thresold is preferred from t1 or t2 ?
+
+t1 or t2 ??
+
+-> I believe that t1 should be choosen but please explain if its not true !

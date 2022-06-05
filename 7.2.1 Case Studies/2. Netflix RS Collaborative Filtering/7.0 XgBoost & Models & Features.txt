@@ -1,0 +1,15 @@
+7.0 XgBoost & Models & Features
+   ---------
+
+* Model : XGBoost
+
+  Features :- Custom 
+      - Basic 13 features :- hand-picked
+        Surprise  (5 new Features)
+            \
+             baseline model
+             KNN user-user
+             KNN movie-movie
+             MF SVD
+             MF SVD++
+     

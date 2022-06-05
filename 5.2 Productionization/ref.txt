@@ -1,0 +1,7 @@
+ref
+
+[Deploy AWS & API-Flask]
+https://drive.google.com/file/d/1O1HwVdUjBdFy80QDzTdayuklRcsyYwCn/view
+
+[Heroku Deployment]
+https://drive.google.com/file/d/1jX2Uef-Hm-8eKXlK4RTh9k3XUmvsuOoh/view

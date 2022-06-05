@@ -1,0 +1,30 @@
+------
+Terms
+
+Eigen faces :- FE task for Face Images
+
+-----
+
+* MF for Feature Engineering
+  -----------
+
+- In Matrix Decomposition of User-Item Matrix A :- n * m dimen
+     We have 2 matrix : B :- n * d dimen
+                        C :- m * d dimen
+     
+     [d is kinda hyper-param]
+     
+     Here d can be any val ie It's feature count for individual User & Item 
+         \
+          d > 0 & d < min(m,n)
+
+     If 2 user vector Ui are same then their dist(ui, uj) will be small
+     If 2 item vector Ii are same then their dist(Ii,, Ij) will be small
+     
+
+* MF for Feature Engineering :
+  -----
+  - MF is connected to W2Vec
+    MF is related to Eigen-Faces
+
+    Eigen-Faces :- FE task for face images

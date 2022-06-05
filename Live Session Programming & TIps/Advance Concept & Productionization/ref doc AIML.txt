@@ -1,0 +1,11 @@
+ref
+
+[Doc Time Series Forecasting]
+https://drive.google.com/file/d/1VDCmqpeUVH-PbZVAtxjTVQn9lIjFoNWu/view
+
+[Debugging & testing]
+1) https://sebastianraschka.com/Articles/2014_about_feature_scaling.html
+2) https://towardsdatascience.com/normalization-vs-standardization-quantitative-analysis-a91e8a79cebf
+
+[InterView Que on Productionization]
+https://drive.google.com/file/d/1KUJxmNDlRGG3xaYUX2VXcmsc6yKdZ7R2/view

@@ -1,0 +1,71 @@
+Tips ML
+
+=> Time & Space Complexity matters most when comes to Prodcutionization of Code
+
+=> If D_train & D_test have considerably diff distribution, then your model will fail on Test-Set
+    (this can be possible when data changes over time)
+    In such case CV-err = low & Test-Err = High
+
+    So Distribution of your data plays pivotal role for your model to infer predictions in future
+
+=> Eucledian distance gets impacted/affected by Scale
+
+=> BOW & one-hot encoding are relative in terms of idea
+
+=> Outliers does not only comply with nearness or proximty but they also depends on density in locality as well 
+
+=> Missing val can also be a source of information (NAN)
+   
+   (Curse of dimen)
+=> Cos-Sim is lesser impacted compare to Euc-dist when dimen incr, So Text-Processing uses Cos-Sim
+
+=> In KNN, As K incr, Bias incr slightly & 
+               		  Varince decr drastically
+
+=> If model return probability scores than Accuracy may not be better metric
+
+=> ROC & AUC are only used for binary classification
+=> Log Loss is powerful metrics When probability socre is given
+
+=> R-Squared is metric that helps us to compare our model with simple mean model
+    ie if our model is better than simple mean model  (R-Sq > 0)
+                       equal to                       (R-Sq = 0)
+                       worse than                     (R-Sq < 0)
+
+=> Whenever you have categorical features, You can consider missing val as one other category ie (NAN)
+
+-> For simiplicity you can assume plane passes through an origin
+
+=> L1-regularized is prefer over L2-Regualrized as it provides more sparsity
+   hence convergence faster
+
+=> In lot of optmization problem if you cant solve it then approximate it
+   
+   (Logistic Regression)
+=> Thus if feature vectors are collinear or multi-collinear 
+
+=> Always check for Multi-Collinearity before going for Feature-Importance
+      then your weight vectors may change arbitarily
+
+=> The most imp aspect of Machine Learning is Feature Engineering
+
+=> As you put more features ie #features, The chances of Overfitting also increases
+
+=> Sparsity depends on Weights & biases & not on loss-term
+
+=> Computing logs take more time complexity than computing squares
+
+=> For distance based model : Feature standardization is pivotal
+
+=> Error = bias^2 + variance + c   // c is irreducible error
+
+=> In high dimen space to sperate data is not very hard 
+   so Linear Models works well in such case
+   - There are many options for hyper-param
+
+=> Linear Model have tendency towards High Bias Problem
+
+-> Cross Validations is more trustworthy than the domain knowledge  
+
+[*IMP*]
+FACT :- Mostly in E-Commerce the distribution is Power-Law Distribution

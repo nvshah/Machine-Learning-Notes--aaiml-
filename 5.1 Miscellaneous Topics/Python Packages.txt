@@ -1,0 +1,6 @@
+Python Packages
+
+sklearn.calibration.CalibratedClassifierCV()  // args = {cv, method, }
+							\
+							 fit()
+							 predict_proba()

@@ -1,0 +1,58 @@
+5. Model Framing Techniques :
+  ----------
+
+1) Regression  2) Surprise (MF + RS)
+
+1) Regression Framing :
+   -------
+    -> Given Ui, Mj we want to find some features so that we can use it to predict ratings Rij
+       (Base Model)
+
+2) Surprise Lib has many models :
+   ---------
+    - baselines, KNN, SVD, SVD++
+
+ 
+* Stacking + Nested Boosting Technique :
+  ----------
+   XgBoost -> creates the baseline models iteratively
+
+   Now We here also Do iteration to create diff XGBoost Models
+   So What XGBoost does internally, Here its been emulated to create multiple XGBoost Models
+   at diff level ??
+
+   What XGBoost Does internally as a single model (ie creating multiple baseline models iteratively)
+   here its been replicated to create multiple XGBoost Models 
+     \
+      ie at each stage we are finding new Model (with new Feature as consideration, whereas XgBoost try to fit to Pseudo-Errors)
+
+ Que] Why do such way ?? What is motif & significance ??
+
+* XgBoost Model :
+  ---
+   -> Diff Models at each iteration
+   -> Output of these Models are given to XGBoost
+
+   -> Thus its 
+
+   Diff Features Set :-
+
+     1) 13 Handcrafted Features
+     2) baselines
+     3) KNN - User-User
+     4) KNN - Movie-Movie
+     5) SVD
+     6) SVD++	
+
+
+* Sampling :
+  ------
+   Take some users-movies from Train 
+   Take some users-movies from Test
+
+   & Make Model from it
+
+   (Note :- Inorder to learn Model in less time (on Single Box System) this sampling is done especially)
+
+   FileName :- `sample_train_sparse_matrix.npz`
+   			   `sample_test_sparse_matrix.npz`

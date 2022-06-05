@@ -1,0 +1,27 @@
+Doubts
+
+1) High Dimension & Linear Seperation 
+
+   During Video of Interview Que for SVM ?
+
+   -> I caught up with this que :- 
+        In high dimension data is easily Linearly Seperable, Comparatively
+
+     I understood the statement (theoretically)
+
+        [My Understanding] :-
+        - ie As dimension increases We have more information & thus we can derive better seperation line
+
+     But still I cannot absorb it at 100%
+
+     So can you explain it in more intutive way to understand & imbibe it conceptually
+
+
+2) 
+ Doubt ? -> 
+  How Stacking is much better way to do Weighted Random Forest Model, Where each Base Learner is Weighted ??
+
+ TimeStamp :- 1:32:38  [ Interview Que on Bagging & Boosting Live Session]
+
+ Suggestion :-
+   ref : https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205

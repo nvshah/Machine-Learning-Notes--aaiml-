@@ -1,0 +1,64 @@
+resource ->
+ [SQL AAIML] https://drive.google.com/drive/folders/1rrqZz-ddvYGvbXoP-SH767pgY06B7YHk
+
+------
+
+=> ANY & ALL - often used with Sub-Queries
+-> Sub Queries are more code readable than Join Queries
+
+------------------------------
+
+
+* load all data into sql database :- 
+  ----
+   -> create database {name};
+      use {name}
+      source path/to/sql/file/xyz.sql   
+
+* mysql -u root -p   // give you a password
+
+1---
+* use database-name;
+* show tables;
+* describe table-name;      // to get general idea about tables
+
+2---
+* LIMIT 10 OFFSET 30;  (i.e from 30 + 10 -> [30 : 40])
+* Order By
+* Distinct
+* Where
+* IS NULL, IS NOT NULL
+
+3----
+* Logical Operators :-
+* AND, OR, NOT
+* ANY, ALL, BETWEEN, EXISTS,
+* Like
+   \
+    Wild card characters (%, _)
+
+4----(Aggregate Func)
+* COUNT, MIN, Max, Sum, Avg
+* Group By
+* Having
+
+5----
+* t1 JOIN t2 ON t1.c3 = t2.c1  // Col name do not need to be same
+* t1 JOIN t2 USING col_name    // Natural Join You can omit the USING syntax for Natural Join
+* Left Outer 
+* IN, NOT IN, EXISTS, NOT EXISTS
+
+6----
+* Truncate <t>
+* DELETE from <t>
+* UPDATE <t> SET <c> = <?v> WHERE <?=condition>
+
+7--- (DDL)
+* CREATE
+   \
+   INT, VARCHAR
+   PRIMARY, NOT NULL, UNIQUE, FOREIGN KEY, CHECK, INDEX
+
+8--- (DCL)
+* GRANT, REVOKE
+

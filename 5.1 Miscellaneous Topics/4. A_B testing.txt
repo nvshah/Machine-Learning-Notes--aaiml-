@@ -1,0 +1,84 @@
+------
+
+=> For large amt of data its preferable to perform - AAB testing
+___________
+
+- Google earns billion & trillions just by showing Ads in their search result
+
+=> When you do not have same same data pt for 2 different model
+   then connsider Confidencee Interval instead of point Estimate for Metric
+----
+
+gist :- (AB testing)
+ 
+  -> break the data into 2 groups & apply old model on 1 grp & new model on another grp
+     &
+     whilst doing comparision, instead if doing ratio|point estimate go for probabilistic|CI
+
+     
+* A/B testing
+ ---------
+  - Bucket Testing | Split Run | Controlled Experiments
+
+  - A/B testing is used in  Science & esp in Medical Field
+
+  Eg Drug :
+     ----
+      Consider some drug D1 for cold already present
+      If some company introduce new drug D2 for cold then A|B testing can be useful
+
+      Test D1 for half of sample & D2 for another half for recovery time
+
+
+* AB & ML :
+ -------
+  - Eg Google Search Enngine & Which Ads to show on which search
+
+- Offline testing
+- Online Testing : Testing in real world (production data)
+
+* CTR (Click Through Rate) :
+  ---
+   # clicks / # ads shown
+
+   - Its a metric to compare model for search Engine & Ads 
+      (ie Model which help to display ads for users)
+
+  Often for new model -> start with 90 - 10 split // 90 for old model & 10 for new
+
+Q) How to compare CTR between 2 models (old & new) ?? 
+   [as data are imbalanced between both]
+
+   -> Use Confidence Interval innstead of Point estimate
+
+   => Never conclude the comparision just based on Point Estimate of CTR, 
+      esp when data is imbalanced for verification
+      Also account the Confidence Interval
+
+    See if CI of both are overlapping 
+      \
+       if its overlapping then we can't draw out any particular thing
+
+   =? To really sure if ModelB is better than ModelA, then their CI should not overlap or 
+      if overlap then overlapping should be minimal as possible
+
+
+* A|A testing :
+  __________
+  split the population in parts & apply same old model to both randomly seperated group
+
+
+* A-A-B testing :
+  ____________
+   Split your Universe in 3 parts instead of 2 ie A, A, B
+
+   A - old
+   B - new 
+
+   This will help us to check if New Model is really good performant or 
+   its just randomness of splitting which is giving advantage to new model sometime.
+
+   => AAB test are preferable for large amoutn of data
+
+
+

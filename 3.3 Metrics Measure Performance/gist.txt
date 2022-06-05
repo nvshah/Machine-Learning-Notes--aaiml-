@@ -1,0 +1,17 @@
+gist
+
+Metrics Techniques
+
+=> AUC uses ordering of scores
+
+=> Log Loss uses the probability of the scores
+
+=> Distribution of Error (in case of Linear Regression)
+    \
+     Can use MAD
+
+=> Confusion Matrix gives us idea about how much confused the model is regarding the prediction
+   
+   Precision Matrix also provides us idea about confusion but more specifically regarding the prediction
+
+   Recall Matrix too provides how confused the Model is regarding the original values 

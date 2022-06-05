@@ -1,0 +1,6 @@
+Assignments Tasks 
+
+
+1) Do Frame Model for More Data
+
+2) Do Hyper-Param Tuning Well on XgBoost

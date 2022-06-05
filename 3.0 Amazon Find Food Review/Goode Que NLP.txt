@@ -1,0 +1,9 @@
+Goode Que NLP
+
+Q) How to implement Sparse Matrix ??
+
+   -> dict(dict())
+
+       row_no -> col_no: val
+
+Q) How to store very expnesive Sparse Matrix in Distributed system like Spark ??

@@ -1,0 +1,10 @@
+tips models
+
+* Kernel approx trick :
+  ----
+   Focus on 2 major things :-
+     1. Distance Preservance (in Kernel Space) (alike TSNE)
+     2. Random Projection (Internally Managaed by sklearn )
+
+* Ensemble Model & Imp :
+ => In practice, Ensemble Models like GBDT & RF beats other models (in case of Classification)

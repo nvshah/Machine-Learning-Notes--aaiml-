@@ -1,0 +1,69 @@
+6. Training a MLP : Chain Rule
+-------------------------------
+
+
+------
+(Topics)
+
+- Chain Rule (multiple paths)
+
+------
+
+=> Most things in ML, boils down to optimization & Chain Rule
+
+______
+
+NOTE :- Ignore the Regularization (if) so that Optimization becomes Easier !
+
+
+* Dataset :- {Xi, Yi}
+  Determine :- Network of Weights
+
+  Thus Training MLP = Finding the Weights in network
+  
+
+* Optimization :
+  ---
+   S1) Loss Fn Minimization :
+      ---
+       -> We want to minimze the loss fn (ie Sqred Loss + Regularizer), where variable part would
+          be comprised of Weights (ie W1, W2, W3 ...) At different Hidden layers
+
+   S2) Any Gradient Descent :
+      ---
+       -> Updation (Loop) + Convergence
+
+* Chain Rule & Grad findings
+  ------
+   - Following Path in Backwards Direction (ie From Right to Left)
+
+   there can be multiple paths
+     - 1 Path
+     - 2 Path (Chain Rule)
+
+\=> Calculus : (INTRICATE FORM)
+   ------------
+   2 Paths Math Explanation (SPECIAL CASE OF CHAIN RULE)
+   ---
+    - Multiple Path Chainn Rule :- Sum them up each individual Path
+
+    Eg consider variable X
+       &
+       function dependent on X -> f(x) & g(x)
+       &
+       function dependent on f, g (directly) -> h(f(x), g(x))
+       (Here h() is indirect dependent on variable X)
+
+       So h(x) => Grad of H() w,r,t X := (Sum of individual Paths)
+           \
+            -> ( d(h)/d(f) * d(f)/d(x) ) + 
+               ( d(h)/d(g) * d(g)/d(x) )
+  
+
+  - Diverge & Converge | Path :
+    ----
+     Paths Diverge inbetween & at start but at end they converge 
+
+[Core Concept] :=
+=> After you compute the derivatives, (using Chain Rule - probably among multiple paths)
+   You can update your weights

@@ -1,0 +1,24 @@
+New Concepts Explore
+
+- CUDA
+- LIME
+- SHAP
+
+- Markov - (LSTMs)
+
+- Inverted Inndices (DS) // used for search feature impl
+
+- Fast NN Search 
+  Elastic Search  // Data Part (No ML Algo relation)
+
+- FAISS (FB) 
+
+- YOLO V3  // state of the art obj detection technique
+
+--------
+[Practical Aspect]
+
+- Kafka  (Online System Pipelining)
+- Redis  (Distributed Caching)
+- Postgre (Database NoSql)
+- MongoDb (Database NoSql)

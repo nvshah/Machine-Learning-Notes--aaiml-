@@ -1,0 +1,31 @@
+=> Linear algebra is all about studying shapes ({Rectangle, Circle, Sphere, Cuboid, Line, Plane, etc...})
+
+=> radians is most widely used than degree
+
+Mathematcis Fact :
+------
+ -> Simplest way to represent the rectangle is by a Diagonal Coordinates 
+
+ -> Root finding Problem (finding root of equation where f(x) = 0)
+
+ -> Rate of Convergence -> How fast we're going towards x
+
+ -> As dimensionality increases -> it's easy to seperate data linearly
+
+
+Tips :-
+----
+ :- How to test optima, integral, derivative, ... functions you implemented manually ???
+     -> For known function i.e( function output val known for input x) find & verify for such inputs.
+ 
+ => As CDF increases, probability of such pt decreases
+
+* New Topics :
+-----
+
+- AutoML :
+  ----- 
+   - For the task of Architecture Search
+
+
+  

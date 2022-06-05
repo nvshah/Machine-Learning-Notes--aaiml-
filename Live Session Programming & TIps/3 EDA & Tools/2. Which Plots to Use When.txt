@@ -1,0 +1,31 @@
+* Which Plots to Use When
+  -----
+
+  Tips :
+    - Make sure to read where y axis is starting in case of bar-plot
+
+    - In case of bar plot always start with 0 scale most of the time
+
+    -> 3D plot not so preferable in every situation as we need to rotate it squeeze it 
+       to get different information
+
+       3D plots are always tricky
+
+    -> Whenever you want to read various percentiles in single plot CDF is most appropriate plot
+
+    -> When pattern is not clear in plot You can consider scaling of your features
+
+    -> For QQ plot you need 2 plots - 1) Emperical Plot (Observed)
+                                      2) Theoritical Distb (Normal)
+
+    => Learn or start from baseline Model & then keep evolving it as required
+
+
+Q) Distribution of Sales for each State :
+   
+   -> percentiles & quantiles useful 
+      \
+       -> Box Plot
+
+Q) Most Popular TV Screen Size & TV Price
+    -> Scatter plot with bubble size as popularity

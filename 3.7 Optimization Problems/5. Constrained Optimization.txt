@@ -1,0 +1,123 @@
+5. Constrained Optimization
+
+------
+TIPS : 
+
+=> Langrange Multiplier is helpful to solve the constrained Optimization problem
+
+------
+
+
+* Objective Func :
+  --------
+   -> The function on which we are finding either maximum or minimum is called as an Objective Func
+
+
+* Constrained Optimization Problem :
+   
+  - When we solve any optimization problem where there are some constraints imposed upon the objective function then it is known as Constrained Optimization Problem
+
+  Equality Constraint :- =
+  InEquality Constraint :- >=, <=
+
+
+* Lagrangian Multiplier :
+  -----------------
+   new term :- lma & myu
+
+   LangFunc (x, lma, myu)
+
+   lma & myu are lagrangian multipliers
+
+   Lagrange Funnc :-L(X, lma, myu)
+
+   Finding x* using Lagrange Function :-
+   ---
+   Solving Lagrange Func via optimization & partial derivative, we will get x* which is almost same as the x* we would get via ordinary way
+
+   (Proof that x* via this way is similar invloves mathematics so skip for now)
+
+
+* PCA & Constrained Optimization & Langranian multipliers :
+  -------------------------------------------
+
+   PCA :- argmax(avg(squared(u^T * Xi))) 
+   			  \
+   				S.T u^T*u = 1
+
+   S = Cov(X) = X_T*X/n   // Covariance matrix
+
+   formulated goal :- argmax(u^T*S*u)  // u^T*u = 1 & S = Covariance Matrix of X
+
+   langrangian form :- L(u, lma) = u^T * S * u - (u^Tu - 1)
+    \
+     Solving this we get dL/du = 0
+         \
+          => S*u = lma*u   // thus we want maximization so we will pick large lma first
+
+
+* Logistic Regression & Langrange Multiplier :
+  --------------------------------------
+
+   -> Regularization term in Logistic Regression is related to Langrange Multiplier
+
+   -> Regularization can be in one way as a thought of as an imposing an equality constraint & 
+      solving that via Langrangian Multipliers
+
+
+
+* Logistic Reg & Sparsity :
+  --------------------
+
+  Q) Why L1 Regularization Creates a Sparsity ??
+
+   -> comparing L1 & L2 loss remains same so ignore Loss term for now 
+      lma is also constant so ignore that as well
+
+   L2-Regularizer
+   -> As iteration increases Wj becomes smaller & smaller 
+        \
+         So Rate of Convergence also decreases 
+
+   -> Derivative is not constant & It rate decreases as move towards 0
+   -> Gradient/Slope reduces slowly (ie updates becomes slowly)
+
+   L1-Regularizer
+   -> Rate of Convergence remains constant
+
+   -> Derivative is constant
+   -> Gradient/Slope reduces connstantly (ie updates as it is)
+
+
+  So L2 Regularizer doesn't change the value of w1 from 1 iteration to the another iteration
+  (not initially but later after commencing in interation)
+
+  But L1 regularizer continuously (ie constant) to decrease value of w1 towards 0
+
+  So As in case of L1, slope is constant, in much fewer iteration chances of going towards 0 is much higher for L1
+
+  So thus L1 has more sparsity
+   \
+    -> because L1 has constant gradient/slope
+       while
+       L2 slope/gradient reduces as you come closer to Optima
+
+  To understand this Consider the race of TorToise-Rabbit Story
+    \
+     Where Tortoise = L1
+           Rabbit   = L2
+
+           Initially L2 will be ahead in race 
+           but asa it comes closer to goal it will be slowed down because of its slope/gradient linear decreasing behaviour
+           & 
+           on other side L1 will have constant behaviour so it will have more sparsity compare to L2
+
+
+  => So the chance of W1 = 0 at the end of K iterations is more compare to 
+     the chance of W2 = 0 at the end of K iterations
+
+
+
+
+
+

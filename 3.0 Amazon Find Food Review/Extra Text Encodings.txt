@@ -1,0 +1,119 @@
+Extra Text Encodings
+
+--------
+-> If you dont know the api - treat it as black-box
+
+=> For Stop-Words like `not` do trial & error & figure out if need to keep it or remove
+
+q) How to design Sparse Matrix ??
+
+---------
+Tips :- 
+  
+  number of bytes consumed by sparse matrix (of scipy.sparse.csr_matrix()) is :- matrix_obj.data.nbytes
+
+---------
+
+* Text -> Vectors
+  _______________
+
+-> `BERT` is very strong technique we have today for [sentence to vector] conversion
+      \ 
+       -> State of the Art (Deep Leanring)
+
+* Data pre-processing ;
+  --------
+   1) Tokenize
+   2) Remove Stop Words :
+
+      nltk.corpus.stopwords()
+      nltk.tokenize.word_tokenize
+
+      nltk.downnload('stopwords')
+      nltk.download('punkt')
+
+
+   3) Lemmatization & Stemming
+
+      - Lemmatization uses language rules much better than Stemming
+      - (Stemming is a weaker form of Lemmatization)
+      - stemming is Crued & Fast but Lemmatization is better
+
+       nltk.stem.WordNetLemmatizer
+                     \ 
+                       . lemmatize()
+
+* Bow :
+  ---
+   transformed data by BOW is stored as Sparse Maatrix
+
+   Sparse Matrix :- Compressed Sparse row Matrix 
+
+   * Compressed Sparse Row Matrix :
+       - From Row Perspective most of them are 0 ie sparse
+
+       (row, column, value)
+
+       scipy.sparse.csr_matrix()
+                      \
+                       .data.nnbytes  // give you size in bytes consumed by the sparse matrix object
+                       .todense()     // dense matrix conversion
+
+   	  - sklearn.feature_extraction.text.CountVectorizer
+
+
+* Sparse Matrix :
+  ----------
+  There are many ways to represent sparse matrix by scipy.sparse
+   \
+    one of them is csr_matrix()   // Row Sparsity based
+
+    but there others as well based on Column Sparsity
+
+  Q) How to design the Sparse Matrix from Scratch ??
+    -> dict of dict
+
+* TFIDF :
+  -----
+   TfIdfVectorizer()   // from sklearn
+
+   In 2 grams you will have more features than 1 grams
+
+* Word2Vec :
+  --------
+    - neighbourhood based (in training)
+    Popular dimension used for vector :- 300 dimension
+
+    options :- gensim, spacy
+
+      - gensim.models.KeyedVectors()
+
+    W2V takes more Ram
+
+    but Bert is more Computationally Complex compare to W2V
+
+* Glove :
+  -----
+   -> Its kind of technique to get Word Vector
+   
+   Global Vectors
+
+   - Alternative technique for Word2Vec from spacy moudle/library
+   - It tries to provide vector from given word
+
+   Glove words are trained on wikipedia dataset
+
+   Glove_vectors are map of word -> vectors   // typically 300 in size
+
+
+* Average W2V or Glove :
+  ------
+   Simply divide the result from Word2vec or Glove by total number of Words Counts
+
+
+-------
+
+- Simulated Data & Regular Data 
+   - Do distribution analaysis for both & check how it varys
+   
+   Eg Simulated Image & Normal Image

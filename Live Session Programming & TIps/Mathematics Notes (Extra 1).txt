@@ -1,0 +1,54 @@
+Mathematics Notes (Extra 1)
+
+-> Good Mathematics Function :
+   -------
+    -> sin(x)/x
+       cos(x) - sin(x)
+
+=> How to test such complex functions !!
+   How to test optima, integral, derivative, ... functions you implemented manually ???
+     -> For known function i.e( function output val known for input x) find & verify for such inputs.
+
+-----------------------------------------------
+
+-> Bisection Method vs Newton-Raphson :
+   -----------------------
+   	Bisection Method -> Divide & Conquer
+   	Newton Raphson Method -> Derivative
+
+    -> How quick you are converging towards your goal [Newton-Raphson is best]
+
+
+-> Gradient Method (For Convergence)
+
+-> Feynman's method
+
+-> ROC (Reciever Operation and Center) & AUC (Area Under Curve)
+
+-> Integration problem can be break into discrete problem
+
+   Integration is nothing but finding AUC via very minute delta or via large numbers of intervals between 2 point
+
+   dx -> very minute delta of x
+
+   Integration is Continuous, Summation is Discrete
+
+-> Feynman method of Integration 
+
+=> You can find area of circle by trapezoid rule
+   By which you can find PI 
+
+* Monte Carlo Approach (Simulation) :
+  --------------
+    It can be used to find the value or approximate the value of PI
+    => Monte Carlo Approach tests understanding of Random numbers
+
+-> Approximation using Polygon (with higher K i.e 100 around) to find PI
+
+* Area can be found via 2 ways seen so far :-
+  ---
+   1) AUC - trapezoid or rectangle method
+   2) Monte Carlo Approach 
+   3) Approximation using Polygon  (to find value of PI)
+   
+

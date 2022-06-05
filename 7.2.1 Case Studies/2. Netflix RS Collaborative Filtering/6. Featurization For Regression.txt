@@ -1,0 +1,50 @@
+6. Featurization For Regression
+----------
+
+-> For all Sampled Train & Test Data
+   
+   D_tr -> D_tr`
+
+1. Find GLobal Average of all Movie Ratings
+   Find Avg rating per user
+                   per movie
+
+=> Data we had at hand :- Ui, Mj, & Rij
+
+* First 13 Features (Finding) 
+  -------------------------
+   -> We can use only Ui & Mj to find all the 13 Features 
+      Thus Xi - vector will be of length 13 computed via info use avail from (Ui, Mj)
+
+   -> Yi - is the Rij
+
+  For User Ui & movie Mj :- Compute a Vector as below
+  
+  f1 = Global Avg
+  f2 = User Avg
+  f3 = Movie Avg
+
+  f4-f8 :- Top 5 Similar User's Ratings to User Ui
+  f9-f13 :- Top 5 similar movies rated by this user Ui
+
+
+NOTE :- 
+  when you compute for Test Data, You need to compute Similarity Keeping in mind the User's & movies available under Train Data only (You can't consider any n)
+
+  You can't use test-users only
+
+  So for new user in test data :- provide similar users values as 0
+         new movie in test data :- provide similar vals as 0
+
+
+* data transformation for Surprise :
+  ------------------
+   -> Surprise has its own way to load & store data to make it works fast
+
+   => So you need to transform Your existing data (in Dataframe way) to way that `Surprise` needed 
+
+
+_________________
+
+* Applying ML Models :
+  ---------------

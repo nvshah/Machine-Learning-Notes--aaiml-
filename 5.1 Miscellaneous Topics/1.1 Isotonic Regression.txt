@@ -1,0 +1,53 @@
+ref : 
+ http://scikit-learn.org/stable/modules/isotonic.html
+
+-----------
+
+=> If you have more parameter to estimate then you need more data or points
+
+________________
+
+
+----------
+
+
+* Isotonic Regression
+-------------
+ -> most popular Calibration technique
+
+ - works even when data plot is alike step-wise curve 
+   or when plot doesnt looks like sigmoidal func
+
+ Core Concept :- break original curve into multiple linear model
+
+ Piece-Wise Linear Model 
+ _________________
+ - so Isotonic Calibration :- tries to approximate the func using the bunch of linear models
+   & this is known as piece-wise linear model
+
+ Q How to determine the piece ??
+    - i.e lines & thresolds
+
+ - just as min lines as possible
+
+ Optimization Problem :- tries to find thresold & slopes & intercept of individual lines
+                         (constraint : there should not be too many lines)
+
+  thus in isotonic we need to find many parameter as compare to sigmoidal (ie platt scaling)
+     - thresolds {a1, a2, a3...}
+       slopes & intercept {(m1,b1), (m2,b2),...}
+
+       whereas in platt Scaling :- A & B only
+
+  -> If you have more parameter to estimate then you need more data or points
+
+     As more param so -> more D_calibration points -> more D_CV -> more data pts -> very large dataset
+
+     Thus at the end we need large dataset 
+
+* Isotonic & Sigmoidal :
+   
+   when dataset is large :- can use Isotonic Regression
+                   small :- go for Platt Scaling
+
+

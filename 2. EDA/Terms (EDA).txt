@@ -1,0 +1,120 @@
+ref : 
+
+[Intercept] https://www.youtube.com/watch?v=1rJ5c95MWBQ
+
+Linear Algebra extra ref : 3b1b youtube
+Calculus : 3b1b youtube
+
+________________________
+
+Terms (Gist)
+
+-- EDA --
+Data Points
+Features
+
+2D Scatter Plot
+Legend
+
+Histogram
+PDF
+Violin Plots
+Box Plots
+
+Overlap
+Seperated
+
+Mean (Central Tendency)
+Variance (Spread)
+Outlier
+Median, 
+Percentile, Quantile 
+Median Absoulte Deviation (MAD)
+Inter Quartile Range (IQR)
+
+Univariate, BiVariate, MultiVariate Analysis
+Contour Plots, Contour Circles
+
+Gaussian Distribution
+
+--- LA ---
+point, vector
+distance of point from origin (Norm), # Pythogoras Theorem
+Column Vector
+Row Vector
+Matrix
+
+Dot Product, Cross Product
+Length of a Vector ||v||   (also called as Norm)
+Projection
+Unit Vector
+Slope, Intercept, Pass through origin
+
+Line, Plane, Hyper-Plane
+Vector Notation
+Summation Notation (Iterative)
+Distance of point from a plane
+
+half-space
+
+Equation :- Line, Circle, Ellipse, Square, Rectangle
+
+Axis-Parallel rectangle
+Axis-Parallel Lines
+
+-> Intercept form of eqn of plane 
+   General form of eqn of Plane
+
+--- Probability & Stats ----
+
+Random Variable (Descrete, Continuous)
+Outliers
+
+Gaussian Distribution, PDF, CDF, PMF (for discrete)
+Bell-Shaped Curve
+S-Shaped Curve
+
+Symmetric Distribution
+Skewness
+Kurtosis, Excess Kurtosis
+Standardization
+KDE
+bandwidth (Variance)
+Sampling Dist & CLT
+
+ChebyShev's Inequality 
+Uniform Distributions
+PDF vs PMF
+Mutually Exclusive Events
+
+Bernoulli (Binomial Eqn)
+Pareto Distb, Power law Distb
+Dirac Delta Function
+Log Log Plot          // used to check if Power law Distribution
+Box-Cox Transformation // Pareto -> Gaussian
+
+Correlation, 
+Covariance    
+Pearson Coefficent   
+Monotonically Decreasing | Increasing
+Strictly Increasing
+
+Test Statistic  // Experiment Statistics
+P value
+5 % Significance Levels (P-Val) & p-val   //reciprocity
+ReSampling & Permutation Testing
+
+K-S test
+
+Proportional Sampling
+
+Monte Carlo Approach & Random Numbers
+
+
+
+
+
+
+
+
+

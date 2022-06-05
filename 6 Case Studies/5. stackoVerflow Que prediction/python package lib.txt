@@ -1,0 +1,14 @@
+python package lib
+
+REMEMBER :-
+=> slmultilearn only uses dense matrix & not sparse matrix
+
+---------------------------
+
+skmultilearn
+
+sklearn 
+   \
+    multiclass.OneVsRestclassifier()
+
+    metrics.hamming-loss

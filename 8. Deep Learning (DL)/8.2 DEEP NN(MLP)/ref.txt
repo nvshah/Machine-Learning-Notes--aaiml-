@@ -1,0 +1,21 @@
+ref
+
+- Saddle Point (https://en.wikipedia.org/wiki/Saddle_point )
+
+- Grad + Momentum 
+     - https://www.slideshare.net/SebastianRuder/optimization-for-deep-learning
+     - https://towardsdatascience.com/stochastic-gradient-descent-with-momentum-a84097641a5d
+
+     - refer sebastian Ruder Blog (Optimizing GGradient Descent)
+     - https://ruder.io/optimizing-gradient-descent
+
+- Types of Optimization Algo (Optimizers)
+   - https://towardsdatascience.com/types-of-optimization-algorithms-used-in-neural-networks-and-ways-to-optimize-gradient-95ae5d39529f
+   - https://www.kdnuggets.com/2020/12/optimization-algorithms-neural-networks.html
+
+- Auto Encoders 
+	http://ufldl.stanford.edu/tutorial/unsupervised/Autoencoders/
+	https://en.wikipedia.org/wiki/Autoencoder
+
+- Word2Vec (**IMP**)
+    https://blog.acolyer.org/2016/04/21/the-amazing-power-of-word-vectors/

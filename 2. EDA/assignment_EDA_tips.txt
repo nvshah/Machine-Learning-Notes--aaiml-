@@ -1,0 +1,4 @@
+assignment_EDA_tips
+
+- have proper axes names, title and legend to all the charts that you plot.
+- proper conclusions section where in you summarise your overall observation

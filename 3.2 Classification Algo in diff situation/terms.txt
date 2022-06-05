@@ -1,0 +1,42 @@
+Imbalanced & balanced dataset
+disparity
+Majority Class
+Minority Class
+
+UnderSampling
+OverSampling
+Artifical/Synthetic Points
+Extrapolation
+Dumb Model
+
+multi-class classification
+1 vs rest   // technique to convert multiclas classification to binary classifcation
+Train test Set Differences
+temporally stable
+
+*Outliers Impact
+Local Outlier Factor (LOF)
+Densely-tightly, Sparse Cluster
+
+K-distance
+Neighbour
+reachability distance
+LRD, LOF
+
+Scale & Col Standardization
+Scale-difference
+
+Feature Imp & Forward Feature Selection
+
+ordnial (orders)
+Category Featurization 
+Imputation  (Handling missing val)
+
+Curse of dimensionality
+Hughe's law   (Dimen incr, efficency decr)
+
+Bias-Variance Tradeoff
+Generalization Error
+Irreducible error
+
+

@@ -1,0 +1,42 @@
+6. Deep Learning ConvNets
+ -------------------
+
+
+* Image -> Vec :
+  --------
+   Image has several Features such as :- 
+     - Edges
+     - Shapes
+     - Colors
+     - Patterns
+
+* Convolutional Neural Network (CNN) :
+  ---------
+   -> State of the Art Technique for Image -> Vec  // via Deep learning
+
+
+  Building CNN takes lots of Efforts & its not trivial
+
+  So some companies like Google, Amazon has build already their own CNN
+
+    - AlexNet
+    - GoogleNet
+    - ResNet	
+    - VGG
+
+=> Understanding CNN & how it works internally is not trivial (its fairly complex)
+
+
+Recommendation only via Images (CNN):
+--------
+Consider :-
+  => Only use Images to find Similar Products instead of using (Title + Colors + Brands)
+
+-------
+-------
+(C0de)
+
+[10.1, 10.2, 10.3]
+Visual Features Based Product Similarity 
+
+-> Note traind features from VGGNet are stored in .npy ie numpy files

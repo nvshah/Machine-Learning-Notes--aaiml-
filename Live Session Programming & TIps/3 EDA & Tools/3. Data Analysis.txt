@@ -1,0 +1,96 @@
+3. Data Analysis
+
+-----------
+
+-> The only mandatory thing while defining plane is that normal should be orthogonal to Plane
+   then that normal can be unit vector or any other going inn that direction
+   for sake of simplicity we use unit normal vector
+
+=> Standard Deviation & Covariance are also impacted by scaless
+
+-----------
+
+
+- Using Linear Algebra, EDA only
+
+=> Key thing used in analysis can be :-
+    {
+      Mean, Median, Mode
+      Percentile
+      Distannce from Origin
+    }
+
+Q2) How to predict y for data point ??
+    
+    -> You can use Box-Plots/PDF (ie Median Speratinng out different features)
+
+Q3) how to finnd good thresold ??
+    
+    -> 
+
+Q4) If mean = 0 & Std-Dev = 1 then whether RV is Gaussian Distb or Its a gaussian RV ??
+
+    -> no 
+
+       Just because mean=0 & std_dev = 1 doesnt mean Gaaussian Distb
+
+       So if variable is standard normal variate then mean=0 & stddev=1 but inverse implification is not true
+
+
+Q5) Swiggy Delivery System, Give time of deliveries :- {d1, d2, d3,...}
+	What info you could carve out ??
+
+	- Avg :- Mean :- wont work  as some outliers (ie customers will not be satisfied)
+	- Median    :- also wont work
+
+	=> percentile :- gives you idea about how much % of customers satisfied
+	      \
+	       Eg 95 %ile - gies you idea about how much time it took to deliver to 95% of the customers
+
+	=> We can use PDF & CDF to find the information
+
+
+Q6) What is good metric to measure spread of a distribution that is lot skewed ??
+   
+    -> STd-Dev can be corrupted by extreme outliers because it uses mean
+
+    Kurtosis measures how heavy the tail is
+
+Q7) Eqn of HyperPlane with normal to plane W is ??
+
+    If passing through origin :- W^T*X = 0   //Eqn of Plane
+
+    // Eqn of Plane not passing through orign having y intercept b
+       not passing through Origin :- W^T*X + b = 0 
+
+Q8) Shortest Distance of Point to a Plane ??
+  -> Dot Product to Normal / Norm of Normal
+
+Q9) Shortest Distance of Point to a Hyper-Sphere ??
+  -> ||p|| - radius
+
+Q10) Distance of Origin from Plane ??
+  -> intercept_b / ||W||
+
+Q11) Distance between 2 parallel hyperplanes ??
+  -> p1 :- W^T*x1 + b1 = 0
+     p2 :- W^T*x2 + b2 = 0
+
+         b2-b1 / ||w||
+
+
+Q12) Given delivery times for different days for Uber & Swiggy, How would you determine which is better ??
+ -> Plot PDF & CDF
+
+    By percentile
+      but Just if 99th percentile are same doesnt mean that 50th percentile are same
+
+ -> QQ plot (comparing 2 Distributions)
+
+ The avg time of Swiggy & Uber may be similar but 90th percentile of both may not be similar
+ 
+ -> KS Test
+
+Q13) Given QQ Plot find the Distribution of Random Variable X :
+  
+Q14) Given Unfair Coin Create a Fair Event Output from that coin 

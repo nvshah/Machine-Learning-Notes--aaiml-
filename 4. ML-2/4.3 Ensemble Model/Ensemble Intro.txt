@@ -1,0 +1,21 @@
+Ensemble Intro
+
+
+Core Idea : Combine Multiple basic model to get a single powerful model
+-> To leverage multiple basic models (simple Models) & combine them intutively/ingeneously/creatively
+   into more powerful model
+
+
+* There are 4 types of Modeling :
+    
+    1) Bagging (BootStrapped Aggregation)
+    2) Boosting
+    3) Stacking
+    4) Cacading
+
+    All 4 techniques are high-performing & very powerful
+    - Very useful in real world
+
+
+=> The more different the basic Models are i.e (M1, M2, M3, ...)
+    the better you can combine them into good poerful/creative Model ie. M

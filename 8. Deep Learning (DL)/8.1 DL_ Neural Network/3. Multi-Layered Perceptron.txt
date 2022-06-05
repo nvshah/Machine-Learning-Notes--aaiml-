@@ -1,0 +1,100 @@
+3. Multi-Layered Perceptron (MLP)
+----------------------
+
+--------
+
+
+--------
+[REMEMBER]
+
+=> In a nutshell MLP is a graphical way to represent simple Function Composition
+
+=> Though Multi-Layered Structure (NN | MLP) provide us Powerful ways to represent the 
+   Complex Models|Functions
+   at same time it can be prone to Overfitting as well (readily)
+
+-> Multi-Layered Structure is one of the most interesting, important & powerful idea in entire ML itself
+________
+
+* Terminologies :
+  ---
+   - Input layer
+   - Output layer
+   - Hidden layer
+
+=> In case of Simple Perceptron, You only have Input layers & Output layer, nothing like Hidden Layer
+
+* LogReg & Perceptron :
+   \
+    -> When you represent the Logistic Reg using Perceptron or Neural Model
+       at that time also 
+       There is no Hidden Layers (only Inp & Out layers)
+
+
+* Neural Networks & Multi-layered Perceptron :
+  -----------------------------
+   -> In case of MLP, there can be Hidden Layers
+    - For simplicity each hidden layer is given label ie L1, L2,...
+
+    - Passing inputs through a sequence of functions
+
+   => Multi Layered Structure gives you enormous Power 
+
+
+Que) Why we should care about MLP or Network of Neurons ??
+---
+ -> 1. (becuase of) biological inspiration
+
+    Basic Perceptron is inspired from Neuron
+    Then
+    Why not try to replicate the power of Neural(neuron) Network (maybe present in Human, Rat, Monkey, etc...)
+
+
+* Mathematical Argument :
+  ------------------
+   - Always Linear Reg Fn will not fit in best way
+     Hence
+     In such cases we need complex function 
+     & 
+     thus Neural Network (MLP) can be helpful
+
+  => Thus we can architect|construct the complex function using Multi-Layer Perceptron alike structure
+  
+  Thus
+  => Multi Layered Structure gives you enormous Power
+
+
+* Linear vs Non-Linear Basic Diff :
+  ----------
+   Linear Reg :- helps us to achieve Func for Linearity (Regression Task)
+   Logistic Reg :- helps us for linearity in case of Classification Task
+
+   Non-Linearity :- 
+      - can be introduce & attained by RBF-SVM, RF, GBDT, etc...
+
+   Now
+    -> Neural Network (MLP) also solves non-linearity kinda thing
+         \
+          It achieve this by applying Sequence of Function (most probably Linear Func)
+
+
+* Function Composition (High School Maths) 
+  ------------
+   F(G(x))   // F of G of x
+   G(F(x))  // G of F of x
+
+   - MLP is nothing but Function Compositon similar to stated in math way
+
+   - In a nutshell MLP is a graphical way to represent simple Function Composition
+
+[**]
+REMEMBER :
+________
+ -> Though Multi-Layered Structure (NN | MLP) provide us Powerful ways to represent the 
+    Complex Models|Functions
+    at same time it can be prone to Overfitting as well (readily)
+
+ => And whole of lot of task in DL is prevent the model from Overfitting
+
+ => Multi-Layered Structure is one of the most interesting, important & powerful idea in entire ML itself
+

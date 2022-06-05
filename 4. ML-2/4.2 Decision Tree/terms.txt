@@ -1,0 +1,21 @@
+terms
+
+- nodes|vertex
+- internnal node
+- leaf node
+- Path
+- edges
+
+- axis parallel hyper-plane
+- entropy | Thermo Dynamics | Inforamtion Theory
+- PDF | PMF | more peaked | less peaked
+
+- Kullback-leibler divergence (KL divergence)
+
+- Entropy | ranndomness | certainty
+- Information Gain
+- Gini Impurity
+- Pure Node
+
+- Feature Interaction
+- Tree Unstability

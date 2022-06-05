@@ -1,0 +1,56 @@
+3. StreamLit
+-------------
+
+ref :
+1.https://www.streamlit.io/
+2.https://docs.streamlit.io/en/latest/main_concepts.html
+3.https://docs.streamlit.io/en/stable/tutorial/create_a_data_explorer_app.html
+4.https://github.com/streamlit/demo-self-driving
+
+--------
+-> AWS provides you lot of servers 
+   on one of this server you can run or host your WebApps.
+   - So any box on AWS will have unique IP address
+   - Each Box = anythinng like EC2 acc
+
+-> Socket := Ip Address + Port_Number
+
+- Stress Test  // many calls to api 
+
+Alternative to StreamLit :- Dash 
+Alternative to Flask :- TennsorFlow Serving 
+
+--------
+
+* why ?
+ 
+ -> Flask + EC2 help us to deal with backend, deploying & hosting things but what about the front-end
+ - StreammLit helps us to build entire Web-App
+
+ - StreamLit = Data Apps :- (Backend + Frontend)
+     \
+      Helps to build WebApps for models
+
+* Caching :
+  -----
+   - If you want to store some data after first call so that it can be accessible to multiple browser 
+     accessing the same API/App call using that data, Caching of data after first call can be useful.
+
+   -> @streamlit.cache
+
+   Caching : Dict of innput-output for given func
+
+
+NOTE :- 
+   Whenever any user call the Web-App Req :- It will run from top - to - bottom as any other Python Code
+
+* Deterministic Function :
+  -----
+   -> Caching will work with Deterministic Function
+   -> Non-Randomized Function
+
+
+* Flask vs StreamLit :
+  ----
+   Flask :- WebAPI   (Func)
+   StreamLit :- WebApp (Func + UI)

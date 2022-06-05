@@ -1,0 +1,24 @@
+Python Packages
+
+--------
+
+- In Multi-Class SVM do 1 vs Rest
+
+- linear kernel = dot product
+
+-> tolerence :- terminating criteria for iteration
+
+__________
+
+In sklearn :
+	SVC - params :- { 
+				gamma = 1 / sigma    // RBF kernel sigma is hyper-param
+				tol    // when to stop in iteration during gradient descent
+
+--------
+
+libsvm    // best library for Support Vector Machine
+
+* sklearn.svm 
+           \
+            SVC

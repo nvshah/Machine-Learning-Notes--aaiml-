@@ -1,0 +1,202 @@
+* For any alogo what we see :- 
+
+   - Hyper-param  (Bias-Variance Tradeoff)
+   - Feature Importance & Interpretability
+   - Interpretability
+   - Imbalanced dataset
+   - Outliers
+   - Missing Val
+   - Large Dimension
+
+   - Feature Transformation
+   - Kernalization
+
+   - Sparsity / density
+
+   - High throughput & Low-Latency
+   - SVD | PCA | NMF
+
+=> Outliers mostly impacts the Overfitting 
+
+-> Whenever you have Categorical features, you can consider missing val as another feature (ie NAN)
+
+* Inspiration :
+  
+   KNN :- instance based method | (Heurestic based inspiration)
+   NB  :- Probabilistic method
+   Log-Reg, Linear-Reg, SVM  :- Geometry Inspired
+   Decision Tree :- if-else programatic pragmatic
+
+* Assumptions :  (NOTE : Every Model Makes some assumptions)
+  
+   KNN  -> Neighbourhood of pt is a pt
+   NB   -> Conditional Independence of features
+   LOR  -> Almost Linearly Seperable
+
+* Hyper Param
+
+   KNN -> K
+   NB  -> alpha (laplace smoothing)
+   Log-Reg -> alpha (regularization term)
+   SVM :- C, sigma
+   SVR :- epsilon
+   depth ;- DT
+
+* Feature Imp 
+
+   KNN -> need to do Forward Feature Selection
+   Naive Bayes -> can obtain directly (by likelihood lookup & sorting techniques)
+   Logistic Reg -> :- abs() val of Wj; Wj = Weight Vector  // when no collinearity
+                      or FFS
+   SVM -> not easily done
+   DT  -> good when depth is small
+
+* Imbalanced Dataset
+   
+   KNN -> UnderSampling or OverSampling
+   NB  -> drop priors
+   Log-Reg -> Up/Down Sampling
+   DT     -> Gets affected as entropy or MSE gets affected by Imbalanced (So Do Up/Down Sampling)
+
+* Mising Val Techniques
+   
+   KNN -> Imputation
+   NB -> Categorical : assume NAN as another class
+         Numerical   : Gaussian NB
+
+* Distance/Similarity Matrix
+   
+   KNN -> distance based - so can used
+   NB  -> probabilty based - so cannot used
+   LogReg -> distance can be used - may be used
+   SVM  -> can be used whilst using kernel SVM
+
+   DT  -> It's not distance based but order based for numerical features
+          (DT needs features explicitly)
+
+* Feature Transformation :  
+    - Normalization, Standardization
+    \
+     SVm :- kernel trick (implicit)
+
+     Category -> Numerical 
+      \
+       - One Hot Encoding  (not good for DT as its increases dimen d)
+       - get_dummies
+
+* Loss-Minima Interpretation : (via diff approxiamtion func)
+   \
+    Log-Reg :- sign_distance vs Logistic-Loss plot 
+    Lin-Reg :- error vs Sq-Loss plot 
+
+    Regularizations :- L1 Reg
+                       L2 Reg
+
+                       Elastic Net
+
+    L1 Regularization Creates Sparsity
+
+* Optimization Algorithms :
+   
+   Gradient Descent
+   Stochastic Gradient Descent
+   Sequential minimal optimization (SMO-SVM)
+
+   Matrix Factorization (MF)
+   ALS (Alternating Least Squares)
+
+   Regularization term, Bias term, Mean Term
+
+* Decision Surface :
+   
+   SVM : - LR-SVM :- plane, line, ...
+           Kernel-SVM :- non-linear surface
+
+* distance based models : KNN, Log-Reg, SVM   // Feature Standardization is must
+  
+  Ordering Imp in Model : Decision Tree
+
+
+* Make Model more Robust :- Generalization via Regularization term
+                            RANSAC  (esp for Linear Model)
+
+* Hyper-Parameter Tuning :
+  ----------
+  methods
+   - Grid Search CV
+   - Random search CV
+   - Elbow Method (by plotting Curve for different value)
+
+   => hyper-parameter is one that fixed before learning a model parameters
+        \
+         -> are used to make model more robust & generalized 
+         -> helps to make tradeoff between bias-variance
+         -> otherwise model parameter may tends towards more biased or more variance problems
+
+=> When you have high dimension data, linear Models performs very well
+
+---------------------
+
+-> Naive Bayes vs KNN (Space Complexity)
+   
+    Naive Bayes is better than KNN in terms of Space Complexity (ie space required at runtime in RAM)
+    O(c*d)                    O(n*d)
+
+-> In NB impact of smoothing on Minority Class will be more & on Majority class will be less
+
+=> We are using Loss Func as Approximation to Optimization problem as
+   Often times The Optimization Func is not differentiable & thus non-continuous
+
+=> We are using CV-Error to pick up the best Hyper-Param {K, alpha, lambda, ..}
+   by Hyper-Param diff vals & plotting CV-Error
+
+=> Thus if feature vectors are collinear or multi-collinear 
+      then your weight vectors may change arbitarily  (Just via simple linear eqn soln principle)
+
+=> The most imp aspect of ML is 
+      1) feature-engineering 
+      2) Bias-Variance TradeOff
+      3) Data Analysis
+
+=> Loss-Minima interpretation is via plotting diff approximationn func on Y-Axis
+
+=> In Linear Regression, no need to worry abt Imbalanced Dataset as There are no class labels
+
+=> As you put more features ie #features, The chances of Overfitting also increases
+
+- Hyper-Param : (Notations)
+        With loss term :- C
+             regularization term :- lma
+
+=> Impact of Outliers in SVM is very little as the SVs are the one that matter most
+
+-> Categories of categorical features are also called as Levels
+
+-> For regression we use Mean Squared Error (MSE) or Median Absolute Deviation (MAD)
+
+-> Error = bias^2 + variance + c   // c is irreducible error
+
+=> IMP NOTE :- error term :- bias term related
+               weight coeff term :- variance term related
+
+=> When you do not have same data pt for 2 different model (ie in case of imbalanced data)
+   then connsider Confidence Interval instead of point Estimate for Metric
+
+* High Througput = lots of Query point
+  Low - Latency = faster system
+
+* KPI = Key performance metric
+
+* Use ROC-AUC curve for KNN with probabilities (esp when there is binary classification)
+
+* => At the end GridSearchCV or RandomSearchCV helps us to find the best hyper-param value for Model
+   out of many hyper-param models
+
+* => We must always add Regularization in Optimization to avoid Overfitting
+
+* => L1 regularizations creates sparsity
+
+  [Linear Regression]
+* => If your Data contains multi-collinearity then you can't interpret Weights very easily
+
+  => As Dimensionality increases -> It becomes easy to seperate Data Linearly (Comparatively)

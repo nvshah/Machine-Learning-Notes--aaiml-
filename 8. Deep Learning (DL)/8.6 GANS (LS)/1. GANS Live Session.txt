@@ -1,0 +1,255 @@
+1. GANS Live Session
+-------------------
+section : DL -> 6.1 GANs
+
+ref :
+GAN ref :- https://drive.google.com/file/d/1i32iTTdPn_v2nYFB8iHc0tKotVWDsY3a/view
+
+Content :- Intro, GAN, GAN Wrorking, Types of GANs
+---
+Facts
+
+- GANs working is motivated from Game Theory
+
+---------
+REMEM
+
+- Cross Entropy is generalized version of Log Loss
+
+[NOTE]
+=> Whenever you have complex things to Model, DNN & CNN can come to rescue
+
+-> Today GANs are very popular for Modeling the Distribution
+
+-> Generaotor N/w :- Out => tanh
+   Descriminator N/w :- Out => Sigmoid
+
+---------
+
+* [INTRO]
+
+GANs :- Generative Adverserial Networks
+
+Task : Create Mnist Images, I want to generate new Mnist images
+       (that should not be exact copy but similar to original Images)
+
+Tip : Instead of solving bigger task, try to solve simple task at first (ie First Principle Approach)
+
+* Concept :- Generative :
+  ---------------
+  - Concept similar to comparing or finding the similarity between2 Distribution
+
+* Simpler Task :
+  ---
+   - Generate 1D Vec (Scalar)
+   - need to find the PDF of heights, & parameters Theta
+
+   NOTE : THETA is general variable is used in case of probability (ie PDF)
+
+   - So we want to find type of Distb (ie either using KS-test or QQ-Plot)
+     &
+     also we want to find the parameters (ie THETA) for that founded Distribution
+
+     NOTE : THETA can be combination of params for diff distb type :-
+              |
+               - for Normal it is [Mu, Sigma]
+                     Uniform it is [a, b]
+
+=> PDF is also a Model (ie very simplified Model)
+    |
+    When we draw random samples from founded Distb then if its newly drawn sample is similar to original then
+    we can say D & D` is same
+
+   If distb is similar then its one way to say that both datasets are very similar
+
+* Model based Similarity of Dataset :
+
+* Model Based Approach
+  -------
+-> Model based approach is better than distanced based approach
+
+=> If the model is able to distinguish between D & D`,
+   then underlying distb is not much similar (ie not overlapping) (ie are far away)
+
+* Distance based Approach :-
+   - KL-divergence
+   - JS-Test
+
+=> But Model Based Approach is far more robust as I can pick/build any model (ie maybe DNN as well)
+   Distance based wont work well for High Dimension
+
+---
+Steps
+
+1) Given Data D, build the Model
+
+2) Generate the samples using the Model
+
+3) Model based Similarity of Dataset
+
+----
+
+* Generative Part :- tries to generate the Data (often using Deep NN)
+
+  Adverserial Part :- tries to Judge that whether the data generated is similar to original or not
+                      (here also deep-NN is used often ie Network is used)
+
+  Network :- Deep Network
+
+  => As dimensionality of space increases, you need more & more complex models
+
+
+- As soon as I reach D = D`, We can say Generator Model is performing good
+  &
+  thus we can take Generator Model & start getting/generating samples as many as we need for MNIST
+
+[NOTE]
+=> Whenever you have complex things to Model, DNN & CNN can come to rescue
+   Thus in case of GANs, Deep NN is used instead of Probabilisty based distb (ie PDF)
+
+-> GANs are extremely hard to train (ie to get to work)
+
+Q) Alternative of GANs :
+   - simple probability distb model
+     but
+     they may not leverage deep NN
+
+   - Variation Auto Encoder (VAE)
+
+-----------
+
+* GANs :
+  ----
+  - Generator Network  (Deep NN)
+  - Descriminator Network  (Deep NN)
+  - Output Loss (ie Cross Entropy or Log Loss)
+
+  - Concept is analogous to (Comparing the Distributions are same or not)
+
+* Generator : for generator we can use probability based model
+  Descriminator : we can use Metrics but Model based descriminator makes more sense
+
+  but this may not work for high-d data
+
+  RNN or CNN may be used to model the distribution
+
+=> Today GANs are very popular for Modeling the Distribution
+
+NOTE :- (Descriminator)
+  - If descriminator not perform well, ie it can't descrimnate two datasets, then we can say
+    our datas are equal (fairly)
+
+  - GANs are used for super resolution  // SRGAN
+
+  Application :
+  ---
+   - useful for anime characters generation
+
+  - GANs are much better than standard Image Processing operations or CNN
+
+=> Progressive GANs
+
+----------------
+
+* GANs Working :
+  ------------
+  - motivated from Game Theory
+
+  Generative Model :
+    - generates the samples or data
+
+  Descreminator Model :
+
+  -> We want to maximize the LogLoss (ie Final Loss)
+
+  Q) How does Error back-propogate to Generator N/W
+
+  :) Training happens in 2 stages
+      \
+       - 1) Fix M_d (ie Determining Model) & Train G (via Genrator model)
+                \
+                 Generate Several Img from G
+
+         2) Fix G (generator model) & Train M_d (ie Determining Model) using Gradient Acent (ie like ADAM)
+
+     At moment we freeze 1 model & train other (ie let error pass through freezed model)
+
+  Generator Model :
+  ---
+   - comprises of Deep NN model
+   Input :- 100 * 1 Random vector (must be Gaussian/Normal)  // suggested
+   Out :- 784 * 1 Vector
+
+   - Initially Weights in GAN are also randomly initialized
+
+   - Upsampling through Fully connected Deep NN
+
+  -> As there are 2 Models here (ie Generator & Determinator), I'll go back & forth here
+  -> We can let error propogate through skipping either one
+
+  - Here we are doing alternating minimization
+
+  -> Simultaneously updating weights in both the Model (ie Generator & Determinator) is very complex optimization problem
+
+  - In case of GAN, we want to maximize the Log-Loss
+     |
+     So we will achieve it via Gradient Ascent (instead of Gradient Descent)
+
+> Hack (based on few experiments)
+
+  -> tanh instead of sigmoid
+     tanh := -1, 1 Normalization
+     sigmoid :=
+
+  - Thus Output layer is Dense & possess `tanh` as activation
+
+  Descriminator N/w :
+  ---
+  - It's standard Classifier Network
+  output :- `sigmoid` as activation
+
+*-
+TIP :- Don't sample from Uniform Distb, instead sample it from Gaussian Distb
+
+  => Alternatively we will train the model (ie by fixing either 1 at moment)
+       \
+        - Fix G, train Md  // Updates Weights in Descriminator Model only
+          Fix Md, Train G  // Updates Generator Weights only
+
+  -> We will make this train on Fake Images (ie Generated Images) & true images
+
+  - as #epoch increases then Generated images start looking similar to original imgs
+
+REMEM :- Training GANs is Hard
+
+-----------------------------
+
+* Types of GANs :
+  ----------
+  - Task Specific GANs
+  - already avail GANs are trained to work on some specific dataset so you need to find whether
+    it will work well for your dataset as well or not ?
+
+TIP :-
+  There are 2 main thing when it comes to GANs or any ML-model
+   1. Architecture Design
+   2. Training
+
+  In case of GAN, pick any archi. avail at hand & focus more on Training & deciding the params
+
+  -> Dont spend too much time on Archi Designing
+  -> Focus more on Training
+
+
+__________________
+
+GIST
+
+- Understand the GAN from 1st Principle
+- All in all, GANs Training is not all about BackProp Algo only
+  It's more about alternating Model Training
+    - ie Train Generator, keeping Descrimantor Freezed
+    - &  Train Descriminator, Keeping Generator Freezed
+    - & Move Back & Forth between this 2 in same way
+
+- Alternating Minimization

@@ -1,0 +1,206 @@
+3. Analysis
+
+=> SGDClassifier is general purpose Classifier
+
+=> If you need probability output then must use Calibration models at the end
+=> You must not see data in CV or test whilst doing training
+
+=> The lesser the gap between Train & Test/CV the less is Overfitting
+
+-----
+- One Hot Encoding can be done using CountVectorizer
+
+1.) If there is a less gap between train and test error, it means the model has learnt the pattern in the train data well and also generalized the same in the test or unseen data well. This is the ideal condition.
+
+2.) If the train error is very less and the test error is very high, it means the model is overfitting. The model couldn't generalize well in the test data. You can add regularization to prevent overfitting. 
+
+-> even for OneHot Encoding it is good habit to normalize the data
+
+-> Precision & Recall Matrix can give us very insightful information
+
+ => What type of Featurization You have to use depends on model as well
+-------------
+
+* Univariate Aanalysis :
+  ---------------------
+   - all abt how individual features contribute in predicting actual classes
+
+1) Gene Feature ;
+
+
+* Responsive Coding :
+  -------
+   -> Converting gene point to vector of class labels via Probability from original one
+   		\
+   		 Where each of values is probability val (with some smoothing ie Laplace|Additive)
+
+   		 For given Feature value -> Vector representing the probabilities to different classes
+   		          \ 
+   		           based on this feature val what are probabilities to belong to specific classes
+
+
+# Elegant Hack :
+  ----
+   As there are 90+ Categories for genes, 
+    \
+     So we can try to build model just considering genes as feature
+
+
+=> If you Overfit your Model then gap between Train & CV model's error is more !!
+
+
+* Stability of Feature :
+  -----------
+   if the overlapping of fetures values among 3 dataset ie {Test, Train, CV} is significant
+   then we can say that Feature is Stable
+
+   But if the overlap is very minimal then Feature is unstable
+
+   => You must consider removal or minimizing the usage of Unstable Feature because they may Overfit the Model (though they may be powerful)
+      \ 
+       because Eg if gene present in train model are not present in Test or CV then train model is not much useful
+
+
+2) Variation Feature :
+   _________________
+
+
+* Response Coding :
+  ----
+   - Never use CV or Test Data for Response Coding
+
+
+  Response leakage :
+  ------
+   -> Problem of response leakage is when Train, Test, CV all are considered somehow while doign response coding
+   -> response coding must be done with train data only 
+
+   - but if you leak the data ie probable yi from CV & test during train, then it is known as Response Leaking
+
+
+3) text feature :
+  _____________
+
+   1) One Hot encoding for text feature can be achieve via :- Bag of Words (BOW)
+
+   2. Response Coding :- via Naive bayess
+
+________________________________________________________
+(MODELING ML)
+
+* MultiVariate Analysis :
+  ----------------
+   -> Its nothing but ML models
+      (taking all the features to predict the class labels)
+
+   So far we see diff types of features generated ealier :- 
+      - One Hot Enncoding
+      - Response Coding (based on probabilities NB)
+
+  * Stacking the Features :
+    -----------
+     hstack()
+
+     1) original features + onehot encoding
+     2) original features + response encoding
+
+     onehot encoding has more dimennsional data than response coding
+
+  => when we do one hot encoding we get High diemn data
+
+  => trees can handle low dimen data very easily
+
+1) NB + OneHotEncdoing :
+  ----
+  -> NB is much more simpler model than Logistic Regression
+  - NB does pretty good Job
+
+
+2) KNN 
+  ---
+   -> As KNN did not work well with High dimension data, So we will use Response Coding
+
+   - Response Coding + KNN
+   
+   **
+   => What type of Featurization You have to use depends on model as well
+
+
+   Misclassified Percentage vs LogLoss :
+   -------
+    In case of missclassified :- you are just taking % based on class labels prediction
+    In case of LogLoss :- actually the probabilities are used (so it would be more accurate & informative)
+
+    So it may be possible that  
+       - misclassified % pts may be same in NB & KNN
+         but LogLoss may differ considerably between both
+
+3) Logistic Regression :
+   ------
+    (1) With Balancing
+	    One Hot Encoding - because LogReg works well in High Dimen datas
+
+	    -> Balancing is done (to face with imbalanced data)
+	        \
+	         -> good for minor classes performance
+
+	    Feature Imp
+	    - We can use abs val of Weights Wi to get feature Importance (in a good sense)
+
+	(2) Without Balancing done
+
+	    -> NNot good for minor classes performance
+
+------
+
+ For Feature Importance :
+   - mostly we can get idea by looking at the weigthts ie Coefficient of trained model once done 
+     predicting.
+
+   Que -> Out of all features (top) imp for classifying particular class, 
+          Which features from that set is present in current query data point 
+            \
+             this is one kind of Feature Importance
+
+-------
+
+4) SVM :
+   ---
+    -> Linear SVM is similar to LogReg & its interpretable
+
+    For Feature Imp -> we can take abs val of weights if required
+
+5) Random Forest :
+   ---
+    2 hyper-param :- n_estimators & depth
+
+    1. with OneHot Encoding
+    2. with Response Coding
+
+
+---------
+
+6) Stacking Models :
+   -----
+    - { NB, KNN, LogReg }
+
+    -> One of the major flaw with stacking is that model interpretability is loss !
+
+    - lesser amt of data is avaialable in First Stage
+       \
+        So due to this each model tends to give large err compare to when train individually
+
+    => Stacking is not good idea when you have few points :
+        when million of points -> make sense
+
+    -> So cant get Feature Importance via Stacking
+
+7) Maximum Voting Classifier 
+   ----
+    - its also a type of Ensemble
+      So problem of interpretability
+
+      soft :- expects probability values
+      hard :- work on exact probability
+
+      

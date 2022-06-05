@@ -1,0 +1,70 @@
+5. Batch Normalization
+----------------------
+
+----
+=> When Distribution of Diff Batches are almost Same in Deep NN,
+   then
+   It will eventually improve|impact the Derivative(ie Grad) term of our Update Eqn
+   &
+   Will help us to have Faster Convergence by strenghtening the Learning Rate Higher
+
+----
+
+* Mini Batch SGD & Deep NN :
+  ----
+   -> When we have deep NN(MLP)
+      &
+      We are using Mini-Batch SGD,
+      then
+      A small change in input may lead to a large change in output layer
+
+
+* Internal Covariance Problem :
+  -----
+   -> The distribution of data may varys from layer to layer
+
+   - The layer L5 may see more dissimilarity in batch as compare to layer L2
+
+   -> thus distribution of batch progression at each layer varys & this phenomenon is called as Internal Covariance Problem.
+
+
+* Batch Normalization :
+  -----
+   - Use to deal with the Internal Covariance Problem
+
+   - In batch normalization, we add 1 more layer deep in the NN
+        |
+        this layer will Normalize the each incoming batch
+        thus this way we will mitigate the problem of varying distribution
+
+   - Batch Normalization has 2 Param :- {gamma, beta}
+      &
+     Batch Normalization learn this param during Back Propogation itself
+
+     as Batch Normalization internal operations are differentiable & thus it can be acted as Activationn Function.
+
+   => Whole Batch Normalization Computation is Differentiable 
+       \
+        involves :- {computing mean, variance, normalize, scale & shift}
+
+      as long as something is differentiable, you can add it to the NN between layers & 
+      add it some params which can be learned throughout the process
+      &
+      such param in case of Batch Normalization are :- {gamma, beta}
+
+   PLUS of Batch Normalization
+   ---	
+   => Faster Convergence
+       |
+       As all inputs in network amongst diff layers comes from similar kinda distribution
+       You can have faster convergence
+        \
+         this will allow you to have larger learning rate (ie Eta) in Update Eqn
+
+   => Weak Regularizer :
+       |
+       Batch normalizer have tendency to behave as Regularizer (but this doesnt mean to ignore dropouts)
+
+   => It helps to avoid "internal covariance shift"
+       |
+       when you avoid internal covariance shift, You can train 'deeper NN'

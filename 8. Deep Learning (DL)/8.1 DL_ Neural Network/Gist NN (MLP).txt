@@ -1,0 +1,71 @@
+Gist NN (MLP)
+
+=> In a nutshell MLP is a graphical way to represent simple Function Composition
+
+[*IMP*]
+=> You can think MLP as Multi layer generalization of Linear Regression or Logistic Regression 
+
+_______
+
+* MLP : (Multi Layered Structure)
+ ----------------------
+   - provides Powerful model as they can represent the complex things
+   - but at same time they can be readily overfitted
+
+  -> Multi-Layered Structure is one of the most interesting, important & powerful idea in entire ML   
+   itself & modern Deep Learning
+
+  -> Multi-Layered :
+     - The Weights between any 2 layers can be represented by the Weight Matrix
+  
+  -> MLP indeed helps to address complex things & provide powerful ways, However it also
+     introduce chances of Overfitting too.
+
+     SO whilst doing NN (MLP), we need to take care of Overfitting in particular
+
+
+* fully Connected Network :
+  ----
+   -> There is edge between any 2 layers of entire network
+      - ie kinda cartesian product
+
+
+* Logistic Reg | Perceptron | NN (mlp) :
+  --------------------
+   > LogReg can be represnt using Simple Perceptron Model
+     where there is only input & output layers (no hidden layers)
+
+   -> For complex Modelling of Complex Function (ie Non-linear Function), We need 
+      Multi-Layered structure 
+       \
+        Input + Hidden + Output => layers
+
+
+* NN (MLP) Network :
+  -------
+   - Connection of multiple Neurons (ie Network of Neurons)
+   - Input layer + Hidden layers + Output layer
+
+   Imp things to Rememmber :-
+     \
+      - Chain Rule (For finding the Grad or Derivative)
+      - Memoization
+
+   => Computing & finding the Gradient is one of the challanging part in this 
+
+* BackPropogation :
+  -----
+   -> Chain Rule + Memoization
+
+   Traditional activation Functions :
+     - Sigmoid
+     - tanh
+
+* Vanishing Gradient Problem :
+  -----
+   -> building deep NN (ie with more numbers of Hidden layers) becomes difficult with traditional Activation Functions
+
+   -> Both Sigmoid & tanh squash the vals for their Grad (ie 0->1 or -1->1)
+   -> Due to which Updating Weight in neural Network becommes extremely Difficult
+
+

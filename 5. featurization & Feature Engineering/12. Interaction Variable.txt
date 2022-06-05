@@ -1,0 +1,15 @@
+* Interaction Variable
+-----------
+ - form of Feature Eng.
+
+ -> To create a new variable if we take conjunction of k variables then it is called as k-way 
+    interaction variable
+
+ - Conjunction often happens via boolean operator
+
+ Q) Given Task How to Find good Interaction Features ??
+  -> DT
+     We can perform Feature Engineering using DT here as well via conjunction of conditions arriving 
+     in path to leaf node
+
+     

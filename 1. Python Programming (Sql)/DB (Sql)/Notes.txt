@@ -1,0 +1,163 @@
+Notes
+-----
+ref ->
+[Sql (Imdb) AAIML	] https://drive.google.com/drive/folders/1rrqZz-ddvYGvbXoP-SH767pgY06B7YHk
+
+[mysql slect syntax]  //Function Reference | Keyword Order
+[Correlated SubQuery]  // wiki
+[SQL Data types]  // wiki
+
+shortcuts for terminal (mysql)
+  ctrl + L  // Mac + Linux
+
+------
+(TIPS)
+
+- Always query those cols that are required  (i.e it would be faster than `*` i.e everything)
+- OFFSET = Ignore/Skip (starting rows)
+- Always be aware about NULL values in SQL, (as it has some special meaning)
+
+- Sub Queries are more code readable than Join Queries
+
+- Delete or Truncate only Removes Content of tables
+  Drop removes entire table (with Structure)
+
+- SQLite does not have DCL commands
+
+-> *.*  (all tables of all databases )
+
+_______________________________________________
+( General Notes )
+
+SQL = Declarative => What you want !! 
+                     Not How you want !?
+
+
+-> Primary key, 
+   Foreign key
+   != , <>  // not equal to
+   NULL => doesn't exist | missing
+   IN
+
+   Join Keywords -> {ON, USING}
+
+ * example Imdb Schema -> Imdb dataset (movie, director, etc...)
+
+ => root is the most powerful user  [root = database administrator]
+
+* key => {PRI, MUL}
+
+=> Simple `Select Query` will preserves the Row-Order
+   Output row-order may vary in case of `Order By` query
+
+=> Distinct consider all columns at same time (i.e treating as row & not chunks)
+
+* `=` does not works with `NULL`.  use `IS NULL` or `IS NOT NULL` instead. 
+
+=> Group-By often used with aggregated function
+   Ig grouping columns containing null values, all Null values resorts to 1 i.e grouped together
+
+
+* Having
+-----
+=> Having is often used with Group By,
+   but it's not manadatory
+   in which case it will act as `Where` condition
+
+   Having is applied on top of groups & not on individual rows
+=> Having is applied after grouping whereas Where is used before grouping
+
+* Join :
+----
+=> Not required `ON` keyword syntax whilst Natural Join
+
+   Inner Join = Join
+   Left Join = Left Outer join
+   Full Join = Full Outer Join
+
+* DataTypes :
+----
+ -> XML & Json are widely used to store & transmit data among internet
+
+_____________________________________________________________________________________________
+
+Terminologies 
+----------
+
+=> result-set : a set of rows that form a result of a query alongwith col-names & metadata	
+
+-> Logical Operators
+
+=> aggregate-func : perform some operation on set of rows & return aggregated values
+
+=> Alias : another name for column produce by aggregated fun
+           
+        -> We can use alias just to refer same thing in further part of Query
+
+=> Join : help us to combine data that are splitted among multiple tables
+    
+     Natural Join :- When same cols-name between splitter tables. `USING` is optional
+     Inner Join   :-  `ON`
+     
+     Outer join :- {left, right, full}
+
+=> Sub Queries : Alternatives to Join (to work & get data from inter-dependent tables) 
+                 Inner-Most to Outer-Most
+
+    Exists : -> result set is not an empty set (atleast 1 row)
+
+   Correlated Sub-Queries : Here for each row sub-query is run again
+                            Outer-Most to Inner-Most
+
+
+ * Data Manipulation Language :
+   ----------------------
+    SELECT, INSERT, UPDATE, DELETE
+
+    Insert :
+     ----
+      1) Insert Single/Multiple Rows
+      2) Insert from another table
+
+ * Data Definition Lanaguage :
+   ----------------------
+    CREATE
+       \
+        DataType, Constraints 
+        
+        Type  :-  INT, VARCHAR
+        Constraints :- (i.e PRIMARY, NOT NULL, UNIQUE, FOREIGN KEY, CHECK, INDEX)
+     SQL Data types 
+
+    ALTER 
+      \
+      MODIFY   
+    => With Alter you can add, remove or modify column data, datatype or Constraints
+
+    DROP 
+      -> removes entriee table (alongwith table structure)
+
+
+ * Data Control Language (DCL)
+   --------------------
+    -> Control type of access of an user to DB  
+    -> ensure data safety 
+    -> properly maintained by DB Admin whilst being used by diff engineers with diff access
+    -> Admin controls those premissions
+
+    2 basic Commands -> { GRANT, REVOKE }
+
+    Database creator can create role (alike admin)
+    - Assign some permissions to Role
+    - role can be assign to multiple users
+
+
+
+-----------------
+
+* Temporary Tables 
+  ------------
+
+
+
+

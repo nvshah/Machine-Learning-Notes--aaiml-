@@ -1,0 +1,43 @@
+-> Loss term
+   Regularizer term
+
+   Approximation Func for Loss-Term
+
+   Optimization Problem
+   Constrained Optimization Problem / Langrange Multiplier
+   
+   Sparsity & Density of Data
+
+ -> Instead of term derivative we can use term gradient or grad
+
+ -> Basic Way to approach & solve problem :
+
+     1) Write the Objective Func
+     2) Impose any constraints if required
+     3) Finalise Optimization Problem
+     4) Take first Derivative = 0 & solve the problem
+        or
+        Use technique such as GD or SGD
+     5) Use Langrange muliplier if required
+
+* Variance :=
+    Model changes a lot with slight change in Training Data
+
+  Model Err := bias^2 + variance
+
+=> Business Problem vs ML problem
+
+=> New feature to be included for Model Consideration should be Such That its get correlated with the 
+   error (from model that was trained with that new feature inclusion)
+
+=> When you have high dimension data, linear Models performs very well
+
+=> Random Vectors are used in LSH in KNN
+
+=> Matrix Factorization is very general idea in Mathematics & can be used at many places in ML
+
+* Bias-Term :
+  ----
+   -> In case of NN|MLPv :- we have 1 extra inp that performs same role as of constant in linear Function
+
+=> Random model maybe Worst Model in terms of Performance, but it gurantees to be Non-Biased

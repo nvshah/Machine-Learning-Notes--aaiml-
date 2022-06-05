@@ -1,0 +1,108 @@
+* Modelling
+ ---------
+
+ ______________
+
+ - simple moving average  (SMA)
+ - weighted Moving average (WMA)
+ - Exponential Weighted moving Average (EWMA)
+ ______________
+
+ 2 types of Features :
+
+   1) Ratios Features & 
+   2) Prev-Values Features
+
+for a Given cluster ;- (ie Fix a cluster)
+
+ 1) Ratio Features  (Between 2 different Years)
+    ________
+
+    Let say data from 2015 - train
+                      2016 - Test/CV
+
+    For any given cluster/region :-
+          If we can find the ratio relation between pickups at any given time t between 2015 & 2016
+          then we can estimate the pickups for future events 
+
+          ratio 
+            r_t = Pickup_2015_at_time_t / pickup_2016_at_time_t
+
+            Once you know r_t, you can get idea of p_t_2016 (given p_t_2015)	
+
+    Intution:
+      At the same instance of time t ie (10 min bin) What was the Pickup exact 1 year ago
+
+      so we can use data from 2015 as a training data to give ans for data from 2016
+
+
+ 2) Previous values : (From same Years)
+   __________
+
+    For given cluster/region ;
+
+       We can use Time-Series pattern to predict pickups at future time t 
+       thus using same years data
+
+       ie F(t) = F(t-1, t-2, t-3,...)  // t is time unit (10 min bin)
+
+
+ => Thus we can leverage these 2 features ways to build the baseline model
+
+
+ -----------------
+
+ * Simple Moving Averages :
+   ----------------
+   => n is hyper-parameter  (S.T MAPR is lowest)
+
+   1) Ratios : (SMA on rations)
+      _____
+      - at time t, we are considering all prev n values to estimate r_t
+
+    	So r_t = avg of (r_t-1, r_t-2, ..., r_t-n)
+
+    	que :- what should n be ??
+
+    	n -> as hyper-param  {1,2,3,4,5,6,7,8} - values of n
+    	\
+     	using MAPR as metric (KPI)
+     	     _________________
+        - best n found = 3  // after trying multiple scans
+
+   
+   2) Prev-vals : (SMA on Prev-Vals)
+      ______
+
+      - same way we can find prev-val
+
+         p_t = avg of (p_t-1, p_t-2, p_t-3,...)
+
+
+* Weighted Moving Average :
+  ------------------
+   - Provide weights to the ratios or prev-vals
+   - more weight to more recent one 
+
+   so in denominator instead of n it would be sum of all weights = n*(n+1) / 2
+
+   -> for both ratios & prev-vals
+
+
+* Exponential Weighted Moving Average :
+  -----------------
+   How bad I do in predicting previous time :- I can use that information as well to predict the next time
+
+   R_t = ( alpha*R_t-1_observed ) + (1-alpha * R_t-1-predicted)
+
+   -> for both ratios & prev-vals
+
+-____________________________________
+
+* BaseLine Model :
+  ------------
+   -> Prev-val are much useful than ratio values
+
+* Now compare other ways trained models with the BaseLine model
+
+

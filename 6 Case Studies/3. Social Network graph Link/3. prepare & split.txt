@@ -1,0 +1,27 @@
+* prepare & split
+ -------
+
+  -> Actually data is changing or evolving over time i.e following edge are changing
+      \
+       Temporal Nature
+
+  * Temporal Nature :
+    ---------
+     => Data is changing/evolving over time
+     -> We need to build out train & test data taking into consideration of temporal changing/evovling
+        nature of data
+
+     => Temporal split
+
+     => But we are given only given snapshot at 1 particular timestamp
+         \
+          so we are left with Random Split instead if Time based split
+          (In Real World ideal thing is time based split)
+
+     Random split : 80-20
+
+
+* Cold Start Problem :
+  --------
+   - There are some data (vertices ) in Test data for which I've no information regards in Train data
+     at all

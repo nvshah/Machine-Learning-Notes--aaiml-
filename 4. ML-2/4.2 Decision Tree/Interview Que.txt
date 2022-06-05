@@ -1,0 +1,17 @@
+Interview Que
+
+Video:
+1. Maximum entropy distirbution: https://youtu.be/f6SpsPn6cvs
+
+  Self Learning:
+
+    You are working on a time series data set. You manager has asked you to build a high accuracy model. You start with the decision tree algorithm, since you know it works fairly well on all kinds of data. Later, you tried a time series regression model and got higher accuracy than decision tree model. Can this happen? Why?(Refer :https://www.analyticsvidhya.com/blog/2016/09/40-interview-questions-asked-at-startups-in-machine-learning-data-science/)
+    Running a binary classification tree algorithm is the easy part. Do you know how does a tree splitting takes place i.e. how does the tree decide which variable to split at the root node and succeeding nodes?(Refer:https://www.analyticsvidhya.com/blog/2016/09/40-interview-questions-asked-at-startups-in-machine-learning-data-science/)
+
+  External Resources: 1.https://vitalflux.com/decision-tree-algorithm-concepts-interview-question
+
+--------------
+
+Q) Which discrete distb has largest entropy ?
+
+Q) Which Conti Random Variable has largest Entropy ?

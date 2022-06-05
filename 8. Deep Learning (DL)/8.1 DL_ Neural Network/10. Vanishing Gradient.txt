@@ -1,0 +1,138 @@
+10. Vanishing Gradient 
+----------------------
+[exploding Grad & Sigmoid Units]
+ref :- https://www.youtube.com/watch?v=GNDh64aa-vA&feature=youtu.be
+
+----
+
+- Vanishing gradient Problem (Small Grad Val)
+- Explodign Gradient Problem (large Grad Val)  | (esp RNN)
+
+----
+=> Exploding Gradient Problem can occurs esp when Depth of Network is very large
+
+
+----
+-> Vanishing gradient is one of the impacting problem for NN (due to which people got sight out of 
+   it, earlier)
+
+[**IMP**] <--	
+* If you want to find Updated weight for any Node at any level of Layer
+  \
+   You need to recognize the influence that edge impacts on further paths in Network
+
+-> In case of Sigmoid Fn,
+   Derivatives vals lies in range 0 -> 1
+
+   So & utilisig chain rule whilst updating the Weight (particular)
+   You multiply certain vals that are less than 1 => then final product would be significantly less than 1 (very minuscule val)
+
+   & Thus we are utilizing this minuscle val for updating the Weight (ie Minuscle val with learning Rate)
+
+* Weight Update & Sigmoid Fn :
+  --------------------------
+   - Because Aactivation Fn is Sigmoid, Individual Derivative term will be less than 1
+   - Due to this the total or entire derivative will be very small 
+   - Thus Weight update will not have noticable change comparatively
+      |
+      Effecting the Vanishing Gradient (ie Less Effect of Gradient on Updation of Weight)
+       \ 
+        Updating the Weight become very very hard
+
+    MATH 
+     \
+      -> Product of terms (having range in 0 -> 1) :- result in very smaller Significant Value
+
+   NOTE :
+    --> Here as the number of input layers increases,
+        the individual derivative terms increases & thus the resultant derivative becomes much smaller
+         |
+         Thus as #hidden layers increases => #multiplication terms increases
+                              \
+                               => Thus diminizing the effect of Gradient further to much extent
+
+    => As derivative terms increases, newer & older weights tends to become much similar
+
+ * Vanishing Gradient Problem :
+   --------------
+   ( Small Derivative | No Updation )
+
+    (Here esp in Case of Sigmoid Fn for understanding)
+
+    -> the final Gradient we got is very small because of the Chain Rule based Mutliplication
+        |
+       This will led to lesser updates for Weight between old & new value
+
+    -> One of the Key reason for this is having Sigmoid or tanh as an activation function 
+       (as they are squishing the val in range 0 -> 1 or -1 -> 1)
+
+    => Due to which the Weights are not getting updated properly or to much extent
+
+    Problem :
+    ---
+     -> It was very difficult to train Network with more numbers of Hidden Layer, just because of Vanishing Gradient Problem
+           \
+            As Weights in initial layers do not change at all (or hardly change)
+            They simply gets stucked whenever they gets initialized
+
+     => So building truly Deep NN (ie With more layers ) was difficult or hard
+
+    Deep NN :
+    -------
+     -> To simulate the Biological Neurons Network (ie more numbers of Hidden Layers)
+
+
+* Exploding Gradient Problem :
+  --------------
+  ( Large Derivative | No Convergence )
+
+   -> It's more in context to Recurrent Neural network (RNN)
+
+   -> When derivative val become very very large
+   -> then also it is dangerous
+
+   -> There will be a (large) varied change between old & new val as iteration increases
+       \
+        Weight will change massively
+
+      But actually as we go from 1 iteration to another iteration, Change in Weight must reduce (so as to Converge)
+      but here it may increase because of large derivative
+
+   => Thus with Explodign Gradient Problem (ie Large Derivative Vals) We will face difficulty in 
+      Covergence even if iteration increases
+
+Q) Why does Exploding Gradient Occur ??
+ ---
+  -> because of Same Chain Rule
+     &
+     Some other Activationn Function or Some Diff Situations
+
+  Cause|Reason for Explodinng Gradient Problem :-
+   - Derivative Term > 1  (ie Some other Activation Fn, let assume)
+   - Thus Exponential Growth
+
+  Repurcussions of exploding gradient problem :-
+    - No control over Weights | Weights keep changing Eradically
+    - Hardly Convergence can be achieved
+
+
+________________
+[Extra]
+
+[Ans ref : ref :- https://www.youtube.com/watch?v=GNDh64aa-vA&feature=youtu.be]
+
+Q) How can Exploding Gradient Occur with Sigmoid Units ??
+Ans -> 
+   For Exploding Gradient We need Gradient > 1
+
+   We know :- 
+   	 1) Sigmmoid Func Ranges from 0 -> 1
+     2) derivative of Sigmoid func over Z -> lies in range 0 to 0.25
+
+   - Construct an example where individual derivative can be > 1
+       \
+        by initializing Weights (W) & biases (b) accordingly   (Proove by Counter Example)
+        &
+        You can observe Exploding Grad Problem
+
+=> Exploding Gradient Problem can occurs esp when Depth of Network is very large

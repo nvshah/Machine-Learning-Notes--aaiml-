@@ -1,0 +1,6 @@
+terms
+
+- GANs
+- Generator, Descriminator
+- Game Theory
+- Min-Max Theory

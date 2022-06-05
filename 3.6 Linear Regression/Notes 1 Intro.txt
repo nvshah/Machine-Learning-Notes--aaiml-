@@ -1,0 +1,232 @@
+Notes 1 Intro
+
+ref : 
+[Need for Regularization]
+https://www.youtube.com/watch?v=iUm2Z1SKuGk 
+
+----------------
+-> In Linear Reg we can use any enncoding for categorical features
+
+-> Linear Regression is often referred as 
+ 		Ordinary Least Squares (OLS) or
+ 		Linear Least Squares (LLS)
+
+=> The only change in Linear Regression from Logistic Regression is the Loss Function
+
+-> If your error is negative or positive your loss will always be positive, in Lin-Reg
+
+=> You can arrive at Linear Regression using a Squared-Loss Approximation (ie Parabolic type of func)
+   
+-> Squared-Loss Approximation is used for Optimization in Linear Regression
+
+=> Loss Minima Framework accounnt diff approximation func on Y-Axis
+
+=> Regularization is often used to Stabilize the weight vector s.t. they are generalized & robust for future predictions	 
+_______________
+
+-< f(xi) = W^T*xi + w0
+
+=> Differentiable is the main property of an Optimization technnique
+   
+----------------
+
+LINEAR REGRESSION
+
+AIM :- find a line that fits a given data as well as possible
+       
+* 2D :
+  y = w1*x + w0  // we need to find w1 & w0, 2D here
+  -> It's nothing but a equation of a line in 2D
+
+-> So in short it's just a eqn of a plane in n dimension ie ( W^T*X )
+
+Goal : Find line/plane/hyper-plane that best fits data
+
+Q) What is Best Fits ?
+  -> Minimize the error across traininng data
+
+* Error :
+  -----
+	-> There are some Errors asscoiated with point which are not exactly on line/plane
+	 error = Y1 - Y1`  for pt X1
+	       = actual - predicted
+
+--------
+
+-> We can arrive or study Linear Regression via 3 ways :- {Geometry, Probabilistic, Loss-Term}
+
+=> The only change in Linear Regression from Logistic Regression is the Loss Function
+
+=> Linear Regression is often referred to as Ordinary Least Squares (OLS) 
+   or Linear Least Squares (LLS)
+
+
+
+* Mathematical Formulation : (Geometric interpretation)
+  ----------------------
+
+   best fit line = minimum sum of square error
+
+   We want to find W & w0  in (W^T*X + w0) = 0, S.T error is minimzed
+
+   Optimizationn Problem : (stmt)
+   ----------
+	   argmin (sum of sqaured errors) <--- Goal
+
+	           sum of sq error = Y - Y`  
+	               Where Y` := f(Xi) = W^T*xi + w0
+
+	   Thus this our optimization problem, where we need to find W,w0 s.t. SSE is minimzed
+   
+   Squared_Loss (Loss Term)
+   ---
+   - The loss term in Linear regression, is referred to as Squared-Loss
+
+* Loss-Min Interpretation : (Squared-Loss Approximation)
+  ------------
+
+   // In Log-Reg it was Zi ie Correct or incorrect ie +ve or -ve
+
+   But in Linear Reg there is no incorrect-correct but an error
+
+   X-axis :- error  (y-y`)
+   Y-axis :- squared-loss
+
+   Thus it is known as squared-loss approximation 
+   			(sq-loss seems much alike parabolic curve)
+
+   In case of Linear Reg, F(x) = W^T * Xi + w0  // ie Eqn of a Hyper-plane
+
+   So plot will be of [ error vs Loss ]
+
+    - graph will looks like a quadratic eqn
+
+    - Parabola like graph (y = x^2)
+        \
+         If your error is negative or positive your loss will always be positive
+
+    - As you move away from Plane i.e positively or negatively loss increases
+      ie as error incr +ve_ly or -ve_ly, Loss increases in both the case
+
+  => Thus you can arrive at Linear Reg using a Squared Loss approximation 
+     (instaed of Log-Loss approximation )
+
+     We used diff approxiamtion func here ie Squared-Loss instead of Log-Loss because 
+     in case of Logistic Reg - It was binary ie 0 or 1 ie correct/incorrect
+     Which is not in the case of Linear Regression
+     In case of Lin-Reg err can be any real val hence we use squared-loss approximation
+
+  => This parabolic loss func is called squared-loss func
+
+  Thus for Loss-Minima Framework for :-
+      \
+       Squared Loss (on Y-axis) :- Linear Regression
+
+* Probabilistic Interpretation :
+  ---------
+   -> From GLM,
+       P(Y|Xi) = N(mean, std_dev)  // if its Gaussian distributed
+
+       then we can easily derive the loss func as we have via Geometrically 
+
+--MIMP--
+
+Q) Why squared-loss ??
+ _______________
+  -> Because we want to know error in total (all in all)
+  -> It's just an approximation to actual error (just as logistic loss to 0-1 loss)
+
+Q) why not use abs(y-f(x)) instead of (y-f(x))^2
+
+  -> The problem with abs() function is that it is not differentiable at zero 
+     and hence we do not use it.
+
+     as abs(0) is not defined so abs() is not continuous so we took diff approximation func ie Squared-Loss which is defined for 0 as well i.e 0 itself
+
+
+* Regularization Term in Optimization :
+  ---------------------
+  => Just as same way in Log-Reg we will have Regularization term in Lin-Reg
+
+  Terminologies :-
+
+     -> Linear regression with L2 regularization is also referred to as "Ridge Regression"
+
+     -> Linear regression with L1 regularization is also referred to as "Lasso Regression"
+
+     -> Linear regression with l1+L2 regularization is also referred to as "ElasticNet Regression". 
+
+
+* Need for Regularization :
+  ----------------------
+
+  -> In log-reg as W -> inf, there was problem 
+     but such a problem doesn't occur in linear regression
+
+     So Why ? 
+      -> because real data from real-world often gets encoded sometimes via minute noise/error 
+         So to prepare model keeping in mind the error/noise, We use Regularization
+
+
+     Simulated Dataset from the  Y = W1x1 + W2x2 + W3x3
+     		\
+     		 Then find W & it must be exact W ie [W1, W2, W3]
+
+  -> In Real-World We often have not same exncoded data but its encoded with minor error may be due 
+     to rounding error
+
+  -> So when we are simulating it will work fine
+     but with the real world data, there are some errors as well introduced whilst encoding
+
+     So to simulate data alike the real-world data we add small error terms for each feature
+
+  (No Regularizer Case) :- 
+  -> So now let say we have no regularizer then 
+      \
+       because we have small errors/noise in real-world data, & we are not using regularizer
+       We will try to reduce Squared-Error as much as possible
+         \
+          So it will try to fit W as closely as to the training data
+            - We will get Weights W slightly away from what intended
+            - As slightly noise/error introduce in data
+            - doing so it will obtain wieghts which are not same as unnderlying weights
+
+          When we do not have regularizer !
+            - We do not have any control over Weights ie W
+              \
+               No control = means they will try to overfit the data (even corrupted & noisy data)
+
+            - Weights are not controlled in any other way except through Loss
+               \
+                They will only try to minimze training loss i.e Overfit
+
+     But If we use regularizer + Loss-term
+        \
+         We will get Weights W values closer to underlying Weights (ie intended)
+
+
+     Why such behaviour ??
+
+     -> Regularizer is forcing Weights W to be small 
+         &
+         So thus It will tried to face small noise/err in real-world data more appropriately
+          \
+          ie While training assume that there is some err in real-world data and don't fit model specifically to loss-term as (it will also account the error which may inherit along with)
+          \
+          So to mitigate the effect of possible inherennt error from real-world in Loss-term, We use 
+          regularizer that will prevent from perfect fitting to model which will result in Weight not exactly as intended (ie Underlying Weights) but closer to underlying weights
+
+     => Thus Regularization is a way to control Overfitting of Weights due to possible nois/err
+        in  real-world data
+
+
+    => So thus we will have additional control over regularization via `lma`
+       & 
+       Thus weight will be controlled by 2 terms i.e Loss-Term  + Regularized Term
+
+    => So the weight W found via this way regularization will perform well on Unseen data
+
+
+
+
+   

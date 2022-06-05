@@ -1,0 +1,65 @@
+Math Notes 1
+
+-> e is constant i.e called base of natural logarithm
+
+-> Distributions are preferred over Percentile Models as they are more precise
+
+=> Random Numbers are related with 2 topics Monte Carlo Approach & Uniform Distribution
+
+=> Log is called a monotonnic function
+   Log doesn't change the Order
+
+-> F(x) = X^2  is a Parabola
+
+* Monotonic Function :
+  -------
+   -> as x is incr f(x) also incr
+
+* Sparse Matrix :
+  -------
+   -> Matrix where any row contains most of element of 0/useless
+   -> i.e Matrix that has most of its rows as sparse vectors
+
+* Sparse Vector :
+  ------
+   -> Vector that contains lots of elements as useless info/0
+
+  Sparsity of Matrix :
+    -> percent of non-useful cell (i.e zero cell) in a total cell
+
+* distance vs Norm :
+  -------------
+   - distance between points & norm for a vector
+
+* Polarity : (+ve/-ve)
+
+* Hyper-plane is all abt defining its Normal (Vector)
+
+* Density :- # points in unit area  | if more than more dense else less dense
+
+* If numerator or denominator in original likelihood is small then you have less confidence abt the 
+  ratio
+  (As ratio are easily corrupted when you have small vals in numerator or denominator)
+
+* Log converts the multiplication into addition
+                    exponentiation into multiplication
+
+* If plane passes through origin, intercept in plane = 0
+
+=> For a Monotonic Func the point that minimzes the f(x) is the same that maximizes the -f(x)
+   argmin(f(x)) = argmax(-f(x))
+
+=> For func to be differentiable It needs to be continuous
+   non-continuous = non-differentiable
+
+=> Only smooth continuous curves can be differentiable
+
+* Colinear :
+  --------
+   representing 
+
+=> Dot Product = Cosine Similarity (assuming norm =1)
+
+- euler number = 2.78
+
+-> Computing logs take more time complexity than computing squares

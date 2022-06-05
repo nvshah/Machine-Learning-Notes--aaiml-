@@ -1,0 +1,61 @@
+5 Modeling
+
+------------
+
+=> As Logistic Regression is Linear Model so it has higher chance of Underfitting
+
+___________
+
+* Log Loss & Random Model :
+  --------
+   Log Loss :- [0, inf)
+
+   Random Model:- 
+   ___________
+      takes Xi & generates Yi randomly (ie either 1 or 0, randomly)
+      -> Most dumbest model for binary classification
+      -> helps to define worst case metric val (ie Log Loss)
+
+      -> Log Loss you get on Random Model is also a Worst (because Random Model is itself Worst)
+
+         So to get the Worst Case for model to our dataset, we try on Random Model
+
+      => If log loss computed for our model lies in between 0 -> random_model_log_loss 
+         then it is decent model but if log loss of our model go beyond random model log loss (ie dumb)
+         then our model is not appropriate
+
+   gist & idea :-
+   ---
+    - get the bounds (lower & uper bound) for metric so as to check goodness or decency of our computed model
+    - worst case to get is when model is absolute random it behaves randomly
+    - to get upper bound of model (build by any technnique)
+
+   => The closer to 0 better the model (in case of LogLoss)
+
+
+* Logistic Regression :
+  -----------------
+   - 790 dimension
+      - neither too small nor too large
+
+   - LogReg works verh well for high dimen data
+
+   - find the alpha (ie hyper param) via CV
+   -> If both test loss & train loss are roughly same then we can say model is good enough
+
+=> If GBDT performs well than Linear Models then we can say that Linear Models have High bias Problem
+
+=> Linear Models tends to have more bias than other one !
+    \
+     If train err & test err are closer then they may not suffer from High-Variance Problem
+     but the model may suffer from Underfitting or High Bias Problem
+
+     & We can verify this thing via training more complex model (or more non linear model like GBDT) such as GBDT
+
+* XGBoost :
+  -------
+   GBDT works because dimension is not too large or not too small
+
+
+
+

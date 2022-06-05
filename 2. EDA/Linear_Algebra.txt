@@ -1,0 +1,146 @@
+Notes(Tips)
+
+-> Linear algebra is all about learning in 2D & 3D & (derive | infer | apply) for n-D 
+=> By default assume a vector as Column Vector
+=> Dot Product of vector with itself is just = squaring the distance of vector in same direction
+
+-> Line in 2D = Plane in 3D
+   Line, Plane, Hyper-Plane is just a Linear Surface
+
+:=> Line | Hyper-Plane equation resembles & relates with the Dot-Product equation.
+
+=> Axis-parallel Rectangle are easy for creating boundary case conditions
+
+NOTE :- We can change our axis to make plane pass through origin (i.e Shifting of Axis)
+______________________________________________
+
+* Linear Algebra :
+  -----------
+   -> technique that helps us to seperate via surface in higher dimensions
+
+   1-D : surface = linear line
+   2-D : surface = plane
+
+
+* Point / Vector :
+  ---
+  	- Vector : how far away on each basis axis (i.e is a Vector)
+  	    \
+  	     Components : [x1, x2]
+
+  	// Both based on Pythagoras theorem
+  	- distance of point from origin
+  	- distance between 2 points  
+ 
+  Column Vector :- n rows & 1 column
+  Row Vector    :- 1 row & n columns 
+  Matrix        :- n rows & m columns 
+
+
+* Dot Product & Angle between 2 Vectors :
+  ----
+  => Matrix
+     	Addition :- component wise addition
+     	Mutliplication : dot product & cross product
+
+  Dot Product :
+  ---
+   -> help us to find the angle between 2 vectors
+   => Dot Product of vector with itself is just = squaring the distance of vector in same direction
+
+  Projection :
+  ---
+   -> make perpendicular fall of 1 vector onto another vector
+      distance you get on another vector is called as projection
+
+  Unit Vector : vector in same direction as of original vector, 
+                but with unit length (i.e distance from origin is 1)
+
+NOTE :-
+  Vector Notation - mostly used              (via Dot Product using transpose op.)
+  Summation Notation - iterative approach    (via for loop )
+
+
+**** ---- SHAPES ----- ****
+
+* Line :
+  ---
+   Line is seperates your space (in 2D) with a linear structure into 2 regions
+   => Plane can seperate 3D volume into 2 regions
+
+   Eqn of Hyper-Plane i.e in higher (n) dimension
+            \
+             Passing through origin  (i.e slope & intercept concept)
+
+=> For generality we'll assume that our planes pass through origin so intercept will be 0 
+   i.e through origin only
+   So eqn is simplest
+
+   NOTE :- 
+      Shifting of Axis :-
+        We can change our axis to make plane pass through origin
+
+* Half-Space :
+   -> Geometrically line seperates region into 2 halfs
+
+* Distance of a Point from a Plane :
+  -----
+   - (draw a perpendicular line)
+
+   Steps :-
+    1) InOrder to find the distance from plane, find any vector orthogonal to that plane
+    2) then find projection of point on that vector
+    3) that projection (i.e Dot Product ) will be ans to distance of point from plane
+
+  Half Space : Spaces divided by Line, Plane, hyper-Plane in 2 half regions
+  
+  REMEMBER -
+  Given a Plane & that plane defined by vector W
+    \
+     given 2 points p & p_dash, 
+          if dot product between W & P is +ve then both lies in same half space
+          else if -ve then both lies in different half-space (i.e in other side of direction where W is pointing) 
+
+
+* Circle :
+  -----
+   -> It also divides region into 2 part
+
+   2D : Circle
+   3D : Circle becomes -> Sphere  (like a ball)
+   nD : Circle -> Hyper-Sphere 
+
+
+* Ellipse :
+  ----
+   3D - ellipsoid eg rugby ball
+   nD - Hyper-Ellipsoid
+
+=> Planes are used extensively than Circle, Ellipse (seldomly)
+
+* Squares, Rectangles :
+  ---
+  	Point lies in axis-parallel rectangle or not	
+
+    3D : square -> Cuboid
+    nD : Hyper-Cuboid
+
+   Axis-Parallel rectangle : rectangle whose axis are parallel to basis vectors of space
+   ----
+      \
+       Easy to create if-else conditions for boundary cases (in case point lies)
+
+   Axis-Parallel Line : axis parallel to one of basis vectors
+   ---
+
+
+
+
+
+
+
+
+    
+
+
+

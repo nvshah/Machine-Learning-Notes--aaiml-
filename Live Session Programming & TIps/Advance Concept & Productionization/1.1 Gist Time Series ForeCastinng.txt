@@ -1,0 +1,19 @@
+Gist Time Series ForeCastinng
+
+
+-> ARIMA(p, q, d)
+   -----
+    p,q,d are hyper-params
+
+    - It is a simple Linear Model on (Y_t-1, ..., Y_t-p) & (E_t-1, ..., E_t-q) With some `Differencing`
+
+1) AutoCorrelation of Wave
+
+   AutoCorrelated Wave :
+   ----
+   [IMP reMEMBer]
+	=> AutoCorrelation is one of the way to find out how much I have to move my way to make it 
+       auto-correlated with itself
+
+
+2) Fourier Transform

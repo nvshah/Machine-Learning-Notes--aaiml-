@@ -1,0 +1,20 @@
+* Modelling
+  --------
+
+ Technique :- RandomForestClassifier    // (one of the way, there can be many such possible techniques)
+
+ hyperparam :- #estimators, #depth-of-base-learners
+
+ metric used :- F1-Score (As we want high precision & high recall)
+
+
+-> Hyper-Parameter Tuning :
+   -----
+    For # estimators &
+    For # depth-of-base-learners
+
+
+-> Whatever is the performance for train may not be carry on to future CV/test data   
+    (may be due to Cold Start Problem)
+
+   Cold start Problem :- Test possess some new users which are not present in Train at all

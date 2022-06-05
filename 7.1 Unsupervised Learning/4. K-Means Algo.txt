@@ -1,0 +1,266 @@
+* K-Means Algo
+______________
+
+[K-means]
+Refer: https://cs.wmich.edu/alfuqaha/summer14/cs6530/lectures/ClusteringAnalysis.pdf   
+___________
+
+=> k-means normally tends to prefer the cluster of approximately same sizes
+=> K-means can never be perfect
+
+-> Clustering (ground truth is missing)
+
+----------------
+
+K := #clusters => Hyper-Param in CLustering
+
+Set of Points :- S1, S2, S3  // union of all set = Dataset
+centroid to each set :- C1, C2, C3
+
+-> you get k-centroids & k sets of points
+
+* Centroid :
+  -----
+   - Mean point to all point in corresp set
+
+=> K-Means is a Centroid based clustering Sceheme
+      \
+       Definne each cluster using centroid
+
+
+Q) How to find K-Centroids ??
+   
+   - by using nearest centroid idea then you can get k-sets
+
+
+Core Idea of K-Means :- Find the K-Centroids
+                        Assign points to nearest Centroids forming a set/cluster/group
+
+
+-----
+
+* Mathematical Formulation :
+  ---------------------
+  given D = {x1, x2, ...., xn}
+
+   Task :- K-centroids :- c1, c2, .., ck
+           k-Sets      :- s1, s2, ..., sk
+
+   Objective Function :- 
+          - minimize the intra-cluster distance
+          - minimize the sum of squared distance from centroid in each cluster i
+
+   Solving this kinda problem is often exponential complexity (Hard Problem)
+
+   - When we have hard problem :- we do approximate Solving
+
+* Approximation Algorithm :
+  -------
+   -> When we have hard problem, we use approximation algorithm to solve the hard problem
+
+-----
+
+* LLoyd algorithm 
+  --------------
+   -> Approxiamtion algorithm to solve K-Means clustering idea
+
+   1) Initialization 
+        - randomly pick k centroids
+
+   2) Assignment 
+        - select nearest centroid for each point in dataset
+        - add point to foundned centroid's set
+
+   3) Recompute centroid (Update Stage)
+        - It is also called as update Stage
+        - update all centroid based on set formed newly
+
+        - Thus in this stage we will have old & new centroids 
+
+   4) Repeat Stept 2 & 3 until convergence
+
+   Convergence ??
+   ----
+    -> When your old centroids & new centroids in step 3 do not differ much then we can declare it as convergence in step 4 & hence obtauined the final K-centroids
+
+   Q) how to initialize the K-means ??
+
+
+* Initialization Sensitivity :
+  -----------------
+   -> Its a problem with random initialization (of centroids)
+    - the final centroid or cluster may differ based on initialized centroids
+    - thus final centroid or sets are not deterministic
+    - so diff sets of random point may result in diff sets of clusters
+
+  
+* Deal with Initialization : 
+  ________________
+
+   1) Repeat k-means with diff initialization & pick the best clustering 
+          (based on smaller intra-cluster & larger inter-cluster distances)
+
+   2) K-means++ 
+      --------- 
+       -> Instead of random initialization - use smarter mechanism for initialization
+
+          1. pick first cenroid randomly 
+          2. next create a distribution as follows :
+
+              Probabilistic approach of picking next centroid :
+              _________________________
+                  -> Proportional probability way
+                  -  Pick next centroid s.t. 
+                       point which is farther away from current centroids get higher probability to be a next centroids
+
+                       for this need to create distance table for all points except centroids
+
+                       distance to calculate for current point = distance from nearest centroid
+                          - ie in which proximity this current point x may surround
+
+                       Xi -> dist(xi, nearest_centroid)
+
+                  => this is random probabilistic thing  
+
+          Smart initialization :
+             - Pick new centroid s.t. its as far as possible from cenntroids that are already picked 
+               up
+
+        * [Outliers significance]
+          -------------
+        Q) Why probabistically ?
+           -----
+           Why proportional probabilty & Why not farthest point
+           Why probabilistic random approach
+
+           Why not pick farthest point (maximum distance) from nearest centroid for given pt ?
+           \
+           Why can't we pickup deterministically ??
+           & 
+           why we go for probabilistically ?
+
+           => because in real-world there are chances of presence of Outliers
+              &
+              Going deterministic way can lead us to consideration of noise as well
+
+
+        * Outliers & K-means++
+          ______________
+           -> With the probabilistic approach also there are chances of outliers affecting 
+              but it can be mitigated
+
+              whereas if chosen deterministcally then it may possivle that all Outliers get selected as a Centroids
+
+           -> So One of the reason that k-means ++ is employing the (proportional) Probabilistic way 	to choose the next centroid candidate, may be is, to mitigate the effect of outliers 
+              on K-means algorithm
+
+           => But kmeans++ does get affected by outliers sometimes (not as much as it would be in case of deterministic way)
+
+        [Repeat K-means++ in extreme cases] 
+        -----
+        => If k-means++ gets affected lot bu outliers then
+            - Just repeat the k-means++ to get the better result
+
+----------
+
+* Limitationns of K-Means :
+  ----------------------
+   - Diff cluster size
+   - outliers
+
+  1) Differing Sizes CLuster
+     ---
+      -> also esp when diff size cluster are close together
+      -> k-means normally tends to prefer the cluster of approximately same sizes
+
+  2) Differing Density :
+     ----
+      -> dense & sparse cluster (may be of diff sizes as well)
+      -> when you have cluster of different density, K-means tries to stretch them out
+
+  3) Non-Gobular Shapes (Non-Convex Shapes)
+     ----
+      - when you have non-convex set of points, k-means tends to fail
+
+      - convex : means 2 points can reach out each other via intermediate points only
+
+  4) Outliers :
+     ---
+      - can affect algo also crazilly
+
+
+  Hack for above problems
+
+  1) Differing Sizes :
+     ---
+      -> increase the size of k
+          \
+           so you will get smaller but more clusters
+           - afterwards you need to recombine some parts back into one cluster inorder to get 
+             k clusters
+
+           - whilst clustering you find the parts of original cluster, (may be of larger one)
+             So you need to put back them into single cluster
+
+           - ultimmately k -> k` -> k cluster transition
+              \
+               we need to get k clusters at end somehow (intermediate we can use more parts|cluster ie k`) 
+
+  2) Differing Densities :
+     ---
+      samehack :- increase val of k
+
+      Later task :- to combine the parts into 1 cluster
+
+  3) Non-Covex hack :
+     ----
+      increase the k & find clusters (parts)
+      then combine them to have non-convex shape 
+
+REMEMBER :- 
+   increasing the k-value will not works always !!!
+     \
+      but atleast it gives better than soln devoid of it (ie we gets more parts atleast)
+
+   - Evaluating Clustering is not easy
+       \
+        primarily because there is no ground truth
+        - all we depends on intra-cluster & inter-cluster distances
+______
+
+(IMP)
+=> Evaluating diff clustering technique is not easy (as ground truth is missing)
+   but
+   In case of classification (ground truth is present ) & so no one can deny precision & accuray & recall like metrics
+
+
+___________
+
+* [Interpretability]
+  ------
+
+* Another problem with K-means cluster :
+   
+  - Centroid if computed using geometrically ie via mean :
+     \
+      Then it's hard to read or interpret it
+
+  - Instead of computing mean & providing vector if we provide the one of the point itself then
+    it would be better
+      \
+       as we can read & understand it (Eg amazon Review represnt using BOW)
+
+  - So thus centroid may be not interpretable (ie consider BOW with word count via mean)
+    but
+    if we represent any exisiting review as centroid then its much interpetable 
+
+ Big-idea :- What if each centroid as a existing data point from set
+
+* K-Medioids :
+  ----------
+   -> If we represent the centroid as one of the existing data point (instead of computing mean point)
+      then it is known as `Mediod`
+
+   -> Its useful for interpretability in Clustering
+
+   Algorithm for K-mediod to find centroid is :- PAM (partiton around mediod)

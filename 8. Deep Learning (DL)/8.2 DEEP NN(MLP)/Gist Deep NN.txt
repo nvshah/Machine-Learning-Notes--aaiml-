@@ -1,0 +1,61 @@
+Gist Deep NN
+----------
+
+Dropout <-
+=> Dropout is general concept that is used for Regularization
+=> Dropout is just way to Regularize the Deep NN
+
+
+Batch Normalization | learning rate | Innput Distb <---
+=> When Distribution of Diff Batches are almost Same in Deep NN,
+   then
+   It will eventually improve|impact the Derivative(ie Grad) term of our Update Eqn
+   &
+   Will help us to have Faster Convergence by strenghtening the Learning Rate Higher
+
+
+ * Deep Learning & Optimmization :
+   ---
+   -> Cannnot use simple Mini-batch SGD like Scheme (As it brings lots of Noisy )
+       |
+       To reduce Noise We use Exponential Weighing Scheme
+       |
+       -> SGD + Momenntum
+
+
+=> ADAM is the most popular DL optimizer till date !!!
+
+------
+
+* Problem with Learning (Gradient) 
+    - Vanishing Grad Problem
+    - Exploding Grad Problem
+
+  Grad Clipping can be used to solve Exploding Grad Problem
+
+* Softmax Classifiers :
+  ---------
+   -> Generalization of Logistic Regression for Multiple Classification with MLP
+
+* Auto Encoders :
+  --------
+   -? A way to dimen-reduction in MLP, alike PCA & TSNE
+   - includes compression & Decompression (ie Expansion)
+
+* Word2Vec :
+  ------
+  -> Imp Terms : 
+      \
+       Focus Words, Context Words
+
+  2 techniques :- CBOW, SkipGram
+
+  SkipGram :- from 1 word -> predict K Words    // harder
+  CBOW     :- from k words -> predict 1 Word   // easier
+
+  Problems :- Lots of Weight Computation required in both case
+
+
+* Cross Entropy :
+  ----
+   It is generalization of Log Loss to multi-class settings

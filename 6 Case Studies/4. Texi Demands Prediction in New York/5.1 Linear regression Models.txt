@@ -1,0 +1,53 @@
+* Linear Regression Models :
+  ---------------------
+
+  -> Linear Regression is used to minimize the RMSE & Optimize the model
+
+  TimeSeries model -> linear Regression Model
+
+  Need to find at time t+1 based onn time t => temporal nature
+
+
+* Train-Test Split :
+  ------
+   - Temporal nature of data
+   - Instead of Randmly Splitting, We will split based on time (70% - 30%)
+
+* Cluster Centroid & MRU :
+  --------
+   - For given cluster, centroid is taken as lat-long 
+
+   - For given time t, & given cluster/region we use most 5 recent pickups to estimate the pickups
+     in near time
+
+=> We will check Diff kinda Linear Regression against the BaseLine Model !
+
+0) Baseline model :
+   ---------
+    -> using moving Average (ie Exponenntial Weighted moving Average)
+
+1) Simple Linear Regression
+  -----------
+   -> try to find the weights for 5 most recent prev-vals, 
+
+2) RF - Regressor
+   -------
+    - Feature importance due to probability
+    - Exp_Avg came out to be most imp feature
+
+3) XGBoost Regressor
+   ----
+
+=> Random Search is extremely useful hyper-Parameter Tuning Technique when number of hyper-parameter are more
+
+
+-------------------
+
+Key Take Away :-
+  
+  => Simple Baseline Model ie (EWMA) gives approx near performance to XGBoost & RF like
+
+  -> We can add more features to model i.e via Fourier Transform [f1, a1, f2, a2,...]
+
+  => generally For Time-series kinda Problem, previous values i.e t-1, t-2, t-3 ... works very well 
+     normally

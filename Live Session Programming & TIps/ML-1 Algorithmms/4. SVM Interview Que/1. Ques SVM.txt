@@ -1,0 +1,128 @@
+*. Ques SVM
+------
+
+REMEMBER :
+
+-> Fundamental things we care about is Test Error & Performance
+
+-> For High dimensional Data we don't required complext surfaces to Seperate 
+   Simple Plane can seperate the data
+
+___________
+
+Q1) C large & decision boudnary :
+   ------
+    - Overfit
+
+Q2) C = 0:
+   ----
+    - Underfit (as much as possible)
+    -> only Regularization (ie Margin Maximization)
+    -  No care abt Train Err
+
+    - Equivalen to Traning Hard SVM
+
+    -> Kind of Hard Maximization Problem
+
+* NOTE :
+  ---
+   - If plane ie curve is tilted then it's more towards either side in SVM
+     but If plane is straight line then we can say that it is equally to both side
+
+* Line vs Quadratic :
+  ----------
+   -> Line is Order-1 Polynomial
+   -> Quadratic Surface is more complex then Line
+
+Q3) Kernel Trick Significance & Time Complexity ??
+ -------
+  -> deal with high dimension without significance affecting time 
+
+q4) Point distant from Decision boundary & correctly classified :
+  ------
+  -> SVM boudnaries are unaffected by this distant point (compare to) Logistic Regression
+
+  Reason :- 
+  Because it actually matters due to Loss func (as Regularization term is almost same in both)
+  but In case of Logistic loss, the Contribution of Points around Extreme Points is more towards loss than that in case of Hinge Loss
+  & Thus Logistic Reg is much affected by distant (ie Extreme Points) in compare to SVM 
+
+
+Q5) SVM more robust to Irrelevant Features Introduction ??
+  -> 
+    SVM focusses more on Points which are more innclined towards Misclassified Pts
+
+    - SVM ignores those such points or less focus on those points which are very distant from the Support Vectors in correct direction
+
+    [Assumingn Primal Formulation]
+    - Thus corresp weights of such points (which are going to be ignored) will be near to 0
+
+Q6) Can ||W|| be = 1, necessary ?
+  -> No
+
+[*IMP]--->
+Q7) Why we need Dual SVM part ??
+  -? 
+  In Primal Form :
+      - We need Point necessarily, & There we do Dot-Product of Point with Weight vector W ie (W.T*Xi)
+
+  Whereas
+
+  In dual form :
+      - We are leveraging the Similarity or Relation between Points. 
+      - So we can use Kernel Function for such pairs of Points
+
+
+Q8) When you prefer Logistic Reg over SVM ??
+  
+  -> May be Low-Latency 
+      - but what if SVM gives you few support vectors 
+          -> then it is as good as Logistic Regression
+
+  1. Lots of Outliers
+
+  2. Train Time (of SVM is high ie O(n^2))
+
+  3. High dimension
+       -> For High dimensional Data we don't required complext surfaces to Seperate Data !
+          Simple Plane can seperate the data
+
+  4. Logistic Regression can Provide Probabilistic Output
+
+  5. When Points are Well Seperated, Logistic Regression is good
+
+
+Q9) sigma & RBF-Lern
+
+
+Q10) Linear SVM - Unnderfittinng Case : (What would you try to improve it ) ?
+  -> 
+    If its underfitting then probably you have not enough features/variables
+    Underfitting :- 
+     ----
+      -> Model is not enough learning from Training Data (Current Features Availables)
+
+    1) So try to calculate more features/variables
+    2) The other alternative you can try is using Kernalized SVM instead of Linear SVM
+
+
+Q11) Why Kernel-Logistic Regression is not as popular as SVM ??
+  
+  --> Because in case of Kernalized SVM, only support vectors are considered (ie where alpha > 0)
+      Whereas 
+      in case of Kernalized Logistic Regression (all points are considered)
+
+Q12) Reduce RunTime of SVM for Low-Latency Application !
+
+  -> try diff C
+  -> Support Vectors Selection (try eliminating some Support Vectors)
+        \
+         #Support-Vec vs Test-Err & #Support-Vectors vs Latency
+
+Q13) In which application does SVM performs better ??
+  
+  -> Bio-Infometics
+     Chemo-Infometics
+
+Q14) How does SMO work ??
+  ->

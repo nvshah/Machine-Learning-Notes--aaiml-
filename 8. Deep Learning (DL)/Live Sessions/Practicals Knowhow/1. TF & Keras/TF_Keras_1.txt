@@ -1,0 +1,77 @@
+TF_Keras_1
+------------
+
+---
+lib useful :
+- h5py, tf, keras
+
+---
+
+- Preprocess Images (0-1)
+-> 'Adam' is one of the best optimizer
+
+gist :
+1. Load Data
+2. Pre Process
+3. Prepare N/W
+4. Compile & Run  (Tensorboard)
+
+---
+terms
+
+-> epoch, performance
+-> checkpointing
+-> Functional API vs Sequential API  // Keras
+
+---
+
+
+* from_logits <- Param
+  ---
+   \
+    Do convert to probability after final output-layer
+
+   - When outputs are not necessarily probability values !
+
+
+* tensorboard :
+  ---
+   - useful to check what is happending in my model (ie to debug things)
+   - When model is getting trained, it writes to a log file at each epoch
+   - tensorboard reads from logfile
+     &
+     Model writes to a logfile
+
+   - Model -> logdir (log file) <- Tensorboard
+
+   - `callbacks` :- param that handles writing of info to log file whilst model is getting trained
+
+
+* CheckPointing :
+  ---
+   - Save Model at end of each epoch
+
+   - We can use checkpoint file to save Weights (let say after 20 epochs), so that you can continue from
+     it later
+     NOTE : You need to remember the Model Archi. in this case
+
+   - If we want to start from 21 epoch later then its possible via CheckPointing
+
+   Tip := Store your checkpoint to Google Drive (so if colab die ie box die then we can take back)
+
+
+* Functional API based model
+  -------
+   - functional API vs  Sequential API
+
+
+* TensorFlow/Keras :- allows to add diff regularization at diff layers
+
+=> Whenever you want to model even a slightly complex model,
+   a Functional API is preferred over Sequential API
+
+* Skip Connection & CNN :
+  ------
+   - Functional Connection helps to build the Skip Connection
+
+* Global Avg Pooling :

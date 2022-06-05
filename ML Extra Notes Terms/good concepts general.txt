@@ -1,0 +1,24 @@
+good conncepts genera
+
+1) Set Similarity :
+   --------
+    - Jaccard distance
+    - Otsuka ochiai coefficient (Cosoine Distance alikeness)
+
+
+2) Page Rank :
+   ------
+    - Concept 
+
+    => You can think whole Web as a Directed Graph
+
+3) matrix factorization
+   ------
+
+   Relation between Langrange Multipliers (Constrained Optimization) vs eigen Values (Matrix Decomposition) !!
+
+
+4) Inverted Indices :
+   ------------
+   -> It's most efficient DS when it comes to search
+   -  So google, or any other company that have searching facility will be probably using Innverted Indexes underhood someway

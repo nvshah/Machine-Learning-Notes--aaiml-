@@ -1,0 +1,30 @@
+gist.txt
+
+* Density Based Clustering :
+  ------
+
+  DBScan :
+  ----
+   - DBScan was developed by Database & DataMining Community so that RangeQueries can 
+     be highly optimized inside Database & can be used effectively
+     
+   2 hyper-params :- Min-Pts, Epsilon
+
+     Min- Pts :- decide the dense or sparse regions
+     Epsilon  :- help to find the density of point 
+
+   Points :- Core Point, Border Point, Noise Point
+   other ideas :- Density edge, Density Connection Point
+
+   DBScan Algo : uses above ideas & 2 hyper-param
+
+
+* Range Query :
+  ----
+   -> most imp part of DBScan algo to find the dense & sparse cluster 
+
+* Hyper-Param deciding :
+  -----
+   1) Min-Pts :- via Approximation or Expert-Domain
+   2) Epsilon :- Via Elbow/Knee Method
+                 (as Di increases the chances of noisy also increases)

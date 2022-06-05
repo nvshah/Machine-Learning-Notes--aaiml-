@@ -1,0 +1,23 @@
+terms
+----
+
+- perceptron
+
+- Neural Degeneration
+
+- Multi Layered Structure | MLP | NN 
+
+- Function Composition
+
+- Identity Function | Thresold Function
+
+- Chain Rule
+
+- Memoization
+
+- Epoch 
+
+- Vanishing Gradient Problem (ie Traditional NN | Sigmoid | tanh)
+  Exploding Gradient Problem 
+
+- Sparse MLP

@@ -1,0 +1,52 @@
+=> Forward Feature Selection is very Classification Oriented
+
+* Imp terms & keywords :
+   
+   Sparse - Dense  & High dimen  & Space 
+   Bias - Variance
+   Underfitting - Overfitting
+   train error - test error (generalization error)
+
+_________________________________________
+
+
+* Train Test Set Diff :
+  ------------------
+   Thus all in all,
+	1 - Speculate that both the train & test have diff distribution totally
+	2 - then using binary classifier check how probable our estimate is via checking accuracy metric
+
+	When accuracy is high => Overlapping is less => Speculation is strengthen => towards different distribution
+	                              low  => Overlapping is high => Speculation is weaker => towards similar distribution
+
+	Does this interpreation is correct ?
+
+* Outliers :
+  ------
+   -> Outliers do not only comply with the nearness or proximity but also the density/sparsity of region.
+
+* Columnn Standardization :
+  ------------
+   -> to avoid scale-range issues between diff features such as Variability difference & dumb model
+   -> Eucledian distance gets impacted/affected by Scale
+
+   -< Since Euc-Dist gets affected by Scale, Perform the Col-Standardization before performing KNN
+
+* Categorical Features : 
+  --------------
+   Techniques for featurization :- One-Hot Encoding, 
+                                   Mean-Replacement
+                                   Domain Knowledge
+                                   Ordinal Features (orderness)
+
+
+
+* UnderFit Overfit & Bias Variance :
+  ---------------------
+   Bias => Underfit 
+   Variance => Overfit
+
+   Train Error high => Underfit => high-bias
+   Test Error high => Overfit => high-variance 
+
+

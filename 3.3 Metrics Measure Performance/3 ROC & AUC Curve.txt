@@ -1,0 +1,80 @@
+3 ROC & AUC Curve
+
+-------------
+
+-> ROC & AUC are only used for binary classification
+-> AUC only depends on ordering of pred-variables & not actual scores
+
+=> An ROC curve (receiver operating characteristic curve) is a graph showing the performance of a classification model at all classification thresholds.
+
+-------------
+
+* ROC & AUC :
+  ---------
+   -> Used Only for binary classification
+   -> 0 & 1 are just like probability score
+
+      prediction between (0 to 1)
+
+   Steps 
+    1) Sort data in decr order of y^ (i.e predicted var)
+    2) Thresolding 
+        \
+         for each unique predicted val
+             \
+              at a time take it = tou_i & find new y_tou_i column S.Thresolding
+               y_tou_i = 1 if tou_i > pred_y else 0
+
+         So if n unique prediction -> then n thresolds
+         &
+         for each tou - we can get FPR & TPR
+           \
+            i.e (FPR1,TPR1), (FPR2, TPR2), ...
+
+    3) Plot the FPR vs TPR graph
+         \
+          Connect all dots & you will get a line
+
+          NOTE : PLot will be Unit matrix as FPR & TPR lies in 0 -> 1
+
+    ROC :- This line obtained is known as Reciever Operating Curve (ROC)
+    ---
+    AUC :- Area under the line is known as Area Under Curve
+    ---  
+      -> val of AUC is from 0 to 1;  0 : terrible &  1 : nice
+
+      properties (AUC)
+      ----
+      1) If imbalanced data, AUC can be high for simple/dumb model.
+
+      2) AUC is not dependent on y_hat (ie pred variable) scores instead it depends on ordering 
+         (ie in desc order)
+        => AUC doesnt care abt actual scores themselves, it only cares abt ordering
+
+         So if 2 model have diff score but identical in ordering then AUC(M1) will be equal to AUC(M2) //M1 & m2 are models
+
+         So AUC is dependent on Order
+
+      3) AUC of random model is exactly 0.5
+
+          everything above line means good
+                     below line means worse than random
+
+      vals :- 0.5 to 1 - Ok
+              0.5      - ranndom model
+              < 0.5    - (then swap the class label)
+
+        If you get AUC <0.5 ie let say 0.2 then just Swap the val of class label i.e pred val
+          \
+           So just swap the val of your model output 
+                ie if output 0 then it should be 1
+                             1 then it should be 0
+
+           By doing this hack the AUC will change to 1-0.2 = 0.8
+
+           (Sometimes it happen that AUC < 0.5, esp when there is some mistakes with model)
+
+
+    => This is only useful for binary classification
+
+

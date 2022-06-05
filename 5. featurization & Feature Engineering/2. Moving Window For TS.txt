@@ -1,0 +1,48 @@
+-----------
+
+ - approach domain expert
+
+-----------
+
+* Moving Window For Time Series
+  ---------
+
+  - one of simplest way of featurizing time series data
+
+  -> Consider eg of ECG
+
+  - Take Some Window of size window-width
+
+  * Signal Processing (Info extraction) : (features study)
+    ----
+     - Mean, Std-Dev
+     - Median, Quantile
+     - Max, Min
+     - Max - Min
+     - Max/Min
+     - local maxima
+     - Zero Crossing
+
+  => What is right featurization depends very much on problem
+
+  Featurization Steps :
+  ------
+   1) Window-Width  (decision)
+
+   2) Talk to Domain Expert 
+      & decide features that are useful  (from window)
+
+   3) all your features comes from a single window
+
+   NOTE :- window changes often as time passes
+
+==> Deep Learning comes up with learning featurization automatically, fairly successfuly
+    Given you have lots of data
+
+Thus there are 2 ways :-
+    
+    1) Window  (hand-made often by domain expert)
+    2) Deep-Learned features
+
+
+

@@ -1,0 +1,31 @@
+12 Convolution Layer in Keras
+---------
+ref :
+https://keras.io/api/layers/convolution_layers/
+https://keras.io/api/layers/pooling_layers/
+https://keras.io/api/layers/core_layers/#flatten
+https://github.com/DustinAlandzes/mnist-lenet-keras/blob/master/lenet.py   //[Code Kears Mnist]
+
+Basically there are 3 steps when you do DL
+
+1) build :- define the architecture
+
+2) compile :- optimizers | training
+
+3) Run :- 
+
+---
+
+Sequential()
+Conv2D()
+MaxPooling2D()
+Flatten()
+
+
+For Image Data :- Conv2D()
+    TimeSeries Data :- Conv1D()
+
+    TimeSeries + Image Data :- Conv3D()
+
+
+-> Remember `filters` & `kernels` are 2 diff words for same kernel thing

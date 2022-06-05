@@ -1,0 +1,50 @@
+3. Exploring & Practicing
+
+ref : https://mathworld.wolfram.com/InnerProduct.html   [ Inner Product ]
+
+-------
+
+
+---------
+
+* Similarity Matrix : (User-User)
+  -----------
+
+  - Dot Product & Cosine Similarity
+
+  -> Each User Vector can be of length = ratings given to movies by that user (ie in Sparse Form)
+
+
+* Sparse vs Dense :
+  ----------
+   So when we do dot product of 2 sparse vectors, then its more efficient than doing of dense vectors 
+
+   let Say each User Vector -> dimen -> 17K
+
+   So if we apply PCA to reduce dimen so that we can compute User-User Similarity matrix efficiently
+   But after applying PCA -> we will get dense vectors 
+
+   let say reduce to 500 & that will be dense vector of length of 500 for each user
+
+   So computing Similarity Matrix for User of 500 length dense vector is more time occupying than the 
+   Sparse Vectors of 17K dimen (logically)
+
+   Dot Product of Sparse Vector :
+   ------
+    -> Only connsiders the non-zero value between 2 vector & do computation
+
+   Dot Product of Dense Vector :
+   ------
+    -> Do Computation on Entire vectors
+
+
+* Storing Similarity Matrix : 
+  --------
+   - RunTime Computation
+   - dictionary of dictionary
+
+
+* Movie-Movie Similarity :
+  ------------
+   - 17K * 17K Matrix
+   - By just looking at tha ratings from the User

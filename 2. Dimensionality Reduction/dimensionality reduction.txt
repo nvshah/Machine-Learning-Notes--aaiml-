@@ -1,0 +1,75 @@
+dimensionality reduction 
+---------------------
+
+-> visualize data in very high-dimen
+
+-> default notation = column vector
+
+
+* Data Pre-Processing (Column Normalization) :
+  ------------
+   pre-processing : some type of mathematical operation & transformation on data itself
+
+   There are many ways for data preprocessing :- out of which Column Normalization is 1 such type
+   make a data such that it is easy to model or its easy to reduce dimension
+
+   For dimensionality reduction we will use Column Normalization as Data Pre-processing
+
+   Column Normalization :
+   ------
+    - process each col seperately & process all
+    - all values of features lies between 0 to 1
+    - ReScaling or Squishing the data
+    - getting rid of scales
+
+    => n-dim into unit hyper-cuboid
+
+   Why Col-Normalization ?
+   ---
+   - data get in diff scales : {cm, m, pounds, kg, etc...}
+   - No partiality on treating data, so get features in 1 form norm for internal use
+   - Col-Normalization helps to get rid off diff scale & have same scale for all
+
+   Geometrically It helps to squish our data points into a Unit { Square, Cuboid or hyper-Cuboid }
+
+   -> Helps to converge faster (in case of Linear regression)
+
+
+* Mean -Vector
+  ---------
+   - mean represents approximately center
+   -> Mean Vector is Central Data Point (geometrically)
+
+* Pre-Processing : ( Column-Standardization) :
+  --------------------
+   -> col-stdanrdization more often used than col-normalization
+
+   Column Standardization :
+   ----
+    -> Here transform s.t. mean = 0 & std-dev = 1    // (mean centering & variance scaling)
+
+    You can relate Column Standardization with Standard Normal Variate (Z)
+       \
+        with diff that in Column Standardization values can come from any distribution
+        whereas in Z, it comes from Normal Distribution
+
+   NOTE :- Variance measures the Spread
+
+   What ??
+     Mean Centering  +  Scaling
+     -> 1) Move Mean-Vector to Origin
+        2) Squish/Expand your other vector points S.T. std-dev = 1
+
+* CoVariance of Data MAtrix :
+  ----------
+  	-> d * d   // d = dimension|features
+
+    Property - 1) cov(x,x) = var(x)   // diagonal
+               2) cov(x,y) = cov(y,x) //symmetric
+
+    => Covariance matrix is Square Symmetric Matrix (by property)
+
+
+----
+----
+(Que) Why we do Standardization/Normalization before PCA ??

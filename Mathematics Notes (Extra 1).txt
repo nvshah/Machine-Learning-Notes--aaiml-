@@ -1,0 +1,49 @@
+Mathematics Notes (Extra 1)
+
+-> Good Mathematics Function :
+   -------
+    -> sin(x)/x
+       cos(x) - sin(x)
+
+-> e is special constant which is called base of natural logarithm
+
+-> Never make conclusion from Junk (Random data)
+
+-----------------------------------------------
+
+-> Bisection Method vs Newton-Raphson :
+   -----------------------
+   	Bisection Method -> Divide & Conquer
+   	Newton Raphson Method -> Derivative
+
+    -> How quick you are converging towards your goal [Newton-Raphson is best]
+
+-> Gradient Method (For Convergence)
+
+-> Feynman's method
+
+-> ROC (Reciever Operation and Center) & AUC (Area Under Curve)
+
+-> Integration problem can be break into discrete problem
+
+   Integration is nothing but finding AUC via very minute delta or via large numbers of intervals between 2 point
+
+   dx -> very minute delta of x
+
+   Integration is Continuous, Summation is Discrete
+
+=> Pareto Distribution has Infinite mean & variance
+
+=> Area of Circle using Trapezoid Rule
+
+=> Log is called a monotonnic function
+
+=> Hyper-Plane is all about defining its Normal
+
+=> To solve the optimization problem you need function to be differentiable
+
+=> Inn optimization Problem, the point for which f(x) is minimum is the point for which -f(x) will be maxim
+
+
+   
+

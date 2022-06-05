@@ -1,0 +1,9 @@
+Tips Genneral
+
+-> Always use simpler model if possible than Complex Model
+
+-> Google Colab internally runs on Linux Box
+
+-> Mounting Google Drive onn Google Colab
+
+-> sklearn has popular datasets that are publicly available

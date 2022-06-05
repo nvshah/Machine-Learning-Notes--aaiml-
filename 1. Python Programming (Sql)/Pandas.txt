@@ -1,0 +1,111 @@
+Pandas 
+
+ref : https://pbpython.com/pandas-qcut-cut.html
+
+-------
+
+*-> 
+   xlrd, a package use to read xls file (i.e excel file)
+   openpyxl, a package to store data into excel file
+
+-> DataFrame
+   Series
+
+   You can consider Series as numpy array-vector & do mostly all sorts of stuff on it likewise
+
+   => Eg df.col_name == df.col_name.max()   // gives you the Mask i.e boolean array
+
+
+=> row number is default indexing
+   If you not provide index, then row number is itself index (i.e by default index)
+
+
+* Indexing (Numerical)  <-** (Mimp)
+
+=> iloc - by row number
+   loc  - by whatever index for row is there
+
+   loc[:3]   // slicing
+
+* Custom Index :
+  -----
+   -> You can give custom `index` as parameter to pd.DataFrame([1,2,2], index=[0,1,2])
+
+-----
+
+* to_csv()
+  ---
+   -> also stores index as first column inside csv
+
+* groupby()
+  ----
+   -> indices are not row number
+   -> indices also shift in relative/according groups  (i.e indices remains intact)
+        (row num starts with 1 for each new dataframe)
+
+  unstack()
+
+* pd.concat()
+
+* pd.merge( , on="", type="")   // equi to join() in sql 
+
+* pd.date_range()  // - {periods, freq}
+
+* df.describe()  // summary
+
+* df.sample()   //
+
+* df.apply()
+    .applymap()
+
+------
+EXTRA
+
+ df.sort_values()   //sort by column name
+   .drop_duplicates()
+
+   .duplicated()    // return only duplicated items
+
+Series :-  isin()   // boolean array for each elem of s1 in s2 or not
+           
+           .str.findall() // string methods
+
+           .value_counts()  // Counter in pythons
+           .describe()
+           .unique()
+           .map()
+
+
+* df.corr()   // correlation between features
+
+
+
+
+NOTE :- describe() gives count = #rows where data is present (ie not null)
+
+Q) pandas read csv file in chunks :
+   
+   -> chunksize param in read_csv() method
+
+
+* Pandas & Binning :
+  -----------
+   qcut & cut 
+
+
+* pandas apply & map :
+  ------
+    apply() :-  works on a row / column basis of a DataFrame (based on the axis=0 or 1) 
+    applymap() :- works element-wise on a DataFrame
+    map() :-  works element-wise on a Series.
+
+
+* Pandas Group & Value_Counts & Unstack:
+  -----
+   -> You can use unstack() after value_counts() to view the aggregated val in 
+      tabular form
+
+   -> Then you can use fillna() to fill missing val for aggregated fun col val
+
+
+

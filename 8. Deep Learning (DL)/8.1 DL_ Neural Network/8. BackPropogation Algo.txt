@@ -1,0 +1,108 @@
+8. BackPropogation Algo
+----------------------
+
+
+-----
+
+
+-----
+NOTE
+
+=> Back-Propogation works iff Activation Function are Differentiables
+
+-> Most hardest part in back-propogation is computeuting derivatives 
+_____
+
+NOTE :-
+ - At a time there will be 1 point as input to the Network
+   this point's multiple feature will act as diff inputs to the NN(MLP)
+
+
+* A Data Point & NN :
+  --------
+   Given a Data :- {Xi, Yi}
+    |
+    (1)
+    single pt gets injected to the Network & we get corresp output as it's prediction
+
+    (2)
+    // For each Xi in D :
+    Steps)
+     a. Forward Propogation : pass the input data through the layers to the output 
+     b. Compute the Loss() 
+     c. Backward Propogation : compute the derivative or Grad (ie via Chain Rule) & memoization
+     d. Update Weights, from end of the network to the start
+
+    (3)
+    reapeat step 2 till Convergence
+
+* Forward Propogation : 
+    - We are sending & trying to find output & error
+
+  BackWard Propogation :
+    - We are using the error(or loss) to update the weights in the network.
+      So that
+      When next time I provide the inputs, these weights gets well tuned to provide lesser Loss as Output/Error
+
+* Terms :
+  -----
+
+  1. Epoch :
+  --------
+   -> input all the data points in training once 
+   -> pass all the points in your dataset once through the Neural Network
+
+NOTE :- 
+---
+  => In a NN, you run your model for multiple Epochs
+  => ie You pass your Dataset through Network for multiple times (ie till Convergence)
+
+
+* Epoch & NN :
+  ----
+   EPoch in context to NN can be thought of as :-
+    - Forward Propogation
+    - Compute Loss
+    - Compute Derivatives (Chain Rule)
+    - Update weights in Backward Fashion
+
+    -> Repeat till Convergence
+
+
+* BackPropogation :
+  ----
+   1. Init
+   2. Epoch Phase
+   3. Convergence
+
+   - Most imp part is Chain Rule & Derivatives + Memoization
+
+   => back-prpogation is multi-epoch training methodology where we leverage Chain Rule & Memoization
+      (to update weights)
+   
+**[MImp]**
+   => Back-Propogation works iff Activation Function are Differentiables
+   => If Activation Fn is easily differentiable then you can speed up the training Process !
+
+
+* Batch of Points as Inputs | NN :
+  -----------------------------
+
+  Remmember :- To compute Weights - 
+
+    SGD := 1 Point each 
+    Mini batch SGD := subset of (or batch of) points from dataset 
+    GD := Entire Dataset
+
+  => So algo of NN where we are sending 1 Point (at instant) as input is kinda SGD approach
+
+  => You can also try to send batch of Points to NN (ie kinda mini batch SGD)
+
+  But Note :- keeping all data in RAM & Computing can take lot of time
+
+* Mini Batch based Back-Propogation
+  ---
+   -> pass set of points instead of 1 point
+
+REMEMBER :-
+  -> Typically mini-batch size is in power of 2 (ie 2, 4, 8, 64, ...)

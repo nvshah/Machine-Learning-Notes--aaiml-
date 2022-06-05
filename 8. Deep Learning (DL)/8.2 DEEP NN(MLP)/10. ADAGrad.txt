@@ -1,0 +1,69 @@
+10. ADAGrad
+----------
+
+ref : 
+Grad Descent Algo Ref
+https://ruder.io/optimizing-gradient-descent/
+
+----
+REMEMBER
+
+=> Learning Rate (ie {Eta}) Val is generally smaller --!
+
+
+----
+
+AdaGrad :- Adaptively changes (reduces) the Learning Rates as iteration increases
+
+____
+
+* Adaptive Gradients (AdaGrad)
+-------------------
+
+-> In SGD or SGD+	Momentum, learning rate is same for All weights updation in Network
+
+Idea :- each Weight/Param has a Different Learning Rate
+
+Q) Why we need varing val for Learning Rate also ??
+   \
+    -> because Features of Data can be Sparse or Dense
+       |
+       & For Sparse Features, its not good idea to keep same Learning Rate 
+
+    -> Thus to deal with this we have techniqye called AdaGrad (ie Adaptive Learning)
+
+
+* AdaGrad :
+  ---
+   - For each weight there is diff Learning Rate &
+     For each iteration it changes !
+
+   - Learning Rate will change for each weight at each iteration
+      \
+       It depends on Gradient at that particular iteration
+
+   => As iteration nnumber increases, Learnning Rate is reducing Automatically (Adaptively)
+
+   => It uses all the information of Prev Gradients calculated earlier to decide this !!
+
+
+* Optimization :
+  ---
+   - We found earlier that learning rate (ie Eta) needs to be reduced with passage of time.
+     So as not to overshoot at the end
+
+* Advantage (AdaGrad)
+  ------
+   - No need of manually tuning of Learning Rate (ie Eta) for Each Weight 
+
+   - If you have some sparse feature & some dense feature, the AdaGrad will automatically handles
+     & decide what to take value
+
+  DisAdvantage
+  ------
+   - alpha_t-1 can become very large as t increases
+       \
+        (Problem with large {alpha})
+        As iteration incr, & if alpha grows very large, then it may hinder the Weight Updation & thus obstruct the Convergence Process
+
+        => Thus leads to Slower Convergence

@@ -1,0 +1,29 @@
+* Limitations of Hirerachical Clustering
+
+1) No mathematical objective function
+   ---
+    -> No mathematical objective formulation for what we are solving !
+
+    If something can be represented with mathematical objective function then we can 
+    link it with different algorithms
+
+2) Deciders 
+   ---
+    Min :- Outliers
+    Max :- breaks large clusters
+           can't accomodate the different size clusters
+    grouping avg :- also has some problem as its combinnation of above two
+
+3) Complexities :
+   -----
+    It is the most imp drawback of hierarchical clustering
+
+    -> space & time complexity if Hierarchical Clustering are bottleneck
+    -> cannot scale to large dataset
+
+    K-means has O(nd) which is linear
+     -> thus k-mean clustering can easily be scale to large data whereas agglomerative clustering cannot
+
+    -> this limitation cannot be workaround very easily
+
+

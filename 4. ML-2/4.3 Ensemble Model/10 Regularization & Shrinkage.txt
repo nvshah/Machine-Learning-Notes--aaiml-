@@ -1,0 +1,60 @@
+
+-----------
+
+-> In GBDT when we take m very large, chances of overfitting also increases trivially
+   &
+   thus so we use shrinkage val
+
+=> For any model, always use Cross Validation to get Hyper-param
+____________
+
+
+* Regularization & Shrinkage
+
+- In GB
+  ---- 
+  => As #base-models increases, bias reduces but chances are there that variance increases also
+
+  So #base_models is Hyper-param
+      \
+       that will change bias-variance relation in GB
+
+  => To find correct #base_models, we can use Cross Validation
+
+
+* Shrinkage :
+  ---------
+
+   Fm(x) = Fm-1(x) + gamma_m * hm(x) * v   // v is learning rate & 0 <= v <= 1
+
+   v is called the shrinkage val
+    \
+     -> v is learning rate
+
+   -> v is also a hyper-param in model
+
+   - So we modify the weightage in addition to whatever we found via GB // gamma_m
+     So we reduce gamm_m by a constant v // ie shrinkage val
+
+   -> So we have 2 hyper parameters :- 
+
+        M -> #base_models
+        v -> shrinkage val
+
+   => as v incr, - overfitting incr
+         v decr, - overfitting decr
+
+   => Thus v ie shrinkage val controls the overfitting in the GB F(x) formulatiuon
+      & 
+      M -> helps to reduce the bias of final model
+
+   We can use Grid Search for (M, v) to find the best hyper-params
+   => Both m & v are used to control the bias-variance tradeoff
+
+* In GBDT its very common that model gets Overfit (ie m is large)
+   \
+    So need to find best (m, v)  // via Grid Search in CV
+
+    - because when we take m very large we often overfit
+
+ => For any model, always use Cross Validation to get Hyper-param

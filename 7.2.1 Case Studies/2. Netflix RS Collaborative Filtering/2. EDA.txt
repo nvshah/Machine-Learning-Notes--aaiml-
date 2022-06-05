@@ -1,0 +1,87 @@
+2. EDA
+
+-------------
+-> IN ML, 90% of Experiments Usually Fail
+
+--------------
+
+* Prepare CSV :
+  ---
+   Row Format :- Mj, Ui, Rij, Date
+
+  1) Describe Ratings Column
+  2) Check nan
+  3) Check for duplicated Rows
+  4) Basic Stats (#movies, #users, #ratings)  // uniquely (high level Overview)
+
+
+* Temporal Nature :
+  -----
+   -> You consider all data till today & prepare model tonight
+      &
+      You can then deploy model tomorrow for users
+
+   Split Temporally
+   -------------
+   -> Temporal Nature whilst splitting the data for train-test split.
+   -> 80% - Train 
+      20% - test
+
+   Note :- Data is sorted according to Date only
+
+
+* EDA :
+  ----
+
+1) Distribution of Ratings 
+2) Ratings over Month 
+3) Ratings Given by each User
+     - Check Mean Val
+     - Check Diff Quantiles & Percenntiles Values 
+
+4) For Given Movie Find Num of Users who rated the Movie
+5) No. of Rating by Day of the Week
+
+Q) Is the day of Week is an interesting feature to predict the rating for Movie
+
+6) Box Plot :- 
+     - If all box plot fully align (not much information via that Feature)
+
+     DOW :- is not much good feature
+
+
+* Sparse Matrix Representation :
+  --------------------
+   sparse.csr_matrix() 
+
+   Note :- We need to create Sparse representation otherwise such Data Mmatrix would take lot of space on System.
+
+   As Sparsity Increases -> Sparse Matrix Representation Matters a lot
+
+  -> Data is extremely Sparse
+
+
+* Stats :
+  ----
+   1) Global mean of All Ratings (Entire Ecosystem)
+   2) User-Averages
+   3) Movie-Averages
+
+      User-Avg -> gives Idea abt if user is critical or Linenet
+      Movie-Avg -> gives Idea abt if Movie is Popular or Average
+
+
+* Cold Start Problem :
+  ----------
+   - Imp issue in RS
+
+   :- There will be some users & movies in Test data part (ie Movie which were relaesed later)
+      For which we will have no data available in Train part
+
+   How many new users are there ??
+   How many new Movies are there ?
+
+   -> Cold start is fairly Severe with Users
+
+   : 15% of user in Test do not have any ratingns earlier
+   : 1.95% of movies in Test do not have corresp ratings in Train data

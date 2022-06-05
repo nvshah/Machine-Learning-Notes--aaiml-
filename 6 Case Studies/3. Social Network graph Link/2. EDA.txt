@@ -1,0 +1,90 @@
+2. EDA 
+
+useful module :- networkx
+
+-------
+=> For class 0 
+
+--------
+
+* Basic Stats :
+  ___________
+
+   nx.info()  // graph information ie node cnts, edge cnts
+   nx.draw()  // can be useful to draw the graph
+   &
+   we can plot the graph using matplotlib plt.plot()
+
+
+* User-Follower :
+  ------
+  1) Indegree : (followers of Ui)
+    ----
+     -> Followers to given user Ui
+     - Curve is Steep  & Step-wise like
+
+     -> There are some users who have lots of followers but most of them do not 
+
+  2) outDegree : (following Ui)
+    ---
+     -> number of people each person is following
+
+
+  3) Degree of a vertex :- indegree + outdegree
+    ----
+     -> For given user Ui, 
+          how many people follow this user &
+          how many people are being followed by this user
+
+
+* Binary Classification Task :
+  --------
+
+  (#) Cosntructing Y_i's (predicted labels)
+  _______
+  
+   - In a classification task you need some data pts which have class label 1 & some pts 
+     which have class label 0 (inorder to let model learn effectively)
+
+   But in our dataset we only have all the pts as labelled 1 (ie as only src -> dest edges were provided)
+   	\
+   	 Highly Imbalanced Dataset (Totally Imbalanced Dataset)
+
+   -> So we need to add entries for such src->dest where class label is 0 
+      How ??
+        -> check where edge is not present in current data between 2 nodes ui & uj & place them
+           as new enntry with 0 as label
+
+    problem :
+    -------
+     For n vertices #edges possible = n(n-1)
+      &
+      for millions of vertices this can go crazy so checking such all edges & making their entry
+      can be more densed
+
+      so number of such edges are very large
+
+      1 hack :
+      -----
+       -> We take random sample from all possible set of Edges where the edge is not present
+
+   Balanced Dataset : ( & binary classif )
+   --------
+    -> In classification, its good to have balanced dataset
+
+       So we will add required 0 class label entry by taking random sample from 
+       all the possible edges that are possible but are not there in current Dataset
+
+    => So we will do Random Sampling to create balance Dataset for Binary Classification Task
+
+   Introducing New Edges (Vertices Pair) for {Label 0}:
+   -------------------------
+    -> We will introduce those edges via Sampling where shortest path is greater than 2
+
+    as lenght of path between 2 nodes is smaller -> high chances that they may follow each other
+     &
+    We want those vertices where chances are more of not following, So we will pick or priortize those ones with long path first
+   
+
+
+

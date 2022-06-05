@@ -1,0 +1,61 @@
+gist KNN
+
+KNN :- K nearest Neighbours 
+
+  K :- for diff value of K from 1 -> n plot graph for accuracy & determine best K
+
+  NN -> 
+  # Majority Vote  (Election)
+  # KD Tree        (BST)    // not good for high dimension
+  # LHS            (Hash Table)
+     \
+      {Cos-Sim, Euc-Dist} // only hash function changes between both
+  # Probabilistic Output vs Deterministic Output
+  # Mean, Median  // For regression
+
+
+ => As K incr, smoothness of decision boundary increases
+
+ => smaller val of K is more prone to Outliers So prefer K with large val if there is tie in accuracy
+
+
+ Why KNN is not so good ??
+  -> TC & SC is very large
+
+
+* Underfitting & Overfitting :
+  
+   k = 1, Overfitting
+   k = n, Underfitting
+
+   In KNN, As K incr, Bias incr slightly & 
+                      Varince decr drastically
+
+
+* When to choose KNN ??
+ 
+   1) When dimenn is not large, KNN is good
+
+      When dimen is large -> Curse of dimen (as Euc dist)
+                          -> Interpretability decr
+                          -> KDTree/LSH runtime complexity incr
+
+   2) Low-Latency System 
+      ---------
+      -> result fast
+       
+      - Any internet applications are said to be low-latency systems
+      - KNN should not be used for Low-latency system
+
+   3) Find the right distance measure 
+      -------
+       i.e Cosin-Sim or Euc-Dist or Manhatten-dist ???
+
+       -> KNN is good if you known otherwise KNN is not good choice
+       -> Or if Distance/Similarity Matrix is given then its good to choose KNN
+
+* K-Fold CV ??
+  
+  -> So that maximum data can participate in Training Phase
+
+     - It combines Train & CV data into single Phase of Traaining & prepare CV data internally

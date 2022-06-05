@@ -1,0 +1,80 @@
+* DBScan Algo
+--------------
+
+-> Sklearn migh be using KDTree in their internal structure for DBScan algo
+__________
+
+=> If the distance Di is high for Xi for mth nearest point (ie m is the min-pt cnt)
+   then chances of point being noisy are more
+
+________
+
+=> Hyper-Params : Min-Pts, Epsilon
+
+1) Range Queries :
+  --------------
+   Si = rangeQuery(Xi, Epsilon, D)   // D is Dataset
+
+   - range-query gives you the set of points around Xi in epslion range
+     (internally range-queries might be using KD-tree or similar like structure)
+
+   [Noise Point]
+2) Remove all the Noise Points
+
+   [Core Point]
+3) For each core Point P (ie not assigned to any Cluster)
+     
+     (a) create a new cluster with this unassigned core point
+     (b) add all pts that are density connected to p into this new cluster
+
+   (REPEAT this 3rd step untill all core points gets assigned to some cluster)
+
+   [Border Point]
+4) Each Border Point (assignment)
+    - assign each border point to closest core point's cluster
+
+=> MIMP operation in DBScan is RangeQuery
+
+-> RangeQuery can be performed in O(log n)
+
+
+* Hyper-Params :
+  ------------
+
+  1) Min-Pts :
+     ---
+     Task :- Choose the Min Point   
+
+      // given Point Xi have d-dimension
+      - (Rule of Thumb) := Min-Pts >= d+1
+      
+      (a) Approximation
+
+      	=> Typically Min-Pts := 2*d          // is chosen
+
+      (b) Larger Min-Pts
+      	  
+      	=> If dataset has more noise points
+             Larger Min-Pt -> helps to remove or deduct the effect of noisy points
+
+      (c) Domain Expert
+
+     	=> min-pts by domain-expert
+  
+  2) EPS :
+     ---
+      Let min-pt decided = m
+      then,
+
+      - for pt Xi find the distance di of m_th nearest neaighbor of Xi
+      - do for all the points & arrange the di in increasing order
+
+      Elbow/Knee method :
+      _____
+       - can be used to determine the EPS
+         Where,
+         As {di} increases, the chances of Point {Xi} beinng Noisy also increases
+
+         So you need to find the inflection point or Knee-Point from where there is sudden 
+         increases in Di for corresp Xi
+         whereafter most of the points can be regarded as noisy points

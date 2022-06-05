@@ -1,0 +1,4 @@
+terms
+
+- iid variable (independent & identical random variable)
+- MLE (Maximum Likelihood Estimation)

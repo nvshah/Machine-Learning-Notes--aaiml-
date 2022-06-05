@@ -1,0 +1,5 @@
+terms
+
+- Dense & Sparse Regions
+- Min pts, epsilon, Core-pt, border-pt, noise-pt, density-edge, density connection pts
+- range queries

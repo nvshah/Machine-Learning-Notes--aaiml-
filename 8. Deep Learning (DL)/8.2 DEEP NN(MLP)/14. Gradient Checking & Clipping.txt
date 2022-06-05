@@ -1,0 +1,57 @@
+14. Gradient Checking & Clipping :
+---------------
+
+-----
+=> the most imp part of any optimization strategy is the Optimizer & Gradient Calc
+
+_____
+
+* General Guide
+---
+ -> When we train any MLP or any DL Model, We should monitor the graidents
+    because the most imp part of any optimization strategy is the Gradient
+
+
+* Monitor the Gradient
+  ------------
+   => always monitor the gradients & corresp Updates 
+
+   for an
+    -> each epoch
+    -> each weight
+    -> each layer
+
+   - if not monitor on regular basis then it may lead to 
+       Vanishing Gradient Problem or Exploding Gradient Problem
+
+   - otherwise there may be problem of Converging as well
+
+* Vanishing Gradient :
+  ----
+   - problem of vanishing grad is more likely to first layers (near to input layers)
+     whereas
+     problem of vanishing grad is lesser to last layers (near to output layers)
+
+     one of the reason may be that backpropogation happens from Right -> Left
+   
+   Remedy
+   - immediately change to RELU
+
+
+* Exploding Gradient :
+  ------
+   Soln :
+    -> Gradient Clipping
+
+
+* Gradient CLipping :
+  -------------
+
+  1) L2-Norm Clipping 
+     ---
+      -> We define a {tou} param
+         |
+         & idea is to clip s.t all the gradient is less than {tou}
+
+      -> L2 norm of Gradient vector is greater than all the gradients
+

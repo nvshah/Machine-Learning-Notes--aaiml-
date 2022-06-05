@@ -1,0 +1,42 @@
+6. Nvidia Model
+-----------
+
+ref : 2.10 video Nvidiea
+
+---
+* End to End Learning for Self Driving
+---
+
+---
+terms
+
+truncated normal
+
+----
+
+
+-> Nvidiea use 75 hr driving data
+   &
+   We have 25 hr video data
+
+- In this whole network, you dont have dropout, Max-Pool or even Batch Normalization
+
+----
+CODE
+
+file :- model.py   // borrowed from sullychen
+
+
+* truncated normal :- when we compress the range from tails side
+
+* Dropout & Conv Layer & Fully Connected Layer :
+
+  -> compare to 2 Conv layer, chances of dropout being present between 2 fully connected layers is more
+     because
+     there are more weights variable between 2 FC-layers, comparatively
+     So need some sort of Regularization
+
+
+- atan = tan^-1
+   \
+    arc tan applying at last (to get linear output)

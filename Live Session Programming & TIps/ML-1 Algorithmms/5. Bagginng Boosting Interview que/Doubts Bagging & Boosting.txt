@@ -1,0 +1,12 @@
+Doubts Bagging & Boosting
+
+Q1) 
+ Doubt ? -> 
+  How Stacking is much better way to do Weighted Random Forest Model, Where each Base Learner is Weighted ??
+
+ TimeStamp :- 1:32:38  [ Interview Que on Bagging & Boosting Live Session]
+
+ Suggestion :-
+   ref : https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205
+
+ reply :- https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205

@@ -1,0 +1,43 @@
+topics 
+
+- distance between 2 points
+- Orthogonal Circles
+
+- Two Circle Intersection
+- AUC & Integration   (using trapezoid | Monte Carlo)
+- Monte Carlo Approaches (Randomization related)
+- Approximation using Polygon
+
+- Causation & Correlation
+
+-> Area of Circle using Trapezoid Rule
+
+- Concentric Circles  (circle within circle)
+
+- Principal Diagonal & Off-Matrix Diagonal
+
+- Differentiable & Continuous
+
+- Monotonic Func
+
+- Linear & Quadratic Eqn
+
+- Partial Derivative & Grad
+
+- Harmonic Mean (F1-Score)
+
+- Jaccard Distance
+  Otsuha Ochiai Coefficient
+
+  Katz Centrality
+  EigenVector Centrality
+  PageRanks
+
+- Matrix Factorizations | Matrix Decomposition
+
+- Convex Optimization Problem
+
+- Shrunkage pearson Correlation Coef 
+
+- IID (Independennt & Identical Distribution)  // A probability concept
+- MLE (Maximum Likelihood Estimation)  // A Probability Concept

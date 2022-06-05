@@ -1,0 +1,54 @@
+3. Code-Project WT
+---
+
+Autopilot Tensorflow Project for Self-Car Driving
+
+Folders :
+---
+
+driving_dataset :-
+  - images from front camera & steering angle
+
+logs
+  - all related to epoch
+
+save
+  - final model build will be saved here
+
+
+---------
+
+NOTE :-
+ Inp : seq of imgs
+ Out : angle
+
+* driving_dataset (folder)
+  ---
+   - sequence of image captured by front camera (dash camera)
+
+  data.txt (file) :
+   - for each image we have steering angle in degrees
+
+   -> typical camera captures 30 or 40 images per second
+
+   - 45K images with corresp steering angles (for 1 Video)
+
+
+* Train-Test Split :
+  ----
+   Temporal Data (nature)
+   -> This data has time (ie order/seq)
+      There is sequence in the images
+
+   -> So we should split based on time (axis)
+      - 80% & 20%
+
+   - The distribution of angles in first 80% may differ from those in next 20%
+
+   - radians makes the range simple to work with
+
+
+* Mean Baseline Model :
+  -----
+   -> use mean val as predictor
+   -> or let say 0 as yi^

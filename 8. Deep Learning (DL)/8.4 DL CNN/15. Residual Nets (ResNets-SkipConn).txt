@@ -1,0 +1,116 @@
+15. Residual Nets (ResNets)
+-----------------------
+Sec 4.15
+
+ref 
+https://arxiv.org/pdf/1512.03385.pdf
+https://github.com/keras-team/keras/blob/master/keras/applications/resnet50.py
+
+----
+Concepts :
+- Skip Connection Architecture
+
+-----
+REM
+
+Relu(Relu(x)) = Relu(x)
+
+=> regularization removes all useless Weights
+
+=> as #layers incr, the potential of Model must incr
+   &
+   to leverage such thing one of the way is Residual Nets Approach
+
+-----
+Brief
+
+=> ResNet focus more on Regularization Leverage for Image Detection 
+   (ie by ignoring the useless layers in Network, without actually removing them from Network)
+
+
+-----
+
+- Deep Residual Networks for Image Recognition
+
+- Regular Networks (ie Without Residuals) are called as Plain Networks.
+
+Q) What & Why ??
+  
+  -> Sometimes 56 layered NN performs worse then 20 layered NN, even on larger iterations
+     & usingg some good idea such as Dropout, Relu,...
+
+- Identity | Residual BLocks
+
+* Skip Connection & Residual BLock :
+  ----------
+
+  Remember :- In Convolution Layer you have bunch of Weights & Kernels
+
+  - Residual Nets idea works for both MLP & CNN 
+
+  Flow 
+   \
+    --- x ---> CONV -> RELU -> CONV -> RELU -> ...
+           |                         |
+            _________________________
+
+
+* (Regularization * Skipp Connection)
+  ----------------------
+  Idea :- 
+  ---
+  => Relu(Relu(x)) = Relu(x)    // Property <--**
+  
+  => regularization tends removes all useless Weights    <--***
+
+     ( So assume that some Convolution's weights & kernels are 0 )
+
+  -> When some of layers have all its weights & kernels as 0 then Relu Output (from Prev layer) 
+     is Propogated eventually further to next layer
+     
+     So it is called `Skip Connection Architecture`
+     because of Jumping over some of Conv Layer & RELU in between
+
+     so If your few layers are useless because of Some form of Regularization,
+     via Residual BLock (ie Identical BLock), your Output will not be impacted
+
+     So adding 2 or few additional layers will not impact much
+  
+  Takeaway :
+  ---
+   1. Adding Additional Layer will not hurt performance as Regularization will Skip over them
+
+   2. If new layers added then performance will not decrease but it may increase slightly
+       \
+        because if Skip Layers it is ensured that performance will not decr while going from 20 -> 56 layers
+
+* Residual or Identity BLock :
+  -> Moreover it is also called IDentity Block as x is returned at the end for inp x 
+     (in case in between layers are useless due to Regularization)
+
+* Remember :
+  ---
+   - For Residual Block, you need to plugged that in before RELU of next Layer
+   - skipping over 2 layers
+
+   -> You need to ensure that output you get at the end of Skip Block & its starting have ssame size
+      via Padding or other means of Logic inside that Skip Block
+      |
+      Thus Convolutions (in total) that is performed inside Skip BLock will gurantee the output size same as input one ! 
+       (ie Identity Property)
+   
+   - There are more variation for Skip|Identity Block (but core logic remains same)
+
+[***]
+=> Ideally as #layers incr, the potential of Model must incr
+   &
+   to leverage such thing one of the way is to use `Residual Nets` Approach
+
+-> ResNet helps to promote Regularization more effectively
+
+
+
+---------
+Pract
+
+- identity_block := will comprises of { Convolution, BatchNorm, Activation }

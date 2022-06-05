@@ -1,0 +1,16 @@
+ref articles
+
+[Tensorflow & Kera]
+- https://www.tensorflow.org/tutorials/
+- https://medium.com/implodinggradients/tensorflow-or-keras-which-one-should-i-learn-5dd7fa3f9ca0
+
+[TensorFlow Tutorials]
+- https://www.tensorflow.org/get_started/
+- https://cloud.google.com/blog/products/ai-machine-learning/learn-tensorflow-and-deep-learning-without-a-phd
+
+- https://www.learningtensorflow.com 
+- https://databricks.com/tensorflow
+- https://www.tensorflow.org/learn
+
+[COlab] 
+https://research.google.com/colaboratory/faq.html

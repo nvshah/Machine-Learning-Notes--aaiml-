@@ -1,0 +1,65 @@
+* Feature Importance & Forward Selection :
+  ------------------------------------
+   - most useful feature
+   - sort in incr/decr order of such useful feature
+
+   - feture imp helps in understanding model 
+     -> which in result increase interpretability of model.
+
+   - numerical score for each feature
+
+   - KNN does not give feature imp easily 
+     whereas Logistic Reg gives feature imp easily
+
+   * Forward Feature Selection :
+     -------------
+      -> Help to select useful features
+
+      NOTE : PCA & TSNE do not care abt classification task, the care abt preserving distances
+             Whereas FFS cares abt classification task
+
+      Let say {D_train, D_test}
+       
+      FFS :- if you want to pick k top features then do k iterations & at each iteration
+             You will get set of i optimal features
+      Idea :- ( much like selection sort technique )
+
+      At each stage you are selecting a feature
+
+      perform k iterations :-
+
+        => At each iteration ask que - given a set of features, which feature will add most value to model
+        =? Pick most useful feature, given that you already have some bunch of features.
+            \
+             in such a way that it will give improvement in model or highest accuracy gain
+
+        s-1 ) Train Model & find accuracy for each feature individually 
+                    (accouting prev selected features as well)
+                 \
+                  Here features selected from prev iterations will also participate with individual
+                  i.e prev selected i feature set will be common to all
+                  So Train Model with individual feature + prev selected features
+
+        s-2 ) Find next feature that will add most value
+
+        s-3) Discard that selected feature in s-2 for next iterations & move it to selected feature set
+                 
+      Q) WHy not just take top feature at each iteration & taking feature that is optimal when combine 
+         with prev selected features
+
+      -> because may be possible that individually f1 & f2 features are providing high accuracy 
+         but combinely they may not (maybe due to both of them are much similar )
+
+         So if 2 features are top-2 in stage 1 do not means that both of them will get picked
+
+   * Backward Selection :
+     ------------------
+      -> It tries to remove a feature in each Iteration S.T. after removing, accuracy gain of model is 
+         least affected. i.e remove least imp feature
+
+   Time Complexity is Non-Trivial in both case :- (training d models)
+
+   plus :- Model-Agnostic
+   	    Model-Agnostic : ASA you have method to train & test the data, You can apply FFS or BS
+
+   minus :- High time complexity

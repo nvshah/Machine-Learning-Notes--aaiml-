@@ -1,0 +1,275 @@
+Notes 1
+
+Amazon Fine Food Order Review (Kaggle)
+
+
+gray zone -> confusing zone
+
+
+------------------------------------
+
+=> Data Cleaning & Data Pre-Processing is imp
+-> Use common sense to clean data
+
+-> Given info if you can have it into Vector form then you can leverage power of Linear Algebra
+=> Log is called a monotonnic function
+
+=> For a PDF which follows Zipf's law, both x and y-axis should be in log-axis to obtain a straight line.
+
+=> BOW & TF-IDF do not take semantic meaning of words into consideration 
+
+=> Zipf's law & Log for IDF()
+
+=> Word2Vec create very dense vector
+--------------------------------------
+
+----
+Customer Reviews on Amazon -> Product Ratings `Histogram`
+----
+Objective :- review is +ve or -ve ?? classify i.e Sentiment Polarity
+
+Each review - row
+attributes - cols
+
+Method of approximation
+-----------------
+
+* STEPS :-
+
+1) Data Preprocessing :- transform 'SCORE' column to binary i.e +ve or -ve values
+
+2) Data Cleaning (Deduplication) :- 
+      // Even Product is slightly diff The review is shared by Amazon for similar products from same brand
+
+-----
+
+* NLP :
+  ---
+    step 1) Converting text to d-dimen vector
+    step 2) finding plane (i.e if case is Logistic Reg, classifier, etc...)
+
+
+  * Converting text -> d-dimen Vector :
+    -----
+     Process :- 
+        if similarity(r1, r2) > similarity(r1, r3)   //r1, r2, r3 are texts
+      then dist(v1, v2) < dist(v1, v3)
+
+
+* Bag Of Words :
+  --------
+    - Technique to convert text -> vector
+    - can be thought of as counting a common words
+
+    -> document, unique words
+    -> each word is a diff dimen
+
+    - d will be very large as its #count of words in all documents
+
+    Steps 1) Construct dictionary (of d unique words from corpus) i.e d-dimen array
+          2) freq count for word in document/text
+              \
+               i.e each cell is #word_count #occurences
+
+  Sparse Vectors :- most of the elements of vector are empty/useless/zero
+
+  Corpus :- collection of all document
+
+  => Similar text must be closer (semantically)
+
+  => BOW doesn't work very well in the small terminologies we meant for text/document
+
+  binary/boolean BOW : Instead of #occurences just consider if present or not
+  -----------
+     -> So with binary BOW, norm will be #differing words
+
+  Limitation of BOW :-
+  ----
+    1) It do not interpret semantics of certain english terminologies (i.e is & isn't,...)
+    2) not differentiate & treating trivial & non-trivial words seperately
+
+Text-Preprocessing :
+----- 
+ -> one of way of text-preprocessing is stop-words removal
+
+    S-1) stop-words removal
+    S-2) convert to lowercase (lexiographically)
+    S-3) Stemming
+    S-4) Lemmitization
+
+* Stop Words :
+  ----------
+   -> less imp words 
+   -  to understand semantic meaning stop words matters not much
+
+   - throwing stop words -> BOW - small & meaningful
+   - removing stopwrods is not always important  (eg boundary case :- `not`)
+
+* Stemming :
+  ----
+    -> going to stem (core | essence) of the words
+       i.e Convert to root|base form
+
+    -> base words is same i.e adjective, adverb, verb, plural, singular all for same base word
+       Eg tasty, tastes, taste, tasteful  :- taste
+          beauty, beautiful  :- beauty
+
+* Lemitization :
+  ------
+   -> all about breaking a sent into a words
+   -> It's based on different langugaes & their contexts
+   -> language specific
+
+      Eg New York - consider as whole or seperate
+
+NOTE : We are not considering semantic of word into account (i.e for eg Synonyms)
+
+=> Drawback of BOW : not account semantic of words
+                     Eg - delicious | tasty
+
+
+* Uni-grams : -> 1 dimension for every/each lemmitized words   
+  Bi-grams  : -> pairs of consecutive words is considered as a dimension
+  tri-gram  : -> take 3 consecutive words & create dimension out of it
+   
+  n-grams 
+
+  Eg very tasty & not tasty
+
+  => Uni-gram discards the sequence information
+  => whereas n-gram tries to retains the sequence information ie partial information
+
+  downside :- (of ngrams)
+   -> as n incr, dimensionality also increases drastically
+
+
+* TF-IDF :
+  -----
+    -> part of information retrieval
+    TF (Term Frequency)
+    term freq :- # of freq of word in a document
+               = 0 <= TF(w, d) <= 1    // probability of word in doc
+
+              :- how often word occur in document
+              :- probability of finding word w in document d
+
+    IDF (Inverse Document Frequency) 
+    ----
+     - its for word w in corpus
+     IDF(w, D) :- log(N/n)       // D is DataSet Corpus
+
+     IDF is inversely related to word_count in corpus i.e as word_freq is more in corpus corresp idf will be less
+
+
+    TF * IDF :-
+    ------
+     To find cell val for corresp vector of a document do multiplication of both TF() & IDF() ie
+
+     => It will give more weight to those words that are more frequent in document but less frequent in corpus dataset
+
+   Drawback of TFIDF :- still it is unable to solve spotting semantic meaning of words & considering them 
+                        likewise		
+
+
+Q) Why Log in IDF ??
+   _______________
+
+   -> Zipf's law :- Words in English langugae follows a Power-law distb
+
+      :- ASA you've power law distb, Taking Log is good Idea
+
+   => For a PDF which follows Zipf's law, 
+      both x and y-axis should be in log-axis to obtain a straight line. 
+
+   -> relation of word frequency (in English) to Zipf's law	
+
+   Formula :- TF * IDF
+
+     Notion2 - to shorten range of IDF, 
+               because if IDF has huge range than TF-IDF will also have huge range
+                \
+                 Thus TF will have less impact & may be never dominate the equation as it should be
+
+              So when you do not take log then 
+                 \
+                  IDF dominates & especially for less frequent words
+
+              But if taken log :
+                  -> then dominationn of IDF reduces (comparatively) & TF will have some meaning (comparatively)
+
+              So when TF & IDF are in almost same range then their multiplication make sense
+
+    => IDF - can take very wide range, So to limit its range Log is applied
+
+=> BOW & TF-IDF do not take semantic meaning of words into consideration
+
+* Word2Vec :
+  -------
+   - most powerful technique for text -> vector  (state of the art)
+   -: accounts semantics meaning unlike BOW, TF-IDF
+   -: It also try to learn relations between words automatically
+
+   Naive notion :
+       word  ->  black-box  -> d-dimen vector
+
+       - not sparse vector but dense vector
+       - d typically from {50, 100, 200, 300}
+       - The higher the dimension the more powerful the representation is 
+
+       word2vec : 
+         1) try to place similar words (semantically) closer & diff words farther in d-dimen space
+         2) relationship similarity (eg king-queen, man-women)
+              \
+               diff vector of (king & queen) is parallel to diff vector of (man & women)
+
+               The direction of diff vector of similar relational words will be almost same
+
+            So Word2Vec learn all such relationships automatically from raw-text,
+               all it needs is large data set
+
+        Higher the dimension = much info rich vector is !
+        & 
+        to get higher dimension => need large set of dataset corpus of texts
+
+     -> Vector representation will depend on data we provide
+
+     => At its core Word2Vec basically looks at sequence info of words
+        Neighbourhood of words to compute vector for word
+        Word2Vec check in vicinity of a word to create a vector
+
+     => If Neighbourhood of words are similar then both vectors are also be similar/closer
+
+
+* Avg Word2vec :
+  ------
+   Word2Vec gives vector for words, not senetence !!
+
+   For Sentence -> Vector, 
+
+    2 different weighted schemes :- 
+
+   1) Avg W2Vec - for getting vector of document/senetence
+         works fairly
+         not perfect but simple way
+
+   2) Weighted Avg using TfIDf-Word2vec :
+      ----
+        1. compute tf-idf vector
+        2. Then instead of avg do weighted avg where weights for each word would be the tfidf value
+           from cell of tfidf vector computed earlier.
+
+        Note when tfidf val for all words in sentence is 1, ( Weighted Avg is = Avg W2V )
+
+
+
+
+
+
+
+
+
+
+
+
+
+

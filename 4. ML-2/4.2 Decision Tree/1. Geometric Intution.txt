@@ -1,0 +1,42 @@
+ref : 
+  [Decision Tree Material]
+https://homepage.cs.uri.edu/faculty/hamel/courses/2014/spring2014/csc581/lecture-notes/31-decision-trees.pdf
+
+____________
+
+- Axis Parallel Hyper-Planes ;- DT is all abt Axis Parallel Hyper-planes
+
+------------
+
+
+1. Geometric Intution
+
+-> Convert nested if-else into diagram of Tree structure
+
+   Tree :- 
+   	- For all internal node/vertex (ie non-leaf node) we will make some decisions
+   	- leaf vertex/node will be terminating point for making decision 
+   	  & we will decide what class label to give
+
+-> DT model are highly interpretable as we can read as its a program
+
+Geometric :
+-----
+ - corresp every decision we will have hyper-plane
+
+ - For simple DT, all the hyper-plane are parallel to either axis i.e axis-parallel-hyper-plane
+
+ -> So DT is nothing but set of axis-parallel-hyper-planes that divide your regions into cube, 
+    cuboid, ...
+
+Programatically :- 
+	DT = nested if-else
+
+Read Tree :- via following path through edges
+
+* Challange :- Construct DT
+   
+    Constructing DT is not-trivial
+      \
+       but later part post constructing DT is trivial
+

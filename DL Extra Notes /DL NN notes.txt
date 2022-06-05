@@ -1,0 +1,29 @@
+DL NN notes
+
+=> DL can automatically engineer fetaures for us
+
+* Importance of NN or Multi Layered Structure :
+   - Multi Layered Structure is most useful & imp way of addressign complex functions
+
+=> For Back-Propogation Algo, Your Activation Function needs to be Differentiable.
+
+[*IMP*]
+=> You can think MLP as Multi layer generalization of Linear Regression or Logistic Regression 
+
+
+* DropOut for Regularization
+
+* Data Augmentation is esp used for Image Dataset 
+   \
+    used mostly in CNN
+
+* Padding primarily meant for Batch Update, in LSTM (thus it can speed up update process)
+
+* Skip Connection
+
+* Dropout & Conv Layer & Fully Connected Layer :
+  -------
+  -> compare to 2 Conv layer, chances of dropout being present between 2 fully connected layers is more
+     because
+     there are more weights variable between 2 FC-layers, comparatively
+     So need some sort of Regularization

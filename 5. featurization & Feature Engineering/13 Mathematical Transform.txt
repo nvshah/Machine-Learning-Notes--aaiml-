@@ -1,0 +1,23 @@
+* Matgematical Transform
+  -------------------
+
+  x := single feature
+
+  # logartihmic & base
+  - Log(x)
+  - sqrt(x)
+  - cube_root(x)
+  - e**x
+
+  # polynomial
+  - x**2
+  - x**3
+
+  # trignometry
+  - sin(x)
+  - cos(x)
+  - tan(x)
+
+  => Transformation is domain & problem specific
+  
+  Eg Power-Law :- log(x) -> Normal Distb // # Box-Cox Transformation

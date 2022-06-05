@@ -1,0 +1,7 @@
+Python Packages Useful
+
+sklearn.preprocessing 
+          \
+           .scale()    // standardization
+
+        .datasets      // datasets publicly available by sklearn (generally these data is pre-processed

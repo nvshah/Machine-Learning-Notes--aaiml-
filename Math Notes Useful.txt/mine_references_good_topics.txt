@@ -1,0 +1,30 @@
+[Area using trapezoid method] https://www.cuemath.com/trapezoidal-rule-formula/
+
+[Intution of Planbe Eqn]
+https://math.stackexchange.com/questions/1770206/geometric-intuition-of-the-equation-of-a-plane
+
+[Probability Course]
+https://www.probabilitycourse.com/chapter7/7_1_2_central_limit_theorem.php
+
+[Covariance vs Correlation]
+https://builtin.com/data-science/covariance-vs-correlation
+
+[Covariance]
+https://www.statisticshowto.com/probability-and-statistics/statistics-definitions/covariance/
+
+[Norms L1 vs L2]
+https://medium.com/analytics-vidhya/l1-vs-l2-regularization-which-is-better-d01068e6658c
+
+
+
+
+-----
+
+[Continuity & Differentiability]
+The Organic Math Tutor  -> Youtube
+
+[Langrange Optimization]
+KhanAcademy
+
+[Langrange Multipliers]
+khanacademy.org/math/multivariable-calculus/applications-of-multivariable-derivatives/lagrange-multipliers-and-constrained-optimization/v/lagrange-multiplier-example-part-1

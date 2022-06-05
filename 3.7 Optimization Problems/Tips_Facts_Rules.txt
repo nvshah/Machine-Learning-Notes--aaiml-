@@ -1,0 +1,5 @@
+-> In optimization 
+     min f(x) = max -f(x)
+
+     min f(x) = max 1/f(x)
+     

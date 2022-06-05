@@ -1,0 +1,24 @@
+3. Distance & similarity Measure
+
+* K-NN, Given a Distance|Similarity Measure :
+  -------------------------------------
+   -> It may be hard to represent the pt as a numerical vector
+
+      Eg any medicine i.e paracetamol 
+                           \
+                            -> hard to represent as vector 
+      given 2 points (i.e paracetamol), domain expert can tell if they are similar or not.
+  
+      So sometimes we dont get Xi's as vector
+      but
+      We may get it as similarity matrix
+
+      i.e instead of converting all chemicals into a num-vector
+          its easy for them to fill similarity matrices for pair of chemicals
+
+    => Thus Similarity Matrix or Distance Matrix instead of Xi points (i.e d-dimen vector) explicitly
+
+    -> Given Similarity Matrix or Distance Matrix, KNN will work (as it requires distance to its 
+       neighbour only) well
+        but
+       Logistic regression won't work easily as it needs explicitly the vector repr of points in d-dimen

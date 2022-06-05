@@ -1,0 +1,33 @@
+numpy :
+  count_nonzero()
+
+pd.head()  
+
+pandas :
+
+   describe()
+   info()
+   shape
+   
+   drop_duplicates()
+   sort_values()
+
+   map()
+   value_counts()  //freq count for values in column/series
+
+   read_hdf   // ? load from disk 
+
+tabulate :   // to pretty display pandas dataframe
+
+dask : to load chunks of data from dataframe into RAM
+
+
+sklearn
+
+  metrics.pairwise.pairwise_distances
+  metrics.classification_report
+
+
+np_utils
+    
+    to_caategorical()  // One Hot Kinda Encoding

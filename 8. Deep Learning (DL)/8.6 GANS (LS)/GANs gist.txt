@@ -1,0 +1,26 @@
+GANs gist
+
+* GANs :
+  ---
+   Generative Adverserail Network
+
+   - 2 Models Majorly  (Generator & Descriminator)
+   - Alternative Training for Models (either of 2 at a time)
+   - Deep NN is used in both the Network
+
+- Understand the GAN from 1st Principle
+- All in all, GANs Training is not all about BackProp Algo only
+  It's more about alternating Model Training
+    - ie Train Generator, keeping Descrimantor Fixed
+    - &  Train Descriminator, Keeping Generator Fixed
+    - & Move Back & Forth between this 2 in same way
+
+
+Q) Why alternating Minimization in GANs better than Optimizing both the Model/network together ??
+
+ -> because both the models used Deep NN &
+    to update lots of weights at both side at same time is quite bit complex & strenous process
+    So
+    to match this & deal with this Alternatin gOptimization Mechanism is used/adopted
+
+ -> To know in detail :- Learn Game-Theory, Min-Max Theorem

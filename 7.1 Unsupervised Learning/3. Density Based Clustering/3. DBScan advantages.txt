@@ -1,0 +1,19 @@
+* DBScan advantages
+  --------
+
+plus :
+---
+ - Resistant to Noise
+ - Can handle Cluster of different sizes
+
+
+minus :
+---
+ - Varying Densities : 
+       - small change in EPS leads to dramatically change in Cluster output
+
+ -> Extremely Sensitive to Hyper-Parameter (esp Epsilon)
+
+ -> High-dimen Data :- (Euc-Dist) :- Cures of Dimensionality Problem
+
+ (Minor change in EPS - heavy change in clustering result)

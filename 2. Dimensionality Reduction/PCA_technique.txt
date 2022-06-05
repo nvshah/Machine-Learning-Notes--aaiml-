@@ -1,0 +1,160 @@
+
+Tips :-
+
+  - Dot Product using Vector-component-wise multiplication
+  - So far as Visualization is concerned Top 2/3 Eigen vectors will work often times.
+
+  - PCA is weaker compare to T-Sne
+
+  -> Use PCA before standradization or Normalization
+
+-----------
+
+NOTE -
+  
+  => Spread can be though of Variability
+     Spread is proportional to Information
+
+  Variance :- Avg dispersion of points from central tendency	
+  Norm     :- Norm of a vector is magnitude of vector (s.t considering origin)
+
+  Norm of square(Xi_vector) = Xi.transpose * Xi
+
+
+ -> Goal Of PCA = find the direction of vector (u1) s.t. data can be projected onto it.
+
+______________________________________________
+
+* Principal Component Analysis (PCA)
+  --------
+    Dimensionality reduction using PCA
+
+    d -> d`  //d`is less than d
+
+    Goal : Maximise variance & find that direction 
+
+    -> PCA uses linear algebra transformation for converting/squishing from d-dimen to lower dimen
+    => Preserveing direction with maximal spread (i.e more info)
+       drop or ignore one with minimal spread
+
+    -  Spread is measure of Information
+
+    Case 1) Directly discard either axis
+    Case 2) Do some operation (i.e rotation, shear, etc...)
+            then discard either axis
+
+    AIM :- find direction s.t. variance projected is maximum
+
+  Mathematics Intution :
+  -----
+    -> Care about finding direction (i.e so unit vector )
+
+    1) Objective of an Optimization problem : (variance maximization)
+    	-> Maximise variance & find that direction
+   	    Constraints :
+   	    -> Norm is 1 for vector on which points are being projected
+
+   	2) Alternative Formulation : (distance minimization)
+   	     -> Minimize distance on orthogonal axis (i.e secondary axis)
+   	    Constraints :
+   	    -> Norm is 1 for vector on which points are being projected
+
+
+  => At the End Goal ;- find the direction of new vectors (basis vectors)
+
+
+ * Solution to Optimization Problems :
+   ---------
+    
+    * Eigen Vector & Values :
+      ______
+        -> Every pair of Eigen vectors are perpendicular to each other
+           So their dot product is 0
+
+        -> Covariance matrix of d*d have d eigen vectors
+
+        => helps us to find the direction of maximal variance
+
+        => variance maximization will correspond to the Decreasing series of Eigen Values 
+           (i.e 1st eigen = maximal variance = 1st eigen vector
+                2nd eigen = 2nd most variance = 2nd eigen vector
+                .
+                .
+                .
+                dth eigen = least variance = prpbably discarded by Dimensionality reduction PCA
+           )
+
+       Significance of Eigen Val (lambda's) :
+       ------
+        -> ratio of eigen-val to sum(eigens) = % of info(variance) preserved/conserved
+
+        -> Eigen-Val tells you how is your data spread (i.e only on 1 axis majorly or also on other as well)
+
+        Whereas Eigen-Vec gives you direction of spread
+        Eigen-Vec gives you the scale or how that spread is in that direction
+
+        So ratio lambda/sum(lambda) => % of variance retained/explained by that just direction
+
+
+   - So All in All
+
+   PCA for Dimensionality Reduction :   (d -> d` S.T. d > d`)
+   ---------------------
+     [via Variance Maximization]
+     
+     0) (Assuming that Pre-Processing - Column Standardization is done)
+
+     1) Compute Covariance Matrix
+     2) Compute Eigen Values & Eigen Vectors (take top d` vectors)
+     3) pick top d` vectors
+     4) Do projection of your point on those d` eigen vectors (ie Dot Product)
+
+
+   => So far as Visualization is concerned Top 2 Eigen vectors will work often times.
+
+
+* Limitations of PCA :
+  ------------------
+   - In some cases info loss is very high (Eg data distributed in Circle, Sphere, Hyper-Sphere)
+   - Some times after projection it get much crowded in some region of projection (i.e case of multiple clusters)
+   - some specific fun distribution (eg sin())
+      \
+       We will loose property of sin() after projection
+
+
+* PCA for Non-Visualization :
+  -------------
+   -> If it's to reduce upto 2 or 3 dimension then we can visualize otherwise not (let say 10)
+
+   What to pick d` when not 2 or 3 dimen
+
+   pick any top k - then check what is variance explained by that k eigen values
+
+
+--------------
+
+(Gist & Interesting PCA)
+
+PCA - want to find direction s.t maximum info is retained
+   \
+    For this why Eigen Vectors & Eigen Values only
+     \
+      -> Theoretically :- In optimization problem when constraints are imposed eigen val 
+                          comes into picture
+
+         Intutively :- Spread depends on the Space define by your Basis Vector 
+                       &
+                       You need to alter the space i.e Basis Vectors
+                       |
+                       -> 
+                       Covariance Matrix is the term that is calculated based on basis vectors & features
+
+                       Simply It gives idea about how 2 features vary w.r.t each other
+                       = & try to pick those features first which vary most
+
+
+Q Why we are taking then Covariance in PCA ??
+->
+   because we want to find the top directions s.t. variance of original data is preserved as maximally as possible
+
+   & To know how particular point in d dimen vary in diff direction altogether we need to take help of CoVariance Matrix as its intend for same

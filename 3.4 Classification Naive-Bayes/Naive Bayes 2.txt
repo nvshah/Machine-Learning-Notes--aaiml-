@@ -1,0 +1,113 @@
+Naive Bayes 2.txt
+
+=> Training Phase is often called Learning Phase
+
+=> Fundamental Assumptions : Conditional Independence
+
+---------------------
+
+-> Naive Bayes is all about Counting
+
+* Naive Bayes :
+  ---------
+   Naive :- assume that features are conditionally independent given class label (probability)
+
+   * Categorical Features :
+     ----
+      Learning Phase : (TRAIN)
+      		1. Likelihoods :- need to compute probaility of every feature given class label
+      		2. Prior       :- Probability of each class labels
+
+	      // n = #pts, d = #features, c = #class-labels
+
+	      Time Complexity  :- O(n*d*c)  
+	                      :- O(n* d)     // optimize
+
+	      Space Complexity :- O(d * c) + O(c)
+
+     NOTE : all probabilities for diff fearures are calc in training phase 
+            So in Classification Phase We need to do just lookup those probabilities
+
+	   Classification Phase : (TEST)
+	        3. Posterior :- P(C_k | X_q)  // via Naive-Bayes 
+	                         \
+	                          Note This will not be exactly equal but proportional 
+	                               (as denominator term P(X) we are not calculating as its common in all)  
+
+	        Time Complexity :- O(c * d)
+
+
+	If d is small & c is small then Its a good algo
+
+	So amt of space at runtime is good as compare to K-NN -> Only Dict of (c*d) is required ie
+
+	=> Naive Bayes is much more memory efficient at run time (compare to KNN i.e (n * d))
+ 
+* Naive bayes & Text Classification :
+  ------------------
+   -> Naive Bayes is very popular in Text Classification
+
+       Eg Spam - yes or no
+          review - +ve or -ve
+
+       1) Prior Probability (Class label) 
+          ---
+           is easy to calculate from training pts
+
+       2) Likelihood : 
+          ---
+           P(Wi | y = 0|1)
+
+   Text-Classification Problems :- Spam-Filter, Polarity of a review
+
+      -> For Such problems NB is considered to be a baseline (ie benchmark ) algorithm
+
+         So when such problem is solved using diff algo (such as LR, DL, DT, etc..) the accuracy get with these models are compared with naive Bayes
+
+   => Naive Bayes is considered baseline/benchmark model to which other models are being compared with
+       (Esp for text-classification problems)
+
+
+* Naive Bayes & Multi-Class Classification :
+  --------------------
+   -> It's design such that it can inherently do multi class classification
+
+   -> binary is special case i.e when we have 2 classes
+
+
+* Best Case & Worst Case :
+  ------------------
+   -> Fundamental Assumptions :
+            Conditional Independence
+
+      So when Conditional Independence -> large -> performs well
+                                       -> False -> performance deteriorates/degrades
+
+      So even when some features are dependent, NB works reasonably well
+
+      Theory :- all features must be fully independent
+      in practice :- some part of features are dependent the  NB works reasonably well
+
+   -> For text-spam filter
+          review polarity 
+
+          or High-dimen  , NB is good
+
+  -> Extensively used when categorical features
+
+  -> When numerical features : seldom use NB
+
+  -> Interpretability of NB is super
+     feature importance is good (Eg Medical)
+
+     Run-time complexity - low
+     trainingaining time complexity - low
+     Space Complexity - low
+
+  -> NB is all abt Counting 
+     Its very Simple
+
+  Catch
+   -> Easily Overfit if you do not do laplace smoothing
+   -> NB at is simplicity is easily prone to Overfit so use laplace smoothing in every case
+

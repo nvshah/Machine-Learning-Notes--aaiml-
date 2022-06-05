@@ -1,0 +1,7 @@
+libraries useful
+
+- multiprocessing
+
+- scipy
+    \
+     sparse.hstack   // merge 2 sparse ma

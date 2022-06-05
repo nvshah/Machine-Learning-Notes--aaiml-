@@ -1,0 +1,9 @@
+Revision Que
+
+Q) What is diff between KNN & K-Means ?
+
+-> 1. KNN - Supervised (ie Ground truth is available)
+      KMeans - Unsupervised (ie Ground Truth is missing)
+
+   2. KNN - Majority Voting        (Similarity/Distance based)
+      KMeans - Magnet like effect  (Centroid based)

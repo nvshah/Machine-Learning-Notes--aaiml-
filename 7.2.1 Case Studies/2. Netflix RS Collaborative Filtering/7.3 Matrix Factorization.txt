@@ -1,0 +1,60 @@
+7.3 Matrix Factorization & Surprise Model
+   --------
+   -> Do MF using Surprise Library
+
+* SURPRISE MODEL :
+  -------------
+
+* SVD Using Surprise Models : 
+  ------------
+   - need to find 4 things 
+       - b_u, b_i  // scalars
+       - p_u, q_i  // vectors 
+
+   [Factors] :
+   -> What should be the dimension of vectors p_u & q_i	
+      factors = #dimension of p_u or q_i in SVD
+
+
+   - Eqn Comprises of :- User Bias, Movie Bias, 
+                         user Vector, movie vector
+                         global rating stats
+
+
+* SVD++ 
+  -----
+   - 1 more extra term in Equation (mathematically) compare to above SVD formulation
+
+   Feedback is generally calculated from { user & movie } vector ie p_u & q_i
+     \
+      Implicit & Explicit
+
+   Explicit Feedback :
+    --- 
+     User U give feedback/rating for Movie i :- Explicit Feedback
+     - user watch the movie i (then only he can rate it)
+
+   Implicit Feedback :
+    ---
+     User visit page that contains info about some Movie (not nnecessary user has Watch or rate that Movie)
+       -> fact that User has visit & learn about Movie can be inferred as Implicit Feedback
+
+     - user spent some time with movie 
+       user consider of rating movie (irrespective he rated or not actually) - Implicit Feedback
+
+     - user at some point interested in Movie
+
+    |I_u|  -> cardinality of set of all movies rated by user u
+    y_j    -> new set of item factors that capture implicit ratings 
+
+
+* Hyper-param K :
+  ------------
+
+NOTE :- Big Hyperparameter is #factors ie k
+    
+ -> During SVD++ or SVD :
+     ---
+      If you select larger K (ie dimension of vectors of movie & item)
+        \
+         You can get lower RMSE values

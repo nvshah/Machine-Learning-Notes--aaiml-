@@ -1,0 +1,16 @@
+reference
+
+[Quora Question Pair Similarity]
+https://drive.google.com/drive/folders/1OWZoiQDvAvgOa-IUnEQ-6QKSEp_pw1XO
+
+[Cancer Diagnostic]
+https://colab.research.google.com/drive/15U53IwVyymiCpvNRCHDD1Z73lcg8vyDL?usp=drive_open#scrollTo=z4ITDIVDOQvQ
+
+[Facebook friend Recommendation]
+https://drive.google.com/drive/folders/1c50Q5RcmdpMYj1jCPc3ShOE2y4G8G2ez
+
+[Taxi Demand Prediction]
+https://drive.google.com/drive/folders/1okdoeVcz6peAgJRrBC1Hnx1o7zD3OhYE
+
+
+

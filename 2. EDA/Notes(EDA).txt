@@ -1,0 +1,228 @@
+
+Tips :-
+
+ -> Visualization can neve be perfect 
+
+ RuleOfThumb -
+     :- the far the distributions are (i.e seperated) the better
+     :- the closer the distributions are, More overlap more confusion & not much better
+
+=> Just 1 Outlier can corrupt whole Mean/Variance number
+   As long as less than 50% points are corrupted, Median remains sensible unlike Mean.
+
+=> 50th percentile = Median
+   Percentile gives you idea about population proportion lying on either side relatively
+
+=> 1D-Density = PDF
+   2D-Density = Contour Plots
+
+______________________
+
+* EDA
+  ----
+   -> We usually do before building our model
+
+=> Do data analysis inline with the core Objective
+
+  DataPoints - row
+  Features - 
+=> Think of each dimension as a feature
+
+* Balanced Data Set
+  Imbalanced DataSet : # of data-points per each class(labels) are not balanced (i.e 50:950)
+
+* In 3-D space we can draw a Plane instead of Line
+
+* We humans can visualize 3D (need hack for 4D, 5D, ...)
+
+* Pair Plot :
+  --------
+   -> Hack to visualize higher dimension
+   -> Matrix of diff plots of diff combinations of features (i.e nC2)
+   -> Mirror images on either side of diagonals (i.e x axis becomes y and y axis becomes x)
+
+   plus : Pair Plot is good when dimensionality is less (i.e < 6)
+
+   minus : If dimension (i.e feature) increases. Why ?? -> (nC2) combination formula also increases
+
+
+!Q) Problem with 1-D Scatter Plot :
+    ----------
+   -> Crowded in some region so can't get exact idea about count
+      So we can use Histogram to get much more details (i.e counts better)
+
+
+* Histogram : (PDF)
+  --------
+   -> Idea is to divide that Crowded interval into smaller buckets(windows) 
+    - Visualize Density
+
+      X-Axis : values
+      Y-Axis : Counts(Freq)
+
+   -> Probability Density Function : (PDF)  | DENSITY PLOT
+      -----
+       - Smooth form of jagged Lines in Histogram
+       - Smoothed Histogram  (KDE)
+
+    Overlap :
+   { Thresold : S.T minimal error }
+
+* Univariate Analysis :
+  -------
+   - 1 variable analysis
+      \
+       -> which varaible is more useful among others ??
+          If you need to pick 1 feature ??
+
+   RuleOfThumb ->
+     the far the distributions are (i.e seperated) the better
+     More overlap more confusion & not much better
+
+
+* CDF :
+  ---
+   { starts from 0 -> 1 }
+   -> What percentage is below x (i.e it gives & resembles somewhat to percentiles)
+
+   -> Cumulative Sum or
+      heights of all probabilities come before that (including x's as well) in PDF
+
+   -> CDF is AUC of PDF uptil given point x
+
+    CDF - PDF relation :-
+    --------
+    When you differentiate CDF -> PDF
+    When you Integrate PDF -> CDF
+
+   => CDF helps you to find thresold(i.e overlapping thresold) more accurately (than PDF)
+      with info such as 
+        - how much retention is preserved
+        - how much loss may happen
+  ---
+
+* Mean :
+  ----
+   (simple average) => measures central tendency 
+
+   Outlier affects mean heavily
+     - 1 simple error could corrupt my mine a lot
+
+  Variance :
+  ----
+   Spread
+   Standard Deviation = Sqrt(Variance)
+
+   If S.D is small then spread is small
+
+ => Thus Mean, Variance & S.D are easily corrupted by Outliers
+
+ !Q) So are there any alternative to this ??
+  ---
+  ----
+
+* Median:
+  ----
+   # sorted array # middle index
+
+   Intutively very similar to Mean (alike)  [Alternative when problem faced by Outliers to Mean]
+     \
+      with few outliers it's similar to w.o. those outliers.
+
+   Steps -> 1) Sort the numbers
+            2) Pick the middle numbers
+
+   NOTE -> 
+     If more than 50% of points are corrupted then median gets corrupted
+     As long as less than 50% points are corrupted, Median remains sensible unlike Mean.
+
+* Percentile & Quartile :
+  ----
+   Percentile : 
+      What % are beyound this val & What % are after this val.
+      nth percentile = arr[n]
+
+      50th percentile = Median
+
+   Quantile :
+     { 25, 50, 75, 100 }  -> percentiles = Quantile  (0, 25, 50, 75)
+
+   => Percentile gives you idea about population proportion lying on either side relatively
+
+   Q) Why emphasis 99 and 95 percentile imp ??
+   -> Consider Amazon(ecomm) example
+
+Q) What is Stdandard Deviation = Avg distance/deviation from mean
+
+* Median Absoulute Deviation :
+  ----
+   -> intuitvely doing same thing as Standard Deviation (i.e how far away from central tendency)
+
+---
+NOTE
+---
+  median == mean (idea)
+  MAD    == SD   (idea)
+
+
+* Inter Quartile Range (IQR)
+  ----
+   -> range in between 25th & 75th percentile i.e (50% of data lies in this range) 
+      i.e between 2nd quantile & 4th quantile
+
+   -> Sometimes used as approximation to S.D
+
+* Box Plot :
+  ---
+   -> uses percentile | take ideas of Mean, Median, Percentile & put it into Box Form
+   Eg - boxes corresponding to each of classes
+
+   => You can use Box Plot to find Crowded Area Density idea for each class
+
+   { Box + Whiskers }
+     Box = IQR  
+     Whiskers = Rest  (min and max val, 1.5 * IQR)
+   
+   - IQR is width of BOX
+   - There is no standard way of drawing Whiskers
+   - Most of your points fall within your whiskers
+
+* Violin Plots :
+  ----
+   -> Histograms (PDF) + Box-Plots
+   => Plots the histograms (probability density function) on the sides
+
+* Univariate, Bi-Variate, Multi-Variate Analysis :
+  ----
+   Uni : 1 variable at a time, during analysis {eg PDF(histo), CDF, Box-Plot, Violin-Plot}
+   Bi  : 2 variable                            {eg Scatter-Plot, Pair-Plot}
+   Multi : multiple variable                   
+
+* Multi-Dimension Density Function Plot | Countour Plot:
+  -----
+  Contour Density Plot :
+    - used to interpret 2D distribution
+    - Contours = diff color from inner to outer circles boundary  (darker to lower)
+            
+   -> Eg 2D Density Plot
+         \
+          Imagine Hill Coming Out (darker = higher, lighter = lower)
+          Hill height higher - more point in 2D surface
+          Hill height lower - fewer point in 2D surface
+
+    - As we move away from center crowd decreases   (Eg Gaussian 2D Density Plot)
+
+    -> Contour plots are used often by Civil Engineer, Geologist
+
+   Countour Circles : all points have same height 
+                      (grp pf points having same density)
+
+   => Contour Plot helps you to find out higher density in 2D
+
+
+--------- (extra)---------------
+
+* Word Cloud Plot:
+  --------
+   - help us to Which word occur most in certain scenario
+

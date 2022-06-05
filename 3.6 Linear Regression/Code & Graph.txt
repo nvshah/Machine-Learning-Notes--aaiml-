@@ -1,0 +1,12 @@
+Code & Graph
+
+* Error Distb :
+  ---------
+   -> Idea distb of an error would be straight line along 0
+
+   -> more approximate would be thinner peak around 0
+
+   -> As fatiness increases around 0, Idealness reduces 
+       \
+        Falling more slowly  - not good and we need to reduce some weights from weight vector
+        Falling Quickly    - good

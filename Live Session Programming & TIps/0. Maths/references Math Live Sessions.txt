@@ -1,0 +1,16 @@
+references Math Live Sessions
+
+- (Linear Algebra)
+ https://colab.research.google.com/drive/1u702voTlK7dj7GRFXyGQtdq-LBSmcLkG
+
+- (Probability & Stats 1)
+https://drive.google.com/file/d/1dS-kf0DNVT6VLhDiVYQ6bo6XWwrT0SnW/view
+
+- (Probability & Stats 2)
+https://colab.research.google.com/drive/1BfqcTvn-kyNajsDw6VDeUhAlk4N1g4Nq
+
+- (Probability & Stats 3)
+https://colab.research.google.com/drive/1BfqcTvn-kyNajsDw6VDeUhAlk4N1g4Nq
+
+- (Q&A Probability & Stats)
+https://drive.google.com/file/d/1i2J4Z2Oesh-S4mUEEF4s_OOWrHjUX9CB/view

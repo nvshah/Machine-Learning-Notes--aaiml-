@@ -1,0 +1,23 @@
+terms
+
+- Dense Layers
+- Flatten
+
+- Dropout rate
+- Dead Activation
+
+- Fan-in, Fan-out
+
+- Cross Entropy
+
+- LRM (Local Response Normalization)
+
+- Residual Block | Skip Connection | (Kinda Identity Transfer)
+
+- Bottleneck Layer (1*1 Kernalization trick)
+
+- Long Term Dependency | LSTM
+
+- Identity Matrix | Identity LSTM
+
+-

@@ -1,0 +1,58 @@
+
+---------
+- Internet companies sits on peta-tera-bytes of data
+
+__________
+
+
+Train & Run Time Complexity
+-------------------
+
+Let say RF with k base models (learners)
+
+* Train :- 
+  -----
+  
+   - O (n * lg(n) * d * k)
+	 
+   - On MultiCore system we can train c models in parallel // c = #cores
+
+   Trivially Parallelized : (Algo)
+   ______________________
+	So once we generate the dataset we can trivially parallelize the code 
+	 i.e train sub-model independently on diff core
+ 
+   -> So if we have hadoop cluster or spark clusters - we can train each model independently
+      inside each boxes
+
+
+   So if we have large amt of data with reasonable #features (d) : 
+     - petabytes of data - train data
+       we can prepare model with using boxes i.e 100 box or 1000 box
+       with latest optimization & hyper-threading
+
+       these models are inndependent of each other so we can do this way
+
+
+* Run Time :- 
+  -------
+
+    O(depth * k)   // as DT depends on depth
+
+    - depth here we have considered reasonably large
+    - but with powerful system with multiple cores we can train such models
+       \
+        we can evaluate these trees on diff core or box
+
+    - For very large data it requires multi-core optimization techniques
+
+ Obsv :
+   You can evaluate RF with 200 DT & depth=6 within 3 milliseconds on a modern powerful CPU/box
+   (because if-else conditions are optimized in modern cpu as part of language)
+
+   Thus given Xq -> Yq // we can predict in low time ie 3 milliseconds on a powerful box
+
+=> Thus RF is used sometimes for low-latency application as well
+
+=> RF gives huge performance lift compare to simple DT based model
+

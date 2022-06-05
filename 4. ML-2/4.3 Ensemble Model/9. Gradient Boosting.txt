@@ -1,0 +1,80 @@
+ref : Wikipedia
+
+[GB Explaination]
+https://explained.ai/gradient-boosting/index.html
+
+---------
+
+Rememebr 
+
+  :- err-term|loss-term :- related to Bias 
+     weight|coeff term  :- related to variance | generalization 
+
+  :- RF - Deep DT
+     GB - Shallow DT
+
+=> Pseudo-Residual is great way to encorporate any kinda Los func of our choice most the time
+   in GB
+_________________
+
+* Gradient Boosting
+  ----------------
+
+  1) base First model :
+
+     -> minimize gamma over sum of L(yi, gamma)
+
+     In case of regression it will find gamma = mean(Yi)
+
+
+  2) Learn m models :
+
+     -> You can fit any base learner (one good example is Trees)
+
+     Compute 2 things at current stage m :- h_m(X) & gamma_m
+
+        1) Pseudo-Residuals r_i with F(x) of prev stage i.e m-1
+
+        2) Fit a base learner to r_i i.e {xi, r_i} ie h_m(x)
+
+        3) compute gamma_m :- depends on Loss func & current model build on residual err 
+
+            Why on both ??
+              -> because our end F_m() contains both the term 
+              			i.e Loss Func from prev stage & 
+              				Model build to residuals in current stage
+
+  => Gradient Boosting is general idea
+
+What kind of Base Learners h_m(x) ??
+
+* GB Decision Tree :
+  --------------
+
+  GBDT -> Each of base learner is DT
+
+  & We want High Bias & Low Variance Model
+     \
+      -> shallow DT (DT with small depth)
+
+  -> So we want to train on shallow DT
+
+NOTE :- 
+--
+  :- RF - Deep DT     (low bias & high variance model)
+     GBDT - Shallow DT  (high bias low variance model)
+
+
+-------------------
+-------------------
+
+* Relation between Gradient Boosting & Linear Model :
+  ------------
+
+ -> GBDT is very similar kinda eqn like Linear Regression Optimization where 
+    instead of variable we have function i,e current stage model & instead of lma we have gamma
+
+    lr-reg :- w0 + w1x1 + w2x2 + w3x3    // 3 dimensional w
+
+    GBDT   :- h0 + g1h1(x) + g2h2(x) + g3h3(x)   // 3 base models h
+

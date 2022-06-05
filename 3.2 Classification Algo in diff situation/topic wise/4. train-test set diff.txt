@@ -1,0 +1,92 @@
+4. train-test set diff
+
+* Train Test Set Differences :  (#Ditribution issue)
+  ----------------
+    -> When data is splitted Randomly then there is not much problem
+
+    TBS - can face problems:
+    --------
+       - problem with test + train split
+
+     -> inn TBS :- data is splitted based on the freshness of data
+         \
+          What if data changes considerably (between test & train set)
+           |
+           Eg if in train set - data contains something related to non-alcholic products, majorly
+              but
+                 in test set - data do contains relevancy with alcholic products 
+                               (Eg adding Wine product, recently)
+
+     - underlying data change
+     - D_train & D_test are fundamentally different
+     - distribution change to diff region (i.e for D_train to D_test)
+          \
+           Due to this model performs very badly 
+
+    So distribution of data itself may change (ie from D_train to D_test) & due to this model performs
+    very badly
+     i.e Cross Validation Error = low but
+                   Test Error  = high
+
+    So when you get such scenario like 
+       CV-error = low
+       Test-Err = high
+
+    then check 1) Distribution of Test & Test Data
+                  Do D_train & D_test have same the same distribution
+
+    => If distribution of train & test are changing so fast (i.e with time), then no model can do best/good
+
+    Q) How to determine if data is changing over time such considerably
+       How to check if D_train & D_test have the same distribution or not 
+
+
+    * Determine if D_train & D_test do not have same distb :
+      -----------------------------------
+            1. Assuming both the train & test have diff distribution totally, initially)
+            2. then using binary classifier check how probable our estimate is via checking accuracy 
+               metric
+               if accuracy is high then our speculation is correct i.e both are sperable
+                              low  then weaker our speculation is likewise.
+
+       S-1) Create new Dataset D` - train :-  Yi` = 1 & Xi` = concat (Xi, Yi) in D_train
+                                    test  :-  Yi` = 0 & Xi` = concat (Xi, Yi) in D_test
+
+       S-2) Using any binary classifier on D`   (it may be logistic, KNN, etc...)
+              \
+               this will try to sperate train on one side & test on other side
+               & the overlap region - don't know
+
+               So if the accuracy = 70% means 30% data lies in overlap region (& gets ignored)
+
+               binary classifier :- f(x) -> +1 or 0
+
+              1) Case 1 - almost overlapping
+                > If train & test data are almost overlapping i.e
+                  - then accuracy would be low
+                  - distributions are very similar
+
+              2) Case 2 - medium overlapping
+                > - binary classifier accuracy is medium
+                  - distb are not very similar
+
+              3) Case 3 - less overlappinng
+                  - accuracy is high
+                  - distb are very different
+
+
+              Thus to determine if train data & test data are coming from same distb,
+              We can use any classifier with small modifications
+
+              Modification is : Assume that Both Train & Test Have diff distb, initially
+                                & try to prove it wrong 
+              & 
+              When accuracy is high => Overlapping is less => Speculation is strengthen => diff distb
+                               low  => Overlapping is high => Speculation is weaker => similar distb
+
+        So If D_test & D_train distb are not similar => features are changing with time
+        => Features are not temporally Stable
+              |
+              In such case whta to do ?? -> change your features or design|build new features
+
+      In a nutshell, we change Dn to Dn', by mixing Dtrain and Dtest, such that Dtrain is represented by a class label 1 and Dtest is represented by a class label 0. We then ask the classifier to separate the points in two classes. If they get well separated, they are highly dissimilar.

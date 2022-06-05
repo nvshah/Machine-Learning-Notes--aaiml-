@@ -1,0 +1,189 @@
+4. InterView Que on Productionization
+-------------------------------
+Module 5 :- Live Session :- 3.3
+--
+ref :- https://drive.google.com/file/d/1KUJxmNDlRGG3xaYUX2VXcmsc6yKdZ7R2/view  (Notes)
+
+________
+Unique Terms
+
+-> Wake Word Recognition
+
+----
+Terms & Concepts
+
+- Pickeling
+- Fast API, Gunicorn 
+
+
+-------
+
+-> Typically Your Boosting Base Model perform Well on Tabular Data
+   (ie like RF & likewise)
+
+- For Images :- CNN
+      Texts  :- LSTM | Transformers
+      Tabular Data :- GBDT (often)  // boosting
+
+- Batch Process 
+
+=> GBDT will automatically throws out or not consider the useless feature 
+   So Don't worry much abt Irrelevannt features whilst working with GBDT
+
+________
+
+
+----
+
+(1) 
+---
+ GBDT on Tabular Data | How to Productionize it ??
+ ----------------------------------------------
+  -> If you have tabular Data then it tends to utilize GBDT (in some form)
+  -  GBDt is one of Eg that is used often in Productionization
+
+  GBDT :- Bunch of trees that are incrementally constructed step by step
+
+  ans :- 1) save the Model (Pickel or Json)
+         2) Web API or other ...
+
+         3) How to Update a Re-Trained Model ??
+
+         4) Nightly Evaluation (If Real-time is not tight Constraints)
+
+  Problem Details
+   \
+    - 100 Trees, 
+      Max-Dept :- 4, 
+      Problem Type :- Binary Classification
+
+ * Pickleing :
+   ------ 
+     -> Serialization & Deserialization
+     -> but it has its overhead
+
+ * Json :
+   ---
+    -> Alternative to Pickel
+
+ * Web-Api :
+   ----
+    - Overhead to follow Rest-API protocols
+       \
+        need to follow some object struture as needed
+
+    - Web Api will not be good soln for Desktop App System Soln (Where everything runs locally)
+
+ * Stream Lit :
+   ----
+    - to build Data Web Apps
+    - good for Web Frontend
+    - there is not lots of low-level control
+
+    - will be very slow
+    - & it runs on server side only
+
+    - Load Balancing Issue :
+ 
+
+  * Eg IOT Device like Alexa Smart Speaker
+    Alexa :
+     - wake word recognition 
+     - will not send whole audio to Web-Api to Server
+        \
+         but it will run some small kinda work & 
+         then send that processed thing to Server via Web-API
+
+ =< Need for Load-balancing :
+   ----
+    -> Many Queries or Requests to System
+       Single Processor Cannot tackle multiple Req 
+         \
+          thus there we need Load Balancing
+
+    Load Balancer := Simple Randomization System
+
+      - You need load balancer when you have very high queries per seconds (QPS)
+
+      - all queries goes to Load Balancer
+   
+
+ * Re-Train in Real Time !!
+   ------
+    - Real Time ML Models 
+       or 
+      No Latency Requirement :- Batch Processing (ie at Night)
+
+ => A/B testing :
+    ----
+     -> Not primarily part of Productionization
+        but It's a imp system that you have to think while doing 
+           Productionization, Re-Training & Related Stuffs
+
+ => Check for Model Deterioration (ie Model Quality)
+      \
+       Model's performance fallig over time
+
+ * Triggers | Alarms :
+   ---------------
+   - If you dont have required data avail at hand
+      - { data, feature, response } may be missing
+      - or there is noisy data
+
+
+ * Re-Train :
+   -----
+    - Re-training on fresher data is emphasized even if it adds 0.1 or 0.2 % improvement in updation
+
+
+ Q) How do you design the test cases (Esp for Retrained Model) ??
+    How do you make sure that Model is Sensible ??
+    
+    ( Ie in the case : when data has changed for existing model )
+       \
+        Thus Code not change
+        Hyper-Param not change
+
+   - Basic Test Case :- Compare the Metric between Old & new Model
+   - Baseline Model Idea
+   - Incremmental Check of improvement in case of GBDT
+   - Label Quality & Distribution Diff Check
+
+
+*-------------
+
+Q) What When large Data (ie 10TB) ??
+  -> Spark
+
+Q) how to improve Model over time ??
+ -> 
+    1) FeedBack 
+        - Let say You've Current Data & Feedback Data
+          Now model is going wrong for FeedBack Data (if)
+          So
+           \
+            You can try giving Weight More to FeedBack Data
+             - Thus Loss via old data &
+                    Loss via Feedback data  // give this loss more weight 
+
+
+    2) feature Engineering 
+        \
+         - You can go to Domain Experts
+
+   * Major Errorneous Cases 
+     -----
+      - EDA on Error Data to figure out the Pattern
+      - try to find what have messed up the things (by inspecting Features as well)
+
+----
+[GBDT REMEMBER]
+=> GBDT will automatically throws out or not consider the useless feature 
+   So Don't worry much abt Irrelevannt features whilst working with GBDT
+
+=> Highly Non-Linear Model
+=> Scale Independent
+
+=> What GBDT anyways does :- is train model on Residuals to fit current Errors
+=> Can give use Feature Importance
+

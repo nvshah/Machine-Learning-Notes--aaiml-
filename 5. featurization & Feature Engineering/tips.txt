@@ -1,0 +1,20 @@
+tips & facts
+
+-> Read Lots of Literature in ML for understanding Data & finding correct featurization
+
+=> Deep Learning comes up with learning featurization automatically, fairly successfuly
+   Given you have lots of data
+
+=> To featurize the Time Series Data we can have 3 ways :
+    1) Window   (Hand Made ie specialization)
+    2) Fourier transform
+    3) Deep Learned   (LSTM)
+
+=> Best way to learn Time Series Data is LSTM
+=> Best way to learn the Image Data is CNN Deep Learning Algo
+
+=> Models & Featurization are inter-related
+
+=> You need to understand the domain of task you are trying to solve for.
+   because domain based featurization plays imp role
+   so spend time reading & learning the domain stuffs & what things already exists 

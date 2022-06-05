@@ -1,0 +1,17 @@
+Tips
+
+-> Given any problem if you can convert it to Vector then we can leverage power of Linear Algebra
+
+-> Log is called a monotonnic function
+
+-> K-fold cross validation will give you 10 scores
+
+
+1) The vocabuylary should be built only with the words of Train Data
+
+2) Data Leakage Problem :
+      - Dont do fit_transform() before train-test-split
+
+       1. First do train-test-split
+       2. then fit your vocab on train data
+       3. transform all the 3 parts ie train, CV, test

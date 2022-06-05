@@ -1,0 +1,10 @@
+reference
+
+* Data Acquisition (Amazon)
+   - amazon product advertising api
+
+
+* Files :
+  ---
+
+ 1) AppliedAIWorkShop.ipynb

@@ -1,0 +1,52 @@
+9. Bidirectional RNN
+-------------------
+
+--------
+TIP
+
+-> Whenever you need to understand Forward Prop & backward Prop, just use or consider direction of arrrows
+
+---------
+REM
+
+-> BRNN is very popular in NLP & Speech domain
+
+---------
+
+* Notion :-
+
+-> What if my Output at time t is dependent on inp at time t+1
+
+
+* Uni-Directional RNN :- Regular RNN you've is uni-directional RNN
+  ---
+   - Sequence is being processed from first word to last word
+
+* Bi-Direction Idea : (BRNN)
+  ---
+  - In addition to forward connection, for every neuron we also have a backward connection
+
+  - 2 directions (ie 2 type of connections)
+
+  - Lot of information in Later inps that can impact/affect your previous outputs
+
+  - Forward Impacts
+    Reverse Impacts (later units impacting output)
+
+  - Impacting from earlier or later units
+    &
+    Vice-Versa :- ie Impacting on prev output from later units (ie Reverse Direction)
+
+  - very popular in NLP tasks
+
+  - can also be used in Speech
+     (here you need to let all the audio recording done before you use the bidirectional RNN)
+
+     So in audio, if you want spontaneous conversion (ie as I speak I get output) then Bidirectional RNN is
+     not useful much
+
+     But instead if you first speak the sentence & then if you want to translate tha audio into text via BRNN
+     then its possible
+
+  -> Structure useful when this matters :-
+       - " What you say afterwards also impacts previous things "

@@ -1,0 +1,19 @@
+7. Interpretability
+
+-> From prediction if we can say that particular words are associated more with class
+   is nothing but interpretability of NB
+
+-> for a given query pt Xq -> {w1, w2, w3, ..., wd}
+
+     Xq -> Yq = 1  // prediction
+
+     We can say this based on likelihoods of words that are more associated with class = 1
+       \
+        ie P(w5|y=1) or P(w7|y=1)   
+
+           // such likelihood are high so we can say that w5 & w7 are highly associated with 
+              class label=1
+
+
+
+

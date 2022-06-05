@@ -1,0 +1,43 @@
+4. Convolution over RGB images (Color Images)
+----------------------------
+
+
+------
+
+=> THus in case of Color Images, We have 3D Kernels (ie Tensors) that act with inp img
+=> 3d tnsors are often called as Volumes
+
+-------
+
+- Till now we seen Convolution GrayScale Images (ie 0 or 255)
+
+- In case of Color Images each pixel hold info in form RGB (Red, green, Blue) :- triplet
+
+* RGB & Color Img :
+  ----
+   - one way of thinking is that RGB image is combination of 3 images
+      1. Red Image
+      2. Green Image
+      3. Blue Image 
+[IMP]
+  => Color Image can be represented as 3D tensor
+
+-> 3Dd tensor are often referred as "Volumes"
+
+
+* Convolution on 3D tensor | Matrix :
+  -------
+   -> #channels between kernel & inp 3D tensor must be same
+   - now cuboid over inp Image's cuboid
+   - Output is 2D matrix
+
+   - Conv operator on input color image generates a 2D image still
+
+
+- All in all 
+  ---
+   - In case you think of earlier as Rectangle & Squares
+     |
+     we need to think over cube & Cuboid
+
+   - Channel cnts needs to be same (except all things works)

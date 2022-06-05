@@ -1,0 +1,35 @@
+python DS Concepts
+
+When to use Which Data Structure ?
+
+* Numpy :
+  ---
+   -> C/C++
+   -> Homogenoues Data only so faster
+
+
+* How to build tinyUrls ??
+  --
+   Given the Long URL -> provide the short URL 
+
+   Given short URL -> provide the Long URL  (from tinyUrl Server)
+
+   Use Dict as we want as much fast as possible to get short URL from long URL
+
+   How Long -> short urL ?? base 64 hashing algo
+                            random variable length 
+
+* QPS :
+  ---
+   Query per Seconds
+
+
+* Distributed Hash Table : (For Search)
+  ------
+   -> when dict too large to be stored in single machine	
+
+   Elastic Search
+
+   inverted Index :- words -> documents  :- Inverted distributed hash table 
+
+   Redis & MemeCache :- General purpose Distributed hash Table

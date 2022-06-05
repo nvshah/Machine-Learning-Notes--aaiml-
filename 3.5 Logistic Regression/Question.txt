@@ -1,0 +1,50 @@
+Question 
+
+Q) What is diff between Log-Loss Func & Sigmoid Func ??
+ 
+  -> Sigmoid Func is understand from Geometric Perspective & it's used as to output the predictions
+     Logistic Loss is approximation to 0-1 Loss Function in case of Optimization Problem Solving
+
+  -> Logistic Loss is nothing but Log applied to Sigmoid Func with some mathematics manipulation
+      \
+       So we can say that 
+
+  -> Logistic Loss uses Sigmoid Func to find best Weight Vector
+  -> Log Loss is used in case of probabilistic prediction
+
+  So at the end When Correct Weight Vector are found :- We will sigmoid Function only for Predictions
+
+
+Q) For Making Inferences or Predictions, Does Sigmoid Function is used ?
+    \
+     or Sigmoid Func is Just Used While preparing Models only (During Training phase) ?
+
+     So if we want Class label only (not interpretation) then do we need Sogmoid Func during inference ?
+     -> No because we can derive that via Signed Distance
+
+
+Q) Why grad updation involves addition & not subtraction ??
+  
+  -> Because Loss Function in case of Logistic Regression (ie LogLoss) is Convex Optimization Problem Function necessarily
+     So instead of Gradient Descent - Gradient Ascent kind of thing is emulated	
+     
+     [Remember]
+     When Convex Optimization Problem :- It's gurantee to have only 1 Minima (global)
+
+  -> the tangent direction at any point is in upwards direction so we put - since we need to descent.By default its gradient ascent.
+
+  - ake the function y = x*x. Assume y is Loss for a value x and Plot it and apply gradient descent by starting at x= 3 manually by hand calculating the gradient and changing the x parameter. This will really help you understand this better.
+
+
+Q) 2 ways to solve Logistic Regression :
+   
+	- LogisticRegression()  // via log probabilities  (Probabilistic Way)
+	- SGDClassifier         // generalized Linear Model
+
+	refer :- 
+	   https://stackoverflow.com/questions/43961225/sgdclassifier-vs-logisticregression-with-sgd-solver-in-scikit-learn-library
+
+	   https://sdsawtelle.github.io/blog/output/week3-andrew-ng-machine-learning-with-python.html
+
+Q) LogisticRegression Modelling
+   What is diff between LogisticRegression() & SGDClassifier ??

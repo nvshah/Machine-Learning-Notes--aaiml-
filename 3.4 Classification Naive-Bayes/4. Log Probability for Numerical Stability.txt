@@ -1,0 +1,56 @@
+4 Log Probability for Numerical Stability
+
+
+------------------
+
+-> Log is called Monotonic Function
+   Log doesn't change the order
+
+   Log converts the multiplication into addition
+                    exponentiation into multiplication
+
+------------------
+
+- Problem :
+    As each term in P(Ci | D) is probability with value in range(0,1) so 
+    as dimension increases that value becomes more shorted or unstable
+
+    => Multiplying numbers between 0 & 1 is tedious & create lot of numerical stability issues
+       like Numerical Underflow
+
+    Why Unstable :
+      As dimension incr -> the value tends towards more smaller i.e 0.000005
+      So after floating point the lenght becomes more & more
+
+      But Python have double precision of 16 decimal point & thus 
+      It do have limit
+
+      Eg 0.1 * 0.2 * 0.3  => more shorter number (ie numerical underflow)
+
+    Numerical Underflow :
+    --------------
+     When digits after floating point exceeds 16 places, Python starts rounding
+
+     Rounding may create errors
+
+     so Instead of manipulating small numbers between 0 & 1, Manipulate the log of those numbers
+
+- Workaround :
+  ----
+     Instead of using the probability directly, Use Log of probability
+     -> Instead of operating on small vals, Its better to operate on Log Values
+
+   => Log are much stables
+
+  Log Properties & Subtelty :
+  -----------------------
+  => Log doesn't change the order i.e as x incr => Log incr
+  => Log is called Monotonic Function 
+
+  => Log Converts the multiplication into addition
+                      exponentiation into multiplication
+
+     exponential will convert log to back to normal values  
+
+     e is revert back case for natural log ie ln
+

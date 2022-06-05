@@ -1,0 +1,72 @@
+ML Common Flow
+
+-> Data Cleaning / PreProcessing
+     \
+      Encoding | NLP | Normalizer | Standardizer | log
+
+   Categorical Feature - Encodings
+                          \
+                           One Hot Encoding
+                           dummy_values
+                           CountVectorizer  (Vector for text)
+
+   Numerical Features - Conversions
+   							\
+   							 Scaling
+   							  \
+   							   Standardization
+   							   Normalization 
+   							   MinMaxScaler
+
+   	Note :- Normalization(norm='l1') = MinMaxScaler
+
+   Text Features - BOW | w2v | Glove | TFIDF
+
+Q) WHy we are doing Scaling or Normalizing on Numerical features ??
+  -> To avoid any dominance impact of particular values on model inference
+
+TIP
+-< Take any Feature Column/Series & try to process it individually if require & then allocate it
+   back to dataframe
+
+-< To concatenate diff features into Dataframe you can use hstack() from scipy
+
+-> split :
+   ---
+    accounts the nature of data :- ie temporal or not
+
+      temporal data :- change with time
+      permanent data :- do not change most with time
+
+=> Do perform Vectorization | Encodings | Feature Scaling after the Splitting of Data inorder
+   to prevent Data Leakage problem
+
+   (ie Make Test data completely Vague to Model)
+
+   Cleaning/Preprocessing cann be done prior to Split but other playing with Features that helps the model to improve better should be done only on train data
+
+
+-> modelling
+      \
+       1) Find the Hyper-Param - GridSearch | RandomSearch | Iterative Approach
+           - use Elbow method to decide best hyper-Param
+
+       2) Train the Model using findings of optimal Hyper-Param &
+          Find the actual model parameters
+
+       3) Inference on Test Data
+
+
+GridSearchCV vs Manual Elbow/Knee method 
+--------
+ -> In Grid or Random Search you don not require to split your data into 
+    Train - Test - CV as it internally does the CV (ie K-fold CV for us)
+
+    So just go with Train-Test split 
+
+
+* For comparing models (Probabilities base system)
+  ------
+   - compare the diff matrix (ie Confusion, Precision, Recall)
+   - compare the Tr-Err, cv-err, Test-Err
+   - compare the misclassification

@@ -1,0 +1,45 @@
+2. EDA & PreProcess
+
+1) Imbalanced Data 
+
+2) Similar Distb
+
+=> When the distribution of classes in Test, Train, CV are roughly same
+   then ML works very Well
+
+   If distributions are very diff then ML models will not work very well
+
+
+* AUC vs LogLoss :
+  --------
+
+   => Understanding how random classifier behaves will help us understand how well our fitted model
+      behaves relatively well
+
+   In case of AUC we know edge cases so we may not need Random Classifer
+
+   but In case of log Loss we do not know abt upper bound so we may use random classifer for that benchmark
+
+* Random Classifier :
+  ----------
+   -> It helps to decide the benchmark for unbounded metrics
+
+   We can use & simulate Random Classifier if required to get some standards to compare our
+   trained model
+
+   => Helps us to identify the Sensible Model
+
+
+=> Log Loss just provide single numbers
+   So we use confusion matrix in conjunction to get better idea
+
+* 3 Confusion Matrix :
+  -------
+   1) Normal Confusion Matrix
+   2) Precision Matrix
+   3) Recall Matrix
+   
+
+_________
+_________
+

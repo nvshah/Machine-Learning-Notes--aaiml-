@@ -1,0 +1,106 @@
+ref : 
+
+- Multi-Label to Multi-class Problem Transformation // refer analytics vidhya
+
+-------
+
+module :- sqlite3
+_________________
+
+* EDA
+ ----
+
+csv -> sqlite  // pump data from csv to sqlite 
+
+- Work on sqlite database to work with data for this task
+
+
+Steps :-
+
+1) Removing duplicates :
+   -----
+    Duplicates by group of columns ie  ['Title', 'Body', 'Tags']
+
+2) Tags NLP - ie Count Vectorizer
+   then find Tags Frequency
+   plot distb of tags occurences
+
+
+3) Word clouds for tags-frequencies
+   ___________
+
+    The larger the font the more frequent you will find
+
+     To build the word cloud you need word-vector & word-frequency
+
+----
+* Cleaning & PreProcessing Of questions
+----
+
+4) PreProcessinng :
+   _______
+    -> text - Body -> preprocessing
+
+
+* Problem Transformation :
+  --------------
+   If some how we can boil down the Multi-label to Binary Classif or Multi-Class Classif 
+   then we can apply known algorithmic techniques
+
+   => We can represent class labels in multi-class settings as Binary Vector
+
+   Binarization
+
+   1) One-Vs-Rest :
+      ----------
+
+
+   2) Classifier Chains :
+      -------------
+       - use information present in predicted value of prev labels for next labels in prediction
+
+       - When one of tags ie labels is related to another tag or can be interpreted by another tags,
+         Classifier Chains is very useful 
+
+       => If 1 label is related to another label or 
+             1 label has power to predict another label
+
+             then such chains are very useful
+
+    3) Labels PowerSet :
+      -------------
+       - If binary vector same - give them same class label
+
+       -> It may end in many classes but 
+
+          Problem with such approach is that you may have 1 or 2 points per many class labels
+          so then what will you learn for such class labels having very few data points  
+
+
+    4) Adapted Algorithm
+       -----------
+        KNN modified to Multi-label-kNN (MLKNN)
+
+        aggregation using multiple techniques for findings the labels vector set for query point
+
+
+  => One vs Rest is the simplest & most useful technique
+
+
+* Discarding Some Tags  :
+  -------------------
+
+Q) Tags all or some ??
+  => Doing One vs Rest for all Tags (ie 42K) is not feasible & expensive 
+   So can I drop some tags w.o affecting much to overall information ??
+
+* Partial Coverage :
+  _______________
+   - Not covering all labels but covering some subset of labels
+   - So take top K most freq tags (so it will cover most Questions)
+
+=> If we take top 500 tags -> 90 % of Que are covered
+                  5500     -> 99 % of Que are covered
+
+                 
+  

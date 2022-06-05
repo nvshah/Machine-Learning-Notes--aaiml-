@@ -1,0 +1,15 @@
+terms
+
+Real Values
+
+Ordinary Least Squares
+Linear least Squares
+Squared Loss 
+parabolic curve
+Squared-Loss approximation
+
+Ridge, Laso, ElasticNet regularization
+
+RanSac
+
+Regressors  // X ie Data pt

@@ -1,0 +1,24 @@
+1. Interview Que Programming
+------
+
+
+------
+-> Python does lots of heavy programmign via C lang (dynamic meory alloc)
+
+-> In python when number exceeds too large val then internally its get converted into Big-Int type
+------
+
+1) Implement pow(a,b) from scratch
+
+2) AUC-ROC :
+   ----
+    1) Sort 
+
+    2) Integraion := Sum of Finite Areas
+                     Trapezoidal Method
+
+
+3) Fun to generarte first 10 most significant of n!
+
+   - 1) Via String 
+   - 2) Via List 

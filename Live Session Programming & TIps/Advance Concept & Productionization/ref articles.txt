@@ -1,0 +1,7 @@
+ref articles 
+
+[ACF Plot]
+https://machinelearningmastery.com/gentle-introduction-autocorrelation-partial-autocorrelation/
+
+[ML in Real Time]
+Chip Huyen Blog

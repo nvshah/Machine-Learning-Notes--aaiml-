@@ -1,0 +1,31 @@
+8 Compare Various models
+  ------------
+
+-> The lower the RMSE the better the Model is !
+
+
+* Do Keep in Mind :
+  ------
+  [Imp of HyperParam & #Features]
+   -> If more features are taken into consideration & Hyper-Param Tuning is not done well
+      then More Feature Model may not show significant result compare to Less-Featured Models
+
+
+  -> We have did Model Framing on Sample Data only
+     if we did on actua all data then it mmay show much better result
+     but it may take long time as well
+
+
+  So Don't take RMSE val obtained as Facade Final 
+  It's just for understanding the Conceptual idea
+
+  To get real & better RMSE :-
+    - Do proper Hyper-param Tuning as you add or account more features on the way
+    - Do train & frame model on large data innstead of sample (it may took time)
+
+
+  -> During SVD++ or SVD :
+     ---
+      If you select larger K (ie dimension of vectors of movie & item)
+        \
+         You can get lower RMSE values

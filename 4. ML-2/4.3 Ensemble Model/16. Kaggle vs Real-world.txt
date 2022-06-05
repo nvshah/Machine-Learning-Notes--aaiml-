@@ -1,0 +1,17 @@
+* Kaggle vs Real-world
+  -------------------
+
+  1) 
+
+  Kaggle :- cares about 1 metric
+
+  real-world :- Multiple Metrics
+
+  -> It's very hard to defend 1 metric to sole goal
+
+  Imp Step ;- business metric trnaslated to ML-Metric
+
+  2) 
+
+  Kaggle ;- Very complex Ensemble (may be impractical)
+  

@@ -1,0 +1,17 @@
+Numpy Stack
+
+----
+- files are named is different in diff OS
+______
+
+Pandas :
+  
+  Series :- df['col'] # Series/array
+  Df :- df[['col']]  # Matrix
+
+  * Masking :
+    ----
+  	 query Indexing :- Boolean Series
+      
+
+

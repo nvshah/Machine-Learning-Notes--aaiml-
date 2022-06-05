@@ -1,0 +1,49 @@
+useful Packages
+
+xlrd -> for opening excel file (i.e xls or xlsx) in pandas  // pip3 install xlrd
+openpyxl -> to store data in excel file
+
+wget -> download from url
+
+bs4.BeautifulSoup -> 
+
+tqdm  -> for printing status bar | progress bar
+
+tabulate -> beutiful print dataframe
+
+fuzzywuzzy
+
+networkx   // for Graph Network
+
+dask
+folium
+
+sklearn
+
+multiprocessing 
+    \
+     Manager
+
+gensim.models.word2vec
+                \
+                 Word2Vec()
+                 KeyedVectors
+
+np_utils
+
+-----
+
+fuzzywuzzy
+
+PIL    // For Image
+
+Ipython.display
+
+altair  // plotting
+
+opencv  // cv2
+  \
+   imdecode()
+
+
+

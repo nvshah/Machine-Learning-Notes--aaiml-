@@ -1,0 +1,75 @@
+
+---------
+
+-> abs() val is not differentiable around 0 but we can find hack abt it
+
+- Optimization -> Loss Func -> distance between 2 PDFs ie -> need to be differentiable
+
+----------
+
+
+* KL divergence
+
+Task : calculate the distance between 2 PDFs
+
+1) KS-Statistics :
+   --------
+    -> Supremum gap between 2 CDF of 2 distb is its KS-stats
+
+    KS-stats = Sup{ | P`(x) - Q`(x) | }   // P` & Q` are CDF resp.
+
+    - Can use KS-statistics as distance measure between 2 PDFs
+
+    -> We cannot compute the derivative of KS-statistics
+        \
+         Thus we cant use it as loss-func in optimization based models.
+
+Thus if want to compare 2 PDF func then we cant use KS-stats as Loss Func as its not differentiable
+-> If dist(P,Q) is differentiable then we can use it as Loss Function
+
+  - Loss func is used when we want optimization based methods
+
+  Optimization -> Loss Func -> distance between 2 PDFs ie -> need to be differentiable
+
+* Information-Theory :
+  ---------
+
+  KL - Divergence :
+  ________
+   - a.k.a relative entropy
+   -> mesauring how divergent or how dissimilar 2 PDF are ?
+
+   KL divergence distance between 2 PDFs P & Q is defined as :-
+
+   for Discrete R.V :
+   	-> D_kl(P || Q) = sum(P(x) * log((p(x)/Q(x)))) 
+
+   for Conti R.V :
+    ->  D_kl(P || Q) = integration(P(x) * log((p(x)/Q(x))))
+
+
+   => KL_Divergence has larger val, the more dissimilar or divergent the PDF are
+                        smaller val, the more similar the distb are
+
+   Q) Why log() in KL-Divergence ??
+    -> becauses KL-divergence was derived concept from Entropy & so it possess log()
+
+   => KL-divergence is also known as relative entropy
+
+=> Thus KS-statistics can measure distannce but its not differentiable
+   
+   KL-Divergence is differentiable & provide us relative entropy (randomness)
+
+
+   If KL_Dist large -> relative similarity less
+              small -> similarity good
+
+
+-> KS-statistics is used mostly in statistics
+=> KL-divergence is used mostly in Machine Learning where it derives ideas from Entropy 
+   & Its differentiable as well
+
+
+
+
+

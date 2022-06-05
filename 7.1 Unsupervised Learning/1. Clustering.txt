@@ -1,0 +1,53 @@
+* Clustering
+  --------
+
+Recap :-
+   In classification & Regression, you try to find a function(features) at holistic way
+   & yi's are given
+
+In clustering,
+   - only yi's are given
+   - only features are given
+
+Task => is to group data points that are 'similar'
+
+* Similar Points : (Naive Idea)
+  ----
+   - Points which are near to each other (same cluster) & 
+     far away from other points (diff cluster)
+
+   - Actually Similar Points are Problem/Task Specific
+
+
+Q) How to measure how well your Algo Model performs ??
+ -> bunch of metrics won't work !! (because all metrics require Yi)
+  
+
+* Diff Techniques of Clustering :
+  -----
+   1) K-Means
+   2) Hierarchical
+   3) DB-Scan
+
+-----
+
+* Unsupervised Algorithms : Clustering / Grouping
+    \
+     - no Yi's to supervised learning
+
+  Supervised Learning : Regression / Classification
+    \
+     - we have class-labels or regressible values to supervised our model learning process
+
+  Semi-Supervised Learning :
+  ----
+   In such case consider Data D = D1 union d2
+           where D1 -> has {X, Y}
+                 D2 ->     {X}
+
+   - small portion of the data has labels or regressible-vals, 
+     whereas large portion of data do not 
+
+   - so small number of data points can guide out during learning process
+
+   - This may happen mostly when labelling thee data-points is very expensive

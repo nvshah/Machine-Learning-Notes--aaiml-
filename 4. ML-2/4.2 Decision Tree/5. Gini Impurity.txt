@@ -1,0 +1,26 @@
+
+-------------
+
+=> Computing logs take more time complexity than computing squares
+
+_______________
+
+Gini Impurity
+-----------
+
+- similar to entropy
+
+I_g(Y) = 1 - sum(pow(P(yi),2))
+
+- Gini Impurity is similar to Entropy if we look via graph except that some scaling factor between 
+  both
+
+  Gini Impurity has no log term & 
+
+ => Computing logs take more time complexity than computing squares
+
+ => So Gini Impurity is computationally efficiennt than Entropy  & so
+    Its used in place or as a proxy to Entropy nowadays
+
+
+

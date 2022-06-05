@@ -1,0 +1,17 @@
+reference
+
+[Exercise Problem Bayes Theorem]
+https://drive.google.com/drive/folders/1n1xCCeEL-H8x6Br39BiLUgIWJ5dilJVTs
+
+[Naive Bayes Example]
+http://shatterline.com/blog/2013/09/12/not-so-naive-classification-with-the-naive-bayes-classifier/
+
+[Bayes Theorem Interview Que]
+https://youtu.be/LadMzl8MaXM 
+
+
+
+-------
+
+[Laplace Smnoothing]
+https://www.analyticsvidhya.com/blog/2021/04/improve-naive-bayes-text-classifier-using-laplace-smoothing/

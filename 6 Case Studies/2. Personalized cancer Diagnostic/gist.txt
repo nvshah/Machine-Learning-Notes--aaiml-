@@ -1,0 +1,25 @@
+gist
+
+Aim :- Need to find the probability for different classes of Diagnosis
+
+1) Univariate Analysis
+    - Feature Stability (how good feature alone work as a Model)
+
+2) Featurization :
+->  OneHot Encoding or 
+    Response Encoding
+
+3) Modeling (multivariate Analysis)
+    - Diff Models Comparision based on performancee
+        { Train-Err, Test-Err, Cv-Err, misclassification % }
+
+    - Best founnd was Logistc Regression
+
+NOTE
+=> Remember that Cross validation is done for hyper-paramters tuning such 
+   but parameters are decided by the train data itself
+
+   CV data acts as a driver to help the model perform better from train data via deciding good parameters
+
+
+

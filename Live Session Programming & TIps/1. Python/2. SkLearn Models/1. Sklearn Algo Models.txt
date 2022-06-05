@@ -1,0 +1,45 @@
+* Sklearn Algo Models
+ __________________
+
+ ref :- https://colab.research.google.com/drive/1hprKCFMvOHsHc4rCa0e04YGe8ItGvtpF
+
+______
+TIPS (Remember)
+
+- In practice, Ensemble Models like GBDT & RF beats other models (in case of Classification)
+
+-----------
+
+* Data choosen -
+    - 2 Features 	
+
+
+* Discrimant Analysis :
+  -----
+   - Linear & Quadratic
+
+* Generate Data :
+  ---
+   - Generate Some Data
+   - Add some noise
+
+* 3 Data :
+  ---
+   1. 2 Moon
+   2. 2 Circle
+   3. Linearly Seperable
+
+* Matplotlib :- creating Figure
+
+* Train Data :- Dark Color
+  Test Data :- Bright Color
+
+* decision function :
+  ----
+   Some classifiers has decision function
+
+* Contour Plots :
+  -----
+   - Shape of Contour can tell you shape of Decision Boundary
+
+   -> countourf()   // 

@@ -1,0 +1,114 @@
+------------
+-> Error = bias^2 + variance + c   // c is irreducible error
+
+- DT which is shallow is eg of high bias & low variance model
+
+- High bias = large training err
+
+- Residual Err = error in prediction
+____________
+
+Intutive idea :- For High Bias = High Training err Model  
+        \
+         -> Try reducing err of model iteratively
+
+
+* general formula :- 
+    
+    F(x) = p1*h1(x) + p2*h2(x) + p3*h3(x) + ...
+      \
+       where p_i = hyper-param {gamma, alpha,}
+             h1(x) = base model func at each stage
+____________
+
+
+* Boosting
+  --------
+
+  -> Base Models will be High-Bias & Low-Variance
+  -> So aim would be to lower the bias keeping the variance low as possible
+
+  -> Here Additive Combining is used to achieve above purpose
+
+  -> reducing the bias (ie training err) by training on the errors (residuals) of the prev stage
+
+  -> In Boosting we want to build the sequence of models
+
+  REMEMBER :_ Error = bias^2 + variance + c   // c is irreducible error
+
+  Core-Idea :- reduce bias
+
+  REMEMBER :-
+   
+   => High-Bias = Large Training Error
+  
+   => DT which is shallow is eg of high bias & low variance model
+
+  Steps :- (intutively)
+
+  0) train model & build model with original D_train (it can be classification or regression)
+      \
+       D_train -> Base Model -> M0 -> High-bias -> so large training err
+
+       let model be h0(xi)
+
+       xi, yi, err    // err => are non-trivial ie very large
+
+  1) Train again model for err instead of yi i.e
+      \
+       xi, err_i
+
+      let model be h1(x)
+
+      So at the end of stage 1 we have 
+        F1(x) = alpha_0 * h0(x) + alpha_1 * h1(x)  // weighted sum of 2 base models
+
+      error at stage 1 = yi - F1(xi) 
+
+  2) {xi, err_i} // err from prev stage
+     train again model M2 -> h2(x)
+      & 
+      try to find its coefficient or weight i.e 
+      F2(x) = alpha_0 * h0(x) + alpha_1 * h1(x) + alpha_2 * h2(x)
+
+  3) at the end of stage k :-
+
+      Fk(x) = sum(alpha_i * h_i(x))  // i from 1 -> k
+
+      This model is called as additive weighted model
+      This model is trained to fit to the residual err at the end of prev stage
+
+      So any model h_i(x) is trained on {i, err_i}, where err_i is residual err from prev stage
+          err_i = y_i - F_i-1(xi)
+            {i, err_i} = {i, y_i - F_i-1(xi)}
+
+  => Thus training each consecutive models based on error in prev stage
+
+  So right k = is all abt finding ie Hyper-Param Tuning
+
+  * Final Model
+    __________
+
+     Fk(x) = sum(alpha_i * h_i(x))  // i from 1 -> k
+     
+ => At each stage we are trying to reduce the error for our model predictions by fitting to prev 
+    stage errors
+
+ => So Our model ends up having low residual error  // residual err = err in inference in prev stage
+
+ -> So from 1 -> k, as i incr, Training err for model decreases => Thus Bias in model reduces
+
+ => Thus in Boosting reducing the bias (ie training err) by training on the errors (residuals) of 
+    the prev stage
+
+* Popular Algo for Boosting technique ??
+  ----------------
+   -> Gradient Boosted DT  // highly used in industry
+   -> AdaBoost    // for Image Detection (First Face Detection using AdaBoost)
+
+
+
+
+
+
+

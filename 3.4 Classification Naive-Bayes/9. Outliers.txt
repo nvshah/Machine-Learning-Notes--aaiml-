@@ -1,0 +1,27 @@
+* Outliers in NB :
+  -------
+  
+  Outliers in Test data :
+  
+	-> Outliers are feature in test data which I've not seen in my training data
+
+  Outliers in Training data :
+
+    -> let say {w1, w2, ..., wm}
+
+       then if w8 occurs very few time in both the classes ie
+            if likelihood of w8 is less in both the classes
+               then you can call w8 as an outlier in training data
+
+    :) Hack(soln)
+
+    -> define some thresold for word/feature to be get accounted
+        \
+         ie Eg if a wrod occur fewer than 10 times, then just ignore that word.
+         	   ie drop that word from vocalbulary you have
+
+         	   don't keep that word w in set {w1, w2, ... wm}
+
+
+
+

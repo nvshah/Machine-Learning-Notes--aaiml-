@@ -1,0 +1,3 @@
+Doubts
+
+Distance of Poinnt from a Plane ?? Why divide by norm of a vector ??

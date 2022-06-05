@@ -1,0 +1,37 @@
+terms
+
+- periodicity
+- Trends
+
+- Stationary TimeSeries
+
+- ARIMA
+  ARMA
+
+  ACF  // Auto Correlation Factor
+  PACF // partial Auto Correlation Factor
+
+- AutoCorrelation of Wave
+  Fourier Transform  (Perodicity)   // Alternative to AutoCorrlation of Wave
+
+-----
+[Low-Latency]
+
+- batch predictions
+
+- Dynamic vs Static Features
+- Model Compression
+- Knowledge Distillation
+
+- Online vs Offline Systems (pipeline)
+- QPS (quer per seconds) | performance measure
+- Stateless vs Stateful Training
+
+
+===
+(New Terms To Explore)
+ \
+  - Spidering AI
+
+  - Aadverserial Attacks
+  - Model Quantization

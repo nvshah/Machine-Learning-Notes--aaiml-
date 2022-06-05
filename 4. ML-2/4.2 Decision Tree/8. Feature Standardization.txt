@@ -1,0 +1,25 @@
+
+---------
+
+- Knn, Log-reg, SVM are distance based model
+
+---------
+
+* Feature Standardization
+
+=> DT is not distance based model
+
+-> In decision tree, for numerical variable we do not care about the actual values themselves.
+   but we care about the order i.e (ascending order)
+     \
+      fi < thresold  (eg)
+
+   - Hence we do not need to do or perform feature standardization
+    \
+     => Simple reason is we dont care abt scaling 
+        but we care abt smthng less than & smthng greater than certain thresold
+
+=> so in DT, no need of Normalization, Standardization
+   We can use raw val as it is.
+   As we only care abt something less than or greater than
+

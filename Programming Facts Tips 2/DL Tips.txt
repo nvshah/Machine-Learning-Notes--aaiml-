@@ -1,0 +1,3 @@
+DL Tips
+
+- To checkpoint the Model at end of every epoch ypu can use lib :- h5py & tf.keras

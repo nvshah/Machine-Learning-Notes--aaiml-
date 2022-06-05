@@ -1,0 +1,21 @@
+6. Char RNN Stateful RNN
+-----------------
+ref : Char-RNN with abc-notation: State ful RNN
+
+* StateFul RNN :
+------
+- It has to do with Batch Mode of Operation
+
+- The output of the Previous batch is provided as inp to first Unit in next batch
+
+  NOTE :- if stateful is false then for next batch also we consider Zero vector as inp to first unit
+          but
+          as if stateful = true then out of prev batch is somehow connected & feeded as inp to next batch
+
+  - So its also the reason we Constructed the Batches (Row-Wise Continutity)
+    because of this Continuity in our Designed batches, We can utilise Stateful RNN very effectively
+
+-> In stateful RNN the Weights learn in any Batch will be retained
+
+=> So that it can learn much more long term Dependencies
+

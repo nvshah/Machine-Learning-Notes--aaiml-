@@ -1,0 +1,40 @@
+Doubts 
+
+Q) Why for Very High Dimen Features, Linear Model are preferred ??
+  
+  -> because for very high dimen, #hyper-planes choices are more 
+     &
+     Hyper-plane can easily seperate points 
+
+     So Linear Model like Linear Reg & Logistic Reg are preferred
+
+
+Q) why Feature Sacling (Normalization) is done after Split ??
+   
+   Normalization or MinMax Scaler
+
+   If we fit Normalizer only on Train Data then wont there be chances that some of test data
+   get value outside of range 0 & 1 whilst normalizing them using earlier fitted Normalizer
+
+   Reply 
+   -> HI, first of all when you split the data there should not be an overlap between two sets(as is the case with your split). Suppose you split the data into train and test sets. Then you should create min-max scaler using training data and use this scaler to scale both training and test data. In other works use min and max values of train data to scale down both training and testing data.
+
+   But this way won't the test scaled feature possess some values out of range ie 0 - 1
+
+
+Q) Does Scaling of Numerical Features (ie Normalization or Standardization) benefits whilst doing 
+   MultiNomial NB ??
+
+   -> As NB is going to use probabilities
+
+   Does Numerical Feature Scaling is useful while doing traditional NB algorithm (except GausianNB) ??
+
+
+Q) Singular Value & Eigen Value relation ?? [resolved by myself]
+   
+
+Q) What is Relation between Langrange Multipliers (Constrained Optimization) vs 
+   Eigen Values (Matrix Factorization) ?? 
+
+   
+

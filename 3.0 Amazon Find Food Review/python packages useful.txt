@@ -1,0 +1,65 @@
+sqlite3
+  \
+   connect()
+     \ 
+      cursor()
+      .text_factory
+
+nltk
+  \
+   corpus.stopwords
+   stem
+    \
+     .PorterStemmer
+     .wordnet
+        \
+         WordNetLemmatizer
+     .SnowballStemmer
+   .FreqDist()
+     \
+      .most_common()
+
+sklearn
+  \ 
+   feature_extraction.text
+
+   CountVectorizer()   // for BOW text -> Vector   {params : }
+     \ 
+      fit_transform()
+                       { params : tokenize }
+
+   TfidfVectorizer   // tfidf vectors from text
+   	\
+   	 get_feature_names()   // all dimensions name i.e words
+
+
+gensim
+   \
+    models.Word2Vec      // train your own Word2Vec
+            \ 
+            wv.vocab     // gives all vocab learn or considered from corpus or large dataset
+          .keyedVectors
+             \
+             .load_word2vec_format()  // to manually train the Word2Vec with custom dataset
+                \
+                 .wv.similarity()     // similarity between 2 words 0 - 1
+                 .wv.most_similar()
+
+spacy :
+  
+  Glove  // word to vector
+
+
+pandas 
+
+  pd.read_sql_query()   // sql query via pandas
+
+  df.sort_values()   // sort by col 
+    .drop_duplicates()
+
+  series :
+    .map()    // transform data via function
+    .value_counts()  //freq count for values in column/series
+
+
+

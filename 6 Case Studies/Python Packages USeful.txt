@@ -1,0 +1,25 @@
+Python Packages USeful
+
+fuzzywuzzy  // For Featurization esp for text
+
+os.path    // for file accessing & checking
+
+networkx   //  for Graph & Network DS
+  \
+   .read_edgelist()
+   .info()          // provide stats abt Graph
+   .draw()          // draw the graph
+
+   .DiGraph()   // DirectedGraph 
+
+dask 
+  \
+   dataframe   // used to load large datasets block by block (ie concepts of OS from disk to RAM)
+
+
+sqlite3    // for database persisten storage
+
+
+os 
+  \
+   stat()  // to get the statistics if byte files

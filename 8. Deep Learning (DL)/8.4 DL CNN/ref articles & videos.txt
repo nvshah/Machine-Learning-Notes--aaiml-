@@ -1,0 +1,52 @@
+ref articles & videos
+-----
+
+CNN (Visual)
+
+- (Visual Processing) https://www.youtube.com/watch?v=v20-E_2bT2c
+- (Hubel Research) https://en.wikipedia.org/wiki/David_H._Hubel#Research
+- (Perception Lec) http://www.cns.nyu.edu/~david/courses/perception/lecturenotes/what-where/what-where.html
+- (Visual Layer Img) https://www.frontiersin.org/files/Articles/34845/fpsyg-04-00124-HTML/image_m/fpsyg-04-00124-g001.jpg
+
+
+* Connvolution Operation
+- https://en.wikipedia.org/wiki/Sobel_operator
+
+
+* [Derivative of max-pooling]
+- https://www.quora.com/How-are-the-parameters-of-max-pooling-represented-in-the-weights-nodes-of-a-neural-network
+
+* LeNet & Mnist 
+https://web.archive.org/web/20201126174628/https://engmrk.com/lenet-5-a-classic-cnn-architecture/
+https://www.kaggle.com/code/blurredmachine/lenet-architecture-a-complete-guide/notebook
+
+* ImageNet
+https://en.wikipedia.org/wiki/ImageNet
+https://www.kaggle.com/c/imagenet-object-detection-challenge
+
+
+* AlexNet
+https://proceedings.neurips.cc/paper/2012/file/c399862d3b9d6b76c8436e924a68c45b-Paper.pdf
+https://i0.wp.com/ramok.tech/wp-content/uploads/2017/12/2017-12-31_01h31_40.jpg
+http://euler.stat.yale.edu/~tba3/stat665/lectures/lec18/notebook18.html
+
+* VGGNet
+https://github.com/fchollet/deep-learning-models/blob/master/vgg16.py
+https://www.quora.com/What-is-the-VGG-neural-network
+https://arxiv.org/pdf/1409.1556.pdf
+
+* ResNet
+https://arxiv.org/pdf/1512.03385.pdf
+https://github.com/keras-team/keras/blob/master/keras/applications/resnet50.py
+
+* Inception Network
+https://arxiv.org/pdf/1512.00567.pdf
+https://github.com/keras-team/keras-applications/blob/master/keras_applications/inception_v3.py
+
+* Transfer Lerning
+https://cs231n.github.io/transfer-learning/   (GOOD BLOG*)
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+
+* (Keras :- Img Classif Models 3 Strategies)
+https://blog.keras.io/building-powerful-image-classification-models-using-very-little-data.html
+

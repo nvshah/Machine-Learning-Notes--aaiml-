@@ -1,0 +1,32 @@
+- gray zone
+- sentiment polarity
+
+- data cleaning; deduplication
+- data transformation/preprocessing
+
+------ NLP --------
+
+documents, words
+Sparse Vector
+Corpus
+Bag of words   // technique for text -> vector
+Binary BOW
+trivial(less imp | more common) words, non-trivial words
+
+Text-Preprocessing
+stop words
+stemming
+Tokenization | Vectorizationn
+
+Bi-grams, Uni-grams, n-grams
+TF-IDF
+Monotonic Function
+
+heuristic | hack
+
+Zipf's law
+Word2Vec
+Avg W2V, tfidf w2v
+
+Sparse Matrix
+Sparsity of matrix

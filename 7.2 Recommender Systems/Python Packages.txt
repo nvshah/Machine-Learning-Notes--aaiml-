@@ -1,0 +1,35 @@
+Python Packages
+
+ref : 
+
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.NMF.html
+https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.TruncatedSVD.html
+https://scikit-learn.org/stable/auto_examples/decomposition/plot_faces_decomposition.html#sphx-glr-auto-examples-decomposition-plot-faces-decomposition-py
+
+
+sklearn.decomposition
+         \
+          TruncatedSVD
+          NMF
+
+       .random_projection
+       		\
+       		sparse_random_matrix
+
+
+* NOTE :-
+  ---
+   NMF is very slow compare to TruncatedSVD
+
+   NMF :- uses Custom Optimization Func (With Elastic Net Regularization)
+
+   TruncatedSVD :- randomized algorithm	
+
+
+* PCA can also be achieved using randomized SVD
+
+---------
+
+* surprise library :
+  ---------------\
+    For Recommended System

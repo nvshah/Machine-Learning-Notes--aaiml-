@@ -1,0 +1,28 @@
+Que 
+
+Q) Why going from Primal Form to Dual Form & Why in SVM ??
+ -> 
+    Because dual form have notation comprises of Dot-Product i.e We can have intution of Similarity
+    & can take advantage of such concepts.
+    ie Xi^T*Xq
+
+    So enntire idea is to get it into Do-Product or Similarity based form
+
+
+Q) How is SVM related to KNN ??
+  
+ -> RBF kernel Hyper-Param sigma & K in KNN are almost sharing same intution
+    K - int
+    sigma - can be float as well
+
+Q) How is SVM related to Logistic Reg ?
+ 
+ -> Log-Reg : Feature Engineering Explicitly
+    SVM  : Feature Engineerig implicilty via Kernel-Trick
+
+
+-----
+
+Q) SVM Regressor vs Classifier ??
+
+Q) SVM Primmal to Dual Form (MAth Way ) ??

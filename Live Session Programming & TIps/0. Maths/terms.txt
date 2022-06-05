@@ -1,0 +1,7 @@
+terms
+
+- Parametric Models (Distributions)
+
+- Randomized controls Trials | A/B testing | Bucket-Testings
+
+- rise over run

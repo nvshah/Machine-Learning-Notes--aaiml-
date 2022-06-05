@@ -1,0 +1,15 @@
+# To Explore :
+
+=> ReAllocate memory in Python
+
+----------------------
+
+Programs to Practice
+
+1) Peak Finding Algo
+      (explore - scipy#find_peaks)
+
+           // problem abt memory allocation & deallocation
+2) Find the factorial of large num w.o using bignum (using loop)   
+
+3) Estimate the Value of PI (using area of circle & circumference of circle)

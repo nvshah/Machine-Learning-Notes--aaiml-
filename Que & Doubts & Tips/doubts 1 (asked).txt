@@ -1,0 +1,74 @@
+doubts 1 (asked)
+
+* Dimen Reduction & Pre-Processing 
+
+Q) Why to do Normalization/Standardization before PCA(Eigen Decomposition)
+ -> Is it just for sake of easing out math work (ie Norm becomes 1 whilst solving)
+
+    Ans :-- https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
+
+Q) What if we do Standardization after PCA(Eigen Decomposition) ? Does result will be similar to above one ?
+
+  https://stats.stackexchange.com/questions/69157/why-do-we-need-to-normalize-data-before-principal-component-analysis-pca
+
+
+---
+* Intercept terms in Linear Model
+
+Q) What is Significance of intercept_ in Linear Models such as Linear Regression or Logistic Regression ??
+
+coef_ are used for weights vectors that will control & manipulate the features
+
+Regularization during training will control Weight Vectors from exceeding its values to inf
+
+But what does role intercept_ term plays in Optimization problem & what is its significance ?
+
+Ans)
+intercept term helps to move our best fit line move up or down based on data. Say all the data is at y=100 and in x range [-10,10] and say we kept intercept=0 then best fit line moves through origin and no where fits the data and we get high error. while if we let our optimization choose intercept then it selects such that error is low.
+
+
+----
+* Making Inference or prediction (Logistic Reg)
+
+Q)
+	If we want only class label ie (0 or 1)
+    Then does sigmoid function is used during inference/prediction or
+    only signed distance can make decision ?
+
+Ans) 
+    
+    Sigmoid function outputs in the range [0,1]. We can define something called as threshold. Let's call the output of the sigmoid function as o.
+    Then our decision rule becomes,
+    if o>=threshold, then the class label is 1 else class label is 0.
+
+
+---
+*
+Q) Why grad updation involves addition & not subtraction ?? (Logistic Regression)
+  
+  -> Because Loss Function in case of Logistic Regression (ie LogLoss) is Convex Optimization Problem Function necessarily
+     So instead of Gradient Descent - Gradient Ascent kind of thing is emulated	
+     
+     [Remember]
+     When Convex Optimization Problem :- It's gurantee to have only 1 Minima (global)
+
+  -> the tangent direction at any point is in upwards direction so we put - since we need to descent.By default its gradient ascent.
+
+  - ake the function y = x*x. Assume y is Loss for a value x and Plot it and apply gradient descent by starting at x= 3 manually by hand calculating the gradient and changing the x parameter. This will really help you understand this better.
+
+---
+* High Dimension & Linear Seperation 
+
+Q) In high dimension, data is easily Linearly Seperable, Comparatively
+
+
+---
+
+* Stacking & Bagging (RF)
+
+Q) How Stacking is much better way to do Weighted Random Forest Model, Where each Base Learner is 
+   Weighted ??
+
+   Ref :- TimeStamp :- 1:32:38  [ Interview Que on Bagging & Boosting Live Session]
+
+   Reply :- https://towardsdatascience.com/ensemble-methods-bagging-boosting-and-stacking-c9214a10a205

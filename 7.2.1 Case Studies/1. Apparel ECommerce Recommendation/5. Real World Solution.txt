@@ -1,0 +1,21 @@
+5. Real World Soln
+
+-> Techniques we saw so far :- { BOW, TF-IDF, IDF, W2V, AvgW2V, Weighted W2V }
+
+-> In the real world how to decide which techniqyes should choose the recommended products
+
+=> You need to run the different technniqyes then on top of that 
+   You need to Consider the Busnniess Rules
+
+* Business Rules
+  -----------
+   -> Busness Rules will dictates what should be the final list of products to be recommended
+
+   -> So Foundings from multiple techniques must adhere to Business Rules at last
+
+   Eg -> Do not show product in recommendation of same brands more than 4 counts
+
+
+* A/B testing :
+  -------
+   -> To decide whether our solution is good or not ! 

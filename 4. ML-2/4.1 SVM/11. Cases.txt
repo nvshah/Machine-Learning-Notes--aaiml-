@@ -1,0 +1,70 @@
+
+-----------
+
+-> Impact of Outliers in SVM is very little as the SVs are the one that matter most
+-----------
+
+Cases
+
+1) Feature Transformation :
+   ----------------
+    \
+     Kernel-Design, Finding Right Kernel
+
+2) Decision Surface :
+   ------
+    - Linear Surface : Plane, Light, etc...
+
+    - Kernel Surface :- non-linear Surface (via Kernel Trick)
+
+3) Similarity/Distance Func :
+   -------
+    - with few modification can be converted to kernel
+
+4) Interpretability & Feature Importance :
+   --------
+    - Not much interpretable
+    - cannot get feature importance natively/directly
+       (We have methods such as Forward Feature Selection)
+       \
+        esp for kernel-SVM, they are not easily interpretable
+
+        For Linear-SVM, we can thought of it as same as Logistic Regression
+
+5) Outliers :
+   --------
+     -> very little impact
+     	\
+     	 As in SVM the support vectors are the one that matter most
+
+     -> Boundary Case in RBF if sigma is small, then its just like KNN with small K & thus get 
+     	affected by Outlier
+     	 \
+     	  Overfitting to Outlier itself
+
+6) Bias-Variance :
+    --------
+     -> C incr, Overfitting incr
+          decr, Underfitting incr
+
+          RBF - SVM :- C & sigma
+
+7) High dimensions :
+   --------
+    when d is large - SVM has no problem
+     As SVM internally tries to take d-dimen to d`-dimen where d` > d 
+
+8) Best Case & Worst Case :
+   ---------
+    -> Best Case :- Choose Right/Appropriate Kernel
+
+       Worst Case :- large n  // lots of data pts -> long training time
+                      or
+                     large K  // ie large number of support vectors.
+                      
+       If #SVs are large then f(Xq) will take a time as O(k*d) 
+         & 
+         thus not suitable for internet based application which require low-latency model
+         so log-reg would be preferred in such case with feature transformation (explicitly)
+
+

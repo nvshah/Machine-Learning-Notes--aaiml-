@@ -1,0 +1,13 @@
+7. Char RNN Archi Build
+---------
+
+useful files :- train.py, build.py
+
+* Keras :
+
+REMEMBER |->
+  Why we add Dropouts ??
+  -> When we have very few data points we add it   inorder to avoid overfit
+
+-> Because we want to use SoftMax Classifer (& multi class like setting)
+   We encode the depth in Out Matrix as One-Hot Encoding

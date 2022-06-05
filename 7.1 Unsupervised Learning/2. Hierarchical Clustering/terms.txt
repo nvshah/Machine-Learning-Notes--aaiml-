@@ -1,0 +1,6 @@
+terms
+
+- Agglomerative
+- proximity matrix
+
+- Ward's method

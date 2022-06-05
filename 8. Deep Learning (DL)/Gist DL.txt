@@ -1,0 +1,84 @@
+Gist DL
+-------
+
+=> Earlier We do not have advantage of 
+    - Lots of Data
+    - Lots of Computational Power
+
+* REMEMBER :
+  
+- Learning Rate (ie {Eta}) Val is generally smaller --!
+
+- In Convolution Layer you have bunch of Weights & Kernels
+
+-> regularization removes all useless Weights
+
+=> initial layers in CNN often deal with the task of detecting the Borders, Common Shapes & Likewise
+   (which is common among all tasks esp when we talk about Images)
+
+=> Keep Small Learning Rates when you FineTune Your Model
+
+-----
+Basic Essential Concept
+
+- Dropout, Batch Normalization
+- RNN, CNN
+
+-----
+
+* Deep NN :
+  ------
+   -> You can consider Deep NN as below (my understanfing)
+       \
+        - Hidden Layers doing kinda Featurization tasks
+        - Output layeer (ie Softmax | RELU) playing role of as a Predictor layer
+
+* Batch Normalization :
+  ---
+   - A layer in NN, to avoid Internal Covariance Problem
+   
+[Batch Normalization Signnificance]
+=> If you have Similar Distb among Diff Batch of Input, It will help you to 
+   immprove your Grad|Derivative Term & thus help to Converge Faster
+   &
+   This is underhood idea of Batch Normalization
+
+
+* Cross Entropy :
+   -> Generalization of Log Loss for Multiple Classes in case of Deep NN
+
+
+* Weight Layer can be possible in 2 ways :- Kernels or FC (ie fully connected layers)
+
+
+* Regularization :
+  ---
+   - can be L1, L2, or Dropout
+   -> regularization removes all useless Weights
+
+* Data augmentation :
+  ----
+   - Is esp useful for Image Dataset
+   - Rotate, Scale Shear, ...
+   - To get more images correspondingly & thus helps to make robust CNN models
+
+
+*) general CNN Convnet includes :
+       - ConvLayer 
+       - MaxPooling 
+       - Flatten 
+       - Dese layers 
+       - DropOut
+
+	ConvNet Part :- ConvLayer | MaxPoolinngg
+	MLP Part :- Flatten | Dense layers | DropOut
+
+	
+*) RNN :
+  ----
+   - Recurrent Unit (Repeated multiple times)
+   - 3 Weights to compute & deal with
+
+   => Long-term dependency won't work well with Simple RNN
+
+   -> Time axis plays an important role in case of RNN

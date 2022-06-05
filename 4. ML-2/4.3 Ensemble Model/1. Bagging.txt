@@ -1,0 +1,104 @@
+
+----------------
+
+- Variance :=
+    Model changes a lot with slight change in Training Data
+
+- Model Err := bias^2 + variance
+________________
+
+* Bagging (Bootstrap Aggregation)
+
+  Bootstrap - technique in statistics
+  Bagging  - more like a colloquial term
+  
+  Bagging :
+  ------
+   Key Idea : Bootstrap Sampling 
+
+   -> Bagging helps us with Variance part of Model (ie reducing Variance comparatively)
+
+   Core Idea :- reduce variance
+
+   Bagging intutively is a techniqye to reduce variance in your model by combining 
+   BootStraping & Aggregation, 
+   (while not impacting Bias) ie Keep bias same & reduce the Variance
+   
+   BootStraping Phase :-
+   ---
+    > Train data 
+   		- do Sampling with replacement
+   		  (these samples are known as bootstrap samples)
+
+   		- Build Model for those samples
+   		  (on each sample we are training the data)
+
+   		- So each sample will never see entire data but a part of data
+
+      ie Dn -> D1`, D2`, D3`,...
+                \
+                 size m  // m <= n
+
+      Each of these model is built on different samples of data
+
+   after Bootstrap Phase, We aggregate those models into single Model
+
+   Aaggregation Phase :-
+   ---
+     Combine the Models obtained in Bootstraping phase
+     
+     How to Aggregate ?
+
+     For classification :- Majority Vote
+         Regression     :- Mean/median
+
+* CRUX of Bagging :
+    = Bootstraping samples technique
+
+* Variance & Bootstraping :
+  ---------------
+  -> If we make slight change in train data ie D_train
+     \
+      then because we have employed Sampling technique, All the Models will not get impacted
+      but few of them gets impacted 
+      So only some of the datasets (sampled) would get changed while other remains intact
+      \
+       -> Some of the Models would change & not all of them
+
+      Thus overall result in aggregation will not impacted or changed much
+
+      So by changing train data by slight :- It impact small subset of models
+       &
+      Since we use aggregation technique end result will get less impacted
+
+  => Thus Bagging as a concept can reduce variance in a model w.o impacting the bias
+
+  Model Err := bias^2 + variance
+
+  So If base models have { low bias & high variance }
+   \
+    Then by Bagging on Mi's, bias will remain low but
+                             Variance will also gets reduced
+
+  => Thus Bagging(M_i's) = helps us to reduce variance
+
+  Why Bagging Helps us to reduce Variance ??
+   -> because of (BootStraping + Aggregation)
+
+  => Thus Core Fundamental Idea of Bagging = reduce variance
+
+* Thus Bagging Core Idea :
+  -----------
+   Take bunnch of  low-biased, high-variance based models 
+   	& combine them using bagging
+   							\
+   							 low biased, low-variance model in result
+
+
+   Eg of Low-Biased, High-Variance Problem ?
+
+     -> DT with high depth (large)
+        \
+         Applying Bagging to such DT is known as Random Forest
+
+    -> Random Forest is extremely widely used algorithm

@@ -1,0 +1,32 @@
+terms
+
+- Sparsity of Matrix
+
+- Matrix Completion Problem
+
+- content based RS
+
+- collabaritve filtering RS
+
+- item-item based similarity
+- user-user based similarity
+
+- Matrix Factorization
+- Eigen Decomposition               (PCA)
+- Singular Value Decomposition      (SVD)
+- Non-Negative Matrix Factorization (NMF)
+
+- Eigen Faces
+
+- SGD
+- ALS   (Alternating Least Sqaures)
+
+- Bias Term | Regularization term | Mean Term
+
+- Cold Start Problem
+
+- Truncated SVD
+
+- Co-Occurence Matrix (for WordVec)
+
+- Frobenius Norm

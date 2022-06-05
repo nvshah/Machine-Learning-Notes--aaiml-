@@ -1,0 +1,47 @@
+------
+=> Decision Tree helps to find the bins in Feature binnning (esp whilst binning real-valued features)
+
+______
+
+ Keys :- { multiple thresolds, multiple buckets }
+
+-----
+
+* Feature Binning
+  ------------
+   - Logical Extension to Indicator Variable
+   
+   => have multiple thresolds
+   -> Instead of binary values, here we can have multiple features
+   -> We pack or bucketize the values into bins
+
+   Binning or Bucketing :
+   -----
+    -> given real vals for features, we seperate them into buckets or bins
+
+    How to find the correct thresolds ??
+     -> Problem-Specific
+
+    - one way to do binning is via domain-knowledge
+
+   Purpose of binning :-
+   ----
+    -> reframe the feature s.t it solves our task
+    => So it makes sense to use Yi's to perform binning on feature
+
+   Finding the thresolds :
+   -----
+    1 way :- (DT)
+    ---
+      ( binned the real-val features using Yi's & feature itself, using DT is one such way )
+      - You can use DT for (feature, Yi)
+      - As DT inherently find the thresolds for split condition
+
+      - Corresponding every leaf node we will have bins as category
+
+    So To binned a real val features :-
+      -> binned the real-val features using Yi's & feature itself using DT is one such way
+IMP
+=> Thus Model need not to be used as just classification algorithm but can also be used for 
+   Featurization if used smartly
+

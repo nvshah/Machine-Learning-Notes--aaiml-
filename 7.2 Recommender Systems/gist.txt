@@ -1,0 +1,115 @@
+gist.txt
+
+=> Matrix Factorization is used for Colloborative Filtering ie to predict or fill the 
+   Empty slots in user-item matrix via using the available ratings in same matrix
+
+   Matrix Factorization is used in PCA as well via Eigen Decomposition
+
+----------------------------
+
+* Recommended System :
+  ----
+   -> Content Based
+   -> Collaborative Filtering
+
+
+ * Item-Item Similarity RS
+   User-User Similarity RS
+
+* Sparse matrix :
+  ----
+   Matrix of User-Item is often very sparse
+
+* Matrix Factorization :
+  ---
+   -> PCA eventuall & fundamentally does Eigen Decomposition ie Matrix Factorization usinng Eigen Vectors
+
+   PCA = Eigen Decomposition
+
+   PCA :- Covariance matrix (Squared Matrix)
+   SVD :- Rectangular Matrix 
+
+   NMF :- Non negative matrix Faactorization
+
+
+* MF & Collaborative Filtering:
+  ------
+   MF -> CF 
+
+   - MF can be used to approximate the Completed Matrix for Sparse Matrix (ie many empty slots) 
+   
+   - predict/fill the empty cells in Matrix
+
+   -> using Optimization technniques + Decomposition (ie MF) to approximate the new Completed matrix for original Matrix (ie Sparse & Incomplete - havin many empty cells)
+  
+   Optimization Problem :- minimize the squared loss
+
+
+* Kmeans CLustering & MF :
+  ------------
+   K-means = MF + Some Constraints
+                      \
+                       Col-Constraints (C) + 0-1 Constraints (Z)
+
+   => Col-Sum of Z_j should be 1
+
+
+* HyperParameter Tuning :
+  -----------
+   During Matrix Factorization there is onne inner dimension ie d
+
+   A -> B*C   // 
+      - A : n*m
+        B : n*d
+        C : m*d 
+
+   d = hyper-parameter
+
+   3 ways
+   To find d : 1) Problem-Specific
+               2) Visualizing inflection point
+               3) plot grad/slope vs d
+
+* ALS (Alternating Least Square)
+  -------
+   - way to solve the Loss func in Optimization problem where underhood it uses Gradiennt Descent only
+
+   - Useful when we need to find the 2 parameters
+
+
+* MF & Optimization :
+  ------
+   Representing Some Problem as Optimization Helps us to scheme it with MF easily
+
+   => Through Optimization as MF we can incorporate the System Biases very easily
+
+
+* Cold Start Problem :
+  -------
+   -> When there is some new pt in test data that had never been seen in train data
+
+      Eg New Item
+         or
+         New User
+
+
+* MF & Word Vectors :
+  ---------
+   To get Word Vectors :- SVD 
+
+
+* Frobenius Norm :
+  -------
+   X - Matrix :- ||X||^2    // sum each element of matrix after squaring it
+
+
+* NMF & Elastic net :
+  --------
+   Objective Funnc :- ( X - W*H )^2 = 0
+
+   -> so if you provide more weight to L1-Regularization in Elastic Net it will provide more sparsity to W & H Matrices of Factors, compare to L2-Regularization
+
+
+___________
+
+* In case of RS :- importance is given more towards :- Recency & Frequency

@@ -1,0 +1,230 @@
+ref :- [doc] https://drive.google.com/file/d/1VDCmqpeUVH-PbZVAtxjTVQn9lIjFoNWu/view  
+
+Time Series Forecasting & Productionization
+---------
+ref :-- 
+ [ACF] https://machinelearningmastery.com/gentle-introduction-autocorrelation-partial-autocorrelation/
+
+_______
+Key Terms
+
+- Periodicity, 
+  Trend  (Upwards|Downwards)
+  Stationary
+
+  ARIMA
+  ARMA
+
+  ACF
+  PACF
+
+- residuals = Errors
+
+
+----
+Remember
+
+-> Gettinng Perfect/Strict Stationary TimeSeries in real world is Rare
+
+-> You cannot convert every distb to Gaussian 
+
+-> ARIMA(p, q, d)  // p, q, d are hyper-params
+    \
+     -> is a simple Linear Model
+
+=> AutoCorrelation is one of the way to find out how much I have to move my way to make it 
+   auto-correlated with itself
+
+-> Differencing / Transformation + Regression is good strategy
+
+-> If your data is perfectly stationary then no model can predict out of it
+    \
+     Consider all class overlapping to each other
+   
+_______
+
+
+- Can be used by 
+    -> Whatsapp to send some advertisement or messages at particular time
+    -> Amazon to advertise particular sale at particular instance
+
+* Time Series :
+  -------
+   - Time as 1 Axis
+   - Plotting some data against time is time series data
+
+   - Eg Heart-Rate, Stock-Market, 
+        #Items_Sold_per_Hr, #cabs_required_per_10_min
+   
+   Property :
+   ------
+   -> `Periodicity` in TimeSeries  (Same Repeating thing in some duration)
+   -> `Trends` in TimeSeris   (Upwards or DownWards)
+
+   1) Stationary TimerSeries Wave 
+      --------------
+       1. Mean const over time
+            \
+             If its trending up or down then its mean is not const over time
+
+       2. Variance must be const over time
+
+       3. Co-Variance is only a function of Gap
+
+       =>> If you have Stationary TS wave then it is very easy for forecasting (old days)
+       =>> It's analogous to Gaussian in Distb
+            \
+             Stationary Time Series has Some properties => Forecasting is trivial
+
+    NOTE :
+      Gettinng Perfect/Strict Stationary TimeSeries in real world is Rare
+
+
+       To determine if Wave is Stationary TimeSeries :- 
+          -> Augmented Dickey Fuller (ADF) test
+
+
+* Forecasting :
+  ----
+   - predict what will happen next (given all data till now)
+
+* Notations :
+  ----
+   Observations :- 
+   Predictions
+   Errors
+
+   by today EOD we will check error in prediction made by model
+
+
+* ARIMA :
+  -----
+   - Combination of 3 Ideas
+
+ 1) AutoRegressive (AR(p)) Model
+    ----
+    - works brillizantly well when we have stationary TimeSeries 
+    - AR(p) is like a Linear Reg Model on previous 'p' values in the Series
+
+    - modelling on prev {p} values (yi)
+
+ 2) Moving Average (MA(q)) Model :
+    ----
+    - modelling (linear Reg) on prev {q} errors (ei)
+    -
+
+ Transform to Stationary TS Wave :
+ ----
+  - broadly 2 techniques for transforming to Time Series Wave 
+    (1) Differencing
+    (2) Transforming
+
+* Differencing :
+  ----
+   -> Most powerful technique to connvert Time Series into Stationary
+   - Similar to idea of Differentiation
+
+   - Instead of predicting Y_t directly try to predict the gap between Y_t & Y_t-1
+
+   - 1st order := Y_t` is typically have to be most likely Stationary Properties of Time Series
+                       than Y_t itself
+
+     The first order difference is more likely to be stationary than actyal Y-values
+      |
+     The second order diff also have good likelihood for being stationary
+
+
+   => So when your TimeSeries is not stationary, use Differencing
+      \
+       Differencing can make your TimeSeries Stationary
+       (If first order not work then try for Second Order)
+
+* Log Transform :
+  -----
+   -> To make a Series Stationary
+
+       Yt = log(Yt)
+
+* ARIMA :
+  -----
+   1) ARIMA (p, q, d)  // need to try various commbination of p, q, d
+
+       I -> Integrated (Opposite of Differencing)
+
+       -> It's linear regression model on previous {p} vals & {q} errors post differencing {d} times
+
+       - Also called as Box-Jenkinn model
+       - p, q, d are hyper-parameters
+
+   2) ARMA (p, q)
+
+
+* Auto Correlation Factor (ACF) :
+  -------
+   -> Will Wave Correlate with itself ??
+
+   - If shift the wave by some distance/time {k}, 
+     then it is perfectly overlapping with upcoming wave
+
+   - Wave is correlating with itself (when shifted for some distance {k})
+
+   - One of advabtage of AutoCorrelation is to get good value for param {p} in Arima Model
+     (as Y_t is highly correlated with Y_t-k)
+
+   - For this
+     Create Table of Gap (ie 2 Variable V1, V2 - representing at 2 diff time t & t-k)
+
+     For Some val of {k} Correlation Coef between V1 & V2 will be high & 
+     for some other vals it will be low
+
+     (We can find it via Plotting)
+
+    => ACF & PACF are plots that can helps us to find the needy
+
+       ACF & PACF helps us to find p in ARIMA
+
+
+[NOTE ]:
+ -> The larger the P value the more accurate the model could be !
+
+* Residuals & Plot :
+  ------------
+   -> If you plot PDF (KDE) of Residuals & if its kinda Gaussian Distb then its Good 
+        \
+         If variance is low (then its good)
+
+
+[IMP ReMEMBer]
+=> AutoCorrelation is one of the way to find out how much I have to move my way to make it 
+   auto-correlated with itself
+
+--------------	
+
+* Fourier Transform :
+  --------
+   -> To Find the Periodicity of Wave
+   -  AutoCorrelation is 1 way to do same thing but Fourier Transform is more Scientific Way
+
+   - After how much time wave repeat itself !!!
+   -> To make sense of when data is repeating !
+
+
+* Forecasting as Regression :
+  -----
+   -> We can create new Features as well apart from p & q
+
+
+------------
+
+[Tip]
+-> Differencing / Transformation + Regression is good strategy
+
+-> If your data is perfectly stationary then no model can predict out of it
+    \
+     Consider all class overlapping to each other
+      - We can't make sense out of it with such space
+
+-> State of the art technnique today is LSTM (Deep learning)
+-> Also RF & GBDT works very well -)
+
+- Challange with LSTM is Complexity of Training & Computational Resources Availables

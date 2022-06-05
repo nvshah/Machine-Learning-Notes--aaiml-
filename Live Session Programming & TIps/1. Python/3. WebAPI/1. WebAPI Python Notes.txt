@@ -1,0 +1,73 @@
+1. WebAPI Python Notes
+---------
+
+ref : https://drive.google.com/drive/folders/1Dcegfgz4ttmm_jiicePDUmqqCwgPKiMt
+
+Python packages 
+
+- urllib.parse
+- http.client.HTTPSConnection()
+
+----
+commands :-
+
+-> pip install -r requiremenrs.txt
+
+- ffmpeg
+
+-----------
+
+* WebAPI
+  ----
+   REST, XML, SOAP
+__________
+(1)
+
+- Speech to text (Google)
+
+* Google Speech -> Text :
+  -----------
+   4 imp files in yout google drive folder 
+     \
+      - api-key.json
+      - audio.wav
+      - requirements.txt
+      - parts  (folder)
+
+* requirements.txt :
+    -> all the libraries required
+     - because google colab may not possess some libraries installed in it
+
+
+* ffmpeg :
+  ----
+   -> process the audio file & break into parts
+
+* Multi-Processing :
+  ------
+   -> Parallel Speech to text for multiple audio Files :
+   -  via Pool
+
+* speech_recognition : (library)
+  -------
+
+
+___________
+(2)
+
+- Bing-Search API : (MicroSoft)
+  ------
+   - Provide Search Results for Search (simiulatig Bing Search)
+
+   1. Web Search 
+   2. Image Search
+
+* Web Protocols :
+  -----
+   Api Key 
+   Params 
+
+   establish conn
+   request (param, key,)
+   response
+   close

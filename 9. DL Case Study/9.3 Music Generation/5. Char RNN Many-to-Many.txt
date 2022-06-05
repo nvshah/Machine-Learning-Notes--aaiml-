@@ -1,0 +1,52 @@
+5. Char RNN Many-to-Many (Keras)
+---------
+
+- multiple LSTM cells can be possible at hidden layer (in Production Archi of Char RNN)
+
+- Each of LSTM unit will learn different aspect of given input character
+  |
+  Analogous to MLP-Deep NN
+  In Deep-MLP, you have multiple activation unit in single layer
+
+  So same way as you have set of cells in MLP, In Char-RNN, you may have set of LSTM's
+
+-> Same inp goes to each of LSTMat same layer
+
+---------------
+KERAS pract
+
+- return sequences  // need this in many to many n/w
+  ------
+   \
+    if you want output for every timestamp then you can set this true (many to many)
+    or
+    if false then ot would be similar to (many to one)
+
+    For every inp in LSTM unit we will get output
+
+
+- Time Distributed Dense Layer :
+  -----
+   - For any hidden/layer we will have multiple LSTM & thus corresp output (at Z-axis)
+     Now
+     For these all outputs (ie at given layer from multiple LSTM), => it seems as a vector of output
+     We want to create a dense layer (connecting these all outputs)
+
+     Thus each of output will be connected to each of the inp in this (newly created) Dense Layer
+
+   -> Dense layer build this way is called Time Distributed Dense Layer
+
+      At same time its connecting various output from LSTM
+
+   - Here We will have Dense Layer after each Layer
+
+   -> If Dense Layer is present at only final Layer (then it would be kinda Many to One n/w)
+      & it is simple Dense Layer
+
+      but
+
+      If we connect Dense layer at every layer (ie connection all outputs from LSTM units at all layers)
+      then it is called as "Time Distributed Dense Layer"
+
+   => Thus at every timestamp Dense Layer is applied
+

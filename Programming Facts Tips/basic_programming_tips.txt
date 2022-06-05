@@ -1,0 +1,46 @@
+
+Tip :-
+        Python 2 -> input() == eval(raw_input())  // i.e raw_input() always str & input() try to evaluates 
+                                                     that str
+remember -> 
+     math.nan > 0.001  // False  (you should never compare nan with number)
+
+ => `%timeit {expr}`   //can be used in Jupyter NB to calculate avg times
+
+____________________________
+
+(Theory)
+
+Fun about algorithms is to reduce time complexity & space complexity
+
+Pre-Allocate memory :
+-----------------
+=> If you know what size you need ahead i.e at compile time then just allocate it at start
+   this will optimize the performance
+   otherwise at run time it may affect performance (as dynamically it needs to be grown)
+
+
+Tip :- 2 loops is not always n-square complexity
+
+Space-Complexity :
+--------------
+ -> When you compute space complexity don't count input & output space (as those are trivial)
+
+=> Recursion is trivial & Pivotal as a concept (which is mimp)
+
+
+* TradeOff between Time & Space :
+  -----------
+   -> If you can spare space at the cost of time reduction then that is rational 
+
+
+* bignum :
+  ----
+   -> as long as my RAM can hold keep growing
+
+* Algorithm & ML :
+  -------
+   So as far as ML is concern, We'll Consider Space Complexity at evaluation time as :
+      total amount of space needed to evaluate at run time 
+
+

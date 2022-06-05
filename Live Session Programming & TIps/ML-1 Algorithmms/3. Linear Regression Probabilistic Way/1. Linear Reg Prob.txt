@@ -1,0 +1,103 @@
+1. Linear Reg Prob
+----------------
+
+Problem :- Given Data Point, -> (Xi, Yi)
+           Find weight vector W & intercept b
+
+           Find :- W, b }-> Called as Parameters of Linear Reg Model
+
+* Probabilistic Interpretation :
+  --------
+
+  -> Assumptions  (required before going with probability part)
+     = = = = = =
+
+     1. Linearity Assumption (ie W.T*X + c)  
+          -> You can predict Yi using linear comb of xi
+
+     2. Residual/Err is Gaussian Distb  
+          -> (each epsilon_i is Gaussian Distributed)
+
+     3. Each of Residual are indepenndent (no correlation) & identically distb (same underlying distb)
+          -> (Each of epsilon are independent) => No correlation between them
+
+* iid Random variable :
+  --------------
+   -> independent & Identically Distb Random Variable
+   -  Residual is assumed to be iid variables
+
+* Eqn 
+  ---
+   Yi = Yi` + epsilon
+
+   Thus Yi is Gaussian or Normal Distributed in (W.T*Xi +b, Sigma_Squared)
+
+   Notation in Probability Statement :
+   ---
+   For 1 Point Xi :-
+       P(Yi | Xi; w,b) // probability of Yi given xi parameterized by w & b
+
+* Likelihood Function :
+  -------
+   L(w,b) := P(Y | X; w,b)   
+
+             - Y :- vector of y_i's  
+               X :- Matrix of x_i's
+
+               w,b :- parameters (ie theta)  // theta is concatenation of w & b ie parameters
+
+    known   :- X & Y  (fixed)
+    unknown :- w & b (ie theta) (variables)
+
+   Thus Likelihood :-
+
+   L(theta) := P(Y | X; theta)   // given X, parameterized on theta
+                           \
+                            theta := <w,b>
+
+   Independent Rule :
+   ______________
+    P(A1, A2, A3) = P(A1)*P(A2)*P(A3)   // if A1, A2, A3 are independent
+
+   In Likelihood() eqn, 
+     Given Xj my Yj depends only on Epsilon_j  as (W.T*Xj + b) is constant
+     &
+     Since we made assumption Xi & Xj are independent (not correlated) So thus
+
+     (Yi | Xi)  &  (Yj | Xj)  are also Independent
+
+* Product Form :
+  -----------
+    Thus We can break or convert the Likelihood Function from Matrix Form (ie Y-> Vector & X -> Matrix) to a Product Form 
+
+    Product of P(Yi | Xi ; theta)
+
+    & Probability cof P(Yi | Xi) can be obtained from PDF because we early assume that to be of Gaussian Distribution
+
+* Mathematical Expression for LikeliHood Func :
+  ------
+   -> We can represent Product form of Likelihood by replacing P(Yi|Xi) -> PDF of Gassian Distribution
+      (with W.T*X + b as a Mean val)
+
+   -> Thus we will obtain mathematical Formulation instead of Probabilistic Formulation
+
+   -> L(theta)  
+      &
+      argmax (L(theta))  // maximising the likelihood function
+
+      Now we need to find theta tha maximises the Likelihood Function
+
+      So we can use log() as it is monotonic function So it will behave similar to original one !
+
+      Why log() ??
+       -> because log() will cancel the exp() in P(yi|xi) = pdf notation & makes math simpler 
+
+    -> max(log(L(theta)))
+
+[IMP]
+=> If we simplify this then we get same expression as Loss Func we derive use Geometric Way
+
+
+
+
+   

@@ -1,0 +1,77 @@
+intro
+
+-> Naive Bayes is Classification Technique
+-> Naive bayes is concept around probability
+
+
+* Conditional Probability :
+  -------------------
+   P(A|B)  = P(A.intersect(B)) / P(B)
+     \
+      Probability of smthn conditioned on something is given 
+
+
+* Independent vs Mutaully Exclusive Events :
+  ------------------
+
+   P(A|B) = P(A)
+   P(B|A) = P(B)
+
+* Mutually Exclusive Events :
+  ------------
+   P(A|B) = P(B|A) = 0  // If A Occur then B will not Occur & if B Occur thenn A will not Occur
+
+
+* Bayes Theorem :
+  ------------
+   P(A|B) = (P(B|A) * P(A)) / P(B)
+   
+   Posterior, Prior, Likelihood, Evidence
+
+
+* Naive Bayes : 
+  ----------
+  - Joint Probability Model : P(Ck, x)
+
+  Not Naive :- the finding the few point with such condition is very difficult in trainign data
+
+  Q) Why Naive ?? :- Assume that Independent
+     -> if Not Naive then finding the few point with such condition is very difficult in training data
+        i.e Eg
+          P(height=60 | weight=110, hair_color=1, age=10, ...) 
+          This would be cumbersome to filter such row in huge matrix
+
+          So we need to be Naive & assume some independency  here
+
+  * Conditional Independence :
+    -----------
+      P(A | B, C) = P(A | C)  // A is conditionally Independnet of B, Given C
+
+      So Let say Xi = {X1, X2, ...}   // feature for point
+
+      Then P(Xi|X_i+1, ..., Ck)
+        \
+         Here we will assume X_i is independent (Conditionally) of X_i+1, X_i+2, ... Given class Label C_k
+
+  Thus Naive in Naive Bayes is `Conditional Independence`
+    
+  => Naive = Conditional Independent of each feature Pair  (Assumption)
+           :- Features are conditionally Independent of each Other
+
+  Thus  
+      P(C_k | x_1,..x_n) => now can have simpler eqn (See Wikipedia)
+
+  * Maximum Posteriori : choose maximum probable posteriori among multiple posteriori
+    ----------------    
+     - helps to find feature which impact most and in which class does it impact most
+
+  AlSO NoTE :- 
+    denominator term P(X) we are not calculating as its common in all so we can skip
+       \
+         it is just a normalizer
+
+
+
+
+
+

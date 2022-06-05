@@ -1,0 +1,121 @@
+3. Hyper Param Optimization
+ --------
+
+----------
+* Tips
+
+-> loguniform() is much popular choice for lambda or alpha in Optimization (ie Hyper-Param) 
+
+___________
+
+ Hyper-Param :- something that if changed then it has power to impact & change the model
+
+-> There basically 3 technniques :- 
+     - Random Search CV 
+     - Grid search CV
+     - Baysian Optimization   (used esp for DL)
+          \
+           -> Its also called as Non-Gradient based Optimization Algorithm
+
+=> Beyond Hyper-Pama such as lma, learning-rate, etc...
+   Pre-Processing can also be considered as sort of Hyper-Param
+
+   Pre-Processing :- Standardization, Min-Max, PCA (ie top K)
+
+   When to use Standardization or Min-Max Scaling ??
+     -> It's very minnute diff so treat it also as a Hyper-Param
+
+* Process :
+  -----
+   - First you find best Hyper-Param via Grid Search or Random Search CV
+   - Then you find best Params via Fitting Model on best Hyper-Param  // oe best model
+
+
+* K-Fold CV :
+  ------
+   K-Fold = K Scores
+
+   In K-Fold CV for each Hyper-param Combinations, you will get K Scores, which you can then 
+   use some stats over it to get some insights such as avg, mean, etc...
+
+
+* Trivially Parallelizable :
+  ------
+   For Grid Search CV you can leverage multiple Cores & make your code more optimally performant
+
+[TIP]
+=> loguniform() is much popular choice for lambda or alpha in Optimization (ie Hyper-Param)
+
+
+
+* GridSearchCV :
+  -----
+   -> Like Brute Force
+
+* RandomSearch = Stochastic Search
+
+* SVM + Linear :
+  --------
+   Optimization 2 Ways :-
+      - LibSVM
+      - SGD + Hinge Loss
+
+------------
+
+* Bayseian Optimization :
+  ----------------
+   -> Can I pick my next lambda val based on prev val (during trying diff lambda val during CV)
+
+   - Cost of evaluating function (ie mapping between lma & metric_score) & be smart in picking next lambda (ie Hyper-Param)
+
+   - next hyper-param val to pick depends on all previous values
+
+   -> Its not necessary that Bayesian Optimization gives you best result
+   -> At its core it uses Bayes Theorem
+
+   -> Where in brute force (GridSearch) & in Random (RandomSearch), prev obsv are not used for next one
+      Bayseian Optimization try to use prev observation for detecting next hyper-param possible val
+
+   -> Core Idea :- Can I be smart in picking the Hyper-param Set of values	
+
+   -> bayseain Optimization tends to find better solution (where can I get best scores) wit fewer function evaluation than Grid or Random Search
+
+   -> Bayseian Optimization is used when function evaluation is high !
+
+   -> On an avg, Baysesian Optimization requires fewer evaluation ie fewer function trainign for fewer val of Hyper-Parameters.
+
+   -> Cost of Evaluating Fun(lma) is high because it needs some calc to decide which lma to pick next
+
+
+   Popular Libraries :
+      - hyperopt
+      - hyperas
+
+      - hyperopt-sklearn
+      - hpsklearn
+
+
+    HyperOptEstimator :- allows you you use any classifer
+
+    Techniqyes for Search Algorithm (ie Picking Hyper-param) :
+      - TPE (tree of parzen estimator)
+
+* HyperOptEstimator :
+  -----------
+   -> Allows you to to do Hyper-param Tuning for Multiple Estimator | Models
+        - experiment with diff types of models as well with Hyper-param tuning 
+
+   -> Allows you to do Hyper-param for single model|estimator
+
+   -> Allows you to do the same thing for list of Estimators with some bias or propensity of choosing the model from !
+
+
+------------
+
+* BlackBox Optimization :
+  ----
+   Bayseian Optimization is one part of BlackBox Optimization
+
+   - Used when cost of evaluating the function is quite high
+   - Lots of AutoML is inspired by BlackBox Optimization
+

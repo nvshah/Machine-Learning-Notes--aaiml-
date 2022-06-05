@@ -1,0 +1,25 @@
+* Feature Importance (Naive Bayes)
+  --------------
+
+Step 1) Sort the pts according to probability, in descending order 
+        (ie high probability on top)
+
+        Words(features) with high probability are most imp in determining that 
+         if query_pt belong to +ve class or -ve class
+
+So to get feature importance :
+   
+   +ve class :- find words (Wi) with highest value of P(Wi | y=1)
+   -ve class :- find words (Wi) with highest value of P(Wi | y=0)
+
+   Feature imp is very simple & 
+   it can be obtained/determined directly from model itself (ie after training)
+    \  
+   As likelihood are calculated for all words in training
+
+ => Thus feature imp = High likelihood words to each classes   // you can select top m high as need
+
+   Note :- In KNN, we need to do Forward Feature Selection, 
+           Whereas in NB, we can obtained directly from trained model.
+
+

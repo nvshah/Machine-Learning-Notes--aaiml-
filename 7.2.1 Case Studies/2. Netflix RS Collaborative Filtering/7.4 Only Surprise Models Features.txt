@@ -1,0 +1,5 @@
+7.4 Only Surprise Models Features
+
+* XGBoost with Surprise {baselines, KNN, SVD}
+  -----------------
+   (excluding basic 13 features)

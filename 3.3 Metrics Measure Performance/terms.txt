@@ -1,0 +1,22 @@
+terms
+
+Accuracy
+Confusion Matrix
+Principal Diagonal
+Off-Matrix Diagonal
+
+Precision
+Recall
+F1-Score
+Harmonic Mean
+
+ROC AUC
+Ranndom Model
+Log Loss
+
+Sum of Squares
+R-Squared
+
+Distribution of Error
+
+Hamming Loss

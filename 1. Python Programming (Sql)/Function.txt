@@ -1,0 +1,42 @@
+* doc string of functions :
+  ---------
+  .__doc__   // first string below function header.
+
+
+* Scope of a Variable :
+  --------
+   -> portion of program where variable is recognized
+
+  Lifetime of a variable :
+  --------
+   -> period throughout which variable exists in memory.
+
+----
+* map(), filter()   // apply on each element
+  reduce()          // apply rolling competetion
+
+  map, filter, reduce  => avoid for loops
+----
+
+
+* Function arguments :
+  -------
+   -> to have non-default arguments on left side of default arguments (i.e default arg at end)
+
+   1) Keyword arguments  (**)   {-> dict
+   2) Arbitary arguments (*)    {-> tuple
+
+
+* Recursion :
+  -------
+   -> boundary case & recursive case
+
+   (If you forget boundary case, program will run forever)
+
+   plus :- simple to look & concise
+   minus :- hard to follow, memory overhead, stack overflow, hard to debug
+
+
+* Anonymous / Lambda :
+  -------------------
+  	`lambda` 

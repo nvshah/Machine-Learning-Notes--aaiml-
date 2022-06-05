@@ -1,0 +1,174 @@
+4. Gradient Descent
+
+Topics : { 
+			Gradient Descent, Linear Reg & Grad Descent
+			Stochastic Gradient Descent (SGD)
+		}
+
+--------
+TIPS:
+
+- In optimization 
+     min f(x) = max -f(x)
+
+-> Oscillation Problem occur more & more when you come close to X* (ie Optima)
+
+___________
+Terms :
+
+- gradient = tangent = slope at point = tan(theta)
+
+--------
+
+* Why ?
+  -> When solving eqn ie df/dx = 0 is not easy then we have an alternative
+
+* Gradient Descent :
+  --------------
+   -> It's an iterative algorithm that is computed using computers 
+
+   - start with random guess & move closer to optimal x* val
+
+   GOAL :- As iteration number incr, You need to move close towards optimal val ie x*, for 
+           optimization problem
+
+
+   Gradient at any point : slope 
+
+   Slope can be either +ve or -ve around minima &
+   at minima slope will be 0
+
+   => As you move from either side slope incr or decr
+        ie if you move from -ve slope then slope increases on approaching minima
+           if you move from +ve slope then slope decreases on approaching minima
+
+   Steps :
+   ----
+    1) Pick random point  (commencing off)
+
+    2) Update Function
+       => X1 = X0 - r * (df/dx)   // df/dx can also be extend to Grad ie Vector differntiation
+
+    3) Do repeat/iteration & find x0, x1, x2, ... xk, xk+1
+          \
+           till (Xk+1 - Xk) is very small => You can decide that Xk is optimal val
+
+    Intution :- (Step Size Decreases & Slope)
+    -----
+    -> As move from X0 -> Xk, slowly the movement decreases slowly ie jump factor
+    => Slope (dy/dx) make smaller jump as we come close to minima
+
+    Why Step Size Increases ? -> because slope decreases 
+   
+    Note :- Slope df/dx ie graident will be close to 0 as we approach minima (ie optima)
+
+            If pt is very far from optima :- df/dx ie slope ie graidient will make long jump
+            But asa it reaches towards the goal ie optima it will make shorter & shorter jump ie
+            Slope will decrease correspondingly faster
+
+
+  * Learning rate (r) :
+    -----------
+
+    * Oscillation Problem :
+      _________
+      - When r is kept constant :-
+     
+	    Problem : if r is kept constant then it may possible that instead of converging to optima our
+	              Point may oscillate between 2 over optimum val.
+
+	              - Simply Jumps over x*
+	              - & thus may be never converge to x*
+
+	   -> This problem occur more & more when you come close to x*
+
+       Remedy :-
+         - change r with each iteration
+         	\
+         	 reduce r with each iteration
+
+         => Thus r will be some function of iteration number
+              \
+               S.T. as iteration-num incr, r reduces
+
+               r = h(i)  // i incr, r decr
+
+        Basic Idea :- Dont keep r constant, but make it change(reduces) as iteration number increases
+
+
+* Linear Regression & Gradient Descent :
+  ------------------------------------
+    L(w) = sum((yi - yi`)^2)  
+            // Optima Problem in terms of W weights as <xi,yi> is const avail from train data
+
+    W_i+1 = W_i - r * Sum_Of_Square_Error
+
+    So we need to 
+      1) start with initial W vector ie W0 = <....>
+
+      2) find W0, W1, W2, ...., Wk
+           \
+            Where W_k-1 is almost similar to W_k // ie nno difference or minnor difference
+            Select W_k
+
+    Problem :-
+    ----
+     If n (# data pts) is large  :
+     -> need to go through entire data pts at every iteration
+     	\
+	     -> At every iterationn We need to compute the error term i.e include n-iteration & if 
+	        n is very large than req to go through while dataset
+     - very expennsive & time consuming
+
+    => Thus Gradient Descent becomes very slow if n is too large
+
+
+* Stochastic Gradient Descent :
+  -------------------------
+   -> To deal with Gradient Descent when n is very large
+   - don't need to go through Whole data at once at each iteration
+
+   - SGD is the most imp algo in ML for optimization Problem.
+
+   => Its adding randomness or stochasticity to pick k points instaead of n pts for calculating 
+   	  error at each iteration
+
+   Idea :
+     Instead of doing sum of squared error for all n points do that for k elements at each iteration
+
+     - pick k random pts from dataset
+
+   Stochastic = Probabilistic & here we are using random so this is called Stochastic or probabilistic gradient Descent
+
+   k = # random pts picked at every iteration
+
+   - set of pts at each iteration will be random & different at each iteration
+
+   - SGD requires will require hence more iterations as k << n, in worst case to reach optima ie w*
+
+   -> 1 < k << n
+
+      When k = n // It becomes GD
+
+   batch size :
+   -----------
+    -> k is known as batch size 
+
+   => The soln we get with GD is almost same as Soln we get with SGD
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

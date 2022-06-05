@@ -1,0 +1,52 @@
+ref :
+https://abcjs.net/abcjs-editor.html
+[Tabla Music]
+https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla/
+ https://www.trivedigaurav.com/blog/machines-learn-to-play-tabla-part-2/
+
+______
+
+8. Char RNN Music Gen
+-----------------
+
+file :- sample.py
+
+--------
+
+* What our Model is about ??
+
+ - Takes a single character as inp
+ - Output a 86 length Vector  (86 Probabilities corresp to 86 Characters I have)
+   |
+   So on Sampling we will have Idea which character have higher probability for choosing next character
+
+ - So this Model/Archi is like a magical machine
+   ie once given a Starting Inp Character It will Recurring Generate Possible nect characters so on...
+
+
+* Seed := First Character you provide to your Model
+
+----
+Code :- 
+
+sample()
+ - loading model from weight file (ie checkpoint)
+ - batch of 1 element & 1 character size
+
+ - What this func does is :-
+    for given single character it generates the 86 characters
+
+Note :- Model Output that avail at 10th epoch must be of
+        lower quality as compare to model output of 100th epoch
+
+To convert ABC notation -> to sound use this online tool :-
+ https://abcjs.net/abcjs-editor.html
+
+
+______________________
+
+8.2 -> Table Music
+(Sec :- 3.9)
+
+Table has specific Music Notes (alike ABC Notation)
+

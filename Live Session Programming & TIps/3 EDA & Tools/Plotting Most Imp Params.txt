@@ -1,0 +1,8 @@
+Plotting Most Imp Params
+
+- hue :- to convert & get for different classes in single plot
+         (Slice data into multiple Slices)
+
+- height
+  size
+

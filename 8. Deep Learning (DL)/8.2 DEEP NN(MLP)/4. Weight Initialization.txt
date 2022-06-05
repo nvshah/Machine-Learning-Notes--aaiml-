@@ -1,0 +1,100 @@
+4. Weight Initialization
+----------------------
+
+-----
+
+
+-----
+
+=> Data Normalization is Mandatory 
+
+=> Vanishing Gradient becomes Severe in Extreme Cases
+
+____
+
+* Logistic Reg :
+  ---------
+   - Weights pick Randomly (Uniform | Normal)
+          \
+           Either it can be from Random Uniform Distribution or Random Normal Distribution
+
+
+* NN & Weight Init
+  ----
+
+1) Symmetry Problem & Weight Init :
+   --------------------------
+    - If all weights are initialized to same val 
+       \
+        -> all neurons may compute to same val  (when all neurons are same in Network)
+        -> Same Gradient Updates
+
+=> Thus we want our Model to Have Assymetric
+
+    Asymmetry :- Diff neuron will learn diff aspect of input
+                 (Idea :- kinda Ensemble Model)
+                  |
+                  > More diff the base model are the better is the output 
+
+* NN & Ensemble Correspondence :
+  -------
+  Ensemble :- More diff the base Models are The better the output of Ensemble Models
+                 |
+                As each model learn diff aspects of inputs
+
+  You can consider NN as simplified Stacking
+  but
+  in stacking you are not doing BackPropogation & all stuff
+
+  So in NN each neuron at diff level can be treated or considered as a base Model (just for sake)
+
+---
+2) Init Weight as Large -ve Vals
+   -------------------------
+   - Again you will face problems as face in case of RELU
+   - It may ran into problem even in case of Sigmoid
+
+[NOTE]
+=> Data Normalization is Mandatory 
+
+
+----
+**
+-> Most of Theory is built around concept that it should have "good-variance"
+
+- These ideas have no concrete agreement for better Idea
+
+* IDEA 1 :
+  --- 
+  -> Weight should be small (but not too small)
+  -> not all 0
+  -> good-variance
+
+  (Gaussian Normal Initialization)
+
+* IDEA 2 :
+  ---
+  -> Fan-in & Fan-out + Uniform-Init
+
+* IDEA 3 : (Xavier|Glorot Init)
+  ----
+   1. Glorot Normal
+   2. Glorot Uniform
+
+   => Xavier|Glorot works very well for Sigmoid Activation Function
+
+* IDEA 4 : (He-Init)
+  ----
+   a. Normal
+   b. Uniform
+
+   -> He-Init Works very well for RELU Activation Unit
+
+NOTE :-
+ - There is no Concrete Aggreement about Which is the best Initialization (idea) amongst all
+
+
+--In genenral
+   |
+   1) Sigmoid Units := good to have Xavier|Glorot Init
+   2) RELU Units := good to have He-Init

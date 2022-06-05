@@ -1,0 +1,101 @@
+TF_Keras_2
+
+Sec :- Live Session | Code Walkthrough 2
+
+ref : https://colab.research.google.com/drive/1rGteQeqNEEtft8k3MMdRbWxoXPqf0_l9
+
+----
+terms
+
+- Dead Node,
+- GradientTape
+- Checkpointing
+- Functional API | Sequential API
+
+----
+REMEM
+
+-> Depth of Kernel is same as depth of input image
+-> Each of Kernel may have bias term
+
+-> You must define layers that are differentiable <** MIMP
+
+______________
+
+-> Architecture Design is one of the Hyper-parameter Challanging
+
+REMEM
+=> Max-Pooling does not have any trainable parameters
+=> Dropout do not have Parameter (ie one that gets trained with BackProp)
+    |
+    do have hyper-param :- ie Dropout Rate
+    no variable params
+
+=> Just like Weight Matrix, you each Kernel also possess bias term
+
+* Trainable Param : Param that got trained as part of BackProp  (in NN)
+
+* Functional API :
+  ---
+   - you have all flexibility to wired the connection the way you want
+
+* Archi - Layers :
+  ---
+   Inp :- Image itself (ie 32 * 32 * 3) size
+   1st Layer :- 32 Conv Kernels
+
+REMEM
+=> Depth of Kernel will be same as depth onf Inp Tensor I've
+
+
+* Track Weight Progress of your training :
+  ----
+  - for Kernel
+  - You can try plot the Weights Distribution Plot
+
+---
+@) Note :- number of kernels is indicated by dimension of last axis in shape (ie Depth)
+---
+
+-> While Plotting you can decide if you want to plot it as RGB or GrayScale Image
+
+
+* CheckPointing :
+  ---
+   -> Save the Weights at the end of every epoch via Callback
+
+* Save & Model :
+  ---
+   - Save Archi, weights & biases (ie Save whole Model at the end of Trainig)
+
+
+* Existing Layers :- readily available in Keras
+
+* Custom Layers :
+  --
+  - need to extends the Layer class &
+    override 3 methods { init, build, call }
+
+    call := provided inp (to layer), how output must get generated !! is decided by this method
+
+  -> If I know the input-shape & the output-shape for any layer
+     then I can initialize the weights params for that layer
+
+NOTE :- input shape :- [?, input_size]  // first one is batch size
+
+  => BackProp :- Automatic Differentiation happens
+                 You dont need to worry abt defining graidents & all (just define forward prop)
+
+
+* GradientTape :
+  -----
+  -> Auto Gradient Calc
+  - by watching the independent variable
+  - let us define outputs & variables
+
+
+-----
+
+* Dead Node :
+  ---
+   - All weights are 0, thus you get nothing as Output from that node

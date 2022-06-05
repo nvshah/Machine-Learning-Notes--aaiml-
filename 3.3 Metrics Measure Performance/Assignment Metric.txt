@@ -1,0 +1,5 @@
+Assignment.txt
+
+* AUC
+  ---
+   to calc Area under the Curve use => np.trapz()

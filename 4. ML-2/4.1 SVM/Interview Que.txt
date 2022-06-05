@@ -1,0 +1,23 @@
+Interview Que
+
+
+    Give some situations where you will use an SVM over a RandomForest Machine Learning algorithm and vice-versa.(https://datascience.stackexchange.com/questions/6838/when-to-use-random-forest-over-svm-and-vice-versa)
+    What is convex hull ?(https://en.wikipedia.org/wiki/Convex_hull)
+    What is a large margin classifier?
+    Why SVM is an example of a large margin classifier?
+    SVM being a large margin classifier, is it influenced by outliers? (Yes, if C is large, otherwise not)
+    What is the role of C in SVM?
+    In SVM, what is the angle between the decision boundary and theta?
+    What is the mathematical intuition of a large margin classifier?
+    What is a kernel in SVM? Why do we use kernels in SVM?
+    What is a similarity function in SVM? Why it is named so?
+    How are the landmarks initially chosen in an SVM? How many and where?
+    Can we apply the kernel trick to logistic regression? Why is it not used in practice then?
+    What is the difference between logistic regression and SVM without a kernel? (Only in implementation – one is much more efficient and has good optimization packages)
+    How does the SVM parameter C affect the bias/variance trade off? (Remember C = 1/lambda; lambda increases means variance decreases)
+    How does the SVM kernel parameter sigma^2 affect the bias/variance trade off?
+    Can any similarity function be used for SVM? (No, have to satisfy Mercer’s theorem)
+    Logistic regression vs. SVMs: When to use which one? ( Let's say n and m are the number of features and training samples respectively. If n is large relative to m use log. Reg. or SVM with linear kernel, If n is small and m is intermediate, SVM with Gaussian kernel, If n is small and m is massive, Create or add more features then use log. Reg. or SVM without a kernel)
+    What is the difference between supervised and unsupervised machine learning?
+
+External Resources: 1.https://www.analyticsvidhya.com/blog/2017/10/svm-skilltest/

@@ -1,0 +1,15 @@
+Python Useful
+
+ref : http://surpriselib.com/
+
+* Scipy.sparse 
+          \ 
+           csr_matrix()   // create/convert sparse Matrix
+
+
+* scikit-surprise
+      \
+       KNNBaseline
+
+
+* Xgboost. XGBRegressor() 

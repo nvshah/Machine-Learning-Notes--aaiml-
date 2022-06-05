@@ -1,0 +1,121 @@
+Optimization Methods for ML/AI 1
+------------------------------
+
+=>  as iteration num increases, Loss Function L has to reduce 
+-> Remove MultiCollinearity is good thing in Linear Regression
+
+------
+Tips :
+
+-> random.seed()  // to get same value in repeating experiments
+
+=> SGD has some shaky form of curve because SGD does some stochasticity
+
+=> use %loss or %diff between L_old & L_new whilst checking condition for breaking the condition
+_____________
+
+* Optimizers :
+  ----
+   Which one to choose ?
+
+   -> SGD is most widely used  & Variations of SGD
+
+
+* Linear Regression :
+  -------------
+  Assume :- Given Minimize(Loss Func + Reg)
+
+  1) First thing need to check :- if is this Differentiable ??
+
+  1) Derivative :
+    ---
+     There should be 2 derivative :- ie wrt {w, b}
+
+     wrt W :- output is Vector
+     wrt b :- output is scalar
+
+  2) Update Equations
+     ----
+      for W & b
+
+  3) Gradient Descent :
+     ----
+     1. Normalize Data (PreProcessing)
+        ---
+         -> For faster convergence
+
+     2. Initialization Hyper-Param :
+        ---
+         Hyper-Param :- lambda, Learning_Rate
+         Params :- Weight_Vector & Bias(Intercept)
+
+         random.seed()  // to get same value in repeating experiments
+          
+         Tip :- Don't initialize all with zero vector & zero value
+                Do make it random vector & random val
+
+         So Initialize W & b with random in range (0->1)
+
+     3. For Loop 
+        ---
+         - Update Weights & Intercept
+         - check loss at each iter
+
+        Terminating Condotion : (Fix a Thresold)
+        ---
+         - Dont pick thresold based on absolute val
+         - Pick a `percentage loss`
+         - Just use percentage diff to check because percentage diff of Loss is independent of all these loss
+
+         - So %diff is less than thresold than break the loop else not break the loop
+
+       => Percentage Loss is good way for terminating condition
+
+         L_old & L_new  // diff between Loss val
+          or
+         W_old & W_new  // diff between weights
+         b_old & b_new  // diff between inntercepts
+
+     4. Update L :
+        -----
+         NOTE :- as iteration num increases, L has to reduce 
+
+         Update the Loss Func 
+            \
+             -> 
+
+     5. Also keep List of Loss Val at each iteration
+
+  4) End of Iteration
+
+* Plot :
+  ----
+   Loss vs iteration i 
+
+-------------
+
+* Pertubation Technique for Collinearity
+
+_______________
+
+* SGD :
+  ---
+   - Stochastic Algo (Randomized Algo)
+   
+   - In SGD you will not monotonically reduce towards minima
+   - You will have some shaky form of movement (as SGD does Some stochasticity )
+
+   1) One Point SGD :
+   2) Batch SGD
+
+   -> Instead of whole data - take random batch & send it
+
+   Variations :-
+    1. Every time randomly Generate Data (ie random batches Every time)
+
+    2. Shuffle Data & then ensure all pts are seen by sending in batches
+
+
+* SGD vs GD :
+  ---
+   -> SGD is faster than Gradient (because update happens frequently ie seeing few points only)

@@ -1,0 +1,49 @@
+12. ADAM  
+-------
+
+
+------
+
+-> 1st order moment := Mean
+   2nd order Moment := Variance
+
+-----
+
+* ADAM : (Adaptive Movement Estimation)
+  ----
+  -> ADAM is the most popular DL optimizer till date !!!
+  -> one of the fastest as far as convergence is concerns
+
+  Idea : Instead of Square use Gradient themselves
+         |
+         EDA (ie Exponential Decaying Average) of Gradient itself
+
+
+* Statistics :
+  ---
+   Mean :- is refer to as 1st order moments
+   Variancee :- is refer to as 2nd order moment
+
+   So Moment Estimation = 1st order estimation in ADAM
+
+   thus Exponential Decaying Avg of Gradient_Squared is = Variance
+        &
+        Exponential Decaying Avg of Gradient is kinda Mean
+
+
+* Math & ADAM :
+  ----
+   the mean (EDA of Grad) & Variance (ie EDA of Grad-Squared)
+   both are kinda Recursive Eqn
+
+   -> ( You need to modify mmean & variance little bit as wee have used (beta1 & beta2 originnally to find the mean & variance, ,decaying term) )
+     \
+      In statistics this is known as Bias Corruption
+
+   -> all the advanntages you see in AdaDelta
+
+
+* ADAMS Plus :
+  ----
+   -> Extremely Fast
+   -> Low Train Err (Relatively)

@@ -1,0 +1,48 @@
+ref  :  http://cs229.stanford.edu/notes2020spring/cs229-notes1.pdf
+
+
+15 Generalized Linear Model
+
+-> Log-Reg = Gaussian Naive bayes + Bernoulli R.V  // probabilistic interpretation of Log-Reg
+
+------------
+
+* Poission Distribution :- 
+    - count random variable
+    - If you want count #occurences of an event
+
+-------------
+* Generalized Linear Model :
+  ----
+   -> Logistic Regression is a type of GLM which is used for 2 class classification
+
+   If you want your Bernoulli Distb to different scheme then we will get GLM
+
+=> In probabilistic interpretation, if you change the Bernoulli Distb to another or slightly then 
+   you will get different variations
+   of Logistic Regression
+
+   1) Bernoulli -> Multinomial Distribution
+
+       -> MultiClass Classification Problem
+          MultiNomial Logistic Regression   // for multiple classes
+
+   2) Bernoulli -> Gaussian Normal Distb
+
+       -> Linear Regression
+       - If you assume P(Y|X) -> N(mean, std_dev) then it will be Linear Regression
+
+   3) Bernoulli -> Poission Distribution
+
+       -> Poission Regression
+           \
+       	- predict Counts
+
+       	Poision Random Variable :-
+        Eg Predict #times a machine would fail in next 10 days
+           How many times earthquake happens
+           count number of visitors for a restaurant
+
+
+
+

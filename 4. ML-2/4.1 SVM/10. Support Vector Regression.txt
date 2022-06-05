@@ -1,0 +1,53 @@
+
+-------------
+- Hyper-Param in SVR :- epsilon
+
+=> RBF & SVR behaves much like KNN 
+
+-------------
+
+Support Vector Regression
+------------------------
+
+- yi are real vals
+
+SVC :- Yi in {1, -1}
+SVR :- Yi in Real-Vals
+
+1) Optimization Problem : (Simplest Formulation)
+    
+    min (0.5 * ||W||^2)
+       \
+        S.T. let Yi` = W^T*Xi + b
+           \
+            - Yi - Yi` <= epsilon
+            - Yi` - Yi <= epsilon  (for all i)
+            - epsilonn >= 0
+
+    The above formulation can be kernalized to fit to diff type of shapes (other than plane)
+
+    -> epsilon := Hyper-Parameter
+    	\
+    	 low :- errors are low on training data i.e => Chances of Overfitting incr
+    	 high :- errors are high on training data  => Underfitting chances incr
+
+=> Linear SVR :- can only fit planes, lines,...
+=> Kernel SVR :- can fit to nonlinear shape
+
+=> RBF & SVR behaves much like KNN 
+
+* Constraints Explanation :
+  --------------
+   Q) How epsilon satisfy both way ???
+
+   -> It is `epsilon tube` i.e epsilon from plane in both side
+
+   As long as Yi` is in epsilon tube around base-Plane i.e Decision Surface, the constraints should
+   work
+
+---------
+gist :-
+   
+   Thus in SVR :- only minimze the Regularization Term with some constraints
+
+

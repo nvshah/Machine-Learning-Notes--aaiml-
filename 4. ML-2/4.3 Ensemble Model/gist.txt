@@ -1,0 +1,138 @@
+gist
+
+-------
+
+=> RF gives huge performance lift compare to simple DT based model
+
+=> Randomization is key idea in RF to reduce Variance
+
+-> Error = bias^2 + variance + c   // c is irreducible error
+
+-> RF : reduce variance in model (DT)
+   GB : reduce Bias in model
+
+=> For any model, always use Cross Validation to get Hyper-param
+
+=> GBDT is applied more than AdABoost esp at internet companies
+
+=> Cascade Model is Used typically when cost of making a mistake is very high
+_______
+
+* Bagging :
+  ------
+   - Boostrap Sampling + Aggregation
+   - Helps us to reduce the Variance of the Model
+   - It's for High-Variance & Low-biased Base Models (where we want to decrease variance)
+   - We employed randomization + Aggregation on Top if it (keeping bias low as it is) 
+     to reduce variance
+
+
+* Random Forest :
+  ------
+   -> Adding sampling at top of fully grown DT
+
+   -> use DT as base models (ie base learners)
+   - DT are generally fully grown i.e long depth possible
+
+   -> Sampling - 2 kinds :- Row-Sampling (Bootstraping)
+                            Col-Saampling (features sampling)
+
+      Aggregation :- Majority Vote
+
+   - Hyper-Param:- #base-models
+
+   - More the base models, better the bias-variance tradeoff i.e lower the variance
+   - Row Sampling Rate & Col sampling rate lesser as much possible - lower the variance in end result 
+     model
+
+   => RF gives huge performance lift compare to simple DT based model 
+      (can also be used for low-latency application given powerful systems/box)
+
+* Boosting :
+  --------
+   - employ on Low-Variance & High-Bias Models
+   - goal is to reduce bias via Additive Combining using residuals from prior stage in iteration
+
+* Gradient Boosting :
+  ----------
+   - Given base Models(with High bias), combine them using pseudo-residual approximation
+     pseudo-residual = -ve grad() of Loss Func w.r.t F_i-1(x)  // F_i-1(x) is model in prev stage
+
+   - GB is abt building sequence of models iteratively using errors
+
+   2 main steps :- 
+      1) Fit model based on prev residual error 
+      2) Compute the gamma for finding Final model for current stage
+
+ => NOTE :-  
+    RF -> Works for minimizing Entropy 
+    GB -> For anu kinda loss func ala loss func is differentiable
+
+  Pseudo Residual :
+  -------
+   - simply its approximation to residual/error in GB algorithm
+
+ -> Fundamental Reasoning for Pseudo-Residual comes from pure Calculus
+
+ * GB vs RF :
+   -------
+    RF :- deep DT
+    GB :- shallow DT
+
+* GBDT :
+  ----
+   -> Gradient Boosting where base models are DT (at each step)
+
+   Shrinkage :- 
+     To handle overfitting in GBDT (esp due to large nums of base models)
+
+-> In GBDT when we take m very large, chances of overfitting also increases trivially
+   &
+   thus so we use shrinkage val
+
+* Adaptive Boosting (AdaBoost)
+  -------
+    All the points which are errorneous are given more weightage using something called 
+    adaptive boosting
+
+    - spot error at each stage
+    - provide more weight to those pts for next modelling
+
+    - alpha is the hyper param in case of AdaBoost
+
+* StackingClassifier :
+  ----------
+   -> It involves many different kind of base models (which are perfect in themselves)
+   -> Meta-Classifer built based on prediction from based models
+
+
+* Cascading Models :
+  ---------
+   -> Credit Card Fraudelent Detection
+      Cancer Detection
+
+   -> Used typically when cost of making a mistake is very high
+
+
+
+
+-----------
+
+GB vs RF :
+
+RF - goal : lower the variance (bagging)
+GB - goal : lower the bias     (boosting)
+
+RF - deep DT
+GB - shallow DT
+
+
+______________
+(IMP)
+
+=> Typically Your Boosting Base Model perform Well on Tabular Data
+   (ie like RF & likewise)
+
+
+
+

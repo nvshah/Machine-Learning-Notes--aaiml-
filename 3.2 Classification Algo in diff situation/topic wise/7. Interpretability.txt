@@ -1,0 +1,28 @@
+7. Interpretability
+
+* Interpretability :
+  ---------------
+   Model & BlackBox
+
+   - Black Box Model -> concern with output but not say anything abt reasonings
+   - Interpretable Model -> If model can give some reasoning abotu why particuar Output !
+
+   If model can give some reasonings, then domain expert about that application field can interpret  it probably the reason with more ideas
+
+   KNN as interpretable Model :
+     Eg k = 7, Xq -> Yq = 1  & let say d = 10 (low dimensions)
+        reasoning := all 7 nearest neighbour are from 1	
+
+        Eg 7 patient are seems to be cancer +ve along with Xq  
+
+            There are 10 tests conducted per patient
+
+        These reasonings can help doctor to understand more idea intutively & he can tell
+        Why all these persons i.e 8 where labelled 1 as +ve
+
+    => K-NN is interpretable when d is small & k is small  
+         [consider medical domain, but this may vary domain to domain]
+
+    So for any classifcationn technique its imp to know if Model is interpretable
+
+   => Model Interpretability is imp for all classification techniques

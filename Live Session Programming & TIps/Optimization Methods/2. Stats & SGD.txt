@@ -1,0 +1,52 @@
+2. Linear SVM
+  ---------
+
+ 	Hinge Loss + Reg
+
+
+* What is Derivative ?
+
+  -> Note :- Hinge Loss is not derivative at 1 So we need some hack to calc 
+                 \
+                  dldw, dldb
+
+             Lr-SVM -> onyl few change compare to Linear Reg 
+                       \
+                        dldw() & dldb()
+
+
+------------
+* Stats + ML (Optimization)
+
+* Point vs CI :
+  ---------
+   W & b we get this way are actually Point Estimate
+
+  Fundamental Assumption in ML :- Training Data is picked from Random Sample of all unniversal data
+
+  So if we got some W & b via few Train + test Data (ie Some sample from Universal Data)
+  then what is Confidence Interval for Entire Universe
+
+  Estimates based on the samples
+
+  Population Estimate :- We need to find (some Interval)
+
+
+* BootStrap Sampling :
+  -------
+   -> Pure Non Parametric 
+   -> Estimate the Pop-Estimate
+   -> Train SGD for diff bootstrap samples
+
+=> There are also Parametric methods that assume some distribution for Wi & give some Intervals easily
+
+
+Q) Can we obtain p-val for each param(weight) ?
+  -------
+   -> In R lang while doing Linear Reg, with weight it also provides the p-val
+
+   -> one way is that to be of T-Distribution
+
+
+* Robust Regression (RanSac)
+  ---------------

@@ -1,0 +1,21 @@
+Python Packages
+
+---------------
+
+-> regressors :- X ie data pt is known as regressors
+
+- sklearn : LinearRegression do not have provision for Regularization
+
+---------------
+sklearn
+  \
+   datasets
+
+   linear_model
+   		.LinearRegression()
+   			.fit()
+
+
+seaborn (sns)
+   \
+    kdeplot()

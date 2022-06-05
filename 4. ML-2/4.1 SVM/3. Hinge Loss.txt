@@ -1,0 +1,61 @@
+
+-------------------
+
+=> Only smooth continuous curves can be differentiable
+
+=> One good thing abt loss-minimization interpretation is that you can easily understand classification algo & regression algo under 1 framework i.e via changing the loss-function
+-------------------
+
+
+* Hinge Loss based interpretation:
+  ---------------------------
+
+-> Both Hinge Loss & Logistic Loss approximates the 0-1 loss
+
+- Hinge loss starts from -inf upto 1 & then it becomes 0.
+
+REMEMBER : => Only smooth continuous curves can be differentiable
+
+- Hinge loss is not differentiable at 1
+   \
+    But there are optimization hack through which you can get rid of such problem
+
+Z_i = Yi(W^T*Xi) + b    
+
+Hinge-Loss :- Z_i >= 1; hinge_loss = 0
+              Z_i < 1;  hinge_loss = 1-Z_i
+
+           := max(0, 1-Zi)
+
+
+ 1. For correctly classified pt :- zeta_i = 0
+
+ 2. for incorrect classified pt :- zeta_j = 1 - Zj     // Zj = Yj(W^T*Xj + b) 
+ 			\
+ 			 distance of Xj from correct belonging boundary Plane
+
+
+Loss-Minimization Problem :-
+----------------
+   argmin(sum( max(0, 1-Zi)) + (lma * ||w||^2))
+
+NOTE :- You can have your hyper-param multiply to either loss or regularization term 
+        With loss it must be larger to shift towards generalized
+        With regularized it must be smaller to shift towards generalized.
+
+Hyper-Param :
+----------
+        With loss term :- C
+             regularization term :- lma
+
+=> zeta_i (geometric formulation) is exactly same as hinge loss (loss-minimization formulation)
+
+  ie hinge-loss = 0 ; for correctly classified pts   (+ve awa -ve)
+                > 0 ; for incorrectly classified pts
+
+
+=> Thus loss-minima interpretation is same as Soft-Margin formulation (with constraints)
+
+
+
+

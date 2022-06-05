@@ -1,0 +1,13 @@
+Good References Articles
+
+[Integral basics] https://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/07/rectangle-method.html
+
+[Sigmoid Fn Explaination]
+Ronny Restrepo :- http://ronny.rest/blog/post_2017_08_10_sigmoid/
+
+
+------
+
+* Research Paper Published :- arxiv.org
+
+* SGD -> https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/

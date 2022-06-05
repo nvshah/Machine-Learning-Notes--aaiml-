@@ -1,0 +1,62 @@
+
+--------------
+- Entropy has its origin in ThermoDynamics in Physics
+
+-> Entropy measures the randomness of R.V
+
+- more peaked :- entropy less  (near to uniform distb)
+
+--------------
+
+
+* Building DT
+
+-> Key Task : D -> DT
+
+* Entropy :  
+  ------
+
+  H(y) = - sum(P(yi) * lg(P(yi)))   // log = log base 2
+
+  1) When classes are equally probable : Entropy is 1
+
+  2) When any 1 class dominating others : Entropy is 0
+
+  - Maximum Entropy occurs when both classes are equally probable
+
+  Thus For R.V Y -> {y1, y2, y3, ..., yk}
+
+  if all are equi-probable :- Entropy is maximum
+     any one is most probable :- Entropy is minimum
+
+  - Uniform distb :- Entropy is maximal
+
+  - Gaussian distb :
+     ---
+      more peaked :- see pts in region which is narrow 
+                   - spread is less
+                   - Entropy is less comparatively
+
+      less peaked :- see pts in region which is comparatively wide
+                   - spread is more
+                   - Entropy is large
+
+
+  => So something when closer to Uniform Distb :- Entropy starts incr
+
+  => If pts are widely spread among all possibilities, Entropy is large
+
+
+-------------
+
+-> Entropy is measure of randomness or level of certainty
+    
+    lowest Entropy = Highest Certainty
+    highest entropy = lowest certainty   // most randomness
+
+    Uniform R.V has highest Entropy
+
+____________
+
+Q) Which distb has highest/lowest entropy ?
+

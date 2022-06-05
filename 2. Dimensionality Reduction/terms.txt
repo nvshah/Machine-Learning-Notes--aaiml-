@@ -1,0 +1,40 @@
+terms
+
+sanity check
+
+Row Vector | Col vector
+dataset, data points, class labels
+Data Matrix (representation)  
+Scaling
+Col Normalization, Standardization
+Mean Vector
+
+Covariance Matrix
+Dot Product
+X * X-transpose means ??
+
+Flatening
+
+--------- PCA ----------
+
+PCA
+Spread & information rationality
+Objective of an Optimization Problem & Constraints
+Alternative Formulation
+
+
+Dot Product using Vector-component-wise multiplication
+Norm of Vector
+
+Eigen Values
+Eigen Vectors
+
+-------- TSNE ----------
+
+Neighbourhood & Embedding
+proof by contradiction
+
+Stochastic == Probabilistic
+
+deterministic algorithm               // definite 
+Stochastic/Probabilistic Algorithm    // non-definite

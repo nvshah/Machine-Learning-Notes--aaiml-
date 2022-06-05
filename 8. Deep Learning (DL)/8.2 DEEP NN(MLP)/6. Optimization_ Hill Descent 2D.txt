@@ -1,0 +1,65 @@
+6. Optimization: Hill Descent (MATH)
+----------------------------
+
+----
+terms
+
+- minima, local minima, global minima, tangent
+- saddle point
+- Convex Function & Non-Convex Functions
+
+-----
+
+=> ML :- Convex Fn
+   DL :- Non-Convex Fn
+
+_______
+
+-> In case of DL, Simple SGD or Batch-SGD or Mini-Batch SGD cannot solve the problem
+
+* Math Recall :
+  ------------
+   -> At minima|maxima you always have your Gradient (ie Slope) = 0
+
+   => Derivative = 0 
+            \
+             -> minima, maxima or saddle point
+
+
+* SGD, Mini-Batch & Saddle Point Stuck :
+  --------------
+   -> Sometimes your SGD, Mini-Batch SGD or Batch-SGD could get stuck at Saddle Point
+      |
+      Instead of converging at Minima or Maxima, it could get stuck at Saddle Point
+
+
+* Convex Function & Non-Convex Function :
+  --------------------
+   Convex : 
+   ---
+      - shortest path between 2 point of same class(region) will also contains all points lying in same region 
+
+      - Only 1 Minima | Maxima
+      - Local Minima = Global Minima
+
+   Non-Convex :- 
+   ---
+      - shortest path between 2 point of same class(region) will contains some point on path from other regions
+
+      - multiple local minima (but 1 global minima)
+
+
+<--IMP-->
+* ML, DL, Convex & Non-Convex :
+  -------------------------
+
+  ML algo such as 
+    - Logistic Reg, Linear Reg, SVM :- 
+         -> there Loss Function tends to be Convex Function
+         -> ie local minima = global minima
+
+  DL algo 
+    - Here Loss Function can be Non-Convex Function
+    - thus there are chances of multiple local minima, saddle points as well !
+
+    - based on initial Weight W :- you could land up at different Minima

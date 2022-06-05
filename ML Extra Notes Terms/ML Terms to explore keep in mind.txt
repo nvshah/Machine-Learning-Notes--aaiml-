@@ -1,0 +1,16 @@
+ML terms 
+
+- one hot encoding
+- Deduplication
+
+
+--------
+
+maths
+
+- Monte Carlo Simulations
+- Hidden Markov models
+
+- Cosine Similarity 
+
+- Frobenius Norm

@@ -1,0 +1,96 @@
+Notes Intro.txt
+
+TOPIC :- { Intro Math Concepts, Optimization Problem }
+
+--------------------
+
+-> Log-Reg can be studied in 3 ways { geometry, probability, loss function }
+
+=> Every Model makes some assumptions
+
+=? W* means Optimial W
+
+=> Normal to a Hyperplane tells abt the Hyperplane
+   For every Plane there is Unique W (ie Normal)
+
+---------------------
+
+* Logistic Regression : (Geometrically)
+
+=> Log-Reg can be studied in 3 ways { geometry, probability, loss function }
+
+-> It's a classification technique.
+- geomteric oriented
+- Linearly Seperable | almost linearly seperable
+- Binary
+
+Line/Plane  - Linearly Surfaces
+Circle/Parabola - Quadratic Surfaces
+
+=> For a given plane there is always Normal Perpendicular to plane
+   & 
+   Plane can be represented by its Normal & intercept term
+   (When plane passes through originn, interept = 0)
+
+--------
+
+Assumption of Log Reg :- Classes are almost/perfectly linearly Seperable
+
+Task in Log reg :- Find Plane (ie W & b) S.T it seperates the Data Pts.
+
+Binary can be {0, 1} or {-1, 1}
+
+=> Decision Surface in Logostic Regression is a Line or a Plane ie Linear Surface
+
+------
+
+- distance of a pt from any given plane can be given as 
+      d_i := (W^T * X)  // assuming W as normal unit vector 
+
+   So if d_i > 0   // same side of normal W  (+ve)
+         d_i < 0   // opp side of normal W   (-ve)
+
+         So sign of distance will be the aid to classifier in this case
+
+   Let Say Binary Classifier i.e {1, -1}
+
+   So if  Yi * d_i > 0  // Yi is then correctly identified
+     \
+      As in both +ve/-ve case Yi & d_i will have same sign so at the end +ve result
+
+      if  Yi * d_i < 0 // Yi is not correctly classifying the points (may be those are outliers)
+
+   Eventually We want Classifier to be very good 
+          :- min num of miss classification
+             max num of correct classification
+
+   So Task = Find Plane s.t. Yi * (W^T * X) > 0  is maximized, Given a Training Dataset
+
+               maximize means := (as many +ve as possible & as few -ve as possible)
+
+   In Yi * (W^T * X) -> W is variable whereas (Xi, Yi) is fixed ie positions
+
+   So In a nutshell Task is Optimization Problem 
+
+=> Optimization Problem :- find W that optimize i.e maximize above eqn
+   ____________________
+    
+   (NOTE below optim func is just 1st intution but its incorrect & not optimal) 
+
+   - W* means Optimal W in Optimization Problem
+
+     W* = argmax([sum(Yi * d_i)])  // [] is calc with diff W i.e Wj :- so need to find j ie argmax()
+           \
+            that W which maximizes 
+
+   -> Thus Objective :- find maximal W (ie W*) in turn such a plane that maximize the eqn Yi * d_i
+
+
+    also optimization involves updation for intercept term b as well
+
+
+
+
+
+
+

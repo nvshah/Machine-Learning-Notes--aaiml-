@@ -1,0 +1,65 @@
+0. History of Neural Network
+-----------------------
+
+* Perceptron :
+  -----
+   - simplest NN based model
+   - Intutively its similar to Logistic Regression
+
+-> Biological Inspiration (loosely inspired ie not exact expectation)
+
+* bilological Neuron vs Artifical Neuron 
+  ------
+   - Some electrical pulses coming inside
+   - it does somme computation
+   - it then sends out pulses outside (possibly to other neuron)
+   
+   [artifical]
+   Some of the inputs have more importance than other (so Weights are used)
+
+
+* Network of Neurons :
+  ----
+   - Structure of Neurons
+   - In a typical brain, we have network of Neurons
+
+   Can we mimic this Structure ??
+    \
+     -> Back Propoagation Algo 
+
+* Back Propogation Algo is just Chain Rule with some hack
+
+* AI-Winter :
+  ----
+   - Time around 1990's
+   - When funding for AI dried out
+
+-------
+
+* Jeff Hinto & Neural Networks 
+  -----
+   -> Rise of Deep NN  // in 2006
+    - It is Deep Learning Foundation thing
+
+* ImageNet Competition (StanFord)
+  -----
+   - 2012, Image -> Object   // Evolution of ML as DL	
+   - better by Deep Learning (Evolve)
+
+   - since 2012, DL was taken seriously
+         \
+          {Google, FB, Microsoft, Baidu}
+
+* Golden Days of NN (DL) : (Later 2012)
+    (Why ?)
+	1) Lots of Data
+	2) lots of Computational Resources
+	3) New Algorithms
+
+--------
+* Great Applications
+  
+   - Voice Assistant 
+      Eg { Siri, Cortona, Google Assistant, alexa }
+
+   - Self Driving (Tesla, Google Waymore)

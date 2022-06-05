@@ -1,0 +1,35 @@
+
+--------------
+- Random Forest uses Regular DT
+
+______________
+
+-> In Normal RF :- there are 2 randomized term ie Row-Sampling & Col-Sampling
+
+* Extremely Randomized Tree
+  ---------
+   - add 1 more level of randomization
+
+   RF uses simple DT &
+   in DT for real vals - we check for thresold for each val of feature
+
+   So Normal DT - tries all possible val of feature Fi to determine the thresold (tou)
+
+   Extremely Randomized Tree says instead of trying all possible val, try out a random sample of 
+   possible value to determine the thresold
+
+   ERT :- take bunch of vals instead of all
+
+   So Extreme Randomized Tree is same as RF with 1 more modifications i.e randomization whilst selecting thresold
+
+   col-sampling + row-sampling + aggregation + randomization whilst selecting `tou`
+
+  => So Extreme Randomized Tree is small update over Random Forest
+  		\
+  		 (1 additional term of ranndomization)
+
+  -> ET reduce variance slight better than RF (but may increase bias by little on other hand)
+
+  => Because of Randomization is key idea in reducing variance in RF
+     So by adding 1 more randomization term in ET, it will reduce Variance better comparitively to RF
+

@@ -1,0 +1,20 @@
+7. AB testing (Bucket Testing)
+  ---------------
+
+  Algorithms + Business Rules = Solution to market
+
+-> Let Say we have 2 Solutions
+   
+   You have to make soln run on million of products !
+
+Q) How would you say that solution 1 is better than solution 2, Quantitatively not subjectively ?? 
+   
+  -> AB testing 
+
+* A/B testing :
+  -----
+   Core Idea :- break users into 2 portion & try 2 soln on each portion & compare then 
+
+     Eg - Drug/Medicine testing
+
+   -> You can try 100 of algorithms

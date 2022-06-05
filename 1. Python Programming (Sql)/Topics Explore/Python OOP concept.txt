@@ -1,0 +1,37 @@
+=> use dir() to see the attributes on obj
+
+
+Python OOP concept
+
+-> The script invoked directlt is considered to be __main__ module
+   so the default module is __main__  (which do not require to be imported in self script)
+
+private members :- __pName
+------------
+ \
+  -> name mangling :- _ClassName__pName
+  - private members cant be access inside subclasses as well
+
+Protected members :- _p
+
+=> object is base class for all objects in python
+
+object class :- __new__, __init__, __str__
+
+* Multiple Inheritance :
+  -----------
+   MRO :- depth first & left->right 
+         nOTE :- not searching when there is overlap in hierarchy
+
+   Deadly Diamond
+
+* Polymorphism ;
+  -------
+   Operator Level Polymorphism
+   Function Level Polymorphism  (dynamic)
+
+* No Overloading in Python OOP :
+  ----
+   -> Only Overriding
+
+   Overloading can bee achieved via dispatcher

@@ -1,0 +1,30 @@
+Terminologies
+
+Data Point / Observation
+Balanced/Imbalanced DataSet
+
+PDF
+CDF
+
+Monotonically Decreasing/Increasing  : never remaining constant or decreasing
+
+Test Statistic  // Experiment Statistics
+
+Student's T distribution
+
+Distance & Norm
+low-latency
+
+Quantifying something (measuring how good or bad it is)
+
+Randomized Algorithm (not always give right ans but most probably give correct ans)
+
+Numerical Underflow
+
+Collinnear Features
+
+Objective Func in Optimization
+
+Langrange Multiplier  
+Eigen Val & Eigen Vec
+

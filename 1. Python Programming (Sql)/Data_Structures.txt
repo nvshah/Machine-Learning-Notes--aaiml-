@@ -1,0 +1,55 @@
+Python 
+
+* List :
+  ----
+   indexable, mutable
+
+* tuple :
+  ----
+   - 'comma' is imp for tuple (i.e esp when we have only 1 element)
+   - We cannot remove individual item in tuple using `del`
+
+* Set :
+  ---
+   - Unordered Collection so cannot be indexed
+   - discard()  // not key error
+     remove()   // raise keyError
+
+  frozenset :
+  ----
+   -> immutable set (can be used as key in dict)
+
+* Dictionary :
+  ----
+   -> alike hash-table in python. (unordered | unindexable)
+   -> search something fastly/quickly (don't go linearly)
+
+* string :
+  ----
+   -> Ascii and Unicode
+
+---------
+Advance
+
+* deque :
+  -----
+   - Stack, 
+
+* heapq :
+  ----
+   - Priority Queue
+   - top k elements (MIMP)
+
+* bisect :
+  ----
+   - binary search based impl
+
+* Inverted Indices :
+  ------
+   - used in search facility impl
+
+* frozenset
+
+* Counter
+
+* KD Tree : 

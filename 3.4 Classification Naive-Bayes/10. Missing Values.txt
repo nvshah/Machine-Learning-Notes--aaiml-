@@ -1,0 +1,54 @@
+* Missing Values
+
+1) Text data :
+   -----
+    -> No channce of missing data as (There will be words in data)
+
+2) Categorical Features :
+   -----
+    -> Whenever you have categorical features, You can consider missing val as one other category 
+       ie (NAN) as another category
+
+3) Numerical Features :
+   ------
+    -> Standard Feature Imputation methods
+
+
+* Handling Numerical Features : 
+  ---------------------------
+
+  -> It's all abt the distribution we assume for the features
+
+  * (Gaussian NB)
+    ___________
+
+    Let say i rows & j features 
+      You want to find likelihood for M_i_j cell then
+
+    - feature can take real values
+
+    1)  
+    -> Take data of particular class (+ve or -ve)
+
+       Assume the data is Gaussian Distributed    <-- MIMP
+        \
+         -> Plot PDF
+            & 
+            then you can spot the probability i.e height in PDF
+
+    => So main point is that we assume our likelihood comes from Gaussian Distribution
+
+  * (Bernoulli NB)
+    ___________
+    - When the feature can take only 2 values 
+    - So assume likelihood probability as Bernoulli NB
+
+
+  * (MultiNomial NB)
+    ____________
+     
+    - Occurence Counts ie Frequenncy Counts of Feature
+   
+
+
+

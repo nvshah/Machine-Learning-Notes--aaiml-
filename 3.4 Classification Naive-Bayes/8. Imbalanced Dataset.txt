@@ -1,0 +1,66 @@
+8. Imbalanced Dataset
+
+NOTE formula for P(Y | w1,w2,w3,...) i.e posterior = prior * likelihood
+
+So imbalanced dataset can impact either prior or likelihood
+
+Problem 1 : (Impact the Prior)
+---------
+
+-> Let assume that likelihood of fetaures for both classes are same 
+   ie Both classes share almost same kinda features(words)
+
+   Then If dataset is imbalanced (ie more points from particular class label than other)
+     \
+     -> Class prior will have an undue impact 
+          \
+           Majority/Dominating class will have an advantage
+
+Soln :
+  
+  1) Up-Sampling & Down-Sampling
+
+  2) or Just Drop the Priors in such case 
+        (because at the end we are only comparing probabilities between diff classes)
+         & 
+         If we do up or down sampling then prior for all class will be 1/2
+         Which doesn't matter for comparision
+
+     So just use likelihood only for comparision
+
+     So then P(y=1) = P(y=0) = 1
+
+  3) Modified NB to account for class-imbalance 
+      
+     - not often used in practice
+
+
+Problem 2 : (Impact the likelihood ratios)
+---------
+
+ -> For The likelihood of same feature/word for +ve class & -ve class 
+ 		\
+ 		the numerator of majority class is > nnumerator of minority class
+
+    So when you apply laplace smoothing with any alpha, then
+       \
+        impact of smoothing on minority class will be more 
+        & 
+        impact of smoothing on majority class will be less
+
+        -> alpha will impact lesser numerator & lesser denominator more than bigger numerator & bigger denominnator
+
+        Eg 2/100 (2%) vs 18/900 (2%) 
+
+           alpha = 8
+           
+           10/100 (10%) vs 26/900 (2.88%)
+
+           Thus more impacted is 2/100 by alpha of 8
+
+     Soln :-
+
+       1) Upsampling or DownSampling
+
+       2) Hacks :- Use diff alpha for diff classes 
+

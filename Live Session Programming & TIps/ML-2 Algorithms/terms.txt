@@ -1,0 +1,5 @@
+terms
+
+* Que (Clustering & MF)
+
+- Frobenius Norm (Matrix | Optimization | SGD)

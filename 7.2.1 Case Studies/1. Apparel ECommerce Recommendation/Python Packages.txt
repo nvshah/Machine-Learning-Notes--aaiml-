@@ -1,0 +1,25 @@
+Python Packages
+
+- PIL.Image
+
+
+* To download StopWords :-  
+    
+    1) 	import nltk
+    2) nltk.download()   // this will prompt you what to download for ??
+
+
+* sklearn.metrics.
+            \
+             pairwise.pairwise_distances
+
+* gensim.models.word2vec
+            		\
+             	  Word2Vec()   // to prepare your own word2vec 
+             	  KeyedVectors
+
+
+
+* keras
+
+* tensorflow

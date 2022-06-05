@@ -1,0 +1,6 @@
+Good References Articles
+
+[Integral basics] https://www.mathcs.emory.edu/~cheung/Courses/170/Syllabus/07/rectangle-method.html
+
+[Correlation Between Categorical & Numerical Variable]
+https://medium.com/@outside2SDs/an-overview-of-correlation-measures-between-categorical-and-continuous-variables-4c7f85610365

@@ -1,0 +1,7 @@
+reference KNN
+
+[Interview Que] 
+https://www.analyticsvidhya.com/blog/2017/09/30-questions-test-k-nearest-neighbors-algorithm/
+
+[KNN]
+https://drive.google.com/drive/folders/1tMYRWzbrSMxQ7aQ5mc8Qf4190gPSt5fy
