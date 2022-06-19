@@ -27,3 +27,15 @@ DL NN notes
      because
      there are more weights variable between 2 FC-layers, comparatively
      So need some sort of Regularization
+
+* Auto Encoder & Word2Vec :
+  ----
+  - Auto Encoder helps you to understand how Word2Vec works internally (alikeness)
+
+* Convert to Vector :
+  --------
+  - For Images (CNN) :- VGG16, ResNet
+  - For NLP (text) :- BERT (Transformer)
+
+=> CNN has become so good today because of the facility available to get vectors from Images
+   (ie VGG16, ResNet)

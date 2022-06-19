@@ -1,0 +1,27 @@
+gist
+
+- Encoder :- Bidirectional LSTM (RNN)
+  Decoder :- UniDirectional LSTM (RNN)
+
+  & Intermediate Layer :- Attention Layer is NN that decides & drive alpha param based on
+                          curr out from encoder & prev output from decoder
+                          for producing curr inp to decoder to get resp cur out from decoder
+
+- BLEU Score :- Translation accuracy from 1 lang to another
+
+- Tx Window size :- size of words accounted from encoder towards the attention layer
+
+* alpha : (Hyerparam)
+  ---
+   We have constraints over alpha &
+     ie Sum(alpha) = 1  && alpha >= 0
+   that is very imp for Regularization
+
+-> Transformer are based on Attention
+   &
+   BERT is based on Transformer
+
+* Application :
+  ---
+   - Image Captioning
+   - Text to Text Translation

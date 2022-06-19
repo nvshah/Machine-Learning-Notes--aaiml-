@@ -8,7 +8,7 @@ http://euler.stat.yale.edu/~tba3/stat665/lectures/lec18/notebook18.html
 
 ---------
 
-- Focus for Object Detection
+- Focus for "Object Detection"
 
 - Activation used :- RELU
   Concept of Dropout was also used

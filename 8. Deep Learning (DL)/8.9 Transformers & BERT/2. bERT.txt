@@ -1,0 +1,117 @@
+2. bERT (Bidirectional Encoder Representation From Transformers)
+----------
+
+
+---------
+# Terms (related)
+
+- NLP
+
+
+
+
+
+
+---------
+
+
+- Simplified Transformer
+- Simple Concept
+
+
+- BERT is inspired from concept of Transformer
+  BERT is a type of Transformer which is simple & equally powerful & can be useful for wide span of tasks
+
+- You can think a BERT of as a Sentence Encoding Model which you can use it in wide span of NLP task
+  such as Sentence Analysis, Sentiment Analysis, Text Classification, Question Answering Systems
+
+-> You can think BERT as a better version of Word2Vec
+
+* Application :
+  - Question Answering Systems
+  - NLP (modern mostly uses BERT)
+
+-> BERT was first model that beats human or perform well for "Question Answering" Task
+
+* Objective :
+  --
+  - Given Sentence can I get Vector
+
+  For Images we do have such kinda facility :- VGG16, ResNet
+  For NLP we have now this :- BERT
+
+
+* Archi :
+  -----
+  - Encoder Only Model
+  - Bert_base, Bert_large
+
+  - Only Encoders-Stack
+    These Encoders are also called as a "Transformer Block"
+
+  - By Encoder it means all it comprises of :-
+    { Positional Encoding,  Self-Attention, Normalization, Feed Forward, Skips (Residual) }
+
+
+* Inp-Out :
+  ----
+  - First word :- class
+  - For every word every encoder generates an output corresp to inp
+
+  NOTE :- based on the #units in Feed-Forward NN, the output vector for each corresp word in Encoder will
+          be decided
+
+=> Given a trained BERT model you can use it for simple text-classification task !
+
+=> Bert is Bi-directional Model :
+
+* Bi-Directional Model :
+  ---
+   - better than forward only models
+   - looking at word before & after matters
+
+
+Q) Word2Vec :
+    -> You try to predict word in context to surrounding words using Simple Feed Forward NN
+    -> In case of Word2Vec we have simple Feed Forward NN
+
+* Masked Language Model : (Training Bert)
+  -------
+  - Similar to Word2Vec concept
+    Instead of using Feed Forward Layer in Word2Vec,
+    Here in case of BERT we are using Encoder based Model with lots of layers of encoding (ie Transformer layer )
+
+  - Randomly mask some words in inp (to Bert)
+
+  - In BERT we will have Encoder based Transformer Model (instead of Feed Forward Model)
+    |
+    which is far more powerful than Feed Forward Model (of word2vec )
+
+  - So in masked language model :
+  -> some words are masked in input & we need to predict what this word should be (given the other words)
+     Thus Predict the masked words
+
+  -> Then we can use Back Propogation to improve model
+
+  -> We randomly choose the word as to be masked
+     &
+     then expect the model to learn & predict that masked word correctly
+
+  -> So via Masked Language Model, you train your BERT model
+
+
+---------
+
+* Train Bert on 2 Sentence
+  ----------------
+  - What if you need to input 2 Sentences ?? (ie Eg SentB comes after SentA)
+
+  -> Use Seperator & just train BERT on it
+      |
+      You need to consider output corresp to [CLS] only &
+      just build a simple model (eg Classifier using Feed Forward)
+
+
+* Bert Feature Extraction :
+  ------------------
+  - after each encoder layer you will get some vec representation for each word

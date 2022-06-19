@@ -1,0 +1,22 @@
+gist Transformer
+
+
+-> 6 Encoder Models
+    - Self Attention
+    -
+   6 Decoder Models
+
+-> Idea :- NeighborHood based Algo that
+           try to find out words to focus for current word
+
+* Encoder Decoder - Transformer (Working)
+  ----
+  - At a time -> You take all the words (ie entire sentence ) & generate the 1 Word as a output
+     |
+     -> All the word are encoded at the same time
+
+  - Thus My Encoder take the whole inputs &
+    My Decoder consider the Previous Outputs (generated in prev time)
+
+  => All input is ingested once
+     Output is generated step-by-step (ie acoording timesteps)

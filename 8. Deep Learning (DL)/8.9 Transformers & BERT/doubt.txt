@@ -1,0 +1,7 @@
+doubt
+
+Q) In BERT archi :
+
+   If Encoder_base has 768 units then it will produce 768 dim vector
+   then
+   how does Multiple Words feeded to Encoder have each individual 768 dim vector ?

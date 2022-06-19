@@ -20,4 +20,6 @@ terms
 
 - Identity Matrix | Identity LSTM
 
--
+- BPTT (Back Propogation Through time)
+
+- Context Vector | EOS

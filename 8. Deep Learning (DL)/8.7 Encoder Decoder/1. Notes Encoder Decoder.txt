@@ -1,0 +1,148 @@
+ref NOTES : https://drive.google.com/file/d/1urJCoLhZ5u6d-Jxb2mc5U-hcI4S382hF/view?usp=sharing
+
+1. Notes Encoder Decoder
+--------
+
+-> Seminal Research Paper
+
+----------------------
+
+Topics
+
+- Time, EOS, Context Vector
+
+
+--------
+Remember
+
+=> Context Vector `W` is the output when EOS is the inp
+=> LSTM-Encoder-Decoder one of the most imp application :- Language Translation (ie English to Gujarati)
+
+_____________________
+
+Application :-
+- Google Translate
+- Auto Reply      // [Eg ThankYou, I'll get back to you]
+- Auto Suggestion
+
+
+* Machine Translation :
+  - Seq to Seq
+
+* Image Captioning / Descriptions :
+  - Img to Seq
+
+
+--------
+
+* Model :
+  ---
+   - Probabilistcally it tries to find P(y) given x
+   - In optimization terms of view, it tries to find Maxima or Minima
+
+  - Find the y which is most probable to x (ie thus maximize the probability)
+
+  - Model is learning this probability during training
+  - You need huge data for train
+
+
+------
+REMEMBER :-
+superscript :- denotest the word in current sentence
+subscript :- denotes the particular sentence amone multiple sentences
+EOS :- end of string
+
+* Case 1 (LSTM)
+---------------------
+- Encoder Network
+    (Unravelled LSTM over time)
+    - Output becomes inp to next timestamp
+    - Feed themselves
+  [EOS]
+  - At the end of Encoder n/w the output `W` will hold all the encoded information over t-timestamps
+  - So with EOS only we have output
+    Rest all cells are just recurrent units at diff timestamps
+
+  COntext Vector
+  ---
+   -> W is called as context vector here (ie output of Encoder is context vector)
+   -> Encapsulate the information gathered along t-timestamps
+
+  => So the output W from Encoder's EOS will be provided as inp to Decoder Network
+
+- Decoder Network
+
+  -> In Decoder n/w all the outputs at diff timestamp by diff cells are considered
+
+  - So these outputs will be taken as what model predicts
+  - then you need to decide a Loss function
+
+  Back Propogation through timestamps
+  -> Back Propogation loss through time ( so that weight & params get re-adjusted )
+  - Keep doing multiple times
+  - eventually Loss goes down
+
+
+* Paper 2 (Case 2)
+---------------------
+
+ -> Same n/w as above
+ -> here context vector (`W`) is feeded to all cells in Decoder n/w
+   \
+    ie Feeding W to cell at diff timestamp in Decoder n/w (ie unrolling with W as feeded)
+
+ Modified LSTM Unit :- to take 2 inp
+
+ -> But this archi is not much referred as it did not bring any significance improvement compare
+    to Paper 1
+
+
+* Paper 3 (Case Study)
+------------------
+ - Encoder n/w : CNN
+   Decoder n/w :- LSTM
+
+ - Image Context Vector :-
+    It encapsulates wholesome of information that is learned by the CNN for an input image
+    - It is output from CNN & CNN is Encoder n/w here
+
+ - Image Context Vector (from CNN) is feeded to LSTM (Decoder Network)
+
+
+NOTE :- all initializations for Encoder-Decoder are done in same way as did in LSTM
+
+=> Context Vector `W` is the output when EOS is the inp
+
+* Eg String with EOS
+--
+ Eg "I want some Food<EOS>"   // EOS suggests the end of line
+
+
+---------------
+
+Code - Samples
+
+
+* Character Level Model :
+  -> At each time stampe a character will be provided as an input
+
+
+* Problem with simple Seq-to-Seq Model : (Need of Attention Models)
+  ---
+  - Very lengthy sentence
+    |
+    So cannot get essence of that sentence in context-vector word
+
+  - Thus translation of Shorter sequence is easier compare to that of longer sequences for an
+    Encoder-Decoder
+
+
+* Attention Idea :
+  ---
+  - use to deal with larger sentences & context word vector
+
+  - How Human tries to translate larger txt :- via doing in chunks
+    |
+    Pay some attention to some part of Generation
+
+  - Thus Attention are more Human Like translation

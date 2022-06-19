@@ -82,3 +82,5 @@ Basic Essential Concept
    => Long-term dependency won't work well with Simple RNN
 
    -> Time axis plays an important role in case of RNN
+
+*) BLUE Score :- specialized metric for transformation of sentences mesaurement

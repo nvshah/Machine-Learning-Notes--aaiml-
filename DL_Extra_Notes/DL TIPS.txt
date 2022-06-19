@@ -25,3 +25,5 @@ DL TIPS
      So need some sort of Regularization
 
 => Better tip is to add Dropout after every Fully Connection Layer !!
+
+*) BLUE Score :- specialized metric for transformation of sentences mesaurement

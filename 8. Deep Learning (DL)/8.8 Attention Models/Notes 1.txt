@@ -1,0 +1,140 @@
+Attention Based Models
+---------
+[NOtES]
+ref : https://drive.google.com/file/d/1urJCoLhZ5u6d-Jxb2mc5U-hcI4S382hF/view
+
+* recap :
+---
+-> the information that will pass from Encoder to Decoder is the latent vector (W)
+   ie Output of last activation unit of Encoder Model to Inp to Decoder Model
+
+-> This thing not works for lengthy sentences
+
+* Why ?
+------
+-> Single vector (W) cannot capture the essence of long sentences
+
+
+* BLEU score :
+----------
+  -> Metric for measuring Accuracy of Translation of sentences
+  - experimentally it was found that as length of sent incr, this bleu score accuracy falls for Encoder-Decoder Models
+
+  -> Tells how good is the translation accuracy from 1 lang to the another lang
+
+
+* Inspiration :- (For attention layer model)
+  - How human translate
+  - Attend few words & get the few words in Output
+
+* BiDirectional RNN
+  ---
+   - Each Box Unit can be either : {RNN, LSTM, GRU}
+   - using vanila RNN is rare case
+
+   -> In BiDirectional RNN, at each layer/timestamp we concatenate the output of both unit (forwayrd & reverse)
+      & use Softmax on top of it to get Output
+      But
+      Here we will not use SoftMax
+      So everything remains same till concatenation
+
+* Attention Model : (Architecture)
+  ---
+  -> based on Bidirectional RNN, where Softmax is not applied
+  -> It is modified Encoder Decoder Model
+
+  Why BiDir-RNN used for Attention Model ?
+  -> the second output word not just depend on 1st inp word but it may also depend on 3rd or 4th inp word
+     So to capture that we have provision of BiDirectional RNN
+
+  -> The genious thing in attention model is Network Architecture
+     whereas mathematics & optimization is same used ie ADAM
+
+
+  Context Vector :
+  -----------
+  - Weighted
+
+
+* Encoder : is a Bidirectional
+  - Typical BiDirectional LSTM
+  - because to generate the first word in decoder you need many words from Encoder model
+    to contribute towards the context vector
+    & that word may not only depend on prior words but also may depends on words coming after current word
+    So BiDirectional RNN/LSTM is used
+
+  Decoder :- is a Unidirectional
+  - UniDirectinal LSTM
+    \
+     because we are generating one word after another word
+  - Output depends on few inps words from Encoder
+  - The inp I gave to 1 unit of decoder unit is the weighted sum of outputs from encoder model
+
+  Hyperparam (Tx)
+  -> To generate 1 output from decoder model, how many inp it will be depends on from Encoder Model
+     this hyper-param is called as Tx
+
+  - Eg 1 output word depends on 3 inp words
+
+  - Window of Inp words you care about while generating output
+
+=> So Attention Models flavors lies in that how you will connect this Encoder Model to Decoder Model
+   (ie BiDirectional Model to UniDirectional Model)
+
+-> So in attention model, the connection pattern dramatically change
+
+
+* Attention Layer :
+  ------
+  - A new layer in Encoder Decoder Structure
+  - You can think of Attention as 1 another layer added between Encoder & Decoder layers
+    in LSTM model
+  - This kinda model is also called as "model with priors"
+  - It require window of words to generate a output
+
+* Alpha_ij :
+  ----
+  - There were some constraints that alpha_ij must follow & these constraints make sure of regularization
+
+  - To satisfy Regularization Constraints we will define alpha_ij alike softmax func
+
+  - It denotes that how much attention should I provide to output of Encoder inorder to generate Yi
+
+  -> Attention Function : Feed Forward NN
+      - let the model decide based on data (instead of taking it as prior)
+
+  - Thus alpha in the middle layer (of Attention) will come from NN, &
+    this NN consider the curr output from Encoder & prev out from Decoder to decide the alpha
+
+* Updates :
+  ---
+  - Back propogation through Time (via ADAM)
+
+
+* Drawback :
+  ---
+   - Time Complexity
+
+   - I can make my each output depend on all the inputs (ie Tx = k1)  // Window Tx & k1 is len of inp
+
+* Visualize the alpha_ij's
+  ----
+  - to check where something goes wrong
+
+
+* Image & Attention Model :
+  ----
+  Application :- Object Localization in Image
+
+  - Each Region will corresponds to some words & hence some alpha value
+          |
+          Part of an Image
+
+  - Via Visual Attention we know why something is given as Output
+
+  - We detect where object lies in image by looking alpha_ijs
+    for every word-region we will have alpha_ij
+
+  - So regions are kinda input (to Encoder)
+    &
+    We'll have alpha for every corresp Regions

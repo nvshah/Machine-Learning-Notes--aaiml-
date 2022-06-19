@@ -6,3 +6,4 @@ Encoder Decoder
 
 - Encoder-Decoder Models are just an extension to Sequence Models
 
+ref NOTES : https://drive.google.com/file/d/1urJCoLhZ5u6d-Jxb2mc5U-hcI4S382hF/view?usp=sharing

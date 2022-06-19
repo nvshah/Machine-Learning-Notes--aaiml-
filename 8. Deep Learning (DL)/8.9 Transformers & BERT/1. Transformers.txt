@@ -1,0 +1,193 @@
+ref : attention all you needs
+
+
+-------------
+-> There is more similarity between Word2Vec and Transformer
+
+--------------
+
+1. Transformers
+----------------
+- Attention is core of Transformer
+
+- Transformer is a Seq to Seq Model
+
+- It has total 6 Encoders
+
+(let)
+* Objective : Transform French -> English
+  So you have data :- LIST[(Eng_txt, french_txt)]
+
+- Transformer possess bunch of Encoder & bunch of Decoder
+-> Encoder-Decoder in case of Transformer are based on concept of Attention &
+   does not use concept of RNN
+
+-> #encoders & #decoders must be same
+
+- Stack of Encoders & Decoders
+
+* Encoder Structure
+  ----
+   Possess 2 main things
+   1. Feed Forward NN
+      - 512 Hidden layers
+   2. Self Attention Layer
+
+   -> All the words in sent are converted to vector (let say by Word2Vec)
+   -> All the words are feeded to Attention layer simultaneously
+
+   - Self Attention convert word's vector x1 -> z1 & likewise for all words
+   - Feed Forward convert z1 -> r1
+     &
+     r1 (out) is the output of Encoder Block for word x1 (inp)
+
+     For every word we have xi & corresp out ri
+
+
+* Self-Attention Module :
+  ----
+   - self attention means where I am focusing in the sentence among words for current words
+
+   - Trainable Matrices param of Self attention module
+
+   - z1 is generated from x1 by self attention
+
+----
+REMEMBER :
+ In your normal MultiLayer Feed Forward networkr also when you have more than 1 activation unit in 1 layer
+ then your all inputs will be alike vector & output will also be a vector
+ now in between your inputs gets applied over all units in layer & thus this interaction can be thought
+ of as a Matric Multiplication
+
+=> Thus Feed Forward NN involves lot of Matrix Multiplication
+-----
+  STEPS
+   - Embeddings
+     Queries   // 64 dimen vectors | dk
+     Keys     // 64 diemn vecor
+     Values   // 6 dimen
+
+     Divide by 8 // Why ?? -> So that Gradient become more stable
+     SoftMax   // will get us relative proportion & also sum of all eq=1
+
+     Softmax * Value
+     Sum
+
+  Step 1 :- Trainable Matrices (W_Q, W_V, W_K)
+
+  These whole things (all steps) can be written using Matrix
+
+Significance :
+---
+ -> Attention helps us to focus on some of words in vicinity which matters
+
+* Multi-Headed Attention :
+----------
+- Increase the complexity of Self Attention Computation
+- Instead of only 1 pair of matrices (ie Q, K, V), we will have multiple pair of Matrices
+
+-> The single-headed Attention Model only focus on some set of words
+
+-> So when you just not need to focus only 1 set of words but different set of words
+   (in same sentence)
+   then you can consider Multi-headed Attention Model
+
+-> Increase Representational Power
+-> Encode more words & thus more hyper-parameters (ie more matrices to train)
+
+   So it would be like:
+    - 1 pair of matrices (ie head) will focus on some set of words (from sentence)
+      whereas other pair (ie other head) will focus on some other set of words
+
+   & this way we can have diverse context of vicinity of particular words in same sentence
+
+   8-headed Attention Model :-
+    -> You need to combine|concat 8 Matrices so that you can get 1 output
+    -> Then you multiply the resulted matrix with W0
+    - thus at the end you will have 1 matrix as output (which will be feeded to next attention in a layer)
+
+=> So all in all there are bunch of Matrices as a Hyper-Parameter
+
+-> The model learns the weights via BackPropogation for given dataset
+
+
+* Positional Encoding :
+  ------------------
+  -> In RNN timestamp tells you which word come before which one
+     but here we do not have any such thing
+     So
+     We use Positional Encoding to encode word vectors before they are feeded to Encoder
+
+  -> The resultant vector encapsulate the info (ie which word is where in relation to next word)
+  - So the vectors are design in such a way that :-
+     it encapsulate the relative positioning
+     & also the distance between the words
+
+  - So via Positional Encoding you can decide that which word come before which word in Transformers
+
+* Layer Wise Normalization :
+  ----
+  - normalize the output of Self-Attention layer
+  - There is Add & Normalize Layer (step) after each layer (ie Self-Attention, Feed Forward NN)
+
+* Residual Connection :
+  ---
+  - let say if some Self-Attention layer is useless then we can skip those via Residual Connection
+  - ShortCut type of Residual Connection
+
+
+* Decoder Part :
+  ----
+  - In Decoder model, it's almoste similar to Encoder except
+    there is 1 more Self-Attention Layer in between (ie its called as Encoder-Decoder Attention)
+
+  - Encoder-Decoder Attention :- Extra Attention layer (in mid)
+     \
+      The vector from encoder (that comprised info or representation of entire text)
+      is passed to this (ie Encoder-Decoder Attention layer) portion of Decoder
+
+
+[IMP]
+* Encoder Decoder - Transformer (Working)
+  ----
+  - At a time -> You take all the words (ie entire sentence ) & generate the 1 Word as a output
+     |
+     -> All the word are encoded at the same time
+
+  - Thus My Encoder take the whole inputs &
+    My Decoder consider the Previous Outputs (generated in prev time)
+
+  - Decoder is already taking the info about cur-time from the Encoder via a vector
+    (ie Encoded Vector to Encoder-Decoder Attention layer)
+
+    So Encoder do not need to run many times as Encoder consider all inp (ie words of sent)
+    run it & produce output vector
+    which it gives to Decoder (at Encoder-Decoder Attention part)
+
+    So Encoder run through the whole sentence once & provide output to Decoder
+    &
+
+    Now it's Decoder which will run multiple times at different timestamps
+    Considering vector recived from Encoder & previous output generated by itself
+
+  - Encoder/Encdoing is 1 time thing
+    Decoder/Decoding is time based step by step thing
+
+  => All input is ingested once
+     Output is generated step-by-step (ie acoording timesteps)
+
+
+* Takeaways (Transformer)
+  ----
+  -> faster than RNN-based models as all input is ingested once
+
+  -> Whole idea is alike CNN (ie neighborhood like concept)
+     In CNN, (For Convolution, you look around for pixel in vicinity)
+
+     Similarly here in case of Transformer, concept is same as with neighborhood
+     (We let model to learn ie which word to focus on for current word)
+
+* Application :
+  ---
+  - Text Summarization
+  - For wide range of NLP task

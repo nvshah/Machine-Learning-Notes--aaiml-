@@ -1,0 +1,10 @@
+pract
+
+- Transformer in Keras
+   - Add Dropout
+   - For Residual
+   - Linear
+   - SoftMax
+
+
+- DistilBert -> Logisitc Regression

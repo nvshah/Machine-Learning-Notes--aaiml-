@@ -1,0 +1,13 @@
+terms
+
+* Encoder Decoder
+* Attention Based Models
+* Transformers
+* BERT
+
+* Machine Translation
+
+* BLUE Score
+
+* Models with Priors (using prior knowledge)
+*
