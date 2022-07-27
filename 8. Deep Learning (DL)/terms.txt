@@ -23,3 +23,5 @@ terms
 - BPTT (Back Propogation Through time)
 
 - Context Vector | EOS
+
+- Conv, Padding, Strides, Max-Pooling, | CNN

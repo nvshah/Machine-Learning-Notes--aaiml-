@@ -1,0 +1,97 @@
+1. Notes 1
+-----------
+
+
+
+----------
+
+* Problem Defin :
+  ---
+  -> Application alike Smart-Speaker
+
+  Multi-Class Classification Problem :
+   -> Different kind of person identification (ie Speaker Identification)
+
+* Audio Data :
+  --
+   -> per user :- input :- 30 seconds of data // into chunks 6 seconds * 5 chunks
+
+   - Amplitude & Time
+
+* Transfer Learning ? (CNN or Image Based from Audio/Sequence things)
+
+Q) Why Audio to Image ?
+
+  -> Inorder to perform Transfer learning via CNN
+
+   Why CNN & not RNN ?
+   -> because we have few samples of data & with few samples we cannot do RNN with Transfer Learning
+      but we can do CNN for Transfer Learning with pre-trained data
+
+      Pre-Trained Models such as AlexNet, VGGNet
+       \
+        -> Transfer learning is possible
+
+* Audio-Image
+  ----
+  - WaveForm Image
+  - Fourier-Transform
+  - Spectogram
+
+  => Spectogram is build via Fourier Transform applied over tiny gap of timespan over audio-wave
+
+  * Dual Channel -> Mono Channel
+    |
+    Mono to Spectogram
+
+  * Trim or Cut the Audio into small chunks
+
+=> If we have 30 seconds longer audio then we will cut or trim this audio via `sox command`
+
+* Pre-Trained Model :
+  ---
+  -> You don't have spectogram like data in Pre-Trained Model consideration
+     |
+     1. ReUser Archi + Weights of Pre-Trained Model
+
+     2. Reuse Archi but trained Weights with lot of Spectogram Images
+
+  -> Pre-Trained on Spectogram Image Specifically via AlexNet or any Image Model
+
+  => This is also a transfer learning but ReTraining on custom data
+
+
+* CIFAR-10
+------------
+ - design for 10 class classif
+ - Pre-trained on Spectogram for 57 Speaker (from Internet collected audios)
+ - Thus borrow archi from CIFAR-10 & trained weights from 57 Speaker's Spectograms
+
+
+* Few-Shot Learning :
+----------
+
+-> What we want ?
+   - For every speaker (person) all of their audio data must be clustered together
+     or
+     well seperated for every speaker
+
+ - Similar Pairs
+   Dissimilar Pairs
+
+* Siamese Twins (Network)
+----------
+-> Similar Pairs & Dissimilar Pairs
+-> We get d-dimen repr of 2 images pass through same CNN
+
+-> Siamese Network to get d-dimensional representation
+
+-> One of the plus of Siamese Network is that You can incrementally update it
+   as we get more number of users
+
+
+* Audio Length & #Users/Speakers :
+---------
+
+Few-Shot Learning :
+    Eg - Face Detection (few faces per person)

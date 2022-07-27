@@ -1,0 +1,8 @@
+pract
+
+- mediapipe
+- mlkit
+- blazepose
+
+- Caffe
+- Face Mesh

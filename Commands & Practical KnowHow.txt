@@ -1,0 +1,7 @@
+Commands & Practical KnowHow
+-------
+
+* ShellScripts :-
+  - set of commands that we intends to run in terminal
+
+

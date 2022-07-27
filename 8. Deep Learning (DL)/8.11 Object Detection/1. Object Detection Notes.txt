@@ -1,0 +1,102 @@
+* Object Detection Notes
+----------------------
+
+-----------
+
+- Face Detection is diff from Obj Detection
+
+Dataset :- COCO
+
+-----------
+
+* Objective :-
+  ---
+  - Bounding Boxes Draw/Derive in Image
+  - There could be multiple obj of same type in single img
+
+- In Img Segmentation : Pixel Level // care more abt pixels
+  In Obj Detection :- We care more about bounding box
+
+
+* Performance Metric :
+  ---
+  - How do we measure our detection is good ?
+
+  - Ground Truth &   // Actual
+    Prediction       // Predicted
+
+
+* IOU :-
+  ---
+  -> Intersection over Union
+     := Area of Overlap / Area of Union
+
+  - Ideal Case :- Exact Overlapi (thus IOU = 1)  // The best case
+    Worst Case :- IOU = 0
+
+  - Ideal Thresold is IOU := 0.5
+    |
+    Overlap 50 or more % with Ground Truth Rectangle
+
+-> Now we will translate identifying this Bounded Rectangle as a Classic Binary Classification Problem
+
+   In image there will be multiple objects So there it's no more binary classif but multiple binary classif
+   Eg
+    - Chair, Person, ...
+
+* Precision-Recall Curve : (Metric)
+  ---
+  -> used for Metric
+  -> Area under Precision Recall Curve   (Just same as AUC-ROC curve)
+
+  -> Au-PRCurve
+  -> Best case := 1
+
+  -> This AU-PRCurve we observe by picking any 1 class (ie let say Chair)
+     &
+     then by changing thresold, we can get diff predictions & for each of them we can get Precision & Recall
+     & We can plot Avg Precision Curve
+
+
+* Mean-Avg-Precision (MAP)
+  ---
+  - Avg Precision for all classess (seperately)
+    &
+    then take mean of all of them
+
+
+-----------
+
+* DL Models :
+
+  inp :- img/video
+  out :- bounding box, obj class  // corresponding
+
+* TradeOff :-
+  - Speed vs MAP
+
+* Algorithms :
+  --------
+  - R-CNN (Regional CNN)
+    Fast CNN
+    Faster CNN
+
+    FPN-FRCN
+
+    -> these are good for MAP  (than speed)
+
+  - RetinaNet
+
+  - YOLO V1
+         V2  // Can compare 9000 objects
+         V3
+
+    ( YOLO has 3 versions based on different Image Size)
+    Image Size determines how large or how small objects you want to determine.
+
+=> We want Lower time & Higher MAP
+
+REMEMBER :- If my input img is bigger, then detecting smaller object is easier compare to
+            when my Inp image is smaller (as there are not many small pixels)
+
+=> Selecting whcih version of YOLO depends on how small object you need

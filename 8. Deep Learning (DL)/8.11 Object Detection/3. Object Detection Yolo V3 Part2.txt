@@ -1,0 +1,195 @@
+3. Object Detection Yolo V3 Part2
+-----------------------------
+
+-------------
+=> Anchor Box will be much closer to Bounding Box (actual) ideally,
+
+=> DarkNet Convo is initialized using ImageNet trained Weights
+   all rest
+   is work-around via training & loss & BackProp
+
+* FPN : borrow idea from diff grid sizes learnings for current learning
+_____________
+
+> Feature Extractor :
+  - DarkNet-53
+
+* Effective Receptive Field :
+  ---
+  -> The 32*32 Grid (in 416*416 Img) is what contributing to Left-Top most Pixel 1*1 in (13*13*1024 Img)
+
+* Bounding Box Representation :
+  ---
+
+* Anchor Boxes :
+  ---
+  - Some PreDefined Boxes in Grid
+
+  -> We will represent the Bounding Box as a small change in Anchor Box
+
+  -> It will be much closer to Bounding Box (actual) ideally,
+
+  - So there will be coordinates learned by model & anchor-box coordniates
+    Using both I can verify or derive my actual Coordinates
+
+  - So in research paper they came up with 5 Anchor boxes to begin with
+    & they came up for this via K-means Clustering
+
+  - These initial Anchor Boxes are also known as "Prior"
+     |
+     because they hint that its high chances you will find the Objects within these regions where prior boexes are located
+
+  - So using this prior info to encode othr bounding boxes gives you less error
+
+[**IMP]
+Q) Why Anchor Boxes are used ?
+->
+  because they gives prior info where most these boxes may be found !
+
+Q) Why Sigmoid ?
+->
+  Telling that we can be atmost 1 Pixel away from anchor centroid (for Bounding box)
+  ie Distance will be much less
+
+Q) How do we derive Anchor Boxes ??
+-> via K-meas Clustering
+
+
+* Per-Class Sigmoids :
+-----------
+
+ Objectness Score :
+  - prob of finding object in this Box
+  - Binary Classif
+
+ => Hierarchical Representation
+   ---
+   -> In the classes there may be some classes which have hierarchical representation
+
+      In such case if we use Softmax-classifier then it may not work
+      Eg
+         Person Class & Women Class
+         - Softmax here will give very high prob to either Person class or Women class
+
+   -> Softmax may not work for Hierarchical Representatble Classes
+
+ -> So they decide to keep n logistic regression for n classes
+    ie 1 Sigmoid per class
+
+  Logistic Reg
+  ----------
+  -> Per class Log Reg (Sigmoid) Func
+  -> So we have (For 1 Bounding Box)
+    4 Box Coordinates
+    1 Logistic Reg for Objectness Identifier
+    n Logistic Reg for n classes
+
+
+* Architect (Loss Func & BackProp) | Optimization
+------------
+ - Loss & What to learn (weights)
+   \
+    -> We need to learn the Weights for our Bounding Box Vector we just found or derived
+
+ - So model will predict the 13*13*k  // k is number of atmost bounding Boxes
+   &
+   that will be Y^
+
+   Now model has to decide the Loss based on the Ground Truth (ie Actual Boxes)
+
+ - So priorly Image will pre-processed via `DarkNet`
+ - Loss from predicted Boxes & Ground Truth Boxes
+ - Differentiable Layers (as all things resorted to Conv & Conv is differentiable)
+
+=> P0 in notation tells you probability of finding Object in Current Box
+
+ LOSS Defn :
+ -----
+ 1. Squared Loss for Coordinates
+    for Box-Coordinates predictions you will use Squared Loss (because those are numbers)
+    ie via Linear Regression
+
+ 2. Log Loss for P0
+    As it is a just a Binary classif kinda thing
+
+ 3. Log Loss for each Pi
+    for diff classes
+
+ -> For all the Box that do not contains the obj in Ground Truth
+    We will minimze the Loss for same via (Regularization Kinda thing|term)
+
+ P0 -> will be in 0-1
+
+ -> Ground Truth Boxes data are manually marked !
+
+ Hyper-Parameters :-
+  lama_coord
+  lama_noobj
+
+  #Boxes  // larger it, more complex model will be
+
+=> So what you try to minimize is the prediction probability for Bounding Box & actual Box's Ground Truth
+
+[NOTE]
+=> DarkNet Convo is initialized using ImageNet trained Weights
+   all rest
+   is work-around via training & loss & BackProp
+   |
+   because ImageNet can tell you which object are there (ie help with the Object Detection)
+
+-> So we are using ImageNet's trained Weight for initialization & Not Transfer Learning
+   Thus
+   it will help to train the model quicker comparatively
+   (As ImageNet has some good weights to detect Objects)
+
+
+(4)* Multi-Scale Prediction
+------------------
+ - Instead of 1 Grid Size (ie 13*13), Try to predict with multiple Grid Sizes
+ - to detect smaller Objects
+ - So it is meant for multiple grid sizes
+
+ -> To get Bounding Boxes at different granularity (ie 13*13, 26*26, 52*52, etc...)
+
+* Feature Pyramid Networks (FPN)
+  ----------------------
+  - Borrow Information from smaller Grid Sizes to Predict Larger Grid Sizes in Multi-Scale Prediction
+    (during DarkNet Striding2)
+
+  - Borrow some info from other granualrity
+
+
+* YOLO V3 Archi :
+  ---
+  After DarkNet,
+  - To predict Bounding Box for this cell, we want info from Surrounding cell as well
+
+  -> Info is Borrowed from smaller grid size info to large grid size
+
+  Motif behind '1024 3*3' Convolution :-
+    - So that I can learn from neighbors as well
+    - So to predict the bounding box for this cell, I must learn from surroundings as well.
+
+[**IMP]
+=> 3 Major things :
+   \
+    DarkNet-53 + MultiScale Prediction + FPN
+
+
+* Filters (For Box)
+------
+ - multiply p0 with each pi's & then take max out of it
+   & check if that is < 0.5, Ignore it
+
+ - So this way you can avoid/filter the useless boxes (otherwise you will get many such boxes as a
+   candidate)
+
+Non-max Suppression
+-----
+ - Many Boxes try to detect same object then which to select ??
+   -> Pick one that has maximum IOU (Intersection over Union) & rest suppress it
+
+ - So drop the one which is not having max-IOU
+ - To get best bounding box for my object
+
+ - To get reasonable numbers of Boxes

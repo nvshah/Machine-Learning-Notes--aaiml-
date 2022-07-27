@@ -11,3 +11,6 @@ Ronny Restrepo :- http://ronny.rest/blog/post_2017_08_10_sigmoid/
 * Research Paper Published :- arxiv.org
 
 * SGD -> https://machinelearningmastery.com/difference-between-a-batch-and-an-epoch/
+
+* Amazon.Science
+  Google AI Blog

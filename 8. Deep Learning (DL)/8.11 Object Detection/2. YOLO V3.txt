@@ -1,0 +1,147 @@
+* YOLO V3
+----------
+
+-------
+=> There will always tradeoff between Speed & Performance
+
+=> Hyperparameter :- #Boxes
+
+=> As you reduce the size of Image, You are increasing the size of Filters in Convolution (simulataneously)
+
+-------
+
+* Yolo V3 : Feature Extractor :
+__________
+- A model for Object Detection
+- The network used in V3 is called as `DarkNet53` // 53 layers of Convolution
+- Sometimes it is also called as BackBone Network
+- Primary Job is Feature Extractor
+- No Pooling
+
+- Fully Convolution Networks
+- There are 53 Layers
+
+- Trained on ImageNet
+
+* Components
+
+> Feature Extractor :
+  -----
+  - Fully COnvolution Network
+  - via "DarkNet-53"
+
+Convolution :- (Op)
+> Convolution Operation -> Batch Norm -> LeakyRelu
+
+=> BatchNorm ensures that even Deep in your networks your inputs are normalized
+
+* Strided Convolution
+  ---
+  Conv with Stride is used to downsample  // (instead of MaxPooling)
+
+  Stride Conv :- Image becomes Half
+  - Thus Striding helps to reduce Size
+
+-> Whenever Residual is written it means we have skip connection from previous block
+
+=> As you reduce the size of Image, You are increasing the size of Filters in Convolution (simulataneously)
+
+Q) Why did DarkNet was invented & ResNet not used ??
+->
+  DarkNet-53 is design S.T. it is very efficient in Speed & Performance (ie MAP)
+   |
+   It is as good as ResNet-152 (with few improvments) & Way Faster
+
+
+(1)* Yolo V3 - 416  // Model no. 2
+ ---------
+ -> Feature Extracted (via downsampling | striding)
+
+
+(2)* Bounding Boxes & Output:
+ ----------
+ To represent 1 Box What you need ?
+ (ie Encoding perspective)
+
+ - Height, Widht,
+   Coordinates (ie tx, ty) for Center Pixel in Box
+
+ Objectness Score
+ - Probability for any object in the box (ie Objectness Score)
+ - Give you Idea about if there is any object or not
+
+ Class Probabilities :
+ - prob for each classes  // ie vector
+ - when multiplied with Objectness Score gives hint that which object may present in this Bound (ie tx, ty, tw, th)
+    |
+    What is the probability that the class this object belongs to !
+
+-> Each Box We can represent using 85 values
+ |
+  -> 1. Box Center & Box Height Width
+     2. P0  : measures whether there is object or not
+     3. 80 class probabilities (from COCO dataset)
+
+  -> So we will get 80 prob in output which will indicates prob of finding a obj in this bounding box.
+
+[ Bounding Box Repr ]
+
+-> To represent 1 box (bounding) you need
+   - Box Center Coordinates,
+   - Box Height & Width
+   - Objectness Score
+   - Prob for each detectable object classes
+
+   - This thing we do on each cell & not on entire image itself
+     (So we do downsampling via Feature Extractor prior because You can't operate on extremely large
+      images through the network otherwise it would be slow)
+
+   - So We are operating in the space of cells & not in the space of Pixels
+
+ Q) Does we need only 1 Box Repr ??
+ -> No
+    because multiple boxes can have same center pixel
+    - The same central cell could belong to multiple objects
+
+    - Thus now primararily We take 1 small pixel as a center & try to find box around it
+      &
+      to represent 1 Box we need 85 piexls (here)
+      So to represent B boxes we need B * 85
+
+    - 13 * 13 * (B * 85)
+
+    -> Thus at depth level the pixel will represent diff possible Boxes which it can belong to as center
+
+ => Thus the #Boxes for particular pixel (or small region/segment) of Possible Object Bounded Region
+    is represented at Depth level in Tensor Repr of an Object
+
+[Connect Feature Extractor to Bounding Box]
+* Down Scaling | Sampling for Boxes :
+  ----
+  - Let say we want to reduce the tensor size obtained via (Feature Extractor) to Some BOunded Boxes
+    |
+    Eg 13*13*1024 (via Featire Extractor) -> 13*13*425 (via Bounded Boxes Repr via Single Center Cell)
+
+  - You can connect your Feature Extractot Output to #425 (1*1) Conv
+    inorder to get the 425 depth out of 1024
+
+
+* COloring :
+  ----
+  - So for given cell, you will check Bounding Boxes related to it are
+    resulting to which class (in terms of High Probability)
+    &
+    then you can use likewise color for that Cell
+
+* backPropogation Driven :
+  ------
+  From Feature Extractor -> Bounding Box (Req-Output) -> Loss
+   |
+   You can now do Backpropogation to get trained & better Output
+
+Hyperparameter :- #Boxes
+ \
+  More the Boxes more the time it will takes
+  ideally B = 3 or 5 is used !
+
+  Smaller B means Faster

@@ -1,0 +1,93 @@
+Notes 2
+-------
+
+________
+Terms
+
+- Huber Loss
+
+--------
+
+* Netflix & Amazon Data Quality
+
+* Netflix Data Quality :
+------------
+- Hive & Spark
+
+- Automated Monitoring
+   - via Robust PCA
+
+  Metrics Visualization
+   - maybe vial Tableau kinda tools
+
+
+* Bad Data Example :
+  1. Drift
+  2. Drastic Changes
+  3. Under Utilization
+
+* compare diff kind of Distributions Plots
+  - QQ plot
+  - KS test
+  - KL-divergence
+  - Model based system
+
+  -> QQ plot are good for human consumption (because they need human to verify it at end)
+
+
+* RAD : Outlier detection on Big Data
+----------
+
+=> Standard ARIMA like model are not well & robust for multivariate Time Series Data
+
+* Robust PCA :
+ -----
+ - robust to outliers in data
+    \
+     because in standard PCA, outliers can mess up eigen vals & eigen data
+
+ Approaches :
+   - Ransac + Outliers Detection
+   - Add more Regularization
+
+
+----------
+
+* Amazon Large Scale Data Quality Verification
+------
+
+- Incremental Computation
+  ---
+  - in alternative to Batch Computation
+  - to prevent wasting time for already computed things & reuse previous computation whenever possible
+
+  Idea : instead of recomputing everything at every timestep
+         create summary & carry that summary in future so that you do not have to
+         repeat the steps
+
+-> Distinct Values : (Approximation)
+   ---
+    - to count distinct values there is algo : `hyperloglog sketches`
+
+* Constraints Suggestion System :
+  ------
+  - Single Column Profiling
+
+  * Predictability Constraints
+    - with some thresold precision
+
+    - Eg Predictability of any feature by combinations of other features
+        \
+         Predictability Constraints (via precision some thresold)
+
+    -> Its not always that feature f3 is always linear combination of other features (ie f1, f2)
+       - There are exponentially combinations possible for features
+
+  REMEMBER :
+  -> You cant remove any feature data just because it is predictable or highly correlated with others
+     You can ignore it for your model
+     but
+     You cannot discard it completely
+     because someone can use this feature to do some analysis (pinpoint by that feature only)
+
+- Dynamo DB :- for Historical Data Storing

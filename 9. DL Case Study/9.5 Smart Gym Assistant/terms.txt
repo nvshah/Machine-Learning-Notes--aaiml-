@@ -1,0 +1,13 @@
+terms
+
+- BMI (gender, height, weight)
+
+- Stick Models
+
+- Key Points
+- Affinity Vector Fields
+
+- Hour-Glass Model
+- Face Mesh
+
+- Stop Gradient Connection :

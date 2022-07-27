@@ -19,9 +19,13 @@ ___________________
 
 * Do Google Search & Be Patient
 
+=> Most of Compute Heavy Stuffs in python is written in C/C++
+
 
 
 TIPS
 ---
 
 - There is no right or wrong ans, It's all abt how do you tackle the things !!
+
+

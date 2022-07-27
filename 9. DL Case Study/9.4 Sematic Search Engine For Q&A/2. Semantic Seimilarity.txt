@@ -1,0 +1,48 @@
+2. Semantic Seimilarity
+---------------------
+
+-----------
+
+- Nearest Neighbor Search
+
+
+------------
+
+-> Semantic Similarity instead of Keyword based approach (Elastic Search - Inverted Indexes + Scoring)
+    |
+     - Synonyms  (Software based)
+     - Sentence Vec (ML/DL)
+
+* Objective :- measure similarity between 2 que (via Sentence vectors)
+
+* Sentence Vectors (NLP)
+------
+- Compute Similarity via Eucledian Distance mechanism
+
+ 1. Eucledian Distance
+ 2. Cosine Similarity
+
+* Nearest Neighbor Search :
+  ---
+  -> Finding similar Question (ie Semantically)
+
+=> Elastic Search supports storing setence vectors
+
+
+* Containarization
+------------------
+- for solving Deployment ambiguity among diff teams
+
+* Docker
+  ---
+  - LightWeight System (where we dont need to load whole guest OS)
+  - Each Container runs some App
+
+  -> VM are bulky whereas Docker is lightweight
+
+  - Docker has different file system compare to your host local system
+  - by default docker - containers bundles with your app & linux distributions (ie CentOS)
+
+  - Helps to create Environment that is platform agnostic
+
+=> Kubernetes helps to manage the Containers in Distributed fashion (ie Orchestrating)

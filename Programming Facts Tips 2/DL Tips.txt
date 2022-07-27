@@ -1,3 +1,5 @@
 DL Tips
 
 - To checkpoint the Model at end of every epoch ypu can use lib :- h5py & tf.keras
+
+- At the end all things boils down to how & what your loss function is defined

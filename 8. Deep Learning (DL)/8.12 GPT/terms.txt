@@ -1,0 +1,13 @@
+terms
+
+- Multi-Head Attention
+- Masked Multi-Head Attention
+
+- Decoder-Only Stack
+-
+
+- Few-Shot Learning
+  Zero-Shot learning
+
+- Sparse Attention
+- Model Distillation

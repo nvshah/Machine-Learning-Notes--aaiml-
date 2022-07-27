@@ -1,0 +1,52 @@
+2. Pose Estimation Details
+---------------
+
+=> Blaze Pose is Pose Estmation Research work to run on smart-phone
+
+BenchMark Dataset
+- Cocodataset
+- mpi dataset
+
+-> OpenPose run & works on images (ie take img as inp & give key point & connection for same)
+
+--------
+
+* Blaze Pose (Research Paper 2)
+------
+- designed by google
+-> optimize for video based (in addition to images)
+-> optimized for fewer people
+-> Can run on Mobile Phones
+
+- Performance Metrics :
+  ---
+  pck h@0.5 :-
+    percentage of correct key-points
+    headbone @0.5  // 50% of headbone link   (inorder to identify correctness of prediction)
+
+  pck @0.2
+    at torso length
+
+  Avergae Precision & Average Recall
+
+
+* Encoder-Decoder Model :
+  ----
+  - Hour Glass Model
+  - Skip Connection helps to train more deeper models
+
+  - 3 images for each keypoint
+
+  - Heat Map :- tells you where are the keypoint
+    Offset Map : how much offset is there for keypoints
+
+  Coordinate Regression Network:
+  - Not ran every time
+
+  Stop Gradient Connection :
+   - No Backpropogate
+
+
+* MediaPipe (for BlazePose)
+-----
+- library for BlazePose

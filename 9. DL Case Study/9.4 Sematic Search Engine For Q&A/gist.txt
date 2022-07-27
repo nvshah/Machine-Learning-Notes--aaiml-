@@ -1,0 +1,24 @@
+gist
+
+* Elastic search :
+  - offers storage that supports inverted indices
+  - Inverted Indices + Scoring Function
+  - Allows to store sentence vectors
+
+  - uses some form of Nearest Neighbor Search
+
+* Keyword Search Result
+   - TFIDF
+
+* Semantic Similarity
+
+* 2 approaches :- 1. Keyword similarity & 2. Semantic Similarity
+
+
+-> title -> vector (USE) -> index via ES
+
+
+=> Ealstic Search doesnt care which model you use to get Sentence/Query Vector
+   as far as You get the Query Vectors
+
+* Most of Copanies like Quora uses Something alike ES with Semantic Similarity

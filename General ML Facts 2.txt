@@ -19,3 +19,6 @@ General ML Facts 2
 
 => ML is not only about great theory stuff its also about engineering stuff
    focussing on great architecture & related things
+
+*
+=> As long as Loss is Differentiable, you can Do BackPropogation

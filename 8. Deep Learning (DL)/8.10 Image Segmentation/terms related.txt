@@ -1,0 +1,8 @@
+terms related
+
+- Conv, Padding, Strides, Max-Pooling, | CNN
+- U-nets
+
+- Jaccard Similarity (IOU)
+
+- ResNets

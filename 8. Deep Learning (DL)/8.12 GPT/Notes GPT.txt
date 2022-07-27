@@ -1,0 +1,162 @@
+Notes GPT
+---------
+ref : https://drive.google.com/file/d/13Qpgvgav78aarA-4z3nOLS8KKtxd3mvY/view
+
+* Generative Pre Training (GPT)
+--------------------------------
+
+-------
+
+
+--------------------------------
+
+
+* Recap :
+-------
+
+- GPT is concept borrowed from "Transformers"
+   \
+    Extension or Innovative hack over transformer
+
+- BERT is also considered as a simplified etension over Transformer
+  (It's Encoder only Stack archi.)
+
+RECAP
+
+- In Transformer, Decoder works according to TimeStamps
+
+* Masked Multi-Head Attention :
+  - Till Position n (or time n) all words are visible
+    but after n, words are assumed as not visible
+    &
+    this way of ignoring words & considering words till `n` is know as Masking
+    whilst doing Multi-Head Attention in Decoder Portion
+
+* Bert
+  - Self attention : look before & after as well (Encoder Part)
+  - There is no concept of timestamp in Bert (as Its Encoder Focussed Model)
+  - At any point you can see all the inputs (or words)
+
+* GPT based :
+  - It's a Masked Self-Attention (ie Decoder only Model)
+  - At any point you can see uptill time t only !
+  - So it works like a Time-Step based Model
+
+
+* Decoder-Only-Model :
+  ---
+  -> In typical Transformer Model, You have Encoder-Decoder Component/Layer
+     Which
+     in Case of Decoder-Only Model will be absent
+
+     So its Decoder Only Stacked
+
+* GPT1 Language Model :
+  ---
+  - You pre-trained with next word prediction
+  - very similar to Bert
+  - GPT1 was kinda introduction to Decoder-Only Model
+  - Decoder-only stack w/o Encoder-Decoder Attention Model
+  - max sentence length in terms of words (512)
+
+=> So all in this You use Decoder-Only Stack for Feature Extraction
+
+* GPT2
+  ---
+  - minor changes in GPT1
+  - longer sentences (1024)
+  - increase vocab size
+  - added 1 more Layer norm after input block (apart from each logical block)
+
+  Token Embedding Dimen :-
+    - Tokens(Words) that gets generated are combined into 1 vector of some dimen
+    - So each of token gets embedded into how many dimen vector
+      this is kinda Hyper-Param
+
+    - It includes Matrix Multiplication
+
+  Zero-Shot Learning :
+  ---
+   - Goal of GPT2
+
+  Few Shot Learning :
+
+   Let say we want to train for Question Answer Task
+   - Pretrain on NWP (next word prediction) task
+   - then you Finetune Model on some question answer from corpus
+
+     - Eg providing some Question-Answer from Corpus
+
+  Zero Shot Learning :-
+   - Only PreTrain & No FineTune
+   - So now finetuning required after Pre-Training
+
+
+* Generative Model with Priming :
+  ---
+  - Priming means providing some context to word
+
+Takeaway
+=> Decoder only model with lots of parameters & large size data can work well on huge number of tasks
+
+----------------------
+
+* GPT3
+--------
+- 300 billion worth of text is used  // Common Crawl Data
+-> Innovation :-
+
+ Sparse Attention :
+  ---
+  -> Let not use all the words for attention
+  -> use subset of them
+
+  - Attention basically is Matrix Multiplication
+    So you can make parse some of them
+
+  - helps to control time complexity
+
+
+* Failure Cases (GPT)
+  -> It is good for extracting data & patterns but It's not as much good with reasoning & logic
+  -> GPT models can be biased in some cases
+
+  Limitations
+
+  - Extremely Expensive to train
+  - BlackBox kinda API from openAI is provided
+
+  - Interpretability (No body knows how it works)
+  - Poor Sample Efficiency
+    -> Even after providing billions of words (text size data) still model is not as much or even
+       good compare to human
+
+
+* Transformer GoodSide
+
+[AMAZING]
+=> Transformer based model can be avoid from Overfit even when we have large number of parameters
+   |
+   Transformer Models (like GPT), we can make them not to overfit even when there are lots of parameters
+
+
+* Model Distillation :
+  ----
+  -> Take a large model (alreay trained & infered)
+     Use its input & output & form a dataset
+     &
+     take this dataset generated from large model to
+     then train a smaller model (ie with less parameter comparatively)
+
+     Research has shown that this smaller model (transformer with less params) can learn the
+     Mapping in dataset (gen from larger one)
+
+
+=> For Generative Purpose : GPT models are often used
+
+   For Text-Encoding Vector : BERT is often used (as it has ability to look bidirectionally)
+
+
+* USE (Universal Sentence Encoder)
+  ---
+  - to encode sentence

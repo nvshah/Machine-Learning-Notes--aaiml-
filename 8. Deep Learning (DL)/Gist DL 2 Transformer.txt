@@ -1,0 +1,13 @@
+Gist DL 2 Transformer
+----
+
+* Transformer is a Encoder-Decoder Archi
+
+* Bert & GPT are simplified or kinda concept arrivied from Transformers
+
+  GPT :- Decoded Only Archi
+  BERT :- Encoded only Archi
+
+
+-> Revolution of Models (Time Series)
+   ARIMA -> LSTM -> Transformer -> BERT

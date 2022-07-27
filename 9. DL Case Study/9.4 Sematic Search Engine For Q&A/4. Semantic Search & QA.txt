@@ -1,0 +1,24 @@
+4. Semantic Search & QA
+-------------
+
+* Elastic Search & Q&A via 2 ways
+  1. Keywords
+  2. Semantic Search
+
+=> All the scoring function thatwe have for Elastic Search works well for non-negative score
+
+Steps :
+---
+
+1. You can use USE (universal sentence encoder) either from online ie dynamically
+   or from your local storage
+     |
+     Embed the USE to a variable
+
+
+=> There are 2 ways to do search
+   1. Keyword Search Results
+   2. Semantic Search Results
+
+
+* NN (Nearest Neighbors) implementation in ES

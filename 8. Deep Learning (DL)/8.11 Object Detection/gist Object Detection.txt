@@ -1,0 +1,52 @@
+gist
+
+-> Standard Dataset used in Object Detection :- COCO dataset
+
+   Standard Dataset used for Images :- ImageNet
+
+-< Ideas :- BatchNorm, Stride Conv, No Pooling, Pre-Trained Model
+
+Steps Involves :-
+
+1. Feature Extractor (via Striding & DownScaling)
+   - DarkNet-53
+2. Object Box Bounded Encoding/Vector
+   - find possible Boxes around a cell (as a center)
+
+
+=> You do Bounding Box things (ie Encoding tensor) on Grid obtained after downsampling via Feature Extractor
+
+=> You have Bounding Box for each of the cells
+    |
+    - So We are operating in the space of cells & not in the space of Pixels
+    - Also this Bounding BOx things we are not doing for entire image but for cells of that image
+      (otherwise it would be slow if done for entire image & image is extremely large)
+
+Hyperparameter :- #Boxes
+
+------
+
+How it Works (Gist)
+
+- Let say you have some images
+  \
+   Training :-
+   - then you will scale down those images first (via Striding, DownSampling)
+   - You'll convert to Bounding Box Representation ( from cell)
+   - Then you will calculate the Loss
+
+  -> So when you downsample your Image, You're getting closer to the Possible Objects in the Image
+
+
+--------
+
+* YOLO V3
+  --
+  major things happening :
+  1. DarkNet-53,             // kinda preprocessing (feature extractor)
+  2. MultiScale-Prediction  // For multiple grid sizes
+  3. FPN   //
+
+=> Each Convo used is followed by Batch Normalization & again Followed by Leakr Relu's
+
+-> Use Filtering & NMS, otherwise number of Boxes you have will be enormously large

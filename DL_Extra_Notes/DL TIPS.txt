@@ -24,6 +24,23 @@ DL TIPS
      there are more weights variable between 2 FC-layers, comparatively
      So need some sort of Regularization
 
+=> If you are overfitting the model then add the dropout
+
 => Better tip is to add Dropout after every Fully Connection Layer !!
 
 *) BLUE Score :- specialized metric for transformation of sentences mesaurement
+
+
+-> Whenever you see Sequence/Timer-Series Data you must always click about
+   - RNN, Attention, Transformer, LSTM, etc...
+
+   Whenever you see about Image Data
+   - CNN,
+
+=> Whenver You have small amount of Data -> You must look for Transfer Learning
+
+   Few Samples of Data => Transfer Learning
+
+=> Whenever you have audio data consider using Spectograms (instead of Fourier Transforms)
+
+-> Gradient Clipping : is used primararily to avoid exploding gradient problem in Recurrent NN

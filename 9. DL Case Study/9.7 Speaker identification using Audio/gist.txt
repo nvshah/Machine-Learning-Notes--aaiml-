@@ -1,0 +1,39 @@
+gist
+
+Concepts :-
+--------
+CNN,
+Transfer learning
+Fourier Transform  (for Audio to Image)
+Keras
+
+Few-Shot Learning
+Siamese Network
+
+_________
+
+Tips :
+
+=> Whenever you have audio data consider using Spectograms (instead of Fourier Transforms)
+
+Key Take Aways :
+
+-> Siamese Network with Few-Shots Learning
+    \
+     - Similar & Dissimilar Pairs Formation to get d-dimens data
+
+   -> Once you get d-dimens data you can train model to classify the things you need (ie Speakers/Persons)
+
+--------
+
+-> Audio -> cut into chunks -> get image ->
+   train on existing Image Model (Pre-Training)  // via reusing Archi & training Weights
+   -> So that we can get d-dimen for images
+
+   Now we will train a model for my 6 speaker & 36 Img that can classify
+
+* Transfer Learning & Few-Shot Learning are useful at many instances
+
+  Few-Shot Learning :
+    Eg - Face Detection (few faces per person)
+

@@ -1,0 +1,15 @@
+Remember Points
+
+* Time Series :
+  - In classical time series model you have some Moving Averages, trends, seasonality
+    or some Integratioon Factors
+  - Arima type Model
+
+
+* Vertica : Columnar based Store
+  Hive
+  PySpark
+
+=> Anomaly is widely used technology for measuring & mapping Data Quality in Data science
+
+- SparkLibMl

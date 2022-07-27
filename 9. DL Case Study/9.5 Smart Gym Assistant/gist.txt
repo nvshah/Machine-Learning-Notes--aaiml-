@@ -1,0 +1,21 @@
+gist
+
+Dataset (Benchmark)
+- coco dataset
+- mpi dataset
+
+-> Open Pose
+-> Blaze Pose
+
+
+* MediaPipe
+
+=> angle is best way to identify different poses
+
+=> Encoder & Decoder's Convolution network will not change because of Regression Network Learnings
+
+
+* Pose Estimation -> Pose Match -> Pose Correction
+
+Tip
+=> Wherever Model is not confident enough, we need Human Intervention (ie Manual Labelling)

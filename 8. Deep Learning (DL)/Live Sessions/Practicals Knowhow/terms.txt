@@ -2,3 +2,5 @@ terms
 
 - Custom layers
 - Gradient Tape
+
+- Computational Graph

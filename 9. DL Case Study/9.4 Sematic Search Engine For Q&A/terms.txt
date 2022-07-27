@@ -1,0 +1,19 @@
+terms
+
+- Inverted Indexes
+- Elastic Search
+
+- SOLR
+- Kibana
+
+- Universal Sentence Encoder (USE)
+
+- Kubernetes
+- Docker
+
+- NMSLib
+- AWS Elastic Search
+
+- NDCG metrics
+
+- BERT vs USE4

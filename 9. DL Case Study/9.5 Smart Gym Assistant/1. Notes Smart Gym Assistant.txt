@@ -1,0 +1,93 @@
+1. Notes Smart Gym Assistant
+----------------------
+
+------
+- Stick Models
+
+-> There are 2 main things :
+   1. Key points (representing body parts)
+   2. Edges representing the connection between key points (Affinity Vector Fields)
+
+- Confidence Maps   // to get more info to model (whilst training)
+______________
+
+1. Define & Understand the Problem
+
+* Simplified/High Level Design
+
+  - Pose Estimation (from Camera)
+    ( Pose Estimation is standard problem of Computer Vision )
+
+
+* Key Points & Pose Estimation :
+  ---
+  -> Pose is typically represented via Key Points & connection between those Key points
+  - PCKH is metric for evaluating the pose estimation
+
+  - FPS is also important thing whilst tracking
+  - Selected Frames
+
+---------------
+
+* Research Paper
+
+* OpenPose      (Research Paper)
+-------
+ Archi,
+ Loss metrics,
+ Performance
+
+- Multi-Person System
+  - Application Eg :- Football Game
+
+- Realtime Solution
+
+Architecture (Open Pose)
+---
+ -> Inpt :- Color Image
+ -> Feature Extractor (1st 10 Layer of VGG 19)
+    - intializa via VGG19
+
+ -> Multi Stage CNN
+    - helps to detect poses of person of variable scales
+
+ -> 1 Stage : 2 Branch (ie 2 CNN Model)
+
+
+Branch 1:-
+  - predict stack of images
+  - try to predict the set of 2d Confidence Maps of Body Part
+
+ -> S_t := Set of 2D confidence maps of body parts
+     |
+      -> For every part of Human body we will have Confidence Map
+      -> Predicted Confidence Map & Ground Truth Confidence Map for each prediction of body parts
+
+     Ground Truth :
+       - Exactly in Picture at which pixel is the particular part (eg let say Elbow)
+       - computed simply using 2D Gaussian
+
+Branch 2:
+ - try to predict the connection between diff body parts (ie Key points)
+ - Affinity Fields :
+   There will be affinity fields for each edge
+
+ - Here ground truth is Edge|Connection
+   So
+   how to represent it (ie How to create Affinity Vector Field ?)
+
+
+=> Thus all in all for stage 1
+   - Branch1 is representing the body parts
+   - Branch2 is representing the location of connection of these body parts
+
+   1. Confidence map of parts
+   2. Vector Fields of Part Affinities (edges)
+
+
+* Graph Based Algorithm to Solve Overlapping Problems
+  --------
+  K-Partite Graph
+
+
+=> number of stages is a Hyper-Parameter

@@ -1,0 +1,8 @@
+terms
+
+- transfer learning
+- siamese network
+
+- audio-image
+- forier-transform
+- Spectogram

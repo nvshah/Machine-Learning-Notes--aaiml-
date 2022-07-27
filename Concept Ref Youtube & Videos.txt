@@ -5,3 +5,19 @@ Concept Ref Youtube & Videos
 ---- DL ----
 
 (Visual Processing) https://www.youtube.com/watch?v=v20-E_2bT2c
+
+
+-------
+Follow these person for ML
+
+- Jef Hinton
+- Alex Mola
+- Yan leeCun
+- Andre Ng
+- Fal Fel Li
+- Richard Socher (NLP Guy)
+- Christopher Manning
+
+- Deep Mind
+
+Conference :- ICML, NIFS, CVPR, ICLR

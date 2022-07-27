@@ -1,0 +1,3 @@
+Practcial
+
+- UpSampling2D  // Image Segmemntation

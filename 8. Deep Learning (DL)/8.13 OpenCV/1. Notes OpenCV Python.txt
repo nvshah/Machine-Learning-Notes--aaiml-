@@ -1,0 +1,110 @@
+1. Notes OpenCV Python
+---------------------
+ref :-
+- https://www.youtube.com/watch?v=SgzPF0_dLMY
+- https://colab.research.google.com/drive/1TH0acCAGg6R3ZYJSvJ4HSsX2Y2EcO1CQ?usp=sharing
+_____________
+
+- Gaussian Mixture Model + K-Means
+
+-> Convolution is a concept from Signal Processing
+
+=> Image is just Matrix
+
+=> NOTE :
+   the kernel used in Computer Vision is for Convolution
+   The kernel used in SVM is for Projecting Data to Higher Dimensions
+
+--------------
+
+* Modern Computer Vision
+  - Digital Signal Processing
+  - Image Processing
+  - ML, DL,
+    (Matrix Algebra), SOTA
+  - Computational Photography  (Lots of Mobile Devices offer this in camera feature)
+  - MultiView Geometry
+    - task to create geometry of an image via multiple views capture by the Camera of an image
+
+-> OpenCV is most influential library in Computer Vision
+
+-----
+
+* Problem 1 : Image Blending
+---------------------------
+
+* Image & RGB & Matrix
+ -----
+ - You can think image as combination of 3 matrices (ie each matrix corresp to R, G, B)
+ - Img is stack of Matrices (R, G, B)
+
+ - Lots of Img Processing Operation are Matrix Operations
+
+ - Img Blending :- Addition of matrices of 2 diff images
+    |
+     - Weighted Matrix Addition
+        - Providing some weights to pixels of corresp Image
+ => Thus Image Blending is simply weightage addition of matrices
+
+ * Img Resizing : Interpolation, BiCubic Interpolation
+
+ - Gamma : you can use gamma to adjust darkness or lightness of the image
+    \
+     Will be added at the end after applying Weighted value for resultant pixels
+
+
+* Problem 2 : Video Survellience :
+------------------------------
+
+- Background is Fixed, often
+  Task : Detect person in video
+
+- Video : Seq of images (ie Frames 24 or 32 fps)
+
+* Image Subtraction : (Background Subtraction)
+-> Simplest way to detect moving obj in video is via Subtraction of diff frames(ie Images)
+
+-> With the help of OpenCV lib, you can read each frame of Video as an Image
+
+* BackGroundSUbtractionMOG
+  ----
+  MOG : mixture of Gaussians
+
+  -> Background Segmentation
+  - Foreground Background Algorithm
+    \
+     Foreground :- new item are appearing/detected
+     Backgound :- Stationary part
+
+
+* Problem 3: Image Blurring using Convolution
+--------------------------------------
+  (Signal Processing Kinda Problem)
+
+ => Convolution is a concept from Signal Processing
+
+ - Try to place Convolution Kernel on each of possible places in image you can plcae it.
+
+ -> We can use Image Convolution for Blurring the images
+ -  Convolution is 1 way of averaging
+
+ -> Gaussian Kernel, Denoising Kernel
+
+ - Gaussian Blur
+    \
+     In Gaussian Center has large weight & as you go away its small weight
+
+ - Median Blurring
+
+QUE) Convo NN vs Classical Img Processing
+  ->
+   Convo NN :- kernels are learnt from the data
+   Img Processing :- often things are HandCrafted based on Research
+
+
+-------------------
+
+* Extra
+
+- Shift Features
+- Image Statistics

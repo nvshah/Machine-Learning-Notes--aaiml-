@@ -1,0 +1,74 @@
+Notes 1
+--------
+
+-> Netflix uses Amazon EWS
+
+------
+Topics
+
+* PySpark
+* Hana
+* Cassandra
+
+--------
+
+Aim :
+ - how to chck if data you have at your org is of good quality
+
+1) Platform & Techniques (for High Data Quality) ??
+->
+  KPI, Utilization (CPU, RAM,...)
+  Anamoly Detection
+
+ * Anamolies in Time-Series Data | techniqyes ??
+   - Time-Series Anomaly Detection
+
+   - Detecting Anaomalies is all about Forceasting (Time Series) & if
+     forcasted prediction is differ a lot then that is a alaram
+
+
+* DQM (Uber)
+
+  - Multi Dimensional Time Series
+  - PCA & lower-dimen projection
+  - Time Series Approach & Anamoly Detection  (via Forecasting)
+     \
+      - on lower dimensional data
+
+    Eg 1000 dimen data -> take down to 10 dimen data
+       &
+       perform time series anomaly detection on 10 dimen data
+
+  - PySpark & Hive
+
+
+* Time Series Anomaly Detection :
+  ---
+  Holt-Winter Models
+    - Exponential Moving Avg
+    - Trends
+    - Seasonality
+
+  => Time Series Anamoly detection on top 5 Principal Components
+
+
+* Why Exponential Moving Avg (Exponential Smoothing) ??
+->
+  - More weights to recent data
+
+
+* Table-Level Scores :
+
+-> There are 2 kind of Time Series
+   Time-Series Metrics Anomalies
+   Time-Series at Table-Level Anomalies
+
+  Table-Level Score
+  Metric-Level Score
+
+
+* Table Lineage :
+  ---
+  - Some sort of combination of multiple tables (ie Join, combine, aggregate, etc...)
+  -> When they see lots of tables has low score then it will generate Table Lineage like structure to track
+     that down

@@ -1,0 +1,19 @@
+pract python
+
+NOTE :-
+-> Google colab cannot read .avi video files
+
+- ffmpeg  // convert videos to othr format
+
+----------------
+
+
+- imread()
+  cv2_imshow()
+
+  addWeighted()  // for blending images
+  resize()
+
+  VideoCapture()
+
+  filter2D()

@@ -1,0 +1,17 @@
+Notes.txt
+
+- huggingface library
+
+
+---------
+
+* Tokenization
+
+* Sub-Tokenization
+  ------
+  -> smart tokenization system that recognize the diff form (ie adj, adverb, etc...) of same words
+     Eg fast, faster
+
+  Character Based Models
+
+  -> Not every Transformer based model utilises the SubTokenization, but some of them do

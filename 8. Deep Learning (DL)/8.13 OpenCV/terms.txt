@@ -1,0 +1,14 @@
+terms
+
+- Computer Visison
+- Interpolation, BiCubic Interpolation
+
+- Background Subtraction  / Image Subtraction
+- BackGroundSUbtractionMOG
+
+- Gaussian Mixture Model & K-Means
+
+- Image Statistics
+
+- Optical Flow
+- Oclusions

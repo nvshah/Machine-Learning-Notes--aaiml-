@@ -1,0 +1,49 @@
+1. High Level Design
+-----------------
+
+* Inverted Index
+---
+ - When Key, Val is not available (so we can't use Hash-Map)
+
+ - Words as the keys
+   &
+   Documents in which this word occurs as a values
+
+ Score(Q*, Qi)
+  - Tf-IDF  // used to priortize the doc from eligible candidates
+
+
+* Elastic Search
+------
+- NoSql DB
+- Data Structure that implements the Inverted Index &
+  also
+  provide scoring capabilities
+
+  Default Scoring Function : Tf-IDF
+
+
+* Distributed System
+---
+ - Load Balancer
+
+ -> When QPS (ie query per seconds) count is more than what single server can handle then
+    you need Load balancer
+    that distributes loads among servers in Distributed Fashion
+
+    Thus You need to run Elastic Search on all these servers !
+
+ => For this You need Distributed Inverted Index SYstem
+
+ Distributed Inverted Index System
+ ---
+
+* Thus Elastic Search incorporates:
+  - Inverted Indices, Scoring, Distributed Fashion, Realtime
+
+
+* Elastic Search vs Redis :
+  ---
+   Elastic Search :- Distributed Inverted Indexes
+
+   Redis :- Distributed Key-Value

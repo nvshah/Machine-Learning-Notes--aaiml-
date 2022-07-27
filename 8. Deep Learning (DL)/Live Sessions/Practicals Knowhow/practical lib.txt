@@ -1,5 +1,7 @@
 practical lib
 
+=> Tensorflow at the end does all things by buidling Computational Graph
+
 * keras
   - Sequential()
 
@@ -27,7 +29,9 @@ attrib on model instance :
 
 * h5py :  // to checkpoint & store the models
 
+* transformers
 
+  - BertTokenizer
 -----------
 
 * tensorboard :
@@ -42,3 +46,7 @@ Remember :
 - param :- from_logits  // bool
              |
               -> check if need to convert to probability after final output
+
+=> BufferSize is used for Shuffling the Data  (in TensorFlow)
+
+=> Thumb Rule : Convert any data into TensorFlow-Dataset

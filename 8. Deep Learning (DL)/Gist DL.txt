@@ -18,6 +18,8 @@ Gist DL
 
 => Keep Small Learning Rates when you FineTune Your Model
 
+=> BatchNorm ensures that even Deep in your networks your inputs are normalized
+
 -----
 Basic Essential Concept
 

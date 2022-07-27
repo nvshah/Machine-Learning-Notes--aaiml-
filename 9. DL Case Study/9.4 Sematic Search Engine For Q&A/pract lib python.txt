@@ -1,0 +1,4 @@
+pract lib python
+
+- tensorflow_hub
+- tensorflow

@@ -1,0 +1,7 @@
+lib ref notes
+
+=> Tensorflow at the end does all things via Computational Graph
+
+- @tf.function  // decorator for func -> TF graph conversion
+
+- GradientTape

@@ -1,0 +1,26 @@
+2. Smart Store Design
+---------------------
+
+
+--------
+
+- Ip-Cameras
+
+------------
+
+-> Data Collection :
+
+-> Geometry Hacks needs to be incorporated into the solution
+
+- People Counter : (Heat Map)
+
+* Pose Detection vs Object Detection (Bounding Box)
+----
+ - Pose detection :- MediaPipe
+
+ - Object Detection :- OpenCV (Bounding Box things)
+
+
+* Adjacent Camersa:
+  ---
+  - track person via relative position of cameras & via diff timestamps

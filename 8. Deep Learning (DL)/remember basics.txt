@@ -39,3 +39,9 @@ TensorFlow/Keras :- allows to add diff regularization at diff layers
 => Depth of Kernel will be same as depth onf Inp Tensor I've
 
 => Max-Pooling does not have any Trainable Param
+
+* Decoder-Only Stack vs Encoder-only Stack
+  Masked Multi Head Attention vs Multi Head Attention
+
+  Multi Head :- Focus on all words
+  Masked :- Focus till now

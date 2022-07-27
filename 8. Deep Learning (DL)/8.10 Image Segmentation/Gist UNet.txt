@@ -1,0 +1,13 @@
+Gist UNet
+-------
+
+-> UNets is all about Image Segmentation
+
+-> It involves primariliy 2 operation
+   - UpConv
+   - Crop & Copy
+
+* UpConv :- UpSampling Followed by Convolution
+
+=> The things that makes UNets outstanding is
+   - UpSampling, Residual Networks (alike impl)

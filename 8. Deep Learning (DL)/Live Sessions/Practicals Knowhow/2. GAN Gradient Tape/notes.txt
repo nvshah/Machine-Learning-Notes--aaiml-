@@ -1,0 +1,81 @@
+-----
+ref :
+https://colab.research.google.com/drive/1Vr3H5saeW-Hjm0m9rxqDwbn3jIVVw8k2
+
+-> Automatic Differentiation (Tensorflow -> GradientTape)
+-> Transpose Convolution
+
+TIP
+-> While working with Tensorflow convert your numpy array to tensorflow dataset !
+
+=> Tensorflow at the end does all the things by building computational graph
+
+=> #Dense Neurons := HyperParam
+-----
+
+
+* GradientTape
+  - Persistent & Non-Persistent Gradient Tape
+
+  If you define x as a variable you dont need to watch it before doing gradient computation
+  otherwise
+  you need to watch it if its a constant
+
+
+* DC GAN (Deep Convo GAN)
+
+  - DeConvolution (Transpose Convolution)
+    -> DeConvolution (Transpose Conv) is imp in case of Generator
+
+  -> Generator Model uses Transpose Convolution excessively
+
+
+* Generator & Descriminator :
+----
+ => Discriminator & Generator are Adverserial
+    - they want to do different things
+
+ -> Discremninator recieves 2 types of images
+   (real images & fake images)
+
+ -> Generator tries to fool the Descriminator
+   (ie the image from generator is considered as fake image for discreminator
+    & If discriminator recognize this fake img as 1 (ie real) then generator succeeded infooling it.
+    So
+    Generator tries to fool the discriminator in this way & thus this way
+    optimizing will make Generator to generate img similar to Real-Images
+
+ Epochs -> each epoch 16 fake img generate from Generator
+ CheckPoints :
+ ---
+  - Generator Optimizer
+  - Discriminator Optimizer
+
+=> test random vectors purpose is just to plot the images (we generate)
+
+* Train :
+----
+ - Creating Batch Size Normal Vectors :
+   \
+    -> Eg 256 * 100
+
+ -> Generator will have its own parameters
+    Discriminaotor will have its own parameters
+
+ -> Using ADAM Optimizer
+     \
+      generator optimizer    -> ADAM
+      discriminator optimizer  -> ADAM
+
+ -> Dataset is Batch dataset with Mnist 256 batch size
+
+ - Prediction size from generator model is 16*28*28*1
+   whereas input size to generator is 16*100
+   where 16 is batch size
+
+ Steps
+
+ 1) Create Noise
+ 2) Create Tapes
+
+  #Dense Neurons := HyperParam

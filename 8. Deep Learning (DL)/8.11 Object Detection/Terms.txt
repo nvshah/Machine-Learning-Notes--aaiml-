@@ -1,0 +1,16 @@
+Terms 
+
+- DarkNet
+- ResNet
+
+- Bounding Box
+
+- COCO dataset
+
+- Inception Network
+- Effective Receptive Field
+
+- Anchor-Boxes
+
+- Multi-Scale Prediction
+- FPN

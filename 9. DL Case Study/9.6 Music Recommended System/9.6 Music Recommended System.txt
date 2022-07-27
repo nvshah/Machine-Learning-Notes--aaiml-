@@ -1,0 +1,23 @@
+9.6 Music Recommended System
+------------
+
+* Metric:
+-> Precision @top k
+
+* Features
+
+- Currently Trending Songs
+- Search History
+- Artist Data
+- User-Song Affinity
+
+- Passive Song Listening List
+
+
+* Train-Test Split
+-> time based
+
+
+=> Recency plays extremely important role in Music Recommended System
+
+-> You can visualize Content based similarity also as a UnSupervised Learning

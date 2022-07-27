@@ -1,0 +1,168 @@
+1. Intro Img Segmentation
+-------------------------
+
+
+----------
+REMEMBER
+
+- UpConv is reverse to MaxPooling
+
+- Copy & Crop Operation is inspired from Skip Connection
+
+
+---------------------
+
+* U-Nets
+
+- Img Segmentation is also referred to as "Semantic Segmentation"
+
+- Objective :
+   - color each of unique logical segment with a unique color
+   - Pixel level Segmentation
+
+-> Input : Image
+   Output :- also Image (with segmented colors)
+
+* Application :
+   - Blurred background in Selfie
+
+* Dataset :- CocoDataset
+
+---
+
+* Segmentation vs Object-Detection :
+  ---
+   - Segmentation : Pixel Level
+
+   - Object Detection :- Bounding Box
+                       -> YOLO for Objec Detection
+
+  -> Segmentation (pixel-level) is harder task as compare to Object-Detection (Bounding Box)
+
+  -> Bounding Box (Object Detection) is Faster & thus often used in Self-Driving Car
+     whereas
+     Pixel-Level (Segmentation) is slower comparatively
+
+
+* Performance Metric :
+  ---
+  - How to measure if Model is working ?
+
+  1. Avg Precision & Recall for each class/color.
+     (by averaging over pixels)
+
+  2. Jaccard Similarity (IOU)
+
+     IOU :- Intersection of Union
+
+     - We use avg IOU over multiple regions
+
+     - IOU : best case -> 1
+             worst case -> 0
+
+
+* Algorithms:
+  --
+  Clustering
+  Edge-Detection
+  Graph-Theoritic ( Spectral Clustering )
+
+  But performance of DL based approach is much better than above
+
+  DL based approach
+  - UNets
+  - Fully Convolution NN
+  - Mask R-CNN
+  - SegNet
+
+  Unets : for biomedical imgs
+
+
+* UNets :
+  --------
+   5 type of operator :
+     - conv 3*3, RELU
+     - copy & crop
+     - maxpool
+     - up-conv
+     - conv, 1*1
+
+  -> If we do Conv, RELU without padding then our img size reduces
+
+  => maxpool ;- use to reduce size of tensor (for Image in CNN)
+  => conv :- use to manipulate image (via Conv Operation ie Kernel)
+
+  In U-Nets,
+
+  Contracting Path
+  -------
+   -> Image size gets reduced
+
+   -> the image size is getting half because of maxpooling
+      but
+      Since there is increased in number of Convolution unit, there is increase in depth
+      of the image (ie doubling)
+
+   -> So the size of image (ie lenght & breadth) reduces
+      &
+      the depth of tensor is doubling
+
+  UpConv :
+  ---
+  => UpSampling followed by Convolution
+
+  -> Let say if we want to scale our tensor(img) from 28*28 to 56*56 then
+     we will repeat each column & each row &
+     this way we can get 56*56 from 28*28 via UpConv operation
+
+  -> It is also called UpSampling
+     \
+      double/duplicate the row & column
+
+  -> In maxpooling we reduce whereas in UpConv we expand
+     So
+     We can say that UpConv is reverse to MaxPooling (in terms of Operations)
+
+  Crop & Copy :
+  ----
+  -> It helps to get smaller dimen tensor from larger one
+   - Eg 56*56 from 64*64
+
+  -> Inspired from Skip Connections
+
+ => REMEMBER :
+   Whenever you do UpConv, you also did the Crop & Copy operation as well
+ :) UpConv alongwith crop & copy
+
+
+  Expanding Path :
+  ------
+  - As I'm going up in Expanding Path (after UpConv & Copy_and_Crop), I also have input from Prev layers
+    (ie Kinda Skip Connections)
+
+    Flow of info From Prev layers to layers much ahead as well
+
+  - Copy & Crop is inspired from Skip Connections
+
+  -> We use Crop & Copy to borrow the info from Prev layers whilst moving ahead in Expanding path (vi UpConv operation)
+
+
+=> Thus so our Image follows path like this in U-Net :
+   |
+   Shrinking Path -> (UpConv + Copy & Crop) -> Expanding Path
+
+   - At the end we can say that we will have a image that will be likely to be Zoomed one of input image
+     ie from 572*572 pixel (inputted img) to 388*388 piexl (Outputted img)
+
+-----------------
+
+* Data Augmentation :
+  --------
+  Core IDea: Dont use raw image
+      \
+       -> Rotate it, shift it or Shear it,... (based on Problem Specific)
+
+[NOTE]
+=> If object is too small, we may miss it
+   |
+   So it is like smaller the object size, we have higher probability of missing it via Unets

@@ -1,0 +1,71 @@
+Notes
+
+* Techniques (for Time Series Forecasting)
+
+1. Moving Window Avg
+2. Uni-Variate Time Series Forecasting
+3. Multi-Variate & Single-Step Forecasting
+4. Multi-Variate & Multi-Step Forecasting
+
+Objective :- Weather Forecast Prediction
+
+----
+
+-> In time series forecasting genrating data is trickiest thing
+
+-> Revolution of Models (Time Series)
+   ARIMA -> LSTM -> Transformer -> BERT
+
+----
+
+1. MWA (Moving Window Avg)
+   ---
+   - mean
+
+
+* Univariate LSTM :
+  ---
+  - At every timestamp we have only 1 variable value (ie temperature) to predict future temperature
+
+  -> 1 LSTM cell can be represented as unwrapped over time
+
+
+* MultiVariate :
+  ----
+  Preprocessing :- same steps (but here you normalize all the 3 features)
+
+  1. Single Step
+     -> Yi is Scalar
+
+  2. Multi Step
+     -> Yi is vector
+
+  => It's not necessary to predict data right now, you can predict for future hours as well
+      \
+       thats denoted by future_target in code
+
+  -> First Dimension is #TimerSeries
+     Second Dimension is size of timeseries
+     third dimension is What feature do you have at each time step
+
+  -> Optimizing using RMSProp
+
+  > MultiStep Output :
+    - Time Series as Inp & Time Series as Output
+
+    - complex archi : inp > LSTM(32) > LSTM(16) > Dense(72)
+
+    - We will have output as 72 values
+
+
+* Build more complex model
+  ----
+  - if performance is not at par
+
+  - via adding more LSTM layers
+    via increasing the number of epochs
+
+
+* Observation
+  ---
+  - because we used more features & longer period (from history), predictions are improved

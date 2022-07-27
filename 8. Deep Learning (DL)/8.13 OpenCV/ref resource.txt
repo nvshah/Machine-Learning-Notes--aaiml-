@@ -1,0 +1,18 @@
+ref resource
+
+-[Colab]
+ https://colab.research.google.com/drive/1TH0acCAGg6R3ZYJSvJ4HSsX2Y2EcO1CQ?usp=sharing
+
+ -[Video]
+ https://www.youtube.com/watch?v=SgzPF0_dLMY
+
+[Smart Store]
+https://drive.google.com/file/d/1NYEvayVzXiv0HiTv7K91LM6HhuPkGXfX/view
+
+---------
+
+tools
+
+- MediaPipe
+
+

@@ -1,0 +1,29 @@
+3. Elastic Serach Docker
+----------
+
+=> There are 2 ways to work with Elastic Search :
+   1. Python Packages
+   2. Web Api
+
+=> You can access application running in Docker-Container via its Port number
+
+* ES :
+----
+
+=> uses json to communicate
+
+- Index :
+   Creating DB in DBMS = Creating index in ES
+
+- Mapping :
+   Define Structure of an index
+- Property
+
+* Flow Gist :
+----
+-> Data (CSV) of Questions
+     \
+      -> title -> USE (universal sentence encoder) -> index via ES on title vector
+
+
+=> The scale of score in case of Keyword Based Search is different from scale of Semantic Similarity Search
