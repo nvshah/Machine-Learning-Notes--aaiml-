@@ -1,0 +1,11 @@
+terms
+
+- Entity Embeddings
+
+- Hadammard Product (Component Wise Product)
+
+- Recency-Frequency
+
+- SCANN
+  FAISS
+

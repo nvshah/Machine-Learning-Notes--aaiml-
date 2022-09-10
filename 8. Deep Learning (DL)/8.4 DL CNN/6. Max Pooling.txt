@@ -26,6 +26,8 @@ Sec :- 4.6
    - You can think Max-Pooling as a Kernel
    - It introduce invariance to the whole System
 
+   - get maximum value for the given area
+
 
 * Most Used Component of Sample NN :
   ---

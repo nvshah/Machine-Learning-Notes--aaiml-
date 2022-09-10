@@ -1,0 +1,39 @@
+Gist Entity Embedding
+
+=> Generally Sparse Repr (Vector) such as TF-IDF, BOW, OHE are in large size
+   &
+   doesnt represent good semantically
+
+=> Embedding are alike Dense Feature vectors
+
+* Entity :
+  ---
+  -> Any object which can be included in ML/DL task
+  Eg - Users, Products, Jobs, Job-Applicants, etc...
+
+  Approaches :
+  1. Sequence based Entity Embedding
+  2. Supervised based Embedding Strategy
+  3. Simultaneous Embeddings of Interacting Entities (MF based techniques)
+  4. Simple Weighted Sum
+  5. Auto Encoder
+
+  RecSys (2 ways)
+  -> Matrix Factorization (2 ways)
+  -> Neural Collaborative Filter (ie Neural CF)
+
+
+* Some New Topics :
+  ---
+  Neural Collaberative Filtering Archi
+
+  Left-Right Combined Archi with Hadammard Product (ie Component Wise Product)
+
+
+* New Technqiyes
+
+  - Product2Vec      ( Seq Data)
+  - MetaProduct2Vec  (Seq + MetaData)
+
+
+-> Whenever there is LSTM, it is 1 inp at a time to model archi

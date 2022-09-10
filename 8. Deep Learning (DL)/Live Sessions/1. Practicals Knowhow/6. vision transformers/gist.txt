@@ -1,0 +1,12 @@
+gist
+
+=> Use Transformer base models alike BERT to perform Computer Vision
+   instead of standard ResNet or CNN based
+
+-> Learnable Positional Encoding
+   - instead of Sinuesoidal Positional Encoding  : (Sin/Cos wave)
+
+   -> So in Fixed PE -> It is fixed via Sin/Cosine Wave
+      But here we want to learn that instead fixing
+
+=> Let model figure out Positional Encoding vector

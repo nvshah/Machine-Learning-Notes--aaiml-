@@ -1,0 +1,75 @@
+3. Session 3 (Maths).txt
+---------------------
+
+- Graph Polynomial (Theory)
+
+
+----------
+
+-> Polynomila Filters in case of Graph Laplacian
+
+-------------------
+
+* Polynomial of Matrices :
+  -----
+  -> It suggests what is max path length possible between given 2 vertices !
+
+  In Graph Theory,
+  -> Polynomial such as A^1, A^2, A^3, ... A^k
+      \
+       helps to decide what can be max path length from vertext Vi -> Vk
+
+
+  * Indirect Aggregation of Neighbors :
+    --
+    For vertices that are atmost k distance away :- A^k * X
+    -> Upto distance of K
+
+  => As here we are doing on nearest neighbors nodes, so it is called as Graph Convolution Layer
+     Analogous to CNN for Image
+
+  -> All of Graph Convolutions are simply Matrix Multiplication using
+     Adjacency Matrix, Feature Matrix & Exponents of Adj. Matrix
+
+     Thus Graph Convolutions is Glorified Matrix Multiplications
+
+* Graph Attention Networks :
+  ------------
+  -> What Transformer are doing via Self Attention is that they are taking each of the token as vertex
+     &
+     building a Complete Graph
+
+  -> Self Attention in Transformer is very similar to Graph NN in Complete Graph
+
+  -> Inspired from Transformer
+
+
+* Graph Laplacians :
+  ------
+  -> Diagonal Degree Matrix using Adj. Matrix
+
+  Polynomial of Laplacian
+  - The weights multiplier we have with Laplacian is same as what weights we consider in CNN
+    |
+    In case of GNN : It will consider what weight to provide at respective edge distance (ie 1, 2, 3...) level
+                     nodes
+                     (Analogy to CNN for GNN)
+
+    This is also called as "Polynomial Filters"
+
+
+  => Laplacian stores similar info as of Adjacency Matrix (but in diff format or way)
+  -> Laplacian is slightly modified version of Adjacency Matrix
+
+  -> Laplacians Capture both Degree Information & Neighbor Information as well
+
+* ChebNet :
+  -------
+  -> Modified version of Laplacian for GNN, (ie modification of Polynomial Filter)
+
+
+* Input & Output for Polynomial Filter Layers :
+  ----
+  (Embedding Computation) :
+  - Weight is given on Neighbors
+    Bias is given for previous output

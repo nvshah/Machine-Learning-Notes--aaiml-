@@ -1,0 +1,9 @@
+terms
+
+- Pyramidal Archi
+- Neural Collaberative Filtering (CF) Archi
+
+
+* Object2Vec
+
+- Infersent

@@ -1,0 +1,13 @@
+DL Concepts
+-----------
+
+- NER (Named Entity Recognition)
+- MLM (Masked Lang Model)   | BERT
+- NSP (Next Sentence Prediction) | BERT
+
+- GMM (Graphical Mixture Model)
+- LDA (Graphical Model)
+
+- Topic Modelling
+
+

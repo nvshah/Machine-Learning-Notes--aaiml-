@@ -11,8 +11,6 @@ REMEM
 
 - Machine Translation esp have long term dependencies
 
-
-
 ----
 
 

@@ -1,0 +1,63 @@
+3.1 Design Youtube Feed RecSys - P1
+------------------------------------------
+ref : https://drive.google.com/file/d/1KJryu3DCCYDOfEVWj43nlHCa00W5vS-T/view
+
+=> MF is time consuming (ie High Latency)
+
+-----------------
+Similar :- (problems)
+TikTok Feed RecSys
+Insta Reels RecSys
+Youtube Shorts RecSys
+
+Problem : (Goal)
+-> User Retention
+
+
+--------------------
+
+* RecSys Gist
+
+  Content Based :- U-U, I-I
+  Collab Based :- MF
+
+  DL based :- Wide & Deep NN
+
+  NCF (Neural Collaborative Filtering) -> Genralization of RecSys
+  Entity Embedding
+  Transformer based MF
+
+=> Low-Variance Content :- Same Repeated content recommended
+
+-> More Heterogenity
+
+* Explore-Exploit Strategy :
+  ---
+   -> Take some from region where user liked &
+      Some from region from where user don't likes
+
+   70% -> Exploit
+   30% -> Explore
+
+- NCF based Entity Embedding : Implicit + Explicit Features (accounts)
+
+* Cluster based Explore-Exploit :
+  ->
+  - Pick random/popular videos from unseen clusters
+=> pick based on user-User similarity
+
+* Exponential Moving Trend/Weightage
+
+* Offline System
+  - Entity Embedding
+  - V-V Clustering (heirarchical)
+  - Approx NN (DS)
+  - User User Clustering
+
+  => Mostly its gonna be spark based syste,
+
+* Online System (needed)
+  - Serving System
+  - Explore Exploit
+  - Compute NN
+  - Data Engg - Store User data

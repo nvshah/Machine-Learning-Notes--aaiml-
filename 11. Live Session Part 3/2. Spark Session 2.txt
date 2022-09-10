@@ -1,0 +1,38 @@
+2. Spark Session 2
+-------------------
+ref :
+iphnb -> https://colab.research.google.com/drive/1mXj1leIVXuqJjCUTVRMfskV_xukpmhP8
+Notes -> https://drive.google.com/file/d/1r4ruQX9dft2G59jwGncjGPb6iNR6uaVF/view
+
+----
+
+=> Spark uses Directed Acyclic Graph DS
+
+----------
+
+AWS EMR -> can provide Spark Cluster or Hadoop Cluster
+Azure Databricks
+
+For Learning its better to setup Spark on SingleBox (via AWS)
+- Docker based Containers
+- on Linux/Mac/Windows <- install Spark
+
+=> Majorly Production system uses Linux System
+
+* Docker :
+  - Sits on top of OS
+  - Creates a virtualization
+
+  Now if we open Jupyter NB (via token) from Docker, then its running on pySpark + Jupyter
+  If I open localhost:8888 in my browser then its pointing to Jupyter NB from Docker
+
+----
+
+* Compute value of PI (using Monte Carlo Approch)
+
+
+=> Dataframe is inspired from SQL
+=> MLLib is inspired from Sklearn
+
+=> Spark can distribute jobs not only on CPUs but also on GPUs
+   (But You need very fast inter-connnect between Computers)

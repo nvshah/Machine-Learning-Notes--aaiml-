@@ -1,0 +1,7 @@
+gist
+----
+
+=> Whole Recommended System has
+   - Matrix Factorization to get your Historical Trends
+   - It has Recency
+   - It also has trends

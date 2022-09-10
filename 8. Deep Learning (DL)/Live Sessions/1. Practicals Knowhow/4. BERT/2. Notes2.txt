@@ -1,0 +1,104 @@
+2. Notes2 (Question Answering System via BERT)
+
+ref : https://colab.research.google.com/drive/1_vdH4_StKsMGGeJai3n17xF0CgtYk0MI
+
+-------
+
+
+NER - Name Entity Recognition (NLP)
+Extractive Answering
+------
+
+-> Bert is nothing but bunch of encoder & transformers layers
+-> BERT is trained on Google Books data & Wikipdeia data
+
+=> REMEMBER : BERT model is pretrained using Masked Language Model (MLM) & Next Sentence Prediction (NSP)
+
+=> There is Tensorflow impl also available for Question Answering
+-------
+
+2) BERT - Fine Tuning
+
+Perspective :- We can fine tune (pretrained) BERT model for our usecase/application
+
+
+* Name Entity Recognition
+  ---
+  - is this word a noun or pronoun or verb !!...
+  -> For every word you want to associate some part of speech & some gramatical constructs
+
+
+* Question Answering :
+  ----
+
+  - SQuAD dataset
+
+  Pre-Training :
+  => BERT model is pretrained for
+   - MLM (masked lang model)
+   - NSP (Next Sentence Prediction)
+
+* MLM (Masked Lang Model) Task:
+  - to mask few words & try to predict those words
+
+* NSP (Next Sentence Prediction) Task:
+  - to check if next sentence arrives after current sentence or not !
+
+* Combined MLM & NSP :
+  ---
+  -> Single model is trained with both together MLM & NSP
+  -> there will be 3 loss in altogether
+     - Loss from NSP prediction  // predicts if sentence B comes after sentence A
+     - Loss from Masked Words in Sentence A prediction
+     - Loss from Masked Words in Sentence B prediction
+
+=> When you do pre-training both MLM & NSP are done together
+
+So Flow is like :
+1. Pretraining happens with both (MLM + NSP)
+2. Fine Tuning of Model
+
+* Fine Tuning :
+  -------
+  Objective :
+   From given paragraph, we want to generate the Question Answer !
+
+  Extractive Answering :
+   -> Given the Que, we want to extract some text from paragraph to generate the answer
+
+  Answer Prediction Approach :
+  ---
+  -> We will have Span of tokens (words) as eligible ans
+     So we will consider start & end of token to decide what is the probability that
+     the corresp span is ans for the given que.
+
+    So we will pass that start & end of token (got from BERT model for Paragraph tokens)
+    to Softmax & check the probability that span is the answer
+
+  -> For every token in paragraph you get
+     2 probability outputs from BERT
+      \
+       1. denoting that this token may be start index of span
+       2. other denoting that this token may be end index of span
+
+
+* Inp Format :
+   -> [cls] Que... [sep] Para Text... [sep]
+
+   -> [cls], [sep]  is special token in inp string
+
+  Output
+  We are interested is
+  -> start indices probabilities vector
+     &
+     end indices probabilities vector
+
+     start & end indices vector corresponding to Paragraph-Inputed Text tokens (ie after [sep])
+
+  => We are havin additional layer on top of BERT
+
+=> start & end scores :-
+   - are logits so you can also extract the top k ans based on probability
+
+-> If all the logits (start scores & end scores) are too small that means this que cannot be answered
+   from this paragraph-text

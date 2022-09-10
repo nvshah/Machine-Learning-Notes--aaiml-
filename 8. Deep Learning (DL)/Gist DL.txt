@@ -86,3 +86,23 @@ Basic Essential Concept
    -> Time axis plays an important role in case of RNN
 
 *) BLUE Score :- specialized metric for transformation of sentences mesaurement
+
+
+* Inductive Biases :
+  ---
+  => So lot of Deep Learning we learns have the inductive biases
+     - CNN - via Convolution
+       Text Info - via Seq Information
+       Transformer - via Self Attention Mechanism
+
+* Polynomial of Matrices :
+  -----
+  -> It suggests what is max path length possible between given 2 vertices !
+
+  In Graph Theory,
+  -> Polynomial such as A^1, A^2, A^3, ... A^k
+      \
+       helps to decide what can be max path length from vertext Vi -> Vk
+
+
+=> SVD & PCA are simplified version of an auto encoder

@@ -1,0 +1,37 @@
+2. Shapely Notes 2
+------------------
+
+=> Most problem in Algo that have Exponential T.C. are solved using Approximate Algortihms
+
+------------
+
+* Shapely Value :
+  ---
+   -> How much each feature contribute to final output
+   => Can give you additive explanation about why output is deferring from original estimation
+   -> You can connect Shapely values to the Conditional Expression
+
+* Marginal Contribution
+----------
+- Difference in Output
+
+* Expectations & Shapely Values :
+  -------
+  -> You can connect Shapely values we learn to the conditional Expectations
+
+
+* Kernel Shap :
+  ----
+  -> LIME + Shapely Values
+  -> Instead of computing feature imp from Linear Models we will compute it via Shaping Values for each featur
+  -> FI via using math of Shapely values
+
+  -> Kernel Shap used to define proximity func as well
+
+* Tree Shap :
+  -------
+  -> generate shapely values for Tree based algo that approximates the values.
+  -> Approximation Algo
+  -> More Approximation
+
+=> Kernel Shap is slower but Kernel Shap gives result that is more similar to Human-Intution

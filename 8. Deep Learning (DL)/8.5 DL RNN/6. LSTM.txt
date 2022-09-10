@@ -13,8 +13,6 @@ Terms
 - Identity Flow
 - Forget Gate
 
-
-
 -------------
 
 - In simple RNN, we do add weights & corresp inp (ie curr + prev)
@@ -152,8 +150,6 @@ Terms
   - via LSTM we have a way to worked out a long-term dependency (via Short-Circuit )
   - Because of possibility of Short-Circuit connection via LSTM unit, we can impact the output
     even which is very far away
-
-
 
 -----------
 [My Gist]

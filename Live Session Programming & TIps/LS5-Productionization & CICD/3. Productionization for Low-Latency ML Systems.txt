@@ -1,9 +1,11 @@
 Date: 5th March, 2022
 
+[40.22] - Live Session
+
 ref 
 [ML in Real Time]  // Chip Huyen Blog
 
-[2.22] - Live Session
+
 3. Productionization for Low-Latency ML Systems
 -----------------
 To Explore :

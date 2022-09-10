@@ -1,0 +1,84 @@
+1. Notes 1 Ad Click
+-------------------
+ref : https://drive.google.com/file/d/1zXwR5HWeBdkKuCUw0YyJ-k0IwXwEYGHT/view
+
+---------------
+
+Terms
+
+PPC :- Pay per click
+CTR :- Click through Rates
+
+=> Search Ads is biggest Revenue Source of Google
+
+* Pay Per Click Ads : (PPC)
+
+* Search Engine :
+  - Want to show ads extremely relevant to the user S.T revenue is maximized
+  - Only when ad is clicked then google will get paid
+
+=> Probability of Click, given {ad, user, context (ie like location, time)} !?
+
+  So there will be lots of candidates for ads for given search
+  We need to pick top k ads S.T PPC is maximized
+  &
+  for this we will compute probability
+
+* Expected Revenue := (probability of click) * (amount willing to paid by the ad bidder to google)
+
+* Positional Bias:
+  - higher inherent probability because of position
+
+* CTR := clicks/impressions
+
+--
+
+* Problem Type :- Classification
+
+* KPI :
+  - Log Loss or AUC ??
+
+  => LogLoss penalizes the wrong prediction
+     AUC not penalizes the output but it cares only about relative ordering
+
+  -> To pose as Ranking problem, AUC is good choice  (ie Relative order of Ads)
+     otherwise
+     LogLoss is good (in case of pclick values are more important)
+
+  -> Log Loss is plus as it holds
+     - Low latency
+
+* Key things to notice (whilst preparing model)
+  - Low Latency
+  - Parallelizable  (Parallelizability while training)
+    - At evaluation time Parallelizability is taken care by Load Balancer
+
+* Features for Ad-Profile Row ?
+  - We can use features such as
+    - isShopping, isHoliday, ...
+    - Geolocation
+    - User - Gender, Age
+
+
+* Avoid Positional Bias :
+  ---
+  Weightage Scheme, where weights will be provided inversely proportional to Positional CTR
+
+  Dropout Scheme
+
+* Naive Bayes vs Logistic Regression ?
+  NB
+  - Low-Latency
+  - Not taking feature interaction into place
+
+  LogReg
+  - Interpretability
+  -> Need to run Calibration on top of it
+  - Low Latency
+  - Works in High-Dimen
+
+
+* Interaction Feature :
+   - we can come up such Interaction feature via Decision Tree
+
+   - We can come up with Polynomial Interaction

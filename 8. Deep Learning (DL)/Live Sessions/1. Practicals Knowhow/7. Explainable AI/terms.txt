@@ -1,0 +1,19 @@
+terms
+
+Integrated Gradients
+
+Model Agnostic Explainability
+ - LIME
+ - SHAP
+
+- Surrogate Model
+
+- Image Patch | Super-Pixels
+
+- K-Lasso Regulariztion
+
+- Inception Neural Network
+
+- Marginal Contribution
+
+- Approximate Algorithms

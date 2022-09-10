@@ -1,0 +1,56 @@
+2. Notes 2
+ref : https://drive.google.com/file/d/1zXwR5HWeBdkKuCUw0YyJ-k0IwXwEYGHT/view
+
+---------
+
+* BlackBox Testing
+  WhiteBox Testing
+
+----------
+
+=> With SGD, we can do Incremental Training
+
+=> LDA := MF + Diff Loss (than Squared Loss)
+
+---------------------
+
+Challange
+ - large amt of training data
+ - low-latency model
+ - minimum log-loss
+
+Q) How would you parallelize the GBDT ?
+   -> GBDT can trained on Modern Large Spark Clusters
+
+=> GBDT is low-latency
+   GBDT can train large amount of data
+   GBDT can achieve us minimum log-loss
+
+=> We should prefer Log-Reg (Log-Loss) over Linear-SVM (Hinge Loss) !
+
+* Kernel-SVM :
+  ---
+  - No control over latency, as we may not have control over #Support-Vectors
+
+* Problem with Stacking :
+  - Low-Latency cant be achieved
+  - How to give Model interpretation
+
+=> Most Company therefore first go with Logistic Regression & then Secondly go with GBDT
+
+
+* Productionization & Monitoring :
+-------------------------
+
+* Monitoring :
+  - check if model is working well
+  - to check if hashtable is corrupted
+  - to check if model is working in production
+
+=> Incremental Training Model is very useful with Logistic Regression
+   LogReg can do Incremental Training
+
+
+* Cold Start Problem
+  - New user or New Ad
+  - only impacts historical rates

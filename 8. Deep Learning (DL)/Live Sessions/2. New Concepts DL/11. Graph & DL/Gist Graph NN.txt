@@ -1,0 +1,71 @@
+Gist
+---
+- Useful terms concepts
+  :- GNN :
+      -> Polynomial Kernel (Laplacians)
+      -> Neighborhood
+      -> Adjacent Matrix & Adjacency List
+
+=> Its not alsways necessary that more params means better models !
+
+Main Idea :
+---
+-> Taking/Pooling info from Neighbors based on the tasks
+   i.e Vertex-Level Tasks, Edge-Level Tasks, Globals-Level tasks
+
+* Graph NN :
+  ---
+  The same way we have
+  Conv layer for Images
+  Self Attention for Transformer
+
+  We must have Graph Neural Layer for Graph NN
+
+  In Graph there are 3 basics info associated with :- Nodes, Edges, Globals
+
+  Pooling Info :
+  ---
+  -> Grab & aggregate the information from neighbors vertexes or edges
+
+  Vertex-level Task
+  Edge-level Task
+
+* Vertext to Vertex Pooling Information
+  You can pool info from vertex to edges & likewise also
+                    from Universal (global) to Vertexes|Edges as well
+
+* Conditioning Function :
+  ---
+  - Concat all representing embedding for
+    - adjacent vertex/node basedd
+    - adj. edge based
+    - global (universal) based
+
+
+* Message passing across Nodes/Edges/Globals => tends to give better Models
+
+* Sampling & Batching in GNN :
+  -------------------------
+  Techniqyes :
+   1. Sample node sampling (1-degree neighbors)
+   2. Random Walk Sampling  // Connected All Selected/Visited
+   3. Random Walk with Neighborhood
+   4. Difussion Sampling // (Gas Diffusion)
+
+* Inductive Biases :
+  ----
+  CNN - Translation Invairance
+  text|LSTM - Sequence Info (ordering)
+  Transformer - Self-Attention
+
+  Graphs also have Inductive biases via Nodes, Edges & Globals
+
+* Graph Convolutions :
+  ----
+  Thus Graph Convolutions is Glorified Matrix Multiplications
+
+
+* Laplacian (Maths)
+  ----
+  You can think Laplacian as modified version of Adjacency Matrix
+  - Capture both Degree & Neighborhood Information

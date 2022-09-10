@@ -1,0 +1,103 @@
+2. Scenario based RecSys Interview Que
+------------------------------
+ref : https://drive.google.com/file/d/18ag6pDPhhgHH9csOOdBenxWkQ7qmzAxJ/view
+
+---
+
+-> Cross Learning :
+   - Information Exchange
+
+=> All latest trend, Neighbor-hood based techniqye are used for recency (ie SOTA)
+
+-----------------
+
+
+
+1) Recency :
+------
+ -> In real world, often Recency is achieved via Neighborhood kinda technique
+
+ -> Matrix Co Factorization
+
+ So Recommendation comes from blend of both ( Recency + MF )
+    \
+     Recency -> Neighbors (approximating)
+     MF -> consider historical data as well !
+
+     - Inorder to copup with latest trend you need to redo entire MF in realtime (which is not good reasonable)
+
+ => Neighbor Approximation is fast
+
+______________
+
+2) Scale of MF : (Scale & Sparsity)
+--------
+ Problem : when data is extremely sparse
+
+* Cross Learning :
+  -> is being Lost when we consider Regional wise or Genre wise Clustering
+     for Ratings (R), Likes (L)
+
+     NOTE there can be multipe many actions, here we are considering 2 for simplicity
+
+  - Cross Learning will work well when # data present in single Genre is good/large
+
+ Idea 1 :- Clustering
+ ---
+ Suggestion
+ -> Cluster based on something either of {region, artist, city, language, ... }
+    NOTE
+     - Just make sure we are not loosing much on Cross Learning
+
+    Clustering based on linguistic, geography, etc...
+
+ -> In Cluster, just make sure bipartite graph partioning works (ie Cross Learning not suffer much)
+
+ Idea 2 :- Sampling (Smartly)
+ ---
+
+ REMEMBER :-
+ Final System := MF + Recency-Based Nearest Neighbors
+
+    Also we can consider another factor :- Non-trending but played by the user
+
+_______________
+Que
+3) Make MF Model Interpretable
+
+  1. Clustering
+  2. TSNE (Visualization)
+  3. Check & Verify with other playlists
+
+
+______________
+
+* Productionization of MF :
+  -----------
+  3 Systems
+  1) MF
+  2) NN-Recency based System
+  3) Trending System
+
+  For MF :
+  - Incremental SGD
+
+  For NN-Recency
+  - SCANN, FAISS
+
+  For Productionization :
+   - Spark
+   - Docker + Kubernetes
+
+  Trending :
+   - Streaming Count algo !
+
+
+-----
+
+* Duplicate Recommended System :
+  ---
+  - How to solve this problem ?
+    Eg Same Shirt of diff size gets recommended
+
+    -> Idea : this can be solved by post-processing

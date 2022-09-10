@@ -1,0 +1,5 @@
+Doubts Dl
+
+Q1) What is Embedding vs Feature Repr (Encoder-Decoder)
+
+Q2) PRELU vs RELU

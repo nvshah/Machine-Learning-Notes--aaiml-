@@ -1,0 +1,4 @@
+terms
+
+- Transfer Learning
+- Knowledge Distillation

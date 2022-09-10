@@ -25,3 +25,18 @@ terms
 - Context Vector | EOS
 
 - Conv, Padding, Strides, Max-Pooling, | CNN
+
+- NER (named entity recognition)
+
+- Topic Modelling
+  - LDA
+  - GMM
+
+  (Graphical Model)
+
+- Product2Vec
+- Sub-Word Embedding
+
+- Hadammard Product (Element Wise Product between Vectors)
+
+- Incremental SGD

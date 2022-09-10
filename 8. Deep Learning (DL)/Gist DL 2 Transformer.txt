@@ -11,3 +11,7 @@ Gist DL 2 Transformer
 
 -> Revolution of Models (Time Series)
    ARIMA -> LSTM -> Transformer -> BERT
+
+[MASKING]
+* Masking is performed so that even if data is present in timeline & if we want to ignore
+  Some data from that as per future prospect We can use Masking

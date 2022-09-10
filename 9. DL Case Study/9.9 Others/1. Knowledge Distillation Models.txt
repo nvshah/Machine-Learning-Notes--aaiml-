@@ -1,0 +1,149 @@
+1. Distillation Models
+----------------------
+ref : https://drive.google.com/file/d/1GjDTiX42GBofpm6QcJNYFL7lP6t8ss1O/view
+-----
+
+
+=> Cross Entropy & Log Loss are Functions of each other
+
+=> In practice the Response Based Knowldge Distillatio is used
+
+-----------------------
+
+* Teacher Model - Student Model
+
+  Let Large Model (any CNN/MLP/LSTM)
+  - Now if we want to use this model to train the smaller model
+
+  Teacher -> Large Model
+  Student -> to be trained Small Model (with the help of teacher model)
+
+  -> So we train Student model via (Xi, Pj) rather than (Xi, Yi)
+     Where
+     Pj is resulted as of Response based Knowledge
+
+     P_ij := Xi belongs to class J
+
+* Response-Based Knowledge Distillation :
+  ---
+  - P_ij that student model returns must be similar to P_ij from teacher model
+
+  As we want both distb (probabilities from teacher & student model) to be similar
+  2 Distb Comparision
+  - KL-Divergence
+    Cross Entropy Loss
+
+  -> Teacher Model is fixed (ie PreTrained)
+     All the Params in Student Model are trainable
+
+
+* Feature-Based Knowledge Distillation
+  ---
+  NOTE :-
+  Feature at diff steps in Teacher & Studen Models may not have same dimension
+  as Teacher & Student model sizes are different
+
+  -> Limitations :- You need to have same #layers in Teacher & Student Models
+  -> We can define some Func PHI, which will transform the feature vec from both into d`-dimen vector
+
+  => Feature Based Knowledge Distillation, hence not widely used in practice
+
+
+* Relation Based Knowledge Distillation :
+  ----
+  (Instance based Distillation)
+
+  -> Now from both Teacher & Student, we will get some feature vectors
+
+  -> It will try to preserve the relation betwee pair of points
+     i.e
+     let say m inp points -> m feature vec from both (teacher & student)
+
+     Now It will try to preserve similar correlation between intra-group
+      - Ti, Tj in teacher model has some similarity
+      - we want same similarity between Si, Sj from Student Model
+
+  -> Capturing same instance relation as what teacher did, from student model as well !
+
+  1 Simple strategy :-
+  You can use distance between 2 points from Teacher Model  -> d_t
+  &
+  distance between same points from Student model -> d_s &
+  check similarity betwn d_t & d_s
+
+  => So the more different they are then higher the Distillation Loss
+
+
+* Transfer Learning vs Knowledge Distillation :
+  ------------------------------------
+  Transf Lrng
+  - Dataset Often Change (& We adapt learned model to our need)
+
+  Knowldg Distl
+  - Dataset often same (but Model is not similar)
+
+[**]
+=> In practice the Response Based Knowldge Distillatio is used
+
+--------
+--------
+Research Paper 2
+
+* Suggested Response based
+  ---
+  2 Losses
+  > Distillation Loss
+    (want teacher & student to similar in terms of output)
+
+  > Regular Loss (With One Hot Encoded Yi's)
+    Cross Entropy Loss with OHE on Yi's
+    -> (Apart from Similar between teacher & student,
+        here we want Student Model to perform well on actual task as well)
+
+
+* Why we use SoftMax ??
+  -> because we dont want to use original Ratio (of multiple class probability)
+     but we want to use Skewed Ratios
+     &
+  -> SoftMax helps to get the Skewed Rations via Exponentiating the resp probabilities
+
+  What if I want to reduce the Impact (ie Reduce the Skewness Effect)
+  - We can increase value of T (because T is used with exponential part)
+  - Thus temperature can help us play with things
+
+
+  Why we do Exponentiation & not use Original ?
+  -> To give High probability to some class (in relative probability)
+
+  Why do we use T (temperature) to reduce Skew Impact ?
+  -> Inorder to avoid very large skewness & capture some reasonable understanding
+  -> So that some Dark Info is Captured !
+
+ => Cross Entropy, K-L Divergence all are Differentiable Losses
+
+ - alpha & beta weights for each loss are often taken as 0.5 & 0.5
+   but they can be treated as a hyper parameter
+
+ - Once Student Model part is ready, (ie trained)
+   We will discard the Teacher & Distillation portion
+
+ -> Thus there are 3 main things over here
+    1. Temperature changes the Relative Probability Skewness
+       (For it to learn Dark Knowledge)
+    2. Distillation Loss
+    3. Actual Student Loss (via OHE Yi's)
+
+ -> If you use different temperature for Student & Teacher Model then scale/proportionality
+    of probabilities between 2 will be havoc
+    So
+    Its recommended to keep same temperature value T for both
+
+    Temperature = t , is a hyper-parameter
+
+_______________________
+
+* DistillBERT :
+  ------
+  - Let say we have BERT model
+    then Distill BERT will be smaller than this above BERT model
+    (ie it will have less Encoders)

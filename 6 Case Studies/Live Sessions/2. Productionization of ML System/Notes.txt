@@ -1,0 +1,39 @@
+Notes
+-----
+
+terms
+
+- Dask (Distributed Framework)
+- FeatureStore
+- MultiProcessing/MultiThreading
+
+=> New Feature, we must check about Collinearity
+
+________________
+
+* Quora Question Pair Similarity
+--------
+  No realtime but Offline (every few hours)
+
+  SOA (Service Oriented Archi)
+  -> When we have complex systems to talk to each other :- Rest API's & MicroServices
+  -> FAST API or Flask API
+
+  -> Pickle Files // Save the Models (learned things)
+  - Pipeline for Preprocessing
+  - AWS-Serverless   // Ec2 or Heroku (not to maintain hardware & all that)
+
+  - Batch Processing
+
+  - Dockerization & Containarization & Kubernetes  // useful when we have high throughput
+    PAAS & Heroku & Dynos
+     \
+      -> Docker & Containerization & Orchestration is taken care by PAAS (like Heroku)
+         So we dont need to worry
+
+  - Spark & Distributed System  // trivially parallelizable
+
+  [*]
+  - Recovery Mechanisms
+    (What if something goes wrong in production)
+    Revert back to prev system

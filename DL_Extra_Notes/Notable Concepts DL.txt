@@ -4,3 +4,10 @@
 
 * Transfer Learning
 * Few-Shots Learning
+
+* Masking
+
+* Embeddings
+
+* Transfer Learning
+* Knowledge Distillation

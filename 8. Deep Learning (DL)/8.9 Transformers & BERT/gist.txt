@@ -20,3 +20,12 @@ gist Transformer
 
   => All input is ingested once
      Output is generated step-by-step (ie acoording timesteps)
+
+
+* 2 Plus of BERT :
+  ---
+  1. It has 2 Phases i.e
+     1) Pre-Training
+     2) Fine Tuning
+
+  2. It is Encoder only Stack

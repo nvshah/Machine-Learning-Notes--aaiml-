@@ -1,0 +1,52 @@
+1. Interview_Que_On_RS
+----------------------
+ref : https://drive.google.com/file/d/1r-Vy4CWlhaIf0wWc5xr_mB9KiZCtvBWz/view
+
+- Causal Inference
+  A/B Testing
+
+-> Industry used RecSys that are mostly Deep Learning Based (perspective)
+
+=> All real time system are combination of Content based + Collaborative Filtering (ie Hybrid)
+
+_______________
+
+REMEMBER :
+-> User cares about Recency
+   (There is variance in even Single Day as per Morning, Evening, ...)
+
+
+* Overview of Problem :
+  - MF
+  - Scale & Recency (item, to item)
+  - Cold Start
+  - Productionize
+  - Retraining
+  - Interpretability
+  - Item Item & User-User Similarity Efficiently
+
+  How to account time ??
+
+----------------------------
+
+* Spotify/Gaana :
+----------------
+  Constraints : Scale, Latency
+   -> Lots of new users & songs & movies
+   -> Mood Specific Songs
+   -> Language specific
+   -> Artists oriented
+   -> Temporalness (80's song, Rock Song, pop song)
+
+ Measure RecSys
+   -> #Skipped Songs
+   -> Time spent by User
+   -> Songs added to playlist
+
+ Historical Data : User, Time, Song
+
+ Special Occasions based Information
+
+=> Metrics & A/B Testing !
+
+=> Tensor Factorization is Computational heavy & Harder

@@ -37,3 +37,5 @@ Tips 1
 => Best way to learn the Image Data is CNN Deep Learning Algo
 
 => Penalized Terms in yout equation when you think some have nore impact than others
+
+=> Most problem in Algo that have Exponential T.C. are solved using Approximate Algortihms

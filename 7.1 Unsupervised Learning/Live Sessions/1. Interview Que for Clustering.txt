@@ -1,0 +1,100 @@
+1. Interview Que for Clustering
+------------------------------
+ref : https://drive.google.com/file/d/1iWlX-FLonRjRuXxrg7LuXc7vxwbLEeTM/view
+
+
+terms :
+
+- Spherical Clustering
+
+________
+
+
+-> Curse of Dimensionality (due to eucledian) will hurt algo but not
+   cares or obligerate it
+
+-> Training a DNN is also a NP-Hard kinda problem, but we still do it
+   DNN (Highly Non-Convex Optimization)
+
+=> Set operation are not differentiable
+
+-> Convex Optimization & Non-Convex Optimizations
+
+-------------
+
+Q1) K-Means Clustering as an optimization ?
+
+Q2) Why cant we solve it using Gradient Descent Method ?
+    (For K means why do we came up with specialized method ie Loyds algo & not used GD )
+
+    -> Even after using langrange technique, the objective func remains non-differentiation
+       So we wont use the GD method
+
+Q3) K-Means Clustering using SGD ?
+    (Clustering as Matrix Factorization)
+    -> Assignment Matrix
+
+    2 Constraints :-
+     1) All row must sum to 1
+     2) Weight (cell val) in Assignment Matrix must be either 0 or 1
+         |
+         W_ij belongs to {0, 1}
+
+     the second constraint is bit tricky to impose as with Langrangian Multiplier
+     As it is kinda set operation & Set operation are not differentiable
+
+        => So Wji would be probability rather than abs value (ie 0 or 1)
+
+     2.1) Soft Clustering :
+          - provide probability that ith point belong to jth cluster
+
+          - It's a Hack
+
+          Hard Clustering :
+          - exact 0 or 1 (ie Set Operation)
+
+Q4) Fast Clustering in case of Many points (let say 1B points) ??
+   -
+    Idea 1: Sampling from many (ie 1 million from 1 billion) & train on subset (ie 1M)
+    Idea 2: Batch K-Means
+
+Q5) Text Processing (TFIDF), Can we use K-means on this ?
+
+   -> As this is sentence vector so it may have high dimension
+      So there will be curse of dimensionality
+      |
+      For this we can try 2 things
+      1) Reduce the dimension via technique as PCA, NMF, SVD, AutoEncoder, etc ...
+      2) Use Cosine Sim/Dist
+
+      Remember :
+      - Mean works well when we have Eucledian Distance
+
+   * Spherical Clustering :
+     ---
+     -> Clustering where Mean of Angular Distance is considered (ie Geomtrically)
+        instead of Euc-Dist
+
+     => Angularity is Taken into account
+
+     -> In high-Dimension they will be close to Hyper-Sphere
+
+Q6) What precautions to take while DBScan ??
+  ->
+    1. Small change in params, changes the clusters
+    2. Curse of Dimensionality
+
+    Small Pertubation Changes or Robustness
+
+    Robustness :
+     - Add small pertubations & check if things changes significantly/dramatically
+
+
+Q7) Single Linkage
+    Complete Linkage
+
+    Agglomerative Clustering
+
+Q8) KMeans++ -> How to optimize KMeans++ for speed ??
+   ->
+     Sampling & Parallelization

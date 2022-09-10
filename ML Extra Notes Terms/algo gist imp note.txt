@@ -135,6 +135,12 @@
 
 => When you have high dimension data, linear Models performs very well
 
+* Why we use SoftMax ??
+  -> because we dont want to use original Ratio (of multiple class probability)
+     but we want to use Skewed Ratios
+     &
+  -> SoftMax helps to get the Skewed Rations via Exponentiating the resp probabilities
+
 ---------------------
 
 -> Naive Bayes vs KNN (Space Complexity)

@@ -26,3 +26,6 @@ terms
 - DBScan
 
 - range query
+
+- Convex Optimization
+  NonConvex Optimization

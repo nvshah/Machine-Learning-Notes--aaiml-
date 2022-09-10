@@ -1,0 +1,5 @@
+DL Pract
+
+- SQuAD Dataset
+- Hugging Face for BERT
+- Tensorflow

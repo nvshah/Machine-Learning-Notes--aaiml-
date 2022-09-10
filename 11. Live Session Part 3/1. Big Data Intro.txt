@@ -1,0 +1,131 @@
+1. Big Data Intro
+-----------------
+ref : https://drive.google.com/file/d/19FEKPsuqciTG3Jdn66mO3vEqD74tVNM_/view
+
+_______
+
+=> Hadoop dont need best RAM
+   If latency is not constained for you & if data intensive task is priority then you can go with Hadoop
+   (Thus cost will be low & performance will still be high)
+
+---------------------------
+
+* tons of data
+
+-> Big Data is all about 5 V -> Volume, Variety, Velocity, Veracity (Noise), Value
+
+-> Relational DB wehre not capabiling of large data (ie Petabytes of data)
+   (Tabular DB) were conventional & were not able to handle petabytes of data
+
+* MySql -> Hadoop -> Spark -> NoSql (Mongo DB)
+
+* Tasks :
+  - Compute Heavy Tasks
+  - Data Heavy Tasks
+
+* Parallel Processing :-
+  MPI & PVM
+
+* Earlier Days Scenario :
+  -> In earlier times (before 2002, 2005), Space was major issue than time
+     So Data was often distributed among multiple disks
+
+  -> Pass data between System via the LAN (Ethernet Cable)
+
+* Map-Reduce
+
+* Hadoop is more efficient for Data-Intensive Tasks
+
+  - Data-Intensive Tasks are like Join multiple table
+  - Map-Reduce is designed for Data-Intensive Tasks
+
+  HDFS
+
+  PIG LATIN
+  HIVE (was much closer to SQL)
+
+  -> Hadoop is not good for Compute Intensive task (ie Iterative Tasks)
+
+  => Hadoop stores all intermediate data to disks
+  -> When Hadoop was designed Ram was small & later day by day Ram size increases dramatically
+
+-> Today, the amount of RAM has increased dramataically in last 10 years
+
+* Spark
+  - Spark comes into existence because price of RAM goes down
+  - Size of Ram grown & cost also came down
+
+  In Hadoop intermediate data is in disk -> so it is compute intensive
+  So
+  Spark was introduced
+
+  If intermediate data can be stored into my Ram then let it be otherwise
+  we will go to Disk
+
+  => Once data is stored in RAM, you can do iterative tasks better !
+     &
+     Thus we can do Compute Intensive Task
+
+  What are Compute Intensive TasK :
+  - ML is eg of Compute Intensive Tasks
+
+  ( Spark, PySpark, Scala, )
+
+  Thus SparkMlLib is best fit for ML today !
+
+  => Spark can do both Data-Intensive + Compute-Intensive Tasks
+
+* GPU
+  ---
+  - Nvidia is pioneer in this tech
+
+  - CUDA (Software)
+    - that anyone can write code to leverage the GPU
+
+  -> GPU gave use huge amount of parallel programming power
+
+  Multiple GPU on same Box
+  Multiple GPU cluster    // Super power
+
+---- DB -----
+
+* Traditional Databases :
+  ----
+  - Minimize the disk space to store the data using Normalization technique
+
+
+* Distributed Datanases :
+  ----
+  - Redis & MemCache
+    |
+    -> Quick Lookup (via Hashtables)
+
+  - NoSql
+  - Key-Val Store
+
+* Elastic Search & MongoDb :
+  ---
+  -> MongoDb :- Text based documents
+
+
+* AWS :
+  ---
+  - lease a computer (Box) for some time
+  - Compute Infrastructure on Demand
+
+  - Platform as a Service (ie Compute Power + Database as well)
+
+  - AWS, GCP, Azure
+  - Every tom & dick company nowadays provide PAAS (ie Oracle, IBM, ...)
+
+
+* CPU vs GPU Core :
+  ----
+  - Cores in CPU are defined for General Purpose task
+    whereas
+    Cores in GPU are not general purpose
+    Cores in GPU are defined well for Vector Purpose Tasks
+
+
+* Kafka : High Volume Processing Engine
+* Dask : Graph Databases

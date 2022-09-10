@@ -1,0 +1,117 @@
+1. Notes (Part 1)
+-----------------
+
+=> In W2V & BERT your entity are Words
+
+-> Entity Embedding is not similar to Text Embedding (Conceptually both are almost similar but
+   actually they are different)
+
+=> For Entity Embedding most imp thing is Sequence information
+
+RecSys (2 ways)
+  -> Matrix Factorization (2 ways)
+  -> Neural Collaborative Filter (ie Neural CF)
+
+----------
+
+* First Cut Solutions
+
+* Embedding :
+  ----
+  -> d-dimen dense repr
+  -> Semantic meaning
+      \
+       -> Semantics are captured better (Eg Queen & King)
+
+=> Embeddings are different from Sparse Vector repr
+
+  Sparse Vector Repr :-
+    - One-Hot Enc
+    - TF-IDF
+    - BOW
+
+    -> Very High Dimensional
+    -> They do not capture semantics very well
+
+  => Word2Vec :
+     1. CBOW -> From context words to Focus words
+     2. Skip-Gram -> from Focus words to Context words
+
+     -> Seq of Words
+
+  => BERT
+     Transformer based model
+     -> BERT pre-trained based on Masked Lang Model & Next Sent Prediction model
+
+* Masked Lang Model :
+  ---
+  -> Your model need to predict the masked position
+  - It's similar to somewhat predicting the Focus word from context Words
+
+
+* Self-Supervised :
+  ---
+  - You only have Seq of Words
+  - & We devise
+       Masked Lang Model &
+       Next Sentence Prediction
+
+* Fundamental Idea (Entity Techniqye)
+  ---
+  -> Sequence & Self-Supervision techniqye
+  -> Words, Sentences (are entities) & (W2V, BERT are techniques)
+
+  Entity is anyhting object that is involved in ML/DL
+
+  So once anythin (entity) can be aligned with Sequence we can think of Embedding
+  |
+  -> Anywhere when its Sequence information => We can use Self-Supervision
+
+
+* Entity Embedding Usecases
+  - Linkedin User into a Sequence
+  - Linkedin Job Posting
+  - Amazon Product into a Sequence
+
+  Embedding for Images :-
+   - via Transfer Learning
+
+   ( Visualize using T-SNE)
+   -> VGG16 visualization are semantically meaningful
+
+  => One of most popular module used for Transfer Learning is ResNet-50 (CNN) archi
+
+* Key-Idea 2 : (Supervision based Embedding Strategy)
+  ---
+  - Supervised Learning  + Deep Learning for getting embedding Vector
+  -> Use appropriate Deep Learning (archi)
+     Use pretrained model for classif in a supervised fashion
+
+  -> Supervised based Embedding Strategy is default one for today's any Image based Sysytem
+       \
+        Supervision based Embedding Strategy
+
+
+  * Multi-Tasking
+    ---
+    -> MultiTask Learning for single d-dime vector training & preparation
+    -> Training model in supervised setting (ie Historical data)
+
+    -> So for Single user there will be multiple task associated => hence multiple output
+       \
+        Multiple tasks learning in single archi
+
+* Idea 3 : Matrix Factorization based RecSys
+  -----------------
+  => Simultaneous Embeddings of Interacting Entities
+
+  Simultaneous Embeddings  (Co-Embeddings) :
+   -> diff entity interacting in system
+      &
+      due to this interaction we are simulataneously embedding both due to interaction
+
+  MF := Regression + Entity interaction
+
+
+* Key Idea 5 : (Auto Encoder)
+  ---

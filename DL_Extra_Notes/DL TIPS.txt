@@ -44,3 +44,11 @@ DL TIPS
 => Whenever you have audio data consider using Spectograms (instead of Fourier Transforms)
 
 -> Gradient Clipping : is used primararily to avoid exploding gradient problem in Recurrent NN
+
+
+
+---------------
+
+-> Convolution is concept borrowed from Signal Processing
+
+-> YOLO helps to do Object Detection pretty well via Bounding Box

@@ -14,3 +14,16 @@ Ronny Restrepo :- http://ronny.rest/blog/post_2017_08_10_sigmoid/
 
 * Amazon.Science
   Google AI Blog
+
+* For Research Paper -> paperswithcode.com
+
+
+-------
+Christopher Bishops TextBook (ML)
+Yan Goodfellow (DL)
+
+
+* To Follow on Twitter
+
+  Yan Le Coon
+  Jeff Hington

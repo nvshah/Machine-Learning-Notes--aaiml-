@@ -45,3 +45,12 @@ TensorFlow/Keras :- allows to add diff regularization at diff layers
 
   Multi Head :- Focus on all words
   Masked :- Focus till now
+
+
+* Embeddings (NN)
+
+
+=> Hyper-Param is something you dont change during training
+   but you change to get a better Cross-Validation error !
+
+=> Backprop is a fancy way of looking a chain rule of differentiation

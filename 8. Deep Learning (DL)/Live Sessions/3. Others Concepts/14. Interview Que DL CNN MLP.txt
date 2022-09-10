@@ -1,0 +1,164 @@
+14. Interview Que DL CNN MLP
+--------------------------
+
+ref : https://drive.google.com/file/d/1dXALHtu0bHvxqLuEF8MNQuKmE5Y_rmzr/view
+__________
+
+=> Hyper-Param is something you dont change during training
+   but you change to get a better Cross-Validation error !
+
+=> Backprop is a fancy way of looking a chain rule of differentiation
+
+------------------
+
+Q1) Why do we not use Perceptron as often as Logistic Reg or Neural Network ?
+->
+  - LR penalizes the changes in the probabilities, Perceptron doesnt find the probability
+  - LR is less impacted by the outliers
+  - LR gives Probabilistic Interpretation
+
+  - Perceptron is more impacted by outliers
+
+  Perceptron vs NN :
+  ---
+  - Single Unit vs Multiple layers
+  - Perceptron is a linear model
+    NN (MLP) we can make it non-linear model
+
+  -> It's all about different activation function
+
+
+Q2) How does RELU introduces non-linearity when it looks "linear" ?
+
+  => Simply when anything is not a line := it is non-linear
+
+Q3) Why do we prefer Dropout over L1/L2 Regularization in Deep NN ?
+ ->
+    Computational Expensive
+     |
+     In dropout my optimization func doesnt change, (ie Differentiation ie Chain Rule) doesnt change
+     Only
+     thing is randomly discrading some connections
+
+    Dropout is much Computationally cheaper than adding L1,L2 regularization
+
+    Dropout is randomization strategy
+
+Q4) How dropout works at Test time ?
+
+    -> Dropout (some connection are rejected only during train time)
+       & during
+       Test time all the weights are kept
+
+    -> At test time the network is always fully connected & we use weights = 'p*w'
+       where p is the dropout probability
+
+Q5) Why max pooling is popular in CNN ?
+  ->
+    We want to capture Edges & for detecting edge we need to find the brightest features
+
+
+Q6) Why individual learning rates per weight (as in AdaGrad) helps as compare to one learning rate for all weights ?
+
+   ->
+     Convergence is faster when scaling of weight is unequal
+
+     For some weights minima is closer & for some weights minima it's far
+     If we use same learning rate for all weights, then weights which are closer to minima might overshoot
+     & never reach minima
+
+   => Adagrad : Idea -> Each weight/param has diff learning rate
+                    |
+                     -> sparse :- higher learning rate
+                        dense feature :- lower learning rate
+                -> Sparse feature needs diff learning rate than Dense Features
+
+Q7) Weight Update function for ADAM !
+
+Q8) Number of params & hyper-params in max-pooling layers ?
+    -> Pool Size & Stride
+
+Q9) Differentiate & Back-Prop through Max-Pool layer ?
+
+Q10) Train loss not changes from epoch to epoch in NN ?
+   -> May be its reach either Local Minima or Saddle Point
+
+Q11) What is Loss function of an AutoEncoder ?
+
+Q12) Why Heirarchical SoftMax in Word2Vec ??
+   -> If softmax has n activations then
+      Hierarchical will have log(n) activations
+
+Q13) Negative Sampling :
+
+    -> Always keep the targeted words
+    -> Keep a sample of words from non-targeted words
+    -> Update only sample of words per iteration
+
+    - Inversely proportional to frequency of words
+
+Q14) What are trainable params in Batch-Normalization ?
+   -> Scale & Shift
+
+[**]
+Q15) Why Residual Network able to learn models of significantly larger depth than earlier VGGNet ?
+   -> because of `Skip Connections`
+       \
+        You can skip bunch of layers that are not useful
+
+Q16) How back-prop relates to Dynamic Programming ?
+   ->
+      Back Prop = Chain Rule of Differentiation + Memoization
+
+Q17) 5000 Images & want to get 5 class labels ?
+   -> Image Augmentation
+      use Pretrained VGG16. as dataset is small we will retune last layer output with small learning rate
+
+Q18) Why Data Augmentation helps in Object Recog Task ?
+   -> Makes model more robust by introducing several Invariance
+
+Q19) Why GPU help in Deep Learning much more than a multi-core of 16 or 8 cores ?
+   ->
+      CPU is like a F1 Car where 1 person can travel fast
+      GPU is like a truck where many people can travel with reasonable speed
+      (Number of calculations are high in GPU)
+
+    - CPU is used specially for Multi-tasking
+
+Q20) How Convolution is different from simple matrix multiplication ?
+     Convo vs Fully Connected Weights ??
+
+     -> Weight Sharing in case of Convolution Kernel
+
+Q21) Derivative of Sigmoid Func ?
+     ->
+
+
+Q22) Why do we need Leaky RELU ?
+    ->
+       To avoid dead activations in Deep NN
+
+[**]
+Q23) Why is sometimes tanh over sigmoid ??
+     What are advatnages of tanh over sigmoid ??
+
+     -> Derivative of tanh are larger than derivative of sigmoid
+        So It will have lesser problem of vanishing gradient &
+        Faster Convergence
+
+     -> Tanh lies between -1 & 1
+        Sigmoid lies between 0 & 1
+
+     -> Output of tanh have higher chance of Zero Centred
+        Thus tanh was easier to train for Bigger networks with this property as compare to Sigmoid
+
+Q24) How to Fix Exploding Gradient in MLP ?
+     -> Gradient Clipping
+           \
+            L2-Norm Clipping
+
+Q25) Detect Outliers using NN ?
+     ->
+        Auto Encoders
+        |
+        Why ?-> AutoEncoders will have a higher Errors

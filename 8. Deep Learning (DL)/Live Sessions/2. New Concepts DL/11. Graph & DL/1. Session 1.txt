@@ -1,0 +1,71 @@
+1. Session 1
+
+* Graph Neural Networks & Geometric Learning :
+----------
+
+- BiPartite Graph
+
+----------
+
+* Graph-NN :
+  -----
+  Embeddings for {Vertex, Edge, Entire-Graph}
+
+  Vertex :- Entity (Real World)
+  Edges :- RelationShips
+
+=> You can think a text as Line Graph
+
+* Node-Level Task :
+  ---
+  Eg -> Image Segmentation
+     -> Part of speech in Text
+
+* 4 things Imp :
+  ---
+  - Node
+  - Edges
+  - global context
+  - Connectivity    // via Adjacency Matrix
+
+  Problem with Adjacency Matrix
+  -> Space inefficient
+
+  => In Image & Text there is some natural ordering
+     But
+     In Graph there is no such ordering
+     Nodes do not have any natural ordering in general Graphs
+
+* Problem in Representing as a Graph :
+  ---
+  - Adjacency Matrix for same graph may differ as per order of vertices
+
+* Permutation Invariant :
+  ---
+  -> on changing the labelling of vertices, the Model/Graph Structure remains intact
+
+* Graph-In, Graph-Out Archi :
+  ------------
+  For Images We have Conv layer
+  For Text We have Self-Attention layer
+
+  What layer we use for Graph-In Graph-Out Archi ??
+
+* Pooling & Aggregation :
+  ---
+  - Pooling info from Edges to construct infor for Vertices
+
+  Case 1 : Vertex Prediction
+
+  Case 2 : Edge Prediction
+
+* Graph Independent Layers :
+  ---
+  - Not using the Connectivity information (ie Adj. list)
+
+
+* GNN :
+  ---
+  -> Use the Adj. List (ie Connectivity info) as well
+
+  -> Graph Convolution layer

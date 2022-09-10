@@ -1,0 +1,69 @@
+2. Session 2
+
+-> Vertex-Level task & Edge-Level Task
+
+----------
+
+-> Pooling information  between Universal, Vertex & Edge Representation
+
+-> Universal Representation helps to pass info from Vertexes to Edges that are far away in Graph
+
+
+* GNL :  (Graph Neural Layers)
+  ----
+  -> Layerwise-pooling, info is propogated lately for far-distance vertexes
+
+  => As depth of network increases, some info is also going far away from nodes
+
+* Type of Aggregation used :
+  - Min, Max, Mean
+
+* Message Passing  :
+  - one of most imp Hyper-Param
+  - for nodes, edges & globals
+  - more info is passed across structure
+
+
+* Sampling & Batching in GNN :
+  -------------------------
+  - diff vertextes have diff property of connection
+
+  Techniqyes :
+   1. Sample node sampling (1-degree neighbors)
+   2. Random Walk Sampling  // Connected All Selected/Visited
+   3. Random Walk with Neighborhood
+   4. Difussion Sampling // (Gas Diffusion)
+
+* Inductive Biases
+  -----
+  -> Prior info about the problem space that we are inducing into the model itself
+     (as prior biases)
+
+     Eg In Image (Convo) ;- Translation Invariant is implicitly induced
+
+        In text :- Sequence Info (ie Order of Text's Words is Implicitly induced into the model)
+
+        Self Attention is also one kinda Inductive Bias
+         - For any word to understand it truly, we need to understand all the words (not just before that or after that only)
+
+  => So lot of Deep Learning we learns have the inductive biases
+     - CNN - via Translation Invariance & Convolution
+       LSTM | Text Info - via Seq Information
+       Transformer - via Self Attention Mechanism
+
+  In Graph how to consider Inductive Biases ??!
+  -> "Permutation Invariant"
+
+  => Thus Graphs also have the inductive biases through Nodes, Edges, & Globals
+
+* GCN as SubGraph Function Approximators :
+  ---------
+  Bag of k-graphs to obtains Subgraph Embeddings
+
+  -> GCN is a fancy neural network on a Bag of K-Subgraphs
+
+* Edges & Graph Dual :
+  ----------------
+  Dual :- Edges becomes vertices & vice-versa
+
+  -> Helps to pose a vertex-level task to edge-level task

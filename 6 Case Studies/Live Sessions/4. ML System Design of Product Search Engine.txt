@@ -1,0 +1,39 @@
+4. ML System Design of Product Search Engine
+---------------------------------------------
+
+terms
+
+- Inverted Indices
+
+=> BERT is a backbone of modern search engine system
+
+_______________
+
+* Problem : Query (Search Text) -> Rank List of Products
+
+A1) Pure String Matching : (word by word search)
+->
+ Problem with Pure String or Word by Word match
+ - Synonyms
+ - Personalization
+ - Rule based systems
+
+* Inverted Index :
+  ----
+  - Fancy HashTable
+
+  => Elastic Search is fancy Inverted Index
+
+* Query to Embedding :
+  ------------------
+
+* Complex Search Query & Query Understanding
+  - Price in Query
+  - alphanumeric string (ie Model Number)
+
+* Spell Check & AutoCorrect Model
+
+
+* Personalization (How to solve ?)
+
+  - Current Context + History <- Pay Attention

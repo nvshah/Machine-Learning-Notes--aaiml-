@@ -1,0 +1,106 @@
+1. Intro
+--------
+ref : https://drive.google.com/file/d/1OTGlN_pBe9ZuVpPmkirsJMOgFSs2AuCh/view
+
+=> Richard Bellman invented both classical DP & Reinforcement Learning's Bellman Eqn
+
+* Applications of RL :
+  - Robotics
+  - Game-Play  ( Atari, Dota, Chess )
+  - Self driving-cars
+  - Trading Systems
+
+* Modern RL := Deep RL  (DL + RL)
+
+
+* Problem Formulation
+  ---
+  Agent :- Robot
+  Environment :- Setup of the problem
+  States :- current state where agent is in environment
+  Actions :- what actions can agent performs ?
+
+  Reward R(S, A):- function of 2 variables ie {states, action}
+
+
+* Bellman Equation
+  ----
+  => You are trying to find the action that maximizes your immediate rewards ( & also considers
+     the Future Rewards with some discounting factor)
+
+  Value Function
+  -> The defn of value func is called as Bellman Eqn
+
+  -> It will consider multiple possible actions from current state & then
+     also consider rewards in next possible state
+     &
+     chooses maximal rewarding action
+
+  -> It's kinda recursion
+
+  -> Current State & Next State consideration
+
+  Discounting Factor (Gamma)
+  - used to weigh future rewards
+  -> So we are not giving same weightage to Future Reward same as Instantaneous Rewards
+
+  -> So this gamma tells how much weight to give to future rewards as compare to instantaneous rewards
+
+
+REMEMBER :-
+=> The Environment may change & its not as it is with the time
+
+* Diff between classical DP (Dynamic Prog) & RL (Reinforcement Learning)
+  ----
+  -> As Environment may change with the time, So in RL, Agent is not aware about entire graph
+     (from the very beginning) &
+     It has to figure it out via experiment & navigating through whole space
+
+     So Environment will change over time
+
+  -> Whereas in classical Graph (DP) problem, We are aware about the Graph from start -> end
+
+
+* Markov Decision Process : (MDP)
+  ---------------------
+  Stocastic :- Randomness involved
+  Deterministic :- No Randomness
+
+  Most realworld agent are Stochastic
+
+  When you have system where agent is stocastic, it is known as Markov Decision Process
+  - It boils down to the probabilities
+
+  How to account Stocasticity in Bellman Eqn :
+  - Instantaneous Reward part remains same (intact)
+  - For Future Reward (value func) part, we will use Estimated value (via probabilities)
+
+  Summation over all possible state s` from state s via action a
+
+  V(s) = max[ R(s,a) + GAMMA * E(V(s`) ]
+
+* Q-Function :
+  ----------
+  -> Deep Q-learning is all about Q-function
+  - Q-func is a function of 2 things :- state & action
+
+  - This Q Func is also a recursive function
+
+  When P(s, a, s`) = 1, We make that as a Deterministic
+
+
+* Temporal Difference :
+  -----
+  - When Environment is changing
+    Eg Robotic :- Some Dust Spill on Floor (because Door is open)
+       Gameplay :- Ball changing
+
+  - how much environment change from timestamp to another timestamp
+
+  TD(s, a) = Q_new(s,a) - Q_old(s,a)
+
+  alpha factor := Learning Rate
+  -> How quickly adapt to env changes
+
+* Deep Q Learning Intution :
+  --------------------

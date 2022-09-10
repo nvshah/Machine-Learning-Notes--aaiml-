@@ -62,7 +62,7 @@ REMEMBER :
 => Thus Feed Forward NN involves lot of Matrix Multiplication
 -----
   STEPS
-   - Embeddings
+   - Embeddings // Get Feature Vector Repr
      Queries   // 64 dimen vectors | dk
      Keys     // 64 diemn vecor
      Values   // 6 dimen

@@ -1,0 +1,11 @@
+ref
+
+Notes
+https://drive.google.com/file/d/17aZiYUHMP7zxn2YCWoEUdVYV0KsWgSDd/view
+
+* Part2 Real World Case Studies
+
+1. Linkedin Engineering PenSeive (Research Paper)
+
+
+5. Moving Beyond Meta for Better Product Recommendation

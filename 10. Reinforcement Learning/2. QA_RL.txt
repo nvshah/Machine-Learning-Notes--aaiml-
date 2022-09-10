@@ -1,0 +1,19 @@
+2. QA_RL
+-------
+
+Course ref :
+- Berkely Deep RL course
+- Yotutbe DeepMind
+
+---------
+
+-> Q(S, a) is what maximized when you compute value func V(s)
+
+-> Depending on Value Func V(s), you can define your policy
+
+=> Roomba is Robotic that did household kinda works
+
+-> Lots of Autonomous Drones also used Reinforcement Learning
+
+=> In ML & DL its minimizing Loss Func
+   In RL its maximizing the Rewards

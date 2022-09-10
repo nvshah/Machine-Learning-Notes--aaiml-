@@ -13,6 +13,7 @@ practical lib
   - SparseCategoricalCrossEntropy()
 
   - callbacks.ModelCheckPoint()  // to save model at end of every epoch
+             .EarlyStopping()
 
 attrib on model instance :
   - summary()
@@ -32,6 +33,7 @@ attrib on model instance :
 * transformers
 
   - BertTokenizer
+
 -----------
 
 * tensorboard :

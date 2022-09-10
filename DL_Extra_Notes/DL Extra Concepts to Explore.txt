@@ -1,0 +1,7 @@
+DL Extra Concepts to Explore
+
+- Image Processing
+  - Transformation Matrices
+    2D -> 3D, 3D -> 2D projections
+
+  - OpenCV

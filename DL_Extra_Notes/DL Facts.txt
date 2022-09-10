@@ -1,0 +1,3 @@
+DL Facts
+
+-> Transformer are replacing the LSTM or Bidirectional LSTM

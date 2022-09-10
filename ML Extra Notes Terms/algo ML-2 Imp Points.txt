@@ -1,5 +1,10 @@
 algo ML-2 Imp Points
 
+=> SoftMax is a Generalization of Logistic Regression to a MultiClass Setup
+   (ie from 2 class to more class setup)
+
+_________________________________________
+
 - Hyper-param & CV
  ------ 
 Train - Test Split :
@@ -150,3 +155,8 @@ Train - Test Split :
 * Recommended System :
    \
     Recency & Frequency Impact
+
+
+* Pre-Training vs Fine-Tuning ?
+  ---
+  -> You pre-train on large amount of data whereas you tune on small-space of data (later)

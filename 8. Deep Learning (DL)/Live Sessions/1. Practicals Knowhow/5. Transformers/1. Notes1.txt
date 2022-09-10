@@ -1,0 +1,29 @@
+1. Notes1
+
+-------
+
+-> [None] is meant for BatchSize while programming
+
+------
+
+* Tensorflow Tokenizer :
+  ---
+   - SubwordTextEncoder
+
+Q What happens in Standard Tokenization ?
+-> Each word in sentence is breaked up & assign some unique id
+
+  SubWordTokenization - by default in worst case breaks upto each character of a word
+
+REMEMBER:
+- Whenever we input any sent to transformer we add some special token such as
+  [cls], [sep]
+  [start], [end]
+
+* Positional Encoding :
+  - helps to conserve related positions of words
+  - Transformer generates pos-encoding via Sin & Cos (ie Trignometry)
+
+* Masking :
+  - Padding Tokens
+  - Lookahead Mask

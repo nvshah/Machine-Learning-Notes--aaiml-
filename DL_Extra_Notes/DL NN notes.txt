@@ -39,3 +39,13 @@ DL NN notes
 
 => CNN has become so good today because of the facility available to get vectors from Images
    (ie VGG16, ResNet)
+
+
+* Inductive Biases :
+  ----
+  -> Prior-Info we consider to build or prepare our model
+
+  => So lot of Deep Learning we learns have the inductive biases
+     - CNN - via Convolution
+       Text Info - via Seq Information
+       Transformer - via Self Attention Mechanism

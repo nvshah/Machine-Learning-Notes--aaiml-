@@ -1,0 +1,74 @@
+1. Notes 1
+----------
+
+-> state of the art for RecSys := Matrix Factorization
+
+- Every rating given by every user will become 1 inp pair
+
+* RecSys using DL models :
+------------------
+
+
+* Entity Embeddings :
+  ---
+  -> The biggest application of Entity Embeddings is the Recommended System
+
+  Drawback of One-Hot Encoding Vectors :
+   - Asa new users are joined the vector size increases
+
+  [Incorporate new users & movies data]
+  -> Problem with Matrix Factorization approach is to incorporate the new user feature & movie feature
+     whereas in Kinda Generic Structure (may be via OHE) we can incorporate
+     any additional data for users & movies
+
+* So RecSys via Deep Learning Stuffs, we can incorporate additional Users & Movies features into model easily
+
+* Problems
+
+(1) Cold Start :
+    ---
+    - New Movie
+    - New Inp vector (but possibly same meta-data vector)
+
+    Soln approach :
+    - Get vector (embedded) after FFNN-2 & pass it to Nearest Neighbor algo like SCANN, FAISS
+      to get similar movies/items
+
+Flow
+ -> user -> user-inp-vec + user-meta-vec -> DL FNN -> Embedding vec (corresp)
+    item -> item-inp-vec + item-meta-vec -> DL FNN -> Embedding vec (corresp)
+
+(2) Latency :
+    ---
+    -> Good algo for Nearest Neighbor Searching after we get embedded vec for new user item
+
+(3) Recency-Frequency :
+    ---
+    -> using DL its not good to choice to go for incorporating Recency & Frequency things
+       So
+       its preferrable to use Nearest Neighbors Algo (like)
+        - SCANN,
+        - FAISS
+
+
+=> So the reason behind using DL in RecSys, is
+   - You get embedded vec repr for user-item
+   - You can handle Cold-Start problem & latency problem
+
+[Interesting]
+=> Facebook uses FAISS for recommending new users
+   Google uses SCANN for recommending new search
+
+
+* Multi Task Learning :
+  ----
+  - Single Archi to learn & predict for multiple tasks
+  (useful when we have multiple types of ratings)
+
+  For Eg Train based on
+  - Ratings (Rij)
+  - Watch (Wij)
+
+  likewise diff tasks
+
+  => this way our single d-dimen repr will learn all behaviour during back-prop

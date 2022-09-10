@@ -1,0 +1,17 @@
+terms
+
+- GeoDesics
+
+- Permutation Invariant
+
+- Pooling & Aggregation
+ 
+
+- Inductive Biases
+
+- Laplacian of Graph
+  Polynomial of Laplacian
+
+  Polynomial Filters
+
+- ChebNet

@@ -1,0 +1,111 @@
+2. Entity Embedding Case Studies 2
+------------------
+- Frame feature market place
+- Tensorflow on Yarn
+
+- Linkedin Knowledge Graph
+
+REMEMBER :
+
+-> For most Distributed Systems, Reading is faster whereas Writing is Slower
+
+________
+
+1) Linkedin PenSieve
+----------
+
+* Pensieve :- Feature store
+  ---
+  - Pre-compute & publish embedding
+
+  1. Offline Training Pipeline
+     - Distributed System platform
+
+  2. Penseive Modeling
+
+  3. Embedding Serving Framework
+
+
+* Penseive takes ideas from Deep Structure Semantic Models
+
+* Skip Connections created through concatenation of prior inp layers
+
+  From raw features to embedding (it is via simple Matrix multiplication)
+  -> All the info at lower level, we don't want to dump it
+     We will keep concatenating it as we move layers up
+
+  -> The embeddings at above layers are stronger embeddings
+
+  & This way Archi changes (ie as info is passed & concatenated to above/next layer)
+
+  [ Pyramidal Embedding Network ]
+  ----------
+  => Instead of simple archi, here its used Pyramidial kinda Archi where you keep check that you're not
+     loosing out imp information from prev layers
+
+* Model Deployment :
+  ---
+  -> break into 2 individual Embedding Graphs
+
+  Distributed Hash Table (Lookup Table)
+   -> MemCache / Redis
+
+  Stream Processing
+
+
+2) Linkedin Embeddings (for Course Recommendation)
+----------------
+  Concept : Neural Collaberative Filtering Archi
+
+  - course to course similarity
+
+3) Amazon Object2Vec :
+-----------------
+  Keyword : SageMaker
+
+  -> 2 Input : Left Encoder & Right Encoder
+
+  - Embeddings of Products,
+    Embedding of Customers
+
+  In this you dont need to limit to Customer on Left Encoder & Product on Right Encoder
+  It can be Customer on LE & seq of products on RE
+
+  - Left Encoder :-  Product Id
+    Right Encoder :- Sequence of Words (for which Product needs to be predicted)
+
+    If its correctly predicted then output 1 else 0
+
+    Having the flexibility to input the sequences of products for single customer is viatal thing
+  -> So in archi when on one side it would be Customer & & on another side instead of Single Product
+     We may have Sequence of Product
+     The Archi would be much useful (As we are not missing out sequence information)
+     &
+     This make Object2Vec Powerful
+
+  => When you have Sequence of Inputs you can have Bi-Directional LSTM instead of MLP
+
+  => Object2Vec is a generic system designed for any entity
+
+     Similar to InferSent
+
+4) InstaKart :
+-------------
+ - multiple entities : shopper, items, store
+
+ - What is the next item shopper should pick & from which store ?
+   (Given Shopper had picked some items)
+
+5) tata 1Mg's
+---------------
+ 1. Product2Vec
+ 2. Meta-Product2Vec
+
+ Product2Vec :
+  Seq-Info -> Graph -> Random Walk
+
+ => Product2Vec will struggle with long tail coverage of products
+
+ MetaProduct2Vec+
+  - Product2Vec using metadata
+  -> In addition to Sequence Info, also usi g metadata

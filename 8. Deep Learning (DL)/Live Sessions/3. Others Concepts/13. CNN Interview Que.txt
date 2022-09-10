@@ -1,0 +1,73 @@
+13. CNN Interview Que
+--------------------
+
+ref : https://drive.google.com/file/d/1GrH7HgvHGxq9OURwyj2-M_UeCYjq4SYV/view
+
+---
+terms
+
+Knowledge Distillation
+
+---
+
+=> Operation available for CNN
+   - Conv, MaxPool, Dropout, Residual
+
+=> Typical CNN are very parameter efficient & they have redundancy for Noise
+
+=> Dont always think of a model as input to output
+   There is also a Dense Rich Layer available sometimes (which is information rich)
+
+----------------------
+
+Q1) MaxPool Layer - How does BackProp works ??
+ ->
+    MaxPool will pass the only derivative corresp to pixel that have max-value amongst others
+    &
+    will suppress others
+
+=> Operation available for CNN
+   - Conv, MaxPool, Dropout, Residual
+
+NOTE :- Derivative coming from Prev-Layer during Back Propogation will get multiplied ahead
+
+
+Q3) Time Series Forecasting using CNN for next vectors ?
+->
+   We can use 1D Conv -> Weightage -> Flatten -> FFN -> Sq.Loss
+
+Q) Why do we use 2D Convolution ?
+  -> because Img has property that space around defines the pixel
+
+Q4) Edge Detection uses Convolution ?
+----
+  Build CNN model s.t 1st layer Convolution looks like Edge Detector
+
+  - Kernels & Template Kernels
+  - At the end of the day I want to minimize the Loss
+
+  - Min of all difference between Kernel (learned) & Templated Kernel , @each layer
+    |
+    In MaxPooling, during back Propogation, we only keep derivative w.r.t Max operation
+    likewise
+    In case of min, we can keep only derivative of min itself
+
+Q5) Engineering Hacks for Less Powerful System to Run already trained Model ?
+  ->
+     Quantization, Distillation
+
+    Big Model to Small Model ?-> How !
+
+    Train time for Small Model :-
+
+    Small Model will not try to find ent to end Inp -> Output
+    but
+    What it will try is to send input to one of the last layer of Big Model
+    ( So the Info we get from large model's last layer is significant (as a vector layer))
+    |
+    Info getting from large model is a large vector
+    So there is more potential of Information transfer from larger model to smaller model this way
+
+    Thus it is not doing Inp -> Out mapping but it is doing input to one of the last layer in Big Model
+
+

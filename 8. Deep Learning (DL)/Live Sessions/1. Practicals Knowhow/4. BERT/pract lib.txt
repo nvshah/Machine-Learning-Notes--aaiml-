@@ -1,0 +1,16 @@
+pract lib
+
+=> HuggingFace is a popular library which has implementation for different kind of
+   BERT models & Trasnformer based Models
+
+* hugging face
+
+   - TFBertForQuestionAnswering
+
+* transformers
+   - DistilBertTokenizer
+      - from_pretrained()
+
+   - DistilBertConfig
+
+=> There is Tensorflow impl also available for Question Answering

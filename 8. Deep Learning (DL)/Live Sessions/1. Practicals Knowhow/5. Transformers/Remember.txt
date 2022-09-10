@@ -1,0 +1,4 @@
+Remember
+
+* Masking is performed so that even if data is present in timeline & if we want to ignore
+  Some data from that as per future prospect We can use Masking

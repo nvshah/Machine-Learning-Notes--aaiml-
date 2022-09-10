@@ -1,0 +1,20 @@
+4. Session 4 (Pract)
+-------------
+
+Library :
+
+- Spektral
+- TF GNN
+
+
+----------
+
+* Conv-GNN
+
+- GraphConvo Layer
+- GNN Node Classifier
+
+Steps :
+ 1) Prepare
+ 2) Aggregate
+ 3) Update

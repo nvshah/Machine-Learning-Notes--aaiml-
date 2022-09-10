@@ -7,6 +7,13 @@ Concept Ref Youtube & Videos
 (Visual Processing) https://www.youtube.com/watch?v=v20-E_2bT2c
 
 
+
+Books
+---
+- Multiple view Geometry in Computer Vision  | Book
+- Probability & Statistics for Computer Science
+
+
 -------
 Follow these person for ML
 

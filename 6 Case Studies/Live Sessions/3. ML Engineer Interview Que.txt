@@ -1,0 +1,24 @@
+3. ML Engineer Interview Que
+----------------------------
+
+Q1) Scratch Code for Naive Bayes
+
+-> Problem of Numerical Overflow ~ close to 0 when d is large
+   - instead of storing prob, store log of probabilities
+
+  Calibration :- Model on Log Probabilities
+    |
+     - Platt Scaling, Isotonic Regression
+
+Q2) Batch SGD Pseudo Code
+
+Q3) Blur GrayScale Image (Computer Vision Problem) :
+   -> We need Kernel
+   - Box-Blur Kernel
+   - averaging the neighboring
+
+   => Every blur will have avergaing factor
+
+Q4) GroupBy in Spark - map, reduce
+
+Q5) WAF to add 2 sparse tensors

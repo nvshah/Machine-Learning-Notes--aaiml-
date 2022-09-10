@@ -27,3 +27,7 @@ terms
 - Pseudo Random number generator
 
 - Penalized Terms
+
+- Cold Start
+
+- Embedding Layer Vector

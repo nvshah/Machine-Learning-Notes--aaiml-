@@ -1,0 +1,42 @@
+12. Session on DL-MLP (Interview Que)
+---------------------
+
+ref : https://drive.google.com/file/d/1k8U4RtpzhdVE9y-roGrtL2KOgzLjZnBa/view
+_____________
+
+=> SVD & PCA are simplified version of an auto encoder
+
+------------
+
+Q1) Design Archi for `Product2Vec` ?!
+ ->
+   KNN + MLP
+
+   => SOTA : Entity Embeddings
+
+Q2) Activation Func : Can abs() be activation function ?!
+
+   -> Nonlinear
+
+   Problem :-
+   - Generally In case of Neuron when you pass some info you meant to preserve some indicator out of it
+     Eg
+     In case of RELU +ve signals are passed ahead whereas -ve signals are inhibited & not pass ahead
+     So in case of RELU we have indicator that can indicate us of +ve or -ve signals significance
+
+     But In case of abs(), No matter if signal is +ve or -ve it will pass always it as +ve in output
+     So there is no indicator when we use abs() as an activation function
+     |
+     So you dont know if to inhibit the signal or amplify/Exhibit the Signal
+     \
+      We cannot differentiate if we get strong +ve signal or strong -ve signal
+
+
+Q3) Given Some iteration of Gradient Descent, How you will decide if current point is
+    minima, maxima, or saddle point ?
+
+   => When we take random pertubation with that point,
+      then
+      derivative is sometimes increasing & sometimes decreasing
+      &
+      Hence that is a indicator (Standard Understanding of) that it can be a Saddle Point

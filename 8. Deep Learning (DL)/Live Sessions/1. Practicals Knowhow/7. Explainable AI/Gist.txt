@@ -1,0 +1,20 @@
+Gist
+
+-> Explanability is much concern with Interpretability of Model
+
+Q) Feature Imp vs LIME | SHAP
+
+  -> Feature Imp is concern with Global
+     whereas
+     LIME|SHAP or Explainability AI is concern with Local as well
+
+  -> For large dataset, Local Interpretability is more important
+     (ie Why this is behaving for specific inp)
+
+
+* Flow :
+  X -> f() -> out
+  X` -> g() -> tries to approximate the output of f()
+
+  X` is derived from X &
+  X` is interpretable vector of X // whereas X may not be interpretable

@@ -1,0 +1,55 @@
+11. NLP Classic to SOTA
+----------------------
+
+=> SoftMax is a Generalization of Logistic Regression to a MultiClass Setup
+   (ie from 2 class to more class setup)
+
+=> Lot of SOTA in NLP is Transformer based
+
+=> You dont need to do any text-preprocessing in case of BERT
+
+-> BERT := Library -> HuggingFace
+
+-> Google itself uses BERT alike models for Searches
+
+----------------
+
+Q1) Sentiment Polarity Classification for Reviews
+    3 classes := ( +ve, -ve, neutral )
+
+  -> NOTE : Pre-Processing is not always necessary, (for eg in case of BERT it may not needed)
+
+  => Trivial 1 Layer NN with Softmax (3 probability) works
+
+
+Q2) Given text corpus in a language you don't know (German, French, Thai), How do you find Stop-Words ?
+
+  -> Frequencies of Words
+
+Q3) Named Entity Recongition (NER) using BERT/Transformer:
+
+  -> Concept used : BERT (for solving NER)
+  -> Masked Language Model (MLM)
+
+  -> Phase 1 : (Pre-Train) Specific of lang is learned by BERT model (from Raw Text)
+     Phase 2 : (Fine Tuning) :- We get Entity Embedding for each token input (Words)
+
+
+Q4) How would you Label Efficiently ??
+    - Each Doc can have multiple Labels !
+
+    - Hierarchical Clustering  : (Documents in Hierarchical Clusters)
+
+* Topic Modelling
+  - (via LDA or GMM) <- Graphical Model
+  -> Is not powerful enough
+
+  SOTA in Topic Modelling is Transformer today !
+
+  : Each Doc => BERT => Repr => pass through => Multi-Classification alike Softmax
+
+
+Q5) News Recommendation App :
+   -------------------------
+
+  ->

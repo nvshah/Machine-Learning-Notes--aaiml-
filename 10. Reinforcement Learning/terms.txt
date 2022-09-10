@@ -1,0 +1,13 @@
+terms
+-----
+
+* Agent
+* Destination
+* State
+
+* Value Function
+
+* Deterministic
+  Stochastic
+
+* Temporal Difference

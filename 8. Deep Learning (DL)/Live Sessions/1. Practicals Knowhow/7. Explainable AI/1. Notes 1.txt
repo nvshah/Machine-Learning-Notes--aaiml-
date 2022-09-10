@@ -1,0 +1,101 @@
+1. Notes 1
+----------
+
+Motif behing Explainable AI ??
+
+-> Why does Model in this specific way !
+   \
+    -> Explainability & Interpretability
+
+=> Explanable AI is much more about Interpretability
+
+-> It is essential to know why model give a output
+   (justification)
+
+   If its Coincidence that reasoning is not reasonable then its spurious or jibberish
+
+
+* Explainability :
+-------
+ -> Explainability := Feature importance or Feature Contribution
+
+ - Linear Models : Weights Magnitude
+   Tree Models : Entropy or Info Gain @ each feature
+
+   Deep Learning Models : Integrated Gradients
+
+* Model Agnostic Explainability !?
+---
+ (Black Box Models)
+ - Explainability for BlackBox Model
+
+ -> LIME or SHAP
+
+* LIME (Local Interpretable Modal Agnostic Explaination)
+-------
+
+* Local vs Global Interpretable :
+  ---
+  Global Models :-
+    - looks at global structure of whole model
+  Local Model :-
+    - we are looking at locality to find why model is giving specific output
+    - Its not necessary that Model behaves same everywhere else as well
+
+    -> Surrogate Model  (from Proximity to observed point)  | g()
+        \
+         -> Approximates the bigger model (ie global model)
+
+         - So that we can ge idea about why f() is giving y_q for x_q if we can approximate g() -> f()
+           It is for within neighborhood of x
+
+
+* Super Pixels | Image-Patches :
+  ----
+  - area which has similar pixels features
+
+
+=> So for inp X ->
+    - We may get some vector representing that Input X for Model computation purpose
+      So
+      We cannot use that generated feature vector for Explainability all the time
+      Hence we will use some different vector or representation for the same purpose
+      (maybe via BOW or similar techniques)
+
+
+* Surrogate Models :
+  ---
+  -> do not use original feature vectors
+  -> Surrogate func g() will operate on interpretable feature representation
+
+* Proximity Function :
+  ---
+  - closeness of point x to point y
+
+* Local Fidelity :
+  ---
+  - How unfaithfully g() approximates the f() in the locality defined by Proximity function
+  - how close is this surrogate func g() with the original func f() for given proximity func
+
+* Loss Func Formulation :
+  Idea : Define Loss Func that minimzes the local fidelity & complexity of Surrogate Model at same time
+  -> Entire loss is weighted by proximity score
+
+  - K-Lasso Regulariztion
+
+
+* Sparse Linear Explainations using LIME :
+  ---------
+  Sparse : as L1-Reg is used
+  Linear Explanations : as Surrogate Model uses Linear Models
+
+  N -> number of samples you need to consider in the neighborhood
+
+
+* LIME :
+  ---
+  -> It doesn't matter if x is interpretable or not
+     As long as it is img, text or tabular data,
+
+     we will make it work by having a new vector x` for x
+     which is interpretable

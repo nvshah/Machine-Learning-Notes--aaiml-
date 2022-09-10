@@ -1,0 +1,52 @@
+2 Notes2
+-------
+
+-> Dense Layer underneath are just Matrix multiplications
+
+-> depth is the size of each input we get at output
+
+* Encoder Layer :
+  - Input -> Position Encoding ->  Self-Attention -> Feed-Forward
+
+  Components :-
+    3. Self-Attention
+    4. Feed-Forward
+    5. Layer-Normalization
+
+* MHA (Multi Head Attention)
+  - MHA at its core has 3 parts
+     \
+      V, K, Q
+
+
+* Embedding Layers :
+  ---
+  - Instead of converting token to vector via some techinqye such as Word2Vec,
+    We will have Embedding layer
+    Thie Embedding layer will learn the Conversion inseatd of using any predefined techniques
+
+
+* Encoder Component comprises of
+  1. Embedding Layer
+  2. Positional Encoding
+  3. multiple encoding layers ( self-attention -> Layer Norma -> Feed-Forward )
+  4. Dropout
+
+* Decoder :
+  ---
+  At time t, the input to Decoder stack is all output till t-1
+
+  After Decoder there is Linear -> SoftMax Layer
+
+* SoftMax Layer:
+  ---
+  - Last Unit in the Transformer that will tell what should be the next word in the timeline
+
+
+* LookAhead Masks :
+  ---
+  -> To mask out future words/tokens at future timestamps
+  -> Thus masking here is used to abstract out the future words (whilst training)
+  -> Lookahead masks is use to ensure we are not looking ahead in future for ouptuts
+
+  - While generate at time t, It can see all the previous words but current & future outputs (words) it cannot see

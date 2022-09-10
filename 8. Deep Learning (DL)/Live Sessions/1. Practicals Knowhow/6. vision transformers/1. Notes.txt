@@ -1,0 +1,79 @@
+1. Notes
+---------
+ref : https://drive.google.com/file/d/1Cclec5P5cyjiyW5pAwuRjYWh1QV4aHRJ/view
+
+-------------
+
+=> Transformer at the core are attention based models
+
+- jax
+
+* CNN -> Transformer based models for Computer Vision
+
+-> Sinusoidal Positional Encoding vs Learnable Positional Encoding
+
+-------------
+
+Vision Transformers :
+----
+-> For Computer Vision (for Images)
+-> Its not better than SOTA (State of the Arts) CNN
+-> Transformer based NLP
+-> No Convolution
+-> Low Power Computation
+-> Encoder Only Model (Pure)
+
+-> It is standard BERT alike model
+
+-> For Attention based model, it has high quadratic complexity because there include Combinations
+
+* Key idea :
+  --
+  Patches
+  -> In NLP we operate on Word level Granularity
+  -> In CV, we will operate on Patches level Granularity
+
+  Patch -> 16*16 pixel size
+
+  => Image is break down into patches
+
+  Why Patches -> because otherwise if we do pixel level Granularity
+     (ie compare each pixel with rest then it would be computationally not efficient)
+
+
+* Flattening Patch
+  ---
+  Patch -> Flattened Patch (Vector)
+
+  -> By this you will loose locality information
+
+* Linear Projections of Flattened Patch :
+  ---
+  -> multiply vector (patched) with the matrix
+  -> Learnable Weight Matrix
+  -> It's kinda Embedding layer
+
+* 2D Positional Encoding :
+  ---
+  -> learn positional weights/vectors
+  -> We can find similarity between each cell
+
+  -> Sinusoidal Positional Encoding can be taken as starting point as well
+
+=> Simple 1D pos-encoding @ input is enough
+
+
+* GELU :
+  ---
+  - Activation Function
+  - variation of RELU -> GELU, ELU
+  - smoother RELU
+
+  => In Transformer Encoder, MLP, they are using GELU
+
+
+* BIT : ResNet CNN based:
+  ---
+  - BIT is state of the art ResNet based model.
+
+=> Vision Transformer requires significantly larger amount of dataset comparatively to CNN based models

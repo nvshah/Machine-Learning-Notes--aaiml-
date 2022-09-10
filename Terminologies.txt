@@ -28,3 +28,8 @@ Objective Func in Optimization
 Langrange Multiplier  
 Eigen Val & Eigen Vec
 
+
+
+----
+
+- First Cut Soln

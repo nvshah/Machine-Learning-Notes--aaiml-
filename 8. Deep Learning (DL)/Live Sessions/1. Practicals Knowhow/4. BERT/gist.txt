@@ -1,0 +1,26 @@
+gist
+
+* Question Answering (QA)
+---------------
+
+- Paragraph of Text
+  Question
+  -> Ans extract from paragraph
+
+1. PreTraining Stage (via MLM + NSP)
+   MLM - masked layerd model
+   NSP - Next sentence prediction
+
+2. Fine Tuning Stage
+
+Special String in your Input for single sample
+- [cls], [sep]
+
+
+-> BERT-QueAns Train via google & wikipedia data &
+   It is Fine Tune via SQuAD dataset
+
+* Hugging Face Train Que Ans : to train on Custom data
+
+=> REMEMBER : On top of BERT model we are adding additional models (ie softmax or likewise)
+              to get start & end probability for each token
